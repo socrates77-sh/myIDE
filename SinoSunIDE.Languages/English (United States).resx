@@ -1,0 +1,2679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutWinScope" xml:space="preserve">
+    <value>About WinScope</value>
+  </data>
+  <data name="ASM" xml:space="preserve">
+    <value>ASM</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="Alphabetical" xml:space="preserve">
+    <value>In alphabetical order</value>
+  </data>
+  <data name="AutomaticStep" xml:space="preserve">
+    <value>Automatic Step</value>
+  </data>
+  <data name="AutomaticTrack" xml:space="preserve">
+    <value>Automatic Track</value>
+  </data>
+  <data name="Bookmarks" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="BooksWindow" xml:space="preserve">
+    <value>Books Window</value>
+  </data>
+  <data name="BreakpointsList" xml:space="preserve">
+    <value>Breakpoints</value>
+  </data>
+  <data name="BuildOutput" xml:space="preserve">
+    <value>Build Output</value>
+  </data>
+  <data name="Buildtarget" xml:space="preserve">
+    <value>Build Target</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CheckForUpdate" xml:space="preserve">
+    <value>Check For Update</value>
+  </data>
+  <data name="ChipConfiguration" xml:space="preserve">
+    <value>Chip Configuration</value>
+  </data>
+  <data name="ChipModel" xml:space="preserve">
+    <value>Chip Model：</value>
+  </data>
+  <data name="ClearAllBookmark" xml:space="preserve">
+    <value>Clear All Bookmark</value>
+  </data>
+  <data name="CloneLines" xml:space="preserve">
+    <value>Clone Lines</value>
+  </data>
+  <data name="CloneLinesAndComment" xml:space="preserve">
+    <value>Clone Lines And Comment</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CloseProject" xml:space="preserve">
+    <value>Close Project</value>
+  </data>
+  <data name="CommentSelected" xml:space="preserve">
+    <value>Comment Selected</value>
+  </data>
+  <data name="CompileAssemble" xml:space="preserve">
+    <value>Compile/Assemble</value>
+  </data>
+  <data name="CompileDebugger" xml:space="preserve">
+    <value>CompileDebugger</value>
+  </data>
+  <data name="ContentsMemoryRegion" xml:space="preserve">
+    <value>Contents Memory Region</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CreateDirectory" xml:space="preserve">
+    <value>Create directory for project</value>
+  </data>
+  <data name="Criterion" xml:space="preserve">
+    <value>Criterion</value>
+  </data>
+  <data name="CurrentMode" xml:space="preserve">
+    <value>Current Mode</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteRow" xml:space="preserve">
+    <value>Delete Row</value>
+  </data>
+  <data name="DesignatedCOMPort" xml:space="preserve">
+    <value>Designated COM Port</value>
+  </data>
+  <data name="DisableAllBreakpoints" xml:space="preserve">
+    <value>Disable All Breakpoints</value>
+  </data>
+  <data name="DisableEnableBreakpoint" xml:space="preserve">
+    <value>Disable/Enable Breakpoint</value>
+  </data>
+  <data name="DisassemblyWindow" xml:space="preserve">
+    <value>Disassembly Window</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="ExitWindow" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ExportTemplate" xml:space="preserve">
+    <value>Export Template</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="FindInActiveFile" xml:space="preserve">
+    <value>Find In Active File</value>
+  </data>
+  <data name="FindInFiles" xml:space="preserve">
+    <value>Find In Files</value>
+  </data>
+  <data name="FindOne" xml:space="preserve">
+    <value>Find One</value>
+  </data>
+  <data name="FindResultOutput" xml:space="preserve">
+    <value>Find Result Output</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="FirmwareUpdates" xml:space="preserve">
+    <value>Emulator Firmware Updates</value>
+  </data>
+  <data name="FontSet" xml:space="preserve">
+    <value>Font Set</value>
+  </data>
+  <data name="FontSize" xml:space="preserve">
+    <value>Font Size Set：</value>
+  </data>
+  <data name="FunctionList" xml:space="preserve">
+    <value>Function List</value>
+  </data>
+  <data name="GeneratedCode" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="GoNeglectBreakpoint" xml:space="preserve">
+    <value>Go Neglect Breakpoint</value>
+  </data>
+  <data name="GoToBookmark" xml:space="preserve">
+    <value>Go To</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="InputCharacter" xml:space="preserve">
+    <value>Please Input The Search Character</value>
+  </data>
+  <data name="InsertBookmark" xml:space="preserve">
+    <value>Insert Bookmark</value>
+  </data>
+  <data name="InsertLineIndentation" xml:space="preserve">
+    <value>Insert Line Indentation</value>
+  </data>
+  <data name="InsertRemoveBreakpoint" xml:space="preserve">
+    <value>Insert/Remove Breakpoint</value>
+  </data>
+  <data name="KillAllBreakpoints" xml:space="preserve">
+    <value>Kill All Breakpoints</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LoginTime" xml:space="preserve">
+    <value>Login Time</value>
+  </data>
+  <data name="MakeLowercase" xml:space="preserve">
+    <value>Make Lowercase</value>
+  </data>
+  <data name="MakeUppercase" xml:space="preserve">
+    <value>Make Uppercase</value>
+  </data>
+  <data name="MCUOption" xml:space="preserve">
+    <value>MCU OPTION</value>
+  </data>
+  <data name="MCUOptionValue" xml:space="preserve">
+    <value>MCU OPTION Value</value>
+  </data>
+  <data name="MergeFiles" xml:space="preserve">
+    <value>Merge S19 Files</value>
+  </data>
+  <data name="MessagesOutput" xml:space="preserve">
+    <value>Messages Output</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NavigateBackwards" xml:space="preserve">
+    <value>Navigate Backwards</value>
+  </data>
+  <data name="NavigateBackwardsTip" xml:space="preserve">
+    <value>Navigate Backward(Crtl+-)</value>
+  </data>
+  <data name="NavigatesForwards" xml:space="preserve">
+    <value>Navigates Forwards</value>
+  </data>
+  <data name="NavigatesForwardsTip" xml:space="preserve">
+    <value>Navigates Forward(Shift+Crtl+-)</value>
+  </data>
+  <data name="NewBuilt" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewFile" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewProject" xml:space="preserve">
+    <value>New Project</value>
+  </data>
+  <data name="NextBookmark" xml:space="preserve">
+    <value>Next Bookmark</value>
+  </data>
+  <data name="NextStep" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NoSort" xml:space="preserve">
+    <value>According to from low to high ranking</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="OpenFile" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="OpenProject" xml:space="preserve">
+    <value>Open Project</value>
+  </data>
+  <data name="OperationTime" xml:space="preserve">
+    <value>Operation Time</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OutputPath" xml:space="preserve">
+    <value>Output Path：</value>
+  </data>
+  <data name="PageRange" xml:space="preserve">
+    <value>Page Range：</value>
+  </data>
+  <data name="PageRangeEditor" xml:space="preserve">
+    <value>Page Range</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="PreBookmark" xml:space="preserve">
+    <value>Previous Bookmark</value>
+  </data>
+  <data name="PreStep" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="PrintSetup" xml:space="preserve">
+    <value>Print Setup</value>
+  </data>
+  <data name="ProgramEdit" xml:space="preserve">
+    <value>Program Edit</value>
+  </data>
+  <data name="ProgramRunTime" xml:space="preserve">
+    <value>Program Run Time</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Project Name：</value>
+  </data>
+  <data name="ProjectWindow" xml:space="preserve">
+    <value>Project Window</value>
+  </data>
+  <data name="ProjectWindowTip" xml:space="preserve">
+    <value>Project Window</value>
+  </data>
+  <data name="ProjectWSH" xml:space="preserve">
+    <value>Project Window Show</value>
+  </data>
+  <data name="ProjOption" xml:space="preserve">
+    <value>Project Option</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="PropertyPage" xml:space="preserve">
+    <value>Property Page</value>
+  </data>
+  <data name="RAMData" xml:space="preserve">
+    <value>RAM Data</value>
+  </data>
+  <data name="RecentFiles" xml:space="preserve">
+    <value>Recent Files</value>
+  </data>
+  <data name="RecentProjects" xml:space="preserve">
+    <value>Recent Projects</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="RedoTip" xml:space="preserve">
+    <value>Redo(Ctrl+Y)</value>
+  </data>
+  <data name="RegAddr" xml:space="preserve">
+    <value>Addr</value>
+  </data>
+  <data name="RegeneratedCode" xml:space="preserve">
+    <value>Rebuild</value>
+  </data>
+  <data name="RegeneratedCodeAndDownload" xml:space="preserve">
+    <value>Rebuild And Download</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="RegisterOnline" xml:space="preserve">
+    <value>Register Online</value>
+  </data>
+  <data name="RegValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="RemoveBookmark" xml:space="preserve">
+    <value>Remove Bookmark</value>
+  </data>
+  <data name="RemoveLineIndentation" xml:space="preserve">
+    <value>Remove Line Indentation</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="ResetCPU" xml:space="preserve">
+    <value>Reset CPU</value>
+  </data>
+  <data name="ROMData" xml:space="preserve">
+    <value>ROM Data</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="RunTime" xml:space="preserve">
+    <value>Run Time</value>
+  </data>
+  <data name="RunTo" xml:space="preserve">
+    <value>Run To Cursor</value>
+  </data>
+  <data name="SavaAs" xml:space="preserve">
+    <value>Sava As</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveALL" xml:space="preserve">
+    <value>Save ALL</value>
+  </data>
+  <data name="SaveOption" xml:space="preserve">
+    <value>Save Option</value>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>Save settings</value>
+  </data>
+  <data name="SecondStep" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="SelectCompiler" xml:space="preserve">
+    <value>Compiler：</value>
+  </data>
+  <data name="SimulationDebugging" xml:space="preserve">
+    <value>Simulation debugging</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>According to the sorting order</value>
+  </data>
+  <data name="SpaceForTab" xml:space="preserve">
+    <value>Space For Tab</value>
+  </data>
+  <data name="SpecialFunctionRegister" xml:space="preserve">
+    <value>Special Function Register</value>
+  </data>
+  <data name="StartStopDebugger" xml:space="preserve">
+    <value>Start/Stop Debugger</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="StepIn" xml:space="preserve">
+    <value>Step In</value>
+  </data>
+  <data name="StepInTip" xml:space="preserve">
+    <value>F11  Step In</value>
+  </data>
+  <data name="StepOut" xml:space="preserve">
+    <value>Step Out</value>
+  </data>
+  <data name="StepOutTip" xml:space="preserve">
+    <value>Shift+F11 Step out</value>
+  </data>
+  <data name="StepOver" xml:space="preserve">
+    <value>Step Over</value>
+  </data>
+  <data name="StepOverTip" xml:space="preserve">
+    <value>F10  Step Over</value>
+  </data>
+  <data name="StopRun" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TabifySelection" xml:space="preserve">
+    <value>Tabify Selection</value>
+  </data>
+  <data name="TabSet" xml:space="preserve">
+    <value>Tab Set：</value>
+  </data>
+  <data name="TabSetEditor" xml:space="preserve">
+    <value>Tab Set</value>
+  </data>
+  <data name="TabSize" xml:space="preserve">
+    <value>Tab Size</value>
+  </data>
+  <data name="ToggleBookmark" xml:space="preserve">
+    <value>Toggle Bookmark</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Toolbar</value>
+  </data>
+  <data name="ToolOption" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Track" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="Translatecurrentfile" xml:space="preserve">
+    <value>Translate Current File</value>
+  </data>
+  <data name="UncommentSelected" xml:space="preserve">
+    <value>Uncomment Selected</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="UndoTip" xml:space="preserve">
+    <value>Undo(Ctrl+Z)</value>
+  </data>
+  <data name="UntabifySelection" xml:space="preserve">
+    <value>Untabify Selection</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="WatchWindow" xml:space="preserve">
+    <value>Watch</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome to use WinScope IDE！</value>
+  </data>
+  <data name="Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="WinScopeHelp" xml:space="preserve">
+    <value>WinScope Help</value>
+  </data>
+  <data name="Wizard" xml:space="preserve">
+    <value>New Project Wizard</value>
+  </data>
+  <data name="MessageBoxText" xml:space="preserve">
+    <value>Unable to obtain the normal route!</value>
+  </data>
+  <data name="MessageBoxText1" xml:space="preserve">
+    <value>Do you want to save the current project?</value>
+  </data>
+  <data name="MessageBoxCaption1" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="MessageBoxText2" xml:space="preserve">
+    <value>Not found.</value>
+  </data>
+  <data name="MessageBoxText3" xml:space="preserve">
+    <value>File not readable!</value>
+  </data>
+  <data name="MessageBoxText4" xml:space="preserve">
+    <value>File Monitoring error</value>
+  </data>
+  <data name="MessageBoxCaption4" xml:space="preserve">
+    <value>Monitoring error</value>
+  </data>
+  <data name="MessageBoxText5" xml:space="preserve">
+    <value>The file has been changed, whether loading a new document?</value>
+  </data>
+  <data name="MessageBoxCaption5" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="MessageBoxText6" xml:space="preserve">
+    <value>RISC series of MCU does not support the debugger command!</value>
+  </data>
+  <data name="MessageBoxText7" xml:space="preserve">
+    <value>Communication connection timeout, please re - enter debug mode!</value>
+  </data>
+  <data name="MessageBoxCaption7" xml:space="preserve">
+    <value>Receive data timeout</value>
+  </data>
+  <data name="MessageBoxText8" xml:space="preserve">
+    <value>Detection to the emulator and software does not match the current firmware version, please update firmware!</value>
+  </data>
+  <data name="MessageBoxText9" xml:space="preserve">
+    <value>Please input a string!</value>
+  </data>
+  <data name="MessageBoxText10" xml:space="preserve">
+    <value>Can only enter Hexadecimal or  Decimal</value>
+  </data>
+  <data name="MessageBoxText11" xml:space="preserve">
+    <value>Can only enter Hexadecimal, and less than</value>
+  </data>
+  <data name="MessageBoxText12" xml:space="preserve">
+    <value>The program has been running fly! Please reset</value>
+  </data>
+  <data name="MessageBoxText13" xml:space="preserve">
+    <value>Paper no.:</value>
+  </data>
+  <data name="MessageBoxText14" xml:space="preserve">
+    <value>Line breakpoint is invalid! ,Will be forcibly removed</value>
+  </data>
+  <data name="MessageBoxText15" xml:space="preserve">
+    <value>Set breakpoint number cannot exceed 15. Beyond will be cleared!</value>
+  </data>
+  <data name="MessageBoxText16" xml:space="preserve">
+    <value>Software online updating detection failed, please make sure that the network!</value>
+  </data>
+  <data name="MessageBoxText17" xml:space="preserve">
+    <value>or, you can also visit the company's website to see if there is an updated version</value>
+  </data>
+  <data name="MessageBoxCaption16" xml:space="preserve">
+    <value>Update Check Error</value>
+  </data>
+  <data name="MessageBoxText18" xml:space="preserve">
+    <value>Detection of a new version of the software! In order to better serve you, please download the latest version of the network to the company website!</value>
+  </data>
+  <data name="MessageBoxCaption18" xml:space="preserve">
+    <value>To detect software has a new version</value>
+  </data>
+  <data name="MessageBoxText19" xml:space="preserve">
+    <value>Project name already exists, please change the path</value>
+  </data>
+  <data name="MessageBoxText20" xml:space="preserve">
+    <value>Or change the name of the project^_^@</value>
+  </data>
+  <data name="MessageBoxText21" xml:space="preserve">
+    <value>Are you sure want to quit the new project wizard?</value>
+  </data>
+  <data name="MessageBoxText22" xml:space="preserve">
+    <value>The system cannot simulation mode, the type of unified vibration</value>
+  </data>
+  <data name="MessageBoxText23" xml:space="preserve">
+    <value>Simulation of the model is unable to support the external oscillator, use this setting when the frequency is fixed at 8MHZ!</value>
+  </data>
+  <data name="MessageBoxText24" xml:space="preserve">
+    <value>HC05 system is unable to simulation of external vibration mode, set the mode frequency is fixed at 8MHZ!</value>
+  </data>
+  <data name="MessageBoxText25" xml:space="preserve">
+    <value>The simulator is not connected or attached on illegal word input</value>
+  </data>
+  <data name="MessageBoxCaption25" xml:space="preserve">
+    <value>The change value error</value>
+  </data>
+  <data name="MessageBoxText26" xml:space="preserve">
+    <value>The input character illegal!</value>
+  </data>
+  <data name="MessageBoxCaption26" xml:space="preserve">
+    <value>Illegal input</value>
+  </data>
+  <data name="MessageBoxText27" xml:space="preserve">
+    <value>addresses out of RAM range!</value>
+  </data>
+  <data name="MessageBoxText28" xml:space="preserve">
+    <value>Can only enter Hexadecimal, and less than or equal to</value>
+  </data>
+  <data name="MessageBoxText29" xml:space="preserve">
+    <value>Font Set Error!</value>
+  </data>
+  <data name="MessageBoxText30" xml:space="preserve">
+    <value>Language Set Error!</value>
+  </data>
+  <data name="MessageBoxText31" xml:space="preserve">
+    <value>Choose to open the need to compile the project</value>
+  </data>
+  <data name="MessageBoxText32" xml:space="preserve">
+    <value>Can't find main.c, or project name consistent C file and the main function in the file.</value>
+  </data>
+  <data name="MessageBoxText33" xml:space="preserve">
+    <value>Can't find the compiler</value>
+  </data>
+  <data name="MessageBoxText34" xml:space="preserve">
+    <value>ASM file not found</value>
+  </data>
+  <data name="MessageBoxText35" xml:space="preserve">
+    <value>.The program must have a ASM file, and name consistent with project name.</value>
+  </data>
+  <data name="MessageBoxText36" xml:space="preserve">
+    <value>Compile error!</value>
+  </data>
+  <data name="MessageBoxText37" xml:space="preserve">
+    <value>There are spaces, tabs, or point symbols and other illegal character path development environment software store</value>
+  </data>
+  <data name="MessageBoxText38" xml:space="preserve">
+    <value>Please select and open the need to compile the file!</value>
+  </data>
+  <data name="MessageBoxText39" xml:space="preserve">
+    <value>Path have spaces or tabs, point symbols, such as illegal characters</value>
+  </data>
+  <data name="MessageBoxText40" xml:space="preserve">
+    <value>C file not found</value>
+  </data>
+  <data name="MessageBoxText41" xml:space="preserve">
+    <value>Compile and link error!</value>
+  </data>
+  <data name="MessageBoxText42" xml:space="preserve">
+    <value>Merger successful!</value>
+  </data>
+  <data name="Retain011" xml:space="preserve">
+    <value>011:Retention</value>
+  </data>
+  <data name="Retain001" xml:space="preserve">
+    <value>001:Retention</value>
+  </data>
+  <data name="Retain000" xml:space="preserve">
+    <value>000:Retention</value>
+  </data>
+  <data name="OSCM11" xml:space="preserve">
+    <value>11:Internal high-frequency RC&amp;RTC</value>
+  </data>
+  <data name="OSCM10" xml:space="preserve">
+    <value>10:Internal high-frequency RC</value>
+  </data>
+  <data name="OSCM01" xml:space="preserve">
+    <value>01:High-frequency crystal oscillator</value>
+  </data>
+  <data name="OSCM00" xml:space="preserve">
+    <value>00:Low-frequency crystal oscillator</value>
+  </data>
+  <data name="BorselFunc" xml:space="preserve">
+    <value>Reset voltage point</value>
+  </data>
+  <data name="BorselFuncExplain" xml:space="preserve">
+    <value>Chip reset voltage, this function can not be real-time simulation, as long as the actual chip effectively.</value>
+  </data>
+  <data name="MCLREFunc" xml:space="preserve">
+    <value>Reset function</value>
+  </data>
+  <data name="MCLREFuncExplain1" xml:space="preserve">
+    <value>reset pin function set:</value>
+  </data>
+  <data name="MCLREFuncExplain2" xml:space="preserve">
+    <value>True:external reset is enabled;</value>
+  </data>
+  <data name="MCLREFuncExplain3" xml:space="preserve">
+    <value>False:pin used as input;</value>
+  </data>
+  <data name="FOSCFunc" xml:space="preserve">
+    <value>Oscillator frequency</value>
+  </data>
+  <data name="FOSCFuncExplain" xml:space="preserve">
+    <value>Oscillator frequency set,These settings are invalid for the external crystal pattern.</value>
+  </data>
+  <data name="FCPUFunc" xml:space="preserve">
+    <value>CPU clock</value>
+  </data>
+  <data name="FCPUFuncExplain" xml:space="preserve">
+    <value>Can select 1-4T (true), or 0-2T (false)</value>
+  </data>
+  <data name="TWDTFunc" xml:space="preserve">
+    <value>Power on reset time</value>
+  </data>
+  <data name="TWDTFuncExplain" xml:space="preserve">
+    <value>Select the power on reset and watchdog overflow time</value>
+  </data>
+  <data name="WDTEFunc" xml:space="preserve">
+    <value>WDT set</value>
+  </data>
+  <data name="WDTEFuncExplain1" xml:space="preserve">
+    <value>WDT set:</value>
+  </data>
+  <data name="WDTEFuncExplain2" xml:space="preserve">
+    <value>True:WDT is enabled</value>
+  </data>
+  <data name="WDTEFuncExplain3" xml:space="preserve">
+    <value>False:WDT is disabled</value>
+  </data>
+  <data name="RDPORTFunc" xml:space="preserve">
+    <value>Port read function set</value>
+  </data>
+  <data name="RDPORTFuncExplain1" xml:space="preserve">
+    <value>Output pin read function:</value>
+  </data>
+  <data name="RDPORTFuncExplain2" xml:space="preserve">
+    <value>True: read port, read is level port;</value>
+  </data>
+  <data name="RDPORTFuncExplain3" xml:space="preserve">
+    <value>False: read port, read is the value of register</value>
+  </data>
+  <data name="SMTENFunc" xml:space="preserve">
+    <value>MCU type</value>
+  </data>
+  <data name="SMTENFuncExplain1" xml:space="preserve">
+    <value>Input pin set:</value>
+  </data>
+  <data name="SMTENFuncExplain2" xml:space="preserve">
+    <value>True: with Schmidt trigger</value>
+  </data>
+  <data name="SMTENFuncExplain3" xml:space="preserve">
+    <value>False: without Schmidt trigger</value>
+  </data>
+  <data name="MCUtypeFunc" xml:space="preserve">
+    <value>MCU type</value>
+  </data>
+  <data name="MCUtypeFuncExplain1" xml:space="preserve">
+    <value>MCU type:</value>
+  </data>
+  <data name="MCUtypeFuncExplain2" xml:space="preserve">
+    <value>true: compatible XXS53 chip</value>
+  </data>
+  <data name="MCUtypeFuncExplain3" xml:space="preserve">
+    <value>false: compatible XXP153 chip</value>
+  </data>
+  <data name="OSCM" xml:space="preserve">
+    <value>Internal high-frequency RC&amp;RTC</value>
+  </data>
+  <data name="OSCMFunc" xml:space="preserve">
+    <value>Oscillator selection</value>
+  </data>
+  <data name="OSCMFuncExplain" xml:space="preserve">
+    <value>Support for External high-frequency、External low-frequency，Internal IRC</value>
+  </data>
+  <data name="CPFunc" xml:space="preserve">
+    <value>Encryption set</value>
+  </data>
+  <data name="CPFuncExplain" xml:space="preserve">
+    <value>In the program, set the encryption ROM area!</value>
+  </data>
+  <data name="LVRSString7" xml:space="preserve">
+    <value>Other:3.6V</value>
+  </data>
+  <data name="WDTCString1" xml:space="preserve">
+    <value>00: Disable WDT all the time</value>
+  </data>
+  <data name="WDTCString2" xml:space="preserve">
+    <value>01: Disable WDT in IDLE mode</value>
+  </data>
+  <data name="WDTCString3" xml:space="preserve">
+    <value>1X: Enable WDT all the time</value>
+  </data>
+  <data name="OSCMString1" xml:space="preserve">
+    <value>11:internal 8MHZ &amp; RTC</value>
+  </data>
+  <data name="OSCMString2" xml:space="preserve">
+    <value>10:internal 8MHZ</value>
+  </data>
+  <data name="OSCMString3" xml:space="preserve">
+    <value>01:High-frequency crystal oscillator model</value>
+  </data>
+  <data name="OSCMString4" xml:space="preserve">
+    <value>01:Low-frequency crystal oscillator model</value>
+  </data>
+  <data name="OSCMPCFunc" xml:space="preserve">
+    <value>Oscillator model</value>
+  </data>
+  <data name="OSCMPCFuncExplain" xml:space="preserve">
+    <value>Oscillator model selection,internal oscillator?external oscillator?RTC?</value>
+  </data>
+  <data name="FCPUPCFunc" xml:space="preserve">
+    <value>CPU clock speed</value>
+  </data>
+  <data name="FCPUPCFuncExplain" xml:space="preserve">
+    <value>select between 1//2 and 1//16</value>
+  </data>
+  <data name="LVRSPCFunc" xml:space="preserve">
+    <value>Undervoltage reset voltage selection</value>
+  </data>
+  <data name="LVRSPCFuncExplain" xml:space="preserve">
+    <value>1.5V--3.6V</value>
+  </data>
+  <data name="MCLREPCFunc" xml:space="preserve">
+    <value>Reset function</value>
+  </data>
+  <data name="MCLREPCFuncExplain" xml:space="preserve">
+    <value>This is lvr fution select option.. Try it!</value>
+  </data>
+  <data name="WDTCPCFunc" xml:space="preserve">
+    <value>WDT controled</value>
+  </data>
+  <data name="WDTCPCFuncExplain" xml:space="preserve">
+    <value>This property uses as WDT controled.</value>
+  </data>
+  <data name="WDTTPCFunc" xml:space="preserve">
+    <value>WDT overflow time</value>
+  </data>
+  <data name="WDTTPCFuncExplain" xml:space="preserve">
+    <value>Setting different WDT overflow time</value>
+  </data>
+  <data name="OSCMMC20P24BString1" xml:space="preserve">
+    <value>11:8MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P24BString2" xml:space="preserve">
+    <value>10:4MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P24BString3" xml:space="preserve">
+    <value>01:2MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P24BString4" xml:space="preserve">
+    <value>00:external 400K-8MHZ crystal</value>
+  </data>
+  <data name="WDTEMC20P24BString1" xml:space="preserve">
+    <value>WDT clock is disabled</value>
+  </data>
+  <data name="WDTEMC20P24BString2" xml:space="preserve">
+    <value>WDT clock is enabled</value>
+  </data>
+  <data name="RSTEMC20P24BString1" xml:space="preserve">
+    <value>P12 used as input</value>
+  </data>
+  <data name="RSTEMC20P24BString2" xml:space="preserve">
+    <value>P12 used as external reset pin</value>
+  </data>
+  <data name="LVRSMC20P24BString1" xml:space="preserve">
+    <value>LVR voltage=2.1V</value>
+  </data>
+  <data name="LVRSMC20P24BString2" xml:space="preserve">
+    <value>LVR voltage=3.6V</value>
+  </data>
+  <data name="LVREMC20P24BString1" xml:space="preserve">
+    <value>LVR is disabled</value>
+  </data>
+  <data name="LVREMC20P24BString2" xml:space="preserve">
+    <value>LVR is enabled</value>
+  </data>
+  <data name="RESMC20P24BString1" xml:space="preserve">
+    <value>P12 pull-up resistor is disabled</value>
+  </data>
+  <data name="RESMC20P24BString2" xml:space="preserve">
+    <value>P12 pull-up resistor is enabled</value>
+  </data>
+  <data name="PROTECTMC20P24BString1" xml:space="preserve">
+    <value>Protection is enabled</value>
+  </data>
+  <data name="PROTECTMC20P24BString2" xml:space="preserve">
+    <value>Protection is disabled</value>
+  </data>
+  <data name="OSCMMC20P24BFuncExplain" xml:space="preserve">
+    <value>Internal IRC 8MHZ,4MHZ,2MHZ and external crystal</value>
+  </data>
+  <data name="LVREMC20P24BFunc" xml:space="preserve">
+    <value>Enable low voltage reset set</value>
+  </data>
+  <data name="LVREMC20P24BFuncExplain1" xml:space="preserve">
+    <value>LVRE=False LVR is disabled;</value>
+  </data>
+  <data name="LVREMC20P24BFuncExplain2" xml:space="preserve">
+    <value>LVRE=True LVR is enabled</value>
+  </data>
+  <data name="RSTEMC20P24BFunc" xml:space="preserve">
+    <value>Reset port set</value>
+  </data>
+  <data name="RSTEMC20P24BFuncExplain1" xml:space="preserve">
+    <value>RST=False P12 used as input;</value>
+  </data>
+  <data name="RSTEMC20P24BFuncExplain2" xml:space="preserve">
+    <value>RST=True P12 used as external reset pin</value>
+  </data>
+  <data name="RESMC20P24BFunc" xml:space="preserve">
+    <value>P12 pull-up resistor set</value>
+  </data>
+  <data name="RESMC20P24BFuncExplain1" xml:space="preserve">
+    <value>RES=False P12 pull-up resistor is disabled;</value>
+  </data>
+  <data name="RESMC20P24BFuncExplain2" xml:space="preserve">
+    <value>RES=True P12 pull-up resistor is enabled</value>
+  </data>
+  <data name="LVRSMC20P24BFunc" xml:space="preserve">
+    <value>low voltage reset selection</value>
+  </data>
+  <data name="LVRSMC20P24BFuncExplain1" xml:space="preserve">
+    <value>LVRS=False LVR voltage=2.1V;</value>
+  </data>
+  <data name="LVRSMC20P24BFuncExplain2" xml:space="preserve">
+    <value>LVRE=True LVR voltage=3.6V</value>
+  </data>
+  <data name="PROTECTMC20P24BFunc" xml:space="preserve">
+    <value>Encryption set</value>
+  </data>
+  <data name="PROTECTMC20P24BFuncExplain" xml:space="preserve">
+    <value>In the program, set the encryption ROM!, True encryption, False:: no encryption</value>
+  </data>
+  <data name="BorselMC20P01String4" xml:space="preserve">
+    <value>LVR is disabled</value>
+  </data>
+  <data name="OSCMMC20P01String1" xml:space="preserve">
+    <value>11:external crystal oscillator 400K-8MHZ</value>
+  </data>
+  <data name="OSCMMC20P01String2" xml:space="preserve">
+    <value>10:8MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P01String3" xml:space="preserve">
+    <value>01:4MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P01String4" xml:space="preserve">
+    <value>00:2MHz internal RC oscillator</value>
+  </data>
+  <data name="WDTEMC20P01Func" xml:space="preserve">
+    <value>WDT clock set</value>
+  </data>
+  <data name="WDTEMC20P01FuncExplain1" xml:space="preserve">
+    <value>WDTE=False WDT clock is disabled;</value>
+  </data>
+  <data name="WDTEMC20P01FuncExplain2" xml:space="preserve">
+    <value>WDTE=True WDT clock is enabled</value>
+  </data>
+  <data name="LVREMC20P01FuncExplain1" xml:space="preserve">
+    <value>LVRE=False LVR is enabled;</value>
+  </data>
+  <data name="LVREMC20P01FuncExplain2" xml:space="preserve">
+    <value>LVRE=True LVR is disabled</value>
+  </data>
+  <data name="RSTEMC20P04String1" xml:space="preserve">
+    <value>P17 used as input</value>
+  </data>
+  <data name="RSTEMC20P04String2" xml:space="preserve">
+    <value>P17 used as external reset pin</value>
+  </data>
+  <data name="RESMC20P04String1" xml:space="preserve">
+    <value>P17 pull-up resistor is disabled</value>
+  </data>
+  <data name="RESMC20P04String2" xml:space="preserve">
+    <value>P17 pull-up resistor is enabled</value>
+  </data>
+  <data name="WDTEMC20P04FuncExplain1" xml:space="preserve">
+    <value>WDTE=False WDT clock is enabled;</value>
+  </data>
+  <data name="WDTEMC20P04FuncExplain2" xml:space="preserve">
+    <value>WDTE=True WDT clock is disabled</value>
+  </data>
+  <data name="RSTEMC20P04FuncExplain1" xml:space="preserve">
+    <value>RST=False P17 used as input;</value>
+  </data>
+  <data name="RSTEMC20P04FuncExplain2" xml:space="preserve">
+    <value>RST=True P17 used as external reset pin</value>
+  </data>
+  <data name="RESMC20P04Func" xml:space="preserve">
+    <value>P17 pull-up resistor set</value>
+  </data>
+  <data name="RESMC20P04FuncExplain1" xml:space="preserve">
+    <value>RES=False P17 pull-up resistor is disabled;</value>
+  </data>
+  <data name="RESMC20P04FuncExplain2" xml:space="preserve">
+    <value>RES=True P17 pull-up resistor is enabled</value>
+  </data>
+  <data name="OSCMMC20P04String1" xml:space="preserve">
+    <value>11:8MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P04String2" xml:space="preserve">
+    <value>10:4MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P04String3" xml:space="preserve">
+    <value>01:external 400K-8MHZ crystal</value>
+  </data>
+  <data name="OSCMMC20P04String4" xml:space="preserve">
+    <value>00:2MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC10P01String1" xml:space="preserve">
+    <value>000：Carrier frequency is 1/6 of system frequency (about 38KHz @ Fosc=455KHz)</value>
+  </data>
+  <data name="OSCMMC10P01String2" xml:space="preserve">
+    <value>001：Carrier frequency is 1/36 of system frequency (about 56KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String3" xml:space="preserve">
+    <value>010：Carrier frequency is 1/50 of system frequency (about 40KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String4" xml:space="preserve">
+    <value>011：Carrier frequency is 1/53 of system frequency (about 38KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String5" xml:space="preserve">
+    <value>100：Carrier frequency is 1/56 of system frequency (about 36KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String6" xml:space="preserve">
+    <value>101：Carrier frequency is 1/61 of system frequency (about 33KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String7" xml:space="preserve">
+    <value>110：Carrier frequency is 1/64 of system frequency (about 31.5KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="OSCMMC10P01String8" xml:space="preserve">
+    <value>111：Carrier frequency is 1/74 of system frequency (about 27KHz @ Fosc=4MHz)</value>
+  </data>
+  <data name="RCENMC10P01String1" xml:space="preserve">
+    <value>External OSC mode</value>
+  </data>
+  <data name="RCENMC10P01String2" xml:space="preserve">
+    <value>Internal RC mode</value>
+  </data>
+  <data name="IROUTMC10P01String1" xml:space="preserve">
+    <value>IROUT outputs negative logic</value>
+  </data>
+  <data name="IROUTMC10P01String2" xml:space="preserve">
+    <value>IROUT outputs positive logic</value>
+  </data>
+  <data name="RESMC10P01String1" xml:space="preserve">
+    <value>PB0 pull-up resistor is disabled</value>
+  </data>
+  <data name="RESMC10P01String2" xml:space="preserve">
+    <value>PB0 pull-up resistor is enabled</value>
+  </data>
+  <data name="OSCMMC10P01Func" xml:space="preserve">
+    <value>Carrier wave frequency selection</value>
+  </data>
+  <data name="OSCMMC10P01FuncExplain" xml:space="preserve">
+    <value>38K@455K, 56K@4MHZ, 40K@4MHZ etc.</value>
+  </data>
+  <data name="RCENMC10P01Func" xml:space="preserve">
+    <value>Clock set</value>
+  </data>
+  <data name="RCENMC10P01FuncExplain" xml:space="preserve">
+    <value>External OSC mode or Internal RC mode</value>
+  </data>
+  <data name="IROUTMC10P01Func" xml:space="preserve">
+    <value>IROUT set</value>
+  </data>
+  <data name="IROUTMC10P01FuncExplain" xml:space="preserve">
+    <value>positive logic or negative logic selection</value>
+  </data>
+  <data name="RESMC10P01Func" xml:space="preserve">
+    <value>PB0 pull-up resistor set</value>
+  </data>
+  <data name="RESMC10P01FuncExplain1" xml:space="preserve">
+    <value>RES=False PB0 pull-up resistor is disabled;</value>
+  </data>
+  <data name="RESMC10P01FuncExplain2" xml:space="preserve">
+    <value>RES=True PB0 pull-up resistor is enabled</value>
+  </data>
+  <data name="RSTEMC20P22String1" xml:space="preserve">
+    <value>P16 used as general purpose I/O</value>
+  </data>
+  <data name="RSTEMC20P22String2" xml:space="preserve">
+    <value>P16 used as external reset pin</value>
+  </data>
+  <data name="RSTEMC20P22FuncExplain1" xml:space="preserve">
+    <value>RST=False P16 used as input or open drain output;</value>
+  </data>
+  <data name="RSTEMC20P22FuncExplain2" xml:space="preserve">
+    <value>RST=True P16 used as an external reset pin</value>
+  </data>
+  <data name="LVRSMC20P22Func" xml:space="preserve">
+    <value>Low voltage reset detection</value>
+  </data>
+  <data name="LVRSMC20P22FuncExplain" xml:space="preserve">
+    <value>LVRS=00:LVD36, LVD24 low voltage detection enabled, VDD less than the 2.0V chip reset</value>
+  </data>
+  <data name="RSTEMC20P38String1" xml:space="preserve">
+    <value>PC1 used as reset pin</value>
+  </data>
+  <data name="RSTEMC20P38String2" xml:space="preserve">
+    <value>PC1 used as general purpose I/O</value>
+  </data>
+  <data name="RSTEMC20P38FuncExplain1" xml:space="preserve">
+    <value>RST=False PC1 used as reset pin;</value>
+  </data>
+  <data name="RSTEMC20P38FuncExplain2" xml:space="preserve">
+    <value>RST=True PC1 used as general purpose I/O</value>
+  </data>
+  <data name="OSCMMC20P801String1" xml:space="preserve">
+    <value>11:8MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P801String2" xml:space="preserve">
+    <value>10:4MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P801String3" xml:space="preserve">
+    <value>01:2MHz internal RC oscillator</value>
+  </data>
+  <data name="OSCMMC20P801String4" xml:space="preserve">
+    <value>00:1MHz internal RC oscillator</value>
+  </data>
+  <data name="WDTCMC31P11Func" xml:space="preserve">
+    <value>Enable WDT</value>
+  </data>
+  <data name="WDTCMC31P11FuncExplain" xml:space="preserve">
+    <value>WDT set,enable or disable</value>
+  </data>
+  <data name="FCPUMC31P11Func" xml:space="preserve">
+    <value>Clock selection</value>
+  </data>
+  <data name="FCPUMC31P11FuncExplain" xml:space="preserve">
+    <value>External high-frequency</value>
+  </data>
+  <data name="ISELMC31P11Func" xml:space="preserve">
+    <value>The reference current</value>
+  </data>
+  <data name="ISELMC31P11FuncExplain" xml:space="preserve">
+    <value>The reference current selection 0.75--6uA</value>
+  </data>
+  <data name="VDSELMC31P11Func" xml:space="preserve">
+    <value>IRC LDO selection</value>
+  </data>
+  <data name="VDSELMC31P11FuncExplain" xml:space="preserve">
+    <value>The internal oscillator LDO selection,True:1.5V，False:1.7V</value>
+  </data>
+  <data name="PSELMC31P11Func" xml:space="preserve">
+    <value>Switching speed selection</value>
+  </data>
+  <data name="OSCMMC32P21String1" xml:space="preserve">
+    <value>00:External high-frequency&amp;Internal low-frequency</value>
+  </data>
+  <data name="OSCMMC32P21String2" xml:space="preserve">
+    <value>01:Internal high-frequency&amp;External low-frequency</value>
+  </data>
+  <data name="OSCMMC32P21String3" xml:space="preserve">
+    <value>10:External high-frequency&amp;Internal low-frequency</value>
+  </data>
+  <data name="OSCMMC32P21String4" xml:space="preserve">
+    <value>11:Retention</value>
+  </data>
+  <data name="MCLREMC32P21String1" xml:space="preserve">
+    <value>0:The corresponding pin used as general purpose I/O</value>
+  </data>
+  <data name="MCLREMC32P21String2" xml:space="preserve">
+    <value>1:The corresponding pin used as reset pin</value>
+  </data>
+  <data name="LVRSMC32P21String1" xml:space="preserve">
+    <value>000: LVR voltage =3.0V</value>
+  </data>
+  <data name="LVRSMC32P21String2" xml:space="preserve">
+    <value>Other: Retention</value>
+  </data>
+  <data name="FCPUMC32P21FuncExplain" xml:space="preserve">
+    <value>Internal and External high-frequency, Internal and External low-frequency</value>
+  </data>
+  <data name="LVRSMC32P21Func" xml:space="preserve">
+    <value>LVR selection</value>
+  </data>
+  <data name="LVRSMC32P21FuncExplain" xml:space="preserve">
+    <value>Can select 3.0V</value>
+  </data>
+  <data name="LVRSMC32P64String1" xml:space="preserve">
+    <value>000: LVR voltage=3.0V</value>
+  </data>
+  <data name="LVRSMC32P64String2" xml:space="preserve">
+    <value>001: LVR voltage=2.8V</value>
+  </data>
+  <data name="LVRSMC32P64String3" xml:space="preserve">
+    <value>010: LVR voltage=2.6V</value>
+  </data>
+  <data name="LVRSMC32P64String4" xml:space="preserve">
+    <value>011: LVR voltage=2.4V</value>
+  </data>
+  <data name="LVRSMC32P64String5" xml:space="preserve">
+    <value>100: LVR voltage=2.2V</value>
+  </data>
+  <data name="LVRSMC32P64String6" xml:space="preserve">
+    <value>101: LVR voltage=2.0V</value>
+  </data>
+  <data name="LVRSMC32P64String7" xml:space="preserve">
+    <value>110: LVR voltage=1.8V</value>
+  </data>
+  <data name="LVRSMC32P64String8" xml:space="preserve">
+    <value>111: LVR voltage=1.5V</value>
+  </data>
+  <data name="OSCMMC33P116String1" xml:space="preserve">
+    <value>0:Internal low-frequency 32K</value>
+  </data>
+  <data name="OSCMMC33P116String2" xml:space="preserve">
+    <value>1:External crystal 32K</value>
+  </data>
+  <data name="LVRSMC33P116String1" xml:space="preserve">
+    <value>000: LVR voltage=1.5V</value>
+  </data>
+  <data name="LVRSMC33P116String2" xml:space="preserve">
+    <value>001: LVR voltage=1.7V</value>
+  </data>
+  <data name="LVRSMC33P116String3" xml:space="preserve">
+    <value>010: LVR voltage=1.9V</value>
+  </data>
+  <data name="LVRSMC33P116String4" xml:space="preserve">
+    <value>011: LVR voltage=2.1V</value>
+  </data>
+  <data name="LVRSMC33P116String5" xml:space="preserve">
+    <value>100: LVR voltage=2.3V</value>
+  </data>
+  <data name="LVRSMC33P116String6" xml:space="preserve">
+    <value>101: LVR voltage=2.5V</value>
+  </data>
+  <data name="LVRSMC33P116String7" xml:space="preserve">
+    <value>110: LVR voltage=2.7V</value>
+  </data>
+  <data name="LVRSMC33P116String8" xml:space="preserve">
+    <value>111: LVR voltage=2.9V</value>
+  </data>
+  <data name="OSCMMC33P116FuncExplain" xml:space="preserve">
+    <value>Internal IRC 32K and External crystal 32K</value>
+  </data>
+  <data name="OSCMMC33P78String1" xml:space="preserve">
+    <value>0:Internal high-frequency</value>
+  </data>
+  <data name="OSCMMC33P78String2" xml:space="preserve">
+    <value>1:External crystal</value>
+  </data>
+  <data name="REMMC33P78String1" xml:space="preserve">
+    <value>1:RAM built in power supply</value>
+  </data>
+  <data name="REMMC33P78String2" xml:space="preserve">
+    <value>0:RAM external power supply</value>
+  </data>
+  <data name="OSCMMC33P78FuncExplain" xml:space="preserve">
+    <value>Internal IRC 16MHZ and External crystal</value>
+  </data>
+  <data name="LVRSMC33P78FuncExplain" xml:space="preserve">
+    <value>1.5V--2.9V</value>
+  </data>
+  <data name="REMMC33P78Func" xml:space="preserve">
+    <value>RAM power selection</value>
+  </data>
+  <data name="REMMC33P78FuncExplain" xml:space="preserve">
+    <value>You can select the RAM power supply</value>
+  </data>
+  <data name="LOSCMC33P94String1" xml:space="preserve">
+    <value>0:28K Vibration used as low-frequency clock source</value>
+  </data>
+  <data name="LOSCMC33P94String2" xml:space="preserve">
+    <value>1:External crystal used as low-frequency clock source</value>
+  </data>
+  <data name="HOSCMC33P94String1" xml:space="preserve">
+    <value>0:28K Vibration used used as high-frequency clock source</value>
+  </data>
+  <data name="HOSCMC33P94String2" xml:space="preserve">
+    <value>1:External crystal used as high-frequency clock source</value>
+  </data>
+  <data name="LVRSMC33P94String1" xml:space="preserve">
+    <value>000: LVR voltage=3.0V</value>
+  </data>
+  <data name="LVRSMC33P94String2" xml:space="preserve">
+    <value>001: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String3" xml:space="preserve">
+    <value>010: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String4" xml:space="preserve">
+    <value>011: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String5" xml:space="preserve">
+    <value>100: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String6" xml:space="preserve">
+    <value>101: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String7" xml:space="preserve">
+    <value>110: LVR voltage=?V</value>
+  </data>
+  <data name="LVRSMC33P94String8" xml:space="preserve">
+    <value>Other:Retention</value>
+  </data>
+  <data name="LOSCMC33P94Func" xml:space="preserve">
+    <value>LOSC selection</value>
+  </data>
+  <data name="LOSCMC33P94FuncExplain" xml:space="preserve">
+    <value>Select 32.768KHz or 28KHz</value>
+  </data>
+  <data name="HOSCMC33P94Func" xml:space="preserve">
+    <value>HOSC selection</value>
+  </data>
+  <data name="HOSCMC33P94FuncExplain" xml:space="preserve">
+    <value>Select vibration 16MHz or external crystal</value>
+  </data>
+  <data name="OSCMMC34P01String1" xml:space="preserve">
+    <value>1:Internal high-frequency RC</value>
+  </data>
+  <data name="OSCMMC34P01String2" xml:space="preserve">
+    <value>0:Internal low-frequency RC</value>
+  </data>
+  <data name="RESSELMC34P01String1" xml:space="preserve">
+    <value>1:weak pull-up</value>
+  </data>
+  <data name="RESSELMC34P01String2" xml:space="preserve">
+    <value>0:strong pull</value>
+  </data>
+  <data name="FOSCMC34P01FuncExplain" xml:space="preserve">
+    <value>Oscillator frequency set, when the choice the external crystal oscillator should be connected with in the EV board.</value>
+  </data>
+  <data name="OSCMMC34P01" xml:space="preserve">
+    <value>Internal high-frequency RC</value>
+  </data>
+  <data name="OSCMMC34P01FuncExplain" xml:space="preserve">
+    <value>Support internal high-frequency, low-frequency</value>
+  </data>
+  <data name="FILSELMC34P01FuncExplain1" xml:space="preserve">
+    <value>Output pin read function:</value>
+  </data>
+  <data name="FILSELMC34P01FuncExplain2" xml:space="preserve">
+    <value>True: filter;</value>
+  </data>
+  <data name="FILSELMC34P01FuncExplain3" xml:space="preserve">
+    <value>False: filter free</value>
+  </data>
+  <data name="SMTSELMC34P01" xml:space="preserve">
+    <value>Input threshold set</value>
+  </data>
+  <data name="SMTSELMC34P01Func" xml:space="preserve">
+    <value>Port threshold selection</value>
+  </data>
+  <data name="SMTSELMC34P01FuncExplain" xml:space="preserve">
+    <value>Support 1.5V/0.6V  &amp; 0.7VDD/0.3VDD</value>
+  </data>
+  <data name="RESSELMC34P01" xml:space="preserve">
+    <value>Pull-up resistor set</value>
+  </data>
+  <data name="RESSELMC34P01Func" xml:space="preserve">
+    <value>Pull-up resistor selection</value>
+  </data>
+  <data name="RESSELMC34P01FuncExplain" xml:space="preserve">
+    <value>Support weak pull-up and strong pull</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Compile" xml:space="preserve">
+    <value>Compile</value>
+  </data>
+  <data name="Regenerated" xml:space="preserve">
+    <value>Rebuild</value>
+  </data>
+  <data name="Addafile" xml:space="preserve">
+    <value>Add existing file</value>
+  </data>
+  <data name="DelSel" xml:space="preserve">
+    <value>Delete current selection</value>
+  </data>
+  <data name="InsertRemoveBookmark" xml:space="preserve">
+    <value>Insert Or Remove Bookmark</value>
+  </data>
+  <data name="RemoveCurBookmark" xml:space="preserve">
+    <value>Remove Current Bookmark</value>
+  </data>
+  <data name="AddtoWatchWindow" xml:space="preserve">
+    <value>AddtoWatchWindow</value>
+  </data>
+  <data name="LVRSMC32P7022String1" xml:space="preserve">
+    <value>0000: LVR voltage=2.7V</value>
+  </data>
+  <data name="LVRSMC32P7022String2" xml:space="preserve">
+    <value>0001: LVR voltage=2.6V</value>
+  </data>
+  <data name="LVRSMC32P7022String3" xml:space="preserve">
+    <value>0010: LVR voltage=2.5V</value>
+  </data>
+  <data name="LVRSMC32P7022String4" xml:space="preserve">
+    <value>0011: LVR voltage=2.4V</value>
+  </data>
+  <data name="LVRSMC32P7022String5" xml:space="preserve">
+    <value>0100: LVR voltage=2.3V</value>
+  </data>
+  <data name="LVRSMC32P7022String6" xml:space="preserve">
+    <value>0101: LVR voltage=2.2V</value>
+  </data>
+  <data name="LVRSMC32P7022String7" xml:space="preserve">
+    <value>0110: LVR voltage=2.1V</value>
+  </data>
+  <data name="LVRSMC32P7022String8" xml:space="preserve">
+    <value>0111: LVR voltage=2.0V</value>
+  </data>
+  <data name="LVRSMC32P7022String9" xml:space="preserve">
+    <value>1000: LVR voltage=1.9V</value>
+  </data>
+  <data name="LVRSMC32P7022String10" xml:space="preserve">
+    <value>1001: LVR voltage=1.8V</value>
+  </data>
+  <data name="LVRSMC32P7022String11" xml:space="preserve">
+    <value>1010: LVR voltage=1.7V</value>
+  </data>
+  <data name="LVRSMC32P7022String12" xml:space="preserve">
+    <value>1011: LVR voltage=1.6V</value>
+  </data>
+  <data name="LVRSMC32P7022String13" xml:space="preserve">
+    <value>1100: LVR voltage=1.5V</value>
+  </data>
+  <data name="LVRSMC32P7022String14" xml:space="preserve">
+    <value>1101: LVR voltage=1.4V</value>
+  </data>
+  <data name="LVRSMC32P7022String15" xml:space="preserve">
+    <value>1110: LVR voltage=1.3V</value>
+  </data>
+  <data name="LVRSMC32P7022String16" xml:space="preserve">
+    <value>1111: LVR voltage=1.2V</value>
+  </data>
+  <data name="LVRSMC32P7022FuncExplain" xml:space="preserve">
+    <value>1.2V--2.7V</value>
+  </data>
+  <data name="DRVSMC32P7022String1" xml:space="preserve">
+    <value>0:common drive</value>
+  </data>
+  <data name="DRVSMC32P7022String2" xml:space="preserve">
+    <value>1:strengthen drive</value>
+  </data>
+  <data name="DRVSMC32P7022Func" xml:space="preserve">
+    <value>IO port drive selection</value>
+  </data>
+  <data name="DRVSMC32P7022FuncExplain" xml:space="preserve">
+    <value>Support strengthen drive and common drive</value>
+  </data>
+  <data name="RCSMTBMC32P7022String1" xml:space="preserve">
+    <value>0:Open</value>
+  </data>
+  <data name="RCSMTBMC32P7022String2" xml:space="preserve">
+    <value>1:Close</value>
+  </data>
+  <data name="VDSELMC32P7022FuncExplain" xml:space="preserve">
+    <value>The internal oscillator LDO selection,True:1.7V，False:1.4V</value>
+  </data>
+  <data name="FASMC32P7022Func" xml:space="preserve">
+    <value>Internal high-frequency oscillator frequency selection</value>
+  </data>
+  <data name="FASMC32P7022FuncExplain" xml:space="preserve">
+    <value>Can select internal high-frequency oscillator frequency</value>
+  </data>
+  <data name="FDSMC32P7022Func" xml:space="preserve">
+    <value>Internal high-frequency oscillator prescaler selection</value>
+  </data>
+  <data name="FDSMC32P7022FuncExplain" xml:space="preserve">
+    <value>Can select internal high-frequency oscillator prescaler</value>
+  </data>
+  <data name="RCSMTBMC32P7022Func" xml:space="preserve">
+    <value>Internal high-frequency oscillator schmidt selection</value>
+  </data>
+  <data name="RCSMTBMC32P7022FuncExplain" xml:space="preserve">
+    <value>Internal high-frequency oscillator schmidt selection,True:Close,False:Open</value>
+  </data>
+  <data name="HIRCSELMC32P7022String1" xml:space="preserve">
+    <value>0:Internal 16M RC</value>
+  </data>
+  <data name="HIRCSELMC32P7022String2" xml:space="preserve">
+    <value>1:External clock source</value>
+  </data>
+  <data name="HIRCSELMC32P7022Func" xml:space="preserve">
+    <value>high-frequency clock source selection(Only in EV)</value>
+  </data>
+  <data name="HIRCSELMC32P7022FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TADJHMC32P7022Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TADJHMC32P7022FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String0111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060String1111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CPMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CPMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROTPMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROTPMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IODRVMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IODRVMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RDPORTMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RDPORTMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTENMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTENMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCUSELMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCUSELMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILSMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILSMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="XTDRVBMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="XTDRVBMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCSMTBMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCSMTBMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC30P6060FuncExplain" xml:space="preserve">
+    <value>1.2V--3.8V</value>
+  </data>
+  <data name="MCLREMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FINTOSCMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FINTOSCMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060FuncExplain1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060FuncExplain2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FCPUSMC30P6060FuncExplain3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CPMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CPMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROTPMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROTPMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IODRVMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IODRVMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RDPORTMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RDPORTMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTENMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTENMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCUSELMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCUSELMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTSELMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTSELMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILSMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILSMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060FuncExplain1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060FuncExplain2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ODSELMC30P6060FuncExplain3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="XTDRVBMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="XTDRVBMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VDSELMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VDSELMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RESSELMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RESSELMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FASMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FASMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FDSMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FDSMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCSMTBMC30P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCSMTBMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32E22String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32E22String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32E22String00" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32E22String01" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32E22String11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32E22String111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ENCRMC32E22String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ENCRMC32E22String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LPENMC32E22String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LPENMC32E22String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22String00" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22String01" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22String10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22String11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32E22Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32E22FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DENCRMC32E22Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CENCRMC32E22Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ENCRMC32E22FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LPENMC32E22Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LPENMC32E22FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OPTWEMC32E22FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32P7510String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32P7510String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7510String111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC32P7510String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC32P7510String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTSELMC32P7510Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SMTSELMC32P7510FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC32P7510Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC32P7510FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32T8132String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32T8132String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ENCRMC32T8132Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32P5312String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32P5312String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String13" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String14" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String15" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312String16" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32P5312Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSCMC32P5312FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P5312FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FASMC32P5312FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FMODE32P7011String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FMODE32P7011String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSC32P7011String000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSC32P7011String100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSC32P7011String101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSC32P7011String110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FOSC32P7011String111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P6060String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P6060Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1102" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1103" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1104" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1105" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6060String1106" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String0111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511String1111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7511FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC30P6060String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC30P6060String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC30P6060FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32P7212String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MCLREMC32P7212String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String0111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212String1111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRSMC32P7212FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CLKSELMC32P7510FuncExplain1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVDPDMC32P5212String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVDPDMC32P5212String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVDPDMC32P5212Func" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVDPDMC32P5212FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MTPData" xml:space="preserve">
+    <value>MTP Data</value>
+  </data>
+  <data name="MDWindow" xml:space="preserve">
+    <value>MEMORY Data</value>
+  </data>
+  <data name="FOSC32P7011String010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7323String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7323String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7323String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRPDSMC32P7323String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LVRPDSMC32P7323String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SPDSMC32P7323String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SPDSMC32P7323String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String13" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String14" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VLVRSMC32P7323String15" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7511String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7511String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MODEMC32P7511String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FASMC33P116FuncExplain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String000" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String001" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String010" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String011" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String100" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String101" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OSCMMC30P6080String111" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P0RESMC30P6080String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P0RESMC30P6080String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P0SELMC30P6080String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P0SELMC30P6080String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LOADSMC30P6080String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LOADSMC30P6080String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCOUTMC30P6080String0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCOUTMC30P6080String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RCSMTB" xml:space="preserve">
+    <value>SMT Config</value>
+  </data>
+  <data name="RCSMTB_0" xml:space="preserve">
+    <value>0:Enable</value>
+  </data>
+  <data name="RCSMTB_1" xml:space="preserve">
+    <value>1:Disable</value>
+  </data>
+  <data name="VDSEL" xml:space="preserve">
+    <value>Voltage of OSC config</value>
+  </data>
+  <data name="VDSEL_0" xml:space="preserve">
+    <value>0:1.55V</value>
+  </data>
+  <data name="VDSEL_1" xml:space="preserve">
+    <value>1:1.7V</value>
+  </data>
+  <data name="WDTM" xml:space="preserve">
+    <value>Model of WDT</value>
+  </data>
+  <data name="WDTC" xml:space="preserve">
+    <value>Model of WDT</value>
+  </data>
+  <data name="WDT_OFF" xml:space="preserve">
+    <value>00:WDT off all ways</value>
+  </data>
+  <data name="WDT_OFF_STOP" xml:space="preserve">
+    <value>01:WDT off when stop model</value>
+  </data>
+  <data name="WDT_ON" xml:space="preserve">
+    <value>1x:WDT on all ways</value>
+  </data>
+  <data name="WDTT" xml:space="preserve">
+    <value>WDT overflow time</value>
+  </data>
+  <data name="WDTT_000" xml:space="preserve">
+    <value>000:PRT=WDT=4mS</value>
+  </data>
+  <data name="WDTT_001" xml:space="preserve">
+    <value>001:PRT=WDT=16mS</value>
+  </data>
+  <data name="WDTT_010" xml:space="preserve">
+    <value>010:PRT=WDT=64mS</value>
+  </data>
+  <data name="WDTT_011" xml:space="preserve">
+    <value>011:PRT=WDT=256mS</value>
+  </data>
+  <data name="WDTT_100" xml:space="preserve">
+    <value>100:PRT=4mS,WRT=512mS</value>
+  </data>
+  <data name="WDTT_101" xml:space="preserve">
+    <value>101:PRT=16mS,WRT=1024mS</value>
+  </data>
+  <data name="WDTT_110" xml:space="preserve">
+    <value>110:PRT=64mS,WRT=2048mS</value>
+  </data>
+  <data name="WDTT_111" xml:space="preserve">
+    <value>111:PRT=256mS,WRT=4096mS</value>
+  </data>
+  <data name="FCPUS" xml:space="preserve">
+    <value>HIRC Select</value>
+  </data>
+  <data name="FCPU_000" xml:space="preserve">
+    <value>000:FOSC//2</value>
+  </data>
+  <data name="FCPU_001" xml:space="preserve">
+    <value>001:FOSC//4</value>
+  </data>
+  <data name="FCPU_010" xml:space="preserve">
+    <value>010:FOSC//8</value>
+  </data>
+  <data name="FCPU_011" xml:space="preserve">
+    <value>011:FOSC//16</value>
+  </data>
+  <data name="FCPU_100" xml:space="preserve">
+    <value>100:FOSC//32</value>
+  </data>
+  <data name="FCPU_101" xml:space="preserve">
+    <value>101:FOSC//64</value>
+  </data>
+  <data name="FCPU_110" xml:space="preserve">
+    <value>110:FOSC//128</value>
+  </data>
+  <data name="FCPU_111" xml:space="preserve">
+    <value>111:FOSC//256</value>
+  </data>
+  <data name="MCLRE" xml:space="preserve">
+    <value>EX-RST Config</value>
+  </data>
+  <data name="MCLRE_0" xml:space="preserve">
+    <value>0：Disabled</value>
+  </data>
+  <data name="MCLRE_1" xml:space="preserve">
+    <value>1：Enable</value>
+  </data>
+  <data name="RSTEN" xml:space="preserve">
+    <value>EX-RST Config</value>
+  </data>
+  <data name="RSTEN_0" xml:space="preserve">
+    <value>0：Disabled</value>
+  </data>
+  <data name="RSTEN_1" xml:space="preserve">
+    <value>1：Enable</value>
+  </data>
+  <data name="SPDS" xml:space="preserve">
+    <value>Output open speed selection</value>
+  </data>
+  <data name="SPDS_0" xml:space="preserve">
+    <value>0:Quickly</value>
+  </data>
+  <data name="SPDS_1" xml:space="preserve">
+    <value>1:Slowly</value>
+  </data>
+  <data name="RESSEL" xml:space="preserve">
+    <value>Push up RES Select</value>
+  </data>
+  <data name="RESSEL_0" xml:space="preserve">
+    <value>0:150K</value>
+  </data>
+  <data name="RESSEL_1" xml:space="preserve">
+    <value>1:60K</value>
+  </data>
+  <data name="LVRSLP" xml:space="preserve">
+    <value>Sleeping LVR selection</value>
+  </data>
+  <data name="LVRSLP_0" xml:space="preserve">
+    <value>0：LVR OFF</value>
+  </data>
+  <data name="LVRSLP_1" xml:space="preserve">
+    <value>1：LVR ON</value>
+  </data>
+  <data name="VLVRS" xml:space="preserve">
+    <value>Voltage of system</value>
+  </data>
+  <data name="LVR_0000" xml:space="preserve">
+    <value>0000:LVR=1.2V</value>
+  </data>
+  <data name="LVR_0001" xml:space="preserve">
+    <value>0001:LVR=1.3V</value>
+  </data>
+  <data name="LVR_0010" xml:space="preserve">
+    <value>0010:LVR=1.4V</value>
+  </data>
+  <data name="LVR_0011" xml:space="preserve">
+    <value>0011:LVR=1.5V</value>
+  </data>
+  <data name="LVR_0100" xml:space="preserve">
+    <value>0100:LVR=1.6V</value>
+  </data>
+  <data name="LVR_0101" xml:space="preserve">
+    <value>0101:LVR=1.7V</value>
+  </data>
+  <data name="LVR_0110" xml:space="preserve">
+    <value>0110:LVR=1.8V</value>
+  </data>
+  <data name="LVR_0111" xml:space="preserve">
+    <value>0111:LVR=1.9V</value>
+  </data>
+  <data name="LVR_1000" xml:space="preserve">
+    <value>1000:LVR=2.0V</value>
+  </data>
+  <data name="LVR_1001" xml:space="preserve">
+    <value>1001:LVR=2.1V</value>
+  </data>
+  <data name="LVR_1010" xml:space="preserve">
+    <value>1010:LVR=2.2V</value>
+  </data>
+  <data name="LVR_1011" xml:space="preserve">
+    <value>1011:LVR=2.3V</value>
+  </data>
+  <data name="LVR_1100" xml:space="preserve">
+    <value>1100:LVR=2.4V</value>
+  </data>
+  <data name="LVR_1101" xml:space="preserve">
+    <value>1101:LVR=2.5V</value>
+  </data>
+  <data name="LVR_1110" xml:space="preserve">
+    <value>1110:LVR=2.6V</value>
+  </data>
+  <data name="LVR_1111" xml:space="preserve">
+    <value>1111:LVR=2.7V</value>
+  </data>
+  <data name="FAS" xml:space="preserve">
+    <value>HIRC</value>
+  </data>
+  <data name="FAS_000" xml:space="preserve">
+    <value>000:16M</value>
+  </data>
+  <data name="FAS_001" xml:space="preserve">
+    <value>001:8M</value>
+  </data>
+  <data name="FAS_010" xml:space="preserve">
+    <value>010:4M</value>
+  </data>
+  <data name="FAS_011" xml:space="preserve">
+    <value>011:2M</value>
+  </data>
+  <data name="FAS_100" xml:space="preserve">
+    <value>100:1M</value>
+  </data>
+  <data name="FAS_101" xml:space="preserve">
+    <value>101:455K</value>
+  </data>
+  <data name="ENCR" xml:space="preserve">
+    <value>Encryption Select</value>
+  </data>
+  <data name="ENCR_0" xml:space="preserve">
+    <value>0:Disable</value>
+  </data>
+  <data name="ENCR_1" xml:space="preserve">
+    <value>1:Enable</value>
+  </data>
+  <data name="LVR_0000_7333" xml:space="preserve">
+    <value>0000:LVR关闭（POR电压=1.5V）</value>
+  </data>
+  <data name="LVR_0001_7333" xml:space="preserve">
+    <value>0001:LVR关闭</value>
+  </data>
+  <data name="LVR_0010_7333" xml:space="preserve">
+    <value>0010:LVR=1.6V</value>
+  </data>
+  <data name="LVR_0011_7333" xml:space="preserve">
+    <value>0011:LVR=1.8V</value>
+  </data>
+  <data name="LVR_0100_7333" xml:space="preserve">
+    <value>0100:LVR=2.0V</value>
+  </data>
+  <data name="LVR_0101_7333" xml:space="preserve">
+    <value>0101:LVR=2.2V</value>
+  </data>
+  <data name="LVR_0110_7333" xml:space="preserve">
+    <value>0110:LVR=2.4V</value>
+  </data>
+  <data name="LVR_0111_7333" xml:space="preserve">
+    <value>0111:LVR=2.6V</value>
+  </data>
+  <data name="LVR_1000_7333" xml:space="preserve">
+    <value>1000:LVR=2.8V</value>
+  </data>
+  <data name="LVR_1001_7333" xml:space="preserve">
+    <value>1001:LVR=3.0V</value>
+  </data>
+  <data name="LVR_1010_7333" xml:space="preserve">
+    <value>1010:LVR=3.2V</value>
+  </data>
+  <data name="LVR_1011_7333" xml:space="preserve">
+    <value>1011:LVR=3.4V</value>
+  </data>
+  <data name="LVR_1100_7333" xml:space="preserve">
+    <value>1100:LVR=3.6V</value>
+  </data>
+  <data name="LVR_1101_7333" xml:space="preserve">
+    <value>1101:LVR=3.8V</value>
+  </data>
+  <data name="LVR_1110_7333" xml:space="preserve">
+    <value>1110:LVR=4.0V</value>
+  </data>
+  <data name="LVR_1111_7333" xml:space="preserve">
+    <value>1111:LVR=4.2V</value>
+  </data>
+  <data name="LVR_7122_000" xml:space="preserve">
+    <value>000:LVR关闭</value>
+  </data>
+  <data name="LVR_7122_001" xml:space="preserve">
+    <value>001:LVR=2.3V</value>
+  </data>
+  <data name="LVR_7122_010" xml:space="preserve">
+    <value>010:LVR=2.7V</value>
+  </data>
+  <data name="LVR_7122_011" xml:space="preserve">
+    <value>011:LVR=3.3V</value>
+  </data>
+  <data name="LVR_7122_100" xml:space="preserve">
+    <value>100:LVR=4.1V</value>
+  </data>
+</root>

@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E9B726A-D47F-4843-9649-C70E41DF3148}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSunIDE</RootNamespace>
+    <AssemblyName>WinScope IDE</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Applications America Online.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CmdSNLink, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="COD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Edit, Version=2.8.3.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SinoSunIDE.Languages, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabStrip, Version=2.0.2523.29272, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.5.0.15095, Culture=neutral, PublicKeyToken=null" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DragHelper.cs" />
+    <Compile Include="ExamplesClasses.cs" />
+    <Compile Include="FrmPCx\FrmPC.mc30p6220.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32f7122.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStopMess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStopMess.Designer.cs">
+      <DependentUpon>FrmStopMess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBreakPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBreakPoint.Designer.cs">
+      <DependentUpon>FrmBreakPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.global.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Recent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmMain.ToolsManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMTPRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMTPRAM.designer.cs">
+      <DependentUpon>FrmMTPRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPC.Designer.cs">
+      <DependentUpon>FrmPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc30p6060.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc30p6080.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32e22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p5212.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p5312.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7011.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7022.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7031.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7041.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7212.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32P7311.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32P7323.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7510.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p7511.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p821.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc9902.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32t8132.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc33p116.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc33p78.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc10p02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc10p01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc10p11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p38.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p801.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p24b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc20p01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc31p11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32p64.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc33p94.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc34p01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPCx\FrmPC.mc32t7333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProjOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProjOption.Designer.cs">
+      <DependentUpon>FrmProjOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRAM.Designer.cs">
+      <DependentUpon>FrmRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmROM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmROM.Designer.cs">
+      <DependentUpon>FrmROM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSys.Designer.cs">
+      <DependentUpon>FrmSys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSystemOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSystemOption.Designer.cs">
+      <DependentUpon>FrmSystemOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWatch.Designer.cs">
+      <DependentUpon>FrmWatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="funtion.cs">
+    </Compile>
+    <Compile Include="FrmNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewProject.Designer.cs">
+      <DependentUpon>FrmNewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFile.Designer.cs">
+      <DependentUpon>FrmFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditor.Designer.cs">
+      <DependentUpon>FrmEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessage.Designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReg.Designer.cs">
+      <DependentUpon>FrmReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExplorer.Designer.cs">
+      <DependentUpon>FrmExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMAIN.Designer.cs">
+      <DependentUpon>FrmMAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.CompilerEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\FrmCOMSeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\FrmCOMSeting.Designer.cs">
+      <DependentUpon>FrmCOMSeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBreakPoint.resx">
+      <DependentUpon>FrmBreakPoint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMTPRAM.resx">
+      <DependentUpon>FrmMTPRAM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPC.resx">
+      <DependentUpon>FrmPC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProjOption.resx">
+      <DependentUpon>FrmProjOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRAM.resx">
+      <DependentUpon>FrmRAM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmROM.resx">
+      <DependentUpon>FrmROM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStopMess.resx">
+      <DependentUpon>FrmStopMess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSys.resx">
+      <DependentUpon>FrmSys.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSystemOption.resx">
+      <DependentUpon>FrmSystemOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWatch.resx">
+      <DependentUpon>FrmWatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="funtion.resx">
+      <DependentUpon>funtion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewProject.resx">
+      <DependentUpon>FrmNewProject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFile.resx">
+      <DependentUpon>FrmFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditor.resx">
+      <DependentUpon>FrmEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessage.resx">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReg.resx">
+      <DependentUpon>FrmReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExplorer.resx">
+      <DependentUpon>FrmExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMAIN.resx">
+      <DependentUpon>FrmMAIN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\FrmCOMSeting.resx">
+      <DependentUpon>FrmCOMSeting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,01%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,02%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,06%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,07%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,08%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,12%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,13%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,14%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,18%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,19%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,20%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,24%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,25%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,26%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,30%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,31%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,32%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,36%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,37%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,38%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,42%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,43%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,44%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,48%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,49%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2801,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2801,34%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2818,37%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2812,43%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2842,28%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2817,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2818,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2816,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,39%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2801,39%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2810,01%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2811,01%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2802,00%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,04%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2800,41%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2801,12%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2802,12%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2824,38%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2825,38%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2826,38%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2827,38%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_uv4_project_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\functions_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disassembly_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watch_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memory_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert_bpnt[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\build_target[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebuild_all[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_build[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\translate_file[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debug[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepinto[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepover[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\runtocursor[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepout[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enable_bpnt[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disable_all_bpnt[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kill_all_bpnt[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target_options[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findinfiles[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\incfind[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolbox_window[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2802,29%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uncomment[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indent[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unindent[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Applications America Online.ico" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="Resources\h.jpg" />
+    <None Include="Resources\upperTolower1.png" />
+    <None Include="Resources\lowerToUpper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PropertyGridEx\PropertyGridEx.csproj">
+      <Project>{B0BB47F2-21C4-41FC-B6E6-40757ADFC4A1}</Project>
+      <Name>PropertyGridEx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

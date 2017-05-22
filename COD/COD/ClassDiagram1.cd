@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="COD.AHC05_cod">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AHC05_cod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COD.CHC05_cod">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>CHC05.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COD.CODDebug">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgACEIAAAAoCQjQAAFhwISACgACIABACAiRAGCAgQAA=</HashCode>
+      <FileName>COD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COD.CRISC_cod">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRISC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COD.FrmProcessS19">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAaAQABCAAAiAAAACBAAAAAAAFIAQAAAAAAA=</HashCode>
+      <FileName>FrmProcessS19.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COD.RegeditFuntion">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Regedit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

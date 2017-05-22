@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer1.Panel1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 378</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbC.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbC.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 188</value>
+  </data>
+  <data name="rbC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 16</value>
+  </data>
+  <data name="rbC.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="rbC.Text" xml:space="preserve">
+    <value>C语言</value>
+  </data>
+  <data name="&gt;&gt;rbC.Name" xml:space="preserve">
+    <value>rbC</value>
+  </data>
+  <data name="&gt;&gt;rbC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbC.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;rbC.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbASM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbASM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 188</value>
+  </data>
+  <data name="rbASM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="rbASM.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="rbASM.Text" xml:space="preserve">
+    <value>ASM汇编语言</value>
+  </data>
+  <data name="&gt;&gt;rbASM.Name" xml:space="preserve">
+    <value>rbASM</value>
+  </data>
+  <data name="&gt;&gt;rbASM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbASM.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;rbASM.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelCompiler.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCompiler.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11.25pt, style=Bold</value>
+  </data>
+  <data name="labelCompiler.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 242</value>
+  </data>
+  <data name="labelCompiler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="labelCompiler.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="labelCompiler.Text" xml:space="preserve">
+    <value>选择编译器：</value>
+  </data>
+  <data name="&gt;&gt;labelCompiler.Name" xml:space="preserve">
+    <value>labelCompiler</value>
+  </data>
+  <data name="&gt;&gt;labelCompiler.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCompiler.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;labelCompiler.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CompilerSelect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 12pt</value>
+  </data>
+  <data name="CompilerSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 233</value>
+  </data>
+  <data name="CompilerSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 24</value>
+  </data>
+  <data name="CompilerSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;CompilerSelect.Name" xml:space="preserve">
+    <value>CompilerSelect</value>
+  </data>
+  <data name="&gt;&gt;CompilerSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CompilerSelect.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;CompilerSelect.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxCreateDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxCreateDirectory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 14pt</value>
+  </data>
+  <data name="checkBoxCreateDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 159</value>
+  </data>
+  <data name="checkBoxCreateDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 23</value>
+  </data>
+  <data name="checkBoxCreateDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBoxCreateDirectory.Text" xml:space="preserve">
+    <value>Create directory for project</value>
+  </data>
+  <data name="checkBoxCreateDirectory.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCreateDirectory.Name" xml:space="preserve">
+    <value>checkBoxCreateDirectory</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCreateDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCreateDirectory.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCreateDirectory.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="MCUSelect_comboBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11pt</value>
+  </data>
+  <data name="MCUSelect_comboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 24</value>
+  </data>
+  <data name="MCUSelect_comboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 23</value>
+  </data>
+  <data name="MCUSelect_comboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_comboBox.Name" xml:space="preserve">
+    <value>MCUSelect_comboBox</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_comboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_comboBox.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_comboBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="MCUSelect_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MCUSelect_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11.25pt, style=Bold</value>
+  </data>
+  <data name="MCUSelect_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="MCUSelect_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 15</value>
+  </data>
+  <data name="MCUSelect_label.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="MCUSelect_label.Text" xml:space="preserve">
+    <value>选择芯片型号：</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_label.Name" xml:space="preserve">
+    <value>MCUSelect_label</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_label.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;MCUSelect_label.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11pt</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 116</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ProjectPath_comboBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11pt</value>
+  </data>
+  <data name="ProjectPath_comboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 117</value>
+  </data>
+  <data name="ProjectPath_comboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 23</value>
+  </data>
+  <data name="ProjectPath_comboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ProjectPath_comboBox.Name" xml:space="preserve">
+    <value>ProjectPath_comboBox</value>
+  </data>
+  <data name="&gt;&gt;ProjectPath_comboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProjectPath_comboBox.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;ProjectPath_comboBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelProjectLoadPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelProjectLoadPath.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11.25pt, style=Bold</value>
+  </data>
+  <data name="labelProjectLoadPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 120</value>
+  </data>
+  <data name="labelProjectLoadPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 15</value>
+  </data>
+  <data name="labelProjectLoadPath.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelProjectLoadPath.Text" xml:space="preserve">
+    <value>项目存放路径：</value>
+  </data>
+  <data name="&gt;&gt;labelProjectLoadPath.Name" xml:space="preserve">
+    <value>labelProjectLoadPath</value>
+  </data>
+  <data name="&gt;&gt;labelProjectLoadPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelProjectLoadPath.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;labelProjectLoadPath.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ProjectName_textBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11pt</value>
+  </data>
+  <data name="ProjectName_textBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 66</value>
+  </data>
+  <data name="ProjectName_textBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 24</value>
+  </data>
+  <data name="ProjectName_textBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ProjectName_textBox.Name" xml:space="preserve">
+    <value>ProjectName_textBox</value>
+  </data>
+  <data name="&gt;&gt;ProjectName_textBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProjectName_textBox.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;ProjectName_textBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labelProjectName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelProjectName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11.25pt, style=Bold</value>
+  </data>
+  <data name="labelProjectName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 69</value>
+  </data>
+  <data name="labelProjectName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 15</value>
+  </data>
+  <data name="labelProjectName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelProjectName.Text" xml:space="preserve">
+    <value>项目名称：</value>
+  </data>
+  <data name="&gt;&gt;labelProjectName.Name" xml:space="preserve">
+    <value>labelProjectName</value>
+  </data>
+  <data name="&gt;&gt;labelProjectName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelProjectName.Parent" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;labelProjectName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="panel_step1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 12</value>
+  </data>
+  <data name="panel_step1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 281</value>
+  </data>
+  <data name="panel_step1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel_step1.Name" xml:space="preserve">
+    <value>panel_step1</value>
+  </data>
+  <data name="&gt;&gt;panel_step1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_step1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;panel_step1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 12pt</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 234</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ProjectAbstractRichTextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ProjectAbstractRichTextBox.Name" xml:space="preserve">
+    <value>ProjectAbstractRichTextBox</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractRichTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractRichTextBox.Parent" xml:space="preserve">
+    <value>ProjectAbstractepanel</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractRichTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ProjectAbstractepanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 12</value>
+  </data>
+  <data name="ProjectAbstractepanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 234</value>
+  </data>
+  <data name="ProjectAbstractepanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractepanel.Name" xml:space="preserve">
+    <value>ProjectAbstractepanel</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractepanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractepanel.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;ProjectAbstractepanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btCancle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 319</value>
+  </data>
+  <data name="btCancle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 35</value>
+  </data>
+  <data name="btCancle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btCancle.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="&gt;&gt;btCancle.Name" xml:space="preserve">
+    <value>btCancle</value>
+  </data>
+  <data name="&gt;&gt;btCancle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btCancle.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btCancle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btNextStep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 319</value>
+  </data>
+  <data name="btNextStep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 35</value>
+  </data>
+  <data name="btNextStep.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btNextStep.Text" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="&gt;&gt;btNextStep.Name" xml:space="preserve">
+    <value>btNextStep</value>
+  </data>
+  <data name="&gt;&gt;btNextStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btNextStep.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btNextStep.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bt_backStep.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bt_backStep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 319</value>
+  </data>
+  <data name="bt_backStep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 35</value>
+  </data>
+  <data name="bt_backStep.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="bt_backStep.Text" xml:space="preserve">
+    <value>上一步</value>
+  </data>
+  <data name="&gt;&gt;bt_backStep.Name" xml:space="preserve">
+    <value>bt_backStep</value>
+  </data>
+  <data name="&gt;&gt;bt_backStep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bt_backStep.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;bt_backStep.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>777, 378</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>261</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>777, 378</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>新建项目 向导</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>NewProject_From</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
