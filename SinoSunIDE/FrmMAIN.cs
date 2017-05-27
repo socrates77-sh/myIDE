@@ -43,6 +43,7 @@ namespace SinoSunIDE
         {
             InitializeComponent();
 
+            // 通过prj打开IDE
             if (strProName != null)// wj add for open IDE through the pro file
             {
                 string srt = frmMAIN.APPLICATION_PATH + "global.ini";
@@ -64,6 +65,7 @@ namespace SinoSunIDE
                 this.frmfile.tsFiles.TabStripItemSelectionChanged += new FarsiLibrary.Win.TabStripItemChangedHandler(this.ItemSelectionChanged);
             }
 
+            // 从ini文件取得language的设置
             string path = frmMAIN.APPLICATION_PATH + "global.ini";
             string languageSel = null;
 
@@ -96,6 +98,8 @@ namespace SinoSunIDE
                     break;
                 }
             }
+
+            // 从资源文件resx中调用字符串，设置各类Text
             ApplyLanguage();
 
             //添加委托事件
@@ -112,11 +116,15 @@ namespace SinoSunIDE
 
             busy_Timer.Enabled = false;
 
-            const string OptionName = "CustomInfo.xml";
 
+            // CustomInfo.xml 用于配置IDE信息
+            const string OptionName = "CustomInfo.xml";
+           
             string CurPath = Application.StartupPath; //获取当前EXE路径
             string xmlFileName = CurPath + "\\" + OptionName;
 
+            // 以读取ini文件的方式读取CustomInfo.xml中Website、Version的设置
+            // OperateIniFile封装了ini读写的DLL函数
             toolStripStatusLabel2.Text = OperateIniFile.ReadIniData("Information", "Website", "WinScope IDE", xmlFileName);
             //frm = OperateIniFile.ReadIniData("Information", "SoftName", "WinScope IDE", xmlFileName);
             this.Text += OperateIniFile.ReadIniData("Information", "Version", "V0.04bt", xmlFileName);
@@ -125,7 +133,7 @@ namespace SinoSunIDE
 
         private void frmMAIN_Load(object sender, EventArgs e)
         {
-
+            // 从CustomUI.xml文件读取并配置DockPanel
             string uiFile = Path.Combine(Application.StartupPath, "CustomUI.xml");
             if (File.Exists(uiFile))
                 this.dockPanelMain.LoadFromXml(uiFile, m_deserializeDockContent); //UI display
@@ -2909,7 +2917,7 @@ namespace SinoSunIDE
                     return;
                 }
                 int len = COMPORT.port1.Read(ReadDataBuffer, 0, COMPORT.port1.BytesToRead);
-                len=len;
+                //len=len;
             }
         }
 

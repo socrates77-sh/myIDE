@@ -13,9 +13,12 @@ namespace SinoSunIDE
         [STAThread]
         static void Main(string[] args)
         {
+            // 设置捕获未处理的exception
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(UnhandledExceptionEventHandler);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             if (args.Length != 0)
             {
                 Application.Run(new frmMAIN(args[0]));
@@ -26,6 +29,7 @@ namespace SinoSunIDE
             }
         }
 
+        // 捕获未处理的exception，将异常的信息存到testme.log文件
         static void UnhandledExceptionEventHandler(object sender, UnhandledExceptionEventArgs e)
         {
             try
