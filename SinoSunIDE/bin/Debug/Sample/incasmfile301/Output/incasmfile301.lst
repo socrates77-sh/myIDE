@@ -1,0 +1,41 @@
+gplink-1.4.2_beta (Jan  6 2014)
+Listing File Generated: 2014-8-28  16:07:59
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                           
+                                           	org 0x00
+000000   2801     goto    0x1                      goto start
+                                                   
+                                                   
+                                           start:
+                                           	include 2.asm
+                                           
+                                           
+                                           lab:
+000001   0baa     movai   0xaa             	movai	0xaa
+000002   1610     movar   0x10             	movar	0x10
+000003   000c     return                   	return	
+000004   0000     nop                      	nop
+000005   0b55     movai   0x55                     movai	0x55
+000006   15a0     movra   0x20                     movra	0x20;
+                                                   
+                                           loop:
+000007   0000     nop                      	nop
+000008   2807     goto    0x7              	goto loop       
+                                           
+                                           
+                                           	end;       
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XX-------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:     9
+

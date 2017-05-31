@@ -1,0 +1,577 @@
+gpasm-1.2.0 (Apr 12 2013)    33p716_wdt.asm     2013-4-16  19:00:42          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #include mc33p716.inc
+                      00001 ;==========================================================================
+                      00002 
+                      00003 ;W                            EQU     H'0000'
+                      00004 ;F                            EQU     H'0001'
+                      00005 
+                      00006 ;----- Register Files------------------------------------------------------
+                      00007 cblock  0x1B0
+                      00008 INDF0                   
+                      00009 INDF1                   
+                      00010 INDF2                   
+                      00011 HIBYTE                  
+                      00012 FSR0                    
+                      00013 FSR1                    
+                      00014 PCL                     
+                      00015 PFALG                   
+                      00016 ;----0x1B8
+                      00017 MCR                     
+                      00018 INDF3                   
+                      00019 INTE0                   
+                      00020 INTF0                   
+                      00021 OSCM    ;INVALID_ADDR0          
+                      00022 INVALID_ADDR1           
+                      00023 INVALID_ADDR2           
+                      00024 INVALID_ADDR3           
+                      00025 ;----0x1C0
+                      00026 P0                      
+                      00027 DDR0                    
+                      00028 PUP0           
+                      00029 PUS0
+                      00030 PDP0
+                      00031 PDS0
+                      00032 DKWP0
+                      00033 INVALID_ADDR_P0
+                      00034 ;ANSEL
+                      00035 ;P1                      
+                      00036 ;DDR1                    
+                      00037 ;PUP1                    
+                      00038 ;KBIM           
+                      00039 ;-----0x1C8
+                      00040 P1                      
+                      00041 DDR1                        
+                      00042 PUP1           
+                      00043 PUS1
+                      00044 PDP1
+                      00045 PDS1
+                      00046 DKWP1
+                      00047 INVALID_ADDR_P1
+                      00048 ;----0x1D0
+                      00049 P2                      
+                      00050 DDR2                    
+                      00051 PUP2           
+                      00052 PUS2
+                      00053 PDP2
+                      00054 PDS2
+                      00055 DKWP2
+                      00056 INVALID_ADDR_P2
+                      00057 ;----0x1D8
+                      00058 TACR
+                      00059 TALOADH
+                      00060 TALOADL
+                      00061 TALATRH
+                      00062 TALATRL
+                      00063 TALATFH
+                      00064 TALATFL
+                      00065 INVALID_ADDR_TA
+                      00066 ;-----0x1E0
+                      00067 TBCR
+                      00068 TBDATA
+                      00069 TBLOAD
+                      00070 INVALID_ADDR_TB0
+                      00071 OPCR0
+                      00072 OPCR1
+                      00073 DKW
+                      00074 INVALID_ADDR_TB1
+                      00075 ;----0x1E8
+                      00076 ADCR0
+                      00077 ADCR1
+                      00078 ADRH
+                      00079 ADRL
+                      00080 TMPCR
+                      00081 INVALID_ADDR_AD0      
+                      00082 INVALID_ADDR_AD1        
+                      00083 INVALID_ADDR_AD2
+                      00084 endc
+                      00085 ;------------------------------------------------
+                      00086 #define         STATUS          PFALG
+                      00087 #define         INDF            INDF0
+                      00088 #define         FSR             FSR0
+                      00089 #define         P0HCON          PUP0
+                      00090 #define         P1HCON          PUP1
+                      00091 #define         INTECON         INTE0
+                      00092 #define         INTEFLAG        INTF0   
+                      00093 
+                      00094 ;----- STATUS Bits --------------------------
+                      00095 #define Z       STATUS,2
+                      00096 #define DC      STATUS,1
+                      00097 #define C       STATUS,0
+                      00098 
+                      00099 ;----- MCR Bits --------------------------
+                      00100 #define GIE     MCR,7
+                      00101 #define T0      MCR,5
+                      00102 #define PD      MCR,4
+                      00103 #define MINT11  MCR,3
+                      00104 #define MINT10  MCR,2
+                      00105 #define MINT01  MCR,1
+                      00106 #define MINT00  MCR,0
+                      00107 ;-----  P2HCON Bits -----------------------
+                      00108 #define P20PH   P2HCON,0
+                      00109 #define P21PH   P2HCON,1
+                      00110 #define P22PH   P2HCON,2
+                      00111 #define P23PH   P2HCON,3
+                      00112 #define P24PH   P2HCON,4
+                      00113 #define P25PH   P2HCON,5
+                      00114 #define P26PH   P2HCON,6
+                      00115 #define P27PH   P2HCON,7
+                      00116 ;----- INTECON Bits --------------------------
+                      00117 #define INTE    INTECON
+                      00118 #define KBIE    INTECON,7
+                      00119 #define ADIE    INTECON,6
+                      00120 #define LVDIE   INTECON,5
+                      00121 
+                      00122 #define INT1IE  INTECON,3
+                      00123 #define INT0IE  INTECON,2
+                      00124 
+                      00125 ;----- INTEFLAG Bits --------------------------
+                      00126 #define INTF    INTEFLAG
+                      00127 #define KBIF    INTF,7
+                      00128 #define ADIF    INTF,6
+                      00129 #define LVDIF   INTF,5
+                      00130 
+                      00131 #define INT1IF  INTF,3
+                      00132 #define INT0IF  INTF,2
+                      00133 ;---- ADCR0 Bits -----------------
+                      00134 #define    ADCKS_8      0<<1    ;Fsys/8
+                      00135 #define    ADCKS_4      1<<1    ;Fsys/4
+                      00136 #define    ADCKS_2      2<<1    ;Fsys/2
+                      00137 #define    ADCKS_1      3<<1    ;Fsys/1
+                      00138 #define    ADCHS_0      0<<4    ;AN0
+                      00139 #define    ADCHS_1      1<<4    ;AN1
+                      00140 #define    ADCHS_2      2<<4    ;AN2
+                      00141 #define    ADCHS_3      3<<4    ;AN3
+                      00142 #define    ADCHS_4      4<<4    ;AN4
+                      00143 #define    ADCHS_5      5<<4    ;AN5
+                      00144 #define    ADCHS_6      6<<4    ;AN6
+                      00145 #define    ADCHS_7      7<<4    ;AN7
+                      00146 #define    ADCHS_8      8<<4    ;AN8
+                      00147 #define    ADCHS_9      9<<4    ;AN9
+                      00148 #define    ADCHS_VDD    0x0d<<4 ;VDD
+                      00149 #define    ADCHS_VDD4   0x0e<<4 ;VDD/4
+                      00150 #define    ADCHS_VDD2   0x0f<<4 ;VDD/2
+                      00151 #define ADEN    ADCR0,0
+                      00152 #define ADEOC   ADCR0,1
+                      00153 ;----- T0CR  Bits ----------------
+                      00154 #define T0CR    TACR
+                      00155 #define T0IF    T0CR,7
+                      00156 #define T0XF    T0CR,6
+                      00157 #define T0IE    T0CR,5
+                      00158 #define PR0_1   0<<3
+                      00159 #define PR0_2   1<<3
+                      00160 #define PR0_4   2<<3
+                      00161 #define PR0_8   3<<3
+                      00162 #define TC0EN   T0CR,2
+                      00163 ;----- T1CR  Bits ----------------
+                      00164 #define T1CR    TBCR
+                      00165 #define T1IF    T1CR,7
+                      00166 #define T1XF    T1CR,6
+                      00167 #define T1IE    T1CR,5
+                      00168 #define PR1_1   0<<3
+                      00169 #define PR1_2   1<<3
+                      00170 #define PR1_4   2<<3
+                      00171 #define PR1_8   3<<3
+                      00172 #define TC1EN   T1CR,2
+                      00173 ;----- OSCM  Bits ----------------
+                      00174 #define CLKS    OSCM,2
+                      00175 #define LFEN    OSCM,1
+                      00176 #define HFEN    OSCM,0
+                      00177 ;
+                      00178 ;;-----  POWCR Bits -------
+                      00179 ;#define LDOEN  POWCR,7
+                      00180 ;#define        ENB     POWCR,6
+                      00181 ;;-----  LVDCR Bits -------
+                      00182 ;#define LVD    PLVDCR,7
+                      00183 ;#define        LVDS    PLVDCR,6
+                      00184 ;***********DDR1 DDR2 **********
+                      00185 #define DDR10   DDR1,0
+                      00186 #define DDR11   DDR1,1
+                      00187 #define DDR12   DDR1,2
+                      00188 #define DDR13   DDR1,3
+                      00189 
+                      00190 #define DDR20   DDR2,0
+                      00191 #define DDR21   DDR2,1
+                      00192 #define DDR22   DDR2,2
+                      00193 #define DDR23   DDR2,3
+                      00194 #define DDR24   DDR2,4
+                      00195 #define DDR25   DDR2,5
+                      00196 #define DDR26   DDR2,6
+                      00197 #define DDR27   DDR2,7
+                      00198 ;******************************
+                      00199 ;----DKW----
+                      00200 #define DKWE    DKW,7
+                      00201 #define IROS    DKW,6
+                      00202 #define IROT    DKW,5
+                      00203 #define WSEL_32         00
+                      00204 #define WSEL_64         1<<3
+                      00205 #define WSEL_96         2<<3
+                      00206 #define WSEL_128        3<<3
+                      00207 #define ISEL_0_7        0
+                      00208 #define ISEL_1_7        1
+                      00209 #define ISEL_2_7        2
+                      00210 #define ISEL_3_7        3
+                      00211 #define ISEL_4_7        4
+                      00212 #define ISEL_5_7        5
+                      00213 #define ISEL_6_7        6
+                      00214 #define ISEL_7_7        7
+                      00215 
+                      00216 
+                      00002 
+                      00003 ;*************ram****************
+                      00004 ;#define        r0      0x1af
+                      00005 ;#define        r1      0x1ae   
+                      00006 ;#define        r2      0x1ad
+                      00007 cblock 0x00
+                      00008 r0
+                      00009 r1
+                      00010 r2
+                      00011 r3
+                      00012 acc_temp
+                      00013 status_temp
+                      00014 flag
+                      00015 
+                      00016 
+                      00017 
+                      00018 endc
+                      00019 
+                      00020 #define  stop_enable         flag,0
+                      00021 #define  clk_enable          flag,1
+                      00022 #define  key                 P2,1
+                      00023 
+                      00024 ;***********************
+                      00025 #define R0 r0
+                      00026 #define OUT_IR  P1,7
+                      00027 
+                      00028 #define    RAM_COUNT    0xff    ;48个RAM
+                      00029 #define    FIR_RAM_ADDR    0x00    ;RAM首地址
+                      00030 ;#undefine  INDF
+                      00031 ;#define    INDF                INDF3
+                      00032 #define    MAX_DIS_DATA    18
+                      00033 
+                      00034 
+                      00035 
+                      00036 
+                      00037             org 0x0
+0000   A000           00038         goto    main
+                      00039 
+                      00040         org 0x8        
+0008                  00041 start_just_int:
+0008   FBD8           00042         jbclr    T0IE
+0009   EFD8           00043         jbset    T0IF
+000A   A000           00044         goto     lab_if_timer1_int
+                      00045 ;----timer0-----------------------
+000B   DFD8           00046         bclr    T0IF
+                      00047         
+                      00048 
+                      00049 ;---------------------------------
+000C                  00050 lab_if_timer1_int:        
+000C   FBE0           00051         jbclr    T1IE
+000D   EFE0           00052         jbset    T1IF
+000E   A000           00053         goto    just_int0        
+                      00054 ;*********timer1***********
+000F   DFE0           00055         bclr    T1IF
+                      00056         ;movai   0x3c
+                      00057         ;movra   TBCR
+0010   F9C8           00058         jbclr       P1,4
+0011   A000           00059         goto        lab_p01_4
+0012   C9C8           00060         bset        P1,4
+0013   A000           00061         goto        end_time1_interrupt
+0014                  00062 lab_p01_4:    
+0014   D9C8           00063         bclr        P1,4
+                      00064 
+                      00065 
+0015                  00066 end_time1_interrupt:
+                      00067 ;**********end_timer1******
+0015                  00068 just_int0:
+0015   F5BA           00069     jbclr    INT0IE
+0016   E5BB           00070     jbset    INT0IF
+0017   A000           00071     goto     just_int1
+                      00072 ;**********int0************
+0018   D5BB           00073     bclr    INT0IF
+                      00074     
+                      00075 
+                      00076     
+                      00077     ;goto       end_time1_interrupt
+0019                  00078 end_int0_interrupt:
+0019                  00079 just_kbim:
+0019   FFBA           00080         jbclr KBIE
+001A   EFBB           00081         jbset   KBIF
+001B   A000           00082         goto    just_int1
+001C   DFBB           00083         bclr    KBIF
+                      00084 ;*********end int0*********
+001D                  00085 just_int1:
+001D   F7BA           00086     jbclr    INT1IE
+001E   E7BB           00087     jbset    INT1IF
+001F   A000           00088     goto     end_just_int
+                      00089 ;**********int0************
+0020   D7BB           00090     bclr    INT1IF
+                      00091 
+                      00092 ;**********end_kbim********
+0021                  00093 end_just_int:
+0021                  00094 exit_interrupt:
+                      00095 
+0021   000D           00096     retie     
+                      00097  
+                      00098     
+                      00099 ;***************************************
+0022                  00100 main:
+0022   000E           00101     clrwdt
+                      00102  ;   bset    WDTEN
+0023   DFB8           00103     bclr    GIE    ;开全局中断
+                      00104 ;************main loop***************
+0024                  00105 main_loop:
+                      00106     ;clrwdt
+                      00107     ;movai      0x87
+                      00108     ;movra      DKW     
+                      00109 
+                      00110 ;*******************************
+                      00111 ;*****按键值保存在key_value*****
+                      00112 ;**T扫 P00-P16-P10-P27-P20 16个IO
+0024   3C00           00113     movai       0x00
+0025   57C6           00114     movra       DKWP0
+0026   57CE           00115     movra       DKWP1
+0027   57D6           00116     movra       DKWP2
+                      00117 
+0028   C3BC           00118     bset        LFEN
+                      00119     
+0029   3CFF           00120     movai       0xff
+002A   57C9           00121     movra       DDR1
+002B   57D1           00122     movra       DDR2
+002C   57C1           00123     movra       DDR0
+                      00124      
+002D   0000           00125     nop
+002E   0000           00126         nop
+002F   0000           00127         NOP
+0030   0000           00128         nop
+0031   0000           00129         nop
+0032   0000           00130         nop
+0033   0000           00131         nop
+0034   0000           00132         nop
+0035   0000           00133         nop
+0036   0000           00134         nop
+0037   D3BC           00135         bclr LFEN        
+0038                  00136 loop:
+0038   000B           00137     stop 
+0039   73C8           00138     comr        P1
+                      00139 
+003A   A000           00140         goto loop
+                      00141         
+                      00142        
+                      00143 
+                      00144 
+                      00145 
+                      00146     end
+gpasm-1.2.0 (Apr 12 2013)    33p716_wdt.asm     2013-4-16  19:00:42          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000001E8
+ADCR1                             000001E9
+ADRH                              000001EA
+ADRL                              000001EB
+DDR0                              000001C1
+DDR1                              000001C9
+DDR2                              000001D1
+DKW                               000001E6
+DKWP0                             000001C6
+DKWP1                             000001CE
+DKWP2                             000001D6
+FSR0                              000001B4
+FSR1                              000001B5
+HIBYTE                            000001B3
+INDF0                             000001B0
+INDF1                             000001B1
+INDF2                             000001B2
+INDF3                             000001B9
+INTE0                             000001BA
+INTF0                             000001BB
+INVALID_ADDR1                     000001BD
+INVALID_ADDR2                     000001BE
+INVALID_ADDR3                     000001BF
+INVALID_ADDR_AD0                  000001ED
+INVALID_ADDR_AD1                  000001EE
+INVALID_ADDR_AD2                  000001EF
+INVALID_ADDR_P0                   000001C7
+INVALID_ADDR_P1                   000001CF
+INVALID_ADDR_P2                   000001D7
+INVALID_ADDR_TA                   000001DF
+INVALID_ADDR_TB0                  000001E3
+INVALID_ADDR_TB1                  000001E7
+MCR                               000001B8
+OPCR0                             000001E4
+OPCR1                             000001E5
+OSCM                              000001BC
+P0                                000001C0
+P1                                000001C8
+P2                                000001D0
+PCL                               000001B6
+PDP0                              000001C4
+PDP1                              000001CC
+PDP2                              000001D4
+PDS0                              000001C5
+PDS1                              000001CD
+PDS2                              000001D5
+PFALG                             000001B7
+PUP0                              000001C2
+PUP1                              000001CA
+PUP2                              000001D2
+PUS0                              000001C3
+PUS1                              000001CB
+PUS2                              000001D3
+TACR                              000001D8
+TALATFH                           000001DD
+TALATFL                           000001DE
+TALATRH                           000001DB
+TALATRL                           000001DC
+TALOADH                           000001D9
+TALOADL                           000001DA
+TBCR                              000001E0
+TBDATA                            000001E1
+TBLOAD                            000001E2
+TMPCR                             000001EC
+__33P94                           00000001
+acc_temp                          00000004
+end_int0_interrupt                00000019
+end_just_int                      00000021
+end_time1_interrupt               00000015
+exit_interrupt                    00000021
+flag                              00000006
+just_int0                         00000015
+just_int1                         0000001D
+just_kbim                         00000019
+lab_if_timer1_int                 0000000C
+lab_p01_4                         00000014
+loop                              00000038
+main                              00000022
+main_loop                         00000024
+r0                                00000000
+r1                                00000001
+r2                                00000002
+r3                                00000003
+start_just_int                    00000008
+status_temp                       00000005
+ADCHS_0                           0<<4
+ADCHS_1                           1<<4
+ADCHS_2                           2<<4
+ADCHS_3                           3<<4
+ADCHS_4                           4<<4
+ADCHS_5                           5<<4
+ADCHS_6                           6<<4
+ADCHS_7                           7<<4
+ADCHS_8                           8<<4
+ADCHS_9                           9<<4
+ADCHS_VDD                         0x0d<<4
+ADCHS_VDD2                        0x0f<<4
+ADCHS_VDD4                        0x0e<<4
+ADCKS_1                           3<<1
+ADCKS_2                           2<<1
+ADCKS_4                           1<<1
+ADCKS_8                           0<<1
+ADEN                              ADCR0,0
+ADEOC                             ADCR0,1
+ADIE                              INTECON,6
+ADIF                              INTF,6
+C                                 STATUS,0
+CLKS                              OSCM,2
+DC                                STATUS,1
+DDR10                             DDR1,0
+DDR11                             DDR1,1
+DDR12                             DDR1,2
+DDR13                             DDR1,3
+DDR20                             DDR2,0
+DDR21                             DDR2,1
+DDR22                             DDR2,2
+DDR23                             DDR2,3
+DDR24                             DDR2,4
+DDR25                             DDR2,5
+DDR26                             DDR2,6
+DDR27                             DDR2,7
+DKWE                              DKW,7
+FIR_RAM_ADDR                      0x00
+FSR                               FSR0
+GIE                               MCR,7
+HFEN                              OSCM,0
+INDF                              INDF0
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT1IE                            INTECON,3
+INT1IF                            INTF,3
+INTE                              INTECON
+INTECON                           INTE0
+INTEFLAG                          INTF0
+INTF                              INTEFLAG
+IROS                              DKW,6
+IROT                              DKW,5
+ISEL_0_7                          0
+ISEL_1_7                          1
+ISEL_2_7                          2
+ISEL_3_7                          3
+ISEL_4_7                          4
+ISEL_5_7                          5
+ISEL_6_7                          6
+ISEL_7_7                          7
+KBIE                              INTECON,7
+KBIF                              INTF,7
+LFEN                              OSCM,1
+LVDIE                             INTECON,5
+LVDIF                             INTF,5
+MAX_DIS_DATA                      18
+MINT00                            MCR,0
+MINT01                            MCR,1
+MINT10                            MCR,2
+MINT11                            MCR,3
+OUT_IR                            P1,7
+P0HCON                            PUP0
+P1HCON                            PUP1
+P20PH                             P2HCON,0
+P21PH                             P2HCON,1
+P22PH                             P2HCON,2
+P23PH                             P2HCON,3
+P24PH                             P2HCON,4
+P25PH                             P2HCON,5
+P26PH                             P2HCON,6
+P27PH                             P2HCON,7
+PD                                MCR,4
+PR0_1                             0<<3
+PR0_2                             1<<3
+PR0_4                             2<<3
+PR0_8                             3<<3
+PR1_1                             0<<3
+PR1_2                             1<<3
+PR1_4                             2<<3
+PR1_8                             3<<3
+R0                                r0
+RAM_COUNT                         0xff
+STATUS                            PFALG
+T0                                MCR,5
+T0CR                              TACR
+T0IE                              T0CR,5
+T0IF                              T0CR,7
+T0XF                              T0CR,6
+T1CR                              TBCR
+T1IE                              T1CR,5
+T1IF                              T1CR,7
+T1XF                              T1CR,6
+TC0EN                             T0CR,2
+TC1EN                             T1CR,2
+WSEL_128                          3<<3
+WSEL_32                           00
+WSEL_64                           1<<3
+WSEL_96                           2<<3
+Z                                 STATUS,2
+clk_enable                        flag,1
+key                               P2,1
+stop_enable                       flag,0
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc35P7041" ID="0x7041" MCU_Type="RISC" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="test_7041_0420_2">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="test_7041_0420_2.asm" fPath="\test_7041_0420_2.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="0" Value0="0" Value1="110" Value2="0" Value3="25" Value4="8" Value5="0" FOSC_7041="8" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="ASM" />
+</Project>

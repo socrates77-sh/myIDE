@@ -1,0 +1,114 @@
+
+Map of System\mc10p11_c.h05 from link file mc_com.lkf - Wed Mar 05 16:41:28 2014
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001c03 end 00001f03 length   768 segment CODE
+start 00001f03 end 00001f73 length   112 segment .const
+start 000000e0 end 000000e0 length     0 segment ZPAGE
+start 000000e0 end 000000eb length    11 segment UZPAGE
+start 000000e0 end 000000e0 length     0 segment IDATA
+start 000000e0 end 000000e0 length     0 segment UDATA
+start 000000eb end 000000ef length     4 segment .share
+start 00000000 end 00000982 length  2434 segment .debug
+start 00001ff4 end 00002000 length    12 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.h05:
+start 00001c03 end 00001c0d length    10 section CODE (.text)
+start 000000e0 end 000000e4 length     4 section UZPAGE (.ubsct)
+
+mc10p11_c.o:
+start 00001c0d end 00001f03 length   758 section CODE (.text)
+start 000000e4 end 000000eb length     7 section UZPAGE (.ubsct)
+start 00000000 end 00000982 length  2434 section .debug
+start 00001f03 end 00001f73 length   112 section .const
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x111.o:
+start 00001ff4 end 00002000 length    12 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+mc10p11_c.o:
+_delay_100us        000000ed-000000ed (0,1)
+_delay_1ms          000000ec-000000ec (0,1)
+_read_key           000000ec-000000ec (0,1)
+_scan_key           000000eb-000000eb (1,0)
+_send_byte          000000ec-000000ee (1,2)
+_send_byte_3010     000000ec-000000ed (0,2)
+_send_code          000000eb-000000eb (1,0)
+_send_head          000000ec-000000ec (1,0)
+_send_tr_bit        000000ec-000000ec (1,0)
+
+Stack size: 13
+
+
+                               -------
+                               Symbols
+                               -------
+
+_KBI_ISR            00001f00   defined in mc10p11_c.o section CODE (.text)
+                               used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x111.o
+_KBI_ISR.L          000000ef   defined in linker section .share
+                               *** not used ***
+_KEYL               00000000   defined in mc10p11_c.o
+_SWI_ISR            00001eff   defined in mc10p11_c.o section CODE (.text)
+                               used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x111.o
+_SWI_ISR.L          000000ef   defined in linker section .share
+                               *** not used ***
+__stext             00001c03   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.h05 section CODE (.text)
+                               used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x111.o
+_delay_100us        00001c0d   defined in mc10p11_c.o section CODE (.text)
+_delay_100us.L      000000ed   defined in linker section .share
+                               used in mc10p11_c.o
+_delay_1ms          00001c1c   defined in mc10p11_c.o section CODE (.text)
+_delay_1ms.L        000000ec   defined in linker section .share
+                               used in mc10p11_c.o
+_exit               00001c0b   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.h05 section CODE (.text)
+_ior                00000002   defined in mc10p11_c.o
+_key_bak            000000e5   defined in mc10p11_c.o section UZPAGE (.ubsct)
+_key_buffer         000000e8   defined in mc10p11_c.o section UZPAGE (.ubsct)
+_key_data           000000e4   defined in mc10p11_c.o section UZPAGE (.ubsct)
+_key_deal           00001c8d   defined in mc10p11_c.o section CODE (.text)
+_key_table          00001f03   defined in mc10p11_c.o section .const
+_key_temp           000000e6   defined in mc10p11_c.o section UZPAGE (.ubsct)
+_key_value          000000e7   defined in mc10p11_c.o section UZPAGE (.ubsct)
+_main               00001ee9   defined in mc10p11_c.o section CODE (.text)
+                               used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.h05
+_mcr                00000001   defined in mc10p11_c.o
+_read_key           00001c3c   defined in mc10p11_c.o section CODE (.text)
+_read_key.L         000000ec   defined in linker section .share
+                               used in mc10p11_c.o
+_scan_key           00001c54   defined in mc10p11_c.o section CODE (.text)
+_scan_key.L         000000ec   defined in linker section .share
+                               used in mc10p11_c.o
+_send_byte          00001d0d   defined in mc10p11_c.o section CODE (.text)
+_send_byte.L        000000ed   defined in linker section .share
+                               used in mc10p11_c.o
+_send_byte_3010     00001dfe   defined in mc10p11_c.o section CODE (.text)
+_send_byte_3010.L   000000ec   defined in linker section .share
+                               used in mc10p11_c.o
+_send_code          00001e72   defined in mc10p11_c.o section CODE (.text)
+_send_code.L        000000ec   defined in linker section .share
+                               used in mc10p11_c.o
+_send_head          00001cd2   defined in mc10p11_c.o section CODE (.text)
+_send_head.L        000000ed   defined in linker section .share
+                               used in mc10p11_c.o
+_send_tr_bit        00001d8d   defined in mc10p11_c.o section CODE (.text)
+_send_tr_bit.L      000000ed   defined in linker section .share
+                               used in mc10p11_c.o
+_sys_init           00001c2b   defined in mc10p11_c.o section CODE (.text)
+_vectab             00001ff4   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x111.o section .const
+                               *** not used ***
+_work_flag          000000ea   defined in mc10p11_c.o section UZPAGE (.ubsct)
+c_h                 000000e1   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.h05 section UZPAGE (.ubsct)

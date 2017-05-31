@@ -1,0 +1,106 @@
+L 1				
+L 2				P0		EQU	$00
+L 3				DDR0		EQU	$01
+L 4				P0HCON		EQU	$02
+L 5				P1		EQU	$03
+L 6				DDR1		EQU	$04
+L 7				P1HCON		EQU	$05
+L 8				KBIM		EQU	$06
+L 9				TCNT0		EQU	$07
+L 10				TLOAD0		EQU	$07
+L 11				TCR0		EQU	$08
+L 12				TDATA1		EQU	$09
+L 13				TCNT1		EQU	$0A
+L 14				TLOAD1		EQU	$0A
+L 15				TCR1		EQU	$0B
+L 16				TDATA2H		EQU	$0C
+L 17				TCNT2H		EQU	$0D
+L 18				TLOAD2H		EQU	$0D
+L 19				TDATA2L		EQU	$0E
+L 20				TCNT2L		EQU	$0F
+L 21				TLOAD2L		EQU	$0F
+L 22				TCR2		EQU	$10
+L 23				INTC		EQU	$11
+L 24				ADCM		EQU	$12
+L 25				ADCON		EQU	$13
+L 26				ADTH		EQU	$14
+L 27				ADTL		EQU	$15
+L 28				MCR		EQU	$16
+L 29				RSTFR		EQU	$17
+L 30				;----------------------------------
+L 31				;RSTFR-----------------------------
+L 32				WDTRF	define	3,RSTFR
+L 33				LVRRF	define	2,RSTFR
+L 34				RSTRF	define	1,RSTFR
+L 35				PORRF	define	0,RSTFR
+L 36				;----------------------------------
+L 37				;KBIM-------------------------------
+L 38				KBIM6	define	6,KBIM
+L 39				KBIM5	define	5,KBIM
+L 40				KBIM4	define	4,KBIM
+L 41				KBIM3	define	3,KBIM
+L 42				KBIM2	define	2,KBIM
+L 43				KBIM1	define	1,KBIM
+L 44				KBIM0	define	0,KBIM
+L 45				;----------------------------------
+L 46				;MCR-------------------------------
+L 47				KBIE	define	7,MCR
+L 48				KBIC	define	6,MCR
+L 49				ADE5	define	5,MCR
+L 50				WDTC	define	4,MCR
+L 51				WDTF	define	3,MCR
+L 52				WDTM	define	2,MCR
+L 53				LVD36	define  1,MCR
+L 54				LVD24	define  0,MCR
+L 55				;----------------------------------
+L 56				;TCR0------------------------------
+L 57				T0IF	define	7,TCR0
+L 58				T0IM	define	6,TCR0
+L 59				
+L 60				T0PTA	define	2,TCR0
+L 61				T0PTS	define	1,TCR0
+L 62				BUZOE	define	0,TCR0
+L 63				;----------------------------------
+L 64				;TCR1------------------------------
+L 65				T1IF	define	7,TCR1
+L 66				T1IM	define	6,TCR1
+L 67					
+L 68				T1EN	define	2,TCR1
+L 69				T1PTS	define	1,TCR1
+L 70				PWM1E	define	0,TCR1
+L 71				;----------------------------------
+L 72				;TCR2------------------------------
+L 73				T2IF	define	7,TCR2
+L 74				T2IM	define	6,TCR2
+L 75						
+L 76				T2EN	define	2,TCR2
+L 77				T2PTS	define	1,TCR2
+L 78				PWM2E	define	0,TCR2
+L 79				;----------------------------------
+L 80				;ADCM------------------------------
+L 81				VREF	define	7,ADCM
+L 82				VHSH	define	6,ADCM
+L 83				VHSL	define	5,ADCM		
+L 84				ADE4	define	4,ADCM
+L 85				ADE3	define	3,ADCM
+L 86				ADE2	define	2,ADCM
+L 87				ADE1	define	1,ADCM
+L 88				ADE0	define	0,ADCM
+L 89				;----------------------------------
+L 90				;ADCON-----------------------------
+L 91				ADEN	define	4,ADCON
+L 92				EOC	define	3,ADCON
+L 93				ADCE	define	0,ADCON
+L 94				;----------------------------------
+L 95				;INTC------------------------------
+L 96				INT0E	define	7,INTC
+L 97				INT0M1	define	6,INTC
+L 98				INT0M0	define	5,INTC		
+L 99				INT0F	define	4,INTC
+L 100				INT1E	define	3,INTC
+L 101				INT1M1	define	2,INTC
+L 102				INT1M0	define	1,INTC
+L 103				INT1F	define	0,INTC
+L 104				;----------------------------------
+L 105				
+L 106				

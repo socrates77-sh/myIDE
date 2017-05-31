@@ -1,0 +1,58 @@
+gpasm-0.7.0 (Nov 19 2012)    main.asm           2012-11-21  16:32:50         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001     
+                      00002     ;#include "sub1.inc"
+                      00003 
+                      00004     
+                      00005         extern funtion0
+                      00006         extern funtion1
+                      00007         extern abc
+                      00008         extern aaa
+                      00009          
+  00000010            00010 kdkd equ 10h
+                      00011 
+                      00012 PROG CODE
+                      00013     ORG 03FFH
+03FF   2800           00014     GOTO lab_main
+                      00015 
+                      00016     org 000h
+0000                  00017 lab_main:
+0000   0000           00018       nop
+0001   0000           00019       nop
+0002   0BA5           00020       movai 0xa5
+0003   1580           00021       movra abc
+0004   1580           00022       movra aaa
+0005   2000           00023       call funtion0
+0006   0000           00024       nop
+0007                  00025 lab_loop:
+0007   0000           00026         nop
+0008   2000           00027         call funtion1
+0009   0000           00028         nop
+000A   2000           00029   call funtion0 
+000B   2800           00030         goto lab_loop
+                      00031         
+                      00032         en
+gpasm-0.7.0 (Nov 19 2012)    main.asm           2012-11-21  16:32:50         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P01A                          00000001
+aaa                               00000000
+abc                               00000000
+funtion0                          00000000
+funtion1                          00000000
+kdkd                              00000010
+lab_loop                          00000007
+lab_main                          00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

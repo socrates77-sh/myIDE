@@ -1,0 +1,12 @@
+PA at 0x0010  xxxx.x  0000 to 0000
+PB at 0x0011  xxxx.x  0000 to 0000
+DDRA at 0x0004  xxxx.x  0000 to 0000
+P0CONH at 0x0016  xxxx.x  0000 to 0000
+DDRB at 0x0005  xxxx.x  0000 to 0000
+TDR at 0x0008  xxxx.x  0000 to 0000
+TCR at 0x0009  xxxx.x  0000 to 0000
+KBIM at 0x000B  xxxx.x  0000 to 0000
+MCR at 0x000C  xxxx.x  0000 to 0000
+PC at 0x0012  xxxx.x  0000 to 0000
+DDRC at 0x000E  xxxx.x  0000 to 0000
+BTCON at 0x000C  xxxx.x  0000 to 0000

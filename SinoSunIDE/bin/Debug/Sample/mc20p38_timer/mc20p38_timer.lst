@@ -1,0 +1,83 @@
+L 1				
+L 2				PA      equ     $00
+L 3				PB      equ     $01
+L 4				PC      equ     $02
+L 5				DDRA    equ     $03
+L 6				DDRB    equ     $04
+L 7				
+L 8				TDR0    equ     $07
+L 9				TLOAD0  equ     $07
+L 10				TCR0    equ     $08
+L 11				TDR1    equ     $09
+L 12				TLOAD1  equ     $09
+L 13				TCR1    equ     $0a
+L 14				TDR2    equ     $0b
+L 15				TLOAD2  equ     $0b 
+L 16				TCR2    equ     $0c
+L 17				
+L 18				INTC0   equ     $17
+L 19				INTC1   equ     $18
+L 20				
+L 21				T0F     equ     6,INTC0
+L 22				T0E     equ     7,INTC0
+L 23				T1F     equ     4,INTC0
+L 24				T1E     equ     5,INTC0
+L 25				T2F     equ     2,INTC0
+L 26				T2E     equ     3,INTC0
+L 27				
+L 28				        org $3FEE
+L 29		3FEE	2C00	        fdb     int_timer2
+L 30		3FF0	2C05	        fdb     int_timer1
+L 31		3FF2	2C0B	        fdb     int_timer0
+L 32		3FF4	2C10	        fdb     int_cmp1
+L 33		3FF6	2C10	        fdb     int_lvd
+L 34		3FF8	2C10	        fdb     int_int
+L 35		3FFA	2C10	        fdb     int_cmp2
+L 36		3FFC	2C10	        fdb     int_swi
+L 37		3FFE	2C11	        fdb     int_reset
+L 38				        
+L 39				        org     $2c00
+L 40				int_timer2:
+L 41	[5]	2C00	3C01	        inc     PB
+L 42	[5]	2C02	1517	        bclr    T2F
+L 43	[9]	2C04	80	        rti
+L 44				int_timer1:
+L 45				      
+L 46	[5]	2C05	1917	        bclr    T1F
+L 47				  ;      lda     #%01101111
+L 48				  ;     sta     intc0
+L 49	[5]	2C07	3C00	        inc     PA
+L 50	[2]	2C09	9A	        cli
+L 51	[9]	2C0A	80	        rti
+L 52				int_timer0:
+L 53	[5]	2C0B	1D17	        bclr    T0F
+L 54	[5]	2C0D	3302	        com     PC
+L 55	[9]	2C0F	80	        rti
+L 56				int_cmp1:
+L 57				int_cmp2:
+L 58				int_int:
+L 59				int_lvd:
+L 60				int_swi:
+L 61	[9]	2C10	80	        rti      
+L 62				int_reset:
+L 63				       ; lda     #124;125
+L 64				       ; sta     TLOAD0
+L 65	[2]	2C11	A6FB	        lda     #251;250
+L 66	[4]	2C13	B709	        sta     TLOAD1
+L 67	[2]	2C15	A67C	        lda     #124;125
+L 68	[4]	2C17	B70B	        sta     TLOAD2
+L 69				        
+L 70	[2]	2C19	A615	        lda     #$15
+L 71	[4]	2C1B	B708	        sta     TCR0
+L 72	[2]	2C1D	A615	        lda     #$15
+L 73	[4]	2C1F	B70A	        sta     TCR1
+L 74	[2]	2C21	A615	        lda     #$15
+L 75	[4]	2C23	B70C	        sta     TCR2
+L 76	[5]	2C25	1617	        bset    T2E
+L 77	[5]	2C27	1A17	            bset    T1E
+L 78	[2]	2C29	9A	        cli
+L 79				main_loop:
+L 80	[2]	2C2A	A6FF	        lda     #$ff
+L 81	[4]	2C2C	B703	        sta     DDRA
+L 82	[4]	2C2E	B704	        sta     DDRB
+L 83	[3]	2C30	20F8	        bra     main_loop       

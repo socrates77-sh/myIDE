@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P24B" ID="0x0224" MCU_Type="CHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="mc20p24b_02c">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="main.c" fPath="\main.c" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="43" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="C" />
+</Project>

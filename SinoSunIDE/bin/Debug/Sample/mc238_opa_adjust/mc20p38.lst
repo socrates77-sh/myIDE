@@ -1,0 +1,40 @@
+L 1				
+L 2				
+L 3				
+L 4				PA	     EQU	    $00
+L 5				PB	     EQU	    $01
+L 6				PCC	    EQU	    $02
+L 7				DDRA	   EQU		   $03
+L 8				DDRB	   EQU		   $04
+L 9				DDR2    EQU     $04
+L 10				PAHCON	 EQU		   $05
+L 11				PBHCON	 EQU		   $06
+L 12				TDR0	   EQU	    $07
+L 13				TLOAD0	 EQU		   $07
+L 14				TCR0	   EQU	    $08
+L 15				TDR1	EQU	$09
+L 16				TLOAD1	EQU		$09
+L 17				TCR1	EQU	$0A
+L 18				TDR2	EQU	$0B
+L 19				TLOAD2	EQU		$0B
+L 20				TCR2	EQU		$0C
+L 21				PPGC	EQU	$0D
+L 22				PPGCNT	EQU	$0E
+L 23				PPGT	EQU	$0E
+L 24				NETCTL	EQU		$0F
+L 25				INTDB	EQU		$10
+L 26				CVREF	EQU		$11
+L 27				PPGDL	EQU		$12
+L 28				CMP0C	EQU	$13
+L 29				CMP1C	EQU	$14
+L 30				CMP2C	EQU	$15
+L 31				OPAC	EQU	$16
+L 32				INTC0	EQU	$17
+L 33				INTC1	EQU	$18
+L 34				ADCON	EQU	$19
+L 35				ADCM	EQU	$1A
+L 36				ADDATAH	EQU		$1B
+L 37				ADDATAL	EQU		$1C
+L 38				MCR	EQU	$1D
+L 39				RSTFR	EQU	$1E
+L 40				MCRX EQU $1F

@@ -1,0 +1,161 @@
+L 1				;$0000-$002F:Control registers
+L 2				T0CNT    EQU    $00    ;timer0
+L 3				T0DATA    EQU    $01
+L 4				T0CON    EQU    $02
+L 5				MCR    EQU    $03
+L 6				BTCON    EQU    $0c    ;basic time
+L 7				BTCLR    equ    1
+L 8				BTCNT    EQU    $0d
+L 9				P0    EQU    $10    ;port0-2
+L 10				P1    EQU    $11
+L 11				P2    EQU    $12
+L 12				P0CONH    EQU    $16
+L 13				P0CONL    EQU    $17
+L 14				P0PND    EQU    $18
+L 15				P1CON    EQU    $19
+L 16				P2CONH    EQU    $1a
+L 17				P2CONL    EQU    $1b
+L 18				PWMDATA    EQU    $22    ;PWM
+L 19				PWMCON    EQU    $23
+L 20				ADCON    EQU    $27    ;A/D
+L 21				ADDATAH    EQU    $28
+L 22				ADDATAL    EQU    $29
+L 23				 
+L 24				
+L 25				INT1E  define  3,P0PND
+L 26				INT1F  define  2,P0PND
+L 27				INT0E  define  1,P0PND
+L 28				INT0F  define  0,P0PND
+L 29				
+L 30				ADC_EOC define 3,ADCON;adc convert finish
+L 31				ADC_EN  define 0,ADCON;adc start control bit 1=enable
+L 32				
+L 33				
+L 34				    org $0030
+L 35				    adch    rmb 1
+L 36				adcl    rmb 1
+L 37				
+L 38				    org $1c00
+L 39				reset:
+L 40	[2]	1C00	9B	    sei
+L 41	[2]	1C01	9C	    rsp
+L 42				    
+L 43	[2]	1C02	A6A5	    lda #$a5
+L 44	[4]	1C04	B70C	    sta $0c
+L 45	[4]	1C06	B7FD	    sta $fd
+L 46	[4]	1C08	B7FE	    sta $fe
+L 47	[4]	1C0A	B7FF	    sta $ff
+L 48	[4]	1C0C	B731	    sta $31
+L 49				    
+L 50	[2]	1C0E	A6A5	    lda #$a5 ;p00,01 input&push up / p02,p03 output
+L 51	[4]	1C10	B717	    sta P0CONL
+L 52	[2]	1C12	A6D0	    lda #$d0 ;p07--ADC input,p06--pwm, p05,04 input
+L 53	[4]	1C14	B716	    sta P0CONH
+L 54	[2]	1C16	A6FE	    lda #$fe ;
+L 55				   
+L 56				fnClearAllRam:
+L 57	[2]	1C18	AE30	        ldx    #$30                ;
+L 58				Lab_ClearAllRamLoop:
+L 59	[5]	1C1A	7F	        clr    ,x                    ;initial and clear ram
+L 60	[3]	1C1B	5C	        incx
+L 61	[2]	1C1C	A3FF	        cpx    #$ff
+L 62	[3]	1C1E	26FA	        bne    Lab_ClearAllRamLoop
+L 63				        
+L 64	[5]	1C20	1618	        bset INT1E;
+L 65	[5]	1C22	1218	        BSET INT0E;
+L 66				    
+L 67				    ;timer initial
+L 68	[2]	1C24	A6F2	    lda #$f2 ;t=Fsys, disable interrupt
+L 69	[4]	1C26	B702	    sta T0CON
+L 70	[2]	1C28	A6AA	    lda #$aa
+L 71	[4]	1C2A	B701	    sta T0DATA
+L 72	[2]	1C2C	9A	    cli
+L 73				    
+L 74				
+L 75				    
+L 76				loop:
+L 77	[3]	1C2D	B630	    lda $30
+L 78	[3]	1C2F	4C	    inca
+L 79	[4]	1C30	B730	    sta $30
+L 80	[3]	1C32	B631	    lda $31
+L 81	[3]	1C34	B630	    lda $30
+L 82	[5]	1C36	1410	    bset 2,P0
+L 83	[5]	1C38	1610	    bset 3,P0
+L 84	[5]	1C3A	1510	    bclr 2,P0
+L 85	[5]	1C3C	1710	    bclr 3,P0
+L 86				    ;adc sample
+L 87	[5]	1C3E	1027	    bset ADC_EN;
+L 88				adc_wait:
+L 89				    ;    brclr ADC_EOC,adc_wait ;wait adc completed
+L 90				    ;stop
+L 91				no_stop:
+L 92	[6]	1C40	CD1C4B	    jsr fun001
+L 93	[6]	1C43	CD1C65	    jsr fun002
+L 94	[6]	1C46	CD1C65	    jsr fun003
+L 95	[3]	1C49	20E2	    bra loop
+L 96				
+L 97				fun001:
+L 98	[3]	1C4B	B640	    lda $40
+L 99	[3]	1C4D	4C	    inca
+L 100	[4]	1C4E	B740	    sta $40
+L 101	[6]	1C50	CD1C55	    jsr fun011
+L 102	[2]	1C53	9D	    nop
+L 103	[6]	1C54	81	    rts
+L 104				    
+L 105				fun011:
+L 106	[2]	1C55	9D	    nop
+L 107	[2]	1C56	A655	    lda #$55
+L 108	[4]	1C58	B746	    sta $46
+L 109				    ;brset 2,$30,loop
+L 110	[6]	1C5A	CD1C62	    jsr fun111
+L 111	[2]	1C5D	A603	    lda #03
+L 112	[4]	1C5F	B747	    sta $47
+L 113	[6]	1C61	81	    rts
+L 114				    
+L 115				fun111:
+L 116	[2]	1C62	9D	    nop
+L 117	[2]	1C63	9D	    nop
+L 118	[6]	1C64	81	    rts
+L 119				
+L 120				fun002:
+L 121				fun003:
+L 122	[2]	1C65	9D	    nop
+L 123	[2]	1C66	9D	    nop
+L 124	[6]	1C67	81	    rts 
+L 125				    
+L 126				    
+L 127				fn_int0:
+L 128	[5]	1C68	1118	    bclr INT0F;
+L 129	[3]	1C6A	B641	    LDA $41
+L 130	[3]	1C6C	4C	    INCA 
+L 131	[4]	1C6D	B741	    STA $41
+L 132	[9]	1C6F	80	    rti
+L 133				
+L 134				fn_int1:
+L 135	[5]	1C70	1518	    bclr INT1F
+L 136	[3]	1C72	B642	    LDA $42
+L 137	[3]	1C74	4C	    INCA 
+L 138	[4]	1C75	B742	    STA $42
+L 139	[9]	1C77	80	    RTI
+L 140				    
+L 141				fn_time0:
+L 142	[2]	1C78	A6FE	    lda #$fe
+L 143	[4]	1C7A	B702	    sta T0CON
+L 144	[3]	1C7C	B643	    LDA $43
+L 145	[3]	1C7E	4C	    INCA
+L 146	[4]	1C7F	B743	    STA $43
+L 147	[9]	1C81	80	    rti
+L 148				    
+L 149				    
+L 150				    
+L 151				    org $1ff4 ;int1 index
+L 152		1FF4	1C70	    fdb fn_int1
+L 153				    
+L 154				    org $1ff6;timer0 index
+L 155		1FF6	1C78	    fdb fn_time0
+L 156				    
+L 157				    org $1ffa; int0 index
+L 158		1FFA	1C68	    fdb fn_int0
+L 159				    
+L 160				    org $1ffe; reset index
+L 161		1FFE	1C00	    fdb reset

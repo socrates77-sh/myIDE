@@ -1,0 +1,389 @@
+L 1				
+L 2				;********ADAM27P16*************
+L 3				;******delay600us是延时560us****
+L 4				;******芯片：10p11 sop-16******
+L 5				;******频率38K*****************
+L 6				;******日期:2012.06.11*********
+L 7				;******校验:ff02H**************
+L 8				
+L 9				KEY	equ	$00
+L 10				MCR	equ	$01
+L 11				IOR	equ	$02
+L 12				
+L 13				OUTC	define	5,MCR
+L 14				KBIF	define	6,MCR
+L 15				KBIE	define	7,MCR
+L 16				LED_IO	define	0,IOR
+L 17				
+L 18				R0	equ	$e1
+L 19				R1	equ	$e2
+L 20				
+L 21				USR_CODE_L	equ	$04
+L 22				USR_CODE_H	equ	$cb
+L 23				key_count	equ	$e3
+L 24				key_value1	equ	$e4
+L 25				key_value2	equ	$e5
+L 26				key_buffer_l	equ	$e6
+L 27				key_buffer_h	equ	$e7
+L 28				send_bit_time	equ	$e8
+L 29				;send_data1	equ	$e9
+L 30				;send_data2	equ	$ea
+L 31				send_data3	equ	$eb
+L 32				send_data	equ	$ed
+L 33				send_count	equ	$ee
+L 34				key_value1_bak	equ	$ef
+L 35				;send_bit1_count	equ	$eb
+L 36				
+L 37				work_flag	equ	$e0
+L 38				send_code_flag	define	0,work_flag
+L 39				gnd_key_flag	define	1,work_flag
+L 40				send_over_flag	define	2,work_flag
+L 41				
+L 42				
+L 43					org	$1ff4
+L 44		1FF4	1C00		fdb	k_int
+L 45				
+L 46					org	$1ffc
+L 47		1FFC	1C02		fdb	swi_int
+L 48				
+L 49					org	$1ffe
+L 50		1FFE	1C03		fdb	reset
+L 51				
+L 52					org	$1c00
+L 53				
+L 54				k_int:
+L 55	[5]	1C00	1D01		bclr	KBIF
+L 56				swi_int:
+L 57	[9]	1C02	80		rti
+L 58				
+L 59				reset:
+L 60	[2]	1C03	9B		sei
+L 61	[2]	1C04	9C		rsp
+L 62	[5]	1C05	1A01		bset	OUTC	;不发码
+L 63	[5]	1C07	1B01	 bclr OUTC
+L 64	[5]	1C09	1A01	 bset OUTC
+L 65	[5]	1C0B	1B01	 bclr OUTC
+L 66				 ;jmp reset
+L 67	[2]	1C0D	AEE0		ldx	#$e0
+L 68				clr_ram:
+L 69	[5]	1C0F	7F		clr	,x
+L 70	[3]	1C10	5C		incx
+L 71	[3]	1C11	26FC		bne	clr_ram
+L 72	[5]	1C13	1A01		bset	OUTC	;不发码
+L 73				
+L 74				
+L 75	[2]	1C15	AEFF		ldx	#255
+L 76				loop_delay:			;等待上电稳定
+L 77	[6]	1C17	CD1D64		jsr	delay600us
+L 78	[6]	1C1A	CD1D64		jsr	delay600us
+L 79	[5]	1C1D	1A01		bset	OUTC	;不发码
+L 80	[3]	1C1F	5A		decx
+L 81	[3]	1C20	26F5		bne	loop_delay
+L 82	[5]	1C22	10E0		bset	send_code_flag
+L 83	[5]	1C24	1002		bset	LED_IO
+L 84				;***************************************
+L 85				main_loop:
+L 86	[2]	1C26	9B		sei
+L 87	[2]	1C27	9C		rsp
+L 88				 ;jsr sp_test
+L 89	[2]	1C28	A681		lda	#$81
+L 90	[4]	1C2A	B702		sta	IOR
+L 91				key_scan:
+L 92	[2]	1C2C	A60D		lda	#13
+L 93	[4]	1C2E	B7E1		sta	R0
+L 94				
+L 95	[2]	1C30	AE00		ldx	#0
+L 96	[5]	1C32	1D01		bclr	KBIF	;重置
+L 97				
+L 98	[5]	1C34	3FE1		clr	R0
+L 99	[5]	1C36	3FE3		clr	key_count
+L 100	[5]	1C38	3FE4		clr	key_value1
+L 101	[5]	1C3A	3FE5		clr	key_value2
+L 102	[5]	1C3C	13E0		bclr	gnd_key_flag
+L 103				scan_gnd:
+L 104	[3]	1C3E	B600		lda	KEY
+L 105	[4]	1C40	B7E6		sta	key_buffer_l
+L 106	[3]	1C42	B601		lda	MCR
+L 107	[2]	1C44	AAE0		ora	#$e0
+L 108	[4]	1C46	B7E7		sta	key_buffer_h
+L 109				
+L 110	[2]	1C48	A1FF		cmp	#$ff
+L 111	[3]	1C4A	260E		bne	L000
+L 112	[3]	1C4C	B6E6		lda	key_buffer_l
+L 113	[2]	1C4E	A1FF		cmp	#$ff
+L 114	[3]	1C50	2608		bne	L000
+L 115				
+L 116	[2]	1C52	A60D		lda	#13
+L 117	[4]	1C54	B7E3		sta	key_count
+L 118	[5]	1C56	3FE1		clr	R0
+L 119	[3]	1C58	2008		bra	scan_loop
+L 120				L000:
+L 121	[2]	1C5A	A60D		lda	#13
+L 122	[4]	1C5C	B7E2		sta	R1
+L 123	[5]	1C5E	12E0		bset	gnd_key_flag
+L 124	[3]	1C60	2022		bra	get_key
+L 125				
+L 126				scan_loop:
+L 127	[4]	1C62	B700		sta	KEY		;开始扫描
+L 128	[5]	1C64	3CE1		inc	R0
+L 129	[2]	1C66	9D		nop	
+L 130	[2]	1C67	9D		nop
+L 131				;	ldx	R0
+L 132				;	jsr	delay600us	;延时消抖 子函数用到了R0
+L 133				;	stx	R0
+L 134	[2]	1C68	9D		nop	
+L 135	[3]	1C69	B600		lda	KEY
+L 136	[4]	1C6B	B7E6		sta	key_buffer_l
+L 137	[3]	1C6D	B601		lda	MCR
+L 138	[2]	1C6F	AAE0		ora	#$e0
+L 139	[4]	1C71	B7E7		sta	key_buffer_h
+L 140				
+L 141	[4]	1C73	B700		sta	KEY
+L 142	[2]	1C75	A60D		lda	#13
+L 143	[3]	1C77	B0E1		sub	R0
+L 144	[4]	1C79	B7E2		sta	R1
+L 145				
+L 146	[3]	1C7B	BEE1		ldx	R0
+L 147				shift_loop:
+L 148	[5]	1C7D	36E7		ror	key_buffer_h
+L 149	[5]	1C7F	36E6		ror	key_buffer_l
+L 150	[3]	1C81	5A		decx
+L 151	[3]	1C82	26F9		bne	shift_loop
+L 152				get_key:
+L 153	[5]	1C84	3CE3		inc	key_count		;键值
+L 154	[5]	1C86	00E612		brset	0,key_buffer_l,end_stor_value
+L 155	[3]	1C89	B6E3		lda	key_count
+L 156	[4]	1C8B	3DE4		tst	key_value1
+L 157	[3]	1C8D	2604		bne	stor_value2
+L 158	[4]	1C8F	B7E4		sta	key_value1		;第一个按键存放在key_value1
+L 159	[3]	1C91	2008		bra	end_stor_value
+L 160				stor_value2:
+L 161	[3]	1C93	201B		bra	mult_key	;无组合键
+L 162	[4]	1C95	3DE5		tst	key_value2
+L 163	[3]	1C97	2617		bne	mult_key		;多键处理(超过两个按键)
+L 164	[4]	1C99	B7E5		sta	key_value2		;第二个按键存放在key_value2
+L 165				end_stor_value:
+L 166	[5]	1C9B	3AE2		dec	R1
+L 167	[3]	1C9D	2706		beq	L1111
+L 168	[5]	1C9F	36E7		ror	key_buffer_h
+L 169	[5]	1CA1	36E6		ror	key_buffer_l
+L 170	[3]	1CA3	20DF		bra	get_key
+L 171				L1111:
+L 172	[5]	1CA5	02E00E		brset	gnd_key_flag,end_key_scan
+L 173	[3]	1CA8	B6E1		lda	R0
+L 174	[2]	1CAA	A10B		cmp	#11
+L 175	[3]	1CAC	25B4		blo	scan_loop
+L 176	[3]	1CAE	2006		bra	end_key_scan
+L 177				mult_key:
+L 178	[5]	1CB0	10E0		bset	send_code_flag
+L 179	[5]	1CB2	3FE4		clr	key_value1
+L 180	[5]	1CB4	3FE5		clr	key_value2
+L 181				end_key_scan:
+L 182				;***********************************************
+L 183				check_key_value:
+L 184	[5]	1CB6	1002		bset	LED_IO		;关闭LED
+L 185	[4]	1CB8	3DE4		tst	key_value1
+L 186					;beq	end_key_deal	;key_value1为0,key_value2也应该为0
+L 187	[3]	1CBA	2614		bne	key_deal1
+L 188				;******************no key*************
+L 189	[5]	1CBC	10E0		bset	send_code_flag
+L 190	[5]	1CBE	1A01		bset	OUTC	;不发码
+L 191	[5]	1CC0	1D01		bclr	KBIF
+L 192	[5]	1CC2	1E01		bset	KBIE
+L 193	[2]	1CC4	9C		rsp
+L 194	[2]	1CC5	8E		stop
+L 195	[2]	1CC6	9D		nop
+L 196	[2]	1CC7	9C		rsp
+L 197	[5]	1CC8	1F01		bclr	KBIE
+L 198	[2]	1CCA	A6FF		lda	#$ff
+L 199	[4]	1CCC	B7EF		sta	key_value1_bak
+L 200	[3]	1CCE	2017		bra	end_key_deal
+L 201				;****************single key********************
+L 202				key_deal1:
+L 203	[3]	1CD0	B6E4		lda	key_value1
+L 204	[3]	1CD2	B1EF		cmp	key_value1_bak
+L 205	[3]	1CD4	2711		beq	end_key_deal
+L 206				
+L 207	[4]	1CD6	B7EF		sta	key_value1_bak
+L 208				cmp_key_type:
+L 209	[3]	1CD8	BEE4		ldx	key_value1
+L 210	[3]	1CDA	5A		decx
+L 211	[5]	1CDB	D61D93		lda	key_value_table,x
+L 212	[4]	1CDE	B7EB		sta	send_data3
+L 213	[3]	1CE0	4C		inca
+L 214	[3]	1CE1	2704		beq	end_key_deal
+L 215				
+L 216					;lda	#$45
+L 217					;sta	send_data1		;45BAH
+L 218					;lda	#$BA
+L 219					;sta	send_data2
+L 220	[5]	1CE3	11E0		bclr	send_code_flag
+L 221	[5]	1CE5	15E0		bclr	send_over_flag
+L 222				deal_send_code:
+L 223				;******************************************
+L 224				end_key_deal:
+L 225				;***********************************************
+L 226				
+L 227				;******************end debug***************	
+L 228	[5]	1CE7	01E003		brclr	send_code_flag,star_send_code	;有发码标志则发码，没有跳出
+L 229	[3]	1CEA	CC1D59		jmp	end_send_code
+L 230				star_send_code:
+L 231					;clr	send_bit1_count
+L 232				
+L 233					;bclr	LED_IO			;发码则LED亮
+L 234	[2]	1CED	A604		lda	#USR_CODE_L
+L 235	[4]	1CEF	B7ED		sta	send_data
+L 236	[5]	1CF1	3FEE		clr	send_count
+L 237	[2]	1CF3	AEFF		ldx	#$ff
+L 238				loop_star1:
+L 239	[6]	1CF5	CD1D6D		jsr	send_38K
+L 240	[3]	1CF8	5A		decx
+L 241	[3]	1CF9	26FA		bne	loop_star1
+L 242	[2]	1CFB	AE5A		ldx	#90
+L 243				loop_star2:			;loop_star,loop_star2共9ms
+L 244	[6]	1CFD	CD1D6D		jsr	send_38K
+L 245	[3]	1D00	5A		decx
+L 246	[3]	1D01	26FA		bne	loop_star2
+L 247	[2]	1D03	AE04		ldx	#4
+L 248	[5]	1D05	04E002		brset	send_over_flag,loop_star3	;已经发完成则只发头
+L 249	[2]	1D08	AE08		ldx	#8
+L 250				loop_star3:	
+L 251	[6]	1D0A	CD1D64		jsr	delay600us
+L 252	[3]	1D0D	5A		decx
+L 253	[3]	1D0E	26FA		bne	loop_star3
+L 254	[5]	1D10	05E006		brclr	send_over_flag,send_code
+L 255	[2]	1D13	A6AB		lda	#171		;发送剩余时间
+L 256	[4]	1D15	B7E2		sta	R1		
+L 257	[5]	1D17	3FED		clr	send_data	;发送一个0
+L 258				;**********************************
+L 259				send_code:
+L 260	[2]	1D19	AE15		ldx	#21		;38K时间
+L 261	[6]	1D1B	CD1D7D		jsr	send_bit	;调用发码程序
+L 262				
+L 263	[5]	1D1E	04E031		brset	send_over_flag,delay_remain_loop
+L 264	[5]	1D21	3CEE		inc	send_count
+L 265	[3]	1D23	B6EE		lda	send_count
+L 266	[2]	1D25	A121		cmp	#33
+L 267	[3]	1D27	2423		bhs	send_over
+L 268	[2]	1D29	A108		cmp	#8
+L 269	[3]	1D2B	270C		beq	load_send_data2
+L 270	[2]	1D2D	A110		cmp	#16
+L 271	[3]	1D2F	270E		beq	load_send_data3
+L 272	[2]	1D31	A118		cmp	#24
+L 273	[3]	1D33	2710		beq	load_send_data4
+L 274	[5]	1D35	37ED		asr	send_data	;发送下一位数据
+L 275	[3]	1D37	20E0		bra	send_code
+L 276				
+L 277				load_send_data2:
+L 278					;lda	send_data2
+L 279	[2]	1D39	A6CB		lda	#USR_CODE_H
+L 280	[4]	1D3B	B7ED		sta	send_data
+L 281	[3]	1D3D	20DA		bra	send_code
+L 282				load_send_data3:
+L 283	[3]	1D3F	B6EB		lda	send_data3
+L 284	[4]	1D41	B7ED		sta	send_data
+L 285	[3]	1D43	20D4		bra	send_code
+L 286				load_send_data4:
+L 287	[3]	1D45	B6EB		lda	send_data3
+L 288	[3]	1D47	43		coma
+L 289	[4]	1D48	B7ED		sta	send_data
+L 290	[3]	1D4A	20CD		bra	send_code
+L 291				;*********************************
+L 292				send_over:
+L 293	[5]	1D4C	14E0		bset	send_over_flag
+L 294	[2]	1D4E	A638		lda	#56
+L 295				delay_remain_time:
+L 296	[4]	1D50	B7E2		sta	R1
+L 297				delay_remain_loop:
+L 298	[6]	1D52	CD1D64		jsr	delay600us
+L 299	[5]	1D55	3AE2		dec	R1
+L 300	[3]	1D57	26F9		bne	delay_remain_loop	
+L 301				end_send_code:
+L 302					;bclr	send_code_flag	;一次按键发一次码
+L 303				
+L 304	[3]	1D59	CC1C26		jmp	main_loop
+L 305				;********************************************
+L 306				
+L 307				sp_test:
+L 308	[2]	1D5C	9D	       nop
+L 309	[2]	1D5D	A6AA	       lda #$aa
+L 310	[4]	1D5F	B7E1	       sta R0
+L 311	[3]	1D61	CC1C26	       jmp main_loop
+L 312				
+L 313				
+L 314				delay600us:
+L 315					;lda	#147
+L 316	[2]	1D64	A689		lda	#137
+L 317	[4]	1D66	B7E1		sta	R0
+L 318				delay_loop:			;(1.5+2.5)*137=548	//(1,5+2.5)*147=588
+L 319	[5]	1D68	3AE1		dec	R0		;1.5us
+L 320	[3]	1D6A	26FC		bne	delay_loop	;2.5us
+L 321				end_delay600us:
+L 322	[6]	1D6C	81		rts			;3us
+L 323				
+L 324				;**********用bclr 和nop调节时间可以以0.5us的步进微调*******
+L 325				send_38K:
+L 326	[5]	1D6D	1B01		bclr	OUTC		;out put	;2.5us
+L 327	[2]	1D6F	9D		nop			;1us
+L 328	[2]	1D70	9D		nop			;1us
+L 329	[5]	1D71	1B01		bclr	OUTC		;out put	;2.5us
+L 330					;nop			;2.5us
+L 331	[5]	1D73	1A01		bset	OUTC		;2.5us
+L 332	[5]	1D75	1A01		bset	OUTC		;2.5us
+L 333	[5]	1D77	1A01		bset	OUTC		;2.5us
+L 334					;bset	OUTC		;2.5us
+L 335	[2]	1D79	9D		nop			;1us
+L 336	[2]	1D7A	9D		nop			;1us
+L 337	[2]	1D7B	9D		nop
+L 338				end_send_38K:
+L 339	[6]	1D7C	81		rts			;3us
+L 340				
+L 341				send_bit:
+L 342	[6]	1D7D	CD1D6D		jsr	send_38K
+L 343					;dec	send_bit_time	;检测产生38K的时间
+L 344	[3]	1D80	5A		decx
+L 345	[3]	1D81	26FA		bne	send_bit
+L 346	[5]	1D83	1A01		bset	OUTC
+L 347	[2]	1D85	AE01		ldx	#1
+L 348	[5]	1D87	01ED02		brclr	0,send_data,loop_send_low
+L 349	[2]	1D8A	AE03		ldx	#3
+L 350				loop_send_low:
+L 351	[6]	1D8C	CD1D64		jsr	delay600us	;3us
+L 352	[3]	1D8F	5A		decx
+L 353	[3]	1D90	26FA		bne	loop_send_low
+L 354	[6]	1D92	81		rts
+L 355				
+L 356					
+L 357				
+L 358				key_value_table:
+L 359		1D93	FFFFFFFF		fcb	$ff, $ff, $ff, $ff, $ff,	$ff, $ff, $ff, $ff, $ff	
+			FFFFFFFF	
+			FFFF	
+L 360		1D9D	FFFFFF		fcb	$ff, $ff, $ff 	;GND						;K1-k13
+L 361		1DA0	FFFFFFFF		fcb	$ff, $ff, $ff, $ff, $ff, 	$ff, $ff, $ff, $ff, $ff 
+			FFFFFFFF	
+			FFFF	
+L 362		1DAA	FFFF		fcb	$ff, $ff	;S0						;k14-k25
+L 363		1DAC	015F1650		fcb	$01, $5f, $16, $50, $42, 	$46, $09, $41, $58, $03		;k26-k36
+			42460941	
+			5803	
+L 364		1DB6	FF		fcb	$ff		;S1
+L 365		1DB7	FF1A4C56		fcb	$ff, $1a, $4c, $56, $07, 	$55, $45, $5a, $17, $ff	;S2	;k37-k46
+			0755455A	
+			17FF	
+L 366		1DC1	1EFFFFFF		fcb	$1e, $ff, $ff, $ff, $5b, 	$57, $ff, $4f, $ff	;S3	;k47-k55
+			5B57FF4F	
+			FF	
+L 367		1DCA	435C1253		fcb	$43, $5c, $12, $53, $4b, 	$54, $0e, $ff		;S4	;k56-k63
+			4B540EFF	
+L 368		1DD2	020A5947		fcb	$02, $0a, $59, $47, $1b, 	$06, $ff 		;S5	;k64-k70
+			1B06FF	
+L 369		1DD9	05111D19		fcb	$05, $11, $1d, $19, $0d,	$ff 		;S6	;k70-K76
+			0DFF	
+L 370		1DDF	52445113		fcb	$52, $44, $51, $13, $ff		;S7	;K77-K81
+			FF	
+L 371		1DE4	484D0FFF		fcb	$48, $4d, $0f, $ff		;S8	;K82-K85
+L 372		1DE8	4E4AFF		fcb	$4e, $4a, $ff	;S9	;K86-K88
+L 373		1DEB	15FF		fcb	$15, $ff	;S10	;K89-90
+L 374		1DED	FF		fcb	$ff		;S11	;K91
+L 375				

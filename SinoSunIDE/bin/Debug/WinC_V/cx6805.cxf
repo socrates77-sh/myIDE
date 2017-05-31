@@ -1,0 +1,12 @@
+#	CONFIGURATION FILE FOR 68HC05 COMPILER
+#	Copyright (c) 1996 by COSMIC Software
+#
+-pu				# unsigned char
+-pm0x1024			# model configuration
+#
+-m debug:x			# debug: produce debug info
+-m nobss:,bss			# nobss: do not use bss
+-m nocst:,ct			# nocst: constants in code
+-m rev:rb			# rev: reverse bit field order
+-m nsh:,nsh			# nsh: static not shared
+-m jmp:,,tjmptab.s		# jmp: optimize function calls

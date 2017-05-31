@@ -1,0 +1,38 @@
+gplink-1.9.5 (Apr 18 2017)
+Listing File Generated: 2017-4-24  14:14:13
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           #include "mc2722.inc"
+                                           		LIST
+                                           ;mc2722.inc    Standard Header File, Version 1.00 by Sinomcu
+                                           		NOLIST
+                                                  	org 0x00
+000000   8001     goto    0x1                     	goto start
+                                           
+                                           start:
+000001   0000     nop                         	NOP
+000002   0000     nop                         	nop
+000003   8004     goto    0x4                 	goto loop
+                                           
+                                           loop:
+000004   0000     nop                         	nop
+000005   0000     nop                         	nop
+000006   0000     nop                         	NOP
+000007   0000     nop                         	nop
+000008   0000     nop                         	NOP
+000009   8004     goto    0x4                 	goto loop
+                                           
+                                           
+                                              	end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXX------------ ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    10
+

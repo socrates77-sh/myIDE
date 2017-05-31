@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC10P11B" ID="0x0111" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="mc10p11_01">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="mc10p11_01.asm" fPath="\mc10p11_01.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="7F" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="ASM" />
+</Project>

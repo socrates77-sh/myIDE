@@ -1,0 +1,65 @@
+L 1				;=======================================================================
+L 2				;“∆∂ØµÁ‘¥
+L 3				;MC20P22-SOP14
+L 4				;=======================================================================
+L 5					include	MC20P22.H
+L 6					include	var.H
+L 7					include	sysInit.asm
+L 8					include	T500msSbr.asm
+L 9					include	key.asm
+L 10					include	displaysbr.asm
+L 11					include	interrupt.asm
+L 12					include	ADCSbr.asm
+L 13				Rest:
+L 14	[2]	1ABE	9B		SEI
+L 15	[2]	1ABF	9C		RSP
+L 16	[6]	1AC0	CD1800		JSR	SysInitSbr
+L 17				RestA:    
+L 18	[2]	1AC3	9A		CLI
+L 19	[5]	1AC4	090002		BRCLR	pVIn,RestA1
+L 20	[5]	1AC7	3FF1		CLR	CellLow
+L 21				RestA1:	
+L 22	[3]	1AC9	B6F1		LDA	CellLow
+L 23	[2]	1ACB	A155		CMP	#$55
+L 24	[3]	1ACD	2614		BNE	RestA2
+L 25	[5]	1ACF	1913		BCLR	ADEN
+L 26	[5]	1AD1	1E16		BSET	KBIE
+L 27	[5]	1AD3	1C16		BSET	KBIC
+L 28	[6]	1AD5	CD1846		JSR	LEDAllOff
+L 29	[5]	1AD8	1503		BCLR	pHeat
+L 30	[5]	1ADA	1303		BCLR	pCharge
+L 31	[2]	1ADC	9D		NOP
+L 32	[2]	1ADD	9D		NOP
+L 33	[2]	1ADE	9D		NOP
+L 34	[2]	1ADF	8F		WAIT
+L 35	[2]	1AE0	9D		NOP
+L 36	[2]	1AE1	9D		NOP
+L 37	[2]	1AE2	9D		NOP
+L 38				RestA2:	
+L 39	[5]	1AE3	0181DD		BRCLR	F2ms,RestA    ;
+L 40	[5]	1AE6	1181		BCLR	F2ms
+L 41	[5]	1AE8	1816		BSET	WDTC
+L 42	[3]	1AEA	B6F1		LDA	CellLow
+L 43	[2]	1AEC	A155		CMP	#$55
+L 44	[3]	1AEE	27D3		BEQ	RestA
+L 45					
+L 46	[6]	1AF0	CD1A1B		JSR	ADCSbr
+L 47	[6]	1AF3	CD1958		JSR	KeySbr
+L 48	[6]	1AF6	CD1846		JSR	LEDAllOff
+L 49	[5]	1AF9	0980C7		BRCLR	FADOver,RestA
+L 50	[6]	1AFC	CD1994		JSR	DisplaySbr
+L 51	[6]	1AFF	CD184F		JSR	T100msSbr
+L 52	[3]	1B02	20BF		BRA	RestA
+L 53				    
+L 54					ORG	$1FEE
+L 55		1FEE	1A09		DW	WDTISbr
+L 56		1FF0	1A09		DW	KBISbr
+L 57		1FF2	1A09		DW	TMI2Sbr
+L 58		1FF4	1A09		DW	TMI1Sbr
+L 59		1FF6	1A16		DW	TMI0Sbr
+L 60		1FF8	1A09		DW	INT1Sbr
+L 61		1FFA	1A09		DW	INT0Sbr
+L 62		1FFC	1A09		DW	SWISbr
+L 63		1FFE	1ABE		DW	Rest
+L 64				
+L 65				

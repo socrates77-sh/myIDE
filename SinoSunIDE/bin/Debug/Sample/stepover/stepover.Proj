@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P22" ID="0x0222" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-06-15" VS="1.00">
+  <ProWindows>
+    <Explorer fName="stepover">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="stepover.asm" fPath="\stepover.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="f6" />
+  <Compiler Name="Assembly.exe" />
+  <WatchSymbol Name="temp02" Addr="0x42" Value="1" />
+</Project>

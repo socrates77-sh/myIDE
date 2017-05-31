@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc30p01" ID="0x0301" MCU_Type="RISC" Author="Mike.Mo" Date="2012-06-15" VS="1.00">
+  <ProWindows>
+    <Explorer fName="test01">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="mc30p01_test.asm" fPath="\mc30p01_test.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="37ff3770" />
+  <Compiler Name="gpasm.exe" />
+  <WatchSymbol Name="P0" Addr="0005" Value="255" />
+  <WatchSymbol Name="r1" Addr="0012" Value="??" />
+</Project>

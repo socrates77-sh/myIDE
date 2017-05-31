@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P24B" ID="0x0224" MCU_Type="CHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="触摸按键">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="adc.h" fPath="\adc.h" />
+        <asmFile fName="ADCSbr.c" fPath="\ADCSbr.c" />
+        <asmFile fName="Const.h" fPath="\Const.h" />
+        <asmFile fName="COSMOCmacros.h" fPath="\COSMOCmacros.h" />
+        <asmFile fName="Display.c" fPath="\Display.c" />
+        <asmFile fName="display.h" fPath="\display.h" />
+        <asmFile fName="EXTI.h" fPath="\EXTI.h" />
+        <asmFile fName="EXTVar.h" fPath="\EXTVar.h" />
+        <asmFile fName="GPIO.h" fPath="\GPIO.h" />
+        <asmFile fName="initSys.c" fPath="\initSys.c" />
+        <asmFile fName="interrupt_vector.c" fPath="\interrupt_vector.c" />
+        <asmFile fName="interrupt_vector.h" fPath="\interrupt_vector.h" />
+        <asmFile fName="Key.c" fPath="\Key.c" />
+        <asmFile fName="KeyCodeTbl.H" fPath="\KeyCodeTbl.H" />
+        <asmFile fName="Main.c" fPath="\Main.c" />
+        <asmFile fName="main.h" fPath="\main.h" />
+        <asmFile fName="PT.h" fPath="\PT.h" />
+        <asmFile fName="T500msSbr.c" fPath="\T500msSbr.c" />
+        <asmFile fName="Tables.h" fPath="\Tables.h" />
+        <asmFile fName="TM1628.c" fPath="\TM1628.c" />
+        <asmFile fName="Var.h" fPath="\Var.h" />
+        <asmFile fName="说明.H" fPath="\说明.H" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="D7" Value0="" Value1="" Value2="" Value3="" Value4="" Value5="" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="C" />
+</Project>

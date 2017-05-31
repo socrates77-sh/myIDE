@@ -1,0 +1,62 @@
+L 1					ORG	$80
+L 2				Flag1		DS	1
+L 3				Flag2		DS	1
+L 4				KeyCnt		DS	1
+L 5				ADCCnt		DS	1	;计算平均值用
+L 6				TempAD		DS	1
+L 7				TempADBuf	DS	2
+L 8				VAD			DS	1
+L 9				VADBuf		DS	2
+L 10				ADCnt		DS	1
+L 11				Stauts		DS	1
+L 12				KeyLong		DS	1
+L 13				T50ms		DS	1
+L 14				T100ms		DS	1
+L 15				CellV		DS	1
+L 16				T500ms		DS	1
+L 17				Buf			DS	1
+L 18				TempOpDly	DS	1
+L 19				TempShDly	DS	1
+L 20				FlashCnt	DS	1
+L 21				V38CNT		DS	1
+L 22				V32CNT		DS	1
+L 23				CellDly		DS	1
+L 24				
+L 25				Test		DS	1
+L 26				Test1		DS	1
+L 27				CellLow		EQU	$F1
+L 28				;标志定义-------------------------------------
+L 29				
+L 30				FTempOver	define	0,Flag1
+L 31				FKeyAck		define	1,Flag1
+L 32				FFlash50	define	2,Flag1	
+L 33				FFlash100	define	3,Flag1 
+L 34				FADOver		define	4,Flag1 
+L 35				FERR 		define	5,Flag1 
+L 36				F32V		define	6,Flag1 
+L 37				F38V		define	7,Flag1 
+L 38				
+L 39				F2ms		define	0,Flag2
+L 40				FVin		define	1,Flag2
+L 41				;C8ms		EQU	$80
+L 42				;端口定义-------------------------------------
+L 43				pKey	define	3,P0
+L 44				pLED1	define	5,P1
+L 45				pLED2	define	3,P1
+L 46				pLED3	define	0,P1
+L 47				pLED4	define	2,P0
+L 48				pHeat	define	2,P1
+L 49				pCharge	define	1,P1
+L 50				pVIn	define	4,P0
+L 51				pPwr	define	4,P1
+L 52				;常数定义-------------------------------------
+L 53				CV32	EQU $6F 	;3.2V
+L 54				CV38	EQU	$84		;3.8V
+L 55				CV41	EQU	$91		;4.15V
+L 56				CT38	EQU	$6D
+L 57				CT41	EQU $74
+L 58				CT42	EQU	$76
+L 59				CT45	EQU $7D
+L 60					
+L 61				
+L 62				

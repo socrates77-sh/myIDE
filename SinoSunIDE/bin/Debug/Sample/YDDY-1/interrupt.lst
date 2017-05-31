@@ -1,0 +1,21 @@
+L 1				WDTISbr:
+L 2				SWISbr:    
+L 3				INT1Sbr:
+L 4				INT0Sbr:
+L 5				TMI2Sbr:
+L 6				TMI1Sbr:
+L 7				KBISbr:
+L 8	[5]	1A09	1C16	    BSET    KBIC
+L 9	[5]	1A0B	1F0B	    BCLR    T1IF
+L 10	[5]	1A0D	1716	    BCLR    WDTF
+L 11	[5]	1A0F	1111	    BCLR    INT1F
+L 12	[5]	1A11	1911	    BCLR    INT0F
+L 13	[5]	1A13	1F10	    BCLR    T2IF
+L 14	[9]	1A15	80	    RTI
+L 15				TMI0Sbr:
+L 16	[5]	1A16	1F08	    BCLR    T0IF
+L 17	[5]	1A18	1081	    BSET	F2ms
+L 18	[9]	1A1A	80	    RTI
+L 19					
+L 20				    
+L 21				

@@ -1,0 +1,302 @@
+gpasm-0.7.0 (Nov 19 2012)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc30p011\mc311_test.asm2012-11-21  16:12:44         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #include mc30p01a.inc
+                      00001         LIST
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00179         LIST
+                      00002 
+                      00003 
+                      00004 
+                      00005 
+0000                  00006 .data 
+0000                  00007 acc_temp
+0000                  00008 status_temp
+0000                  00009 r1
+0000                  00010 r2
+0000                  00011 work_flag1
+0000                  00012 work_flag2
+0000                  00013 error_flag
+                      00014 
+0000                  00015 time_125us
+0000                  00016 time_1ms
+0000                  00017 time_10ms
+0000                  00018 time_100ms
+0000                  00019 time_1s
+0000                  00020 time_1min
+0000                  00021 time_1hour
+                      00022 ;endc
+                      00023 
+                      00024 #define sks 0x20a5
+                      00025 
+                      00026 ;extern akbk;
+0000                  00027 .code
+                      00028     org 3ffh
+03FF   1D8E           00029     clrr INTE ; disable all interrupt
+                      00030               
+                      00031     org 00h ;ksks
+0000   2800           00032     goto lab_start
+0001   0BA5           00033     movai low(sks)
+0002   0B20           00034     movai high(sks)
+                      00035 
+                      00036     ;movar akbk
+                      00037    
+                      00038     org 08h
+0008                  00039 fn_interrupt_sub:
+0008   1580           00040     movra    acc_temp
+0009   1603           00041     movar    STATUS
+000A   1580           00042     movra    status_temp
+                      00043 ;*******判断是哪个中断*****
+000B                  00044 start_just_int:
+                      00045  ;int0
+000B   310E           00046     jbset    INT0IF
+000C   2800           00047     goto    exit_interrupt
+000D   3D0E           00048     bclr    INT0IF
+000E   0000           00049  nop
+000F   0000           00050  nop
+0010                  00051 exit_interrupt:
+0010   1600           00052     movar    status_temp
+0011   1583           00053     movra    STATUS
+0012   1600           00054     movar    acc_temp
+0013   000D           00055     retie
+                      00056 ;;*******软中断代码***********
+                      00057 ;soft_interrupt:
+                      00058 ;    movar    status_temp
+                      00059 ;    movra    STATUS
+                      00060 ;    movar    acc_temp
+                      00061 ;    retie
+                      00062 ; rti  
+                      00063 
+                      00064 
+                      00065   
+0014                  00066 lab_start:
+                      00067     ;fill    0x0000,5
+                      00068     
+                      00069     ; dt "abcde"
+0014   0B06           00070     movai   4|6;
+0015   0B09           00071     movai   '\t'
+0016   15C5           00072     movra   P5IOC ;p0 output
+0017   0BFF           00073     movai   0xFF
+0018   15C6           00074     movra   P6IOC ;p1 input
+0019   3C0D           00075     bclr    PHCON,0    ;开P10上拉    bclr    INT0M
+                      00076       ;movai 0x12
+                      00077       ;movra FSR
+                      00078       ;movai 0x0a
+                      00079       ;movra INDF
+                      00080       ;incr INDF
+                      00081       ;movai 0x20
+                      00082       ;movra FSR
+                      00083       ;incr INDF
+                      00084       ;movai 0x34
+                      00085       ;movra FSR
+                      00086       ;incr INDF
+                      00087       ;incr INDF
+                      00088       
+                      00089       
+                      00090       
+001A   3B8E           00091       bset GIE
+                      00092       
+001B                  00093 loop: 
+001B   0B55           00094     movai 0x55
+001C   1590           00095     movra 0x10
+001D   15CE           00096     movra 0x4e
+001E   1990           00097     incr  0x10
+                      00098  ;   goto $-1
+                      00099     
+001F   2000           00100     call int0_cfg_l
+                      00101     ;sleep;    
+0020   0BFE           00102     movai 0xfe
+0021   1585           00103      movra   P0
+0022   0000           00104     nop
+0023   2000           00105     call fun001
+0024   0000           00106     nop
+0025   0B00           00107     movai 0x00
+0026   1585           00108     movra P0
+0027   0000           00109     nop
+0028   0000           00110     nop
+0029   2000           00111     call int0_cfg_h
+                      00112     ;sleep
+                      00113     ;movai 0xfe
+                      00114     ;movra   P0
+                      00115     ;nop
+                      00116     ;nop
+                      00117     ;movai 0x00
+                      00118     ;movra P0
+                      00119     ;nop
+                      00120     ;nop
+002A   2800           00121     goto loop
+                      00122     
+002B                  00123 fun001:
+002B   0000           00124     nop
+002C   2000           00125     call fun002
+002D   0000           00126     nop
+002E   000C           00127     return
+002F                  00128 fun002:
+002F   0000           00129     nop
+0030   2000           00130     call fun003
+0031   0000           00131     nop
+0032   000C           00132     return
+0033                  00133 fun003:
+0033   0000           00134     nop
+0034   000C           00135     return    
+                      00136 ;*****int0 cfg************************
+                      00137 ;*****下降沿触发**********************
+0035                  00138 int0_cfg_l:    
+Error[113]  : Symbol not previously defined (DDR1).
+0035   3800           00139     bset    DDR1,0    ;P10输入    
+0036   3C0D           00140     bclr    PHCON,0    ;开P10上拉    
+Error[128]  : Missing argument(s).
+0037                  00141     bclr    INT0M    
+0037   3B08           00142     bset    EIS    
+0038   390E           00143     bset    INT0IE    ;开中断    
+0039   3F88           00144     bclr    WDTEN    
+                      00145     ;sleep    
+003A   000C           00146     return;
+                      00147 ;**************************************
+003B                  00148 int0_cfg_h:    
+Error[113]  : Symbol not previously defined (DDR1).
+003B   3800           00149     bset    DDR1,0    ;P10输入    
+003C   3C0D           00150     bclr    PHCON,0    ;开P10上拉    
+Error[128]  : Missing argument(s).
+003D                  00151     bset    INT0M    
+003D   3B08           00152     bset    EIS    
+003E   390E           00153     bset    INT0IE    ;开中断    
+003F   3F88           00154     bclr    WDTEN    
+                      00155     ;sleep    
+0040   000C           00156     return;
+                      00157     
+                      00158     end
+gpasm-0.7.0 (Nov 19 2012)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc30p011\mc311_test.asm2012-11-21  16:12:44         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+.code                             00000000
+.data                             00000000
+FSR                               00000004
+GPR                               00000007
+INDF                              00000000
+INTECON                           0000000E
+INTEDG                            00000006
+INTEFLAG                          0000000E
+KBIM                              00000009
+MCR                               00000008
+ODCON                             0000000C
+OPT                               00000041
+P0                                00000005
+P1                                00000006
+P5IOC                             00000045
+P6IOC                             00000046
+PCL                               00000002
+PCLATH                            0000000A
+PDCON                             0000000B
+PHCON                             0000000D
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+STATUS                            00000003
+T0CNT                             00000001
+T0CS                              00000005
+T0SE                              00000004
+_BOR_15                           00003FF8
+_BOR_18                           00003FF9
+_BOR_20                           00003FFA
+_BOR_22                           00003FFB
+_BOR_24                           00003FFC
+_BOR_26                           00003FFD
+_BOR_36                           00003FFF
+_CONFIG1                          00002000
+_CONFIG2                          00002001
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_FCPU_2T                          00003F7F
+_FCPU_4T                          00003FFF
+_FOSC_1M                          00003FCF
+_FOSC_2M                          00003FDF
+_FOSC_32K                         00003F9F
+_FOSC_455K                        00003FAF
+_FOSC_4M                          00003FEF
+_FOSC_500K                        00003FBF
+_FOSC_62P5K                       00003F8F
+_FOSC_8M                          00003FFF
+_MCLR_OFF                         00003FF7
+_MCLR_ON                          00003FFF
+_MCU_EMC                          00003BFF
+_MCU_FEL                          00003FFF
+_OSCM_HS                          00003FFF
+_OSCM_IRC                         000037FF
+_OSCM_LP                          00003FFF
+_RDPORT_PIN                       00003FFF
+_RDPORT_REG                       00003EFF
+_ROTP_100N                        00001FFF
+_ROTP_200N                        00002FFF
+_ROTP_300N                        00000FFF
+_ROTP_HALFCPU                     00003FFF
+_SMT_OFF                          00003DFF
+_SMT_ON                           00003EFF
+_TWDT_18_18                       00003FFF
+_TWDT_288_288                     00003DFF
+_TWDT_4P5_4P5                     00003EFF
+_TWDT_72_72                       00003CFF
+_TWDT_P140_18                     00003BFF
+_TWDT_P140_288                    000039FF
+_TWDT_P140_4P5                    00003AFF
+_TWDT_P140_72                     000038FF
+_WDT_OFF                          000037FF
+_WDT_ON                           00003FFF
+__30P01A                          00000001
+acc_temp                          00000000
+error_flag                        00000000
+exit_interrupt                    00000010
+fn_interrupt_sub                  00000008
+fun001                            0000002B
+fun002                            0000002F
+fun003                            00000033
+int0_cfg_h                        0000003B
+int0_cfg_l                        00000035
+lab_start                         00000014
+loop                              0000001B
+r1                                00000000
+r2                                00000000
+start_just_int                    0000000B
+status_temp                       00000000
+time_100ms                        00000000
+time_10ms                         00000000
+time_125us                        00000000
+time_1hour                        00000000
+time_1min                         00000000
+time_1ms                          00000000
+time_1s                           00000000
+work_flag1                        00000000
+work_flag2                        00000000
+C                                 STATUS,0
+DC                                STATUS,1
+EIS                               MCR,6
+GIE                               INTECON,7
+GPR0                              STATUS,5
+GPR1                              STATUS,6
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INTE                              INTECON
+INTF                              INTEFLAG
+KBIE                              INTECON,1
+KBIF                              INTF,1
+PD                                STATUS,3
+RST                               STATUS,7
+T0IE                              INTECON,0
+T0IF                              INTF,0
+TO                                STATUS,4
+WDTEN                             MCR,7
+Z                                 STATUS,2
+sks                               0x20a5
+
+Errors   :     4
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

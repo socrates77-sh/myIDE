@@ -1,0 +1,39 @@
+gplink-1.6.1 (Jan 23 2014)
+Listing File Generated: 2014-5-8  13:42:56
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           IOP0	EQU	0X1C0
+                                           OEP0	EQU	0X1C1
+                                           	
+                                           
+                                           
+                                           	org 0x00
+000000   a001     goto    0x1              	goto	main
+                                           
+                                           
+                                           main:
+000001   3cff     movai   0xff             	movai	0xff
+000002   57c1     movra   0x1c1                   	movra	OEP0		
+                                           	
+                                           loop:
+000003   3cff     movai   0xff                    	movai	0xff
+000004   57c0     movra   0x1c0                   	movra	IOP0
+000005   0000     nop                              nop
+000006   0000     nop                              nop
+000007   77c0     clrr    0x1c0                    clrr	IOP0
+000008   0000     nop                       nop
+000009   a003     goto    0x3                      goto	loop
+                                           	end       
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXX------------ ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    10
+

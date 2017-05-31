@@ -1,0 +1,1156 @@
+gpasm-1.7.0_beta1 (Nov 26 2015)aaaa.asm           2016-1-4  11:45:21           PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 #include mc30p011.inc
+                      00001         LIST
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00190         LIST
+                      00003 
+                      00004   org 0x0
+0000   2812           00005   goto  0x12
+0001   000D           00006   retie
+0002   0EFF           00007   addai 0xff
+0003   0EFF           00008   addai 0xff
+0004   0EFF           00009   addai 0xff
+0005   0EFF           00010   addai 0xff
+0006   0EFF           00011   addai 0xff
+0007   0EFF           00012   addai 0xff
+0008   290D           00013   goto  0x10d
+0009   1F82           00014   addra 0x2
+000A   0A20           00015   retai 0x20
+000B   0A23           00016   retai 0x23
+000C   0A30           00017   retai 0x30
+000D   0A33           00018   retai 0x33
+000E   0A40           00019   retai 0x40
+000F   0A43           00020   retai 0x43
+0010   0A50           00021   retai 0x50
+0011   0A53           00022   retai 0x53
+0012   3D90           00023   bclr  0x10, 0x3
+0013   1603           00024   movar 0x3
+0014   0D98           00025   andai 0x98
+0015   3503           00026   jbclr 0x3, 0x2
+0016   3990           00027   bset  0x10, 0x3
+0017   000E           00028   clrwdt
+0018   3F8E           00029   bclr  0xe, 0x7
+0019   0B02           00030   movai 0x2
+001A   15C1           00031   movra 0x41
+001B   1D00           00032   clra
+001C   1583           00033   movra 0x3
+001D   1588           00034   movra 0x8
+001E   158F           00035   movra 0xf
+001F   158E           00036   movra 0xe
+0020   0BBA           00037   movai 0xba
+0021   15C6           00038   movra 0x46
+0022   0B02           00039   movai 0x2
+0023   3790           00040   jbclr 0x10, 0x7
+0024   0B42           00041   movai 0x42
+0025   1586           00042   movra 0x6
+0026   0BFF           00043   movai 0xff
+0027   158B           00044   movra 0xb
+0028   0B00           00045   movai 0
+0029   158C           00046   movra 0xc
+002A   0B0F           00047   movai 0xf
+002B   15C5           00048   movra 0x45
+002C   0BCF           00049   movai 0xcf
+002D   158D           00050   movra 0xd
+002E   2247           00051   call  0x247
+002F   3590           00052   jbclr 0x10, 0x3
+0030   285E           00053   goto  0x5e
+0031   0B10           00054   movai 0x10
+0032   1584           00055   movra 0x4
+0033   1D80           00056   clrr  0
+0034   1984           00057   incr  0x4
+0035   1604           00058   movar 0x4
+0036   0D3F           00059   andai 0x3f
+0037   0830           00060   xorai 0x30
+0038   3103           00061   jbset 0x3, 0x2
+0039   2833           00062   goto  0x33
+003A   0B03           00063   movai 0x3
+003B   2160           00064   call  0x160
+003C   224A           00065   call  0x24a
+003D   0B28           00066   movai 0x28
+003E   15AA           00067   movra 0x2a
+003F   3606           00068   jbclr 0x6, 0x4
+0040   284B           00069   goto  0x4b
+0041   0BFA           00070   movai 0xfa
+0042   2352           00071   call  0x352
+0043   3606           00072   jbclr 0x6, 0x4
+0044   284B           00073   goto  0x4b
+0045   3C06           00074   bclr  0x6, 0
+0046   391A           00075   bset  0x1a, 0x2
+0047   3906           00076   bset  0x6, 0x2
+0048   3B06           00077   bset  0x6, 0x6
+0049   222A           00078   call  0x22a
+004A   292D           00079   goto  0x12d
+004B   0B10           00080   movai 0x10
+004C   1591           00081   movra 0x11
+004D   23D8           00082   call  0x3d8
+004E   161F           00083   movar 0x1f
+004F   15A4           00084   movra 0x24
+0050   161E           00085   movar 0x1e
+0051   0955           00086   isubai        0x55
+0052   3503           00087   jbclr 0x3, 0x2
+0053   285C           00088   goto  0x5c
+0054   0B55           00089   movai 0x55
+0055   159E           00090   movra 0x1e
+0056   0B00           00091   movai 0
+0057   159F           00092   movra 0x1f
+0058   15A4           00093   movra 0x24
+0059   0B10           00094   movai 0x10
+005A   1591           00095   movra 0x11
+005B   23C6           00096   call  0x3c6
+005C   21AB           00097   call  0x1ab
+005D   2876           00098   goto  0x76
+005E   224A           00099   call  0x24a
+005F   2166           00100   call  0x166
+0060   19AE           00101   incr  0x2e
+0061   0B0B           00102   movai 0xb
+0062   122E           00103   rsubar        0x2e
+0063   3003           00104   jbset 0x3, 0
+0064   28F9           00105   goto  0xf9
+0065   1DAE           00106   clrr  0x2e
+0066   16AA           00107   movr  0x2a
+0067   3103           00108   jbset 0x3, 0x2
+0068   1BAA           00109   decr  0x2a
+0069   16AF           00110   movr  0x2f
+006A   3103           00111   jbset 0x3, 0x2
+006B   1BAF           00112   decr  0x2f
+006C   3210           00113   jbset 0x10, 0x4
+006D   2875           00114   goto  0x75
+006E   19AC           00115   incr  0x2c
+006F   0B06           00116   movai 0x6
+0070   122C           00117   rsubar        0x2c
+0071   3003           00118   jbset 0x3, 0
+0072   2875           00119   goto  0x75
+0073   3906           00120   bset  0x6, 0x2
+0074   1DAC           00121   clrr  0x2c
+0075   21F9           00122   call  0x1f9
+0076   1DAD           00123   clrr  0x2d
+0077   3C06           00124   bclr  0x6, 0
+0078   000E           00125   clrwdt
+0079   0B02           00126   movai 0x2
+007A   15C1           00127   movra 0x41
+007B   1D81           00128   clrr  0x1
+007C   0B01           00129   movai 0x1
+007D   158E           00130   movra 0xe
+007E   3B8E           00131   bset  0xe, 0x7
+007F   3890           00132   bset  0x10, 0x1
+0080   0B14           00133   movai 0x14
+0081   159D           00134   movra 0x1d
+0082   000E           00135   clrwdt
+0083   2239           00136   call  0x239
+0084   2166           00137   call  0x166
+0085   2201           00138   call  0x201
+0086   2258           00139   call  0x258
+0087   2286           00140   call  0x286
+0088   2AAB           00141   goto  0x2ab
+0089   3110           00142   jbset 0x10, 0x2
+008A   28E8           00143   goto  0xe8
+008B   3D10           00144   bclr  0x10, 0x2
+008C   1622           00145   movar 0x22
+008D   1229           00146   rsubar        0x29
+008E   3103           00147   jbset 0x3, 0x2
+008F   2893           00148   goto  0x93
+0090   1696           00149   movr  0x16
+0091   3103           00150   jbset 0x3, 0x2
+0092   28E8           00151   goto  0xe8
+0093   1622           00152   movar 0x22
+0094   15A9           00153   movra 0x29
+0095   1D94           00154   clrr  0x14
+0096   1614           00155   movar 0x14
+0097   2009           00156   call  0x9
+0098   1591           00157   movra 0x11
+0099   23D8           00158   call  0x3d8
+009A   1620           00159   movar 0x20
+009B   129E           00160   rsubra        0x1e
+009C   3103           00161   jbset 0x3, 0x2
+009D   28A5           00162   goto  0xa5
+009E   1621           00163   movar 0x21
+009F   129F           00164   rsubra        0x1f
+00A0   3103           00165   jbset 0x3, 0x2
+00A1   28A5           00166   goto  0xa5
+00A2   3C90           00167   bclr  0x10, 0x1
+00A3   218A           00168   call  0x18a
+00A4   28E8           00169   goto  0xe8
+00A5   1994           00170   incr  0x14
+00A6   0B08           00171   movai 0x8
+00A7   1214           00172   rsubar        0x14
+00A8   3003           00173   jbset 0x3, 0
+00A9   2896           00174   goto  0x96
+00AA   3710           00175   jbclr 0x10, 0x6
+00AB   28BA           00176   goto  0xba
+00AC   16AA           00177   movr  0x2a
+00AD   3503           00178   jbclr 0x3, 0x2
+00AE   28E8           00179   goto  0xe8
+00AF   1622           00180   movar 0x22
+00B0   092F           00181   isubai        0x2f
+00B1   3103           00182   jbset 0x3, 0x2
+00B2   28E8           00183   goto  0xe8
+00B3   0B04           00184   movai 0x4
+00B4   1596           00185   movra 0x16
+00B5   3C90           00186   bclr  0x10, 0x1
+00B6   3B10           00187   bset  0x10, 0x6
+00B7   0B28           00188   movai 0x28
+00B8   15AA           00189   movra 0x2a
+00B9   28E8           00190   goto  0xe8
+00BA   1DAA           00191   clrr  0x2a
+00BB   1622           00192   movar 0x22
+00BC   0922           00193   isubai        0x22
+00BD   3503           00194   jbclr 0x3, 0x2
+00BE   28CD           00195   goto  0xcd
+00BF   1622           00196   movar 0x22
+00C0   0921           00197   isubai        0x21
+00C1   3503           00198   jbclr 0x3, 0x2
+00C2   28CD           00199   goto  0xcd
+00C3   1622           00200   movar 0x22
+00C4   0DE0           00201   andai 0xe0
+00C5   0920           00202   isubai        0x20
+00C6   3103           00203   jbset 0x3, 0x2
+00C7   28CD           00204   goto  0xcd
+00C8   0B24           00205   movai 0x24
+00C9   1222           00206   rsubar        0x22
+00CA   3503           00207   jbclr 0x3, 0x2
+00CB   21B8           00208   call  0x1b8
+00CC   28E8           00209   goto  0xe8
+00CD   3F10           00210   bclr  0x10, 0x6
+00CE   3C90           00211   bclr  0x10, 0x1
+00CF   0B04           00212   movai 0x4
+00D0   1596           00213   movra 0x16
+00D1   1624           00214   movar 0x24
+00D2   2009           00215   call  0x9
+00D3   1591           00216   movra 0x11
+00D4   1620           00217   movar 0x20
+00D5   159E           00218   movra 0x1e
+00D6   1621           00219   movar 0x21
+00D7   159F           00220   movra 0x1f
+00D8   23C6           00221   call  0x3c6
+00D9   0B1E           00222   movai 0x1e
+00DA   2352           00223   call  0x352
+00DB   19A4           00224   incr  0x24
+00DC   0B08           00225   movai 0x8
+00DD   1224           00226   rsubar        0x24
+00DE   3503           00227   jbclr 0x3, 0x2
+00DF   1DA4           00228   clrr  0x24
+00E0   0B55           00229   movai 0x55
+00E1   159E           00230   movra 0x1e
+00E2   1624           00231   movar 0x24
+00E3   159F           00232   movra 0x1f
+00E4   0B10           00233   movai 0x10
+00E5   1591           00234   movra 0x11
+00E6   23C6           00235   call  0x3c6
+00E7   21EB           00236   call  0x1eb
+00E8   3710           00237   jbclr 0x10, 0x6
+00E9   2882           00238   goto  0x82
+00EA   349A           00239   jbclr 0x1a, 0x1
+00EB   2882           00240   goto  0x82
+00EC   16A6           00241   movr  0x26
+00ED   3103           00242   jbset 0x3, 0x2
+00EE   2882           00243   goto  0x82
+00EF   1696           00244   movr  0x16
+00F0   3103           00245   jbset 0x3, 0x2
+00F1   2882           00246   goto  0x82
+00F2   169D           00247   movr  0x1d
+00F3   3503           00248   jbclr 0x3, 0x2
+00F4   3C90           00249   bclr  0x10, 0x1
+00F5   3490           00250   jbclr 0x10, 0x1
+00F6   2882           00251   goto  0x82
+00F7   351A           00252   jbclr 0x1a, 0x2
+00F8   2882           00253   goto  0x82
+00F9   2258           00254   call  0x258
+00FA   1626           00255   movar 0x26
+00FB   3103           00256   jbset 0x3, 0x2
+00FC   2876           00257   goto  0x76
+00FD   1D96           00258   clrr  0x16
+00FE   3806           00259   bset  0x6, 0
+00FF   3F8E           00260   bclr  0xe, 0x7
+0100   1D00           00261   clra
+0101   1583           00262   movra 0x3
+0102   1588           00263   movra 0x8
+0103   0B09           00264   movai 0x9
+0104   15C1           00265   movra 0x41
+0105   000E           00266   clrwdt
+0106   1D00           00267   clra
+0107   158E           00268   movra 0xe
+0108   0B80           00269   movai 0x80
+0109   1588           00270   movra 0x8
+010A   000B           00271   sleep
+010B   0000           00272   nop
+010C   2882           00273   goto  0x82
+010D   1592           00274   movra 0x12
+010E   1192           00275   swapr 0x12
+010F   1103           00276   swapar        0x3
+0110   1593           00277   movra 0x13
+0111   300F           00278   jbset 0xf, 0
+0112   2929           00279   goto  0x129
+0113   3C0F           00280   bclr  0xf, 0
+0114   0B15           00281   movai 0x15
+0115   1581           00282   movra 0x1
+0116   169D           00283   movr  0x1d
+0117   3103           00284   jbset 0x3, 0x2
+0118   1B9D           00285   decr  0x1d
+0119   1997           00286   incr  0x17
+011A   199B           00287   incr  0x1b
+011B   19AD           00288   incr  0x2d
+011C   3503           00289   jbclr 0x3, 0x2
+011D   3810           00290   bset  0x10, 0
+011E   162D           00291   movar 0x2d
+011F   0D7F           00292   andai 0x7f
+0120   3103           00293   jbset 0x3, 0x2
+0121   2929           00294   goto  0x129
+0122   3310           00295   jbset 0x10, 0x6
+0123   2927           00296   goto  0x127
+0124   0B04           00297   movai 0x4
+0125   1086           00298   xorra 0x6
+0126   2929           00299   goto  0x129
+0127   3610           00300   jbclr 0x10, 0x4
+0128   3D06           00301   bclr  0x6, 0x2
+0129   1113           00302   swapar        0x13
+012A   1583           00303   movra 0x3
+012B   1112           00304   swapar        0x12
+012C   000D           00305   retie
+012D   000E           00306   clrwdt
+012E   3206           00307   jbset 0x6, 0x4
+012F   292D           00308   goto  0x12d
+0130   0B0A           00309   movai 0xa
+0131   2352           00310   call  0x352
+0132   3206           00311   jbset 0x6, 0x4
+0133   292D           00312   goto  0x12d
+0134   223F           00313   call  0x23f
+0135   000E           00314   clrwdt
+0136   2258           00315   call  0x258
+0137   33A6           00316   jbset 0x26, 0x7
+0138   2935           00317   goto  0x135
+0139   3FA6           00318   bclr  0x26, 0x7
+013A   0B0A           00319   movai 0xa
+013B   2160           00320   call  0x160
+013C   3D06           00321   bclr  0x6, 0x2
+013D   3C1A           00322   bclr  0x1a, 0
+013E   000E           00323   clrwdt
+013F   216C           00324   call  0x16c
+0140   301A           00325   jbset 0x1a, 0
+0141   293E           00326   goto  0x13e
+0142   3C1A           00327   bclr  0x1a, 0
+0143   0B14           00328   movai 0x14
+0144   2160           00329   call  0x160
+0145   000E           00330   clrwdt
+0146   224D           00331   call  0x24d
+0147   3210           00332   jbset 0x10, 0x4
+0148   2945           00333   goto  0x145
+0149   2225           00334   call  0x225
+014A   0B06           00335   movai 0x6
+014B   2160           00336   call  0x160
+014C   223F           00337   call  0x23f
+014D   0B55           00338   movai 0x55
+014E   159E           00339   movra 0x1e
+014F   0B70           00340   movai 0x70
+0150   1591           00341   movra 0x11
+0151   23C6           00342   call  0x3c6
+0152   0B64           00343   movai 0x64
+0153   2352           00344   call  0x352
+0154   1D9E           00345   clrr  0x1e
+0155   0B70           00346   movai 0x70
+0156   1591           00347   movra 0x11
+0157   23D8           00348   call  0x3d8
+0158   0B55           00349   movai 0x55
+0159   129E           00350   rsubra        0x1e
+015A   3103           00351   jbset 0x3, 0x2
+015B   295F           00352   goto  0x15f
+015C   21AB           00353   call  0x1ab
+015D   3D1A           00354   bclr  0x1a, 0x2
+015E   2876           00355   goto  0x76
+015F   2876           00356   goto  0x76
+0160   1594           00357   movra 0x14
+0161   0BFA           00358   movai 0xfa
+0162   2352           00359   call  0x352
+0163   1A94           00360   djzr  0x14
+0164   2961           00361   goto  0x161
+0165   000C           00362   return
+0166   3710           00363   jbclr 0x10, 0x6
+0167   2989           00364   goto  0x189
+0168   3390           00365   jbset 0x10, 0x7
+0169   2989           00366   goto  0x189
+016A   3290           00367   jbset 0x10, 0x5
+016B   2989           00368   goto  0x189
+016C   161A           00369   movar 0x1a
+016D   0D08           00370   andai 0x8
+016E   1594           00371   movra 0x14
+016F   1606           00372   movar 0x6
+0170   0D08           00373   andai 0x8
+0171   1214           00374   rsubar        0x14
+0172   3503           00375   jbclr 0x3, 0x2
+0173   2989           00376   goto  0x189
+0174   0B01           00377   movai 0x1
+0175   2352           00378   call  0x352
+0176   1606           00379   movar 0x6
+0177   0D08           00380   andai 0x8
+0178   1214           00381   rsubar        0x14
+0179   3503           00382   jbclr 0x3, 0x2
+017A   2989           00383   goto  0x189
+017B   3D9A           00384   bclr  0x1a, 0x3
+017C   1606           00385   movar 0x6
+017D   0D08           00386   andai 0x8
+017E   179A           00387   orra  0x1a
+017F   3503           00388   jbclr 0x3, 0x2
+0180   2989           00389   goto  0x189
+0181   381A           00390   bset  0x1a, 0
+0182   0B07           00391   movai 0x7
+0183   15C5           00392   movra 0x45
+0184   3D85           00393   bclr  0x5, 0x3
+0185   0BFA           00394   movai 0xfa
+0186   2352           00395   call  0x352
+0187   0B0F           00396   movai 0xf
+0188   15C5           00397   movra 0x45
+0189   000C           00398   return
+018A   0B05           00399   movai 0x5
+018B   1596           00400   movra 0x16
+018C   3710           00401   jbclr 0x10, 0x6
+018D   29B8           00402   goto  0x1b8
+018E   1622           00403   movar 0x22
+018F   0DE0           00404   andai 0xe0
+0190   0920           00405   isubai        0x20
+0191   3103           00406   jbset 0x3, 0x2
+0192   29B1           00407   goto  0x1b1
+0193   1622           00408   movar 0x22
+0194   0922           00409   isubai        0x22
+0195   3503           00410   jbclr 0x3, 0x2
+0196   29AB           00411   goto  0x1ab
+0197   1622           00412   movar 0x22
+0198   0921           00413   isubai        0x21
+0199   3503           00414   jbclr 0x3, 0x2
+019A   29AC           00415   goto  0x1ac
+019B   0B24           00416   movai 0x24
+019C   1222           00417   rsubar        0x22
+019D   3503           00418   jbclr 0x3, 0x2
+019E   29AD           00419   goto  0x1ad
+019F   0B28           00420   movai 0x28
+01A0   1222           00421   rsubar        0x22
+01A1   3503           00422   jbclr 0x3, 0x2
+01A2   29AF           00423   goto  0x1af
+01A3   1622           00424   movar 0x22
+01A4   092F           00425   isubai        0x2f
+01A5   3103           00426   jbset 0x3, 0x2
+01A6   29F8           00427   goto  0x1f8
+01A7   3B10           00428   bset  0x10, 0x6
+01A8   0B28           00429   movai 0x28
+01A9   15AA           00430   movra 0x2a
+01AA   29F8           00431   goto  0x1f8
+01AB   2A98           00432   goto  0x298
+01AC   2A93           00433   goto  0x293
+01AD   222F           00434   call  0x22f
+01AE   29F8           00435   goto  0x1f8
+01AF   222A           00436   call  0x22a
+01B0   29F8           00437   goto  0x1f8
+01B1   3390           00438   jbset 0x10, 0x7
+01B2   29F8           00439   goto  0x1f8
+01B3   1622           00440   movar 0x22
+01B4   0D0F           00441   andai 0xf
+01B5   3503           00442   jbclr 0x3, 0x2
+01B6   29F8           00443   goto  0x1f8
+01B7   2981           00444   goto  0x181
+01B8   0B24           00445   movai 0x24
+01B9   1222           00446   rsubar        0x22
+01BA   3103           00447   jbset 0x3, 0x2
+01BB   29DE           00448   goto  0x1de
+01BC   1DAA           00449   clrr  0x2a
+01BD   3F10           00450   bclr  0x10, 0x6
+01BE   3F8E           00451   bclr  0xe, 0x7
+01BF   3906           00452   bset  0x6, 0x2
+01C0   1DA4           00453   clrr  0x24
+01C1   0B55           00454   movai 0x55
+01C2   159E           00455   movra 0x1e
+01C3   1624           00456   movar 0x24
+01C4   159F           00457   movra 0x1f
+01C5   0B10           00458   movai 0x10
+01C6   1591           00459   movra 0x11
+01C7   23C6           00460   call  0x3c6
+01C8   0B32           00461   movai 0x32
+01C9   2352           00462   call  0x352
+01CA   1D94           00463   clrr  0x14
+01CB   1614           00464   movar 0x14
+01CC   2009           00465   call  0x9
+01CD   1591           00466   movra 0x11
+01CE   0BFF           00467   movai 0xff
+01CF   159E           00468   movra 0x1e
+01D0   159F           00469   movra 0x1f
+01D1   23C6           00470   call  0x3c6
+01D2   0B1E           00471   movai 0x1e
+01D3   2352           00472   call  0x352
+01D4   1994           00473   incr  0x14
+01D5   0B08           00474   movai 0x8
+01D6   1214           00475   rsubar        0x14
+01D7   3103           00476   jbset 0x3, 0x2
+01D8   29CB           00477   goto  0x1cb
+01D9   0B0A           00478   movai 0xa
+01DA   2160           00479   call  0x160
+01DB   3D06           00480   bclr  0x6, 0x2
+01DC   3B8E           00481   bset  0xe, 0x7
+01DD   000C           00482   return
+01DE   1622           00483   movar 0x22
+01DF   0922           00484   isubai        0x22
+01E0   3503           00485   jbclr 0x3, 0x2
+01E1   29EB           00486   goto  0x1eb
+01E2   1622           00487   movar 0x22
+01E3   0921           00488   isubai        0x21
+01E4   3503           00489   jbclr 0x3, 0x2
+01E5   29EB           00490   goto  0x1eb
+01E6   1622           00491   movar 0x22
+01E7   0DE0           00492   andai 0xe0
+01E8   0920           00493   isubai        0x20
+01E9   3503           00494   jbclr 0x3, 0x2
+01EA   29F8           00495   goto  0x1f8
+01EB   3F10           00496   bclr  0x10, 0x6
+01EC   3F8E           00497   bclr  0xe, 0x7
+01ED   3906           00498   bset  0x6, 0x2
+01EE   0B06           00499   movai 0x6
+01EF   2160           00500   call  0x160
+01F0   3D06           00501   bclr  0x6, 0x2
+01F1   0B04           00502   movai 0x4
+01F2   2160           00503   call  0x160
+01F3   3906           00504   bset  0x6, 0x2
+01F4   0B06           00505   movai 0x6
+01F5   2160           00506   call  0x160
+01F6   3D06           00507   bclr  0x6, 0x2
+01F7   3B8E           00508   bset  0xe, 0x7
+01F8   000C           00509   return
+01F9   16AB           00510   movr  0x2b
+01FA   3503           00511   jbclr 0x3, 0x2
+01FB   2A00           00512   goto  0x200
+01FC   1BAB           00513   decr  0x2b
+01FD   3103           00514   jbset 0x3, 0x2
+01FE   2A00           00515   goto  0x200
+01FF   3A90           00516   bset  0x10, 0x5
+0200   000C           00517   return
+0201   3010           00518   jbset 0x10, 0
+0202   2A1F           00519   goto  0x21f
+0203   3C10           00520   bclr  0x10, 0
+0204   3310           00521   jbset 0x10, 0x6
+0205   2A0C           00522   goto  0x20c
+0206   1BAA           00523   decr  0x2a
+0207   16AA           00524   movr  0x2a
+0208   3103           00525   jbset 0x3, 0x2
+0209   2A0C           00526   goto  0x20c
+020A   3F10           00527   bclr  0x10, 0x6
+020B   3D06           00528   bclr  0x6, 0x2
+020C   16A8           00529   movr  0x28
+020D   3103           00530   jbset 0x3, 0x2
+020E   1BA8           00531   decr  0x28
+020F   1696           00532   movr  0x16
+0210   3503           00533   jbclr 0x3, 0x2
+0211   2A15           00534   goto  0x215
+0212   1B96           00535   decr  0x16
+0213   3503           00536   jbclr 0x3, 0x2
+0214   3890           00537   bset  0x10, 0x1
+0215   21F9           00538   call  0x1f9
+0216   3210           00539   jbset 0x10, 0x4
+0217   2A1F           00540   goto  0x21f
+0218   19AC           00541   incr  0x2c
+0219   0B0C           00542   movai 0xc
+021A   122C           00543   rsubar        0x2c
+021B   3003           00544   jbset 0x3, 0
+021C   2A1F           00545   goto  0x21f
+021D   3906           00546   bset  0x6, 0x2
+021E   1DAC           00547   clrr  0x2c
+021F   000C           00548   return
+0220   1645           00549   movar 0x45
+0221   0DFD           00550   andai 0xfd
+0222   15C5           00551   movra 0x45
+0223   3C85           00552   bclr  0x5, 0x1
+0224   2A34           00553   goto  0x234
+0225   1645           00554   movar 0x45
+0226   0DFB           00555   andai 0xfb
+0227   15C5           00556   movra 0x45
+0228   3D05           00557   bclr  0x5, 0x2
+0229   2A34           00558   goto  0x234
+022A   1646           00559   movar 0x46
+022B   0D7F           00560   andai 0x7f
+022C   15C6           00561   movra 0x46
+022D   3F86           00562   bclr  0x6, 0x7
+022E   2A34           00563   goto  0x234
+022F   1645           00564   movar 0x45
+0230   0DFE           00565   andai 0xfe
+0231   15C5           00566   movra 0x45
+0232   3C05           00567   bclr  0x5, 0
+0233   2A34           00568   goto  0x234
+0234   1D9B           00569   clrr  0x1b
+0235   389A           00570   bset  0x1a, 0x1
+0236   0B28           00571   movai 0x28
+0237   15AF           00572   movra 0x2f
+0238   000C           00573   return
+0239   309A           00574   jbset 0x1a, 0x1
+023A   2A46           00575   goto  0x246
+023B   0B64           00576   movai 0x64
+023C   121B           00577   rsubar        0x1b
+023D   3003           00578   jbset 0x3, 0
+023E   2A46           00579   goto  0x246
+023F   3C9A           00580   bclr  0x1a, 0x1
+0240   1645           00581   movar 0x45
+0241   0C85           00582   orai  0x85
+0242   15C5           00583   movra 0x45
+0243   1646           00584   movar 0x46
+0244   0C02           00585   orai  0x2
+0245   15C6           00586   movra 0x46
+0246   000C           00587   return
+0247   0B1B           00588   movai 0x1b
+0248   1588           00589   movra 0x8
+0249   000C           00590   return
+024A   16AF           00591   movr  0x2f
+024B   3103           00592   jbset 0x3, 0x2
+024C   2A57           00593   goto  0x257
+024D   1608           00594   movar 0x8
+024E   0D20           00595   andai 0x20
+024F   1594           00596   movra 0x14
+0250   1614           00597   movar 0x14
+0251   3103           00598   jbset 0x3, 0x2
+0252   2A55           00599   goto  0x255
+0253   3E10           00600   bclr  0x10, 0x4
+0254   2A57           00601   goto  0x257
+0255   3A10           00602   bset  0x10, 0x4
+0256   2A57           00603   goto  0x257
+0257   000C           00604   return
+0258   227B           00605   call  0x27b
+0259   1227           00606   rsubar        0x27
+025A   3503           00607   jbclr 0x3, 0x2
+025B   2A68           00608   goto  0x268
+025C   0B0A           00609   movai 0xa
+025D   2352           00610   call  0x352
+025E   227B           00611   call  0x27b
+025F   1591           00612   movra 0x11
+0260   1227           00613   rsubar        0x27
+0261   3503           00614   jbclr 0x3, 0x2
+0262   2A68           00615   goto  0x268
+0263   1611           00616   movar 0x11
+0264   15A7           00617   movra 0x27
+0265   3503           00618   jbclr 0x3, 0x2
+0266   2A6B           00619   goto  0x26b
+0267   2A79           00620   goto  0x279
+0268   3626           00621   jbclr 0x26, 0x4
+0269   2A72           00622   goto  0x272
+026A   2A71           00623   goto  0x271
+026B   31A6           00624   jbset 0x26, 0x3
+026C   2A70           00625   goto  0x270
+026D   1DA6           00626   clrr  0x26
+026E   38A6           00627   bset  0x26, 0x1
+026F   2A79           00628   goto  0x279
+0270   1DA6           00629   clrr  0x26
+0271   000C           00630   return
+0272   16A8           00631   movr  0x28
+0273   3103           00632   jbset 0x3, 0x2
+0274   000C           00633   return
+0275   3826           00634   bset  0x26, 0
+0276   3DA6           00635   bclr  0x26, 0x3
+0277   3E26           00636   bclr  0x26, 0x4
+0278   2A79           00637   goto  0x279
+0279   3BA6           00638   bset  0x26, 0x7
+027A   000C           00639   return
+027B   1606           00640   movar 0x6
+027C   0D20           00641   andai 0x20
+027D   0820           00642   xorai 0x20
+027E   1591           00643   movra 0x11
+027F   000C           00644   return
+0280   39A6           00645   bset  0x26, 0x3
+0281   000C           00646   return
+0282   0B05           00647   movai 0x5
+0283   15A8           00648   movra 0x28
+0284   3A26           00649   bset  0x26, 0x4
+0285   000C           00650   return
+0286   33A6           00651   jbset 0x26, 0x7
+0287   2A8F           00652   goto  0x28f
+0288   3FA6           00653   bclr  0x26, 0x7
+0289   3426           00654   jbclr 0x26, 0
+028A   2A90           00655   goto  0x290
+028B   34A6           00656   jbclr 0x26, 0x1
+028C   2A9F           00657   goto  0x29f
+028D   2280           00658   call  0x280
+028E   2282           00659   call  0x282
+028F   000C           00660   return
+0290   3C26           00661   bclr  0x26, 0
+0291   3390           00662   jbset 0x10, 0x7
+0292   2A98           00663   goto  0x298
+0293   3F90           00664   bclr  0x10, 0x7
+0294   3F06           00665   bclr  0x6, 0x6
+0295   1DAB           00666   clrr  0x2b
+0296   2225           00667   call  0x225
+0297   000C           00668   return
+0298   0B09           00669   movai 0x9
+0299   15AB           00670   movra 0x2b
+029A   3E90           00671   bclr  0x10, 0x5
+029B   3B90           00672   bset  0x10, 0x7
+029C   3B06           00673   bset  0x6, 0x6
+029D   2220           00674   call  0x220
+029E   000C           00675   return
+029F   3CA6           00676   bclr  0x26, 0x1
+02A0   222F           00677   call  0x22f
+02A1   000C           00678   return
+02A2   1591           00679   movra 0x11
+02A3   0B05           00680   movai 0x5
+02A4   0EFF           00681   addai 0xff
+02A5   3103           00682   jbset 0x3, 0x2
+02A6   2AA4           00683   goto  0x2a4
+02A7   000E           00684   clrwdt
+02A8   1A91           00685   djzr  0x11
+02A9   2AA3           00686   goto  0x2a3
+02AA   000C           00687   return
+02AB   0B02           00688   movai 0x2
+02AC   1595           00689   movra 0x15
+02AD   1D98           00690   clrr  0x18
+02AE   3486           00691   jbclr 0x6, 0x1
+02AF   2AB3           00692   goto  0x2b3
+02B0   22E9           00693   call  0x2e9
+02B1   3503           00694   jbclr 0x3, 0x2
+02B2   2AE8           00695   goto  0x2e8
+02B3   231F           00696   call  0x31f
+02B4   231F           00697   call  0x31f
+02B5   0903           00698   isubai        0x3
+02B6   3503           00699   jbclr 0x3, 0x2
+02B7   2AE8           00700   goto  0x2e8
+02B8   1A95           00701   djzr  0x15
+02B9   2AB4           00702   goto  0x2b4
+02BA   1D97           00703   clrr  0x17
+02BB   3797           00704   jbclr 0x17, 0x7
+02BC   2AE8           00705   goto  0x2e8
+02BD   230D           00706   call  0x30d
+02BE   22FB           00707   call  0x2fb
+02BF   0B64           00708   movai 0x64
+02C0   1219           00709   rsubar        0x19
+02C1   3003           00710   jbset 0x3, 0
+02C2   2ABB           00711   goto  0x2bb
+02C3   0BA0           00712   movai 0xa0
+02C4   1219           00713   rsubar        0x19
+02C5   3403           00714   jbclr 0x3, 0
+02C6   2ABB           00715   goto  0x2bb
+02C7   1DA3           00716   clrr  0x23
+02C8   1DA0           00717   clrr  0x20
+02C9   1DA1           00718   clrr  0x21
+02CA   1DA2           00719   clrr  0x22
+02CB   0B20           00720   movai 0x20
+02CC   1584           00721   movra 0x4
+02CD   0B04           00722   movai 0x4
+02CE   15A5           00723   movra 0x25
+02CF   0B08           00724   movai 0x8
+02D0   1595           00725   movra 0x15
+02D1   1D9C           00726   clrr  0x1c
+02D2   231F           00727   call  0x31f
+02D3   1594           00728   movra 0x14
+02D4   0901           00729   isubai        0x1
+02D5   3003           00730   jbset 0x3, 0
+02D6   2AE8           00731   goto  0x2e8
+02D7   0900           00732   isubai        0
+02D8   149C           00733   rlr   0x1c
+02D9   1A95           00734   djzr  0x15
+02DA   2AD2           00735   goto  0x2d2
+02DB   161C           00736   movar 0x1c
+02DC   1580           00737   movra 0
+02DD   1984           00738   incr  0x4
+02DE   1AA5           00739   djzr  0x25
+02DF   2ACF           00740   goto  0x2cf
+02E0   1620           00741   movar 0x20
+02E1   1F21           00742   addar 0x21
+02E2   1F22           00743   addar 0x22
+02E3   1223           00744   rsubar        0x23
+02E4   3103           00745   jbset 0x3, 0x2
+02E5   2AE8           00746   goto  0x2e8
+02E6   3910           00747   bset  0x10, 0x2
+02E7   0000           00748   nop
+02E8   2889           00749   goto  0x89
+02E9   000E           00750   clrwdt
+02EA   3486           00751   jbclr 0x6, 0x1
+02EB   2AF6           00752   goto  0x2f6
+02EC   0B01           00753   movai 0x1
+02ED   22A2           00754   call  0x2a2
+02EE   1998           00755   incr  0x18
+02EF   0B96           00756   movai 0x96
+02F0   1218           00757   rsubar        0x18
+02F1   3003           00758   jbset 0x3, 0
+02F2   2AE9           00759   goto  0x2e9
+02F3   1D99           00760   clrr  0x19
+02F4   3903           00761   bset  0x3, 0x2
+02F5   000C           00762   return
+02F6   1618           00763   movar 0x18
+02F7   1599           00764   movra 0x19
+02F8   1D98           00765   clrr  0x18
+02F9   3D03           00766   bclr  0x3, 0x2
+02FA   000C           00767   return
+02FB   000E           00768   clrwdt
+02FC   3486           00769   jbclr 0x6, 0x1
+02FD   2B08           00770   goto  0x308
+02FE   0B01           00771   movai 0x1
+02FF   22A2           00772   call  0x2a2
+0300   1998           00773   incr  0x18
+0301   0BFE           00774   movai 0xfe
+0302   1218           00775   rsubar        0x18
+0303   3003           00776   jbset 0x3, 0
+0304   2AFB           00777   goto  0x2fb
+0305   1D99           00778   clrr  0x19
+0306   3903           00779   bset  0x3, 0x2
+0307   000C           00780   return
+0308   1618           00781   movar 0x18
+0309   1599           00782   movra 0x19
+030A   1D98           00783   clrr  0x18
+030B   3D03           00784   bclr  0x3, 0x2
+030C   000C           00785   return
+030D   000E           00786   clrwdt
+030E   3086           00787   jbset 0x6, 0x1
+030F   2B1A           00788   goto  0x31a
+0310   0B01           00789   movai 0x1
+0311   22A2           00790   call  0x2a2
+0312   1998           00791   incr  0x18
+0313   0B96           00792   movai 0x96
+0314   1218           00793   rsubar        0x18
+0315   3003           00794   jbset 0x3, 0
+0316   2B0D           00795   goto  0x30d
+0317   1D99           00796   clrr  0x19
+0318   3903           00797   bset  0x3, 0x2
+0319   000C           00798   return
+031A   1618           00799   movar 0x18
+031B   1599           00800   movra 0x19
+031C   1D98           00801   clrr  0x18
+031D   3D03           00802   bclr  0x3, 0x2
+031E   000C           00803   return
+031F   230D           00804   call  0x30d
+0320   3503           00805   jbclr 0x3, 0x2
+0321   2B4F           00806   goto  0x34f
+0322   1619           00807   movar 0x19
+0323   0B06           00808   movai 0x6
+0324   1219           00809   rsubar        0x19
+0325   3003           00810   jbset 0x3, 0
+0326   2B4E           00811   goto  0x34e
+0327   0B28           00812   movai 0x28
+0328   1219           00813   rsubar        0x19
+0329   3003           00814   jbset 0x3, 0
+032A   2B34           00815   goto  0x334
+032B   0B29           00816   movai 0x29
+032C   1219           00817   rsubar        0x19
+032D   3003           00818   jbset 0x3, 0
+032E   2B4E           00819   goto  0x34e
+032F   0B6E           00820   movai 0x6e
+0330   1219           00821   rsubar        0x19
+0331   3003           00822   jbset 0x3, 0
+0332   2B41           00823   goto  0x341
+0333   2B4E           00824   goto  0x34e
+0334   22E9           00825   call  0x2e9
+0335   3503           00826   jbclr 0x3, 0x2
+0336   2B4F           00827   goto  0x34f
+0337   1619           00828   movar 0x19
+0338   0B29           00829   movai 0x29
+0339   1219           00830   rsubar        0x19
+033A   3003           00831   jbset 0x3, 0
+033B   2B4F           00832   goto  0x34f
+033C   0B6E           00833   movai 0x6e
+033D   1219           00834   rsubar        0x19
+033E   3403           00835   jbclr 0x3, 0
+033F   2B4F           00836   goto  0x34f
+0340   0A01           00837   retai 0x1
+0341   22E9           00838   call  0x2e9
+0342   3503           00839   jbclr 0x3, 0x2
+0343   2B4F           00840   goto  0x34f
+0344   1619           00841   movar 0x19
+0345   0B06           00842   movai 0x6
+0346   1219           00843   rsubar        0x19
+0347   3003           00844   jbset 0x3, 0
+0348   2B4F           00845   goto  0x34f
+0349   0B28           00846   movai 0x28
+034A   1219           00847   rsubar        0x19
+034B   3403           00848   jbclr 0x3, 0
+034C   2B4F           00849   goto  0x34f
+034D   0A00           00850   retai 0
+034E   22E9           00851   call  0x2e9
+034F   1619           00852   movar 0x19
+0350   1591           00853   movra 0x11
+0351   0A03           00854   retai 0x3
+0352   1591           00855   movra 0x11
+0353   0BF8           00856   movai 0xf8
+0354   0EFF           00857   addai 0xff
+0355   3103           00858   jbset 0x3, 0x2
+0356   2B54           00859   goto  0x354
+0357   000E           00860   clrwdt
+0358   1A91           00861   djzr  0x11
+0359   2B53           00862   goto  0x353
+035A   000C           00863   return
+035B   0B06           00864   movai 0x6
+035C   000E           00865   clrwdt
+035D   0EFF           00866   addai 0xff
+035E   3103           00867   jbset 0x3, 0x2
+035F   2B5C           00868   goto  0x35c
+0360   000C           00869   return
+0361   1646           00870   movar 0x46
+0362   0DCF           00871   andai 0xcf
+0363   15C6           00872   movra 0x46
+0364   235B           00873   call  0x35b
+0365   3A06           00874   bset  0x6, 0x4
+0366   235B           00875   call  0x35b
+0367   3A86           00876   bset  0x6, 0x5
+0368   235B           00877   call  0x35b
+0369   3E06           00878   bclr  0x6, 0x4
+036A   235B           00879   call  0x35b
+036B   3E86           00880   bclr  0x6, 0x5
+036C   235B           00881   call  0x35b
+036D   000C           00882   return
+036E   159C           00883   movra 0x1c
+036F   1646           00884   movar 0x46
+0370   0DEF           00885   andai 0xef
+0371   15C6           00886   movra 0x46
+0372   0B08           00887   movai 0x8
+0373   1595           00888   movra 0x15
+0374   3E86           00889   bclr  0x6, 0x5
+0375   235B           00890   call  0x35b
+0376   1606           00891   movar 0x6
+0377   0DEF           00892   andai 0xef
+0378   149C           00893   rlr   0x1c
+0379   3403           00894   jbclr 0x3, 0
+037A   0C10           00895   orai  0x10
+037B   1586           00896   movra 0x6
+037C   235B           00897   call  0x35b
+037D   3A86           00898   bset  0x6, 0x5
+037E   235B           00899   call  0x35b
+037F   1A95           00900   djzr  0x15
+0380   2B74           00901   goto  0x374
+0381   3E86           00902   bclr  0x6, 0x5
+0382   3E06           00903   bclr  0x6, 0x4
+0383   1646           00904   movar 0x46
+0384   0C10           00905   orai  0x10
+0385   15C6           00906   movra 0x46
+0386   3E86           00907   bclr  0x6, 0x5
+0387   235B           00908   call  0x35b
+0388   3A86           00909   bset  0x6, 0x5
+0389   235B           00910   call  0x35b
+038A   1606           00911   movar 0x6
+038B   159C           00912   movra 0x1c
+038C   235B           00913   call  0x35b
+038D   3E86           00914   bclr  0x6, 0x5
+038E   235B           00915   call  0x35b
+038F   161C           00916   movar 0x1c
+0390   0D10           00917   andai 0x10
+0391   000C           00918   return
+0392   1646           00919   movar 0x46
+0393   0C10           00920   orai  0x10
+0394   15C6           00921   movra 0x46
+0395   0B08           00922   movai 0x8
+0396   1595           00923   movra 0x15
+0397   1D9C           00924   clrr  0x1c
+0398   3A86           00925   bset  0x6, 0x5
+0399   235B           00926   call  0x35b
+039A   1606           00927   movar 0x6
+039B   0D10           00928   andai 0x10
+039C   0EFF           00929   addai 0xff
+039D   149C           00930   rlr   0x1c
+039E   235B           00931   call  0x35b
+039F   3E86           00932   bclr  0x6, 0x5
+03A0   235B           00933   call  0x35b
+03A1   1A95           00934   djzr  0x15
+03A2   2B98           00935   goto  0x398
+03A3   161C           00936   movar 0x1c
+03A4   000C           00937   return
+03A5   1646           00938   movar 0x46
+03A6   0DEF           00939   andai 0xef
+03A7   15C6           00940   movra 0x46
+03A8   3E06           00941   bclr  0x6, 0x4
+03A9   235B           00942   call  0x35b
+03AA   3A86           00943   bset  0x6, 0x5
+03AB   235B           00944   call  0x35b
+03AC   3E86           00945   bclr  0x6, 0x5
+03AD   235B           00946   call  0x35b
+03AE   000C           00947   return
+03AF   3A86           00948   bset  0x6, 0x5
+03B0   235B           00949   call  0x35b
+03B1   3E86           00950   bclr  0x6, 0x5
+03B2   235B           00951   call  0x35b
+03B3   000C           00952   return
+03B4   1646           00953   movar 0x46
+03B5   0DEF           00954   andai 0xef
+03B6   15C6           00955   movra 0x46
+03B7   3E06           00956   bclr  0x6, 0x4
+03B8   235B           00957   call  0x35b
+03B9   3A86           00958   bset  0x6, 0x5
+03BA   235B           00959   call  0x35b
+03BB   3A06           00960   bset  0x6, 0x4
+03BC   235B           00961   call  0x35b
+03BD   3E86           00962   bclr  0x6, 0x5
+03BE   235B           00963   call  0x35b
+03BF   3E06           00964   bclr  0x6, 0x4
+03C0   235B           00965   call  0x35b
+03C1   235B           00966   call  0x35b
+03C2   1646           00967   movar 0x46
+03C3   0C30           00968   orai  0x30
+03C4   15C6           00969   movra 0x46
+03C5   000C           00970   return
+03C6   2361           00971   call  0x361
+03C7   0BA0           00972   movai 0xa0
+03C8   236E           00973   call  0x36e
+03C9   1611           00974   movar 0x11
+03CA   236E           00975   call  0x36e
+03CB   3103           00976   jbset 0x3, 0x2
+03CC   2BEF           00977   goto  0x3ef
+03CD   161E           00978   movar 0x1e
+03CE   236E           00979   call  0x36e
+03CF   3103           00980   jbset 0x3, 0x2
+03D0   2BEF           00981   goto  0x3ef
+03D1   161F           00982   movar 0x1f
+03D2   236E           00983   call  0x36e
+03D3   3103           00984   jbset 0x3, 0x2
+03D4   2BEF           00985   goto  0x3ef
+03D5   23B4           00986   call  0x3b4
+03D6   0B00           00987   movai 0
+03D7   000C           00988   return
+03D8   2361           00989   call  0x361
+03D9   0BA0           00990   movai 0xa0
+03DA   236E           00991   call  0x36e
+03DB   3103           00992   jbset 0x3, 0x2
+03DC   2BEF           00993   goto  0x3ef
+03DD   1611           00994   movar 0x11
+03DE   236E           00995   call  0x36e
+03DF   3103           00996   jbset 0x3, 0x2
+03E0   2BEF           00997   goto  0x3ef
+03E1   2361           00998   call  0x361
+03E2   0BA1           00999   movai 0xa1
+03E3   236E           01000   call  0x36e
+03E4   3103           01001   jbset 0x3, 0x2
+03E5   2BEF           01002   goto  0x3ef
+03E6   2392           01003   call  0x392
+03E7   159E           01004   movra 0x1e
+03E8   23A5           01005   call  0x3a5
+03E9   2392           01006   call  0x392
+03EA   159F           01007   movra 0x1f
+03EB   23AF           01008   call  0x3af
+03EC   23B4           01009   call  0x3b4
+03ED   3903           01010   bset  0x3, 0x2
+03EE   000C           01011   return
+03EF   23B4           01012   call  0x3b4
+03F0   0BFF           01013   movai 0xff
+03F1   0AFF           01014   retai 0xff
+03F2   0EFF           01015   addai 0xff
+03F3   0EFF           01016   addai 0xff
+03F4   0EFF           01017   addai 0xff
+03F5   0EFF           01018   addai 0xff
+03F6   0EFF           01019   addai 0xff
+03F7   0EFF           01020   addai 0xff
+03F8   0EFF           01021   addai 0xff
+03F9   0EFF           01022   addai 0xff
+03FA   0EFF           01023   addai 0xff
+03FB   0EFF           01024   addai 0xff
+03FC   0EFF           01025   addai 0xff
+03FD   0EFF           01026   addai 0xff
+03FE   0EFF           01027   addai 0xff
+03FF   0EFF           01028   addai 0xff
+                      01029   
+                      01030   end       
+gpasm-1.7.0_beta1 (Nov 26 2015)aaaa.asm           2016-1-4  11:45:21           PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+DDR0                              00000045
+DDR1                              00000046
+FSR                               00000004
+GPR                               00000007
+INDF                              00000000
+INTECON                           0000000E
+INTEFLAG                          0000000F
+KBIM                              00000009
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P1                                00000006
+P5IOC                             00000045
+P6IOC                             00000046
+PCL                               00000002
+PCLATH                            0000000A
+PDCON                             0000000B
+PR0                               00000000
+PR1                               00000001
+PR2                               00000002
+PTA                               00000003
+PUCON                             0000000D
+STATUS                            00000003
+T0CNT                             00000001
+T0CR                              00000041
+T0CS                              00000005
+T0SE                              00000004
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DATA                            0000004F
+T1LOAD                            0000004E
+TMCR                              0000004B
+_BOR_15                           00003FF8
+_BOR_18                           00003FF9
+_BOR_20                           00003FFA
+_BOR_22                           00003FFB
+_BOR_24                           00003FFC
+_BOR_26                           00003FFD
+_BOR_36                           00003FFF
+_CONFIG1                          00002000
+_CONFIG2                          00002001
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_FCPU_2T                          00003F7F
+_FCPU_4T                          00003FFF
+_FOSC_1M                          00003FCF
+_FOSC_2M                          00003FDF
+_FOSC_32K                         00003F9F
+_FOSC_455K                        00003FAF
+_FOSC_4M                          00003FEF
+_FOSC_500K                        00003FBF
+_FOSC_62P5K                       00003F8F
+_FOSC_8M                          00003FFF
+_MCLR_OFF                         00003FF7
+_MCLR_ON                          00003FFF
+_MCU_EMC                          00003BFF
+_MCU_FEL                          00003FFF
+_OSCM_HS                          00003FFF
+_OSCM_IRC                         000037FF
+_OSCM_LP                          00003FFF
+_RDPORT_PIN                       00003FFF
+_RDPORT_REG                       00003EFF
+_ROTP_100N                        00001FFF
+_ROTP_200N                        00002FFF
+_ROTP_300N                        00000FFF
+_ROTP_HALFCPU                     00003FFF
+_SMT_OFF                          00003DFF
+_SMT_ON                           00003EFF
+_TWDT_18_18                       00003FFF
+_TWDT_288_288                     00003DFF
+_TWDT_4P5_4P5                     00003EFF
+_TWDT_72_72                       00003CFF
+_TWDT_P140_18                     00003BFF
+_TWDT_P140_288                    000039FF
+_TWDT_P140_4P5                    00003AFF
+_TWDT_P140_72                     000038FF
+_WDT_OFF                          000037FF
+_WDT_ON                           00003FFF
+__30P011                          00000001
+BUZOUT                            T1CR,5
+C                                 STATUS,0
+DC                                STATUS,1
+EIS                               MCR,6
+GIE                               INTECON,7
+GPR0                              STATUS,5
+GPR1                              STATUS,6
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT0M                             T0CR,6
+INTE                              INTECON
+INTF                              INTEFLAG
+KBIE                              INTECON,1
+KBIF                              INTF,1
+PD                                STATUS,3
+PWMOUT                            T1CR,6
+RST                               STATUS,7
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T1IE                              TMCR,1
+T1IF                              TMCR,0
+TBS                               TMCR,7
+TMR1EN                            T1CR,7
+TO                                STATUS,4
+WDTEN                             MCR,7
+Z                                 STATUS,2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

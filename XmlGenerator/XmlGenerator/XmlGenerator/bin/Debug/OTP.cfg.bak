@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--mcu reg config -->
+<WinScope Name="confige" Version="1.00" Author="Mike.Mo" Date="2012-06-21">
+  <MCUS>
+    <MCU name="mc30p01" id="0x0301">
+      <chip_cfg chip_romFirstAddr="0x0000" chip_romEndAddr="0x03ff" chip_ramFirstAddr="0x0000" chip_ramEndAddr="0x004f" />
+      <ev_cfg ev_romFirstAddr="0x0000" ev_romEndAddr="0x07ff" ev_ramFirstAddr="0x8000" ev_ramEndAddr="0x804f" ev_bkFirstAddr="0x8f00" ev_bkEndAddr="0x8f1f" ev_pcFirstAddr="0x9000" ev_pcEndAddr="0x9039" ev_optionAddr="0x9100" ev_optionCnt="0x04" ev_traceFirstAddr="0xc000" ev_traceEndAddr="0xc7ff" />
+      <syss>
+        <sys name="A" value="0xff" describe="A state reg" />
+        <sys name="PC" value="0x03ff" describe="A state reg" />
+        <sys name="SP" value="0xff" describe="SP pointer reg" />
+        <sys name="Stack1" value="0xffff" describe="堆栈地址" />
+        <sys name="Stack2" value="0xffff" describe="the Second stack addr" />
+        <sys name="Stack3" value="0xffff" describe="the third stack addr" />
+        <sys name="Stack4" value="0xffff" describe="the four stack addr " />
+        <sys name="Stack5" value="0xffff" describe="the five stack addr" />
+      </syss>
+      <option>
+        <CP>abcddd</CP>
+      </option>
+      <regs>
+        <reg name="INDF" addr="0x00" />
+        <reg name="T0" addr="0x01" />
+        <reg name="PCL" addr="0x02" />
+        <reg name="STATUS" addr="0x03" />
+        <reg name="FSR" addr="0x04" />
+        <reg name="P5" addr="0x05" />
+        <reg name="P6" addr="0x06" />
+        <reg name="GPR" addr="0x07" />
+        <reg name="PCON" addr="0x08" />
+        <reg name="IOCB" addr="0x09" />
+        <reg name="PCLATH" addr="0x0A" />
+        <reg name="PDCON" addr="0x0B" />
+        <reg name="ODCON" addr="0x0C" />
+        <reg name="PHCON" addr="0x0D" />
+        <reg name="INTECON" addr="0x0E" />
+        <reg name="INTFLAG" addr="0x0F" />
+        <reg name="OPTION" addr="0x41" />
+        <reg name="P5IOC" addr="0x45" />
+        <reg name="P6IOC" addr="0x46" />
+      </regs>
+    </MCU>
+    <MCU name="MC20P24B" id="0x0224">
+      <chip_cfg chip_romFirstAddr="0x0000" chip_romEndAddr="0x03ff" chip_ramFirstAddr="0x0000" chip_ramEndAddr="0x0088" />
+      <ev_cfg ev_romFirstAddr="0x0000" ev_romEndAddr="0x07ff" ev_ramFirstAddr="0x8000" ev_ramEndAddr="0x804f" ev_bkFirstAddr="0x8f00" ev_bkEndAddr="0x8f1f" ev_pcFirstAddr="0x9000" ev_pcEndAddr="0x9039" ev_optionAddr="0x9100" ev_optionCnt="0x04" ev_traceFirstAddr="0xc000" ev_traceEndAddr="0xc7ff" />
+      <syss>
+        <sys name="PC" value="0x1000" describe="PC程序计数器" />
+        <sys name="SP" value="0xff" describe="SP 堆栈指针" />
+        <sys name="A" value="0xff" describe="A累加寄存器" />
+        <sys name="X" value="0x00" describe="X变址寄存器" />
+        <sys name="C" value="0xff" describe="C条件标示寄存器" />
+        <sys name="Bit:H " value="0" describe="H：半字节进位标志位" />
+        <sys name="Bit:I" value="1" describe="I：中断屏蔽标志位。为1时，禁止中断 " />
+        <sys name="Bit:N" value="0" describe="N：负标志位" />
+        <sys name="Bit:Z" value="0" describe="Z:零标志位" />
+        <sys name="Bit:C" value="0" describe="C:进位、借位标志位" />
+      </syss>
+      <option>
+        <CP>abcddd</CP>
+        <OSCM>11:</OSCM>
+        <MCUtype>1:mcu1 0:mcu2</MCUtype>
+      </option>
+      <regs>
+        <reg name="TOCNT" addr="0x00" />
+        <reg name="TODATA" addr="0x01" />
+        <reg name="T0CON" addr="0x02" />
+        <reg name="MCR" addr="0x03" />
+        <reg name="BTCON" addr="0x0C" />
+        <reg name="BTCNT" addr="0x0D" />
+        <reg name="P0" addr="0x10" />
+        <reg name="P1" addr="0x11" />
+        <reg name="P2" addr="0x12" />
+        <reg name="P0CONH" addr="0x16" />
+        <reg name="P0CONL" addr="0x17" />
+        <reg name="P0PND" addr="0x18" />
+        <reg name="P1CON" addr="0x19" />
+        <reg name="P2CONH" addr="0x1A" />
+        <reg name="P2CONL" addr="0x1B" />
+        <reg name="PWMDATA" addr="0x22" />
+        <reg name="PWMCON" addr="0x23" />
+        <reg name="ADCON" addr="0x27" />
+        <reg name="ADDATAH" addr="0x28" />
+        <reg name="ADDATAL" addr="0x29" />
+      </regs>
+    </MCU>
+    <MCU name="MC20P22" id="0x0222">
+      <chip_cfg chip_romFirstAddr="0x1000" chip_romEndAddr="0x1fff" chip_ramFirstAddr="0x0000" chip_ramEndAddr="0x0088" />
+      <ev_cfg ev_romFirstAddr="0x0000" ev_romEndAddr="0x07ff" ev_ramFirstAddr="0x8000" ev_ramEndAddr="0x804f" ev_bkFirstAddr="0x8f00" ev_bkEndAddr="0x8f1f" ev_pcFirstAddr="0x9000" ev_pcEndAddr="0x9039" ev_optionAddr="0x9100" ev_optionCnt="0x04" ev_traceFirstAddr="0xc000" ev_traceEndAddr="0xc7ff" />
+      <syss>
+        <sys name="PC" value="0x1000" describe="PC程序计数器" />
+        <sys name="SP" value="0xff" describe="SP 堆栈指针" />
+        <sys name="A" value="0xff" describe="A累加寄存器" />
+        <sys name="X" value="0x00" describe="X变址寄存器" />
+        <sys name="C" value="0xff" describe="C条件标示寄存器" />
+        <sys name="Bit:H " value="0" describe="H：半字节进位标志位" />
+        <sys name="Bit:I" value="1" describe="I：中断屏蔽标志位。为1时，禁止中断 " />
+        <sys name="Bit:N" value="0" describe="N：负标志位" />
+        <sys name="Bit:Z" value="0" describe="Z:零标志位" />
+        <sys name="Bit:C" value="0" describe="C:进位、借位标志位" />
+      </syss>
+      <option>
+        <CP>abcddd</CP>
+        <OSCM>11:</OSCM>
+        <MCUtype>1:mcu1 0:mcu2</MCUtype>
+      </option>
+      <regs>
+        <reg name="P0" addr="0x00" />
+        <reg name="DDR0" addr="0x01" />
+        <reg name="P0HCON" addr="0x02" />
+        <reg name="P1" addr="0x03" />
+        <reg name="DDR1" addr="0x04" />
+        <reg name="P1HCON" addr="0x05" />
+        <reg name="KBIM" addr="0x06" />
+        <reg name="TCNT0" addr="0x07" />
+        <reg name="TCR0" addr="0x08" />
+        <reg name="TDATA1" addr="0x09" />
+        <reg name="TCNT1" addr="0x0A" />
+        <reg name="TCR1" addr="0x0B" />
+        <reg name="TDATA2H" addr="0x0C" />
+        <reg name="TCNT2H" addr="0x0D" />
+        <reg name="TDATA2L" addr="0x0E" />
+        <reg name="TCNT2L" addr="0x0F" />
+        <reg name="TCR2" addr="0x10" />
+        <reg name="INTC" addr="0x11" />
+        <reg name="ADCM" addr="0x12" />
+        <reg name="ADCON" addr="0x13" />
+        <reg name="ADTH" addr="0x14" />
+        <reg name="ADTL" addr="0x15" />
+        <reg name="MCR" addr="0x16" />
+        <reg name="RSTFR" addr="0x17" />
+      </regs>
+    </MCU>
+    <MCU name="MC20P04" id="0x0204">
+      <chip_cfg chip_romFirstAddr="0x1000" chip_romEndAddr="0x1fff" chip_ramFirstAddr="0x0000" chip_ramEndAddr="0x0088" />
+      <ev_cfg ev_romFirstAddr="0x0000" ev_romEndAddr="0x07ff" ev_ramFirstAddr="0x8000" ev_ramEndAddr="0x804f" ev_bkFirstAddr="0x8f00" ev_bkEndAddr="0x8f1f" ev_pcFirstAddr="0x9000" ev_pcEndAddr="0x9039" ev_optionAddr="0x9100" ev_optionCnt="0x04" ev_traceFirstAddr="0xc000" ev_traceEndAddr="0xc7ff" />
+      <syss>
+        <sys name="PC" value="0x1000" describe="PC程序计数器" />
+        <sys name="SP" value="0xff" describe="SP 堆栈指针" />
+        <sys name="A" value="0xff" describe="A累加寄存器" />
+        <sys name="X" value="0x00" describe="X变址寄存器" />
+        <sys name="C" value="0xff" describe="C条件标示寄存器" />
+        <sys name="Bit:H " value="0" describe="H：半字节进位标志位" />
+        <sys name="Bit:I" value="1" describe="I：中断屏蔽标志位。为1时，禁止中断 " />
+        <sys name="Bit:N" value="0" describe="N：负标志位" />
+        <sys name="Bit:Z" value="0" describe="Z:零标志位" />
+        <sys name="Bit:C" value="0" describe="C:进位、借位标志位" />
+      </syss>
+      <option>
+        <CP>abcddd</CP>
+        <OSCM>11:</OSCM>
+        <MCUtype>1:mcu1 0:mcu2</MCUtype>
+      </option>
+      <regs>
+        <reg name="TOCNT" addr="0x00" />
+        <reg name="TODATA" addr="0x01" />
+        <reg name="T0CON" addr="0x02" />
+        <reg name="MCR" addr="0x03" />
+        <reg name="BTCON" addr="0x0C" />
+        <reg name="BTCNT" addr="0x0D" />
+        <reg name="P0" addr="0x10" />
+        <reg name="P1" addr="0x11" />
+        <reg name="P2" addr="0x12" />
+        <reg name="P0CONH" addr="0x16" />
+        <reg name="P0CONL" addr="0x17" />
+        <reg name="P0PND" addr="0x18" />
+        <reg name="P1CON" addr="0x19" />
+        <reg name="P2CONH" addr="0x1A" />
+        <reg name="P2CONL" addr="0x1B" />
+        <reg name="PWMDATA" addr="0x22" />
+        <reg name="PWMCON" addr="0x23" />
+        <reg name="ADCON" addr="0x27" />
+        <reg name="ADDATAH" addr="0x28" />
+        <reg name="ADDATAL" addr="0x29" />
+      </regs>
+    </MCU>
+  </MCUS>
+</WinScope>

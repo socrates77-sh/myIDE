@@ -1,0 +1,145 @@
+L 1				
+L 2				include mc20p38.h
+L 3				
+L 4				;DEFINE RAM $40~FF
+L 5				R_TopTEMP EQU $40
+L 6				R_temp1   EQU $41
+L 7				OPACTEMP  EQU $42
+L 8				opaof     equ $43
+L 9				keycounter equ $44
+L 10				
+L 11				
+L 12				sendcode      equ $45
+L 13				
+L 14				OPACTEMP1 EQU $46
+L 15				
+L 16				EOC DEFINE 3,ADCON
+L 17				ADCE DEFINE 0,ADCON
+L 18				
+L 19				KEY DEFINE 1,PCC
+L 20				FREQ DEFINE 0,PCC
+L 21				
+L 22				PST DEFINE 7,PPGC
+L 23				C0CMPOP DEFINE 7,MCRX
+L 24				C1CMPOP DEFINE 6,MCRX
+L 25				C2CMPOP DEFINE 5,MCRX
+L 26				OPAMPOP DEFINE 4,MCRX
+L 27				
+L 28				C0COFM  DEFINE 7,CMP0C
+L 29				C0CRS   DEFINE 6,CMP0C
+L 30				
+L 31				C1COFM  DEFINE 7,CMP1C
+L 32				C1CRS   DEFINE 6,CMP1C
+L 33				
+L 34				C2COFM  DEFINE 7,CMP2C
+L 35				C2CRS   DEFINE 6,CMP2C
+L 36				
+L 37				OPAOFM  DEFINE 7,OPAC
+L 38				OPARS   DEFINE 6,OPAC
+L 39				
+L 40				CMP0EN  DEFINE 7,MCR
+L 41				CMP1EN  DEFINE 6,MCR
+L 42				CMP2EN  DEFINE 5,MCR
+L 43				OPAEN   DEFINE 4,MCR
+L 44				
+L 45				WDTC    DEFINE 0,MCR
+L 46				PA0     DEFINE 0,PA
+L 47				PA3			DEFINE   3,PA
+L 48				PB3     DEFINE  3,PB
+L 49				
+L 50				
+L 51				OPAOF5  DEFINE 3,PB
+L 52				OPAOF4  DEFINE 2,PB
+L 53				OPAOF3  DEFINE 0,PB
+L 54				OPAOF2  DEFINE 0,PA
+L 55				OPAOF1  DEFINE 1,PA
+L 56				OPAOF0  DEFINE 2,PA
+L 57				
+L 58				
+L 59				
+L 60				        org $3f00
+L 61				reset:
+L 62	[2]	3F00	9C	        rsp
+L 63	[2]	3F01	9D	        nop
+L 64	[5]	3F02	1604	        bset    3,DDR2
+L 65	[5]	3F04	1701	        bclr    3,PB
+L 66	[2]	3F06	9D	        NOP
+L 67	[2]	3F07	9D	        nop
+L 68	[5]	3F08	1601	        bset    3,PB
+L 69	[2]	3F0A	9D	        nop
+L 70	[2]	3F0B	9D	        nop
+L 71	[5]	3F0C	1701	        bclr    3,PB
+L 72	[2]	3F0E	9D	        nop
+L 73	[2]	3F0F	9D	        nop
+L 74	[5]	3F10	1601	        bset    3,PB
+L 75	[2]	3F12	9D	        nop
+L 76	[2]	3F13	9D	        nop
+L 77	[5]	3F14	1701	        bclr    3,PB
+L 78				        
+L 79				        
+L 80				        
+L 81	[6]	3F16	CD3F1B	        jsr     cal_opa_auto
+L 82	[3]	3F19	20FE	        bra *        
+L 83				        
+L 84				;===============================================тк╥е				
+L 85				cal_opa_auto:
+L 86	[2]	3F1B	A66D	    lda         #$6d
+L 87	[4]	3F1D	B70F	    sta         NETCTL 
+L 88	[5]	3F1F	181D	    bset    4,MCR   ; ENABLE OPA
+L 89				    
+L 90	[5]	3F21	3F16					clr         opac
+L 91	[5]	3F23	1E16					bset		      opaofm	; set as offset adj model					
+L 92	[5]	3F25	1C16					bset		      opars
+L 93	[6]	3F27	CD3F60					jsr         delay100us
+L 94	[3]	3F2A	B61F					lda		       mcrx
+L 95	[2]	3F2C	A410					and		       #%00010000
+L 96	[4]	3F2E	B741					sta		       r_temp1				
+L 97				cal_opalp:		
+L 98	[3]	3F30	B616	        lda     opac
+L 99	[2]	3F32	A43F	        and     #%00111111
+L 100	[2]	3F34	A83F	        eor     #%00111111
+L 101	[3]	3F36	2722	        beq     cal_opa_error ; if OPAOF[5:0]=3F, jmp error
+L 102				        
+L 103	[5]	3F38	3C16	        inc     opac ;OFAOF[5:0] inc 1
+L 104	[6]	3F3A	CD3F60	        jsr     delay100us
+L 105	[3]	3F3D	B61F	        lda     mcrx
+L 106	[2]	3F3F	A410	        and     #%00010000
+L 107	[3]	3F41	B841	        eor     r_temp1
+L 108	[3]	3F43	27EB	        beq     cal_opalp
+L 109				        
+L 110	[5]	3F45	1601	        bset    PB3 ;
+L 111				        
+L 112	[3]	3F47	B616	        lda     opac
+L 113	[2]	3F49	A43F	        and     #%00111111
+L 114	[2]	3F4B	A820	        eor     #%00100000 ; if OPAOF[5:0]== 6'B100000,
+L 115	[3]	3F4D	2604	        bne     lab_next
+L 116	[5]	3F4F	1B16	        bclr    5,OPAC
+L 117	[3]	3F51	2009	        bra     cal_opa_end
+L 118				lab_next:
+L 119	[5]	3F53	0B1606	        brclr   5,OPAC,cal_opa_end
+L 120	[5]	3F56	3A16	        dec     opac
+L 121	[3]	3F58	2002	        bra     cal_opa_end
+L 122				cal_opa_error:
+L 123	[5]	3F5A	1701	        bclr    PB3
+L 124				cal_opa_end:
+L 125	[5]	3F5C	1F16	        bclr    OPAOFM ;EXIT OPA ADJ MODEL
+L 126	[6]	3F5E	81	        rts        
+L 127				        
+L 128	[6]	3F5F	81					rts
+L 129				
+L 130				
+L 131				;delay funtion
+L 132				delay100us:
+L 133	[2]	3F60	A61E	        lda   #30
+L 134	[4]	3F62	B740	        sta   r_toptemp
+L 135				delay100usloop:        
+L 136	[2]	3F64	9D	        nop
+L 137	[2]	3F65	9D	        nop
+L 138	[2]	3F66	9D	        nop
+L 139	[2]	3F67	9D	        nop
+L 140	[5]	3F68	3A40	        dec   r_toptemp
+L 141	[3]	3F6A	26F8	        bne   delay100usloop
+L 142	[6]	3F6C	81			rts		        
+L 143				        
+L 144				        org $3ffe
+L 145		3FFE	3F00	        fdb     reset

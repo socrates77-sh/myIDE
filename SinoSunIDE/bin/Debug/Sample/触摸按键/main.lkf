@@ -1,0 +1,35 @@
+#	LINK COMMAND FILE EXAMPLE FOR 68HC05 GP20 
+#	Copyright (c) 1998 by COSMIC Software
+#  	MC20P02
++seg .text  -b 0x1000  -m0xf00 -nCODE -sROM	# program start address
++seg .const -a CODE	-it  -sROM		# Constants and strings
++seg .bsct  -b 0x30   -nZPAGE	-m0xD0   -sRAM 	# zero page start address
++seg .ubsct -a ZPAGE  -nUZPAGE  -sRAM
++seg .share -a UZPAGE  -is  -sRAM
++seg .data  -a UZPAGE -nIDATA -sRAM 	# data start address
++seg .bss   -a IDATA -nUDATA -sRAM
+
+					# startup routine
+					# application program
+#在下面列出你的C文件并把扩展名改为.o
+main.o
+initSys.o
+key.o
+T500msSbr.o
+TM1628.O
+display.o
+adcsbr.o
+
+#<BEGIN STARTUP_FILE>
+"D:\SinoSunC_V1.4\Lib\crts.h05"
+#<END STARTUP_FILE>
+
+#<BEGIN LIBRARY_FILES>
+"D:\SinoSunC_V1.4\Lib\libi.h05"
+"D:\SinoSunC_V1.4\Lib\libm.h05"
+#<END LIBRARY_FILES>
+
++seg .const -b 0x1FF4				# vectors start address
+interrupt_vector.o				# interrupt vectors
+
++def __memory=@.bss				# symbol used by library

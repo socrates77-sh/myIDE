@@ -1,0 +1,120 @@
+
+Map of System\main.h05 from link file mc_com.lkf - Thu Mar 06 15:54:52 2014
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00002003 end 00002011 length    14 segment CODE
+start 00002011 end 00002011 length     0 segment .const
+start 00000040 end 00000040 length     0 segment ZPAGE
+start 00000040 end 00000045 length     5 segment UZPAGE
+start 00000040 end 00000040 length     0 segment IDATA
+start 00000040 end 00000040 length     0 segment UDATA
+start 00000045 end 00000045 length     0 segment .share
+start 00000000 end 00001bac length  7084 segment .debug
+start 00003fec end 00003ffe length    18 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o:
+start 00000040 end 00000044 length     4 section UZPAGE (.ubsct)
+
+main.o:
+start 00002003 end 00002011 length    14 section CODE (.text)
+start 00000044 end 00000045 length     1 section UZPAGE (.ubsct)
+start 00000000 end 00001bac length  7084 section .debug
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o:
+start 00003fec end 00003ffe length    18 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+Stack size: 5
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADTH           0000001b   defined in main.o
+_ADTL           0000001c   defined in main.o
+_CMP1I_ISR      00002007   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_CMP1I_ISR.L    00000045   defined in linker section .share
+                           *** not used ***
+_CMP2I_ISR      00002004   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_CMP2I_ISR.L    00000045   defined in linker section .share
+                           *** not used ***
+_CVREF          00000011   defined in main.o
+_INT_ISR        00002005   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_INT_ISR.L      00000045   defined in linker section .share
+                           *** not used ***
+_LVDINT_ISR     00002006   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_LVDINT_ISR.L   00000045   defined in linker section .share
+                           *** not used ***
+_NTCON          0000000f   defined in main.o
+_PPGDL          00000012   defined in main.o
+_PPGT           0000000e   defined in main.o
+_Quotient       00000044   defined in main.o section UZPAGE (.ubsct)
+_SWI_ISR        00002003   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_SWI_ISR.L      00000045   defined in linker section .share
+                           *** not used ***
+_TDR0           00000007   defined in main.o
+_TDR1           00000009   defined in main.o
+_TDR2           0000000b   defined in main.o
+_TLOAD0         00000007   defined in main.o
+_TLOAD1         00000009   defined in main.o
+_TLOADL2        0000000b   defined in main.o
+_TMI0_ISR       00002008   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_TMI0_ISR.L     00000045   defined in linker section .share
+                           *** not used ***
+_TMI1_ISR       00002009   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_TMI1_ISR.L     00000045   defined in linker section .share
+                           *** not used ***
+_TMI2_ISR       0000200a   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_TMI2_ISR.L     00000045   defined in linker section .share
+                           *** not used ***
+_adcm           0000001a   defined in main.o
+_adcon          00000019   defined in main.o
+_cmp0c          00000013   defined in main.o
+_cmp1c          00000014   defined in main.o
+_cmp2c          00000015   defined in main.o
+_ddra           00000003   defined in main.o
+_ddrb           00000004   defined in main.o
+_intc0          00000017   defined in main.o
+_intc1          00000018   defined in main.o
+_intdb          00000010   defined in main.o
+_main           0000200b   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o
+_mcr            0000001d   defined in main.o
+_mcrx           0000001f   defined in main.o
+_opac           00000016   defined in main.o
+_pa             00000000   defined in main.o
+_pahcon         00000005   defined in main.o
+_pb             00000001   defined in main.o
+_pbhcon         00000006   defined in main.o
+_pc             00000002   defined in main.o
+_ppgc           0000000d   defined in main.o
+_rstfr          0000001e   defined in main.o
+_tcr0           00000008   defined in main.o
+_tcr1           0000000a   defined in main.o
+_tcr2           0000000c   defined in main.o
+_vectab         00003fec   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x238.o section .const
+                           *** not used ***
+c_h             00000041   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o section UZPAGE (.ubsct)
+                           *** not used ***

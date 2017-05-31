@@ -1,0 +1,317 @@
+gpasm-1.7.0_beta1 (Mar 26 2015)main.asm           2015-4-17  17:29:39          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : ANSI-C Compiler
+                      00003 ; Version 0.0.4 (Mar  2 2015) (MINGW32)
+                      00004 ; This file was generated Fri Apr 17 17:29:38 2015
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC3X port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "main.c"
+                      00009         list    p=3111
+                      00010         radix dec
+                      00011         include "3111.inc"
+                      00001                 LIST
+                      00002 ;mc31p11.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00176                 LIST
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015         extern  _STATUSbits
+                      00016         extern  _MCRbits
+                      00017         extern  _INTECONbits
+                      00018         extern  _INTFLAGbits
+                      00019         extern  _IOP0bits
+                      00020         extern  _OEP0bits
+                      00021         extern  _PUP0bits
+                      00022         extern  _DKWP0bits
+                      00023         extern  _IOP1bits
+                      00024         extern  _OEP1bits
+                      00025         extern  _PUP1bits
+                      00026         extern  _DKWP1bits
+                      00027         extern  _DKWbits
+                      00028         extern  _INDF
+                      00029         extern  _FSR
+                      00030         extern  _PCL
+                      00031         extern  _STATUS
+                      00032         extern  _MCR
+                      00033         extern  _INTECON
+                      00034         extern  _INTFLAG
+                      00035         extern  _IOP0
+                      00036         extern  _OEP0
+                      00037         extern  _PUP0
+                      00038         extern  _DKWP0
+                      00039         extern  _IOP1
+                      00040         extern  _OEP1
+                      00041         extern  _PUP1
+                      00042         extern  _DKWP1
+                      00043         extern  _DKW
+                      00044 ;--------------------------------------------------------
+                      00045 ; global declarations
+                      00046 ;--------------------------------------------------------
+                      00047         global  _main
+                      00048 
+                      00049         global STK06
+                      00050         global STK05
+                      00051         global STK04
+                      00052         global STK03
+                      00053         global STK02
+                      00054         global STK01
+                      00055         global STK00
+                      00056 
+                      00057 sharebank udata_ovr 0x0010
+0008                  00058 STK06   res 1
+0008                  00059 STK05   res 1
+0009                  00060 STK04   res 1
+0009                  00061 STK03   res 1
+000A                  00062 STK02   res 1
+000A                  00063 STK01   res 1
+000B                  00064 STK00   res 1
+                      00065 
+                      00066 ;--------------------------------------------------------
+                      00067 ; global definitions
+                      00068 ;--------------------------------------------------------
+                      00069 ;--------------------------------------------------------
+                      00070 ; absolute symbol definitions
+                      00071 ;--------------------------------------------------------
+                      00072 ;--------------------------------------------------------
+                      00073 ; compiler-defined variables
+                      00074 ;--------------------------------------------------------
+                      00075 ;--------------------------------------------------------
+                      00076 ; initialized data
+                      00077 ;--------------------------------------------------------
+                      00078 
+                      00079 ;@Allocation info for local variables in function 'main'
+                      00080 ;@main main                      Allocated to registers ;size:2
+                      00081 ;@main STATUSbits                Allocated to registers ;size:1
+                      00082 ;@main MCRbits                   Allocated to registers ;size:1
+                      00083 ;@main INTECONbits               Allocated to registers ;size:1
+                      00084 ;@main INTFLAGbits               Allocated to registers ;size:1
+                      00085 ;@main IOP0bits                  Allocated to registers ;size:1
+                      00086 ;@main OEP0bits                  Allocated to registers ;size:1
+                      00087 ;@main PUP0bits                  Allocated to registers ;size:1
+                      00088 ;@main DKWP0bits                 Allocated to registers ;size:1
+                      00089 ;@main IOP1bits                  Allocated to registers ;size:1
+                      00090 ;@main OEP1bits                  Allocated to registers ;size:1
+                      00091 ;@main PUP1bits                  Allocated to registers ;size:1
+                      00092 ;@main DKWP1bits                 Allocated to registers ;size:1
+                      00093 ;@main DKWbits                   Allocated to registers ;size:1
+                      00094 ;@main INDF                      Allocated to registers ;size:1
+                      00095 ;@main FSR                       Allocated to registers ;size:1
+                      00096 ;@main PCL                       Allocated to registers ;size:1
+                      00097 ;@main STATUS                    Allocated to registers ;size:1
+                      00098 ;@main MCR                       Allocated to registers ;size:1
+                      00099 ;@main INTECON                   Allocated to registers ;size:1
+                      00100 ;@main INTFLAG                   Allocated to registers ;size:1
+                      00101 ;@main IOP0                      Allocated to registers ;size:1
+                      00102 ;@main OEP0                      Allocated to registers ;size:1
+                      00103 ;@main PUP0                      Allocated to registers ;size:1
+                      00104 ;@main DKWP0                     Allocated to registers ;size:1
+                      00105 ;@main IOP1                      Allocated to registers ;size:1
+                      00106 ;@main OEP1                      Allocated to registers ;size:1
+                      00107 ;@main PUP1                      Allocated to registers ;size:1
+                      00108 ;@main DKWP1                     Allocated to registers ;size:1
+                      00109 ;@main DKW                       Allocated to registers ;size:1
+                      00110 ;@end Allocation info for local variables in function 'main';
+                      00111 
+                      00112 ;--------------------------------------------------------
+                      00113 ; overlayable items in internal ram 
+                      00114 ;--------------------------------------------------------
+                      00115 ;       udata_ovr
+                      00116 ;--------------------------------------------------------
+                      00117 ; reset vector 
+                      00118 ;--------------------------------------------------------
+                      00119 STARTUP code 0x0000
+0000   1400           00120         goto    _main
+                      00121 ;--------------------------------------------------------
+                      00122 ; code
+                      00123 ;--------------------------------------------------------
+                      00124 code_main       code
+                      00125 ;***
+                      00126 ;  pBlock Stats: dbName = M
+                      00127 ;***
+                      00128 ;entry:  _main  ;Function start
+                      00129 ; 2 exit points
+                      00130 ;has an exit
+                      00131 ;; Starting pCode block
+0000                  00132 _main   ;Function start
+                      00133 ; 2 exit points
+                      00134 ;       .line   11; "main.c"    GIE=0;
+0000   1BC0           00135         BCLR    _MCRbits,7
+                      00136 ;       .line   12; "main.c"    IOP0=0XFF;
+0001   04FF           00137         MOVAI   0xff
+0002   0AC0           00138         MOVRA   _IOP0
+                      00139 ;       .line   13; "main.c"    IOP1=0XFF;
+0003   04FF           00140         MOVAI   0xff
+0004   0AC0           00141         MOVRA   _IOP1
+                      00142 ;       .line   14; "main.c"    OEP0=0XFF;
+0005   04FF           00143         MOVAI   0xff
+0006   0AC0           00144         MOVRA   _OEP0
+                      00145 ;       .line   15; "main.c"    OEP1=0XFF;
+0007   04FF           00146         MOVAI   0xff
+0008   0AC0           00147         MOVRA   _OEP1
+                      00148 ;       .line   16; "main.c"    OEP01 = 1;
+0009   1840           00149         BSET    _OEP0bits,1
+000A                  00150 _00106_DS_
+                      00151 ;       .line   21; "main.c"    IOP1=~IOP1;       
+000A   0E00           00152         COMAR   _IOP1
+000B   0AC0           00153         MOVRA   _IOP1
+                      00154 ;       .line   22; "main.c"    OEP0=0;
+000C   0EC0           00155         CLRR    _OEP0
+000D   1400           00156         GOTO    _00106_DS_
+000E   000C           00157         RETURN  
+                      00158 ; exit point of _main
+                      00159 
+                      00160 
+                      00161 ;       code size estimation:
+                      00162 ;          15+    0 =    15 instructions (   30 byte)
+                      00163 
+                      00164         end
+gpasm-1.7.0_beta1 (Mar 26 2015)main.asm           2015-4-17  17:29:39          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+C                                 00000000
+DC                                00000001
+DKW                               0000000F
+DKWE                              00000007
+DKWP0                             0000000A
+DKWP00                            00000000
+DKWP01                            00000001
+DKWP02                            00000002
+DKWP03                            00000003
+DKWP04                            00000004
+DKWP05                            00000005
+DKWP1                             0000000E
+DKWP10                            00000000
+DKWP11                            00000001
+DKWP12                            00000002
+DKWP13                            00000003
+DKWP14                            00000004
+DKWP15                            00000005
+DKWP16                            00000006
+FSR                               00000001
+GIE                               00000007
+INDF                              00000000
+INT0IE                            00000002
+INT0IF                            00000002
+INT1IE                            00000003
+INT1IF                            00000003
+INTECON                           00000005
+INTFLAG                           00000006
+IOP0                              00000007
+IOP00                             00000000
+IOP01                             00000001
+IOP02                             00000002
+IOP03                             00000003
+IOP04                             00000004
+IOP05                             00000005
+IOP06                             00000006
+IOP1                              0000000B
+IOP10                             00000000
+IOP11                             00000001
+IOP12                             00000002
+IOP13                             00000003
+IOP14                             00000004
+IOP15                             00000005
+IOP16                             00000006
+MCR                               00000004
+OEP0                              00000008
+OEP00                             00000000
+OEP01                             00000001
+OEP02                             00000002
+OEP03                             00000003
+OEP04                             00000004
+OEP05                             00000005
+OEP06                             00000006
+OEP1                              0000000C
+OEP10                             00000000
+OEP11                             00000001
+OEP12                             00000002
+OEP13                             00000003
+OEP14                             00000004
+OEP15                             00000005
+OEP16                             00000006
+PCL                               00000002
+PD                                00000004
+PUP0                              00000009
+PUP00                             00000000
+PUP01                             00000001
+PUP02                             00000002
+PUP03                             00000003
+PUP04                             00000004
+PUP05                             00000005
+PUP06                             00000006
+PUP1                              0000000D
+PUP10                             00000000
+PUP11                             00000001
+PUP12                             00000002
+PUP13                             00000003
+PUP14                             00000004
+PUP15                             00000005
+PUP16                             00000006
+RSEL                              00000006
+STATUS                            00000003
+STK00                             00000016
+STK01                             00000015
+STK02                             00000014
+STK03                             00000013
+STK04                             00000012
+STK05                             00000011
+STK06                             00000010
+TO                                00000005
+Z                                 00000002
+_00106_DS_                        0000000A
+_CONFIG0                          00008000
+_CONFIG1                          00008001
+_CP_ALL                           00000FFF
+_DKW                              00000000
+_DKWP0                            00000000
+_DKWP0bits                        00000000
+_DKWP1                            00000000
+_DKWP1bits                        00000000
+_DKWbits                          00000000
+_FCPU_16X                         00001FFF
+_FCPU_2X                          00001FF3
+_FCPU_4X                          00001FF7
+_FCPU_8X                          00001FFB
+_FSR                              00000000
+_INDF                             00000000
+_INTECON                          00000000
+_INTECONbits                      00000000
+_INTFLAG                          00000000
+_INTFLAGbits                      00000000
+_IOP0                             00000000
+_IOP0bits                         00000000
+_IOP1                             00000000
+_IOP1bits                         00000000
+_MCR                              00000000
+_MCRbits                          00000000
+_OEP0                             00000000
+_OEP0bits                         00000000
+_OEP1                             00000000
+_OEP1bits                         00000000
+_PCL                              00000000
+_PUP0                             00000000
+_PUP0bits                         00000000
+_PUP1                             00000000
+_PUP1bits                         00000000
+_STATUS                           00000000
+_STATUSbits                       00000000
+_WDT_ALWAYS_OFF                   00001FFC
+_WDT_ALWAYS_ON                    00001FFF
+_WDT_SLEEP_OFF                    00001FFD
+__31P11                           00000001
+_main                             00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

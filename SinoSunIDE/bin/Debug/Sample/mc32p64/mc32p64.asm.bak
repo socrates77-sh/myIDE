@@ -1,0 +1,218 @@
+#include "mc32p64.inc"
+
+#define RAM_COUNT0      256
+#define RAM_COUNT1      0X40
+
+cblock  0X0000
+acc_temp
+status_temp
+r1
+r2
+r3
+r4
+work_flag1
+work_flag2
+
+time_125us
+time_1ms
+time_100ms
+time_1min
+time_1hour
+
+endc 
+
+
+        ;ROM:0X00000	X0FFF   
+        org 0x0000
+        goto    start
+        
+        ;int funtion
+        org 0x08
+interrupt_fun:
+        movra   acc_temp
+        movra   status_temp
+        ;int process
+if_tim2_int:
+        jbclr   T2IE
+        jbset   T2IF
+        goto    if_key0counter_int
+        bclr    T2IF 
+        ;bset    TC2EN     
+        incr    IOP3; 
+if_key0counter_int:
+        jbclr   TK0IE ;if tk0ie=0,jmp next instruct
+        jbset   TK0IF
+        goto    if_key1counter_int
+        ;--------------------
+        bclr    TK0IF ;clear int flag
+        bclr    TK0CLR ;clr tkncounter
+        ;goto    end_interrupt
+        
+if_key1counter_int:
+        jbclr   TK1IE
+        jbset   TK1IF
+        goto    if_key2counter_int
+        ;----------------
+        bclr    TK1IF
+        bclr    TK1CLR  
+        ;goto    end_interrupt
+if_key2counter_int:
+        jbclr   TK2IE
+        jbset   TK2IF
+        ;goto    if_key2counter_int
+        goto    end_interrupt
+        ;----------------
+        bclr    TK1IF
+        bclr    TK1CLR  
+        ;goto    end_interrupt       
+end_interrupt:        
+        retie ;return interrupt funtion
+        
+start:
+        bclr    GIE ;close all interrupt 
+        movai   0xaa
+        movra   0X00 
+        movra   0x02
+        
+        movai   0xff ;as output
+        
+        movra   OEP0
+        movra   OEP1
+        movra   OEP2
+        movra   OEP3
+        
+        clrr    TK0CRL
+        clrr    TK1CRL
+        clrr    TK2CRL
+        ;stabk test
+        call    fun01
+    ;if test key model
+        call   lab_key_model    
+    ;if test input model
+        call   lab_intput_model
+
+        
+ ;test all pin as out put model       
+lab_loop_output:
+        incr            IOP0;
+        incr            IOP1
+        incr            IOP2
+        incr            IOP3
+        goto            lab_loop_output
+        
+        ;test all pin as input model
+lab_intput_model:
+        movai   0x00 ;as input        
+        movra   OEP0
+        movra   OEP1
+        movra   OEP2
+        movra   OEP3
+        
+        ;resistor push up
+        movai   0xff
+        movra   PUP0
+        movra   PUP1
+        movra   PUP2
+        movra   PUP3
+        
+lab_loop_input:
+        movar        IOP0
+        movar        IOP1
+        movar        IOP2
+        movar        IOP3         
+
+        goto            lab_loop_input
+
+        ;--------end input test---------------------------------------
+fun01:
+        nop
+        call    fun02
+        return
+        
+fun02:
+        nop
+        call    fun03
+        return
+        
+fun03:
+        nop
+        call    fun04
+        return
+
+fun04:
+        nop
+        call    fun05
+        return
+fun05:
+        nop
+        call    fun06
+        return
+fun06:
+        NOP
+        call    fun07
+        return
+fun07:
+        nop
+        call    fun08
+        nop
+        return        
+fun08:
+        nop
+        call    fun09
+        nop
+        return        
+
+fun09:
+        nop
+        return        
+
+; key model test funtion
+
+lab_key_model        
+        movai   0x0f; all io as key pin & no any TKnFL
+        movra   TK0CRL
+        movra   TK1CRL
+        movra   TK2CRL
+        ;00:key0,key4,key8       
+        ;01:key1,key5,key9
+        ;10:key2,key6,key10
+        ;11:key3,key7,key11
+        movai   0x10 ;enable key_osc,800khz
+        movra   TK0CRH
+        movra   TK1CRH
+        movra   TK2CRH
+        
+        ;timer2 initial
+        movai  0xff
+        movra   T2LOADH
+        movra   T2LOADL
+        ;clrr    T2LOADL
+        clrr    T2CNTH
+        clrr    T2CNTL
+        
+        movai   0x00
+        movra   T2CR; key model FCUP,t2pr=0
+        
+        bset    TK0IE
+        bset    TK1IE
+        bset    TK2IE
+        bset    TK0RCE
+        bset    TK1RCE
+        bset    TK2RCE
+        bset    TK0CLR
+        bset    TK1CLR
+        bset    TK2CLR
+        bset    T2IE ;enable timer2 int
+        bset    TC2EN
+        bset    GIE
+lab_key_loop:
+        ;test io mutil used
+        ;incr    IOP3;        
+        
+        goto    lab_key_loop
+                
+        END
+   
+   
+   
+        

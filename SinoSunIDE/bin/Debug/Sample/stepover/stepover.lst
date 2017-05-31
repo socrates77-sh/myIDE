@@ -1,0 +1,39 @@
+L 1				    
+L 2				    ram80 equ $80
+L 3				    ram81 equ $81
+L 4				    ram82 equ $82
+L 5				
+L 6				    org $40
+L 7				    temp00 rmb 1
+L 8				    temp01 rmb 1
+L 9				    temp02 rmb 1
+L 10				
+L 11				    org $1c00
+L 12				reset:
+L 13	[2]	1C00	A6AA	  lda #$aa      
+L 14	[4]	1C02	B780	  sta ram80
+L 15	[2]	1C04	A655	  lda #$55
+L 16	[4]	1C06	B780	  sta ram80
+L 17				
+L 18				loop:
+L 19	[2]	1C08	9D	    nop
+L 20	[6]	1C09	CD1C12	    jsr abcd
+L 21	[6]	1C0C	CD1C19	    jsr abcdd
+L 22	[2]	1C0F	9D	    nop
+L 23	[3]	1C10	20F6	    bra loop
+L 24				
+L 25				abcd:
+L 26	[2]	1C12	9D	    nop
+L 27	[3]	1C13	B681	    lda ram81
+L 28	[3]	1C15	4C	    inca
+L 29	[4]	1C16	B781	    sta ram81
+L 30	[6]	1C18	81	    rts
+L 31				abcdd:
+L 32	[2]	1C19	9D	    nop
+L 33	[3]	1C1A	B682	    lda ram82
+L 34	[3]	1C1C	4C	    inca
+L 35	[4]	1C1D	B782	    sta ram82
+L 36	[6]	1C1F	81	    rts   
+L 37				    
+L 38				    org $1ffe
+L 39		1FFE	1C00	    fdb reset

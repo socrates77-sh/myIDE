@@ -1,0 +1,39 @@
+L 1				
+L 2				DDR1    EQU     $04
+L 3				P1      EQU     $03
+L 4				DDR0    EQU     $01
+L 5				p0      EQU     $00
+L 6				MCR     EQU     $0F
+L 7				
+L 8				        org $1c00
+L 9				reset:        
+L 10	[3]	1C00	B6AA	        lda $aa
+L 11	[4]	1C02	B7C0	        sta     $c0
+L 12	[2]	1C04	A6FF	        lda     #$ff
+L 13	[4]	1C06	B704	        sta     DDR1
+L 14	[4]	1C08	B701	        sta     DDR0
+L 15				        
+L 16	[5]	1C0A	3F07	        clr     $07 ; disable OD
+L 17				        
+L 18				loop:
+L 19	[5]	1C0C	3CC0	        INC     $C0
+L 20	[3]	1C0E	B6C0	        LDA     $c0
+L 21	[4]	1C10	B703	        STA     P1
+L 22	[4]	1C12	B700	        sta     P0
+L 23				        ;bset    0,P1
+L 24				        ;
+L 25				        ;nop
+L 26				        ;bclr    0,P1
+L 27	[2]	1C14	9D	        NOP
+L 28	[2]	1C15	9D	        NOP
+L 29	[5]	1C16	180F	        bset    4,MCR
+L 30	[3]	1C18	20F2	        bra     loop        
+L 31				        
+L 32				        
+L 33				        
+L 34				        
+L 35				        
+L 36				        org $1ffe
+L 37		1FFE	1C00	        fdb     reset
+L 38				        
+L 39				        

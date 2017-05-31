@@ -1,0 +1,39 @@
+gpasm-1.7.0_beta1 (Nov 20 2014)initial.asm        2014-11-25  14:58:52         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 
+0000                  00004 .code
+0000                  00005 fn_adc100:
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0000   0B09           00006     movai   '\t'
+Error[113]  : Symbol not previously defined (time_10ms).
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0001   1580           00007     movra   time_10ms
+Error[113]  : Symbol not previously defined (time_100ms).
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0002   1580           00008     movra   time_100ms 
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0003   000C           00009     return 
+                      00010    
+                      00011    
+                      00012    end
+gpasm-1.7.0_beta1 (Nov 20 2014)initial.asm        2014-11-25  14:58:52         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+.code                             00000000
+__30P011                          00000001
+fn_adc100                         00000000
+
+Errors   :     6
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

@@ -1,0 +1,8 @@
+---- F32V Æ¥Åä (7 in 3 ÎÄ¼þ) ----
+DisplaySbr.asm:	BRCLR	F32V,DispCellA2
+T500msSbr.asm:	BRCLR	F32V,CellChkSbrA2
+T500msSbr.asm:	BCLR	F32V
+T500msSbr.asm:	BSET	F32V
+T500msSbr.asm:	BCLR	F32V
+T500msSbr.asm:	BCLR	F32V
+Var.h:F32V		define	6,Flag1 

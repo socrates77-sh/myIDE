@@ -1,0 +1,4 @@
+---- log Æ¥Åä (3 in 0 ÎÄ¼þ) ----
+MC20P24.bat (d:\winscopeide_v0.03bt_20121122\sinosunc_v):%COSMIC_HOME%sed -e "s/^[ ]*//" < %1.lst | %COSMIC_HOME%sed -e "s/^[0-9]\{1,\}//1" | %COSMIC_HOME%sed -e "s/ \{1,\}/\t\t\t\t/" | %COSMIC_HOME%sed -e "/^[\t]*[0-9][0-9a-f]\{3\}[ ]*[0-9a-f]\{2\}/ s/^[\t]*\([0-9a-f]\{4\}\)[ ]*/[1]\t\1\t/" > %1.log
+MC20P24.bat (d:\winscopeide_v0.03bt_20121122\sinosunc_v):%COSMIC_HOME%sed "/./=" %1.log | %COSMIC_HOME%sed -e "/./N;s/\n/\t/" | %COSMIC_HOME%sed -e "s/^/L /"> %1.lst
+MC20P24.bat (d:\winscopeide_v0.03bt_20121122\sinosunc_v):del %1.log

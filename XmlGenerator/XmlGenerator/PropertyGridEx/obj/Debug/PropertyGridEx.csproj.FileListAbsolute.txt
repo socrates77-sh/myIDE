@@ -1,0 +1,15 @@
+G:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.dll
+G:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.pdb
+G:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.dll
+G:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.pdb
+D:\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.dll
+D:\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.pdb
+D:\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\ResolveAssemblyReference.cache
+D:\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.dll
+D:\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.pdb
+F:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.dll
+F:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\bin\Debug\Option.pdb
+F:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\ResolveAssemblyReference.cache
+F:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.dll
+F:\Emulator\IDE\SinoSunIDE\XmlGenerator\XmlGenerator\PropertyGridEx\obj\Debug\Option.pdb

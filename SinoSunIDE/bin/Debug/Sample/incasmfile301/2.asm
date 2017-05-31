@@ -1,0 +1,6 @@
+
+
+lab:
+	movai	0xaa
+	movar	0x10
+	return	

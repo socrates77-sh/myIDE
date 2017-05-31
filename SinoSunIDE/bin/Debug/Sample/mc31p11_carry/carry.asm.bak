@@ -1,0 +1,46 @@
+
+;
+;        ksjdlwkje               //ksksk
+;        ksks    sksklslsl         sks   ksks
+;        kskjdlwjel
+;        ;abd    k       kccddriek       ;//lskdwlk
+;        ;sssss  kkk     ksjdek          ;//
+;                k       k       k       ;ll
+;        ;aaaaa  aaaa    1234569 9       ;11
+;      ss        133333  ksksksss        ;kskdljre
+;        jej;ljkeeoidjk                  ;
+;        movai   #0x001          ksks    ;ej;j;lkj;wk
+;jdlkjwqew;jd;kwj;ejkf;eukkkjdkj;kjskj;wiuejkj;akej;iu;kj
+      abcde f                 //ksksksksksk           ksksk
+;     123  6                   kks  //dkkdkdkdk
+;       ku kkkk k                   kkk  k
+    
+abc     equ     0x20
+abc0    equ     0x30        
+
+        org 0x00
+        movai   0x01
+        movra   0x10
+        movai   0x02
+        rsubar  0x10
+        
+        movai   0x03
+        movra   0x10
+        movai   0x02
+        rsubar  0x10
+
+looop:        
+        incr    abc
+        movar   0x20
+        movra   abc0
+        movra   0x35
+        movra   0x38
+        movra   0x40
+        
+        
+        
+        
+        goto    looop
+        
+        
+        end

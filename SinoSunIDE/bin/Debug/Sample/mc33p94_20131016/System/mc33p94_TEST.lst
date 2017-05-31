@@ -1,0 +1,660 @@
+gpasm-1.4.0 (Sep 22 2013)    mc33p94_TEST.asm   2013-10-16  17:39:45         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 #include "mc33p94.inc"
+                      00001 
+                      00002 ;==========================================================================
+                      00003 ;                               mc33p94
+                      00004 ;       Revision History
+                      00005 ;
+                      00006 ;==========================================================================
+                      00007 
+                      00008 ;Rev:   Date:    Reason:
+                      00009 
+                      00010 ;1.00   12/06/21 Initial Release
+                      00011 
+                      00012 ;==========================================================================
+                      00013 ;
+                      00014 ;       Verify Processor
+                      00015 ;
+                      00016 ;==========================================================================
+                      00017 ;
+                      00018 ;       Register Definitions
+                      00019 ;
+                      00020 ;==========================================================================
+                      00021 
+                      00022 ;W                            EQU     H'0000'
+                      00023 ;F                            EQU     H'0001'
+                      00024 
+                      00025 ;----- Register Files------------------------------------------------------
+                      00026 
+                      00027 
+                      00028 
+                      00029 cblock  0x180
+                      00030 INDF0                   
+                      00031 INDF1                   
+                      00032 INDF2                   
+                      00033 HIBYTE                  
+                      00034 FSR0                    
+                      00035 FSR1                    
+                      00036 PCL                     
+                      00037 PFALG                   
+                      00038 ;----0x188
+                      00039 MCR                     
+                      00040 INDF3                   
+                      00041 INTE0                   
+                      00042 INTF0                   
+                      00043 INVALID_ADDR0           
+                      00044 INVALID_ADDR1           
+                      00045 INVALID_ADDR2           
+                      00046 INVALID_ADDR3           
+                      00047 ;----0x190
+                      00048 IOP0                    
+                      00049 OEP0                              
+                      00050 INVALID_ADDR4
+                      00051 INVALID_ADDR5
+                      00052 IOP1                      
+                      00053 OEP1                    
+                      00054 PUP1                    
+                      00055 INVALID_ADDR6           
+                      00056 ;-----0x198                        
+                      00057 IOP2
+                      00058 OEP2                      
+                      00059 INVALID_ADDR7                    
+                      00060 INVALID_ADDR8           
+                      00061 INVALID_ADDR9           
+                      00062 INVALID_ADDR10           
+                      00063 INVALID_ADDR11                      
+                      00064 INVALID_ADDR12          
+                      00065 ;-----0x1a0
+                      00066 T0CR                    
+                      00067 T0CNT                   
+                      00068 T0LOAD                  
+                      00069 T0DATA                  
+                      00070 T1CR                    
+                      00071 T1CNT                   
+                      00072 T1LOAD                  
+                      00073 T1DATA                  
+                      00074 ;-----0x1a8                        
+                      00075 UCR                     
+                      00076 UBR                     
+                      00077 UFR                     
+                      00078 UTR                     
+                      00079 URR                     
+                      00080 LVDCR                   
+                      00081 OSCM                    
+                      00082 POWCR                   
+                      00083 ;-----0x1b0
+                      00084 ADCR0                   
+                      00085 ADCR1                   
+                      00086 ADCR2                   
+                      00087 INVALID_ADDR13                   
+                      00088 ADRH                    
+                      00089 ADRM                    
+                      00090 ADRL                    
+                      00091 INVALID_ADDRD14           
+                      00092 ;----0x1b8                        
+                      00093 LCDCR0                  
+                      00094 LCDCR1                  
+                      00095 LCDIOS                  
+                      00096 INVALID_ADDRD15           
+                      00097 INVALID_ADDR16           
+                      00098 INVALID_ADDR17          
+                      00099 INVALID_ADDR18          
+                      00100 INVALID_ADDR19          
+                      00101 ;----0x1c0
+                      00102 LCDDS0                  
+                      00103 LCDDS1                  
+                      00104 LCDDS2                  
+                      00105 LCDDS3                  
+                      00106 LCDDS4                  
+                      00107 LCDDS5                  
+                      00108 LCDDS6                  
+                      00109 LCDDS7                  
+                      00110 ;----0x1c8                        
+                      00111 LCDDS8                  
+                      00112 LCDDS9                  
+                      00113 LCDDS10                  
+                      00114 LCDDS11                  
+                      00115 LCDDS12                  
+                      00116 LCDDS13                  
+                      00117 LCDDS14                  
+                      00118 LCDDS15                  
+                      00119 endc
+  000001F3            00120 OSCCAL          equ     0x1f3
+                      00121 
+                      00122 #define         STATUS          PFALG
+                      00123 #define         INDF            INDF0
+                      00124 #define         FSR             FSR0
+                      00125 #define         P0HCON          PUP0
+                      00126 #define         P1HCON          PUP1
+                      00127 #define         INTECON         INTE0
+                      00128 #define         INTEFLAG        INTF0   
+                      00129 #define         LCDDS10         LCDDSa
+                      00130 #define         LCDDS11         LCDDSb
+                      00131 #define         LCDDS12         LCDDSc
+                      00132 #define         LCDDS13         LCDDSc
+                      00133 #define         LCDDS14         LCDDSe
+                      00134 #define         LCDDS15         LCDDSf
+                      00135 
+                      00136 ;----- STATUS Bits --------------------------
+                      00137 #define Z       STATUS,2
+                      00138 #define DC      STATUS,1
+                      00139 #define C       STATUS,0
+                      00140 
+                      00141 ;----- MCR Bits --------------------------
+                      00142 #define GIE     MCR,7
+                      00143 
+                      00144 ;-----  P2HCON Bits -----------------------
+                      00145 #define P20PH   P2HCON,0
+                      00146 #define P21PH   P2HCON,1
+                      00147 #define P22PH   P2HCON,2
+                      00148 #define P23PH   P2HCON,3
+                      00149 #define P24PH   P2HCON,4
+                      00150 #define P25PH   P2HCON,5
+                      00151 #define P26PH   P2HCON,6
+                      00152 #define P27PH   P2HCON,7
+                      00153 ;----- INTECON Bits --------------------------
+                      00154 #define INTE    INTECON
+                      00155 #define ADIE    INTECON,6
+                      00156 #define KBIE    INTECON,4
+                      00157 #define INT1IE  INTECON,3
+                      00158 #define INT0IE  INTECON,2
+                      00159 #define T1IE    INTECON,1
+                      00160 #define T0IE    INTECON,0
+                      00161 
+                      00162 ;----- INTEFLAG Bits --------------------------
+                      00163 #define INTF    INTEFLAG
+                      00164 #define ADIF    INTF,6
+                      00165 #define KBIF    INTF,4
+                      00166 #define INT1IF  INTF,3
+                      00167 #define INT0IF  INTF,2
+                      00168 #define T1IF    INTF,1
+                      00169 #define T0IF    INTF,0
+                      00170 ;----- UCR Bits--------------------------
+                      00171 #define OPEN    UCR,4
+                      00172 #define EPEN    UCR,3
+                      00173 #define UARTEN  UCR,2
+                      00174 ;----- UFR ----------------------
+                      00175 #define FREF    UFR,7
+                      00176 #define PAEF    UFR,6
+                      00177 #define OVEF    UFR,5
+                      00178 #define TSEF    UFR,4
+                      00179 #define RDAF    UFR,1
+                      00180 #define TREF    UFR,0
+                      00181 ;---- ADCR0 Bits -----------------
+                      00182 #define    ADCKS_16     0<<1    ;Fcpu/16
+                      00183 #define    ADCKS_8      1<<1    ;Fcpu/8
+                      00184 #define    ADCKS_4      2<<1    ;Fcpu/4
+                      00185 #define    ADCKS_2      2<<1    ;Fcpu/2
+                      00186 #define    ADCHS_0      0<<4    ;AN0
+                      00187 #define    ADCHS_1      1<<4    ;AN1
+                      00188 #define    ADCHS_2      2<<4    ;AN2
+                      00189 #define    ADCHS_3      3<<4    ;AN3
+                      00190 #define    ADCHS_4      4<<4    ;AN4
+                      00191 #define    ADCHS_5      5<<4    ;AN5
+                      00192 #define    ADCHS_6      6<<4    ;AN6
+                      00193 #define ADEN    ADCR0,0
+                      00194 #define ADEOC   ADCR0,3
+                      00195 ;---- ADCR1 Bits -----------------
+                      00196 #define    ADV_ADD      3       ;VDD
+                      00197 #define    ADV_4V       2       ;4V
+                      00198 #define    ADV_3V       1       ;3V
+                      00199 #define    ADV_2V       0       ;2V
+                      00200 #define    ADV_EX       4       ;外部参考电压
+                      00201 ;----- LCDCR0 Bits --------------------------
+                      00202 #define LCDEN   LCDCR0,7
+                      00203 #define VLCDS   LCDCR0,3
+                      00204 ;----- T0CR  Bits ----------------
+                      00205 #define TC0EN   T0CR,7
+                      00206 #define PWM0OUT T0CR,6
+                      00207 #define BUZ0OUT T0CR,5
+                      00208 
+                      00209 ;----- T1CR  Bits ----------------
+                      00210 #define TC1EN   T1CR,7
+                      00211 #define PWM1OUT T1CR,6
+                      00212 #define BUZ1OUT T1CR,5
+                      00213 
+                      00214 ;----- OSCM  Bits ----------------
+                      00215 #define STBL    OSCM,5
+                      00216 #define STBH    OSCM,4
+                      00217 #define CLKS    OSCM,2
+                      00218 #define LFEN    OSCM,1
+                      00219 #define HFEN    OSCM,0
+                      00220 
+                      00221 ;-----  POWCR Bits -------
+                      00222 #define LDOEN   POWCR,7
+                      00223 #define ENB     POWCR,6
+                      00224 ;-----  LVDCR Bits -------
+                      00225 #define LVD     PLVDCR,7
+                      00226 #define LVDS    PLVDCR,6
+                      00227 ;***********DDR1 DDR2 **********
+                      00228 #define DDR10   DDR1,0
+                      00229 #define DDR11   DDR1,1
+                      00230 #define DDR12   DDR1,2
+                      00231 #define DDR13   DDR1,3
+                      00232 
+                      00233 #define DDR20   DDR2,0
+                      00234 #define DDR21   DDR2,1
+                      00235 #define DDR22   DDR2,2
+                      00236 #define DDR23   DDR2,3
+                      00237 #define DDR24   DDR2,4
+                      00238 #define DDR25   DDR2,5
+                      00239 #define DDR26   DDR2,6
+                      00240 #define DDR27   DDR2,7
+                      00241 ;******************************
+                      00242 
+                      00243 
+                      00244 ;#define        inca    addai 1
+                      00004 
+                      00005 
+                      00006 
+                      00007 cblock 0x00
+                      00008 r0
+                      00009 r1
+                      00010 r2
+                      00011 r3
+                      00012 acc_temp
+                      00013 status_temp
+                      00014 flag
+                      00015 
+                      00016 
+                      00017 
+                      00018 endc
+                      00019 
+                      00020 #define  stop_enable         flag,0
+                      00021 #define  clk_enable          flag,1
+                      00022 
+                      00023 
+                      00024         org 0x0
+0000   A000           00025         goto    main
+                      00026 
+                      00027         org 0x8        
+0008                  00028 start_just_int:
+0008   F18A           00029         jbclr    T0IE
+0009   E18B           00030         jbset    T0IF
+000A   A000           00031         goto     lab_if_timer1_int
+                      00032 ;----timer0-----------------------
+000B   D18B           00033         bclr    T0IF
+                      00034         
+000C   F994           00035         jbclr       IOP1,4
+000D   A000           00036         goto        lab_p01_4
+000E   C994           00037         bset        IOP1,4
+000F   A000           00038         goto        end_time0_interrupt
+0010                  00039 lab_p01_4:    
+0010   D994           00040         bclr        IOP1,4
+                      00041 
+0011                  00042 end_time0_interrupt:
+                      00043 ;---------------------------------
+0011                  00044 lab_if_timer1_int:        
+0011   F38A           00045         jbclr    T1IE
+0012   E38B           00046         jbset    T1IF
+0013   A000           00047         goto    just_int0        
+                      00048 ;*********timer1***********
+0014   D38B           00049     bclr    T1IF
+                      00050     ;incr    time_125us
+                      00051     ;jbset    time_125us,3
+                      00052 
+0015                  00053 end_time1_interrupt:
+                      00054 ;**********end_timer1******
+0015                  00055 just_int0:
+0015   F58A           00056     jbclr    INT0IE
+0016   E58B           00057     jbset    INT0IF
+0017   A000           00058     goto     just_int1
+                      00059 ;**********int0************
+0018   D58B           00060     bclr    INT0IF
+                      00061     
+                      00062 
+                      00063     
+                      00064     ;goto   end_time1_interrupt
+0019                  00065 end_int0_interrupt:    
+                      00066 ;*********end int0*********
+0019                  00067 just_int1:
+0019   F78A           00068     jbclr    INT1IE
+001A   E78B           00069     jbset    INT1IF
+001B   A000           00070     goto     end_just_int
+                      00071 ;**********int0************
+001C   D78B           00072     bclr    INT1IF
+                      00073 
+                      00074 
+                      00075 ;**********end_kbim********
+001D                  00076 end_just_int:
+001D                  00077 exit_interrupt:
+                      00078 
+001D   000D           00079     retie     
+                      00080         
+                      00081         ;p16 use for int0
+                      00082         ;p14 clk out       
+001E                  00083 main: 
+                      00084         ;fill    0x0000,370      
+001E   DF88           00085         bclr    GIE
+001F   3CFF           00086         movai   0xff
+0020   5791           00087         movra   OEP0 ;set as output port
+                      00088         ;movra   OEP1
+0021   5799           00089         movra   OEP2
+0022   5796           00090         movra   PUP1 ;p1 push up R
+0023   3CBF           00091         movai   0xbf
+0024   5795           00092         movra   OEP1 ;
+                      00093         
+0025   3C70           00094         movai   0x70
+0026   57B0           00095         movra   ADCR0
+                      00096 
+0027   3CFF           00097         movai   0xff
+0028   5784           00098         movra   FSR0
+                      00099 
+0029                  00100 lab_clr_ram:        
+0029   7780           00101         clrr    INDF0
+                      00102         ;decr    FSR0
+002A   6B84           00103         djzr    FSR0 ;FRS0-1=0,skip next instruction
+002B   A000           00104         goto    lab_clr_ram 
+002C   7780           00105         clrr    INDF0   ;clr 0x00 addr        
+                      00106         
+                      00107         ;lcd 
+002D   3C85           00108         movai   0x85
+002E   57B8           00109         movra   LCDCR0
+002F   3C05           00110         movai   0x05
+0030   57B9           00111         movra   LCDCR1
+0031   3CFF           00112         movai   0xff
+0032   57BA           00113         movra   LCDIOS
+                      00114         
+0033   3C02           00115         movai   0x02
+0034   57AE           00116         movra   OSCM
+                      00117         
+0035   3C8B           00118         movai   0x8b ; enable t0,pwm t0pts=0,t0pr=0
+0036   57A0           00119         movra   T0CR
+                      00120         ;movai   11000111b ; enable t0,pwm t0pts=0,t0pr=0
+                      00121         ;movra   T1CR
+                      00122         
+0037   3C64           00123         movai   100
+0038   57A2           00124         movra   T0LOAD
+                      00125         
+0039   3C01           00126         movai   0x01
+003A   5788           00127         movra   MCR        
+                      00128         
+003B   C58A           00129         bset    INT0IE
+                      00130         ;bset    T0IE
+003C   CF88           00131         bset    GIE
+                      00132         
+003D   C006           00133         bset stop_enable 
+003E   000B           00134         stop
+                      00135         
+                      00136         
+003F                  00137 loop:
+                      00138         
+003F   8000           00139         call    keyscan
+0040   F006           00140         jbclr   stop_enable
+0041   A000           00141         goto    main
+0042   C18A           00142         bset    T0IE
+                      00143         
+0043   A000           00144         goto loop
+                      00145         
+0044                  00146 keyscan:
+0044   FD94           00147         jbclr   IOP1,6 ;
+0045   A000           00148         goto    end_keyscan
+0046   8000           00149         call    delay10ms
+0047   8000           00150         call    delay10ms
+0048   8000           00151         call    delay10ms
+0049   FD94           00152         jbclr   IOP1,6
+004A   A000           00153         goto    end_keyscan
+                      00154 
+004B   F006           00155         jbclr       stop_enable
+004C   A000           00156         goto        lab_p00_0
+004D   C006           00157         bset        stop_enable
+004E   D206           00158         bclr        clk_enable
+004F   A000           00159         goto        cancle_end_keyscan
+0050                  00160 lab_p00_0:    
+0050   D006           00161         bclr        stop_enable
+0051   C206           00162         bset        clk_enable        
+                      00163                                 
+0052                  00164 cancle_end_keyscan:
+0052   ED94           00165         jbset   IOP1,6 
+0053   A000           00166         goto    cancle_end_keyscan
+0054   8000           00167         call    delay10ms
+                      00168         ;call    delay10ms
+0055   8000           00169         call    delay10ms
+0056   ED94           00170         jbset   IOP1,6
+0057   A000           00171         goto    cancle_end_keyscan
+0058                  00172 end_keyscan:        
+0058   000C           00173         return
+                      00174 
+0059                  00175 delay10ms:
+0059   3CFF           00176         movai   0xff
+005A   5601           00177         movra   r1
+005B                  00178 re_load:
+005B   3CFF           00179         movai   0xff        
+005C   5600           00180         movra   r0
+005D                  00181 del_dec:        
+005D   6A00           00182         djzr    r0
+005E   A000           00183         goto    del_dec
+005F   6A01           00184         djzr    r1
+0060   A000           00185         goto    re_load
+0061   0000           00186         nop
+0062   000C           00187         return                
+                      00188         
+                      00189 
+                      00190                 
+                      00191         
+                      00192         en
+gpasm-1.4.0 (Sep 22 2013)    mc33p94_TEST.asm   2013-10-16  17:39:45         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000001B0
+ADCR1                             000001B1
+ADCR2                             000001B2
+ADRH                              000001B4
+ADRL                              000001B6
+ADRM                              000001B5
+FSR0                              00000184
+FSR1                              00000185
+HIBYTE                            00000183
+INDF0                             00000180
+INDF1                             00000181
+INDF2                             00000182
+INDF3                             00000189
+INTE0                             0000018A
+INTF0                             0000018B
+INVALID_ADDR0                     0000018C
+INVALID_ADDR1                     0000018D
+INVALID_ADDR10                    0000019D
+INVALID_ADDR11                    0000019E
+INVALID_ADDR12                    0000019F
+INVALID_ADDR13                    000001B3
+INVALID_ADDR16                    000001BC
+INVALID_ADDR17                    000001BD
+INVALID_ADDR18                    000001BE
+INVALID_ADDR19                    000001BF
+INVALID_ADDR2                     0000018E
+INVALID_ADDR3                     0000018F
+INVALID_ADDR4                     00000192
+INVALID_ADDR5                     00000193
+INVALID_ADDR6                     00000197
+INVALID_ADDR7                     0000019A
+INVALID_ADDR8                     0000019B
+INVALID_ADDR9                     0000019C
+INVALID_ADDRD14                   000001B7
+INVALID_ADDRD15                   000001BB
+IOP0                              00000190
+IOP1                              00000194
+IOP2                              00000198
+LCDCR0                            000001B8
+LCDCR1                            000001B9
+LCDDS0                            000001C0
+LCDDS1                            000001C1
+LCDDS10                           000001CA
+LCDDS11                           000001CB
+LCDDS12                           000001CC
+LCDDS13                           000001CD
+LCDDS14                           000001CE
+LCDDS15                           000001CF
+LCDDS2                            000001C2
+LCDDS3                            000001C3
+LCDDS4                            000001C4
+LCDDS5                            000001C5
+LCDDS6                            000001C6
+LCDDS7                            000001C7
+LCDDS8                            000001C8
+LCDDS9                            000001C9
+LCDIOS                            000001BA
+LVDCR                             000001AD
+MCR                               00000188
+OEP0                              00000191
+OEP1                              00000195
+OEP2                              00000199
+OSCCAL                            000001F3
+OSCM                              000001AE
+PCL                               00000186
+PFALG                             00000187
+POWCR                             000001AF
+PUP1                              00000196
+T0CNT                             000001A1
+T0CR                              000001A0
+T0DATA                            000001A3
+T0LOAD                            000001A2
+T1CNT                             000001A5
+T1CR                              000001A4
+T1DATA                            000001A7
+T1LOAD                            000001A6
+UBR                               000001A9
+UCR                               000001A8
+UFR                               000001AA
+URR                               000001AC
+UTR                               000001AB
+__33P94                           00000001
+acc_temp                          00000004
+cancle_end_keyscan                00000052
+del_dec                           0000005D
+delay10ms                         00000059
+end_int0_interrupt                00000019
+end_just_int                      0000001D
+end_keyscan                       00000058
+end_time0_interrupt               00000011
+end_time1_interrupt               00000015
+exit_interrupt                    0000001D
+flag                              00000006
+just_int0                         00000015
+just_int1                         00000019
+keyscan                           00000044
+lab_clr_ram                       00000029
+lab_if_timer1_int                 00000011
+lab_p00_0                         00000050
+lab_p01_4                         00000010
+loop                              0000003F
+main                              0000001E
+r0                                00000000
+r1                                00000001
+r2                                00000002
+r3                                00000003
+re_load                           0000005B
+start_just_int                    00000008
+status_temp                       00000005
+ADCHS_0                           0<<4
+ADCHS_1                           1<<4
+ADCHS_2                           2<<4
+ADCHS_3                           3<<4
+ADCHS_4                           4<<4
+ADCHS_5                           5<<4
+ADCHS_6                           6<<4
+ADCKS_16                          0<<1
+ADCKS_2                           2<<1
+ADCKS_4                           2<<1
+ADCKS_8                           1<<1
+ADEN                              ADCR0,0
+ADEOC                             ADCR0,3
+ADIE                              INTECON,6
+ADIF                              INTF,6
+ADV_2V                            0
+ADV_3V                            1
+ADV_4V                            2
+ADV_ADD                           3
+ADV_EX                            4
+BUZ0OUT                           T0CR,5
+BUZ1OUT                           T1CR,5
+C                                 STATUS,0
+CLKS                              OSCM,2
+DC                                STATUS,1
+DDR10                             DDR1,0
+DDR11                             DDR1,1
+DDR12                             DDR1,2
+DDR13                             DDR1,3
+DDR20                             DDR2,0
+DDR21                             DDR2,1
+DDR22                             DDR2,2
+DDR23                             DDR2,3
+DDR24                             DDR2,4
+DDR25                             DDR2,5
+DDR26                             DDR2,6
+DDR27                             DDR2,7
+ENB                               POWCR,6
+EPEN                              UCR,3
+FREF                              UFR,7
+FSR                               FSR0
+GIE                               MCR,7
+HFEN                              OSCM,0
+INDF                              INDF0
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT1IE                            INTECON,3
+INT1IF                            INTF,3
+INTE                              INTECON
+INTECON                           INTE0
+INTEFLAG                          INTF0
+INTF                              INTEFLAG
+KBIE                              INTECON,4
+KBIF                              INTF,4
+LCDDS10                           LCDDSa
+LCDDS11                           LCDDSb
+LCDDS12                           LCDDSc
+LCDDS13                           LCDDSc
+LCDDS14                           LCDDSe
+LCDDS15                           LCDDSf
+LCDEN                             LCDCR0,7
+LDOEN                             POWCR,7
+LFEN                              OSCM,1
+LVD                               PLVDCR,7
+LVDS                              PLVDCR,6
+OPEN                              UCR,4
+OVEF                              UFR,5
+P0HCON                            PUP0
+P1HCON                            PUP1
+P20PH                             P2HCON,0
+P21PH                             P2HCON,1
+P22PH                             P2HCON,2
+P23PH                             P2HCON,3
+P24PH                             P2HCON,4
+P25PH                             P2HCON,5
+P26PH                             P2HCON,6
+P27PH                             P2HCON,7
+PAEF                              UFR,6
+PWM0OUT                           T0CR,6
+PWM1OUT                           T1CR,6
+RDAF                              UFR,1
+STATUS                            PFALG
+STBH                              OSCM,4
+STBL                              OSCM,5
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T1IE                              INTECON,1
+T1IF                              INTF,1
+TC0EN                             T0CR,7
+TC1EN                             T1CR,7
+TREF                              UFR,0
+TSEF                              UFR,4
+UARTEN                            UCR,2
+VLCDS                             LCDCR0,3
+Z                                 STATUS,2
+clk_enable                        flag,1
+stop_enable                       flag,0
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

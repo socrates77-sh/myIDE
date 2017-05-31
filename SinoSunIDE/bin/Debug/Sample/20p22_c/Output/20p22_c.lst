@@ -1,0 +1,201 @@
+L 1					; C Compiler for MC68HC05 (COSMIC Software)
+L 2					; Generator V4.1n - 19 Jul 2001
+L 3					; Optimizer V4.1n - 19 Jul 2001
+L 4					; 4   void funtion001(unsigned char aa,unsigned char bb)
+L 5					; 5   {
+L 6						xref.b	_funtion001.L
+L 7						switch	.text
+L 8					180d               _funtion001:
+L 9					; 8     if(aa==bb)
+L 10	[1]	180d	b18b          	cmp	_funtion001.L+1
+L 11	[1]	180f	2605          	bne	L5331
+L 12					; 10         P0=0xff;
+L 13	[1]	1811	a6ff          	lda	#255
+L 14	[1]	1813	b700          	sta	_p0
+L 15	[1]	1815	81            	rts	
+L 16					1816               L5331:
+L 17					; 14         P0=0x00;
+L 18	[1]	1816	3f00          	clr	_p0
+L 19					; 15   }
+L 20	[1]	1818	81            	rts	
+L 21					; 9 void initial()
+L 22					; 10 {
+L 23						xref.b	_initial.L
+L 24						switch	.text
+L 25					1819               _initial:
+L 26					; 11    	uchar i=0;
+L 27	[1]	1819	3f8a          	clr	_initial.L-1
+L 28					; 12     SEI(); //disable enterrupt 
+L 29	[1]	181b	9b            	sei	
+L 30					; 16     DDR0=0xff;
+L 31	[1]	181c	a6ff          	lda	#255
+L 32	[1]	181e	b701          	sta	_ddr0
+L 33					; 17     P0=0xff;
+L 34	[1]	1820	b700          	sta	_p0
+L 35					; 19    	aaa = 0x55;
+L 36	[1]	1822	a655          	lda	#85
+L 37	[1]	1824	48            	lsla	
+L 38	[1]	1825	b784          	sta	_aaa
+L 39					; 20    	aaa = aaa *2;
+L 40					; 21    	for (i=0;i<5;i++)
+L 41	[1]	1827	3f8a          	clr	_initial.L-1
+L 42					1829               L1631:
+L 43					; 23    	   	temp[i] = aaa+i;
+L 44	[1]	1829	b684          	lda	_aaa
+L 45	[1]	182b	bb8a          	add	_initial.L-1
+L 46	[1]	182d	be8a          	ldx	_initial.L-1
+L 47	[1]	182f	e785          	sta	_temp,x
+L 48					; 21    	for (i=0;i<5;i++)
+L 49	[1]	1831	3c8a          	inc	_initial.L-1
+L 50	[1]	1833	b68a          	lda	_initial.L-1
+L 51	[1]	1835	a105          	cmp	#5
+L 52	[1]	1837	25f0          	blo	L1631
+L 53					; 25     for (i=0;i<5;i++)
+L 54	[1]	1839	3f8a          	clr	_initial.L-1
+L 55					183b               L7631:
+L 56					; 27    	   	aaa = temp[i];
+L 57	[1]	183b	be8a          	ldx	_initial.L-1
+L 58	[1]	183d	e685          	lda	_temp,x
+L 59	[1]	183f	b784          	sta	_aaa
+L 60					; 25     for (i=0;i<5;i++)
+L 61	[1]	1841	3c8a          	inc	_initial.L-1
+L 62	[1]	1843	b68a          	lda	_initial.L-1
+L 63	[1]	1845	a105          	cmp	#5
+L 64	[1]	1847	25f2          	blo	L7631
+L 65					; 29 }
+L 66	[1]	1849	81            	rts	
+L 67					; 32 @nosvf @interrupt void SWI_ISR(void)
+L 68					; 33    	{
+L 69						xref.b	_SWI_ISR.L
+L 70						switch	.text
+L 71					184a               _SWI_ISR:
+L 72					; 35    	}
+L 73	[1]	184a	80            	rti	
+L 74					; 37 @nosvf @interrupt void INT1_ISR(void)
+L 75					; 38    	{
+L 76						xref.b	_INT1_ISR.L
+L 77						switch	.text
+L 78					184b               _INT1_ISR:
+L 79					; 40    	}
+L 80	[1]	184b	80            	rti	
+L 81					; 42 @nosvf @interrupt void INT0_ISR(void)
+L 82					; 43    	{
+L 83						xref.b	_INT0_ISR.L
+L 84						switch	.text
+L 85					184c               _INT0_ISR:
+L 86					; 45    	}
+L 87	[1]	184c	80            	rti	
+L 88					; 47 @nosvf @interrupt void TMI2_ISR(void)
+L 89					; 48    	{  	
+L 90						xref.b	_TMI2_ISR.L
+L 91						switch	.text
+L 92					184d               _TMI2_ISR:
+L 93					; 50    	}
+L 94	[1]	184d	80            	rti	
+L 95					; 52 @nosvf @interrupt void TMI1_ISR(void)
+L 96					; 53    	{  	
+L 97						xref.b	_TMI1_ISR.L
+L 98						switch	.text
+L 99					184e               _TMI1_ISR:
+L 100					; 55    	}
+L 101	[1]	184e	80            	rti	
+L 102					; 57 @nosvf @interrupt void TMI0_ISR(void)
+L 103					; 58 {  	
+L 104						xref.b	_TMI0_ISR.L
+L 105						switch	.text
+L 106					184f               _TMI0_ISR:
+L 107					; 60    	T0IF = 0;
+L 108	[1]	184f	1f08          	bclr	7,_tcr0
+L 109					; 61    	aaa = 0x45;
+L 110	[1]	1851	a645          	lda	#69
+L 111	[1]	1853	b784          	sta	_aaa
+L 112					; 62     for (i=0;i<5;i++)
+L 113	[1]	1855	3f8c          	clr	_TMI0_ISR.L-2
+L 114	[1]	1857	3f8d          	clr	_TMI0_ISR.L-1
+L 115					1859               L5441:
+L 116					; 64        	temp[i] = aaa+i;
+L 117	[1]	1859	b684          	lda	_aaa
+L 118	[1]	185b	bb8d          	add	_TMI0_ISR.L-1
+L 119	[1]	185d	be8d          	ldx	_TMI0_ISR.L-1
+L 120	[1]	185f	e785          	sta	_temp,x
+L 121					; 62     for (i=0;i<5;i++)
+L 122	[1]	1861	3c8d          	inc	_TMI0_ISR.L-1
+L 123	[1]	1863	2602          	bne	L22
+L 124	[1]	1865	3c8c          	inc	_TMI0_ISR.L-2
+L 125					1867               L22:
+L 126	[1]	1867	b68d          	lda	_TMI0_ISR.L-1
+L 127	[1]	1869	a005          	sub	#5
+L 128	[1]	186b	b68c          	lda	_TMI0_ISR.L-2
+L 129	[1]	186d	a200          	sbc	#0
+L 130	[1]	186f	2be8          	bmi	L5441
+L 131					; 66    	for (i=0;i<5;i++)
+L 132	[1]	1871	3f8c          	clr	_TMI0_ISR.L-2
+L 133	[1]	1873	3f8d          	clr	_TMI0_ISR.L-1
+L 134					1875               L3541:
+L 135					; 68    	   	aaa = temp[i];
+L 136	[1]	1875	be8d          	ldx	_TMI0_ISR.L-1
+L 137	[1]	1877	e685          	lda	_temp,x
+L 138	[1]	1879	b784          	sta	_aaa
+L 139					; 66    	for (i=0;i<5;i++)
+L 140	[1]	187b	3c8d          	inc	_TMI0_ISR.L-1
+L 141	[1]	187d	2602          	bne	L42
+L 142	[1]	187f	3c8c          	inc	_TMI0_ISR.L-2
+L 143					1881               L42:
+L 144	[1]	1881	b68d          	lda	_TMI0_ISR.L-1
+L 145	[1]	1883	a005          	sub	#5
+L 146	[1]	1885	b68c          	lda	_TMI0_ISR.L-2
+L 147	[1]	1887	a200          	sbc	#0
+L 148	[1]	1889	2bea          	bmi	L3541
+L 149					; 70 }
+L 150	[1]	188b	80            	rti	
+L 151					; 73 @nosvf @interrupt void KBI_ISR(void)
+L 152					; 74    	{
+L 153						xref.b	_KBI_ISR.L
+L 154						switch	.text
+L 155					188c               _KBI_ISR:
+L 156					; 76    	}
+L 157	[1]	188c	80            	rti	
+L 158					; 78 @nosvf @interrupt void WDTI_ISR(void)
+L 159					; 79    	{
+L 160						xref.b	_WDTI_ISR.L
+L 161						switch	.text
+L 162					188d               _WDTI_ISR:
+L 163					; 81    	}
+L 164	[1]	188d	80            	rti	
+L 165					; 84 void main(void)
+L 166					; 85 {
+L 167						switch	.text
+L 168					188e               _main:
+L 169					; 86     RSP(); //只能在主程序中清，调用子程序中不能清堆栈指针，否则含数将无法返回。
+L 170	[1]	188e	9c            	rsp	
+L 171					; 87     initial();
+L 172	[1]	188f	ad88          	jsr	_initial
+L 173					; 88    	CLI();
+L 174	[1]	1891	9a            	cli	
+L 175					; 89    	T0IM = 0;
+L 176	[1]	1892	1d08          	bclr	6,_tcr0
+L 177					1894               L3051:
+L 178					; 93         P0=~P0;
+L 179	[1]	1894	3300          	com	_p0
+L 180					; 94    	   	aaa = 0;
+L 181	[1]	1896	3f84          	clr	_aaa
+L 182	[1]	1898	20fa          	bra	L3051
+L 183						xdef	_main
+L 184						xdef	_WDTI_ISR
+L 185						xdef	_KBI_ISR
+L 186						xdef	_TMI0_ISR
+L 187						xdef	_TMI1_ISR
+L 188						xdef	_TMI2_ISR
+L 189						xdef	_INT0_ISR
+L 190						xdef	_INT1_ISR
+L 191						xdef	_SWI_ISR
+L 192						xdef	_initial
+L 193						switch	.ubsct
+L 194					0084               _aaa:
+L 195	[1]	0084	00            	ds.b	1
+L 196						xdef	_aaa
+L 197					0085               _temp:
+L 198	[1]	0085	0000000000    	ds.b	5
+L 199						xdef	_temp
+L 200						xdef	_funtion001
+L 201						end

@@ -1,0 +1,70 @@
+P0 at 0x0000  xxxx.x  0000 to 0000
+DDR0 at 0x0001  xxxx.x  0000 to 0000
+P0HCON at 0x0002  xxxx.x  0000 to 0000
+P1 at 0x0003  xxxx.x  0000 to 0000
+DDR1 at 0x0004  xxxx.x  0000 to 0000
+P1HCON at 0x0005  xxxx.x  0000 to 0000
+KBIM at 0x0006  xxxx.x  0000 to 0000
+TCNT0 at 0x0007  xxxx.x  0000 to 0000
+TLOAD0 at 0x0007  xxxx.x  0000 to 0000
+TCR0 at 0x0008  xxxx.x  0000 to 0000
+TDATA1 at 0x0009  xxxx.x  0000 to 0000
+TCNT1 at 0x000A  xxxx.x  0000 to 0000
+TLOAD1 at 0x000A  xxxx.x  0000 to 0000
+TCR1 at 0x000B  xxxx.x  0000 to 0000
+TDATA2H at 0x000C  xxxx.x  0000 to 0000
+TCNT2H at 0x000D  xxxx.x  0000 to 0000
+TLOAD2H at 0x000D  xxxx.x  0000 to 0000
+TDATA2L at 0x000E  xxxx.x  0000 to 0000
+TCNT2L at 0x000F  xxxx.x  0000 to 0000
+TLOAD2L at 0x000F  xxxx.x  0000 to 0000
+TCR2 at 0x0010  xxxx.x  0000 to 0000
+INTC at 0x0011  xxxx.x  0000 to 0000
+ADCM at 0x0012  xxxx.x  0000 to 0000
+ADCON at 0x0013  xxxx.x  0000 to 0000
+ADTH at 0x0014  xxxx.x  0000 to 0000
+ADTL at 0x0015  xxxx.x  0000 to 0000
+MCR at 0x0016  xxxx.x  0000 to 0000
+RSTFR at 0x0017  xxxx.x  0000 to 0000
+KBIC at 0x00
+ADE5  xxxx.x  0000 to 0000
+VHSL at 0x00
+ADE4  xxxx.x  0000 to 0000
+ADE3 at 0x00
+ADE2  xxxx.x  0000 to 0000
+ADE1 at 0x00
+ADE0  xxxx.x  0000 to 0000
+EOC at 0x00
+ADCE  xxxx.x  0000 to 0000
+CellLow at 0x00F1  xxxx.x  0000 to 0000
+CV32 at 0x006F  xxxx.x  0000 to 0000
+CV38 at 0x0084  xxxx.x  0000 to 0000
+CV41 at 0x0091  xxxx.x  0000 to 0000
+CT38 at 0x006D  xxxx.x  0000 to 0000
+CT41 at 0x0074  xxxx.x  0000 to 0000
+CT42 at 0x0076  xxxx.x  0000 to 0000
+CT45 at 0x007D  xxxx.x  0000 to 0000
+Flag1 at 0x0080  xxxx.x  0000 to 0000
+Flag2 at 0x0081  xxxx.x  0000 to 0000
+KeyCnt at 0x0082  xxxx.x  0000 to 0000
+ADCCnt at 0x0083  xxxx.x  0000 to 0000
+TempAD at 0x0084  xxxx.x  0000 to 0000
+TempADBuf at 0x0085  xxxx.x  0000 to 0000
+VAD at 0x0087  xxxx.x  0000 to 0000
+VADBuf at 0x0088  xxxx.x  0000 to 0000
+ADCnt at 0x008A  xxxx.x  0000 to 0000
+Stauts at 0x008B  xxxx.x  0000 to 0000
+KeyLong at 0x008C  xxxx.x  0000 to 0000
+T50ms at 0x008D  xxxx.x  0000 to 0000
+T100ms at 0x008E  xxxx.x  0000 to 0000
+CellV at 0x008F  xxxx.x  0000 to 0000
+T500ms at 0x0090  xxxx.x  0000 to 0000
+Buf at 0x0091  xxxx.x  0000 to 0000
+TempOpDly at 0x0092  xxxx.x  0000 to 0000
+TempShDly at 0x0093  xxxx.x  0000 to 0000
+FlashCnt at 0x0094  xxxx.x  0000 to 0000
+V38CNT at 0x0095  xxxx.x  0000 to 0000
+V32CNT at 0x0096  xxxx.x  0000 to 0000
+CellDly at 0x0097  xxxx.x  0000 to 0000
+Test at 0x0098  xxxx.x  0000 to 0000
+Test1 at 0x0099  xxxx.x  0000 to 0000

@@ -1,0 +1,47 @@
+gpasm-1.4.2_beta (Jan  6 2014)1.asm              2014-8-28  16:07:59          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 
+                      00004         org 0x00
+0000   2800           00005         goto start
+                      00006         
+                      00007         
+0001                  00008 start:
+                      00009         include 2.asm
+                      00001 
+                      00002 
+0001                  00003 lab:
+0001   0BAA           00004         movai   0xaa
+0002   1610           00005         movar   0x10
+0003   000C           00006         return
+0004   0000           00010         nop
+0005   0B55           00011         movai   0x55
+0006   15A0           00012         movra   0x20;
+                      00013         
+0007                  00014 loop:
+0007   0000           00015         nop
+0008   2800           00016         goto loop       
+                      00017 
+                      00018 
+                      00019         end;      
+gpasm-1.4.2_beta (Jan  6 2014)1.asm              2014-8-28  16:07:59          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P011                          00000001
+lab                               00000001
+loop                              00000007
+start                             00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

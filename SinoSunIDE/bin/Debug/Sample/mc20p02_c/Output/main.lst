@@ -1,0 +1,64 @@
+L 1					; C Compiler for MC68HC05 (COSMIC Software)
+L 2					; Generator V4.1n - 19 Jul 2001
+L 3					; Optimizer V4.1n - 19 Jul 2001
+L 4					; 2 @nosvf @interrupt void SWI_ISR(void)
+L 5					; 3 	{
+L 6						xref.b	_SWI_ISR.L
+L 7						switch	.text
+L 8					180d               _SWI_ISR:
+L 9					; 5 	}
+L 10	[1]	180d	80            	rti	
+L 11					; 7 @nosvf @interrupt void INT1_ISR(void)
+L 12					; 8 	{
+L 13						xref.b	_INT1_ISR.L
+L 14						switch	.text
+L 15					180e               _INT1_ISR:
+L 16					; 10 	}
+L 17	[1]	180e	80            	rti	
+L 18					; 12 @nosvf @interrupt void INT0_ISR(void)
+L 19					; 13 	{
+L 20						xref.b	_INT0_ISR.L
+L 21						switch	.text
+L 22					180f               _INT0_ISR:
+L 23					; 15 	}
+L 24	[1]	180f	80            	rti	
+L 25					; 17 @nosvf @interrupt void TMI_ISR(void)
+L 26					; 18 	{	
+L 27						xref.b	_TMI_ISR.L
+L 28						switch	.text
+L 29					1810               _TMI_ISR:
+L 30					; 20 	}
+L 31	[1]	1810	80            	rti	
+L 32					; 22 @nosvf @interrupt void KBI_ISR(void)
+L 33					; 23 	{
+L 34						xref.b	_KBI_ISR.L
+L 35						switch	.text
+L 36					1811               _KBI_ISR:
+L 37					; 25 	}
+L 38	[1]	1811	80            	rti	
+L 39					; 27 @nosvf @interrupt void WDTI_ISR(void)
+L 40					; 28 	{
+L 41						xref.b	_WDTI_ISR.L
+L 42						switch	.text
+L 43					1812               _WDTI_ISR:
+L 44					; 30 	}
+L 45	[1]	1812	80            	rti	
+L 46					; 5 void main()
+L 47					; 6 {
+L 48						xref.b	_main.L
+L 49						switch	.text
+L 50					1813               _main:
+L 51					; 9     i=0;
+L 52	[1]	1813	3fc4          	clr	_main.L-1
+L 53					1815               L3631:
+L 54					; 13      i=~i;
+L 55	[1]	1815	33c4          	com	_main.L-1
+L 56	[1]	1817	20fc          	bra	L3631
+L 57						xdef	_main
+L 58						xdef	_WDTI_ISR
+L 59						xdef	_KBI_ISR
+L 60						xdef	_TMI_ISR
+L 61						xdef	_INT0_ISR
+L 62						xdef	_INT1_ISR
+L 63						xdef	_SWI_ISR
+L 64						end

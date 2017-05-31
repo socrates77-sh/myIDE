@@ -1,0 +1,469 @@
+gplink-1.7.0_beta1 (Nov 26 2015)
+Listing File Generated: 2015-12-31  10:51:50
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           #include mc30p01.inc
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           
+                                           #define    RAM_COUNT    48    ;48个RAM
+                                           #define    FIR_RAM_ADDR    0x10    ;RAM首地址
+                                           
+                                           #define    RAM_E    0x00        ;RAM错误报E0
+                                           ;***************特殊RAM***********
+                                           R0    equ    0x07
+                                           T0DATA    equ    0x41
+                                           DDR0    equ    0x45
+                                           DDR1    equ    0x46
+                                           
+                                           #define    IO_TM1628_STB    P0,0
+                                           #define    IO_TM1628_CLK    P0,1
+                                           #define    IO_TM1628_DATA    P0,2
+                                           #define    IO_TM1628_DDR    DDR0,2
+                                           ;*************ram****************
+                                           cblock    0x00
+                                           acc_temp
+                                           status_temp
+                                           r1
+                                           r2
+                                           work_flag1
+                                           work_flag2
+                                           error_flag
+                                           
+                                           time_125us
+                                           time_1ms
+                                           time_10ms
+                                           time_100ms
+                                           time_1s
+                                           time_1min
+                                           time_1hour
+                                           
+                                           dis_buffer0
+                                           dis_buffer1
+                                           dis_buffer2
+                                           dis_buffer3
+                                           tm_data0
+                                           tm_data1
+                                           tm_data2
+                                           tm_data3
+                                           tm_data4
+                                           tm_data5
+                                           tm_data6
+                                           tm_data7
+                                           key_data_buffer0
+                                           key_data_buffer1
+                                           key_data_buffer2
+                                           key_data_buffer3
+                                           key_data_buffer4
+                                           endc
+                                           ;***************end ram*************
+                                           #define    dis_buffer4    tm_data4
+                                           #define    dis_buffer5    tm_data5
+                                           #define    dis_buffer6    tm_data6
+                                           #define    dis_buffer7    tm_data7
+                                           #define    disp0_point    tm_data0,4
+                                           #define    disp1_point    tm_data1,4
+                                           #define    disp2_point    tm_data2,4
+                                           #define    disp3_point    tm_data3,4
+                                           #define    key_data1    key_data_buffer0,0    ;k1
+                                           #define    key_data2    key_data_buffer0,3    ;k2
+                                           #define    key_data3    key_data_buffer3,0    ;k3
+                                           
+                                           #define flag_time_10ms         work_flag1,0
+                                           #define flag_key1_effect    work_flag1,1
+                                           #define flag_key2_effect    work_flag1,2
+                                           #define flag_key3_effect    work_flag1,3
+                                           #define flag_key1_effect_bak    work_flag1,4
+                                           #define flag_key2_effect_bak    work_flag1,5
+                                           #define flag_key3_effect_bak    work_flag1,6
+                                           
+                                           #define    flag_disp0_point    work_flag2,0
+                                           #define    flag_disp1_point    work_flag2,1
+                                           #define    flag_disp2_point    work_flag2,2
+                                           #define    flag_disp3_point    work_flag2,3
+                                           
+                                               org     0x3ff        ;复位向量
+0003ff   2826     goto    0x26              goto   start
+                                                ;bclr    GIE    ;关中断
+                                               org     0x00
+000000   2826     goto    0x26                 goto    start
+000001   0000     nop                          nop         ;0001H
+000002   0000     nop                          NOP         ;0002H
+                                               
+                                           ;    org     0x002        ;软中断向量
+                                           ;    movra    acc_temp    ;02
+                                           ;    movar    STATUS        ;03
+                                           ;    movra    status_temp    ;04
+                                           ;
+                                           ;    goto    soft_interrupt    ;07
+                                           
+                                               ORG 0x08        ;其它中断向量
+                                           interrupt_sub:
+000008   1580     movra   0                    movra    acc_temp
+000009   1603     movar   0x3                  movar    STATUS
+00000a   1581     movra   0x1                  movra    status_temp
+                                           ;*******判断是哪个中断*****
+                                           start_just_int:
+00000b   300e     jbset   0xe, 0               jbset    T0IF
+00000c   2818     goto    0x18                 goto    just_int0
+                                           ;**********timer0**********
+00000d   3c0e     bclr    0xe, 0               bclr    T0IF
+00000e   1987     incr    0x7                  incr    time_125us
+00000f   3187     jbset   0x7, 0x3             jbset    time_125us,3
+000010   2818     goto    0x18                 goto    end_time0_interrupt
+000011   1d87     clrr    0x7                  clrr    time_125us
+000012   1988     incr    0x8                  incr    time_1ms
+000013   1608     movar   0x8                  movar    time_1ms
+                                               ;subai    10        ;10-acc
+000014   3503     jbclr   0x3, 0x2             jbclr    Z
+000015   2818     goto    0x18                 goto    end_time0_interrupt
+000016   1d88     clrr    0x8                  clrr    time_1ms
+000017   3804     bset    0x4, 0               bset    flag_time_10ms
+                                           end_time0_interrupt:
+                                           ;**********end_time0*******
+                                           just_int0:
+000018   310e     jbset   0xe, 0x2             jbset    INT0IF
+000019   281b     goto    0x1b                 goto    just_kbim
+                                           ;**********int0************
+00001a   3d0e     bclr    0xe, 0x2             bclr    INT0IF
+                                           ;*********end int0*********
+                                           just_kbim:
+00001b   308e     jbset   0xe, 0x1             jbset    KBIF
+00001c   281e     goto    0x1e                 goto    end_just_int
+                                           ;**********kbim************
+00001d   3d0e     bclr    0xe, 0x2             bclr    INT0IF
+                                           ;**********end_kbim********
+                                           end_just_int:
+00001e   160e     movar   0xe                  movar    INTF
+00001f   0d07     andai   0x7                  andai    0x07        ;低三位
+000020   3403     jbclr   0x3, 0               jbclr    C
+000021   280b     goto    0xb                  goto    start_just_int
+                                           exit_interrupt:
+000022   1601     movar   0x1                  movar    status_temp
+000023   1583     movra   0x3                  movra    STATUS
+000024   1600     movar   0                    movar    acc_temp
+000025   000d     retie                        retie
+                                           ;;*******软中断代码***********
+                                           ;soft_interrupt:
+                                           ;    movar    status_temp
+                                           ;    movra    STATUS
+                                           ;    movar    acc_temp
+                                           ;    retie
+                                           
+                                           ;*******程序开始*************
+                                           ;*********start***************
+                                           start:
+000026   3f88     bclr    0x8, 0x7             bclr    WDTEN        ;关看门狗
+000027   3f08     bclr    0x8, 0x6             bclr    EIS
+000028   15c1     movra   0x41              movra T0DATA
+                                            ;goto ram_error
+                                           clr_ram:
+000029   0b55     movai   0x55                  movai    0x55
+00002a   1587     movra   0x7                  movra    R0        ;07地址也开放给用户
+00002b   0000     nop                          nop
+00002c   1607     movar   0x7                  movar    R0
+                                            ;   nop
+                                               ;    nop
+                                               ; subai    0xff
+                                             ;bclr C
+00002d   3003     jbset   0x3, 0               jbset    C
+00002e   2846     goto    0x46                 goto    ram_error
+00002f   1d87     clrr    0x7                  clrr    R0
+000030   0000     nop                          nop
+000031   1607     movar   0x7                  movar    R0
+                                            ;BCLR C
+000032   3003     jbset   0x3, 0               jbset    C
+000033   2846     goto    0x46                 goto    ram_error
+                                               ;goto    ram_error
+000034   0b10     movai   0x10                 movai    FIR_RAM_ADDR
+000035   1584     movra   0x4                  movra    FSR        ;首地址
+000036   0b30     movai   0x30                 movai    RAM_COUNT
+000037   1587     movra   0x7                  movra    R0
+                                           clr_ram_loop:
+000038   0bff     movai   0xff                 movai    0xff
+000039   1580     movra   0                    movra    INDF        ;把FF写到FSR所指的地址
+00003a   0000     nop                          nop
+00003b   1600     movar   0                    movar    INDF        ;写完后读出来
+                                               ; subai    0xff
+00003c   3103     jbset   0x3, 0x2             jbset    Z        ;读出来后如果是FF，相减后为0，Z为1
+00003d   2846     goto    0x46                 goto    ram_error    ;先写FF
+                                           
+00003e   1980     incr    0                    incr    INDF
+00003f   1600     movar   0                    movar    INDF        ;0xff+1后为0
+000040   3103     jbset   0x3, 0x2             jbset    Z
+000041   2846     goto    0x46                 goto    ram_error    ;若不为0则是出错
+                                           
+000042   1984     incr    0x4                  incr    FSR        ;FSR指向下一个地址
+000043   1a87     djzr    0x7                  djzr    R0        ;R0-1==0则跳过一行
+000044   2838     goto    0x38                 goto    clr_ram_loop
+000045   2848     goto    0x48                 goto    sys_init
+                                           ram_error:
+000046   1600     movar   0                    movar    RAM_E
+000047   1586     movra   0x6                  movra    error_flag
+                                           ;*****************************************
+                                           sys_init:
+000048   0b01     movai   0x1                  movai    1    ;8M,2T,4分频
+000049   15c1     movra   0x41                 movra    T0DATA        ;写入T0CR 
+00004a   0b83     movai   0x83                 movai    (256-125)
+00004b   1581     movra   0x1                  movra    T0CNT    ;定时125us
+00004c   380e     bset    0xe, 0               bset    T0IE    ;开定时中断
+                                           
+00004d   1dc5     clrr    0x45                 clrr    DDR0
+00004e   1dc6     clrr    0x46                 clrr    DDR1    ;全部作为输入口
+00004f   1d85     clrr    0x5                  clrr    P0
+000050   1d86     clrr    0x6                  clrr    P1
+                                           ;***************************************
+000051   000e     clrwdt                       clrwdt
+000052   3b88     bset    0x8, 0x7             bset    WDTEN
+000053   3b8e     bset    0xe, 0x7             bset    GIE    ;开全局中断
+                                           ;************main loop***************
+                                           main_loop:
+000054   000e     clrwdt                       clrwdt
+000055   205d     call    0x5d                 call    time_deal
+000056   2096     call    0x96                 call    tm_1628_read_sub    ;读按键
+000057   2062     call    0x62                 call    key_scan        ;整理读回来的按键数据
+000058   207b     call    0x7b                 call    key_deal        ;按键处理
+000059   207c     call    0x7c                 call    work_deal
+00005a   207d     call    0x7d                 call    display
+00005b   20a4     call    0xa4                 call    tm_1628_write_sub    ;写显示数据
+00005c   2854     goto    0x54                 goto    main_loop
+                                           ;************time sub*************
+                                           time_deal:
+00005d   3004     jbset   0x4, 0               jbset    flag_time_10ms
+00005e   2861     goto    0x61                 goto    end_time_deal
+00005f   3c04     bclr    0x4, 0               bclr    flag_time_10ms
+000060   1989     incr    0x9                  incr    time_10ms
+                                           end_time_deal:
+000061   000c     return                       return
+                                           ;************key_scan*************
+                                           key_scan:
+                                           ;**********k1***********
+                                           scan_key1
+000062   301a     jbset   0x1a, 0              jbset    key_data1
+000063   2869     goto    0x69                 goto    clr_key1_bak
+                                               
+000064   3484     jbclr   0x4, 0x1             jbclr    flag_key1_effect
+000065   286a     goto    0x6a                 goto    scan_key2
+                                           
+000066   3884     bset    0x4, 0x1             bset    flag_key1_effect
+000067   3a04     bset    0x4, 0x4             bset    flag_key1_effect_bak
+000068   286a     goto    0x6a                 goto    scan_key2
+                                           clr_key1_bak:
+000069   3e04     bclr    0x4, 0x4             bclr    flag_key1_effect_bak
+                                           ;**********k2************
+                                           scan_key2:
+00006a   319a     jbset   0x1a, 0x3            jbset    key_data2
+00006b   2871     goto    0x71                 goto    clr_key2_bak
+                                               
+00006c   3504     jbclr   0x4, 0x2             jbclr    flag_key2_effect
+00006d   2872     goto    0x72                 goto    scan_key3
+                                           
+00006e   3904     bset    0x4, 0x2             bset    flag_key2_effect
+00006f   3a84     bset    0x4, 0x5             bset    flag_key2_effect_bak
+000070   2872     goto    0x72                 goto    scan_key3
+                                           clr_key2_bak:
+000071   3e84     bclr    0x4, 0x5             bclr    flag_key2_effect_bak
+                                           ;**********k3************
+                                           scan_key3:
+000072   301d     jbset   0x1d, 0              jbset    key_data3
+000073   2879     goto    0x79                 goto    clr_key3_bak
+                                               
+000074   3584     jbclr   0x4, 0x3             jbclr    flag_key3_effect
+000075   287a     goto    0x7a                 goto    end_key_scan
+                                           
+000076   3984     bset    0x4, 0x3             bset    flag_key3_effect
+000077   3b04     bset    0x4, 0x6             bset    flag_key3_effect_bak
+000078   287a     goto    0x7a                 goto    end_key_scan
+                                           clr_key3_bak:
+000079   3f04     bclr    0x4, 0x6             bclr    flag_key3_effect_bak
+                                           end_key_scan:
+00007a   000c     return                       return
+                                           ;***********key_deal**************
+                                           key_deal:
+                                           end_key_deal:
+00007b   000c     return                       return
+                                           ;***********work sub**************
+                                           work_deal:
+                                           end_work_deal:
+00007c   000c     return                       return
+                                           ;********************************
+                                           display:
+                                           ;*************查表开始***************
+00007d   1d87     clrr    0x7                  clrr    R0                ;计数4次
+                                           load_table_loop:
+00007e   0b0e     movai   0xe                  movai    dis_buffer0
+00007f   1f07     addar   0x7                  addar    R0
+000080   1584     movra   0x4                  movra    FSR                ;每次循环更新一次FSR指针
+                                               
+000081   1600     movar   0                    movar    INDF        
+000082   0b01     movai   0x1                  movai    0x01                
+000083   23fe     call    0x3fe                call    table_dis_code
+000084   1582     movra   0x2                  movra    r1                ;r1存放查表的临时值
+000085   0b12     movai   0x12                 movai    dis_buffer0+4
+000086   1f07     addar   0x7                  addar    R0
+000087   1584     movra   0x4                  movra    FSR
+000088   1602     movar   0x2                  movar    r1
+000089   1580     movra   0                    movra    INDF                ;把查表值（r1）存储到tm_data中
+                                           
+00008a   1987     incr    0x7                  incr    R0
+00008b   3107     jbset   0x7, 0x2             jbset    R0,2
+00008c   287e     goto    0x7e                 goto    load_table_loop
+                                           
+                                           ;*************小数点的显示************
+00008d   3405     jbclr   0x5, 0               jbclr    flag_disp0_point
+00008e   3a12     bset    0x12, 0x4            bset    disp0_point
+00008f   3485     jbclr   0x5, 0x1             jbclr    flag_disp1_point
+000090   3a13     bset    0x13, 0x4            bset    disp1_point
+000091   3505     jbclr   0x5, 0x2             jbclr    flag_disp2_point
+000092   3a14     bset    0x14, 0x4            bset    disp2_point
+000093   3585     jbclr   0x5, 0x3             jbclr    flag_disp3_point
+000094   3a15     bset    0x15, 0x4            bset    disp3_point
+                                           ;***************其它段的显示处理*********
+                                           end_display
+000095   000c     return                       return
+                                           
+                                           ;***************1628读按键数据************
+                                           tm_1628_read_sub:
+000096   0b1a     movai   0x1a                 movai    key_data_buffer0
+000097   1584     movra   0x4                  movra    FSR
+                                           
+000098   0b05     movai   0x5                  movai    5    ;循环5次
+000099   1583     movra   0x3                  movra    r2
+                                           
+00009a   0b42     movai   0x42                 movai    0x42
+00009b   1582     movra   0x2                  movra    r1
+00009c   20c0     call    0xc0                 call    tm_1628_write
+                                           tm1628_read_key_loop:
+00009d   20d2     call    0xd2                 call    tm_1628_read
+00009e   1602     movar   0x2                  movar    r1
+00009f   1580     movra   0                    movra    INDF
+                                                
+0000a0   1984     incr    0x4                  incr    FSR
+0000a1   1a83     djzr    0x3                  djzr    r2
+0000a2   289d     goto    0x9d                 goto    tm1628_read_key_loop
+                                           end_tm_1628_read:
+0000a3   000c     return                       return
+                                           ;***********1628 写显示数据***************
+                                           tm_1628_write_sub:
+0000a4   0b03     movai   0x3                  movai    0x03
+0000a5   1582     movra   0x2                  movra    r1
+0000a6   20c0     call    0xc0                 call    tm_1628_write
+0000a7   3805     bset    0x5, 0               bset    IO_TM1628_STB
+0000a8   0b40     movai   0x40                 movai    0x40
+0000a9   1582     movra   0x2                  movra    r1
+0000aa   20c0     call    0xc0                 call    tm_1628_write
+0000ab   3805     bset    0x5, 0               bset    IO_TM1628_STB
+0000ac   0bc0     movai   0xc0                 movai    0xc0
+0000ad   1582     movra   0x2                  movra    r1
+0000ae   20c0     call    0xc0                 call    tm_1628_write
+0000af   0b12     movai   0x12                 movai    tm_data0            ;首地址
+0000b0   1584     movra   0x4                  movra    FSR
+0000b1   1d83     clrr    0x3                  clrr    r2                ;r2计算发送buffer的次数
+                                           send_display_buffer:
+0000b2   1600     movar   0                    movar    INDF
+0000b3   1582     movra   0x2                  movra    r1
+0000b4   20c0     call    0xc0                 call    tm_1628_write
+0000b5   20c0     call    0xc0                 call    tm_1628_write
+0000b6   1984     incr    0x4                  incr    FSR
+0000b7   1983     incr    0x3                  incr    r2
+0000b8   3183     jbset   0x3, 0x3             jbset    r2,3                ;够八次就跳出
+0000b9   28b2     goto    0xb2                 goto    send_display_buffer
+                                           
+0000ba   3805     bset    0x5, 0               bset    IO_TM1628_STB
+0000bb   0b88     movai   0x88                 movai    0x88
+0000bc   1582     movra   0x2                  movra    r1
+0000bd   20c0     call    0xc0                 call    tm_1628_write
+0000be   3805     bset    0x5, 0               bset    IO_TM1628_STB
+                                           end_tm_1628_write:
+0000bf   000c     return                       return
+                                           ;*********************************
+                                           ;***************1628***************
+                                           ;*********占用r1,R0寄存器***********
+                                           ;*********r1作为参数****************
+                                           tm_1628_write:
+0000c0   3c05     bclr    0x5, 0               bclr    IO_TM1628_STB
+0000c1   3945     bset    0x45, 0x2            bset    IO_TM1628_DDR    ;data output
+0000c2   1d87     clrr    0x7                  clrr    R0        ;计数用
+0000c3   3987     bset    0x7, 0x3             bset    R0,3        ;R0=8
+                                           tm1628_send_data_loop:
+0000c4   3d05     bclr    0x5, 0x2             bclr    IO_TM1628_DATA
+0000c5   3c85     bclr    0x5, 0x1             bclr    IO_TM1628_CLK
+                                           
+0000c6   3402     jbclr   0x2, 0               jbclr    r1,0        ;发送0位数据
+0000c7   3905     bset    0x5, 0x2             bset    IO_TM1628_DATA
+                                           tm1628_clk_rising:
+0000c8   1382     rrr     0x2                  rrr    r1
+0000c9   0000     nop                          nop
+0000ca   0000     nop                          nop
+0000cb   0000     nop                          nop
+0000cc   0000     nop                          nop
+0000cd   0000     nop                          nop
+0000ce   3885     bset    0x5, 0x1             bset    IO_TM1628_CLK
+0000cf   1a87     djzr    0x7                  djzr    R0
+0000d0   28c4     goto    0xc4                 goto    tm1628_send_data_loop
+0000d1   000c     return                       return
+                                           
+                                           tm_1628_read:
+0000d2   3c05     bclr    0x5, 0               bclr    IO_TM1628_STB
+0000d3   3d45     bclr    0x45, 0x2            bclr    IO_TM1628_DDR    ;data input
+0000d4   1d87     clrr    0x7                  clrr    R0        ;计数用
+0000d5   3987     bset    0x7, 0x3             bset    R0,3        ;R0=8
+                                           tm1628_receive_data_loop:
+0000d6   3c85     bclr    0x5, 0x1             bclr    IO_TM1628_CLK
+0000d7   0000     nop                          nop
+0000d8   0000     nop                          nop
+0000d9   0000     nop                          nop
+0000da   3c03     bclr    0x3, 0               bclr    C
+0000db   3505     jbclr   0x5, 0x2             jbclr    IO_TM1628_DATA
+0000dc   3803     bset    0x3, 0               bset    C
+0000dd   1382     rrr     0x2                  rrr    r1
+0000de   3885     bset    0x5, 0x1             bset    IO_TM1628_CLK
+0000df   1a87     djzr    0x7                  djzr    R0
+0000e0   28d6     goto    0xd6                 goto    tm1628_receive_data_loop
+0000e1   000c     return                       return
+                                           ;**********************************
+                                           table:
+                                               org (0x3fe-18)
+0003ec   0a40     retai   0x40                 retai    0x40
+0003ed   0a00     retai   0                    retai    0x00
+0003ee   0ac5     retai   0xc5                 retai    0xC5
+0003ef   0acd     retai   0xcd                 retai    0xCD
+0003f0   0a6e     retai   0x6e                 retai    0x6E
+0003f1   0a8d     retai   0x8d                 retai    0x8D
+0003f2   0a6d     retai   0x6d                 retai    0x6D
+0003f3   0ae7     retai   0xe7                 retai    0xE7
+0003f4   0aeb     retai   0xeb                 retai    0xEB
+0003f5   0aef     retai   0xef                        retai    0xEF
+0003f6   0aa2     retai   0xa2                 retai    0xA2
+0003f7   0aed     retai   0xed                 retai    0xED
+0003f8   0ae9     retai   0xe9                 retai    0xE9
+0003f9   0a63     retai   0x63                 retai    0x63
+0003fa   0aea     retai   0xea                 retai    0xEA
+0003fb   0ace     retai   0xce                 retai    0xCE
+0003fc   0a22     retai   0x22                 retai    0x22
+0003fd   0aaf     retai   0xaf                 retai    0xAF
+                                               org    0x3fe
+                                           table_dis_code:
+                                               ;subra    PCL
+                                               end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXX---------- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXX------------ ---------------- ---------------- ----------------
+07C0 : ---------------- --------XXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXX--XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:   240
+

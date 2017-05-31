@@ -1,0 +1,16 @@
+
+
+
+    org 0x0
+    goto    main
+    
+    
+    
+main:
+     movai   0xaa
+     movra   0x10
+     movai   0xff
+     movai   0x10
+     
+     
+     end

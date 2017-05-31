@@ -1,0 +1,1476 @@
+gplink-1.7.0_beta1 (Nov 26 2015)
+Listing File Generated: 2016-4-18  09:49:35
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           ;--------------------------------------------------------
+                                           ; File Created by SN-SDCC : ANSI-C Compiler
+                                           ; Version 0.0.4 (Nov 24 2015) (MINGW32)
+                                           ; This file was generated Mon Apr 18 09:49:34 2016
+                                           ;--------------------------------------------------------
+                                           ; MC3X port for the RISC core
+                                           ;--------------------------------------------------------
+                                           ;	.file	"main.c"
+                                           	list	p=3221
+                                           	radix dec
+                                           	include "3221.inc"
+                                           
+                                           ;==========================================================================
+                                           ;
+                                           ;       Revision History
+                                           ;
+                                           ;==========================================================================
+                                           
+                                           ;Rev:   Date:    Reason:
+                                           
+                                           ;1.00   12/06/21 Initial Release
+                                           
+                                           ;==========================================================================
+                                           ;
+                                           ;       Register Definitions
+                                           ;
+                                           ;==========================================================================
+                                           
+                                           ;W                            EQU     H'0000'
+                                           ;F                            EQU     H'0001'
+                                           
+                                           ;----- Register Files------------------------------------------------------
+                                           INDF0		   EQU	   0x180
+                                           INDF1			 EQU	   0x181
+                                           INDF2			 EQU	   0x182
+                                           HIBYTE		 EQU	   0x183	
+                                           FSR0			 EQU	   0x184
+                                           FSR1			 EQU	   0x185
+                                           PCL			   EQU	   0x186
+                                           PFLAG			 EQU	   0x187
+                                           ;----0x188
+                                           MCR			   EQU	   0x188
+                                           INDF3			 EQU	   0x189
+                                           INTE			 EQU	   0x18a
+                                           INTF			 EQU	   0x18b		
+                                           ;----0x190
+                                           IOP0			 EQU     0x190
+                                           OEP0       EQU     0x191
+                                           PUP0       EQU     0x192    
+                                           ANSEL      EQU     0x193
+                                           IOP1       EQU     0x194               
+                                           OEP1       EQU     0x195             
+                                           PUP1       EQU     0x196
+                                           KBCR       EQU     0x197              
+                                           ;-----0x1a0
+                                           T0CR			 EQU     0x1a0
+                                           T0CNT      EQU     0x1a1             
+                                           T0LOAD     EQU     0x1a2             
+                                           T0DATA     EQU     0x1a3             
+                                           T1CR       EQU     0x1a4             
+                                           T1CNT      EQU     0x1a5             
+                                           T1LOAD     EQU     0x1a6             
+                                           T1DATA     EQU     0x1a7             
+                                           ;-----0x1a8
+                                           OSCM       EQU     0x1ae
+                                           LVDCR      EQU     0x1af                           
+                                           ;-----0x1b0
+                                           ADCR0			 EQU     0x1b0
+                                           ADCR1      EQU     0x1b1             
+                                           ADRH       EQU     0x1b4                               
+                                           ADRL       EQU     0x1b5          
+                                           ;----0x1f8                 
+                                           OSCCAL		 EQU	   0x1fb
+                                           
+                                           #define		STATUS		PFLAG
+                                           #define		INDF		  INDF0
+                                           #define		FSR		    FSR0
+                                           #define		P0HCON		PUP0
+                                           #define		P1HCON		PUP1
+                                           #define		INTECON		INTE
+                                           #define		INTFLAG	  INTF
+                                           
+                                           ;INDF0 
+                                           #define         INDF07          INDF0,7
+                                           #define         INDF06          INDF0,6
+                                           #define         INDF05          INDF0,5
+                                           #define         INDF04          INDF0,4
+                                           #define         INDF03          INDF0,3
+                                           #define         INDF02          INDF0,2
+                                           #define         INDF01          INDF0,1
+                                           #define         INDF00          INDF0,0 
+                                           
+                                           ;INDF1 
+                                           #define         INDF17          INDF1,7
+                                           #define         INDF16          INDF1,6
+                                           #define         INDF15          INDF1,5
+                                           #define         INDF14          INDF1,4
+                                           #define         INDF13          INDF1,3
+                                           #define         INDF12          INDF1,2
+                                           #define         INDF11          INDF1,1
+                                           #define         INDF10          INDF1,0
+                                           
+                                           ;INDF2 
+                                           #define         INDF27          INDF2,7
+                                           #define         INDF26          INDF2,6
+                                           #define         INDF25          INDF2,5
+                                           #define         INDF24          INDF2,4
+                                           #define         INDF23          INDF2,3
+                                           #define         INDF22          INDF2,2
+                                           #define         INDF21          INDF2,1
+                                           #define         INDF20          INDF2,0 
+                                           
+                                           ;HIBYTE
+                                           #define         HIBYTE7         HIBYTE,7
+                                           #define         HIBYTE6         HIBYTE,6
+                                           #define         HIBYTE5         HIBYTE,5
+                                           #define         HIBYTE4         HIBYTE,4
+                                           #define         HIBYTE3         HIBYTE,3
+                                           #define         HIBYTE2         HIBYTE,2
+                                           #define         HIBYTE1         HIBYTE,1
+                                           #define         HIBYTE0         HIBYTE,0
+                                           
+                                           ;FSR0 
+                                           #define         FSR07           FSR0,7
+                                           #define         FSR06           FSR0,6
+                                           #define         FSR05           FSR0,5
+                                           #define         FSR04           FSR0,4
+                                           #define         FSR03           FSR0,3
+                                           #define         FSR02           FSR0,2
+                                           #define         FSR01           FSR0,1
+                                           #define         FSR00           FSR0,0 
+                                           
+                                           ;FSR1
+                                           #define         FSR17           FSR1,7
+                                           #define         FSR16           FSR1,6
+                                           #define         FSR15           FSR1,5
+                                           #define         FSR14           FSR1,4
+                                           #define         FSR13           FSR1,3
+                                           #define         FSR12           FSR1,2
+                                           #define         FSR11           FSR1,1
+                                           #define         FSR10           FSR1,0
+                                           
+                                           ;PCL 
+                                           #define         PC7             PCL,7
+                                           #define         PC6             PCL,6
+                                           #define         PC5             PCL,5
+                                           #define         PC4             PCL,4
+                                           #define         PC3             PCL,3
+                                           #define         PC2             PCL,2
+                                           #define         PC1             PCL,1
+                                           #define         PC0             PCL,0	
+                                           
+                                           ;----- STATUS Bits --------------------------
+                                           #define	Z	  STATUS,2
+                                           #define	DC	STATUS,1
+                                           #define	C	  STATUS,0
+                                           
+                                           ;----- MCR Bits --------------------------
+                                           #define	GIE	    MCR,7
+                                           #define	TO	    MCR,5
+                                           #define	PD	    MCR,4
+                                           #define	MINT11	MCR,3
+                                           #define	MINT10	MCR,2
+                                           #define	MINT01	MCR,1
+                                           #define	MINT00	MCR,0
+                                           
+                                           ;INDF3 
+                                           #define         INDF37          INDF3,7
+                                           #define         INDF36          INDF3,6
+                                           #define         INDF35          INDF3,5
+                                           #define         INDF34          INDF3,4
+                                           #define         INDF33          INDF3,3
+                                           #define         INDF32          INDF3,2
+                                           #define         INDF31          INDF3,1
+                                           #define         INDF30          INDF3,0 
+                                           
+                                           ;----- INTE Bits --------------------------
+                                           #define	ADIE	  INTE,6
+                                           #define	KBIE	  INTE,4
+                                           #define	INT1IE	INTE,3
+                                           #define	INT0IE	INTE,2
+                                           #define	T1IE	  INTE,1
+                                           #define	T0IE	  INTE,0
+                                           
+                                           ;----- INTF Bits --------------------------
+                                           #define	ADIF	  INTF,6
+                                           #define	KBIF	  INTF,4
+                                           #define	INT1IF	INTF,3
+                                           #define	INT0IF	INTF,2
+                                           #define	T1IF	  INTF,1
+                                           #define	T0IF	  INTF,0
+                                           
+                                           ;IOP0
+                                           #define         P04D  	        IOP0,4
+                                           #define         P03D  	        IOP0,3
+                                           #define         P02D  	        IOP0,2
+                                           #define         P01D  	        IOP0,1
+                                           #define         P00D	          IOP0,0
+                                           
+                                           ;OEP0
+                                           #define         P04OE           OEP0,4
+                                           #define         P03OE           OEP0,3
+                                           #define         P02OE           OEP0,2
+                                           #define         P01OE           OEP0,1
+                                           #define         P00OE           OEP0,0
+                                           
+                                           ;PUP0
+                                           #define         P04PU           PUP0,4
+                                           #define         P03PU           PUP0,3
+                                           #define         P02PU           PUP0,2
+                                           #define         P01PU           PUP0,1
+                                           #define         P00PU           PUP0,0
+                                           
+                                           ;ANSEL
+                                           #define         P13ANS          ANSEL,6
+                                           #define         P12ANS          ANSEL,5
+                                           #define         P04ANS          ANSEL,4
+                                           #define         P03ANS          ANSEL,3
+                                           #define         P02ANS          ANSEL,2
+                                           #define         P01ANS          ANSEL,1
+                                           #define         P00ANS          ANSEL,0
+                                           
+                                           ;IOP1
+                                           #define         P16D  	        IOP1,6
+                                           #define         P15D  	        IOP1,5
+                                           #define         P14D	          IOP1,4
+                                           #define         P13D  	        IOP1,3
+                                           #define         P12D  	        IOP1,2
+                                           #define         P11D  	        IOP1,1
+                                           #define         P10D	          IOP1,0
+                                           
+                                           ;OEP1
+                                           #define         P16OE           OEP1,6
+                                           #define         P15OE           OEP1,5
+                                           #define         P14OE           OEP1,4
+                                           #define         P13OE           OEP1,3
+                                           #define         P12OE           OEP1,2
+                                           #define         P11OE           OEP1,1
+                                           #define         P10OE           OEP1,0
+                                           
+                                           ;PUP1
+                                           #define         P16PU           PUP1,6
+                                           #define         P15PU           PUP1,5
+                                           #define         P14PU           PUP1,4
+                                           #define         P13PU           PUP1,3
+                                           #define         P12PU           PUP1,2
+                                           #define         P11PU           PUP1,1
+                                           #define         P10PU           PUP1,0
+                                           
+                                           ;KBCR
+                                           #define         KBCR6           KBCR,6
+                                           #define         KBCR5           KBCR,5
+                                           #define         KBCR4           KBCR,4
+                                           #define         KBCR3           KBCR,3
+                                           #define         KBCR2           KBCR,2
+                                           #define         KBCR1           KBCR,1
+                                           #define         KBCR0           KBCR,0
+                                           
+                                           ;----- T0CR  Bits ----------------
+                                           #define	TC0EN	  T0CR,7
+                                           #define	PWM0OE	T0CR,6
+                                           #define	BUZ0OE	T0CR,5
+                                           #define	T0PTS1	T0CR,4
+                                           #define	T0PTS0	T0CR,3
+                                           #define	T0PR2	  T0CR,2
+                                           #define	T0PR1	  T0CR,1
+                                           #define	T0PR0	  T0CR,0
+                                           
+                                           ;T0CNT
+                                           #define         T0C7            T0CNT,7
+                                           #define         T0C6            T0CNT,6
+                                           #define         T0C5            T0CNT,5
+                                           #define         T0C4            T0CNT,4
+                                           #define         T0C3            T0CNT,3
+                                           #define         T0C2            T0CNT,2
+                                           #define         T0C1            T0CNT,1
+                                           #define         T0C0            T0CNT,0
+                                           
+                                           ;T0LOAD
+                                           #define         T0LOAD7         T0LOAD,7
+                                           #define         T0LOAD6         T0LOAD,6
+                                           #define         T0LOAD5         T0LOAD,5
+                                           #define         T0LOAD4         T0LOAD,4
+                                           #define         T0LOAD3         T0LOAD,3
+                                           #define         T0LOAD2         T0LOAD,2
+                                           #define         T0LOAD1         T0LOAD,1
+                                           #define         T0LOAD0         T0LOAD,0
+                                           
+                                           ;T0DATA
+                                           #define         T0DATA7         T0DATA,7
+                                           #define         T0DATA6         T0DATA,6
+                                           #define         T0DATA5         T0DATA,5
+                                           #define         T0DATA4         T0DATA,4
+                                           #define         T0DATA3         T0DATA,3
+                                           #define         T0DATA2         T0DATA,2
+                                           #define         T0DATA1         T0DATA,1
+                                           #define         T0DATA0         T0DATA,0
+                                           
+                                           ;----- T1CR  Bits ----------------
+                                           #define	TC1EN	  T1CR,7
+                                           #define	PWM1OE	T1CR,6
+                                           #define	BUZ1OE	T1CR,5
+                                           #define	T1PTS1  T1CR,4
+                                           #define	T1PTS0	T1CR,3
+                                           #define	T1PR2 	T1CR,2
+                                           #define	T1PR1 	T1CR,1
+                                           #define	T1PR0 	T1CR,0
+                                           
+                                           ;T1CNT
+                                           #define         T1C7            T1CNT,7
+                                           #define         T1C6            T1CNT,6
+                                           #define         T1C5            T1CNT,5
+                                           #define         T1C4            T1CNT,4
+                                           #define         T1C3            T1CNT,3
+                                           #define         T1C2            T1CNT,2
+                                           #define         T1C1            T1CNT,1
+                                           #define         T1C0            T1CNT,0
+                                           
+                                           ;T1LOAD
+                                           #define         T1LOAD7         T1LOAD,7
+                                           #define         T1LOAD6         T1LOAD,6
+                                           #define         T1LOAD5         T1LOAD,5
+                                           #define         T1LOAD4         T1LOAD,4
+                                           #define         T1LOAD3         T1LOAD,3
+                                           #define         T1LOAD2         T1LOAD,2
+                                           #define         T1LOAD1         T1LOAD,1
+                                           #define         T1LOAD0         T1LOAD,0
+                                           
+                                           ;T1DATA
+                                           #define         T1DATA7         T1DATA,7
+                                           #define         T1DATA6         T1DATA,6
+                                           #define         T1DATA5         T1DATA,5
+                                           #define         T1DATA4         T1DATA,4
+                                           #define         T1DATA3         T1DATA,3
+                                           #define         T1DATA2         T1DATA,2
+                                           #define         T1DATA1         T1DATA,1
+                                           #define         T1DATA0         T1DATA,0
+                                           
+                                           ;----- OSCM  Bits ----------------
+                                           #define	STBL	OSCM,5
+                                           #define	STBH	OSCM,4
+                                           #define	CLKS	OSCM,2
+                                           #define	LFEN	OSCM,1
+                                           #define	HFEN	OSCM,0
+                                           
+                                           ;-----  LVDCR Bits -------
+                                           #define LVDEN	PLVDCR,7
+                                           #define	LVDS2	PLVDCR,6
+                                           #define	LVDS1	PLVDCR,5
+                                           #define	LVDS0	PLVDCR,4
+                                           #define	LVDF	PLVDCR,0
+                                           
+                                           ;---- ADCR0 Bits -----------------
+                                           #define ADCHS3	ADCR0,7
+                                           #define	ADCHS2	ADCR0,6
+                                           #define ADCHS1	ADCR0,5
+                                           #define	ADCHS0	ADCR0,4
+                                           #define ADCKS1	ADCR0,3
+                                           #define	ADCKS0	ADCR0,2
+                                           #define ADEOC	  ADCR0,1
+                                           #define	ADON	  ADCR0,0
+                                           
+                                           ;---- ADCR1 Bits -----------------
+                                           #define	VRS2    ADCR1,2
+                                           #define VRS1	  ADCR1,1
+                                           #define	VRS0	  ADCR1,0
+                                           
+                                           ;ADRH
+                                           #define         ADR11           ADRH,7
+                                           #define         ADR10           ADRH,6
+                                           #define         ADR9            ADRH,5
+                                           #define         ADR8            ADRH,4
+                                           #define         ADR7            ADRH,3
+                                           #define         ADR6            ADRH,2
+                                           #define         ADR5            ADRH,1
+                                           #define         ADR4            ADRH,0
+                                           
+                                           ;ADRL
+                                           #define         ADR3            ADRL,3
+                                           #define         ADR2            ADRL,2
+                                           #define         ADR1            ADRL,1
+                                           #define         ADR0            ADRL,0
+                                           
+                                           ;OSCCAL
+                                           #define         OSCCAL7         OSCCAL,7
+                                           #define         OSCCAL6         OSCCAL,6
+                                           #define         OSCCAL5         OSCCAL,5
+                                           #define         OSCCAL4         OSCCAL,4
+                                           #define         OSCCAL3         OSCCAL,3
+                                           #define         OSCCAL2         OSCCAL,2
+                                           #define         OSCCAL1         OSCCAL,1
+                                           #define         OSCCAL0         OSCCAL,0
+                                           
+                                           ;--------------------------------------------------------
+                                           ; external declarations
+                                           ;--------------------------------------------------------
+                                           	extern	_STATUSbits
+                                           	extern	_MCRbits
+                                           	extern	_INTEbits
+                                           	extern	_INTFbits
+                                           	extern	_IOP0bits
+                                           	extern	_OEP0bits
+                                           	extern	_PUP0bits
+                                           	extern	_ANSELbits
+                                           	extern	_IOP1bits
+                                           	extern	_OEP1bits
+                                           	extern	_PUP1bits
+                                           	extern	_KBIMbits
+                                           	extern	_T0CRbits
+                                           	extern	_T1CRbits
+                                           	extern	_LVDCRbits
+                                           	extern	_OSCMbits
+                                           	extern	_ADCR0bits
+                                           	extern	_ADCR1bits
+                                           	extern	_INDF
+                                           	extern	_INDF0
+                                           	extern	_INDF1
+                                           	extern	_INDF2
+                                           	extern	_HIBYTE
+                                           	extern	_FSR
+                                           	extern	_FSR0
+                                           	extern	_FSR1
+                                           	extern	_PCL
+                                           	extern	_STATUS
+                                           	extern	_MCR
+                                           	extern	_INDF3
+                                           	extern	_INTE
+                                           	extern	_INTF
+                                           	extern	_IOP0
+                                           	extern	_OEP0
+                                           	extern	_PUP0
+                                           	extern	_ANSEL
+                                           	extern	_IOP1
+                                           	extern	_OEP1
+                                           	extern	_PUP1
+                                           	extern	_KBIM
+                                           	extern	_T0CR
+                                           	extern	_T0CNT
+                                           	extern	_T0LOAD
+                                           	extern	_T0DATA
+                                           	extern	_T1CR
+                                           	extern	_T1CNT
+                                           	extern	_T1LOAD
+                                           	extern	_T1DATA
+                                           	extern	_LVDCR
+                                           	extern	_OSCM
+                                           	extern	_ADCR0
+                                           	extern	_ADCR1
+                                           	extern	_ADRH
+                                           	extern	_ADRL
+                                           	extern	_OSCAL
+                                           	extern	__gptrget1
+                                           ;--------------------------------------------------------
+                                           ; global declarations
+                                           ;--------------------------------------------------------
+                                           	global	_Init_sys
+                                           	global	_Display
+                                           	global	_Multiplication
+                                           	global	_Division
+                                           	global	_main
+                                           	global	_int_isr
+                                           	global	_ABuf
+                                           	global	_StatusBuf
+                                           	global	_R_r0
+                                           	global	_R_r1
+                                           	global	_R_r2
+                                           	global	_R_r3
+                                           	global	_R_r4
+                                           	global	_R_r5
+                                           	global	_R_r6
+                                           	global	_R_r7
+                                           	global	_R_test
+                                           	global	_R_disp_mode
+                                           	global	_R_disp_H
+                                           	global	_R_disp_M
+                                           	global	_R_disp_L
+                                           	global	_R_ADC_Filt
+                                           	global	_R_ADC_temp
+                                           	global	_R_ADC_const
+                                           	global	_R_16_ADC
+                                           	global	_R_ADC_bak
+                                           	global	_Flag1
+                                           	global	_Flag2
+                                           	global	_TAB_sega
+                                           	global	_TAB_segb
+                                           	global	_TAB_segc
+                                           	global	_TAB_segd
+                                           	global	_TAB_sege
+                                           	global	_TAB_segf
+                                           	global	_TAB_segg
+                                           
+                                           	global STK06
+                                           	global STK05
+                                           	global STK04
+                                           	global STK03
+                                           	global STK02
+                                           	global STK01
+                                           	global STK00
+                                           
+                                           sharebank udata_ovr 0x0000
+                                           STK06	res 1
+                                           STK05	res 1
+                                           STK04	res 1
+                                           STK03	res 1
+                                           STK02	res 1
+                                           STK01	res 1
+                                           STK00	res 1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global definitions
+                                           ;--------------------------------------------------------
+                                           UD_main_0	udata
+                                           _ABuf	res	1
+                                           
+                                           UD_main_1	udata
+                                           _StatusBuf	res	1
+                                           
+                                           UD_main_2	udata
+                                           _R_r0	res	1
+                                           
+                                           UD_main_3	udata
+                                           _R_r1	res	1
+                                           
+                                           UD_main_4	udata
+                                           _R_r2	res	1
+                                           
+                                           UD_main_5	udata
+                                           _R_r3	res	1
+                                           
+                                           UD_main_6	udata
+                                           _R_r4	res	1
+                                           
+                                           UD_main_7	udata
+                                           _R_r5	res	1
+                                           
+                                           UD_main_8	udata
+                                           _R_r6	res	1
+                                           
+                                           UD_main_9	udata
+                                           _R_r7	res	1
+                                           
+                                           UD_main_10	udata
+                                           _R_test	res	1
+                                           
+                                           UD_main_11	udata
+                                           _R_disp_mode	res	1
+                                           
+                                           UD_main_12	udata
+                                           _R_disp_H	res	1
+                                           
+                                           UD_main_13	udata
+                                           _R_disp_M	res	1
+                                           
+                                           UD_main_14	udata
+                                           _R_disp_L	res	1
+                                           
+                                           UD_main_15	udata
+                                           _R_ADC_Filt	res	1
+                                           
+                                           UD_main_16	udata
+                                           _R_ADC_temp	res	1
+                                           
+                                           UD_main_17	udata
+                                           _R_ADC_const	res	1
+                                           
+                                           UD_main_18	udata
+                                           _R_16_ADC	res	2
+                                           
+                                           UD_main_19	udata
+                                           _R_ADC_bak	res	2
+                                           
+                                           UD_main_20	udata
+                                           _Flag1	res	1
+                                           
+                                           UD_main_21	udata
+                                           _Flag2	res	1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; absolute symbol definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; compiler-defined variables
+                                           ;--------------------------------------------------------
+                                           UDL_main_0	udata
+                                           r0x101B	res	1
+                                           r0x101C	res	1
+                                           r0x101D	res	1
+                                           r0x101E	res	1
+                                           r0x1013	res	1
+                                           r0x1014	res	1
+                                           r0x1017	res	1
+                                           r0x1018	res	1
+                                           r0x101A	res	1
+                                           ;--------------------------------------------------------
+                                           ; initialized data
+                                           ;--------------------------------------------------------
+                                           
+                                           ID_main_0	code
+                                           _TAB_sega
+00019d   3b01     retai   0x1              	retai 0x01
+00019e   3b00     retai   0                	retai 0x00
+00019f   3b01     retai   0x1              	retai 0x01
+0001a0   3b01     retai   0x1              	retai 0x01
+0001a1   3b00     retai   0                	retai 0x00
+0001a2   3b01     retai   0x1              	retai 0x01
+0001a3   3b01     retai   0x1              	retai 0x01
+0001a4   3b01     retai   0x1              	retai 0x01
+0001a5   3b01     retai   0x1              	retai 0x01
+0001a6   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ID_main_1	code
+                                           _TAB_segb
+0001a7   3b01     retai   0x1              	retai 0x01
+0001a8   3b01     retai   0x1              	retai 0x01
+0001a9   3b01     retai   0x1              	retai 0x01
+0001aa   3b01     retai   0x1              	retai 0x01
+0001ab   3b01     retai   0x1              	retai 0x01
+0001ac   3b00     retai   0                	retai 0x00
+0001ad   3b00     retai   0                	retai 0x00
+0001ae   3b01     retai   0x1              	retai 0x01
+0001af   3b01     retai   0x1              	retai 0x01
+0001b0   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ID_main_2	code
+                                           _TAB_segc
+0001b1   3b01     retai   0x1              	retai 0x01
+0001b2   3b01     retai   0x1              	retai 0x01
+0001b3   3b00     retai   0                	retai 0x00
+0001b4   3b01     retai   0x1              	retai 0x01
+0001b5   3b01     retai   0x1              	retai 0x01
+0001b6   3b01     retai   0x1              	retai 0x01
+0001b7   3b01     retai   0x1              	retai 0x01
+0001b8   3b01     retai   0x1              	retai 0x01
+0001b9   3b01     retai   0x1              	retai 0x01
+0001ba   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ID_main_3	code
+                                           _TAB_segd
+0001bb   3b01     retai   0x1              	retai 0x01
+0001bc   3b00     retai   0                	retai 0x00
+0001bd   3b01     retai   0x1              	retai 0x01
+0001be   3b01     retai   0x1              	retai 0x01
+0001bf   3b00     retai   0                	retai 0x00
+0001c0   3b01     retai   0x1              	retai 0x01
+0001c1   3b01     retai   0x1              	retai 0x01
+0001c2   3b00     retai   0                	retai 0x00
+0001c3   3b01     retai   0x1              	retai 0x01
+0001c4   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ID_main_4	code
+                                           _TAB_sege
+0001c5   3b01     retai   0x1              	retai 0x01
+0001c6   3b00     retai   0                	retai 0x00
+0001c7   3b01     retai   0x1              	retai 0x01
+0001c8   3b00     retai   0                	retai 0x00
+0001c9   3b00     retai   0                	retai 0x00
+0001ca   3b00     retai   0                	retai 0x00
+0001cb   3b01     retai   0x1              	retai 0x01
+0001cc   3b00     retai   0                	retai 0x00
+0001cd   3b01     retai   0x1              	retai 0x01
+0001ce   3b00     retai   0                	retai 0x00
+                                           
+                                           
+                                           ID_main_5	code
+                                           _TAB_segf
+0001cf   3b01     retai   0x1              	retai 0x01
+0001d0   3b00     retai   0                	retai 0x00
+0001d1   3b00     retai   0                	retai 0x00
+0001d2   3b00     retai   0                	retai 0x00
+0001d3   3b01     retai   0x1              	retai 0x01
+0001d4   3b01     retai   0x1              	retai 0x01
+0001d5   3b01     retai   0x1              	retai 0x01
+0001d6   3b00     retai   0                	retai 0x00
+0001d7   3b01     retai   0x1              	retai 0x01
+0001d8   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ID_main_6	code
+                                           _TAB_segg
+0001d9   3b00     retai   0                	retai 0x00
+0001da   3b00     retai   0                	retai 0x00
+0001db   3b01     retai   0x1              	retai 0x01
+0001dc   3b01     retai   0x1              	retai 0x01
+0001dd   3b01     retai   0x1              	retai 0x01
+0001de   3b01     retai   0x1              	retai 0x01
+0001df   3b01     retai   0x1              	retai 0x01
+0001e0   3b00     retai   0                	retai 0x00
+0001e1   3b01     retai   0x1              	retai 0x01
+0001e2   3b01     retai   0x1              	retai 0x01
+                                           
+                                           
+                                           ;@Allocation info for local variables in function 'Init_sys'
+                                           ;@Init_sys Init_sys                  Allocated to registers ;size:2
+                                           ;@Init_sys STATUSbits                Allocated to registers ;size:1
+                                           ;@Init_sys MCRbits                   Allocated to registers ;size:1
+                                           ;@Init_sys INTEbits                  Allocated to registers ;size:1
+                                           ;@Init_sys INTFbits                  Allocated to registers ;size:1
+                                           ;@Init_sys IOP0bits                  Allocated to registers ;size:1
+                                           ;@Init_sys OEP0bits                  Allocated to registers ;size:1
+                                           ;@Init_sys PUP0bits                  Allocated to registers ;size:1
+                                           ;@Init_sys ANSELbits                 Allocated to registers ;size:1
+                                           ;@Init_sys IOP1bits                  Allocated to registers ;size:1
+                                           ;@Init_sys OEP1bits                  Allocated to registers ;size:1
+                                           ;@Init_sys PUP1bits                  Allocated to registers ;size:1
+                                           ;@Init_sys KBIMbits                  Allocated to registers ;size:1
+                                           ;@Init_sys T0CRbits                  Allocated to registers ;size:1
+                                           ;@Init_sys T1CRbits                  Allocated to registers ;size:1
+                                           ;@Init_sys LVDCRbits                 Allocated to registers ;size:1
+                                           ;@Init_sys OSCMbits                  Allocated to registers ;size:1
+                                           ;@Init_sys ADCR0bits                 Allocated to registers ;size:1
+                                           ;@Init_sys ADCR1bits                 Allocated to registers ;size:1
+                                           ;@Init_sys ABuf                      Allocated to registers ;size:1
+                                           ;@Init_sys StatusBuf                 Allocated to registers ;size:1
+                                           ;@Init_sys R_r0                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r1                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r2                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r3                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r4                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r5                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r6                      Allocated to registers ;size:1
+                                           ;@Init_sys R_r7                      Allocated to registers ;size:1
+                                           ;@Init_sys R_test                    Allocated to registers ;size:1
+                                           ;@Init_sys R_disp_mode               Allocated to registers ;size:1
+                                           ;@Init_sys R_disp_H                  Allocated to registers ;size:1
+                                           ;@Init_sys R_disp_M                  Allocated to registers ;size:1
+                                           ;@Init_sys R_disp_L                  Allocated to registers ;size:1
+                                           ;@Init_sys R_ADC_Filt                Allocated to registers ;size:1
+                                           ;@Init_sys R_ADC_temp                Allocated to registers ;size:1
+                                           ;@Init_sys R_ADC_const               Allocated to registers ;size:1
+                                           ;@Init_sys R_16_ADC                  Allocated to registers ;size:2
+                                           ;@Init_sys R_ADC_bak                 Allocated to registers ;size:2
+                                           ;@Init_sys Flag1                     Allocated to registers ;size:1
+                                           ;@Init_sys Flag2                     Allocated to registers ;size:1
+                                           ;@Init_sys INDF                      Allocated to registers ;size:1
+                                           ;@Init_sys INDF0                     Allocated to registers ;size:1
+                                           ;@Init_sys INDF1                     Allocated to registers ;size:1
+                                           ;@Init_sys INDF2                     Allocated to registers ;size:1
+                                           ;@Init_sys HIBYTE                    Allocated to registers ;size:1
+                                           ;@Init_sys FSR                       Allocated to registers ;size:1
+                                           ;@Init_sys FSR0                      Allocated to registers ;size:1
+                                           ;@Init_sys FSR1                      Allocated to registers ;size:1
+                                           ;@Init_sys PCL                       Allocated to registers ;size:1
+                                           ;@Init_sys STATUS                    Allocated to registers ;size:1
+                                           ;@Init_sys MCR                       Allocated to registers ;size:1
+                                           ;@Init_sys INDF3                     Allocated to registers ;size:1
+                                           ;@Init_sys INTE                      Allocated to registers ;size:1
+                                           ;@Init_sys INTF                      Allocated to registers ;size:1
+                                           ;@Init_sys IOP0                      Allocated to registers ;size:1
+                                           ;@Init_sys OEP0                      Allocated to registers ;size:1
+                                           ;@Init_sys PUP0                      Allocated to registers ;size:1
+                                           ;@Init_sys ANSEL                     Allocated to registers ;size:1
+                                           ;@Init_sys IOP1                      Allocated to registers ;size:1
+                                           ;@Init_sys OEP1                      Allocated to registers ;size:1
+                                           ;@Init_sys PUP1                      Allocated to registers ;size:1
+                                           ;@Init_sys KBIM                      Allocated to registers ;size:1
+                                           ;@Init_sys T0CR                      Allocated to registers ;size:1
+                                           ;@Init_sys T0CNT                     Allocated to registers ;size:1
+                                           ;@Init_sys T0LOAD                    Allocated to registers ;size:1
+                                           ;@Init_sys T0DATA                    Allocated to registers ;size:1
+                                           ;@Init_sys T1CR                      Allocated to registers ;size:1
+                                           ;@Init_sys T1CNT                     Allocated to registers ;size:1
+                                           ;@Init_sys T1LOAD                    Allocated to registers ;size:1
+                                           ;@Init_sys T1DATA                    Allocated to registers ;size:1
+                                           ;@Init_sys LVDCR                     Allocated to registers ;size:1
+                                           ;@Init_sys OSCM                      Allocated to registers ;size:1
+                                           ;@Init_sys ADCR0                     Allocated to registers ;size:1
+                                           ;@Init_sys ADCR1                     Allocated to registers ;size:1
+                                           ;@Init_sys ADRH                      Allocated to registers ;size:1
+                                           ;@Init_sys ADRL                      Allocated to registers ;size:1
+                                           ;@Init_sys OSCAL                     Allocated to registers ;size:1
+                                           ;@end Allocation info for local variables in function 'Init_sys';
+                                           ;@Allocation info for local variables in function 'Display'
+                                           ;@Display i                         Allocated to registers r0x101B ;size:1
+                                           ;@end Allocation info for local variables in function 'Display';
+                                           ;@Allocation info for local variables in function 'Multiplication'
+                                           ;@Multiplication R_Multiplicand            Allocated to registers ;size:1
+                                           ;@Multiplication R_Multiplier              Allocated to registers ;size:1
+                                           ;@end Allocation info for local variables in function 'Multiplication';
+                                           ;@Allocation info for local variables in function 'Division'
+                                           ;@Division R_sor                     Allocated to registers ;size:1
+                                           ;@Division R_dend                    Allocated to registers r0x1014 r0x1013 ;size:2
+                                           ;@end Allocation info for local variables in function 'Division';
+                                           ;@Allocation info for local variables in function 'main'
+                                           ;@end Allocation info for local variables in function 'main';
+                                           ;@Allocation info for local variables in function 'int_isr'
+                                           ;@end Allocation info for local variables in function 'int_isr';
+                                           
+                                           ;--------------------------------------------------------
+                                           ; overlayable items in internal ram 
+                                           ;--------------------------------------------------------
+                                           ;	udata_ovr
+                                           ;--------------------------------------------------------
+                                           ; reset vector 
+                                           ;--------------------------------------------------------
+                                           STARTUP	code 0x0000
+000000   a02c     goto    0x2c             	goto	_main
+                                           ;--------------------------------------------------------
+                                           ; interrupt and initialization code
+                                           ;--------------------------------------------------------
+                                           c_interrupt	code	0x8
+                                           __sdcc_interrupt
+                                           ;***
+                                           ;  pBlock Stats: dbName = I
+                                           ;***
+                                           ;entry:  _int_isr	;Function start
+                                           ; 0 exit points
+                                           ;functions called:
+                                           ;   _Display
+                                           ;   _Display
+                                           ;   _Display
+                                           ;   _Display
+                                           ;   _Display
+                                           ;   _Display
+                                           ;; Starting pCode block
+                                           _int_isr	;Function start
+                                           ; 0 exit points
+                                           ;	.line	199; "main.c"	__endasm;
+000008   5614     movra   0x14             	movra _ABuf
+000009   4587     swapar  0x187            	swapar _STATUS
+00000a   5615     movra   0x15             	movra _StatusBuf
+                                           	
+                                           ;	.line	200; "main.c"	T0IF  = 0;
+00000b   d18b     bclr    0x18b, 0         	BCLR	_INTFbits,0
+                                           ;	.line	201; "main.c"	R_disp_mode++;
+00000c   661f     incr    0x1f             	INCR	_R_disp_mode
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x3=3), size=1
+                                           ;	.line	202; "main.c"	if(R_disp_mode>2)R_disp_mode = 0;                
+00000d   3c03     movai   0x3              	MOVAI	0x03
+00000e   481f     rsubar  0x1f             	RSUBAR	_R_disp_mode
+00000f   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000010   a012     goto    0x12             	GOTO	_00165_DS_
+                                           ;;genSkipc:3251: created from rifx:0028608C
+000011   761f     clrr    0x1f             	CLRR	_R_disp_mode
+                                           _00165_DS_
+                                           ;	.line	203; "main.c"	if(R_disp_mode==0){Display(R_disp_H);COM0=0;}
+000012   3c00     movai   0                	MOVAI	0x00
+000013   5c1f     orar    0x1f             	ORAR	_R_disp_mode
+000014   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+000015   a019     goto    0x19             	GOTO	_00167_DS_
+000016   5820     movar   0x20             	MOVAR	_R_disp_H
+000017   80ee     call    0xee             	CALL	_Display
+000018   d190     bclr    0x190, 0         	BCLR	_IOP0bits,0
+                                           _00167_DS_
+                                           ;	.line	204; "main.c"	if(R_disp_mode==1){Display(R_disp_M);COM1=0;}
+000019   581f     movar   0x1f             	MOVAR	_R_disp_mode
+00001a   3901     xorai   0x1              	XORAI	0x01
+00001b   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+00001c   a020     goto    0x20             	GOTO	_00169_DS_
+00001d   5821     movar   0x21             	MOVAR	_R_disp_M
+00001e   80ee     call    0xee             	CALL	_Display
+00001f   d390     bclr    0x190, 0x1       	BCLR	_IOP0bits,1
+                                           _00169_DS_
+                                           ;	.line	205; "main.c"	if(R_disp_mode==2){Display(R_disp_L);COM2=0;}       
+000020   581f     movar   0x1f             	MOVAR	_R_disp_mode
+000021   3902     xorai   0x2              	XORAI	0x02
+000022   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+000023   a027     goto    0x27             	GOTO	_00171_DS_
+000024   5822     movar   0x22             	MOVAR	_R_disp_L
+000025   80ee     call    0xee             	CALL	_Display
+000026   d590     bclr    0x190, 0x2       	BCLR	_IOP0bits,2
+                                           _00171_DS_
+                                           ;	.line	211; "main.c"	__endasm;
+000027   4415     swapar  0x15             	swapar _StatusBuf
+000028   5787     movra   0x187            	movra _STATUS
+000029   4614     swapr   0x14             	swapr _ABuf
+00002a   4414     swapar  0x14             	swapar _ABuf
+                                           	
+                                           END_OF_INTERRUPT
+00002b   000d     retie                    	RETIE	
+                                           
+                                           ;--------------------------------------------------------
+                                           ; code
+                                           ;--------------------------------------------------------
+                                           code_main	code
+                                           ;***
+                                           ;  pBlock Stats: dbName = M
+                                           ;***
+                                           ;entry:  _main	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   _Init_sys
+                                           ;   _Multiplication
+                                           ;   _Multiplication
+                                           ;   _Multiplication
+                                           ;   _Division
+                                           ;   _Division
+                                           ;   _Init_sys
+                                           ;   _Multiplication
+                                           ;   _Multiplication
+                                           ;   _Multiplication
+                                           ;   _Division
+                                           ;   _Division
+                                           ;6 compiler assigned registers:
+                                           ;   r0x1017
+                                           ;   r0x1018
+                                           ;   r0x1019
+                                           ;   r0x101A
+                                           ;   STK00
+                                           ;   STK01
+                                           ;; Starting pCode block
+                                           _main	;Function start
+                                           ; 2 exit points
+                                           ;	.line	142; "main.c"	GIE = 0;
+00002c   df88     bclr    0x188, 0x7       	BCLR	_MCRbits,7
+                                           ;	.line	143; "main.c"	ClrWdt();
+00002d   000e     clrwdt                   	clrwdt
+                                           ;	.line	154; "main.c"	__endasm;    
+00002e   3c7f     movai   0x7f             	movai 0x7f
+00002f   5600     movra   0                	movra 0x00
+000030   5800     movar   0                	movar 0x00
+000031   5784     movra   0x184            	movra FSR
+000032   7780     clrr    0x180            	clrr INDF
+000033   6a00     djzr    0                	djzr 0x00
+000034   a030     goto    0x30             	goto $-4
+000035   7780     clrr    0x180            	clrr INDF
+000036   7600     clrr    0                	clrr 0x00
+                                           	
+                                           ;	.line	156; "main.c"	Init_sys();
+000037   8178     call    0x178            	CALL	_Init_sys
+                                           ;	.line	157; "main.c"	GIE = 1;
+000038   cf88     bset    0x188, 0x7       	BSET	_MCRbits,7
+                                           _00138_DS_
+                                           ;	.line	160; "main.c"	R_16_ADC = 0;
+000039   7610     clrr    0x10             	CLRR	_R_16_ADC
+00003a   7611     clrr    0x11             	CLRR	(_R_16_ADC + 1)
+                                           ;	.line	161; "main.c"	for(R_ADC_Filt=0;R_ADC_Filt<255;R_ADC_Filt++)
+00003b   7623     clrr    0x23             	CLRR	_R_ADC_Filt
+                                           ;;unsigned compare: left < lit(0xFF=255), size=1
+                                           _00140_DS_
+00003c   3cff     movai   0xff             	MOVAI	0xff
+00003d   4823     rsubar  0x23             	RSUBAR	_R_ADC_Filt
+00003e   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00003f   a051     goto    0x51             	GOTO	_00143_DS_
+                                           ;;genSkipc:3251: created from rifx:0028608C
+                                           ;	.line	163; "main.c"	ADEOC = 0;//start ADC
+000040   d3b0     bclr    0x1b0, 0x1       	BCLR	_ADCR0bits,1
+                                           _00131_DS_
+                                           ;	.line	164; "main.c"	do{Nop();}while(ADEOC==0);       
+000041   0000     nop                      	nop
+000042   e3b0     jbset   0x1b0, 0x1       	JBSET	_ADCR0bits,1
+000043   a041     goto    0x41             	GOTO	_00131_DS_
+                                           ;	.line	165; "main.c"	R_16_ADC = R_16_ADC+ADRH;                    
+000044   59b4     movar   0x1b4            	MOVAR	_ADRH
+000045   560d     movra   0xd              	MOVRA	r0x1017
+000046   760e     clrr    0xe              	CLRR	r0x1018
+                                           ;;102	MOVAR	r0x1017
+                                           ;;100	MOVRA	r0x1019
+000047   3c00     movai   0                	MOVAI	0x00
+000048   560f     movra   0xf              	MOVRA	r0x101A
+                                           ;;101	MOVAR	r0x1019
+000049   580d     movar   0xd              	MOVAR	r0x1017
+00004a   7e10     addra   0x10             	ADDRA	_R_16_ADC
+00004b   580f     movar   0xf              	MOVAR	r0x101A
+00004c   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00004d   600f     jzar    0xf              	JZAR	r0x101A
+00004e   7e11     addra   0x11             	ADDRA	(_R_16_ADC + 1)
+                                           ;	.line	161; "main.c"	for(R_ADC_Filt=0;R_ADC_Filt<255;R_ADC_Filt++)
+00004f   6623     incr    0x23             	INCR	_R_ADC_Filt
+000050   a03c     goto    0x3c             	GOTO	_00140_DS_
+                                           _00143_DS_
+                                           ;	.line	167; "main.c"	R_ADC_temp  = R_16_ADC>>8;                
+000051   5811     movar   0x11             	MOVAR	(_R_16_ADC + 1)
+000052   5624     movra   0x24             	MOVRA	_R_ADC_temp
+000053   560d     movra   0xd              	MOVRA	r0x1017
+000054   760e     clrr    0xe              	CLRR	r0x1018
+                                           ;;105	MOVAR	r0x1017
+                                           ;	.line	168; "main.c"	R_ADC_const = 200;//若要滤波效果好，这里需要一个算法去确定数值。
+000055   3cc8     movai   0xc8             	MOVAI	0xc8
+000056   5625     movra   0x25             	MOVRA	_R_ADC_const
+                                           ;	.line	169; "main.c"	if(R_ADC_bak>R_ADC_temp)
+000057   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000058   560d     movra   0xd              	MOVRA	r0x1017
+000059   760e     clrr    0xe              	CLRR	r0x1018
+00005a   5813     movar   0x13             	MOVAR	(_R_ADC_bak + 1)
+00005b   480e     rsubar  0xe              	RSUBAR	r0x1018
+00005c   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+00005d   a060     goto    0x60             	GOTO	_00159_DS_
+00005e   5812     movar   0x12             	MOVAR	_R_ADC_bak
+00005f   480d     rsubar  0xd              	RSUBAR	r0x1017
+                                           _00159_DS_
+000060   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000061   a071     goto    0x71             	GOTO	_00135_DS_
+                                           ;;genSkipc:3251: created from rifx:0028608C
+                                           ;	.line	171; "main.c"	R_ADC_temp = R_ADC_bak-R_ADC_temp;
+000062   5812     movar   0x12             	MOVAR	_R_ADC_bak
+000063   560d     movra   0xd              	MOVRA	r0x1017
+000064   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000065   480d     rsubar  0xd              	RSUBAR	r0x1017
+000066   5624     movra   0x24             	MOVRA	_R_ADC_temp
+                                           ;	.line	172; "main.c"	Multiplication(R_ADC_temp,R_ADC_const); 
+000067   3cc8     movai   0xc8             	MOVAI	0xc8
+000068   5606     movra   0x6              	MOVRA	STK00
+000069   5824     movar   0x24             	MOVAR	_R_ADC_temp
+00006a   80d5     call    0xd5             	CALL	_Multiplication
+                                           ;	.line	173; "main.c"	R_ADC_temp = R_ADC_bak-R_r1; 
+00006b   5812     movar   0x12             	MOVAR	_R_ADC_bak
+00006c   560d     movra   0xd              	MOVRA	r0x1017
+00006d   5817     movar   0x17             	MOVAR	_R_r1
+00006e   480d     rsubar  0xd              	RSUBAR	r0x1017
+00006f   5624     movra   0x24             	MOVRA	_R_ADC_temp
+000070   a07e     goto    0x7e             	GOTO	_00136_DS_
+                                           _00135_DS_
+                                           ;	.line	176; "main.c"	R_ADC_temp = R_ADC_temp-R_ADC_bak;
+000071   5812     movar   0x12             	MOVAR	_R_ADC_bak
+000072   560d     movra   0xd              	MOVRA	r0x1017
+000073   580d     movar   0xd              	MOVAR	r0x1017
+000074   4a24     rsubra  0x24             	RSUBRA	_R_ADC_temp
+                                           ;	.line	177; "main.c"	Multiplication(R_ADC_temp,R_ADC_const);
+000075   3cc8     movai   0xc8             	MOVAI	0xc8
+000076   5606     movra   0x6              	MOVRA	STK00
+000077   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000078   80d5     call    0xd5             	CALL	_Multiplication
+                                           ;	.line	178; "main.c"	R_ADC_temp = R_ADC_bak+R_r1;   
+000079   5812     movar   0x12             	MOVAR	_R_ADC_bak
+00007a   560d     movra   0xd              	MOVRA	r0x1017
+00007b   5817     movar   0x17             	MOVAR	_R_r1
+00007c   7c0d     addar   0xd              	ADDAR	r0x1017
+00007d   5624     movra   0x24             	MOVRA	_R_ADC_temp
+                                           _00136_DS_
+                                           ;	.line	180; "main.c"	R_ADC_bak = R_ADC_temp;
+00007e   5824     movar   0x24             	MOVAR	_R_ADC_temp
+00007f   5612     movra   0x12             	MOVRA	_R_ADC_bak
+000080   7613     clrr    0x13             	CLRR	(_R_ADC_bak + 1)
+                                           ;	.line	181; "main.c"	Multiplication(R_ADC_temp,200);
+000081   3cc8     movai   0xc8             	MOVAI	0xc8
+000082   5606     movra   0x6              	MOVRA	STK00
+000083   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000084   80d5     call    0xd5             	CALL	_Multiplication
+                                           ;	.line	182; "main.c"	R_ADC_temp = R_r1;//取高8位
+000085   5817     movar   0x17             	MOVAR	_R_r1
+000086   5624     movra   0x24             	MOVRA	_R_ADC_temp
+                                           ;	.line	183; "main.c"	Division(R_ADC_temp,100);//取百位
+000087   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000088   560d     movra   0xd              	MOVRA	r0x1017
+000089   760e     clrr    0xe              	CLRR	r0x1018
+00008a   3c64     movai   0x64             	MOVAI	0x64
+00008b   5605     movra   0x5              	MOVRA	STK01
+00008c   580d     movar   0xd              	MOVAR	r0x1017
+00008d   5606     movra   0x6              	MOVRA	STK00
+00008e   3c00     movai   0                	MOVAI	0x00
+00008f   80a3     call    0xa3             	CALL	_Division
+                                           ;	.line	184; "main.c"	R_disp_H   = R_r0;
+000090   5816     movar   0x16             	MOVAR	_R_r0
+000091   5620     movra   0x20             	MOVRA	_R_disp_H
+                                           ;	.line	185; "main.c"	R_ADC_temp = R_r2;
+000092   5818     movar   0x18             	MOVAR	_R_r2
+000093   5624     movra   0x24             	MOVRA	_R_ADC_temp
+                                           ;	.line	186; "main.c"	Division(R_ADC_temp,10);//取十位
+000094   5824     movar   0x24             	MOVAR	_R_ADC_temp
+000095   560d     movra   0xd              	MOVRA	r0x1017
+000096   760e     clrr    0xe              	CLRR	r0x1018
+000097   3c0a     movai   0xa              	MOVAI	0x0a
+000098   5605     movra   0x5              	MOVRA	STK01
+000099   580d     movar   0xd              	MOVAR	r0x1017
+00009a   5606     movra   0x6              	MOVRA	STK00
+00009b   3c00     movai   0                	MOVAI	0x00
+00009c   80a3     call    0xa3             	CALL	_Division
+                                           ;	.line	187; "main.c"	R_disp_M = R_r0;  
+00009d   5816     movar   0x16             	MOVAR	_R_r0
+00009e   5621     movra   0x21             	MOVRA	_R_disp_M
+                                           ;	.line	188; "main.c"	R_disp_L = R_r2; 
+00009f   5818     movar   0x18             	MOVAR	_R_r2
+0000a0   5622     movra   0x22             	MOVRA	_R_disp_L
+0000a1   a039     goto    0x39             	GOTO	_00138_DS_
+0000a2   000c     return                   	RETURN	
+                                           ; exit point of _main
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Division	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;6 compiler assigned registers:
+                                           ;   r0x1013
+                                           ;   STK00
+                                           ;   r0x1014
+                                           ;   STK01
+                                           ;   r0x1015
+                                           ;   r0x1016
+                                           ;; Starting pCode block
+                                           _Division	;Function start
+                                           ; 2 exit points
+0000a3   5619     movra   0x19             	MOVRA	_R_r3
+                                           ;	.line	95; "main.c"	void  Division(unsigned int R_dend,uchar R_sor)
+0000a4   560b     movra   0xb              	MOVRA	r0x1013
+0000a5   5806     movar   0x6              	MOVAR	STK00
+0000a6   561a     movra   0x1a             	MOVRA	_R_r4
+0000a7   560c     movra   0xc              	MOVRA	r0x1014
+0000a8   5805     movar   0x5              	MOVAR	STK01
+0000a9   561b     movra   0x1b             	MOVRA	_R_r5
+                                           ;	.line	97; "main.c"	R_r0 = 0;
+0000aa   7616     clrr    0x16             	CLRR	_R_r0
+                                           ;	.line	98; "main.c"	R_r1 = 0;
+0000ab   7617     clrr    0x17             	CLRR	_R_r1
+                                           ;	.line	99; "main.c"	R_r2 = 0; 
+0000ac   7618     clrr    0x18             	CLRR	_R_r2
+                                           ;;104	MOVAR	r0x1013
+                                           ;;1	MOVRA	r0x1015
+                                           ;;1	CLRR	r0x1016
+                                           ;;99	MOVAR	r0x1015
+                                           ;	.line	101; "main.c"	R_r4 = R_dend&0xff;
+0000ad   760b     clrr    0xb              	CLRR	r0x1013
+                                           ;;103	MOVAR	r0x1014
+                                           ;	.line	103; "main.c"	R_r7 = 0;                       
+0000ae   761d     clrr    0x1d             	CLRR	_R_r7
+                                           ;	.line	104; "main.c"	if(R_r5==0)
+0000af   3c00     movai   0                	MOVAI	0x00
+0000b0   5c1b     orar    0x1b             	ORAR	_R_r5
+0000b1   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+0000b2   a0b7     goto    0xb7             	GOTO	_00121_DS_
+                                           ;	.line	106; "main.c"	R_r0 = 0;
+0000b3   7616     clrr    0x16             	CLRR	_R_r0
+                                           ;	.line	107; "main.c"	R_r1 = 0;
+0000b4   7617     clrr    0x17             	CLRR	_R_r1
+                                           ;	.line	108; "main.c"	R_r2 = 0;        
+0000b5   7618     clrr    0x18             	CLRR	_R_r2
+0000b6   a0d4     goto    0xd4             	GOTO	_00126_DS_
+                                           _00121_DS_
+                                           ;	.line	112; "main.c"	for(R_r6=0;R_r6<16;R_r6++)
+0000b7   3c10     movai   0x10             	MOVAI	0x10
+0000b8   561c     movra   0x1c             	MOVRA	_R_r6
+                                           _00125_DS_
+                                           ;	.line	134; "main.c"	__endasm;   
+                                           	;
+0000b9   d187     bclr    0x187, 0         	bclr _STATUS,0
+0000ba   521a     rlr     0x1a             	rlr _R_r4
+0000bb   5219     rlr     0x19             	rlr _R_r3
+0000bc   5218     rlr     0x18             	rlr _R_r2
+0000bd   521d     rlr     0x1d             	rlr _R_r7
+0000be   581b     movar   0x1b             	movar _R_r5
+0000bf   4818     rsubar  0x18             	rsubar _R_r2
+0000c0   f187     jbclr   0x187, 0         	jbclr _STATUS,0
+0000c1   a0c6     goto    0xc6             	goto updata_div
+0000c2   f01d     jbclr   0x1d, 0          	jbclr _R_r7,0
+0000c3   a0c6     goto    0xc6             	goto updata_div
+0000c4   d187     bclr    0x187, 0         	bclr _STATUS,0
+0000c5   a0c8     goto    0xc8             	goto r0_shift
+                                           updata_div:
+0000c6   5618     movra   0x18             	movra _R_r2
+0000c7   c187     bset    0x187, 0         	bset _STATUS,0
+                                           r0_shift:
+0000c8   5216     rlr     0x16             	rlr _R_r0
+0000c9   5217     rlr     0x17             	rlr _R_r1
+                                           	
+0000ca   581c     movar   0x1c             	MOVAR	_R_r6
+0000cb   560c     movra   0xc              	MOVRA	r0x1014
+0000cc   6c0c     decar   0xc              	DECAR	r0x1014
+0000cd   561c     movra   0x1c             	MOVRA	_R_r6
+                                           ;	.line	112; "main.c"	for(R_r6=0;R_r6<16;R_r6++)
+0000ce   3c00     movai   0                	MOVAI	0x00
+0000cf   5c1c     orar    0x1c             	ORAR	_R_r6
+0000d0   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+0000d1   a0b9     goto    0xb9             	GOTO	_00125_DS_
+0000d2   3c10     movai   0x10             	MOVAI	0x10
+0000d3   561c     movra   0x1c             	MOVRA	_R_r6
+                                           _00126_DS_
+0000d4   000c     return                   	RETURN	
+                                           ; exit point of _Division
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Multiplication	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;2 compiler assigned registers:
+                                           ;   STK00
+                                           ;   r0x1013
+                                           ;; Starting pCode block
+                                           _Multiplication	;Function start
+                                           ; 2 exit points
+                                           ;	.line	67; "main.c"	void  Multiplication(uchar R_Multiplier,uchar R_Multiplicand)
+0000d5   5619     movra   0x19             	MOVRA	_R_r3
+0000d6   5806     movar   0x6              	MOVAR	STK00
+0000d7   561a     movra   0x1a             	MOVRA	_R_r4
+                                           ;	.line	69; "main.c"	R_r1 = 0;      //结果高8位
+0000d8   7617     clrr    0x17             	CLRR	_R_r1
+                                           ;	.line	70; "main.c"	R_r0 = 0;      //结果低8位
+0000d9   7616     clrr    0x16             	CLRR	_R_r0
+                                           ;	.line	73; "main.c"	for(R_r2=0;R_r2<8;R_r2++)   
+0000da   3c08     movai   0x8              	MOVAI	0x08
+0000db   5618     movra   0x18             	MOVRA	_R_r2
+                                           _00115_DS_
+                                           ;	.line	84; "main.c"	__endasm;      
+                                           	;
+0000dc   4e19     rrr     0x19             	rrr _R_r3
+0000dd   e187     jbset   0x187, 0         	jbset _STATUS,0
+0000de   a0e1     goto    0xe1             	goto Mul_loop
+0000df   581a     movar   0x1a             	movar _R_r4
+0000e0   7e17     addra   0x17             	addra _R_r1
+                                           Mul_loop:
+0000e1   4e17     rrr     0x17             	rrr _R_r1
+0000e2   4e16     rrr     0x16             	rrr _R_r0
+                                           	
+0000e3   5818     movar   0x18             	MOVAR	_R_r2
+0000e4   560b     movra   0xb              	MOVRA	r0x1013
+0000e5   6c0b     decar   0xb              	DECAR	r0x1013
+0000e6   5618     movra   0x18             	MOVRA	_R_r2
+                                           ;	.line	73; "main.c"	for(R_r2=0;R_r2<8;R_r2++)   
+0000e7   3c00     movai   0                	MOVAI	0x00
+0000e8   5c18     orar    0x18             	ORAR	_R_r2
+0000e9   e587     jbset   0x187, 0x2       	JBSET	STATUS,2
+0000ea   a0dc     goto    0xdc             	GOTO	_00115_DS_
+0000eb   3c08     movai   0x8              	MOVAI	0x08
+0000ec   5618     movra   0x18             	MOVRA	_R_r2
+0000ed   000c     return                   	RETURN	
+                                           ; exit point of _Multiplication
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Display	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;   __gptrget1
+                                           ;6 compiler assigned registers:
+                                           ;   r0x101B
+                                           ;   r0x101C
+                                           ;   r0x101D
+                                           ;   STK01
+                                           ;   STK00
+                                           ;   r0x101E
+                                           ;; Starting pCode block
+                                           _Display	;Function start
+                                           ; 2 exit points
+                                           ;	.line	48; "main.c"	void  Display(uchar i)
+0000ee   5607     movra   0x7              	MOVRA	r0x101B
+                                           ;	.line	50; "main.c"	COM0 = 1;
+0000ef   c190     bset    0x190, 0         	BSET	_IOP0bits,0
+                                           ;	.line	51; "main.c"	COM1 = 1;
+0000f0   c390     bset    0x190, 0x1       	BSET	_IOP0bits,1
+                                           ;	.line	52; "main.c"	COM2 = 1; 
+0000f1   c590     bset    0x190, 0x2       	BSET	_IOP0bits,2
+                                           ;	.line	53; "main.c"	SEG_A = TAB_sega[i];
+0000f2   5807     movar   0x7              	MOVAR	r0x101B
+0000f3   3f9d     addai   0x9d             	ADDAI	(_TAB_sega + 0)
+0000f4   5608     movra   0x8              	MOVRA	r0x101C
+0000f5   3c01     movai   0x1              	MOVAI	high (_TAB_sega + 0)
+0000f6   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+0000f7   3f01     addai   0x1              	ADDAI	0x01
+0000f8   5609     movra   0x9              	MOVRA	r0x101D
+0000f9   5808     movar   0x8              	MOVAR	r0x101C
+0000fa   5605     movra   0x5              	MOVRA	STK01
+0000fb   5809     movar   0x9              	MOVAR	r0x101D
+0000fc   5606     movra   0x6              	MOVRA	STK00
+0000fd   3c80     movai   0x80             	MOVAI	0x80
+0000fe   818c     call    0x18c            	CALL	__gptrget1
+0000ff   560a     movra   0xa              	MOVRA	r0x101E
+000100   4c0a     rrar    0xa              	RRAR	r0x101E
+000101   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000102   d194     bclr    0x194, 0         	BCLR	_IOP1bits,0
+000103   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000104   c194     bset    0x194, 0         	BSET	_IOP1bits,0
+                                           ;	.line	54; "main.c"	SEG_B = TAB_segb[i];
+000105   5807     movar   0x7              	MOVAR	r0x101B
+000106   3fa7     addai   0xa7             	ADDAI	(_TAB_segb + 0)
+000107   5608     movra   0x8              	MOVRA	r0x101C
+000108   3c01     movai   0x1              	MOVAI	high (_TAB_segb + 0)
+000109   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00010a   3f01     addai   0x1              	ADDAI	0x01
+00010b   5609     movra   0x9              	MOVRA	r0x101D
+00010c   5808     movar   0x8              	MOVAR	r0x101C
+00010d   5605     movra   0x5              	MOVRA	STK01
+00010e   5809     movar   0x9              	MOVAR	r0x101D
+00010f   5606     movra   0x6              	MOVRA	STK00
+000110   3c80     movai   0x80             	MOVAI	0x80
+000111   818c     call    0x18c            	CALL	__gptrget1
+000112   560a     movra   0xa              	MOVRA	r0x101E
+000113   4c0a     rrar    0xa              	RRAR	r0x101E
+000114   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000115   d394     bclr    0x194, 0x1       	BCLR	_IOP1bits,1
+000116   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000117   c394     bset    0x194, 0x1       	BSET	_IOP1bits,1
+                                           ;	.line	55; "main.c"	SEG_C = TAB_segc[i];
+000118   5807     movar   0x7              	MOVAR	r0x101B
+000119   3fb1     addai   0xb1             	ADDAI	(_TAB_segc + 0)
+00011a   5608     movra   0x8              	MOVRA	r0x101C
+00011b   3c01     movai   0x1              	MOVAI	high (_TAB_segc + 0)
+00011c   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00011d   3f01     addai   0x1              	ADDAI	0x01
+00011e   5609     movra   0x9              	MOVRA	r0x101D
+00011f   5808     movar   0x8              	MOVAR	r0x101C
+000120   5605     movra   0x5              	MOVRA	STK01
+000121   5809     movar   0x9              	MOVAR	r0x101D
+000122   5606     movra   0x6              	MOVRA	STK00
+000123   3c80     movai   0x80             	MOVAI	0x80
+000124   818c     call    0x18c            	CALL	__gptrget1
+000125   560a     movra   0xa              	MOVRA	r0x101E
+000126   4c0a     rrar    0xa              	RRAR	r0x101E
+000127   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000128   d594     bclr    0x194, 0x2       	BCLR	_IOP1bits,2
+000129   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00012a   c594     bset    0x194, 0x2       	BSET	_IOP1bits,2
+                                           ;	.line	56; "main.c"	SEG_D = TAB_segd[i];
+00012b   5807     movar   0x7              	MOVAR	r0x101B
+00012c   3fbb     addai   0xbb             	ADDAI	(_TAB_segd + 0)
+00012d   5608     movra   0x8              	MOVRA	r0x101C
+00012e   3c01     movai   0x1              	MOVAI	high (_TAB_segd + 0)
+00012f   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000130   3f01     addai   0x1              	ADDAI	0x01
+000131   5609     movra   0x9              	MOVRA	r0x101D
+000132   5808     movar   0x8              	MOVAR	r0x101C
+000133   5605     movra   0x5              	MOVRA	STK01
+000134   5809     movar   0x9              	MOVAR	r0x101D
+000135   5606     movra   0x6              	MOVRA	STK00
+000136   3c80     movai   0x80             	MOVAI	0x80
+000137   818c     call    0x18c            	CALL	__gptrget1
+000138   560a     movra   0xa              	MOVRA	r0x101E
+000139   4c0a     rrar    0xa              	RRAR	r0x101E
+00013a   e187     jbset   0x187, 0         	JBSET	STATUS,0
+00013b   d794     bclr    0x194, 0x3       	BCLR	_IOP1bits,3
+00013c   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+00013d   c794     bset    0x194, 0x3       	BSET	_IOP1bits,3
+                                           ;	.line	57; "main.c"	SEG_E = TAB_sege[i];
+00013e   5807     movar   0x7              	MOVAR	r0x101B
+00013f   3fc5     addai   0xc5             	ADDAI	(_TAB_sege + 0)
+000140   5608     movra   0x8              	MOVRA	r0x101C
+000141   3c01     movai   0x1              	MOVAI	high (_TAB_sege + 0)
+000142   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000143   3f01     addai   0x1              	ADDAI	0x01
+000144   5609     movra   0x9              	MOVRA	r0x101D
+000145   5808     movar   0x8              	MOVAR	r0x101C
+000146   5605     movra   0x5              	MOVRA	STK01
+000147   5809     movar   0x9              	MOVAR	r0x101D
+000148   5606     movra   0x6              	MOVRA	STK00
+000149   3c80     movai   0x80             	MOVAI	0x80
+00014a   818c     call    0x18c            	CALL	__gptrget1
+00014b   560a     movra   0xa              	MOVRA	r0x101E
+00014c   4c0a     rrar    0xa              	RRAR	r0x101E
+00014d   e187     jbset   0x187, 0         	JBSET	STATUS,0
+00014e   d994     bclr    0x194, 0x4       	BCLR	_IOP1bits,4
+00014f   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000150   c994     bset    0x194, 0x4       	BSET	_IOP1bits,4
+                                           ;	.line	58; "main.c"	SEG_F = TAB_segf[i];
+000151   5807     movar   0x7              	MOVAR	r0x101B
+000152   3fcf     addai   0xcf             	ADDAI	(_TAB_segf + 0)
+000153   5608     movra   0x8              	MOVRA	r0x101C
+000154   3c01     movai   0x1              	MOVAI	high (_TAB_segf + 0)
+000155   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000156   3f01     addai   0x1              	ADDAI	0x01
+000157   5609     movra   0x9              	MOVRA	r0x101D
+000158   5808     movar   0x8              	MOVAR	r0x101C
+000159   5605     movra   0x5              	MOVRA	STK01
+00015a   5809     movar   0x9              	MOVAR	r0x101D
+00015b   5606     movra   0x6              	MOVRA	STK00
+00015c   3c80     movai   0x80             	MOVAI	0x80
+00015d   818c     call    0x18c            	CALL	__gptrget1
+00015e   560a     movra   0xa              	MOVRA	r0x101E
+00015f   4c0a     rrar    0xa              	RRAR	r0x101E
+000160   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000161   db94     bclr    0x194, 0x5       	BCLR	_IOP1bits,5
+000162   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000163   cb94     bset    0x194, 0x5       	BSET	_IOP1bits,5
+                                           ;	.line	59; "main.c"	SEG_G = TAB_segg[i];                                  
+000164   5807     movar   0x7              	MOVAR	r0x101B
+000165   3fd9     addai   0xd9             	ADDAI	(_TAB_segg + 0)
+000166   5607     movra   0x7              	MOVRA	r0x101B
+000167   3c01     movai   0x1              	MOVAI	high (_TAB_segg + 0)
+000168   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000169   3f01     addai   0x1              	ADDAI	0x01
+00016a   5608     movra   0x8              	MOVRA	r0x101C
+00016b   5807     movar   0x7              	MOVAR	r0x101B
+00016c   5605     movra   0x5              	MOVRA	STK01
+00016d   5808     movar   0x8              	MOVAR	r0x101C
+00016e   5606     movra   0x6              	MOVRA	STK00
+00016f   3c80     movai   0x80             	MOVAI	0x80
+000170   818c     call    0x18c            	CALL	__gptrget1
+000171   5609     movra   0x9              	MOVRA	r0x101D
+000172   4c09     rrar    0x9              	RRAR	r0x101D
+000173   e187     jbset   0x187, 0         	JBSET	STATUS,0
+000174   d790     bclr    0x190, 0x3       	BCLR	_IOP0bits,3
+000175   f187     jbclr   0x187, 0         	JBCLR	STATUS,0
+000176   c790     bset    0x190, 0x3       	BSET	_IOP0bits,3
+000177   000c     return                   	RETURN	
+                                           ; exit point of _Display
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Init_sys	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _Init_sys	;Function start
+                                           ; 2 exit points
+                                           ;	.line	34; "main.c"	OEP0   = 0xef;
+000178   3cef     movai   0xef             	MOVAI	0xef
+000179   5791     movra   0x191            	MOVRA	_OEP0
+                                           ;	.line	35; "main.c"	IOP0   = 0x00;
+00017a   7790     clrr    0x190            	CLRR	_IOP0
+                                           ;	.line	36; "main.c"	OEP1   = 0xff;
+00017b   3cff     movai   0xff             	MOVAI	0xff
+00017c   5795     movra   0x195            	MOVRA	_OEP1
+                                           ;	.line	37; "main.c"	IOP1   = 0x00;   
+00017d   7794     clrr    0x194            	CLRR	_IOP1
+                                           ;	.line	38; "main.c"	ANSEL  = 0x10;//p04设为AD检测引脚 
+00017e   3c10     movai   0x10             	MOVAI	0x10
+00017f   5793     movra   0x193            	MOVRA	_ANSEL
+                                           ;	.line	39; "main.c"	T0CR   = 0x84;//FCPU   16T
+000180   3c84     movai   0x84             	MOVAI	0x84
+000181   57a0     movra   0x1a0            	MOVRA	_T0CR
+                                           ;	.line	40; "main.c"	T0LOAD = 200;
+000182   3cc8     movai   0xc8             	MOVAI	0xc8
+000183   57a2     movra   0x1a2            	MOVRA	_T0LOAD
+                                           ;	.line	41; "main.c"	ADCR0  = 0x43;
+000184   3c43     movai   0x43             	MOVAI	0x43
+000185   57b0     movra   0x1b0            	MOVRA	_ADCR0
+                                           ;	.line	42; "main.c"	ADCR1  = 0x00;//ref=2V
+000186   77b1     clrr    0x1b1            	CLRR	_ADCR1
+                                           ;	.line	43; "main.c"	INTE   = 0x01; 
+000187   3c01     movai   0x1              	MOVAI	0x01
+000188   578a     movra   0x18a            	MOVRA	_INTE
+                                           ;	.line	44; "main.c"	INTF   = 0x00;
+000189   778b     clrr    0x18b            	CLRR	_INTF
+                                           ;	.line	45; "main.c"	PUP0   = 0;
+00018a   7792     clrr    0x192            	CLRR	_PUP0
+00018b   000c     return                   	RETURN	
+                                           ; exit point of _Init_sys
+                                           
+                                           
+                                           ;	code size estimation:
+                                           ;	  346+    0 =   346 instructions (  692 byte)
+                                           
+                                           	end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XX-------------- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0200 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0240 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0280 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+02C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0300 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0340 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0380 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+03C0 : XXXXXX---------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   476
+

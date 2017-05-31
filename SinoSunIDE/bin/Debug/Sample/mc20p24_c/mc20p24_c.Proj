@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P24B" ID="0x0224" MCU_Type="CHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="mc20p24_c">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="funtion.c" fPath="\funtion.c" />
+        <asmFile fName="int_mc20p24.h" fPath="\int_mc20p24.h" />
+        <asmFile fName="var.h" fPath="\var.h" />
+        <asmFile fName="mc20p24_c.c" fPath="\mc20p24_c.c" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="59" Value0="" Value1="" Value2="" Value3="" Value4="" Value5="" Value6="" Value7="" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="C" />
+  <WatchSymbol Name="btcnt" Addr="??" Value="Error:not found" BitFlag="False" Bit="0" DataRes="0" Array="False" />
+  <WatchSymbol Name="Buzzer_H_Timer" Addr="??" Value="Error:not found" BitFlag="False" Bit="0" DataRes="0" Array="False" />
+  <WatchSymbol Name="Quotient" Addr="??" Value="Error:not found" BitFlag="False" Bit="0" DataRes="0" Array="False" />
+</Project>

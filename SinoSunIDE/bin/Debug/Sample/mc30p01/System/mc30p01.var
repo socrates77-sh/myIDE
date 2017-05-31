@@ -1,0 +1,181 @@
+
+DDR0                               at 0x0045  xxxx.x  0000 to 0000
+DDR1                               at 0x0046  xxxx.x  0000 to 0000
+FSR                                at 0x0004  xxxx.x  0000 to 0000
+GPR                                at 0x0007  xxxx.x  0000 to 0000
+INDF                               at 0x0000  xxxx.x  0000 to 0000
+INTECON                            at 0x000E  xxxx.x  0000 to 0000
+INTEDG                             at 0x0006  xxxx.x  0000 to 0000
+INTEFLAG                           at 0x000E  xxxx.x  0000 to 0000
+KBIM                               at 0x0009  xxxx.x  0000 to 0000
+MCR                                at 0x0008  xxxx.x  0000 to 0000
+ODCON                              at 0x000C  xxxx.x  0000 to 0000
+OPT                                at 0x0041  xxxx.x  0000 to 0000
+P0                                 at 0x0005  xxxx.x  0000 to 0000
+P1                                 at 0x0006  xxxx.x  0000 to 0000
+P5IOC                              at 0x0045  xxxx.x  0000 to 0000
+P6IOC                              at 0x0046  xxxx.x  0000 to 0000
+PCL                                at 0x0002  xxxx.x  0000 to 0000
+PCLATH                             at 0x000A  xxxx.x  0000 to 0000
+PDCON                              at 0x000B  xxxx.x  0000 to 0000
+PHCON                              at 0x000D  xxxx.x  0000 to 0000
+PS0                                at 0x0000  xxxx.x  0000 to 0000
+PS1                                at 0x0001  xxxx.x  0000 to 0000
+PS2                                at 0x0002  xxxx.x  0000 to 0000
+PSA                                at 0x0003  xxxx.x  0000 to 0000
+R0                                 at 0x0007  xxxx.x  0000 to 0000
+STATUS                             at 0x0003  xxxx.x  0000 to 0000
+T0CNT                              at 0x0001  xxxx.x  0000 to 0000
+T0CS                               at 0x0005  xxxx.x  0000 to 0000
+T0DATA                             at 0x0041  xxxx.x  0000 to 0000
+T0SE                               at 0x0004  xxxx.x  0000 to 0000
+_BOR_15                            at 0x3FF8  xxxx.x  0000 to 0000
+_BOR_18                            at 0x3FF9  xxxx.x  0000 to 0000
+_BOR_20                            at 0x3FFA  xxxx.x  0000 to 0000
+_BOR_22                            at 0x3FFB  xxxx.x  0000 to 0000
+_BOR_24                            at 0x3FFC  xxxx.x  0000 to 0000
+_BOR_26                            at 0x3FFD  xxxx.x  0000 to 0000
+_BOR_36                            at 0x3FFF  xxxx.x  0000 to 0000
+_CONFIG1                           at 0x2000  xxxx.x  0000 to 0000
+_CONFIG2                           at 0x2001  xxxx.x  0000 to 0000
+_CP_OFF                            at 0x3FFF  xxxx.x  0000 to 0000
+_CP_ON                             at 0x1FFF  xxxx.x  0000 to 0000
+_FCPU_2T                           at 0x3F7F  xxxx.x  0000 to 0000
+_FCPU_4T                           at 0x3FFF  xxxx.x  0000 to 0000
+_FOSC_1M                           at 0x3FCF  xxxx.x  0000 to 0000
+_FOSC_2M                           at 0x3FDF  xxxx.x  0000 to 0000
+_FOSC_32K                          at 0x3F9F  xxxx.x  0000 to 0000
+_FOSC_455K                         at 0x3FAF  xxxx.x  0000 to 0000
+_FOSC_4M                           at 0x3FEF  xxxx.x  0000 to 0000
+_FOSC_500K                         at 0x3FBF  xxxx.x  0000 to 0000
+_FOSC_62P5K                        at 0x3F8F  xxxx.x  0000 to 0000
+_FOSC_8M                           at 0x3FFF  xxxx.x  0000 to 0000
+_MCLR_OFF                          at 0x3FF7  xxxx.x  0000 to 0000
+_MCLR_ON                           at 0x3FFF  xxxx.x  0000 to 0000
+_MCU_EMC                           at 0x3BFF  xxxx.x  0000 to 0000
+_MCU_FEL                           at 0x3FFF  xxxx.x  0000 to 0000
+_OSCM_HS                           at 0x3FFF  xxxx.x  0000 to 0000
+_OSCM_IRC                          at 0x37FF  xxxx.x  0000 to 0000
+_OSCM_LP                           at 0x3FFF  xxxx.x  0000 to 0000
+_RDPORT_PIN                        at 0x3FFF  xxxx.x  0000 to 0000
+_RDPORT_REG                        at 0x3EFF  xxxx.x  0000 to 0000
+_ROTP_100N                         at 0x1FFF  xxxx.x  0000 to 0000
+_ROTP_200N                         at 0x2FFF  xxxx.x  0000 to 0000
+_ROTP_300N                         at 0x0FFF  xxxx.x  0000 to 0000
+_ROTP_HALFCPU                      at 0x3FFF  xxxx.x  0000 to 0000
+_SMT_OFF                           at 0x3DFF  xxxx.x  0000 to 0000
+_SMT_ON                            at 0x3EFF  xxxx.x  0000 to 0000
+_TWDT_18_18                        at 0x3FFF  xxxx.x  0000 to 0000
+_TWDT_288_288                      at 0x3DFF  xxxx.x  0000 to 0000
+_TWDT_4P5_4P5                      at 0x3EFF  xxxx.x  0000 to 0000
+_TWDT_72_72                        at 0x3CFF  xxxx.x  0000 to 0000
+_TWDT_P140_18                      at 0x3BFF  xxxx.x  0000 to 0000
+_TWDT_P140_288                     at 0x39FF  xxxx.x  0000 to 0000
+_TWDT_P140_4P5                     at 0x3AFF  xxxx.x  0000 to 0000
+_TWDT_P140_72                      at 0x38FF  xxxx.x  0000 to 0000
+_WDT_OFF                           at 0x37FF  xxxx.x  0000 to 0000
+_WDT_ON                            at 0x3FFF  xxxx.x  0000 to 0000
+__30P011                           at 0x0001  xxxx.x  0000 to 0000
+acc_temp                           at 0x0000  xxxx.x  0000 to 0000
+clr_key1_bak                       at 0x0069  xxxx.x  0000 to 0000
+clr_key2_bak                       at 0x0071  xxxx.x  0000 to 0000
+clr_key3_bak                       at 0x0079  xxxx.x  0000 to 0000
+clr_ram                            at 0x0029  xxxx.x  0000 to 0000
+clr_ram_loop                       at 0x0038  xxxx.x  0000 to 0000
+dis_buffer0                        at 0x000E  xxxx.x  0000 to 0000
+dis_buffer1                        at 0x000F  xxxx.x  0000 to 0000
+dis_buffer2                        at 0x0010  xxxx.x  0000 to 0000
+dis_buffer3                        at 0x0011  xxxx.x  0000 to 0000
+display                            at 0x007D  xxxx.x  0000 to 0000
+end_display                        at 0x0095  xxxx.x  0000 to 0000
+end_just_int                       at 0x001E  xxxx.x  0000 to 0000
+end_key_deal                       at 0x007B  xxxx.x  0000 to 0000
+end_key_scan                       at 0x007A  xxxx.x  0000 to 0000
+end_time0_interrupt                at 0x0018  xxxx.x  0000 to 0000
+end_time_deal                      at 0x0061  xxxx.x  0000 to 0000
+end_tm_1628_read                   at 0x00A3  xxxx.x  0000 to 0000
+end_tm_1628_write                  at 0x00BF  xxxx.x  0000 to 0000
+end_work_deal                      at 0x007C  xxxx.x  0000 to 0000
+error_flag                         at 0x0006  xxxx.x  0000 to 0000
+exit_interrupt                     at 0x0022  xxxx.x  0000 to 0000
+interrupt_sub                      at 0x0008  xxxx.x  0000 to 0000
+just_int0                          at 0x0018  xxxx.x  0000 to 0000
+just_kbim                          at 0x001B  xxxx.x  0000 to 0000
+key_data_buffer0                   at 0x001A  xxxx.x  0000 to 0000
+key_data_buffer1                   at 0x001B  xxxx.x  0000 to 0000
+key_data_buffer2                   at 0x001C  xxxx.x  0000 to 0000
+key_data_buffer3                   at 0x001D  xxxx.x  0000 to 0000
+key_data_buffer4                   at 0x001E  xxxx.x  0000 to 0000
+key_deal                           at 0x007B  xxxx.x  0000 to 0000
+key_scan                           at 0x0062  xxxx.x  0000 to 0000
+load_table_loop                    at 0x007E  xxxx.x  0000 to 0000
+main_loop                          at 0x0054  xxxx.x  0000 to 0000
+r1                                 at 0x0002  xxxx.x  0000 to 0000
+r2                                 at 0x0003  xxxx.x  0000 to 0000
+ram_error                          at 0x0046  xxxx.x  0000 to 0000
+scan_key1                          at 0x0062  xxxx.x  0000 to 0000
+scan_key2                          at 0x006A  xxxx.x  0000 to 0000
+scan_key3                          at 0x0072  xxxx.x  0000 to 0000
+send_display_buffer                at 0x00B2  xxxx.x  0000 to 0000
+start                              at 0x0026  xxxx.x  0000 to 0000
+start_just_int                     at 0x000B  xxxx.x  0000 to 0000
+status_temp                        at 0x0001  xxxx.x  0000 to 0000
+sys_init                           at 0x0048  xxxx.x  0000 to 0000
+table                              at 0x00E2  xxxx.x  0000 to 0000
+table_dis_code                     at 0x03FE  xxxx.x  0000 to 0000
+time_100ms                         at 0x000A  xxxx.x  0000 to 0000
+time_10ms                          at 0x0009  xxxx.x  0000 to 0000
+time_125us                         at 0x0007  xxxx.x  0000 to 0000
+time_1hour                         at 0x000D  xxxx.x  0000 to 0000
+time_1min                          at 0x000C  xxxx.x  0000 to 0000
+time_1ms                           at 0x0008  xxxx.x  0000 to 0000
+time_1s                            at 0x000B  xxxx.x  0000 to 0000
+time_deal                          at 0x005D  xxxx.x  0000 to 0000
+tm1628_clk_rising                  at 0x00C8  xxxx.x  0000 to 0000
+tm1628_read_key_loop               at 0x009D  xxxx.x  0000 to 0000
+tm1628_receive_data_loop           at 0x00D6  xxxx.x  0000 to 0000
+tm1628_send_data_loop              at 0x00C4  xxxx.x  0000 to 0000
+tm_1628_read                       at 0x00D2  xxxx.x  0000 to 0000
+tm_1628_read_sub                   at 0x0096  xxxx.x  0000 to 0000
+tm_1628_write                      at 0x00C0  xxxx.x  0000 to 0000
+tm_1628_write_sub                  at 0x00A4  xxxx.x  0000 to 0000
+tm_data0                           at 0x0012  xxxx.x  0000 to 0000
+tm_data1                           at 0x0013  xxxx.x  0000 to 0000
+tm_data2                           at 0x0014  xxxx.x  0000 to 0000
+tm_data3                           at 0x0015  xxxx.x  0000 to 0000
+tm_data4                           at 0x0016  xxxx.x  0000 to 0000
+tm_data5                           at 0x0017  xxxx.x  0000 to 0000
+tm_data6                           at 0x0018  xxxx.x  0000 to 0000
+tm_data7                           at 0x0019  xxxx.x  0000 to 0000
+work_deal                          at 0x007C  xxxx.x  0000 to 0000
+work_flag1                         at 0x0004  xxxx.x  0000 to 0000
+work_flag2                         at 0x0005  xxxx.x  0000 to 0000
+#define    RAM_COUNT    48    
+#define    FIR_RAM_ADDR    0x10    
+#define    RAM_E    0x00        
+#define    IO_TM1628_STB    P0,0
+#define    IO_TM1628_CLK    P0,1
+#define    IO_TM1628_DATA    P0,2
+#define    IO_TM1628_DDR    DDR0,2
+#define    dis_buffer4    tm_data4
+#define    dis_buffer5    tm_data5
+#define    dis_buffer6    tm_data6
+#define    dis_buffer7    tm_data7
+#define    disp0_point    tm_data0,4
+#define    disp1_point    tm_data1,4
+#define    disp2_point    tm_data2,4
+#define    disp3_point    tm_data3,4
+#define    key_data1    key_data_buffer0,0    
+#define    key_data2    key_data_buffer0,3    
+#define    key_data3    key_data_buffer3,0    
+#define flag_time_10ms         work_flag1,0
+#define flag_key1_effect    work_flag1,1
+#define flag_key2_effect    work_flag1,2
+#define flag_key3_effect    work_flag1,3
+#define flag_key1_effect_bak    work_flag1,4
+#define flag_key2_effect_bak    work_flag1,5
+#define flag_key3_effect_bak    work_flag1,6
+#define    flag_disp0_point    work_flag2,0
+#define    flag_disp1_point    work_flag2,1
+#define    flag_disp2_point    work_flag2,2
+#define    flag_disp3_point    work_flag2,3

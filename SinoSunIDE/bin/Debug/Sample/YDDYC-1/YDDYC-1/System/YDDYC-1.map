@@ -1,0 +1,198 @@
+
+Map of System\YDDYC-1.h05 from link file MC20P22.lkf - Mon Nov 26 14:19:43 2012
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001800 end 00001afc length   764 segment CODE
+start 00001afc end 00001b0e length    18 segment .const
+start 00000080 end 00000080 length     0 segment ZPAGE
+start 00000080 end 0000009a length    26 segment UZPAGE
+start 0000009a end 0000009d length     3 segment .share
+start 0000009a end 0000009a length     0 segment IDATA
+start 0000009a end 0000009a length     0 segment UDATA
+start 00000000 end 00003da8 length 15784 segment .debug
+start 00001fee end 00001fee length     0 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+ADCSbr.o:
+start 00001800 end 000018a1 length   161 section CODE (.text)
+start 00000000 end 0000098e length  2446 section .debug
+
+DisplaySbr.o:
+start 000018a1 end 0000191c length   123 section CODE (.text)
+start 0000098e end 000013bb length  2605 section .debug
+
+interrupt_vector.o:
+start 000013bb end 0000141f length   100 section .debug
+start 00001afc end 00001b0e length    18 section .const
+
+Key.o:
+start 0000191c end 0000195d length    65 section CODE (.text)
+start 0000141f end 00001d5d length  2366 section .debug
+
+SysInit.o:
+start 0000195d end 0000199b length    62 section CODE (.text)
+start 00001d5d end 00002715 length  2488 section .debug
+
+T500msSbr.o:
+start 0000199b end 00001aa2 length   263 section CODE (.text)
+start 00002715 end 00003133 length  2590 section .debug
+
+YDDYC-1.o:
+start 00001aa2 end 00001af2 length    80 section CODE (.text)
+start 00000080 end 00000096 length    22 section UZPAGE (.ubsct)
+start 00003133 end 00003da8 length  3189 section .debug
+
+D:\WinScopeIDE_v0.03bt_20121122\SinoSunC_V\Lib\crts.h05:
+start 00001af2 end 00001afc length    10 section CODE (.text)
+start 00000096 end 0000009a length     4 section UZPAGE (.ubsct)
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+ADCSbr.o:
+_ADCPro        0000009a-0000009b (2,0)
+_ADCovSbr      0000009c-0000009c (0,1)
+
+T500msSbr.o:
+_TemChkSbr     0000009a-0000009b (2,0)
+
+Stack size: 13
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADCCnt             00000092   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o
+_ADCM               00000012   defined in ADCSbr.o
+_ADCON              00000013   defined in ADCSbr.o
+_ADCONBit           00000013   defined in ADCSbr.o
+_ADCPro             00001808   defined in ADCSbr.o section CODE (.text)
+                               used in YDDYC-1.o
+_ADCPro.L           0000009c   defined in linker section .share
+                               used in ADCSbr.o
+_ADCovSbr           00001800   defined in ADCSbr.o section CODE (.text)
+_ADCovSbr.L         0000009c   defined in linker section .share
+                               used in ADCSbr.o
+_ADTH               00000014   defined in ADCSbr.o
+_ADTL               00000015   defined in ADCSbr.o
+_CellChkSbr         000019de   defined in T500msSbr.o section CODE (.text)
+                               used in ADCSbr.o
+_CellDly            00000080   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in T500msSbr.o
+_CellLow            000000f1   defined in ADCSbr.o
+_CellV              00000087   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in DisplaySbr.o T500msSbr.o
+_DDR0               00000001   defined in ADCSbr.o
+_DDR1               00000004   defined in ADCSbr.o
+_DispCellA          000018c5   defined in DisplaySbr.o section CODE (.text)
+_DispCellB          000018ea   defined in DisplaySbr.o section CODE (.text)
+_DisplayErrSbr      000018bb   defined in DisplaySbr.o section CODE (.text)
+_DisplaySbr         000018a1   defined in DisplaySbr.o section CODE (.text)
+                               used in YDDYC-1.o
+_DisplayStauts      00001913   defined in DisplaySbr.o section CODE (.text)
+_Flag1              00000095   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o DisplaySbr.o Key.o T500msSbr.o
+_Flag2              00000094   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in DisplaySbr.o T500msSbr.o
+_FlashCnt           00000083   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in DisplaySbr.o T500msSbr.o
+_INTC               00000011   defined in ADCSbr.o
+_IRQ_NonHandled     00001af1   defined in YDDYC-1.o section CODE (.text)
+                               used in interrupt_vector.o
+_IRQ_NonHandled.L   0000009d   defined in linker section .share
+                               *** not used ***
+_IRQ_T0             00001aec   defined in YDDYC-1.o section CODE (.text)
+                               used in interrupt_vector.o
+_IRQ_T0.L           0000009d   defined in linker section .share
+                               *** not used ***
+_KBIM               00000006   defined in ADCSbr.o
+_KeyCnt             00000093   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in Key.o
+_KeyLong            0000008a   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in Key.o
+_KeySbr             0000191c   defined in Key.o section CODE (.text)
+                               used in YDDYC-1.o
+_LEDAllOff          00001992   defined in SysInit.o section CODE (.text)
+                               used in DisplaySbr.o YDDYC-1.o
+_MCR                00000016   defined in ADCSbr.o
+_MCRBit             00000016   defined in ADCSbr.o
+_OutCtrlSbr         00001a63   defined in T500msSbr.o section CODE (.text)
+_P0                 00000000   defined in ADCSbr.o
+_P0Bit              00000000   defined in ADCSbr.o
+_P0HCON             00000002   defined in ADCSbr.o
+_P1                 00000003   defined in ADCSbr.o
+_P1Bit              00000003   defined in ADCSbr.o
+_P1HCON             00000005   defined in ADCSbr.o
+_RSTFR              00000017   defined in ADCSbr.o
+_Stauts             0000008b   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in DisplaySbr.o Key.o T500msSbr.o
+_SysInitRamSbr      0000198a   defined in SysInit.o section CODE (.text)
+                               used in YDDYC-1.o
+_SysInitSbr         0000195d   defined in SysInit.o section CODE (.text)
+                               used in YDDYC-1.o
+_T0                 00000002   defined in ADCSbr.o
+_T0CNT              00000007   defined in ADCSbr.o
+_T0CON              00000008   defined in ADCSbr.o
+_T0CONB             00000008   defined in ADCSbr.o
+_T0LOAD             00000007   defined in ADCSbr.o
+_T100ms             00000088   defined in YDDYC-1.o section UZPAGE (.ubsct)
+_T100msSbr          0000199b   defined in T500msSbr.o section CODE (.text)
+                               used in YDDYC-1.o
+_T1CNT              0000000a   defined in ADCSbr.o
+_T1CON              0000000b   defined in ADCSbr.o
+_T1CONB             0000000b   defined in ADCSbr.o
+_T1DATA             00000009   defined in ADCSbr.o
+_T1LOAD             0000000a   defined in ADCSbr.o
+_T2CNTH             0000000d   defined in ADCSbr.o
+_T2CNTL             0000000f   defined in ADCSbr.o
+_T2CON              00000010   defined in ADCSbr.o
+_T2CONB             00000010   defined in ADCSbr.o
+_T2DATAH            0000000c   defined in ADCSbr.o
+_T2DATAL            0000000e   defined in ADCSbr.o
+_T2LOADH            0000000d   defined in ADCSbr.o
+_T2LOADL            0000000f   defined in ADCSbr.o
+_T500ms             00000086   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in T500msSbr.o
+_T50ms              00000089   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in Key.o T500msSbr.o
+_TemChkSbr          00001a3a   defined in T500msSbr.o section CODE (.text)
+_TemChkSbr.L        0000009c   defined in linker section .share
+                               used in T500msSbr.o
+_TempAD             00000091   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o T500msSbr.o
+_TempADBuf          0000008f   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o
+_TempOpDly          00000085   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o
+_TempShDly          00000084   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o
+_V32CNT             00000081   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in T500msSbr.o
+_V38CNT             00000082   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in T500msSbr.o
+_VAD                0000008e   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o T500msSbr.o
+_VADBuf             0000008c   defined in YDDYC-1.o section UZPAGE (.ubsct)
+                               used in ADCSbr.o
+__memory            0000009a   defined in command file section UDATA
+                               *** not used ***
+__stext             00001af2   defined in D:\WinScopeIDE_v0.03bt_20121122\SinoSunC_V\Lib\crts.h05 section CODE (.text)
+                               *** not used ***
+_exit               00001afa   defined in D:\WinScopeIDE_v0.03bt_20121122\SinoSunC_V\Lib\crts.h05 section CODE (.text)
+_main               00001aa2   defined in YDDYC-1.o section CODE (.text)
+                               used in interrupt_vector.o
+                                       D:\WinScopeIDE_v0.03bt_20121122\SinoSunC_V\Lib\crts.h05
+_vectab             00001afc   defined in interrupt_vector.o section .const
+c_h                 00000097   defined in D:\WinScopeIDE_v0.03bt_20121122\SinoSunC_V\Lib\crts.h05 section UZPAGE (.ubsct)

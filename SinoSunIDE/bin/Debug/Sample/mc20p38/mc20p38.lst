@@ -1,0 +1,74 @@
+L 1				
+L 2				        PA      EQU     $00
+L 3				        PB      EQU     $01
+L 4				        PC      EQU     $02     
+L 5				        DDRA    EQU     $03
+L 6				        DDRB    EQU     $04
+L 7				        PAHCON  EQU     $05
+L 8				        PBHCON  EQU     $06
+L 9				        TDR0    EQU     $07
+L 10				        TCR0    EQU     $08
+L 11				        TDR1    EQU     $09
+L 12				        TCR1    EQU     $0A
+L 13				        TDR2    EQU     $0B
+L 14				        TCR2    EQU     $0C
+L 15				        PPGC    EQU     $0D
+L 16				        PPGT    EQU     $0E
+L 17				        
+L 18				        org $40 ;ram define
+L 19				        counter0        rmb 1
+L 20				        counter1        rmb 1
+L 21				        
+L 22				        
+L 23				        
+L 24				        org $2000
+L 25				reset:        
+L 26	[2]	2000	9C	        rsp 
+L 27	[2]	2001	9B	        sei
+L 28	[2]	2002	A6FF	        lda #$ff
+L 29	[4]	2004	B703	        sta     DDRA
+L 30	[4]	2006	B704	        sta     DDRB
+L 31	[4]	2008	B705	        STA     PAHCON
+L 32	[4]	200A	B706	        STA     PBHCON
+L 33				        
+L 34				;        ldx	#$40
+L 35				;clr_ram:
+L 36				;        clr	,x
+L 37				;        incx
+L 38				;        bne	clr_ram
+L 39				;
+L 40				;        ldx     #20
+L 41				;lab_delay:
+L 42				;        jsr delay_100ms        
+L 43				;        jsr delay_100ms
+L 44				;        nop
+L 45				;        nop
+L 46				;        decx
+L 47				;        bne lab_delay     
+L 48				        
+L 49				main_loop:
+L 50	[2]	200C	9D	        NOP
+L 51	[2]	200D	9D	        nop
+L 52	[5]	200E	3CD0	        inc     $d0
+L 53	[3]	2010	B6D0	        lda     $d0
+L 54	[4]	2012	B700	        sta     PA 
+L 55	[4]	2014	B701	        STA     PB
+L 56	[4]	2016	B702	        STA     PC
+L 57				        ;com     PA
+L 58	[2]	2018	9D	        nop
+L 59	[3]	2019	CC200C	        jmp main_loop
+L 60				        
+L 61				;delay_100ms:
+L 62				;        lda #200
+L 63				;        sta     counter0
+L 64				;delay_loop:
+L 65				;        dec counter0
+L 66				;        bne     delay_loop        
+L 67				;        rts        
+L 68				        
+L 69				        
+L 70				        
+L 71				        org     $3ffe
+L 72		3FFE	2000	        fdb     reset
+L 73				        
+L 74				        

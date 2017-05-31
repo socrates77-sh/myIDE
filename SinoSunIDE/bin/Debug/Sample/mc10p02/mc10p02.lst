@@ -1,0 +1,118 @@
+L 1				
+L 2				;Test 10p02r ccr reg
+L 3				
+L 4				
+L 5				
+L 6				PA	EQU $00
+L 7				PB	EQU $01
+L 8				DDRA	EQU	$04
+L 9				DDRB	EQU	$05
+L 10				TDR		EQU	$08
+L 11				TCR		EQU	$09
+L 12				KBIM	EQU	$0B
+L 13				MCR		EQU	$0C
+L 14				PC		EQU	$0D
+L 15				DDRC	EQU	$0E
+L 16				
+L 17				;RAM ADD $E0---$FF
+L 18				
+L 19				
+L 20					
+L 21					
+L 22					ORG $1c00
+L 23				RESET:
+L 24	[2]	1C00	9C		RSP
+L 25	[2]	1C01	9A		CLI
+L 26				
+L 27	[3]	1C02	4F	 CLRA
+L 28				 
+L 29	[4]	1C03	B7E2	 sta $e2
+L 30				 
+L 31				 
+L 32	[2]	1C05	AEE0	 ldx #$e0
+L 33				ram_wr:
+L 34	[4]	1C07	F7	 sta ,x
+L 35	[3]	1C08	4C	 inca
+L 36	[3]	1C09	5C	 incx
+L 37	[3]	1C0A	26FB	 bne ram_wr
+L 38				
+L 39				  
+L 40				 
+L 41	[3]	1C0C	4F	 clra
+L 42	[2]	1C0D	AEE0	 ldx #$e0
+L 43				ram_rd:
+L 44	[3]	1C0F	F1	 cmp ,x
+L 45	[3]	1C10	261A	 bne test_ram_error
+L 46	[3]	1C12	4C	 inca
+L 47	[3]	1C13	5C	 incx
+L 48	[3]	1C14	26F9	 bne ram_rd 
+L 49				 
+L 50				 ;bra *
+L 51				 
+L 52				 
+L 53				 
+L 54	[2]	1C16	A6FF	 LDA	#$FF
+L 55	[4]	1C18	B704		STA	DDRA
+L 56	[4]	1C1A	B705		STA	DDRB
+L 57	[2]	1C1C	A6FF		LDA	#$FF
+L 58	[4]	1C1E	B700		STA	PA
+L 59	[4]	1C20	B701		STA	PB
+L 60	[2]	1C22	A600		LDA	#$00
+L 61	[4]	1C24	B700		STA	PA
+L 62	[4]	1C26	B701		STA	PB
+L 63	[3]	1C28	2006	 bra loop
+L 64				 
+L 65	[2]	1C2A	9D	 nop
+L 66	[2]	1C2B	9D	 nop
+L 67				test_ram_error:
+L 68	[2]	1C2C	9D	 nop
+L 69	[2]	1C2D	9D	 nop
+L 70	[3]	1C2E	20FE	 bra *
+L 71					
+L 72				LOOP:
+L 73	[5]	1C30	3CE0	 	   inc $E0
+L 74	[3]	1C32	B6E0	     LDA $e0
+L 75	[4]	1C34	B700	     STA        PA
+L 76	[4]	1C36	B701	     sta        PB
+L 77				
+L 78	[6]	1C38	CD1C44	    jsr fun001
+L 79	[6]	1C3B	CD1C62	    jsr fun002
+L 80	[6]	1C3E	CD1C62	    jsr fun003
+L 81	[3]	1C41	CC1C30	    JMP LOOP
+L 82				
+L 83				fun001:
+L 84	[3]	1C44	B6E0	    lda $e0
+L 85	[3]	1C46	4C	    inca
+L 86	[2]	1C47	9D	    nop
+L 87	[3]	1C48	4C	    inca
+L 88	[4]	1C49	B7E0	    sta $e0
+L 89	[6]	1C4B	CD1C50	    jsr fun011
+L 90	[2]	1C4E	9D	    nop
+L 91	[6]	1C4F	81	    rts
+L 92				    
+L 93				fun011:
+L 94	[2]	1C50	9D	    nop
+L 95	[3]	1C51	B6E6	    lda $e6
+L 96	[3]	1C53	4C	    inca
+L 97	[4]	1C54	B7E6	    sta $e6
+L 98				    ;brset 2,$30,loop
+L 99	[6]	1C56	CD1C5F	    jsr fun111
+L 100	[3]	1C59	B6E7	    lda $e7
+L 101	[3]	1C5B	4C	    inca
+L 102	[4]	1C5C	B7E7	    sta $e7
+L 103	[6]	1C5E	81	    rts
+L 104				    
+L 105				fun111:
+L 106	[2]	1C5F	9D	    nop
+L 107	[2]	1C60	9D	    nop
+L 108	[6]	1C61	81	    rts
+L 109				
+L 110				fun002:
+L 111				fun003:
+L 112	[2]	1C62	9D	    nop
+L 113	[2]	1C63	9D	    nop
+L 114	[6]	1C64	81	    rts
+L 115				
+L 116				;INT VECTOR
+L 117					ORG	$1FFE
+L 118		1FFE	1C00		FDB	RESET

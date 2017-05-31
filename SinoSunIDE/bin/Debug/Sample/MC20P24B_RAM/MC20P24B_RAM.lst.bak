@@ -1,0 +1,73 @@
+L 1				;$0000-$002F:Control registers
+L 2				T0CNT	EQU	$00	;timer0
+L 3				T0DATA	EQU	$01
+L 4				T0CON	EQU	$02
+L 5				MCR	EQU	$03
+L 6				BTCON	EQU	$0c	;basic time
+L 7				BTCLR	equ	1
+L 8				BTCNT	EQU	$0d
+L 9				P0	EQU	$10	;port0-2
+L 10				P1	EQU	$11
+L 11				P2	EQU	$12
+L 12				P0CONH	EQU	$16
+L 13				P0CONL	EQU	$17
+L 14				P0PND	EQU	$18
+L 15				P1CON	EQU	$19
+L 16				P2CONH	EQU	$1a
+L 17				P2CONL	EQU	$1b
+L 18				PWMDATA	EQU	$22	;PWM
+L 19				PWMCON	EQU	$23
+L 20				ADCON	EQU	$27	;A/D
+L 21				ADDATAH	EQU	$28
+L 22				ADDATAL	EQU	$29
+L 23				 
+L 24				
+L 25				
+L 26				    org $1FC0
+L 27				reset:
+L 28	[2]	1FC0	9B	    sei
+L 29	[2]	1FC1	9C	    rsp
+L 30	[2]	1FC2	A6AA	    lda #$aa
+L 31	[4]	1FC4	B730	    sta $30
+L 32	[4]	1FC6	B731	    sta $31
+L 33				loop:
+L 34	[3]	1FC8	4C	    inca
+L 35	[4]	1FC9	B730	    sta $30
+L 36	[3]	1FCB	B610	    lda $10
+L 37	[3]	1FCD	B630	    lda $30
+L 38	[6]	1FCF	CD1FDA	    jsr fun001
+L 39	[6]	1FD2	CD1FF6	    jsr fun002
+L 40	[6]	1FD5	CD1FF6	    jsr fun003
+L 41	[3]	1FD8	20EE	    bra loop
+L 42				
+L 43				fun001:
+L 44	[2]	1FDA	A658	    lda #88
+L 45	[4]	1FDC	B740	    sta $40
+L 46	[6]	1FDE	CD1FE3	    jsr fun011
+L 47	[2]	1FE1	9D	    nop
+L 48	[6]	1FE2	81	    rts
+L 49				    
+L 50				fun011:
+L 51	[2]	1FE3	9D	    nop
+L 52	[2]	1FE4	A655	    lda #$55
+L 53	[4]	1FE6	B730	    sta $30
+L 54	[5]	1FE8	0430DD	    brset 2,$30,loop
+L 55	[6]	1FEB	CD1FF3	    jsr fun111
+L 56	[2]	1FEE	A603	    lda #03
+L 57	[4]	1FF0	B741	    sta $41
+L 58	[6]	1FF2	81	    rts
+L 59				    
+L 60				fun111:
+L 61	[2]	1FF3	9D	    nop
+L 62	[2]	1FF4	9D	    nop
+L 63	[6]	1FF5	81	    rts
+L 64				
+L 65				fun002:
+L 66				fun003:
+L 67	[2]	1FF6	9D	    nop
+L 68	[2]	1FF7	9D	    nop
+L 69	[6]	1FF8	81	    rts    
+L 70				    
+L 71				    
+L 72				    org $1ffe
+L 73		1FFE	1FC0	    fdb reset

@@ -1,0 +1,350 @@
+gplink-1.7.0_beta1 (Apr 27 2015)
+Listing File Generated: 2015-6-9  15:44:34
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           #include "mc33p78.inc"
+                                           
+                                           ;mc33p78 header file
+                                           ;define must write at first row
+                                                  
+                                           INDF0   EQU     H'01B0'
+                                           INDF1   EQU     H'01B1'
+                                           INDF2   EQU     H'01B2'
+                                           HIBYTE  EQU     H'01B3'
+                                           FSR0    EQU     H'01B4'
+                                           FSR1    EQU     0X1B5
+                                           PCL     EQU     0X1B6
+                                           PFLAG   EQU    0X1B7
+                                           STATUS  EQU     0X1B7
+                                           MCR     EQU     0X1B8
+                                           INDF3   EQU    0X1B9   
+                                           INTE    EQU     0X1BA
+                                           INTF    EQU     0X1BB
+                                           OSCM    EQU     0X1BC
+                                           ;IOP0    EQU     0X1C0
+                                           ;OEP0    EQU     0X1C1
+                                           ;PUP0    EQU     0X1C2
+                                           ;IOP1    EQU     0X1C4
+                                           ;OEP1    EQU     0X1C5
+                                           ;PUP1    EQU     0X1C6
+                                           IOP1    EQU     0X1C8
+                                           OEP1    EQU     0X1C9
+                                           PUP1    EQU     0X1CA
+                                           
+                                           DKWP1    EQU     0X1CE
+                                           
+                                           IOP2    EQU     0X1D0
+                                           OEP2    EQU     0X1D1
+                                           PUP2    EQU     0X1D2
+                                           ;T0DATA  EQU     0X1D3
+                                           ;T1CR    EQU     0X1D4
+                                           ;T1CNT   EQU     0X1D5
+                                           DKWP2   EQU     0X1D6
+                                           KBCR    EQU     0X1D7
+                                           T0CR    EQU     0X1D8
+                                           T0LOADH EQU     0X1D9
+                                           T0LOADL  EQU     0X1DA
+                                           T0LATFL   EQU     0X1DB
+                                           T0LATFH EQU     0X1DC
+                                           
+                                           T0LATRL  EQU     0X1DD
+                                           T0LATRH  EQU     0X1DE
+                                           
+                                           T1CR    EQU     0X1E0
+                                           T1DATA  EQU     0X1E1
+                                           T1LOAD  EQU     0X1E2
+                                           
+                                           OPCR0   EQU     0X1E4
+                                           OPCR1   EQU     0X1E5
+                                           DKW0    EQU     0X1E6
+                                           DKW1    EQU     0X1E7
+                                           
+                                           ;pflag bit 
+                                           #define         Z       PFLAG,2
+                                           #define         DC      PFLAG,1
+                                           #define         C       PFLAG,0 
+                                           
+                                           ;MCR
+                                           #define         GIE     MCR,7
+                                           #DEFINE         TO      MCR,5
+                                           #DEFINE         PD      MCR,4
+                                           #DEFINE         MINT11  MCR,3
+                                           
+                                           
+                                           ;INTE
+                                           #define         KBIE    INTE,7
+                                           #DEFINE         INT1IE  INTE,3
+                                           #DEFINE         INT0IE  INTE,2
+                                           #DEFINE         T1IE    INTE,1
+                                           #define         T0IE    INTE,0
+                                           
+                                           ;INTF
+                                           #DEFINE         KBIF    INTF,7
+                                           #DEFINE         T0RF    INTF,6
+                                           #DEFINE         INT1IF  INTF,3
+                                           #DEFINE         INT0IF  INTF,2
+                                           #DEFINE         T1IF    INTF,1
+                                           #DEFINE         T0IF    INTF,0
+                                           
+                                           ;DKW0
+                                           #DEFINE         DKWE    DKW0,7
+                                           #DEFINE         IROS    DKW0,6
+                                           #DEFINE         IROT    DKW0,5         
+                                           #DEFINE         WSEL0   DKW0,4
+                                           #DEFINE         WSEL1   DKW0,3
+                                           #DEFINE         RSEL    DKW0,2
+                                           #DEFINE         ISEL1   DKW0,1
+                                           #define         ISEL0   DKW0,0 
+                                           
+                                           #define					HFEN		OSCM,0
+                                           #define					LFEN		OSCM,1
+                                           #define					CLKS		OSCM,2
+                                           #define					STBH		OSCM,4
+                                           #DEFINE					STBL		OSCM,5
+                                           
+                                           ;T0CR
+                                           #DEFINE         TC0EN   T0CR,7
+                                           ;#DEFINE  
+                                           
+                                           ;T1CR
+                                           #DEFINE         TC1EN   T1CR,7
+                                                    
+                                               
+                                           
+                                           
+                                           
+                                           
+                                           cblock 0x00
+                                               acc_temp            ;save the ACC value
+                                               status_temp             ;save the ACC status
+                                                   work01
+                                                   work02
+                                                   work03 
+                                           endc
+                                           
+                                           
+                                                   org 0x0
+000000   a00f     goto    0xf                      goto    main
+                                                   
+                                                   org 0x8
+                                           intport:
+000008   5600     movra   0                        movra   acc_temp            ;save the ACC status
+000009   45b7     swapar  0x1b7                    swapar  STATUS              ;save the CPU status
+00000a   5601     movra   0x1                      movra   status_temp 
+                                                   
+                                             
+                                           end_int:        
+00000b   4401     swapar  0x1                      swapar  status_temp
+00000c   57b7     movra   0x1b7                    movra   STATUS
+00000d   5800     movar   0                        movar   acc_temp
+00000e   000d     retie                            retie
+                                                   
+                                           main:
+00000f   dfb8     bclr    0x1b8, 0x7               bclr    GIE
+                                                   ;movai     	0xff
+                                                   ;movra     	OEP2
+                                                   ;movra     	OEP1
+                                                   ;comr      	IOP1
+                                                   ;comr      	IOP2
+                                                   ;GOTO      	main
+                                                  	
+                                                   
+                                           ram_w:
+000010   77b4     clrr    0x1b4                    clrr     FSR0
+                                                   ;clrr    FSR1
+                                           ram_w_first:        
+000011   67b4     incr    0x1b4                    incr    FSR0        
+000012   59b4     movar   0x1b4                    movar   FSR0
+000013   57b0     movra   0x1b0                    movra   INDF0        
+000014   3aff     isubai  0xff                     isubai  0xff
+000015   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000016   a011     goto    0x11                     goto    ram_w_first
+                                           ram_w_second: ;        0x100--0x1af
+000017   67b5     incr    0x1b5                    incr    FSR1        
+000018   59b5     movar   0x1b5                    movar   FSR1
+000019   57b1     movra   0x1b1                    movra   INDF1        
+00001a   3aaf     isubai  0xaf                     isubai  0xaf
+00001b   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00001c   a017     goto    0x17                     goto    ram_w_second
+00001d   77b4     clrr    0x1b4                    clrr    FSR0
+00001e   3c02     movai   0x2                      movai   0x02
+00001f   57b5     movra   0x1b5                    movra   FSR1
+                                           ram_w_thr:
+000020   67b4     incr    0x1b4                    incr    FSR0    ;0x200--0x3ff
+000021   59b4     movar   0x1b4                    movar   FSR0
+000022   57b2     movra   0x1b2                    movra   INDF2        
+000023   3aff     isubai  0xff                     isubai  0xff
+000024   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000025   a020     goto    0x20                     goto    ram_w_thr
+000026   67b5     incr    0x1b5                    incr    FSR1
+000027   59b5     movar   0x1b5                    movar   FSR1
+000028   3a04     isubai  0x4                      isubai  0x04
+000029   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00002a   a020     goto    0x20                     goto    ram_w_thr
+                                           ;check data
+00002b   77b4     clrr    0x1b4                    clrr    FSR0
+                                           ram_first_check:
+                                                   
+00002c   67b4     incr    0x1b4                    incr    FSR0        
+00002d   59b4     movar   0x1b4                    movar   FSR0
+00002e   49b0     rsubar  0x1b0                    rsubar  INDF0
+00002f   e5b7     jbset   0x1b7, 0x2               jbset   Z ;if D_w==D_read
+000030   a07f     goto    0x7f                     goto    flag_error
+000031   59b4     movar   0x1b4                    movar   FSR0        
+000032   3aff     isubai  0xff                     isubai  0xff
+000033   e5b7     jbset   0x1b7, 0x2               jbset   Z        
+000034   a02c     goto    0x2c                     goto    ram_first_check
+                                                   ;0X100--0X1af
+000035   77b5     clrr    0x1b5                    clrr    FSR1
+                                           ram_check_second: ;        0x100--0x1af
+000036   67b5     incr    0x1b5                    incr    FSR1        
+000037   59b5     movar   0x1b5                    movar   FSR1
+000038   49b1     rsubar  0x1b1                    rsubar   INDF1
+000039   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00003a   a07f     goto    0x7f                     goto    flag_error
+00003b   59b5     movar   0x1b5                    movar   FSR1        
+00003c   3aaf     isubai  0xaf                     isubai  0xaf
+00003d   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00003e   a036     goto    0x36                     goto    ram_check_second
+                                                   ;0x200--0x3ff
+00003f   77b4     clrr    0x1b4                    clrr    FSR0
+000040   3c02     movai   0x2                      movai   0x02
+000041   57b5     movra   0x1b5                    movra   FSR1
+                                           ram_check_thr:
+000042   67b4     incr    0x1b4                    incr    FSR0    ;0x200--0x3ff
+000043   59b4     movar   0x1b4                    movar   FSR0
+000044   49b2     rsubar  0x1b2                    rsubar   INDF2 
+000045   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000046   a07f     goto    0x7f                     goto    flag_error
+000047   59b4     movar   0x1b4                    movar   FSR0
+000048   3aff     isubai  0xff                     isubai  0xff
+000049   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00004a   a042     goto    0x42                     goto    ram_check_thr
+00004b   67b5     incr    0x1b5                    incr    FSR1
+00004c   59b5     movar   0x1b5                    movar   FSR1
+00004d   3a04     isubai  0x4                      isubai  0x04
+00004e   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00004f   a042     goto    0x42                     goto    ram_check_thr        
+                                                   ;end ram_w
+                                                   
+                                           ram_clr:
+000050   77b4     clrr    0x1b4                    clrr     FSR0
+                                                   ;clrr    FSR1
+                                           ram_clr_first:        
+000051   67b4     incr    0x1b4                    incr    FSR0        
+000052   59b4     movar   0x1b4                    movar   FSR0
+000053   77b0     clrr    0x1b0                    clrr   INDF0        
+000054   3aff     isubai  0xff                     isubai  0xff
+000055   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000056   a051     goto    0x51                     goto    ram_clr_first
+                                                   ;0X100--0X1af
+000057   77b5     clrr    0x1b5                    clrr    FSR1
+                                           ram_clr_second: ;        0x100--0x1af
+000058   67b5     incr    0x1b5                    incr    FSR1        
+000059   59b5     movar   0x1b5                    movar   FSR1
+00005a   77b1     clrr    0x1b1                    clrr   INDF1        
+00005b   3aaf     isubai  0xaf                     isubai  0xaf
+00005c   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00005d   a058     goto    0x58                     goto    ram_clr_second
+                                                   
+00005e   77b4     clrr    0x1b4                    clrr    FSR0
+00005f   3c02     movai   0x2                      movai   0x02
+000060   57b5     movra   0x1b5                    movra   FSR1
+                                           ram_clr_thr:
+000061   67b4     incr    0x1b4                    incr    FSR0    ;0x200--0x3ff
+000062   59b4     movar   0x1b4                    movar   FSR0
+000063   77b2     clrr    0x1b2                    clrr   INDF2        
+000064   3aff     isubai  0xff                     isubai  0xff
+000065   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000066   a061     goto    0x61                     goto    ram_clr_thr
+000067   67b5     incr    0x1b5                    incr    FSR1
+000068   59b5     movar   0x1b5                    movar   FSR1
+000069   3a04     isubai  0x4                      isubai  0x04
+00006a   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00006b   a061     goto    0x61                     goto    ram_clr_thr
+                                                   
+                                                   ;rom reading funtion test
+00006c   3cf0     movai   0xf0                     movai   0xf0
+00006d   57b4     movra   0x1b4                    movra   FSR0
+00006e   3c1f     movai   0x1f                     movai   0x1f
+00006f   57b5     movra   0x1b5                    movra   FSR1
+000070   59b9     movar   0x1b9                    movar   INDF3
+000071   3a55     isubai  0x55                     isubai  0x55
+000072   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000073   a07f     goto    0x7f                     goto    flag_error
+000074   67b4     incr    0x1b4                    incr    FSR0
+000075   59b9     movar   0x1b9                    movar   INDF3
+000076   3a44     isubai  0x44                     isubai  0x44
+000077   e5b7     jbset   0x1b7, 0x2               jbset   Z
+000078   a07f     goto    0x7f                     goto    flag_error        
+000079   67b4     incr    0x1b4                    incr    FSR0
+00007a   59b9     movar   0x1b9                    movar   INDF3
+00007b   3a56     isubai  0x56                     isubai  0x56
+00007c   e5b7     jbset   0x1b7, 0x2               jbset   Z
+00007d   a07f     goto    0x7f                     goto    flag_error
+00007e   a080     goto    0x80                     goto    funtion_initial
+                                           flag_error:
+00007f   a07f     goto    0x7f                     goto    $
+                                           
+                                           funtion_initial:
+                                                   ;8 levers stack test
+000080   8084     call    0x84                     call    fun001        
+                                                   
+                                           LOOP:
+000081   0000     nop                              NOP
+000082   8084     call    0x84                     call   	fun001
+000083   a081     goto    0x81                     GOTO LOOP        
+                                           fun001:
+000084   6602     incr    0x2                      incr    work01
+000085   8087     call    0x87                     call    fun002
+000086   000c     return                           return
+                                           fun002:
+000087   6602     incr    0x2                      incr    work01
+000088   808a     call    0x8a                     call    fun003
+000089   000c     return                           return
+                                           fun003:
+00008a   6602     incr    0x2                      incr    work01
+00008b   808d     call    0x8d                     call    fun004
+00008c   000c     return                           return
+                                           fun004:
+00008d   6602     incr    0x2                      incr    work01        
+00008e   8090     call    0x90                     call    fun005
+00008f   000c     return                           return
+                                           fun005:
+000090   6602     incr    0x2                      incr    work01
+000091   8093     call    0x93                     call    fun006
+000092   000c     return                           return
+                                           fun006:
+000093   6602     incr    0x2                      incr    work01
+000094   8096     call    0x96                     call    fun007
+000095   000c     return                           return
+                                           fun007:
+000096   6602     incr    0x2                      incr    work01
+000097   8099     call    0x99                     call    fun008
+000098   000c     return                           return        
+                                           fun008:
+000099   6602     incr    0x2                      incr    work01
+                                                   ;call    fun009 ; 
+00009a   000c     return                           return
+                                           fun009:
+00009b   6602     incr    0x2                      incr    work01
+00009c   000c     return                           return
+                                                   
+                                                   end        
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XX-------------- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   150
+

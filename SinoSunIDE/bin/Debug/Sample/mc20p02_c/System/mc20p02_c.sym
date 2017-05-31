@@ -1,0 +1,98 @@
+
+Map of System\mc20p02_c.h05 from link file mc_com.lkf - Tue Jan 19 14:29:12 2016
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001803 end 0000181f length    28 segment CODE
+start 0000181f end 0000181f length     0 segment .const
+start 000000c0 end 000000c0 length     0 segment ZPAGE
+start 000000c0 end 000000c4 length     4 segment UZPAGE
+start 000000c0 end 000000c0 length     0 segment IDATA
+start 000000c0 end 000000c0 length     0 segment UDATA
+start 000000c4 end 000000cd length     9 segment .share
+start 00000000 end 00001340 length  4928 segment .debug
+start 00001ff2 end 00002000 length    14 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05:
+start 00001803 end 0000180d length    10 section CODE (.text)
+start 000000c0 end 000000c4 length     4 section UZPAGE (.ubsct)
+
+mc20p02_c.o:
+start 0000180d end 0000181f length    18 section CODE (.text)
+start 00000000 end 00001340 length  4928 section .debug
+
+C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o:
+start 00001ff2 end 00002000 length    14 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+mc20p02_c.o:
+_main     000000c4-000000cc (9,0)
+
+Stack size: 7
+
+
+                               -------
+                               Symbols
+                               -------
+
+_INT0_ISR     0000180f   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_INT0_ISR.L   000000cd   defined in linker section .share
+                         *** not used ***
+_INT1_ISR     0000180e   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_INT1_ISR.L   000000cd   defined in linker section .share
+                         *** not used ***
+_KBI_ISR      00001813   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_KBI_ISR.L    000000cd   defined in linker section .share
+                         *** not used ***
+_SWI_ISR      0000180d   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_SWI_ISR.L    000000cd   defined in linker section .share
+                         *** not used ***
+_TDR          0000000a   defined in mc20p02_c.o
+_TMI_ISR      00001812   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_TMI_ISR.L    000000cd   defined in linker section .share
+                         *** not used ***
+_WDTI_ISR     00001814   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_WDTI_ISR.L   000000cd   defined in linker section .share
+                         *** not used ***
+__stext       00001803   defined in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o
+_ddr0         00000001   defined in mc20p02_c.o
+_ddr1         00000005   defined in mc20p02_c.o
+_ddr2         00000009   defined in mc20p02_c.o
+_exit         0000180b   defined in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section CODE (.text)
+_kbim         00000007   defined in mc20p02_c.o
+_main         00001815   defined in mc20p02_c.o section CODE (.text)
+                         used in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05
+_main.L       000000cd   defined in linker section .share
+                         used in mc20p02_c.o
+_mcr          0000000d   defined in mc20p02_c.o
+_p0           00000000   defined in mc20p02_c.o
+_p0hcon       00000002   defined in mc20p02_c.o
+_p0lcon       00000003   defined in mc20p02_c.o
+_p0pnd        0000000c   defined in mc20p02_c.o
+_p1           00000004   defined in mc20p02_c.o
+_p1hcon       00000006   defined in mc20p02_c.o
+_p2           00000008   defined in mc20p02_c.o
+_rstfr        0000000e   defined in mc20p02_c.o
+_tcr          0000000b   defined in mc20p02_c.o
+_vectab       00001ff2   defined in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x202.o section .const
+                         *** not used ***
+c_h           000000c1   defined in C:\Users\Administrator\Desktop\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section UZPAGE (.ubsct)

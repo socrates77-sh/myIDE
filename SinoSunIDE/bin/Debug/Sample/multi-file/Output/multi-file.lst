@@ -1,0 +1,116 @@
+gplink-0.7.0 (Nov 19 2012)
+Listing File Generated: 2012-11-21  16:32:50
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                               
+                                               
+                                           
+                                           PRO    CODE
+                                           funtion1:
+                                                   global funtion1
+00000c   0000     nop                              nop
+00000d   0000     nop                              nop
+00000e   000c     return                           return
+                                                   
+                                           lab_abc:
+                                                   global lab_abc
+00000f   0000     nop                              nop
+000010   0000     nop                              nop
+000011   0000     nop                        nop
+000012   0000     nop                        nop
+000013   0000     nop                        NOP
+000014   0000     nop                        nop
+000015   0000     nop                        nop
+000016   000c     return                           return 
+                                                   
+                                                   end
+                                               
+                                               ;#include "sub1.inc"
+                                           
+                                               
+                                                   extern funtion0
+                                                   extern funtion1
+                                                   extern abc
+                                                   extern aaa
+                                                    
+                                           kdkd equ 10h
+                                           
+                                           PROG CODE
+                                               ORG 03FFH
+0003ff   2800     goto    0                    GOTO lab_main
+                                           
+                                               org 000h
+                                           lab_main:
+000000   0000     nop                            nop
+000001   0000     nop                            nop
+000002   0ba5     movai   0xa5                   movai 0xa5
+000003   1591     movra   0x11                   movra abc
+000004   1590     movra   0x10                   movra aaa
+000005   2017     call    0x17                   call funtion0
+000006   0000     nop                            nop
+                                           lab_loop:
+000007   0000     nop                              nop
+000008   200c     call    0xc                      call funtion1
+000009   0000     nop                              nop
+00000a   2017     call    0x17               call funtion0 
+00000b   2807     goto    0x7                      goto lab_loop
+                                                   
+                                                   end
+                                           
+                                           #include "sub1.inc"
+                                           
+                                           #ifndef sub1_h
+                                           #define sub1_h
+                                           
+                                               ;abc equ 1fh
+                                               
+                                                   global abc;
+                                                 global aaa;
+                                           
+                                               
+                                           GPR_DATA        UDATA 0x10
+                                           aaa     RES 1;
+                                           abc     RES 1;
+                                           value RES 1;
+                                               
+                                           #endif
+                                               
+                                           ;#include "mc30p01a.inc"
+                                           
+                                           
+                                               extern lab_abc
+                                           
+                                           time1 equ 10h
+                                           
+                                           
+                                           
+                                           
+                                               ;extern delay;
+                                               ;extern value;
+                                           
+                                           PROG CODE
+                                           funtion0:
+                                                global funtion0
+                                                ;movia ddd
+000017   1610     movar   0x10                  movar time1
+000018   1690     movr    0x10                  movr aaa
+000019   1692     movr    0x12                  movr value;
+00001a   0000     nop                           nop
+00001b   0000     nop                           nop
+00001c   280f     goto    0xf                   goto lab_abc
+                                                
+                                                end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX------
+07C0 : ---------------- ---------------- ---------------- --------------XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    30
+

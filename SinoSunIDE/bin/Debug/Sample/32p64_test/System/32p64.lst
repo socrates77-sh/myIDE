@@ -1,0 +1,362 @@
+gpasm-1.7.0_beta1 (Nov 26 2015)32p64.asm          2016-4-25  13:56:11          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 #include "mc32p64.inc"
+                      00001 
+                      00002 
+                      00003 ;mc32p64 header file
+                      00004 ;
+                      00005 ; 
+                      00006 
+                      00007 ;define must write at first row
+                      00008        
+  000001B0            00009 INDF0   EQU     H'01B0'
+  000001B1            00010 INDF1   EQU     H'01B1'
+  000001B2            00011 INDF2   EQU     H'01B2'
+  000001B3            00012 HIBYTE  EQU     H'01B3'
+  000001B4            00013 FSR0    EQU     H'01B4'
+  000001B5            00014 FSR1    EQU     0X1B5
+  000001B6            00015 PCL     EQU     0X1B6
+  000001B7            00016 PFLAG   EQU    0X1B7
+  000001B8            00017 MCR     EQU     0X1B8
+  000001B9            00018 INDF3   EQU    0X1B9   
+  000001BA            00019 INTE    EQU     0X1BA
+  000001BB            00020 INTFLAG    EQU     0X1BB
+  000001BC            00021 OSCM    EQU     0X1BC
+  000001C0            00022 IOP0    EQU     0X1C0
+  000001C1            00023 OEP0    EQU     0X1C1
+  000001C2            00024 PUP0    EQU     0X1C2
+  000001C4            00025 IOP1    EQU     0X1C4
+  000001C5            00026 OEP1    EQU     0X1C5
+  000001C6            00027 PUP1    EQU     0X1C6
+  000001C8            00028 IOP2    EQU     0X1C8
+  000001C9            00029 OEP2    EQU     0X1C9
+  000001CA            00030 PUP2    EQU     0X1CA
+  000001CC            00031 IOP3    EQU     0X1CC
+  000001CD            00032 OEP3    EQU     0X1CD
+  000001CE            00033 PUP3    EQU     0X1CE
+  000001D0            00034 T0CR    EQU     0X1D0
+  000001D1            00035 T0CNT   EQU     0X1D1
+  000001D2            00036 T0LOAD  EQU     0X1D2
+  000001D3            00037 T0DATA  EQU     0X1D3
+  000001D4            00038 T1CR    EQU     0X1D4
+  000001D5            00039 T1CNT   EQU     0X1D5
+  000001D6            00040 T1LOAD  EQU     0X1D6
+  000001D7            00041 T1DATA  EQU     0X1D7
+  000001D8            00042 T2CR    EQU     0X1D8
+  000001D9            00043 T2CNTH   EQU     0X1D9
+  000001DA            00044 T2CNTL  EQU     0X1DA
+  000001DB            00045 T2LOADH EQU     0X1DB
+  000001DC            00046 T2LOADL EQU     0X1DC
+  000001E0            00047 TK0CRH  EQU     0X1E0
+  000001E1            00048 TK0CRL  EQU     0X1E1
+  000001E2            00049 TK0CNTH EQU     0X1E2
+  000001E3            00050 TK0CNTL EQU     0X1E3
+  000001E4            00051 TK1CRH  EQU     0X1E4
+  000001E5            00052 TK1CRL  EQU     0X1E5
+  000001E6            00053 TK1CNTH EQU     0X1E6
+  000001E7            00054 TK1CNTL EQU     0X1E7
+  000001E8            00055 TK2CRH  EQU     0X1E8
+  000001E9            00056 TK2CRL  EQU     0X1E9
+  000001EA            00057 TK2CNTH EQU     0X1EA
+  000001EB            00058 TK2CNTL EQU     0X1EB
+  000001EC            00059 ADCR0   EQU     0X1EC
+  000001ED            00060 ADCR1   EQU     0X1ED
+  000001ED            00061 ADIOS  EQU      0X1ED
+  000001EE            00062 ADRH    EQU     0X1EE
+  000001EF            00063 ADRL    EQU     0X1EF
+  000001F0            00064 I2CCR   EQU     0X1F0
+  000001F1            00065 I2CADDR EQU     0X1F1
+  000001F2            00066 I2CDATA EQU     0X1F2
+  000001FB            00067 OSCCAL0  EQU     0X1FB
+  000001FC            00068 OSCCAL1  EQU     0X1FC
+                      00069 
+                      00070 
+                      00071 ;int 
+                      00072 #define         GIE             MCR,7
+                      00073 #define         T0        MCR,5
+                      00074 #define         PD              MCR,4
+                      00075 ;#define         MINT1
+                      00076   
+                      00077 
+                      00078 ;pflag bit 
+                      00079 #define         Z       PFLAG,2
+                      00080 #define         DC      PFLAG,1
+                      00081 #define         C       PFLAG,0 
+                      00082 
+                      00083 
+                      00084 ;INTE
+                      00085 ; 1=enable, 0=disable
+                      00086 #define         ADIE    INTE,6
+                      00087 #define         I2CIE   INTE,5
+                      00088 #define         T2IE    INTE,4
+                      00089 #define         INT1IE  INTE,3
+                      00090 #define         INT0IE  INTE,2
+                      00091 #define         T1IE    INTE,1
+                      00092 #define         T0IE    INTE,0
+                      00093 
+                      00094 ;TIME0
+                      00095 #define         TC0EN           T0CR,7
+                      00096 #define         PWM0OUT         T0CR,6
+                      00097 #define         BUZZ0OUT        T0CR,5
+                      00098 #define         T0PS1           T0CR,4
+                      00099 #define         T0PTS0          T0CR,3
+                      00100 ;#define         T0PR2
+                      00101 
+                      00102 ;OSCM
+                      00103 #define         STBL    OSCM,5
+                      00104 #define         STBH    OSCM,4
+                      00105 #define         CLKS    OSCM,2
+                      00106 #define         LFEN    OSCM,1
+                      00107 #define         HFEN    OSCM,0          
+                      00108 
+                      00109 ;TIME0
+                      00110 #define         TC1EN           T1CR,7
+                      00111 #define         PWM1OUT         T1CR,6
+                      00112 #define         BUZZ1OUT        T1CR,5
+                      00113 #define         T1PS1           T1CR,4
+                      00114 #define         T1PTS0          T1CR,3
+                      00115 
+                      00116 ;INTFLAG
+                      00117 ;1=active ,
+                      00118 #define         ADIF    INTFLAG,6 
+                      00119 #define         I2CIF   INTFLAG,5
+                      00120 #define         T2IF    INTFLAG,4
+                      00121 #define         INT1IF  INTFLAG,3
+                      00122 #define         INT0IF  INTFLAG,2
+                      00123 #define         T1IF    INTFLAG,1
+                      00124 #define         T0IF    INTFLAG,0
+                      00125 
+                      00126 
+                      00127 ;-------------------------------------------------------
+                      00128 ;timer2
+                      00129 ;----------------------------
+                      00130 ;T2CR
+                      00131 #define                 TC2EN                           T2CR,7
+                      00132 #define                 T2MODE                  T2CR,6
+                      00133 
+                      00134 
+                      00135 ;TK0CRH
+                      00136 #define                                 TK0JE           TK0CRH,5
+                      00137 #define                                 TK0RCE  TK0CRH,4
+                      00138 #define                                 TK0CLR  TK0CRH,3
+                      00139 ;TK1CRH
+                      00140 #define                                 TK1JE           TK1CRH,5
+                      00141 #define                                 TK1RCE  TK1CRH,4
+                      00142 #define                                 TK1CLR  TK1CRH,3
+                      00143 ;TK2CRH
+                      00144 #define                                 TK2JE           TK2CRH,5
+                      00145 #define                                 TK2RCE  TK2CRH,4
+                      00146 #define                                 TK2CLR  TK2CRH,3
+                      00147 
+                      00148 
+                      00149 ;TKnCRL
+                      00150 #define                                 TK0IF           TK0CRL,7
+                      00151 #define                                 TK0IE           TK0CRL,6
+                      00152                                         
+                      00153 ;TKnCRL
+                      00154 #define                                 TK1IF           TK1CRL,7
+                      00155 #define                                 TK1IE           TK1CRL,6
+                      00156 
+                      00157 ;TKnCRL
+                      00158 #define                                 TK2IF           TK2CRL,7
+                      00159 #define                                 TK2IE           TK2CRL,6
+                      00160 
+                      00161 ;ADCR0
+                      00162 #define         ADEOC   ADCR0,1
+                      00163 #define         ADON    ADCR0,0      
+                      00164 
+                      00165 ;I2CCR
+                      00166 #define                 HCF                     I2CCR,7 ;data send end flag
+                      00167 #define                 HAAS            I2CCR,6      ;addr matching flag 
+                      00168 #define                 HBB                     I2CCR,5                         ;
+                      00169 #define                 HTX                     I2CCR,4
+                      00170 #define                 TXAK            I2CCR,3
+                      00171 #define                 SRW                     I2CCR,2
+                      00172 #define                 HEN                     I2CCR,1
+                      00173 #define                 RXAK            I2CCR,0
+                      00174 
+                      00175 ;-------adc chanal----------------------------------------
+                      00176 #define         AD0     0X00
+                      00177 #define         AD1     0X10
+                      00178 #define         AD2     0X20
+                      00179 #define         AD3     0X30
+                      00180 #define         AD4     0X40
+                      00181 #define         AD5     0X50
+                      00182 #define         AD6     0X60
+                      00183 #define         AD7     0X70
+                      00184 #define         LDO     0X80
+                      00185 #define         AD_VDD          0XD0
+                      00186 #define         AD_VDD_4DIV     0XE0
+                      00187 #define         AD_VDD_2DIV     0XF0
+                      00188 
+                      00004 
+                      00005 
+                      00006 
+                      00007 
+                      00008 
+                      00009         org 0x00
+0000                  00010 start:
+0000   3CAA           00011         movai   0xaa
+0001   3C55           00012         movai   0x55
+0002   5600           00013         movra   0x00
+                      00014 
+0003                  00015 loop:
+0003   0000           00016         nop
+0004   A000           00017         goto    loop
+                      00018  
+                      00019         end     
+gpasm-1.7.0_beta1 (Nov 26 2015)32p64.asm          2016-4-25  13:56:11          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000001EC
+ADCR1                             000001ED
+ADIOS                             000001ED
+ADRH                              000001EE
+ADRL                              000001EF
+FSR0                              000001B4
+FSR1                              000001B5
+HIBYTE                            000001B3
+I2CADDR                           000001F1
+I2CCR                             000001F0
+I2CDATA                           000001F2
+INDF0                             000001B0
+INDF1                             000001B1
+INDF2                             000001B2
+INDF3                             000001B9
+INTE                              000001BA
+INTFLAG                           000001BB
+IOP0                              000001C0
+IOP1                              000001C4
+IOP2                              000001C8
+IOP3                              000001CC
+MCR                               000001B8
+OEP0                              000001C1
+OEP1                              000001C5
+OEP2                              000001C9
+OEP3                              000001CD
+OSCCAL0                           000001FB
+OSCCAL1                           000001FC
+OSCM                              000001BC
+PCL                               000001B6
+PFLAG                             000001B7
+PUP0                              000001C2
+PUP1                              000001C6
+PUP2                              000001CA
+PUP3                              000001CE
+T0CNT                             000001D1
+T0CR                              000001D0
+T0DATA                            000001D3
+T0LOAD                            000001D2
+T1CNT                             000001D5
+T1CR                              000001D4
+T1DATA                            000001D7
+T1LOAD                            000001D6
+T2CNTH                            000001D9
+T2CNTL                            000001DA
+T2CR                              000001D8
+T2LOADH                           000001DB
+T2LOADL                           000001DC
+TK0CNTH                           000001E2
+TK0CNTL                           000001E3
+TK0CRH                            000001E0
+TK0CRL                            000001E1
+TK1CNTH                           000001E6
+TK1CNTL                           000001E7
+TK1CRH                            000001E4
+TK1CRL                            000001E5
+TK2CNTH                           000001EA
+TK2CNTL                           000001EB
+TK2CRH                            000001E8
+TK2CRL                            000001E9
+__32P64                           00000001
+loop                              00000003
+start                             00000000
+AD0                               0X00
+AD1                               0X10
+AD2                               0X20
+AD3                               0X30
+AD4                               0X40
+AD5                               0X50
+AD6                               0X60
+AD7                               0X70
+ADEOC                             ADCR0,1
+ADIE                              INTE,6
+ADIF                              INTFLAG,6
+ADON                              ADCR0,0
+AD_VDD                            0XD0
+AD_VDD_2DIV                       0XF0
+AD_VDD_4DIV                       0XE0
+BUZZ0OUT                          T0CR,5
+BUZZ1OUT                          T1CR,5
+C                                 PFLAG,0
+CLKS                              OSCM,2
+DC                                PFLAG,1
+GIE                               MCR,7
+HAAS                              I2CCR,6
+HBB                               I2CCR,5
+HCF                               I2CCR,7
+HEN                               I2CCR,1
+HFEN                              OSCM,0
+HTX                               I2CCR,4
+I2CIE                             INTE,5
+I2CIF                             INTFLAG,5
+INT0IE                            INTE,2
+INT0IF                            INTFLAG,2
+INT1IE                            INTE,3
+INT1IF                            INTFLAG,3
+LDO                               0X80
+LFEN                              OSCM,1
+PD                                MCR,4
+PWM0OUT                           T0CR,6
+PWM1OUT                           T1CR,6
+RXAK                              I2CCR,0
+SRW                               I2CCR,2
+STBH                              OSCM,4
+STBL                              OSCM,5
+T0                                MCR,5
+T0IE                              INTE,0
+T0IF                              INTFLAG,0
+T0PS1                             T0CR,4
+T0PTS0                            T0CR,3
+T1IE                              INTE,1
+T1IF                              INTFLAG,1
+T1PS1                             T1CR,4
+T1PTS0                            T1CR,3
+T2IE                              INTE,4
+T2IF                              INTFLAG,4
+T2MODE                            T2CR,6
+TC0EN                             T0CR,7
+TC1EN                             T1CR,7
+TC2EN                             T2CR,7
+TK0CLR                            TK0CRH,3
+TK0IE                             TK0CRL,6
+TK0IF                             TK0CRL,7
+TK0JE                             TK0CRH,5
+TK0RCE                            TK0CRH,4
+TK1CLR                            TK1CRH,3
+TK1IE                             TK1CRL,6
+TK1IF                             TK1CRL,7
+TK1JE                             TK1CRH,5
+TK1RCE                            TK1CRH,4
+TK2CLR                            TK2CRH,3
+TK2IE                             TK2CRL,6
+TK2IF                             TK2CRL,7
+TK2JE                             TK2CRH,5
+TK2RCE                            TK2CRH,4
+TXAK                              I2CCR,3
+Z                                 PFLAG,2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

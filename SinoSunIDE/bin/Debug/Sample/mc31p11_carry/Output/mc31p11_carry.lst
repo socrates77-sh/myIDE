@@ -1,0 +1,49 @@
+gplink-1.4.0 (Sep 22 2013)
+Listing File Generated: 2013-11-4  17:50:17
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                               
+                                           abc     equ     0x20
+                                           abc0    equ     0x30        
+                                                   
+                                                   org 0x3ff
+                                           
+                                                   org 0x00
+000000   0401     movai   0x1                      movai   0x01
+000001   0ad0     movra   0x10                     movra   0x10
+000002   0402     movai   0x2                      movai   0x02
+000003   0910     rsubar  0x10                     rsubar  0x10
+                                                   
+000004   0403     movai   0x3                      movai   0x03
+000005   0ad0     movra   0x10                     movra   0x10
+000006   0402     movai   0x2                      movai   0x02
+000007   0910     rsubar  0x10                     rsubar  0x10
+                                           
+                                           looop:        
+000008   0ce0     incr    0x20                     incr    abc
+000009   0b20     movar   0x20                     movar   0x20
+00000a   0af0     movra   0x30                     movra   abc0
+00000b   0af5     movra   0x35                     movra   0x35
+00000c   0af8     movra   0x38                     movra   0x38
+00000d   0ac0     movra   0                        movra   0x40
+                                                   
+                                                   
+                                                   
+                                                   
+00000e   1408     goto    0x8                      goto    looop
+                                                   
+                                                   
+                                                   end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXX-- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    15
+

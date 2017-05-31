@@ -1,0 +1,121 @@
+
+AAAA_R00                           at 0x018C  xxxx.x  0000 to 0000
+AA_R0                              at 0x01AD  xxxx.x  0000 to 0000
+AA_R2                              at 0x01AF  xxxx.x  0000 to 0000
+AA_R4                              at 0x01AB  xxxx.x  0000 to 0000
+ADCR0                              at 0x01B0  xxxx.x  0000 to 0000
+ADCR1                              at 0x01B1  xxxx.x  0000 to 0000
+ANSEL                              at 0x0193  xxxx.x  0000 to 0000
+FSR0                               at 0x0184  xxxx.x  0000 to 0000
+FSR1                               at 0x0185  xxxx.x  0000 to 0000
+HIBYTE                             at 0x0183  xxxx.x  0000 to 0000
+INDF0                              at 0x0180  xxxx.x  0000 to 0000
+INDF1                              at 0x0181  xxxx.x  0000 to 0000
+INDF2                              at 0x0182  xxxx.x  0000 to 0000
+INDF3                              at 0x0189  xxxx.x  0000 to 0000
+INTE                               at 0x018A  xxxx.x  0000 to 0000
+INTF                               at 0x018B  xxxx.x  0000 to 0000
+INVALID_ADDR1                      at 0x018D  xxxx.x  0000 to 0000
+INVALID_ADDR2                      at 0x018E  xxxx.x  0000 to 0000
+INVALID_ADDR3                      at 0x018F  xxxx.x  0000 to 0000
+INVALID_ADDR5                      at 0x0198  xxxx.x  0000 to 0000
+INVALID_ADDR6                      at 0x0199  xxxx.x  0000 to 0000
+INVALID_ADDR7                      at 0x019A  xxxx.x  0000 to 0000
+INVALID_ADDR8                      at 0x019B  xxxx.x  0000 to 0000
+INVALID_ADDR9                      at 0x019C  xxxx.x  0000 to 0000
+INVALID_ADDRA                      at 0x019D  xxxx.x  0000 to 0000
+INVALID_ADDRB                      at 0x019E  xxxx.x  0000 to 0000
+INVALID_ADDRC                      at 0x019F  xxxx.x  0000 to 0000
+IOP0                               at 0x0190  xxxx.x  0000 to 0000
+IOP1                               at 0x0194  xxxx.x  0000 to 0000
+KBIM                               at 0x0197  xxxx.x  0000 to 0000
+MCR                                at 0x0188  xxxx.x  0000 to 0000
+OEP0                               at 0x0191  xxxx.x  0000 to 0000
+OEP1                               at 0x0195  xxxx.x  0000 to 0000
+OSCM                               at 0x01AE  xxxx.x  0000 to 0000
+PCL                                at 0x0186  xxxx.x  0000 to 0000
+PFALG                              at 0x0187  xxxx.x  0000 to 0000
+PUP0                               at 0x0192  xxxx.x  0000 to 0000
+PUP1                               at 0x0196  xxxx.x  0000 to 0000
+PWMCR                              at 0x01AC  xxxx.x  0000 to 0000
+T0CNT                              at 0x01A1  xxxx.x  0000 to 0000
+T0CR                               at 0x01A0  xxxx.x  0000 to 0000
+T0DATA                             at 0x01A3  xxxx.x  0000 to 0000
+T0LOAD                             at 0x01A2  xxxx.x  0000 to 0000
+T1CNT                              at 0x01A5  xxxx.x  0000 to 0000
+T1CR                               at 0x01A4  xxxx.x  0000 to 0000
+T1DATA                             at 0x01A7  xxxx.x  0000 to 0000
+T1LOAD                             at 0x01A6  xxxx.x  0000 to 0000
+T2CNT                              at 0x01A9  xxxx.x  0000 to 0000
+T2CR                               at 0x01A8  xxxx.x  0000 to 0000
+T2LOAD                             at 0x01AA  xxxx.x  0000 to 0000
+org_8_0031                       at 0x0031  xxxx.x  0000 to 0000
+__32P21                            at 0x0001  xxxx.x  0000 to 0000
+acc_temp                           at 0x0000  xxxx.x  0000 to 0000
+end_int                            at 0x000B  xxxx.x  0000 to 0000
+flag_error                         at 0x0031  xxxx.x  0000 to 0000
+fn_ram_test                        at 0x003E  xxxx.x  0000 to 0000
+fun001                             at 0x0058  xxxx.x  0000 to 0000
+fun002                             at 0x005B  xxxx.x  0000 to 0000
+fun003                             at 0x005E  xxxx.x  0000 to 0000
+fun004                             at 0x0061  xxxx.x  0000 to 0000
+fun005                             at 0x0064  xxxx.x  0000 to 0000
+fun006                             at 0x0067  xxxx.x  0000 to 0000
+fun007                             at 0x006A  xxxx.x  0000 to 0000
+fun008                             at 0x006D  xxxx.x  0000 to 0000
+fun009                             at 0x006F  xxxx.x  0000 to 0000
+funtion_initial                    at 0x0032  xxxx.x  0000 to 0000
+intport                            at 0x0008  xxxx.x  0000 to 0000
+look_next_data                     at 0x0026  xxxx.x  0000 to 0000
+loop                               at 0x003B  xxxx.x  0000 to 0000
+main                               at 0x000F  xxxx.x  0000 to 0000
+pc_test_tab                        at 0x02FD  xxxx.x  0000 to 0000
+ram_clr                            at 0x0050  xxxx.x  0000 to 0000
+ram_clr_first                      at 0x0051  xxxx.x  0000 to 0000
+ram_first_check                    at 0x0046  xxxx.x  0000 to 0000
+ram_w                              at 0x003E  xxxx.x  0000 to 0000
+ram_w_first                        at 0x003F  xxxx.x  0000 to 0000
+status_temp                        at 0x0001  xxxx.x  0000 to 0000
+work01                             at 0x0002  xxxx.x  0000 to 0000
+work02                             at 0x0003  xxxx.x  0000 to 0000
+work03                             at 0x0004  xxxx.x  0000 to 0000
+#define Z       STATUS.bitn.bit2
+#define DC      STATUS.bitn.bit1
+#define C       STATUS.bitn.bit0
+#define GIE     MCR.bitn.bit7
+#define ADIE    INTECON.bitn.bit6
+#define T2IE    INTECON.bitn.bit5
+#define KBIE    INTECON.bitn.bit4
+#define INT1IE  INTECON.bitn.bit3
+#define INT0IE  INTECON.bitn.bit2
+#define T1IE    INTECON.bitn.bit1
+#define T0IE    INTECON.bitn.bit0
+#define ADIF    INTF.bitn.bit6
+#define T2IF    INTF.bitn.bit5
+#define KBIF    INTF.bitn.bit4
+#define INT1IF  INTF.bitn.bit3
+#define INT0IF  INTF.bitn.bit2
+#define T1IF    INTF.bitn.bit1
+#define T0IF    INTF.bitn.bit0
+#define TC0EN   T0CR.bitn.bit7
+#define PWM0OE  T0CR.bitn.bit6
+#define BUZ0OE  T0CR.bitn.bit5
+#define TC1EN   T1CR.bitn.bit7
+#define PWM1OE  T1CR.bitn.bit6
+#define BUZ1OE  T1CR.bitn.bit5
+#define STBL    OSCM.bitn.bit5
+#define STBH    OSCM.bitn.bit4
+#define CLKS    OSCM.bitn.bit2
+#define LFEN    OSCM.bitn.bit1
+#define HFEN    OSCM.bitn.bit0
+#define LVD     PLVDCR.bitn.bit7
+#define LVDS    PLVDCR.bitn.bit6
+#define DDR10   DDR1.bitn.bit0
+#define DDR11   DDR1.bitn.bit1
+#define DDR12   DDR1.bitn.bit2
+#define DDR13   DDR1.bitn.bit3
+#define ADEOC           ADCR0.bitn.bit1
+#define ADON            ADCR0.bitn.bit0
+#define VRES            ADCR1.bitn.bit3
+#define VRS0            ADCR1.bitn.bit0
+#define TC2EN                           T2CR.bitn.bit7

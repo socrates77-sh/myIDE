@@ -1,0 +1,107 @@
+
+DKW0                               at 0x01E6  xxxx.x  0000 to 0000
+DKW1                               at 0x01E7  xxxx.x  0000 to 0000
+DKWP1                              at 0x01CE  xxxx.x  0000 to 0000
+DKWP2                              at 0x01D6  xxxx.x  0000 to 0000
+FSR0                               at 0x01B4  xxxx.x  0000 to 0000
+FSR1                               at 0x01B5  xxxx.x  0000 to 0000
+HIBYTE                             at 0x01B3  xxxx.x  0000 to 0000
+INDF0                              at 0x01B0  xxxx.x  0000 to 0000
+INDF1                              at 0x01B1  xxxx.x  0000 to 0000
+INDF2                              at 0x01B2  xxxx.x  0000 to 0000
+INDF3                              at 0x01B9  xxxx.x  0000 to 0000
+INTE                               at 0x01BA  xxxx.x  0000 to 0000
+INTF                               at 0x01BB  xxxx.x  0000 to 0000
+IOP1                               at 0x01C8  xxxx.x  0000 to 0000
+IOP2                               at 0x01D0  xxxx.x  0000 to 0000
+KBCR                               at 0x01D7  xxxx.x  0000 to 0000
+LOOP                               at 0x0081  xxxx.x  0000 to 0000
+MCR                                at 0x01B8  xxxx.x  0000 to 0000
+OEP1                               at 0x01C9  xxxx.x  0000 to 0000
+OEP2                               at 0x01D1  xxxx.x  0000 to 0000
+OPCR0                              at 0x01E4  xxxx.x  0000 to 0000
+OPCR1                              at 0x01E5  xxxx.x  0000 to 0000
+OSCM                               at 0x01BC  xxxx.x  0000 to 0000
+PCL                                at 0x01B6  xxxx.x  0000 to 0000
+PFLAG                              at 0x01B7  xxxx.x  0000 to 0000
+PUP1                               at 0x01CA  xxxx.x  0000 to 0000
+PUP2                               at 0x01D2  xxxx.x  0000 to 0000
+STATUS                             at 0x01B7  xxxx.x  0000 to 0000
+T0CR                               at 0x01D8  xxxx.x  0000 to 0000
+T0LATFH                            at 0x01DC  xxxx.x  0000 to 0000
+T0LATFL                            at 0x01DB  xxxx.x  0000 to 0000
+T0LATRH                            at 0x01DE  xxxx.x  0000 to 0000
+T0LATRL                            at 0x01DD  xxxx.x  0000 to 0000
+T0LOADH                            at 0x01D9  xxxx.x  0000 to 0000
+T0LOADL                            at 0x01DA  xxxx.x  0000 to 0000
+T1CR                               at 0x01E0  xxxx.x  0000 to 0000
+T1DATA                             at 0x01E1  xxxx.x  0000 to 0000
+T1LOAD                             at 0x01E2  xxxx.x  0000 to 0000
+_.org_8_007F                       at 0x007F  xxxx.x  0000 to 0000
+__33P94                            at 0x0001  xxxx.x  0000 to 0000
+acc_temp                           at 0x0000  xxxx.x  0000 to 0000
+end_int                            at 0x000B  xxxx.x  0000 to 0000
+flag_error                         at 0x007F  xxxx.x  0000 to 0000
+fun001                             at 0x0084  xxxx.x  0000 to 0000
+fun002                             at 0x0087  xxxx.x  0000 to 0000
+fun003                             at 0x008A  xxxx.x  0000 to 0000
+fun004                             at 0x008D  xxxx.x  0000 to 0000
+fun005                             at 0x0090  xxxx.x  0000 to 0000
+fun006                             at 0x0093  xxxx.x  0000 to 0000
+fun007                             at 0x0096  xxxx.x  0000 to 0000
+fun008                             at 0x0099  xxxx.x  0000 to 0000
+fun009                             at 0x009B  xxxx.x  0000 to 0000
+funtion_initial                    at 0x0080  xxxx.x  0000 to 0000
+intport                            at 0x0008  xxxx.x  0000 to 0000
+main                               at 0x000F  xxxx.x  0000 to 0000
+ram_check_second                   at 0x0036  xxxx.x  0000 to 0000
+ram_check_thr                      at 0x0042  xxxx.x  0000 to 0000
+ram_clr                            at 0x0050  xxxx.x  0000 to 0000
+ram_clr_first                      at 0x0051  xxxx.x  0000 to 0000
+ram_clr_second                     at 0x0058  xxxx.x  0000 to 0000
+ram_clr_thr                        at 0x0061  xxxx.x  0000 to 0000
+ram_first_check                    at 0x002C  xxxx.x  0000 to 0000
+ram_w                              at 0x0010  xxxx.x  0000 to 0000
+ram_w_first                        at 0x0011  xxxx.x  0000 to 0000
+ram_w_second                       at 0x0017  xxxx.x  0000 to 0000
+ram_w_thr                          at 0x0020  xxxx.x  0000 to 0000
+status_temp                        at 0x0001  xxxx.x  0000 to 0000
+work01                             at 0x0002  xxxx.x  0000 to 0000
+work02                             at 0x0003  xxxx.x  0000 to 0000
+work03                             at 0x0004  xxxx.x  0000 to 0000
+#define         Z       PFLAG,2
+#define         DC      PFLAG,1
+#define         C       PFLAG,0 
+#define         GIE     MCR,7
+#DEFINE         TO      MCR,5
+#DEFINE         PD      MCR,4
+#DEFINE         MINT11  MCR,3
+#define         KBIE    INTE,7
+#DEFINE         INT1IE  INTE,3
+#DEFINE         INT0IE  INTE,2
+#DEFINE         T1IE    INTE,1
+#define         T0IE    INTE,0
+#DEFINE         KBIF    INTF,7
+#DEFINE         T0RF    INTF,6
+#DEFINE         INT1IF  INTF,3
+#DEFINE         INT0IF  INTF,2
+#DEFINE         T1IF    INTF,1
+#DEFINE         T0IF    INTF,0
+#DEFINE         DKWE    DKW0,7
+#DEFINE         IROS    DKW0,6
+#DEFINE         IROT    DKW0,5         
+#DEFINE         WSEL0   DKW0,4
+#DEFINE         WSEL1   DKW0,3
+#DEFINE         RSEL    DKW0,2
+#DEFINE         ISEL1   DKW0,1
+#define         ISEL0   DKW0,0 
+#define                                 HFEN            OSCM,0
+#define                                 LFEN            OSCM,1
+#define                                 CLKS            OSCM,2
+#define                                 STBH            OSCM,4
+#DEFINE                                 STBL            OSCM,5
+#DEFINE         TC0EN   T0CR,7
+#DEFINE  
+                      00103 
+                      00104 
+#DEFINE         TC1EN   T1CR,7

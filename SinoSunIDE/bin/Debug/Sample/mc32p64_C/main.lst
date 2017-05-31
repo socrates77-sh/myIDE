@@ -1,0 +1,1358 @@
+gpasm-1.7.0_beta1 (Nov 26 2015)main.asm           2016-4-28  13:49:33          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : ANSI-C Compiler
+                      00003 ; Version 0.0.4 (Jan  7 2016) (MINGW32)
+                      00004 ; This file was generated Thu Apr 28 13:49:33 2016
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC3X port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "main.c"
+                      00009         list    p=3264
+                      00010         radix dec
+                      00011         include "3264.inc"
+                      00001                 LIST
+                      00002 ;mc32p64.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00374                 LIST
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015         extern  _STATUSbits
+                      00016         extern  _MCRbits
+                      00017         extern  _INTEbits
+                      00018         extern  _INTFbits
+                      00019         extern  _OSCMbits
+                      00020         extern  _IOP0bits
+                      00021         extern  _OEP0bits
+                      00022         extern  _PUP0bits
+                      00023         extern  _IOP1bits
+                      00024         extern  _OEP1bits
+                      00025         extern  _PUP1bits
+                      00026         extern  _IOP2bits
+                      00027         extern  _OEP2bits
+                      00028         extern  _PUP2bits
+                      00029         extern  _IOP3bits
+                      00030         extern  _OEP3bits
+                      00031         extern  _PUP3bits
+                      00032         extern  _T0CRbits
+                      00033         extern  _T1CRbits
+                      00034         extern  _T2CRbits
+                      00035         extern  _TK0CRHbits
+                      00036         extern  _TK0CRLbits
+                      00037         extern  _TK1CRHbits
+                      00038         extern  _TK1CRLbits
+                      00039         extern  _TK2CRHbits
+                      00040         extern  _TK2CRLbits
+                      00041         extern  _ADCR0bits
+                      00042         extern  _ADCR1bits
+                      00043         extern  _I2CCRbits
+                      00044         extern  _INDF
+                      00045         extern  _INDF0
+                      00046         extern  _INDF1
+                      00047         extern  _INDF2
+                      00048         extern  _HIBYTE
+                      00049         extern  _FSR
+                      00050         extern  _FSR0
+                      00051         extern  _FSR1
+                      00052         extern  _PCL
+                      00053         extern  _STATUS
+                      00054         extern  _MCR
+                      00055         extern  _INDF3
+                      00056         extern  _INTE
+                      00057         extern  _INTF
+                      00058         extern  _OSCM
+                      00059         extern  _IOP0
+                      00060         extern  _OEP0
+                      00061         extern  _PUP0
+                      00062         extern  _IOP1
+                      00063         extern  _OEP1
+                      00064         extern  _PUP1
+                      00065         extern  _IOP2
+                      00066         extern  _OEP2
+                      00067         extern  _PUP2
+                      00068         extern  _IOP3
+                      00069         extern  _OEP3
+                      00070         extern  _PUP3
+                      00071         extern  _T0CR
+                      00072         extern  _T0CNT
+                      00073         extern  _T0LOAD
+                      00074         extern  _T0DATA
+                      00075         extern  _T1CR
+                      00076         extern  _T1CNT
+                      00077         extern  _T1LOAD
+                      00078         extern  _T1DATA
+                      00079         extern  _T2CR
+                      00080         extern  _T2CNTH
+                      00081         extern  _T2CNTL
+                      00082         extern  _T2LOADH
+                      00083         extern  _T2LOADL
+                      00084         extern  _TK0CRH
+                      00085         extern  _TK0CRL
+                      00086         extern  _TK0CNTH
+                      00087         extern  _TK0CNTL
+                      00088         extern  _TK1CRH
+                      00089         extern  _TK1CRL
+                      00090         extern  _TK1CNTH
+                      00091         extern  _TK1CNTL
+                      00092         extern  _TK2CRH
+                      00093         extern  _TK2CRL
+                      00094         extern  _TK2CNTH
+                      00095         extern  _TK2CNTL
+                      00096         extern  _ADCR0
+                      00097         extern  _ADCR1
+                      00098         extern  _ADRH
+                      00099         extern  _ADRL
+                      00100         extern  _I2CCR
+                      00101         extern  _I2CADDR
+                      00102         extern  _I2CDATA
+                      00103 ;--------------------------------------------------------
+                      00104 ; global declarations
+                      00105 ;--------------------------------------------------------
+                      00106         global  _Delay_1ms
+                      00107         global  _Send_byte
+                      00108         global  _Send_byte_P23
+                      00109         global  _int_isr
+                      00110         global  _main
+                      00111         global  _Read32p64
+                      00112         global  _flag1
+                      00113         global  _flag2
+                      00114         global  _flag3
+                      00115         global  _flag4
+                      00116         global  _data
+                      00117         global  _sdi_byte
+                      00118         global  _count_bit
+                      00119         global  _count_byte
+                      00120         global  _need_DealData
+                      00121         global  _need_test
+                      00122         global  _checksum
+                      00123         global  _i
+                      00124         global  _j
+                      00125         global  _temp1
+                      00126         global  _temp2
+                      00127         global  _temp
+                      00128         global  _MCU_ID
+                      00129         global  _OS_result
+                      00130         global  _need_answer
+                      00131         global  _sdo_byte
+                      00132 
+                      00133         global STK06
+                      00134         global STK05
+                      00135         global STK04
+                      00136         global STK03
+                      00137         global STK02
+                      00138         global STK01
+                      00139         global STK00
+                      00140 
+                      00141 sharebank udata_ovr 0x0000
+0000                  00142 STK06   res 1
+0000                  00143 STK05   res 1
+0001                  00144 STK04   res 1
+0001                  00145 STK03   res 1
+0002                  00146 STK02   res 1
+0002                  00147 STK01   res 1
+0003                  00148 STK00   res 1
+                      00149 
+                      00150 ;--------------------------------------------------------
+                      00151 ; global definitions
+                      00152 ;--------------------------------------------------------
+                      00153 UD_main_0       udata
+0000                  00154 _flag1  res     1
+                      00155 
+                      00156 UD_main_1       udata
+0000                  00157 _flag2  res     1
+                      00158 
+                      00159 UD_main_2       udata
+0000                  00160 _flag3  res     1
+                      00161 
+                      00162 UD_main_3       udata
+0000                  00163 _flag4  res     1
+                      00164 
+                      00165 UD_main_4       udata
+0000                  00166 _data   res     50
+                      00167 
+                      00168 UD_main_5       udata
+0000                  00169 _sdi_byte       res     1
+                      00170 
+                      00171 UD_main_6       udata
+0000                  00172 _count_bit      res     1
+                      00173 
+                      00174 UD_main_7       udata
+0000                  00175 _count_byte     res     1
+                      00176 
+                      00177 UD_main_8       udata
+0000                  00178 _need_DealData  res     1
+                      00179 
+                      00180 UD_main_9       udata
+0000                  00181 _need_test      res     1
+                      00182 
+                      00183 UD_main_10      udata
+0000                  00184 _checksum       res     1
+                      00185 
+                      00186 UD_main_11      udata
+0000                  00187 _i      res     1
+                      00188 
+                      00189 UD_main_12      udata
+0000                  00190 _j      res     1
+                      00191 
+                      00192 UD_main_13      udata
+0000                  00193 _temp1  res     1
+                      00194 
+                      00195 UD_main_14      udata
+0000                  00196 _temp2  res     1
+                      00197 
+                      00198 UD_main_15      udata
+0000                  00199 _temp   res     1
+                      00200 
+                      00201 UD_main_16      udata
+0000                  00202 _MCU_ID res     1
+                      00203 
+                      00204 UD_main_17      udata
+0000                  00205 _OS_result      res     1
+                      00206 
+                      00207 UD_main_18      udata
+0000                  00208 _need_answer    res     1
+                      00209 
+                      00210 UD_main_19      udata
+0000                  00211 _sdo_byte       res     1
+                      00212 
+                      00213 ;--------------------------------------------------------
+                      00214 ; absolute symbol definitions
+                      00215 ;--------------------------------------------------------
+                      00216 ;--------------------------------------------------------
+                      00217 ; compiler-defined variables
+                      00218 ;--------------------------------------------------------
+                      00219 UDL_main_0      udata
+0000                  00220 r0x1048 res     1
+0000                  00221 r0x1049 res     1
+0001                  00222 r0x1047 res     1
+0001                  00223 r0x1046 res     1
+0002                  00224 r0x1043 res     1
+0002                  00225 r0x1044 res     1
+0003                  00226 r0x1045 res     1
+0003                  00227 r0x1040 res     1
+0004                  00228 r0x1041 res     1
+0004                  00229 r0x1042 res     1
+0005                  00230 r0x103E res     1
+0005                  00231 r0x103F res     1
+0006                  00232 r0x103B res     1
+0006                  00233 r0x103C res     1
+0007                  00234 r0x103D res     1
+                      00235 ;--------------------------------------------------------
+                      00236 ; initialized data
+                      00237 ;--------------------------------------------------------
+                      00238 
+                      00239 ;@Allocation info for local variables in function 'int_isr'
+                      00240 ;@int_isr Send_byte_P23             Allocated to registers ;size:2
+                      00241 ;@int_isr Send_byte                 Allocated to registers ;size:2
+                      00242 ;@int_isr Delay_1ms                 Allocated to registers ;size:2
+                      00243 ;@int_isr int_isr                   Allocated to registers ;size:2
+                      00244 ;@int_isr STATUSbits                Allocated to registers ;size:1
+                      00245 ;@int_isr MCRbits                   Allocated to registers ;size:1
+                      00246 ;@int_isr INTEbits                  Allocated to registers ;size:1
+                      00247 ;@int_isr INTFbits                  Allocated to registers ;size:1
+                      00248 ;@int_isr OSCMbits                  Allocated to registers ;size:1
+                      00249 ;@int_isr IOP0bits                  Allocated to registers ;size:1
+                      00250 ;@int_isr OEP0bits                  Allocated to registers ;size:1
+                      00251 ;@int_isr PUP0bits                  Allocated to registers ;size:1
+                      00252 ;@int_isr IOP1bits                  Allocated to registers ;size:1
+                      00253 ;@int_isr OEP1bits                  Allocated to registers ;size:1
+                      00254 ;@int_isr PUP1bits                  Allocated to registers ;size:1
+                      00255 ;@int_isr IOP2bits                  Allocated to registers ;size:1
+                      00256 ;@int_isr OEP2bits                  Allocated to registers ;size:1
+                      00257 ;@int_isr PUP2bits                  Allocated to registers ;size:1
+                      00258 ;@int_isr IOP3bits                  Allocated to registers ;size:1
+                      00259 ;@int_isr OEP3bits                  Allocated to registers ;size:1
+                      00260 ;@int_isr PUP3bits                  Allocated to registers ;size:1
+                      00261 ;@int_isr T0CRbits                  Allocated to registers ;size:1
+                      00262 ;@int_isr T1CRbits                  Allocated to registers ;size:1
+                      00263 ;@int_isr T2CRbits                  Allocated to registers ;size:1
+                      00264 ;@int_isr TK0CRHbits                Allocated to registers ;size:1
+                      00265 ;@int_isr TK0CRLbits                Allocated to registers ;size:1
+                      00266 ;@int_isr TK1CRHbits                Allocated to registers ;size:1
+                      00267 ;@int_isr TK1CRLbits                Allocated to registers ;size:1
+                      00268 ;@int_isr TK2CRHbits                Allocated to registers ;size:1
+                      00269 ;@int_isr TK2CRLbits                Allocated to registers ;size:1
+                      00270 ;@int_isr ADCR0bits                 Allocated to registers ;size:1
+                      00271 ;@int_isr ADCR1bits                 Allocated to registers ;size:1
+                      00272 ;@int_isr I2CCRbits                 Allocated to registers ;size:1
+                      00273 ;@int_isr flag1                     Allocated to registers ;size:1
+                      00274 ;@int_isr flag2                     Allocated to registers ;size:1
+                      00275 ;@int_isr flag3                     Allocated to registers ;size:1
+                      00276 ;@int_isr flag4                     Allocated to registers ;size:1
+                      00277 ;@int_isr data                      Allocated to registers ;size:50
+                      00278 ;@int_isr sdi_byte                  Allocated to registers ;size:1
+                      00279 ;@int_isr count_bit                 Allocated to registers ;size:1
+                      00280 ;@int_isr count_byte                Allocated to registers ;size:1
+                      00281 ;@int_isr need_DealData             Allocated to registers ;size:1
+                      00282 ;@int_isr need_test                 Allocated to registers ;size:1
+                      00283 ;@int_isr checksum                  Allocated to registers ;size:1
+                      00284 ;@int_isr i                         Allocated to registers ;size:1
+                      00285 ;@int_isr j                         Allocated to registers ;size:1
+                      00286 ;@int_isr temp1                     Allocated to registers ;size:1
+                      00287 ;@int_isr temp2                     Allocated to registers ;size:1
+                      00288 ;@int_isr temp                      Allocated to registers ;size:1
+                      00289 ;@int_isr MCU_ID                    Allocated to registers ;size:1
+                      00290 ;@int_isr OS_result                 Allocated to registers ;size:1
+                      00291 ;@int_isr need_answer               Allocated to registers ;size:1
+                      00292 ;@int_isr sdo_byte                  Allocated to registers ;size:1
+                      00293 ;@int_isr INDF                      Allocated to registers ;size:1
+                      00294 ;@int_isr INDF0                     Allocated to registers ;size:1
+                      00295 ;@int_isr INDF1                     Allocated to registers ;size:1
+                      00296 ;@int_isr INDF2                     Allocated to registers ;size:1
+                      00297 ;@int_isr HIBYTE                    Allocated to registers ;size:1
+                      00298 ;@int_isr FSR                       Allocated to registers ;size:1
+                      00299 ;@int_isr FSR0                      Allocated to registers ;size:1
+                      00300 ;@int_isr FSR1                      Allocated to registers ;size:1
+                      00301 ;@int_isr PCL                       Allocated to registers ;size:1
+                      00302 ;@int_isr STATUS                    Allocated to registers ;size:1
+                      00303 ;@int_isr MCR                       Allocated to registers ;size:1
+                      00304 ;@int_isr INDF3                     Allocated to registers ;size:1
+                      00305 ;@int_isr INTE                      Allocated to registers ;size:1
+                      00306 ;@int_isr INTF                      Allocated to registers ;size:1
+                      00307 ;@int_isr OSCM                      Allocated to registers ;size:1
+                      00308 ;@int_isr IOP0                      Allocated to registers ;size:1
+                      00309 ;@int_isr OEP0                      Allocated to registers ;size:1
+                      00310 ;@int_isr PUP0                      Allocated to registers ;size:1
+                      00311 ;@int_isr IOP1                      Allocated to registers ;size:1
+                      00312 ;@int_isr OEP1                      Allocated to registers ;size:1
+                      00313 ;@int_isr PUP1                      Allocated to registers ;size:1
+                      00314 ;@int_isr IOP2                      Allocated to registers ;size:1
+                      00315 ;@int_isr OEP2                      Allocated to registers ;size:1
+                      00316 ;@int_isr PUP2                      Allocated to registers ;size:1
+                      00317 ;@int_isr IOP3                      Allocated to registers ;size:1
+                      00318 ;@int_isr OEP3                      Allocated to registers ;size:1
+                      00319 ;@int_isr PUP3                      Allocated to registers ;size:1
+                      00320 ;@int_isr T0CR                      Allocated to registers ;size:1
+                      00321 ;@int_isr T0CNT                     Allocated to registers ;size:1
+                      00322 ;@int_isr T0LOAD                    Allocated to registers ;size:1
+                      00323 ;@int_isr T0DATA                    Allocated to registers ;size:1
+                      00324 ;@int_isr T1CR                      Allocated to registers ;size:1
+                      00325 ;@int_isr T1CNT                     Allocated to registers ;size:1
+                      00326 ;@int_isr T1LOAD                    Allocated to registers ;size:1
+                      00327 ;@int_isr T1DATA                    Allocated to registers ;size:1
+                      00328 ;@int_isr T2CR                      Allocated to registers ;size:1
+                      00329 ;@int_isr T2CNTH                    Allocated to registers ;size:1
+                      00330 ;@int_isr T2CNTL                    Allocated to registers ;size:1
+                      00331 ;@int_isr T2LOADH                   Allocated to registers ;size:1
+                      00332 ;@int_isr T2LOADL                   Allocated to registers ;size:1
+                      00333 ;@int_isr TK0CRH                    Allocated to registers ;size:1
+                      00334 ;@int_isr TK0CRL                    Allocated to registers ;size:1
+                      00335 ;@int_isr TK0CNTH                   Allocated to registers ;size:1
+                      00336 ;@int_isr TK0CNTL                   Allocated to registers ;size:1
+                      00337 ;@int_isr TK1CRH                    Allocated to registers ;size:1
+                      00338 ;@int_isr TK1CRL                    Allocated to registers ;size:1
+                      00339 ;@int_isr TK1CNTH                   Allocated to registers ;size:1
+                      00340 ;@int_isr TK1CNTL                   Allocated to registers ;size:1
+                      00341 ;@int_isr TK2CRH                    Allocated to registers ;size:1
+                      00342 ;@int_isr TK2CRL                    Allocated to registers ;size:1
+                      00343 ;@int_isr TK2CNTH                   Allocated to registers ;size:1
+                      00344 ;@int_isr TK2CNTL                   Allocated to registers ;size:1
+                      00345 ;@int_isr ADCR0                     Allocated to registers ;size:1
+                      00346 ;@int_isr ADCR1                     Allocated to registers ;size:1
+                      00347 ;@int_isr ADRH                      Allocated to registers ;size:1
+                      00348 ;@int_isr ADRL                      Allocated to registers ;size:1
+                      00349 ;@int_isr I2CCR                     Allocated to registers ;size:1
+                      00350 ;@int_isr I2CADDR                   Allocated to registers ;size:1
+                      00351 ;@int_isr I2CDATA                   Allocated to registers ;size:1
+                      00352 ;@end Allocation info for local variables in function 'int_isr';
+                      00353 ;@Allocation info for local variables in function 'main'
+                      00354 ;@end Allocation info for local variables in function 'main';
+                      00355 ;@Allocation info for local variables in function 'Send_byte_P23'
+                      00356 ;@Send_byte_P23 byte_data                 Allocated to registers r0x1043 ;size:1
+                      00357 ;@Send_byte_P23 i                         Allocated to registers r0x1044 ;size:1
+                      00358 ;@end Allocation info for local variables in function 'Send_byte_P23';
+                      00359 ;@Allocation info for local variables in function 'Send_byte'
+                      00360 ;@Send_byte byte_data                 Allocated to registers r0x1040 ;size:1
+                      00361 ;@Send_byte i                         Allocated to registers r0x1041 ;size:1
+                      00362 ;@end Allocation info for local variables in function 'Send_byte';
+                      00363 ;@Allocation info for local variables in function 'Delay_1ms'
+                      00364 ;@Delay_1ms num                       Allocated to registers ;size:1
+                      00365 ;@Delay_1ms i                         Allocated to registers r0x103E ;size:1
+                      00366 ;@Delay_1ms j                         Allocated to registers r0x103F ;size:1
+                      00367 ;@end Allocation info for local variables in function 'Delay_1ms';
+                      00368 ;@Allocation info for local variables in function 'Read32p64'
+                      00369 ;@Read32p64 i                         Allocated to registers r0x103C ;size:1
+                      00370 ;@Read32p64 a                         Allocated to registers r0x103D ;size:1
+                      00371 ;@Read32p64 read_data                 Allocated to registers r0x103B ;size:1
+                      00372 ;@end Allocation info for local variables in function 'Read32p64';
+                      00373 
+                      00374 ;--------------------------------------------------------
+                      00375 ; overlayable items in internal ram 
+                      00376 ;--------------------------------------------------------
+                      00377 ;       udata_ovr
+                      00378 ;--------------------------------------------------------
+                      00379 ; reset vector 
+                      00380 ;--------------------------------------------------------
+                      00381 STARTUP code 0x0000
+0000   A000           00382         goto    _main
+                      00383 ;--------------------------------------------------------
+                      00384 ; interrupt and initialization code
+                      00385 ;--------------------------------------------------------
+                      00386 c_interrupt     code    0x8
+0008                  00387 __sdcc_interrupt
+                      00388 ;***
+                      00389 ;  pBlock Stats: dbName = I
+                      00390 ;***
+                      00391 ;entry:  _int_isr       ;Function start
+                      00392 ; 0 exit points
+                      00393 ;2 compiler assigned registers:
+                      00394 ;   r0x1048
+                      00395 ;   r0x1049
+                      00396 ;; Starting pCode block
+0008                  00397 _int_isr        ;Function start
+                      00398 ; 0 exit points
+                      00399 ;       .line   39; "main.c"    if(T0IF==1)
+0008   7600           00400         CLRR    r0x1048
+0009   F000           00401         JBCLR   _INTFbits,0
+000A   6600           00402         INCR    r0x1048
+                      00403 ;;103   MOVAR   r0x1048
+                      00404 ;;102   MOVAR   r0x1049
+000B   5800           00405         MOVAR   r0x1048
+000C   5600           00406         MOVRA   r0x1049
+000D   3901           00407         XORAI   0x01
+000E   E5B7           00408         JBSET   STATUS,2
+000F   A000           00409         GOTO    _00133_DS_
+                      00410 ;       .line   41; "main.c"    T0IF=0;
+0010   D000           00411         BCLR    _INTFbits,0
+                      00412 ;       .line   42; "main.c"    IOP2^=0x02;
+0011   3C02           00413         MOVAI   0x02
+0012   4200           00414         XORRA   _IOP2
+0013   A000           00415         GOTO    END_OF_INTERRUPT
+0014                  00416 _00133_DS_
+                      00417 ;       .line   44; "main.c"    else if(INT0IF==1)
+0014   7600           00418         CLRR    r0x1048
+0015   F400           00419         JBCLR   _INTFbits,2
+0016   6600           00420         INCR    r0x1048
+                      00421 ;;100   MOVAR   r0x1048
+                      00422 ;;99    MOVAR   r0x1049
+0017   5800           00423         MOVAR   r0x1048
+0018   5600           00424         MOVRA   r0x1049
+0019   3901           00425         XORAI   0x01
+001A   E5B7           00426         JBSET   STATUS,2
+001B   A000           00427         GOTO    END_OF_INTERRUPT
+                      00428 ;       .line   46; "main.c"    INT0IF=0;
+001C   D400           00429         BCLR    _INTFbits,2
+                      00430 ;       .line   47; "main.c"    if(need_answer==1)
+001D   5800           00431         MOVAR   _need_answer
+001E   3901           00432         XORAI   0x01
+001F   E5B7           00433         JBSET   STATUS,2
+0020   A000           00434         GOTO    _00128_DS_
+                      00435 ;       .line   49; "main.c"    if(count_bit==0)
+0021   3C00           00436         MOVAI   0x00
+0022   5C00           00437         ORAR    _count_bit
+0023   E5B7           00438         JBSET   STATUS,2
+0024   A000           00439         GOTO    _00106_DS_
+                      00440 ;       .line   51; "main.c"    sdo_byte=data[count_byte++];
+0025   5800           00441         MOVAR   _count_byte
+0026   5600           00442         MOVRA   r0x1048
+0027   6600           00443         INCR    _count_byte
+0028   5800           00444         MOVAR   r0x1048
+0029   3F00           00445         ADDAI   (_data + 0)
+002A   5600           00446         MOVRA   r0x1048
+002B   3C00           00447         MOVAI   high (_data + 0)
+002C   F1B7           00448         JBCLR   STATUS,0
+002D   3F01           00449         ADDAI   0x01
+002E   5600           00450         MOVRA   r0x1049
+002F   5800           00451         MOVAR   r0x1048
+0030   57B4           00452         MOVRA   FSR
+0031   DFB7           00453         BCLR    STATUS,7
+0032   F000           00454         JBCLR   r0x1049,0
+0033   CFB7           00455         BSET    STATUS,7
+0034   59B0           00456         MOVAR   INDF
+0035   5600           00457         MOVRA   _sdo_byte
+                      00458 ;;unsigned compare: left < lit(0x8=8), size=1
+0036                  00459 _00106_DS_
+                      00460 ;       .line   53; "main.c"    if(count_bit<8)
+0036   3C08           00461         MOVAI   0x08
+0037   4800           00462         RSUBAR  _count_bit
+0038   F1B7           00463         JBCLR   STATUS,0
+0039   A000           00464         GOTO    END_OF_INTERRUPT
+                      00465 ;;genSkipc:3251: created from rifx:0028608C
+                      00466 ;       .line   55; "main.c"    if(sdo_byte&0x01)
+003A   E000           00467         JBSET   _sdo_byte,0
+003B   A000           00468         GOTO    _00108_DS_
+                      00469 ;       .line   57; "main.c"    SDO_1;
+003C   C200           00470         BSET    _IOP2,1
+003D   A000           00471         GOTO    _00109_DS_
+003E                  00472 _00108_DS_
+                      00473 ;       .line   61; "main.c"    SDO_0;
+003E   D200           00474         BCLR    _IOP2,1
+                      00475 ;;shiftRight_Left2ResultLit:5283: shCount=1, size=1, sign=0, same=1, offr=0
+003F                  00476 _00109_DS_
+                      00477 ;       .line   63; "main.c"    sdo_byte>>=1;
+003F   D1B7           00478         BCLR    STATUS,0
+0040   4E00           00479         RRR     _sdo_byte
+                      00480 ;       .line   64; "main.c"    count_bit++;
+0041   6600           00481         INCR    _count_bit
+                      00482 ;       .line   65; "main.c"    if(count_bit==8)
+0042   5800           00483         MOVAR   _count_bit
+0043   3908           00484         XORAI   0x08
+0044   E5B7           00485         JBSET   STATUS,2
+0045   A000           00486         GOTO    END_OF_INTERRUPT
+                      00487 ;       .line   67; "main.c"    count_bit=0;
+0046   7600           00488         CLRR    _count_bit
+                      00489 ;       .line   68; "main.c"    if(count_byte==5)
+0047   5800           00490         MOVAR   _count_byte
+0048   3905           00491         XORAI   0x05
+0049   E5B7           00492         JBSET   STATUS,2
+004A   A000           00493         GOTO    END_OF_INTERRUPT
+                      00494 ;       .line   70; "main.c"    count_byte=0;
+004B   7600           00495         CLRR    _count_byte
+                      00496 ;       .line   71; "main.c"    need_answer=0;
+004C   7600           00497         CLRR    _need_answer
+                      00498 ;       .line   72; "main.c"    OEP2&=0xfd;//回复STM32后 SDO设置为输入
+004D   D200           00499         BCLR    _OEP2,1
+004E   A000           00500         GOTO    END_OF_INTERRUPT
+                      00501 ;;shiftRight_Left2ResultLit:5283: shCount=1, size=1, sign=0, same=1, offr=0
+004F                  00502 _00128_DS_
+                      00503 ;       .line   79; "main.c"    sdi_byte>>=1;
+004F   D1B7           00504         BCLR    STATUS,0
+0050   4E00           00505         RRR     _sdi_byte
+                      00506 ;       .line   80; "main.c"    if(IOP2&0x01)
+0051   E000           00507         JBSET   _IOP2,0
+0052   A000           00508         GOTO    _00117_DS_
+                      00509 ;       .line   82; "main.c"    sdi_byte|=0x80;
+0053   CE00           00510         BSET    _sdi_byte,7
+0054   A000           00511         GOTO    _00118_DS_
+0055                  00512 _00117_DS_
+                      00513 ;       .line   86; "main.c"    sdi_byte&=0x7f;                         
+0055   DE00           00514         BCLR    _sdi_byte,7
+0056                  00515 _00118_DS_
+                      00516 ;       .line   88; "main.c"    count_bit++;
+0056   6600           00517         INCR    _count_bit
+                      00518 ;       .line   89; "main.c"    if(count_bit==8)
+0057   5800           00519         MOVAR   _count_bit
+0058   3908           00520         XORAI   0x08
+0059   E5B7           00521         JBSET   STATUS,2
+005A   A000           00522         GOTO    END_OF_INTERRUPT
+                      00523 ;       .line   91; "main.c"    count_bit=0;
+005B   7600           00524         CLRR    _count_bit
+                      00525 ;       .line   92; "main.c"    data[count_byte++]=sdi_byte;//save a byte data
+005C   5800           00526         MOVAR   _count_byte
+005D   5600           00527         MOVRA   r0x1048
+005E   6600           00528         INCR    _count_byte
+005F   5800           00529         MOVAR   r0x1048
+0060   3F00           00530         ADDAI   (_data + 0)
+0061   5600           00531         MOVRA   r0x1048
+0062   3C00           00532         MOVAI   high (_data + 0)
+0063   F1B7           00533         JBCLR   STATUS,0
+0064   3F01           00534         ADDAI   0x01
+0065   5600           00535         MOVRA   r0x1049
+0066   5800           00536         MOVAR   r0x1048
+0067   57B4           00537         MOVRA   FSR
+0068   DFB7           00538         BCLR    STATUS,7
+0069   F000           00539         JBCLR   r0x1049,0
+006A   CFB7           00540         BSET    STATUS,7
+006B   5800           00541         MOVAR   _sdi_byte
+006C   57B0           00542         MOVRA   INDF
+                      00543 ;       .line   93; "main.c"    if(data[0]==0xc5)
+006D   5800           00544         MOVAR   (_data + 0)
+006E   5600           00545         MOVRA   r0x1048
+006F   5800           00546         MOVAR   r0x1048
+0070   39C5           00547         XORAI   0xc5
+0071   E5B7           00548         JBSET   STATUS,2
+0072   A000           00549         GOTO    _00123_DS_
+                      00550 ;       .line   95; "main.c"    if(sdi_byte==0x5c&&count_byte==data[1])//接收到一帧完整数据
+0073   5800           00551         MOVAR   _sdi_byte
+0074   395C           00552         XORAI   0x5c
+0075   E5B7           00553         JBSET   STATUS,2
+0076   A000           00554         GOTO    END_OF_INTERRUPT
+0077   5800           00555         MOVAR   (_data + 1)
+0078   5600           00556         MOVRA   r0x1048
+0079   5800           00557         MOVAR   r0x1048
+007A   4000           00558         XORAR   _count_byte
+007B   E5B7           00559         JBSET   STATUS,2
+007C   A000           00560         GOTO    END_OF_INTERRUPT
+                      00561 ;       .line   97; "main.c"    need_DealData=1;
+007D   3C01           00562         MOVAI   0x01
+007E   5600           00563         MOVRA   _need_DealData
+007F   A000           00564         GOTO    END_OF_INTERRUPT
+0080                  00565 _00123_DS_
+                      00566 ;       .line   102; "main.c"   count_byte=0;
+0080   7600           00567         CLRR    _count_byte
+0081                  00568 END_OF_INTERRUPT
+0081   000D           00569         RETIE   
+                      00570 
+                      00571 ;--------------------------------------------------------
+                      00572 ; code
+                      00573 ;--------------------------------------------------------
+                      00574 code_main       code
+                      00575 ;***
+                      00576 ;  pBlock Stats: dbName = M
+                      00577 ;***
+                      00578 ;entry:  _main  ;Function start
+                      00579 ; 2 exit points
+                      00580 ;has an exit
+                      00581 ;functions called:
+                      00582 ;   _Send_byte_P23
+                      00583 ;   _Send_byte_P23
+                      00584 ;   _Send_byte_P23
+                      00585 ;   _Send_byte_P23
+                      00586 ;   _Send_byte_P23
+                      00587 ;   _Send_byte_P23
+                      00588 ;   _Send_byte_P23
+                      00589 ;   _Send_byte_P23
+                      00590 ;   _Send_byte_P23
+                      00591 ;   _Send_byte_P23
+                      00592 ;   _Delay_1ms
+                      00593 ;   _Read32p64
+                      00594 ;   _Send_byte_P23
+                      00595 ;   _Send_byte_P23
+                      00596 ;   _Send_byte_P23
+                      00597 ;   _Send_byte_P23
+                      00598 ;   _Send_byte_P23
+                      00599 ;   _Send_byte_P23
+                      00600 ;   _Send_byte_P23
+                      00601 ;   _Send_byte_P23
+                      00602 ;   _Send_byte_P23
+                      00603 ;   _Send_byte_P23
+                      00604 ;   _Delay_1ms
+                      00605 ;   _Read32p64
+                      00606 ;3 compiler assigned registers:
+                      00607 ;   r0x1046
+                      00608 ;   STK00
+                      00609 ;   r0x1047
+                      00610 ;; Starting pCode block
+0000                  00611 _main   ;Function start
+                      00612 ; 2 exit points
+                      00613 ;       .line   119; "main.c"   OEP0=0x40;//p07 input,p06 output
+0000   3C40           00614         MOVAI   0x40
+0001   5600           00615         MOVRA   _OEP0
+                      00616 ;       .line   120; "main.c"   OEP1=0x00;//p17 input
+0002   7600           00617         CLRR    _OEP1
+                      00618 ;       .line   121; "main.c"   OEP2=0x1c;//p20 input,p22 output,p23 output,p24 output
+0003   3C1C           00619         MOVAI   0x1c
+0004   5600           00620         MOVRA   _OEP2
+                      00621 ;       .line   122; "main.c"   SCK_1;
+0005   C400           00622         BSET    _IOP2,2
+                      00623 ;       .line   123; "main.c"   SDI_0;
+0006   D600           00624         BCLR    _IOP2,3
+                      00625 ;       .line   125; "main.c"   PUP0=0xff;//P07 pull-up
+0007   3CFF           00626         MOVAI   0xff
+0008   5600           00627         MOVRA   _PUP0
+                      00628 ;       .line   126; "main.c"   PUP1=0xff;//P17 pull-up
+0009   3CFF           00629         MOVAI   0xff
+000A   5600           00630         MOVRA   _PUP1
+                      00631 ;       .line   135; "main.c"   sdi_byte=0;
+000B   7600           00632         CLRR    _sdi_byte
+                      00633 ;       .line   136; "main.c"   count_bit=0;
+000C   7600           00634         CLRR    _count_bit
+                      00635 ;       .line   137; "main.c"   count_byte=0;
+000D   7600           00636         CLRR    _count_byte
+                      00637 ;       .line   138; "main.c"   need_DealData=0;
+000E   7600           00638         CLRR    _need_DealData
+                      00639 ;       .line   139; "main.c"   checksum=0;
+000F   7600           00640         CLRR    _checksum
+0010                  00641 _00141_DS_
+                      00642 ;       .line   144; "main.c"   Mark_0x02;//测试用代码//正式版本 由STM32分配芯片编号
+0010   D800           00643         BCLR    _IOP2,4
+                      00644 ;       .line   145; "main.c"   Send_byte_P23(0xc5);//帧头
+0011   3CC5           00645         MOVAI   0xc5
+0012   8000           00646         CALL    _Send_byte_P23
+                      00647 ;       .line   146; "main.c"   Send_byte_P23(0x0a);//帧长
+0013   3C0A           00648         MOVAI   0x0a
+0014   8000           00649         CALL    _Send_byte_P23
+                      00650 ;       .line   147; "main.c"   Send_byte_P23(0x02);//32P64 MCU ID
+0015   3C02           00651         MOVAI   0x02
+0016   8000           00652         CALL    _Send_byte_P23
+                      00653 ;       .line   148; "main.c"   Send_byte_P23(0x00);//P00
+0017   3C00           00654         MOVAI   0x00
+0018   8000           00655         CALL    _Send_byte_P23
+                      00656 ;       .line   149; "main.c"   Send_byte_P23(0x00);//输出0
+0019   3C00           00657         MOVAI   0x00
+001A   8000           00658         CALL    _Send_byte_P23
+                      00659 ;       .line   150; "main.c"   Send_byte_P23(0x02);//32P64 MCU ID
+001B   3C02           00660         MOVAI   0x02
+001C   8000           00661         CALL    _Send_byte_P23
+                      00662 ;       .line   151; "main.c"   Send_byte_P23(0x01);//P01
+001D   3C01           00663         MOVAI   0x01
+001E   8000           00664         CALL    _Send_byte_P23
+                      00665 ;       .line   152; "main.c"   Send_byte_P23(0x00);//0x00 正常值
+001F   3C00           00666         MOVAI   0x00
+0020   8000           00667         CALL    _Send_byte_P23
+                      00668 ;       .line   153; "main.c"   Send_byte_P23(0x05);//校验码
+0021   3C05           00669         MOVAI   0x05
+0022   8000           00670         CALL    _Send_byte_P23
+                      00671 ;       .line   154; "main.c"   Send_byte_P23(0x5c);//帧尾
+0023   3C5C           00672         MOVAI   0x5c
+0024   8000           00673         CALL    _Send_byte_P23
+                      00674 ;       .line   156; "main.c"   Delay_1ms(2);
+0025   3C02           00675         MOVAI   0x02
+0026   8000           00676         CALL    _Delay_1ms
+                      00677 ;       .line   158; "main.c"   for(i=0;i<5;i++)
+0027   7600           00678         CLRR    _i
+                      00679 ;;unsigned compare: left < lit(0x5=5), size=1
+0028                  00680 _00143_DS_
+0028   3C05           00681         MOVAI   0x05
+0029   4800           00682         RSUBAR  _i
+002A   F1B7           00683         JBCLR   STATUS,0
+002B   A000           00684         GOTO    _00141_DS_
+                      00685 ;;genSkipc:3251: created from rifx:0028608C
+                      00686 ;       .line   161; "main.c"   temp=Read32p64();
+002C   8000           00687         CALL    _Read32p64
+002D   5600           00688         MOVRA   r0x1046
+002E   5800           00689         MOVAR   STK00
+002F   5600           00690         MOVRA   _temp
+0030   5600           00691         MOVRA   r0x1047
+                      00692 ;;101   MOVAR   r0x1047
+                      00693 ;       .line   162; "main.c"   data[i]=temp;
+0031   5800           00694         MOVAR   _i
+0032   3F00           00695         ADDAI   (_data + 0)
+0033   5600           00696         MOVRA   r0x1047
+0034   3C00           00697         MOVAI   high (_data + 0)
+0035   F1B7           00698         JBCLR   STATUS,0
+0036   3F01           00699         ADDAI   0x01
+0037   5600           00700         MOVRA   r0x1046
+0038   5800           00701         MOVAR   r0x1047
+0039   57B4           00702         MOVRA   FSR
+003A   DFB7           00703         BCLR    STATUS,7
+003B   F000           00704         JBCLR   r0x1046,0
+003C   CFB7           00705         BSET    STATUS,7
+003D   5800           00706         MOVAR   _temp
+003E   57B0           00707         MOVRA   INDF
+                      00708 ;       .line   158; "main.c"   for(i=0;i<5;i++)
+003F   6600           00709         INCR    _i
+0040   A000           00710         GOTO    _00143_DS_
+0041   000C           00711         RETURN  
+                      00712 ; exit point of _main
+                      00713 
+                      00714 ;***
+                      00715 ;  pBlock Stats: dbName = C
+                      00716 ;***
+                      00717 ;entry:  _Read32p64     ;Function start
+                      00718 ; 2 exit points
+                      00719 ;has an exit
+                      00720 ;3 compiler assigned registers:
+                      00721 ;   r0x103B
+                      00722 ;   r0x103C
+                      00723 ;   r0x103D
+                      00724 ;; Starting pCode block
+0042                  00725 _Read32p64      ;Function start
+                      00726 ; 2 exit points
+                      00727 ;       .line   258; "main.c"   read_data=0;
+0042   7600           00728         CLRR    r0x103B
+                      00729 ;       .line   259; "main.c"   for(i=0;i<8;i++)
+0043   7600           00730         CLRR    r0x103C
+                      00731 ;;unsigned compare: left < lit(0x8=8), size=1
+0044                  00732 _00185_DS_
+0044   3C08           00733         MOVAI   0x08
+0045   4800           00734         RSUBAR  r0x103C
+0046   F1B7           00735         JBCLR   STATUS,0
+0047   A000           00736         GOTO    _00188_DS_
+                      00737 ;;genSkipc:3251: created from rifx:0028608C
+                      00738 ;       .line   261; "main.c"   SCK_1;  
+0048   C400           00739         BSET    _IOP2,2
+                      00740 ;       .line   262; "main.c"   Nop();
+0049   0000           00741         nop
+                      00742 ;       .line   263; "main.c"   SCK_0;
+004A   D400           00743         BCLR    _IOP2,2
+                      00744 ;       .line   264; "main.c"   Nop();
+004B   0000           00745         nop
+                      00746 ;       .line   265; "main.c"   a=IOP2;
+004C   5800           00747         MOVAR   _IOP2
+004D   5600           00748         MOVRA   r0x103D
+                      00749 ;       .line   266; "main.c"   a&=0x01;
+004E   3C01           00750         MOVAI   0x01
+004F   7A00           00751         ANDRA   r0x103D
+                      00752 ;       .line   267; "main.c"   a<<=i;
+0050   5800           00753         MOVAR   r0x103C
+0051   3A00           00754         ISUBAI  0x00
+0052   F5B7           00755         JBCLR   STATUS,2
+0053   A000           00756         GOTO    _00198_DS_
+0054                  00757 _00197_DS_
+0054   5200           00758         RLR     r0x103D
+0055   3F01           00759         ADDAI   0x01
+0056   E1B7           00760         JBSET   STATUS,0
+0057   A000           00761         GOTO    _00197_DS_
+0058                  00762 _00198_DS_
+                      00763 ;       .line   268; "main.c"   read_data|=a;
+0058   5800           00764         MOVAR   r0x103D
+0059   5E00           00765         ORRA    r0x103B
+                      00766 ;       .line   259; "main.c"   for(i=0;i<8;i++)
+005A   6600           00767         INCR    r0x103C
+005B   A000           00768         GOTO    _00185_DS_
+005C                  00769 _00188_DS_
+                      00770 ;       .line   270; "main.c"   return read_data;
+005C   5800           00771         MOVAR   r0x103B
+005D   000C           00772         RETURN  
+                      00773 ; exit point of _Read32p64
+                      00774 
+                      00775 ;***
+                      00776 ;  pBlock Stats: dbName = C
+                      00777 ;***
+                      00778 ;entry:  _Delay_1ms     ;Function start
+                      00779 ; 2 exit points
+                      00780 ;has an exit
+                      00781 ;2 compiler assigned registers:
+                      00782 ;   r0x103E
+                      00783 ;   r0x103F
+                      00784 ;; Starting pCode block
+005E                  00785 _Delay_1ms      ;Function start
+                      00786 ; 2 exit points
+                      00787 ;       .line   231; "main.c"   void Delay_1ms(uchar num)
+005E   5600           00788         MOVRA   r0x103E
+005F                  00789 _00176_DS_
+                      00790 ;       .line   236; "main.c"   for(i=num;i>0;i--)
+005F   3C00           00791         MOVAI   0x00
+0060   5C00           00792         ORAR    r0x103E
+0061   F5B7           00793         JBCLR   STATUS,2
+0062   A000           00794         GOTO    _00180_DS_
+                      00795 ;       .line   238; "main.c"   for(j=123;j>0;j--)
+0063   3C7B           00796         MOVAI   0x7b
+0064   5600           00797         MOVRA   r0x103F
+0065                  00798 _00172_DS_
+0065   3C00           00799         MOVAI   0x00
+0066   5C00           00800         ORAR    r0x103F
+0067   F5B7           00801         JBCLR   STATUS,2
+0068   A000           00802         GOTO    _00178_DS_
+                      00803 ;       .line   240; "main.c"   Nop();
+0069   0000           00804         nop
+                      00805 ;       .line   238; "main.c"   for(j=123;j>0;j--)
+006A   6E00           00806         DECR    r0x103F
+006B   A000           00807         GOTO    _00172_DS_
+006C                  00808 _00178_DS_
+                      00809 ;       .line   236; "main.c"   for(i=num;i>0;i--)
+006C   6E00           00810         DECR    r0x103E
+006D   A000           00811         GOTO    _00176_DS_
+006E                  00812 _00180_DS_
+006E   000C           00813         RETURN  
+                      00814 ; exit point of _Delay_1ms
+                      00815 
+                      00816 ;***
+                      00817 ;  pBlock Stats: dbName = C
+                      00818 ;***
+                      00819 ;entry:  _Send_byte     ;Function start
+                      00820 ; 2 exit points
+                      00821 ;has an exit
+                      00822 ;3 compiler assigned registers:
+                      00823 ;   r0x1040
+                      00824 ;   r0x1041
+                      00825 ;   r0x1042
+                      00826 ;; Starting pCode block
+006F                  00827 _Send_byte      ;Function start
+                      00828 ; 2 exit points
+                      00829 ;       .line   203; "main.c"   void Send_byte(uchar byte_data)
+006F   5600           00830         MOVRA   r0x1040
+                      00831 ;       .line   206; "main.c"   SCK_0;
+0070   D400           00832         BCLR    _IOP2,2
+                      00833 ;       .line   207; "main.c"   for(i=0;i<8;i++)
+0071   7600           00834         CLRR    r0x1041
+                      00835 ;;unsigned compare: left < lit(0x8=8), size=1
+0072                  00836 _00163_DS_
+0072   3C08           00837         MOVAI   0x08
+0073   4800           00838         RSUBAR  r0x1041
+0074   F1B7           00839         JBCLR   STATUS,0
+0075   A000           00840         GOTO    _00167_DS_
+                      00841 ;;genSkipc:3251: created from rifx:0028608C
+                      00842 ;       .line   209; "main.c"   SCK_1;
+0076   C400           00843         BSET    _IOP2,2
+                      00844 ;       .line   210; "main.c"   if ((byte_data & 0x01)==1)
+0077   3C01           00845         MOVAI   0x01
+0078   7800           00846         ANDAR   r0x1040
+0079   5600           00847         MOVRA   r0x1042
+007A   5800           00848         MOVAR   r0x1042
+007B   3901           00849         XORAI   0x01
+007C   E5B7           00850         JBSET   STATUS,2
+007D   A000           00851         GOTO    _00161_DS_
+                      00852 ;       .line   212; "main.c"   SDO_1;
+007E   C200           00853         BSET    _IOP2,1
+007F   A000           00854         GOTO    _00162_DS_
+0080                  00855 _00161_DS_
+                      00856 ;       .line   216; "main.c"   SDO_0;
+0080   D200           00857         BCLR    _IOP2,1
+0081                  00858 _00162_DS_
+                      00859 ;       .line   218; "main.c"   Nop();
+0081   0000           00860         nop
+                      00861 ;       .line   219; "main.c"   SCK_0;
+0082   D400           00862         BCLR    _IOP2,2
+                      00863 ;;shiftRight_Left2ResultLit:5283: shCount=1, size=1, sign=0, same=1, offr=0
+                      00864 ;       .line   221; "main.c"   byte_data>>=1;
+0083   D1B7           00865         BCLR    STATUS,0
+0084   4E00           00866         RRR     r0x1040
+                      00867 ;       .line   207; "main.c"   for(i=0;i<8;i++)
+0085   6600           00868         INCR    r0x1041
+0086   A000           00869         GOTO    _00163_DS_
+0087                  00870 _00167_DS_
+0087   000C           00871         RETURN  
+                      00872 ; exit point of _Send_byte
+                      00873 
+                      00874 ;***
+                      00875 ;  pBlock Stats: dbName = C
+                      00876 ;***
+                      00877 ;entry:  _Send_byte_P23 ;Function start
+                      00878 ; 2 exit points
+                      00879 ;has an exit
+                      00880 ;3 compiler assigned registers:
+                      00881 ;   r0x1043
+                      00882 ;   r0x1044
+                      00883 ;   r0x1045
+                      00884 ;; Starting pCode block
+0088                  00885 _Send_byte_P23  ;Function start
+                      00886 ; 2 exit points
+                      00887 ;       .line   174; "main.c"   void Send_byte_P23(uchar byte_data)
+0088   5600           00888         MOVRA   r0x1043
+                      00889 ;       .line   178; "main.c"   for(i=0;i<8;i++)
+0089   7600           00890         CLRR    r0x1044
+                      00891 ;;unsigned compare: left < lit(0x8=8), size=1
+008A                  00892 _00151_DS_
+008A   3C08           00893         MOVAI   0x08
+008B   4800           00894         RSUBAR  r0x1044
+008C   F1B7           00895         JBCLR   STATUS,0
+008D   A000           00896         GOTO    _00155_DS_
+                      00897 ;;genSkipc:3251: created from rifx:0028608C
+                      00898 ;       .line   180; "main.c"   SCK_1;
+008E   C400           00899         BSET    _IOP2,2
+                      00900 ;       .line   181; "main.c"   if ((byte_data & 0x01)==1)
+008F   3C01           00901         MOVAI   0x01
+0090   7800           00902         ANDAR   r0x1043
+0091   5600           00903         MOVRA   r0x1045
+0092   5800           00904         MOVAR   r0x1045
+0093   3901           00905         XORAI   0x01
+0094   E5B7           00906         JBSET   STATUS,2
+0095   A000           00907         GOTO    _00149_DS_
+                      00908 ;       .line   183; "main.c"   SDI_1;
+0096   C600           00909         BSET    _IOP2,3
+0097   A000           00910         GOTO    _00150_DS_
+0098                  00911 _00149_DS_
+                      00912 ;       .line   187; "main.c"   SDI_0;
+0098   D600           00913         BCLR    _IOP2,3
+0099                  00914 _00150_DS_
+                      00915 ;       .line   189; "main.c"   SCK_0;
+0099   D400           00916         BCLR    _IOP2,2
+                      00917 ;       .line   190; "main.c"   Nop();
+009A   0000           00918         nop
+                      00919 ;       .line   191; "main.c"   Nop();
+009B   0000           00920         nop
+                      00921 ;;shiftRight_Left2ResultLit:5283: shCount=1, size=1, sign=0, same=1, offr=0
+                      00922 ;       .line   192; "main.c"   byte_data>>=1;
+009C   D1B7           00923         BCLR    STATUS,0
+009D   4E00           00924         RRR     r0x1043
+                      00925 ;       .line   178; "main.c"   for(i=0;i<8;i++)
+009E   6600           00926         INCR    r0x1044
+009F   A000           00927         GOTO    _00151_DS_
+00A0                  00928 _00155_DS_
+00A0   000C           00929         RETURN  
+                      00930 ; exit point of _Send_byte_P23
+                      00931 
+                      00932 
+                      00933 ;       code size estimation:
+                      00934 ;         277+    0 =   277 instructions (  554 byte)
+                      00935 
+                      00936         end
+gpasm-1.7.0_beta1 (Nov 26 2015)main.asm           2016-4-28  13:49:33          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000001EC
+ADCR1                             000001ED
+ADEOC                             00000001
+ADIE                              00000006
+ADIF                              00000006
+ADIOS0                            00000000
+ADIOS1                            00000001
+ADIOS3                            00000003
+ADIOS4                            00000004
+ADIOS5                            00000005
+ADIOS7                            00000007
+ADOIS2                            00000002
+ADOIS6                            00000006
+ADON                              00000000
+ADRH                              000001EE
+ADRL                              000001EF
+BUZ0OE                            00000005
+BUZ1OE                            00000005
+C                                 00000000
+CLKS                              00000002
+DC                                00000001
+END_OF_INTERRUPT                  00000081
+FSR                               000001B4
+FSR0                              000001B4
+FSR1                              000001B5
+GIE                               00000007
+HAAS                              00000006
+HBB                               00000005
+HCF                               00000007
+HEN                               00000001
+HFEN                              00000000
+HIBYTE                            000001B3
+HTX                               00000004
+I2CADDR                           000001F1
+I2CCR                             000001F0
+I2CDATA                           000001F2
+I2CIE                             00000005
+I2CIF                             00000005
+INDF                              000001B0
+INDF0                             000001B0
+INDF1                             000001B1
+INDF2                             000001B2
+INDF3                             000001B9
+INT0IE                            00000002
+INT0IF                            00000002
+INT1IE                            00000003
+INT1IF                            00000003
+INTE                              000001BA
+INTF                              000001BB
+IOP0                              000001C0
+IOP1                              000001C4
+IOP2                              000001C8
+IOP3                              000001CC
+LFEN                              00000001
+MCR                               000001B8
+OEP0                              000001C1
+OEP1                              000001C5
+OEP2                              000001C9
+OEP3                              000001CD
+OSCM                              000001BC
+P00                               00000000
+P00OE                             00000000
+P00PU                             00000000
+P01                               00000001
+P01OE                             00000001
+P01PU                             00000001
+P02                               00000002
+P02OE                             00000002
+P02PU                             00000002
+P03                               00000003
+P03OE                             00000003
+P03PU                             00000003
+P04                               00000004
+P04OE                             00000004
+P04PU                             00000004
+P05                               00000005
+P05OE                             00000005
+P05PU                             00000005
+P06                               00000006
+P06OE                             00000006
+P07                               00000007
+P07OE                             00000007
+P10                               00000000
+P10OE                             00000000
+P10PU                             00000000
+P11                               00000001
+P11OE                             00000001
+P11PU                             00000001
+P12                               00000002
+P12OE                             00000002
+P12PU                             00000002
+P13                               00000003
+P13OE                             00000003
+P13PU                             00000003
+P14                               00000004
+P14OE                             00000004
+P14PU                             00000004
+P15                               00000005
+P15OE                             00000005
+P15PU                             00000005
+P16                               00000006
+P16OE                             00000006
+P16PU                             00000006
+P17                               00000007
+P17OE                             00000007
+P17PU                             00000007
+P20                               00000000
+P20OE                             00000000
+P20PU                             00000000
+P21                               00000001
+P21OE                             00000001
+P21PU                             00000001
+P22                               00000002
+P22OE                             00000002
+P22PU                             00000002
+P23                               00000003
+P23OE                             00000003
+P23PU                             00000003
+P24                               00000004
+P24OE                             00000004
+P24PU                             00000004
+P25                               00000005
+P25OE                             00000005
+P25PU                             00000005
+P26                               00000006
+P26OE                             00000006
+P26PU                             00000006
+P27                               00000007
+P27OE                             00000007
+P27PU                             00000007
+P30                               00000000
+P30OE                             00000000
+P30PU                             00000000
+P31                               00000001
+P31OE                             00000001
+P31PU                             00000001
+PCL                               000001B6
+PD                                00000004
+PUP0                              000001C2
+PUP1                              000001C6
+PUP2                              000001CA
+PUP3                              000001CE
+PWM0OE                            00000006
+PWM1OE                            00000006
+RXAK                              00000000
+SRW                               00000002
+STATUS                            000001B7
+STBH                              00000004
+STBL                              00000005
+STK00                             00000006
+STK01                             00000005
+STK02                             00000004
+STK03                             00000003
+STK04                             00000002
+STK05                             00000001
+STK06                             00000000
+T0CNT                             000001D1
+T0CR                              000001D0
+T0DATA                            000001D3
+T0IE                              00000000
+T0IF                              00000000
+T0LOAD                            000001D2
+T1CNT                             000001D5
+T1CR                              000001D4
+T1DATA                            000001D7
+T1IE                              00000001
+T1IF                              00000001
+T1LOAD                            000001D6
+T2CNTH                            000001D9
+T2CNTL                            000001DA
+T2CR                              000001D8
+T2IE                              00000004
+T2IF                              00000004
+T2LOADH                           000001DB
+T2LOADL                           000001DC
+T2MOD                             00000005
+TC0EN                             00000007
+TC1EN                             00000007
+TC2EN                             00000007
+TK0CLR                            00000003
+TK0CNTH                           000001E2
+TK0CNTL                           000001E3
+TK0CRH                            000001E0
+TK0CRL                            000001E1
+TK0IE                             00000006
+TK0IF                             00000007
+TK0JE                             00000005
+TK0RCE                            00000004
+TK1CLR                            00000003
+TK1CNTH                           000001E6
+TK1CNTL                           000001E7
+TK1CRH                            000001E4
+TK1CRL                            000001E5
+TK1IE                             00000006
+TK1IF                             00000007
+TK1JE                             00000005
+TK1RCE                            00000004
+TK2CLR                            00000003
+TK2CNTH                           000001EA
+TK2CNTL                           000001EB
+TK2CRH                            000001E8
+TK2CRL                            000001E9
+TK2IE                             00000006
+TK2IF                             00000007
+TK2JE                             00000005
+TK2RCE                            00000004
+TO                                00000005
+TXAK                              00000003
+Z                                 00000002
+_00106_DS_                        00000036
+_00108_DS_                        0000003E
+_00109_DS_                        0000003F
+_00117_DS_                        00000055
+_00118_DS_                        00000056
+_00123_DS_                        00000080
+_00128_DS_                        0000004F
+_00133_DS_                        00000014
+_00141_DS_                        00000010
+_00143_DS_                        00000028
+_00149_DS_                        00000098
+_00150_DS_                        00000099
+_00151_DS_                        0000008A
+_00155_DS_                        000000A0
+_00161_DS_                        00000080
+_00162_DS_                        00000081
+_00163_DS_                        00000072
+_00167_DS_                        00000087
+_00172_DS_                        00000065
+_00176_DS_                        0000005F
+_00178_DS_                        0000006C
+_00180_DS_                        0000006E
+_00185_DS_                        00000044
+_00188_DS_                        0000005C
+_00197_DS_                        00000054
+_00198_DS_                        00000058
+_ADCR0                            00000000
+_ADCR0bits                        00000000
+_ADCR1                            00000000
+_ADCR1bits                        00000000
+_ADRH                             00000000
+_ADRL                             00000000
+_CONFIG0                          00008000
+_CONFIG1                          00008001
+_CP_ALL                           00007FFF
+_Delay_1ms                        0000005E
+_FCPU_128T                        0000FFEF
+_FCPU_16T                         0000FFBF
+_FCPU_256T                        0000FFFF
+_FCPU_2T                          0000FF8F
+_FCPU_32T                         0000FFCF
+_FCPU_4T                          0000FF9F
+_FCPU_64T                         0000FFDF
+_FCPU_8T                          0000FFAF
+_FSR                              00000000
+_FSR0                             00000000
+_FSR1                             00000000
+_HIBYTE                           00000000
+_HRC_LRC                          0000FCFF
+_HRC_LXT                          0000FDFF
+_HXT_LRC                          0000FEFF
+_I2CADDR                          00000000
+_I2CCR                            00000000
+_I2CCRbits                        00000000
+_I2CDATA                          00000000
+_INDF                             00000000
+_INDF0                            00000000
+_INDF1                            00000000
+_INDF2                            00000000
+_INDF3                            00000000
+_INTE                             00000000
+_INTEbits                         00000000
+_INTF                             00000000
+_INTFbits                         00000000
+_IOP0                             00000000
+_IOP0bits                         00000000
+_IOP1                             00000000
+_IOP1bits                         00000000
+_IOP2                             00000000
+_IOP2bits                         00000000
+_IOP3                             00000000
+_IOP3bits                         00000000
+_MCLR_OFF                         0000FF7F
+_MCLR_ON                          0000FFFF
+_MCR                              00000000
+_MCRbits                          00000000
+_MCU_ID                           00000000
+_OEP0                             00000000
+_OEP0bits                         00000000
+_OEP1                             00000000
+_OEP1bits                         00000000
+_OEP2                             00000000
+_OEP2bits                         00000000
+_OEP3                             00000000
+_OEP3bits                         00000000
+_OSCM                             00000000
+_OSCMbits                         00000000
+_OS_result                        00000000
+_PCL                              00000000
+_PTWRT_16_1024                    0000FFF7
+_PTWRT_16_16                      0000DFF7
+_PTWRT_256_256                    0000DFFF
+_PTWRT_256_4096                   0000FFFF
+_PTWRT_4_4                        0000DFF3
+_PTWRT_4_512                      0000FFF3
+_PTWRT_64_2048                    0000FFFB
+_PTWRT_64_64                      0000DFFB
+_PUP0                             00000000
+_PUP0bits                         00000000
+_PUP1                             00000000
+_PUP1bits                         00000000
+_PUP2                             00000000
+_PUP2bits                         00000000
+_PUP3                             00000000
+_PUP3bits                         00000000
+_Read32p64                        00000042
+_STATUS                           00000000
+_STATUSbits                       00000000
+_Send_byte                        0000006F
+_Send_byte_P23                    00000088
+_T0CNT                            00000000
+_T0CR                             00000000
+_T0CRbits                         00000000
+_T0DATA                           00000000
+_T0LOAD                           00000000
+_T1CNT                            00000000
+_T1CR                             00000000
+_T1CRbits                         00000000
+_T1DATA                           00000000
+_T1LOAD                           00000000
+_T2CNTH                           00000000
+_T2CNTL                           00000000
+_T2CR                             00000000
+_T2CRbits                         00000000
+_T2LOADH                          00000000
+_T2LOADL                          00000000
+_TK0CNTH                          00000000
+_TK0CNTL                          00000000
+_TK0CRH                           00000000
+_TK0CRHbits                       00000000
+_TK0CRL                           00000000
+_TK0CRLbits                       00000000
+_TK1CNTH                          00000000
+_TK1CNTL                          00000000
+_TK1CRH                           00000000
+_TK1CRHbits                       00000000
+_TK1CRL                           00000000
+_TK1CRLbits                       00000000
+_TK2CNTH                          00000000
+_TK2CNTL                          00000000
+_TK2CRH                           00000000
+_TK2CRHbits                       00000000
+_TK2CRL                           00000000
+_TK2CRLbits                       00000000
+_VLVR_160                         0000E3FF
+_VLVR_185                         0000E7FF
+_VLVR_205                         0000EBFF
+_VLVR_218                         0000EFFF
+_VLVR_232                         0000F3FF
+_VLVR_245                         0000F7FF
+_VLVR_305                         0000FBFF
+_VLVR_360                         0000FFFF
+_WDT_ALWAYS_OFF                   0000FFFC
+_WDT_ALWAYS_ON                    0000FFFF
+_WDT_SLEEP_OFF                    0000FFFD
+__32P64                           00000001
+__sdcc_interrupt                  00000008
+_checksum                         00000000
+_count_bit                        00000000
+_count_byte                       00000000
+_data                             00000000
+_flag1                            00000000
+_flag2                            00000000
+_flag3                            00000000
+_flag4                            00000000
+_i                                00000000
+_int_isr                          00000008
+_j                                00000000
+_main                             00000000
+_need_DealData                    00000000
+_need_answer                      00000000
+_need_test                        00000000
+_sdi_byte                         00000000
+_sdo_byte                         00000000
+_temp                             00000000
+_temp1                            00000000
+_temp2                            00000000
+r0x103B                           0000000C
+r0x103C                           0000000D
+r0x103D                           0000000E
+r0x103E                           0000000A
+r0x103F                           0000000B
+r0x1040                           00000007
+r0x1041                           00000008
+r0x1042                           00000009
+r0x1043                           00000004
+r0x1044                           00000005
+r0x1045                           00000006
+r0x1046                           00000003
+r0x1047                           00000002
+r0x1048                           00000000
+r0x1049                           00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

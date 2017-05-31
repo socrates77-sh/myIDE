@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--customer information config-->
+<!--date : 2013.03.15-->
+<WinScope Name="Information" Version="1.00" Author="Mike.Mo">
+  <About name="SINOMCU" web="http://www.sinomcu.com" tel="021-38682906" mail="support@sinomcu.com" Txt="这是一个刚开发出来的IDE平台，在试用期间如发现任何问题请随时和我们联系。联系电话：021-38682906 Email: Support@sinomcu.com" />
+  <Windown name="WinScope IDE bt v0.01" velcom="欢迎使用WinScope IDE!" web="http://www.sinomcu.com" />
+</WinScope>

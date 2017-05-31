@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P22" ID="0x0222" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="YDDY-1">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="ADCSbr.asm" fPath="\ADCSbr.asm" />
+        <asmFile fName="DisplaySbr.asm" fPath="\DisplaySbr.asm" />
+        <asmFile fName="interrupt.asm" fPath="\interrupt.asm" />
+        <asmFile fName="Key.asm" fPath="\Key.asm" />
+        <asmFile fName="SysInit.asm" fPath="\SysInit.asm" />
+        <asmFile fName="T500msSbr.asm" fPath="\T500msSbr.asm" />
+        <asmFile fName="YDDY-1.asm" fPath="\YDDY-1.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="f4" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="ASM" />
+</Project>

@@ -1,0 +1,44 @@
+	nolist
+;
+;	MACROS FOR MC68HC05 COMPILER
+;	Copyright (c) 1995 by COSMIC Software
+;
+;	sign extention A -> X
+;
+sex:	macro
+	clrx
+	tsta
+	bpl	\@pos
+	comx
+\@pos:
+	endm
+;
+;	branch if less or equal
+;
+ble:	macro
+	bmi	\1
+	beq	\1
+	endm
+;
+;	branch if greater than
+;
+bgt:	macro
+	bmi	\@skip
+	bne	\1
+\@skip:
+	endm
+;
+;	test a bit
+;
+btst:	macro
+	brset	\1,\2,\@here
+\@here:
+	endm
+;
+;	extra debug code
+;
+cxdb:	macro
+	swi
+	endm
+;
+	list

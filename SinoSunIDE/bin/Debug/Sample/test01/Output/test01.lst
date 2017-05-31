@@ -1,0 +1,215 @@
+gplink-0.9.0 (Mar 19 2013)
+Listing File Generated: 2013-5-29  16:18:18
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           #include mc30p01a.inc
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           
+                                           
+                                           
+                                           cblock 0x10 
+                                           acc_temp
+                                           status_temp
+                                           r1
+                                           r2
+                                           work_flag1
+                                           work_flag2
+                                           error_flag
+                                           
+                                           time_125us
+                                           time_1ms
+                                           time_10ms
+                                           time_100ms
+                                           time_1s
+                                           time_1min
+                                           time_1hour
+                                           endc
+                                           
+                                           #define r10 r1,0
+                                           #define r11 r1,1
+                                           
+                                           #define sks 0x20a5
+                                           
+                                           ;extern akbk;
+                                           .code
+                                               org 3ffh
+0003ff   1d8e     clrr    0xe                  clrr INTE ; disable all interrupt
+                                                         
+                                               org 00h ;ksks
+000000   2819     goto    0x19                 goto lab_start
+000001   0ba5     movai   0xa5                 movai low(sks)
+000002   0b20     movai   0x20                 movai high(sks)
+                                           
+                                               ;movar akbk
+                                              
+                                               org 08h
+                                           fn_interrupt_sub:
+000008   1590     movra   0x10                 movra    acc_temp
+000009   1603     movar   0x3                  movar    STATUS
+00000a   1591     movra   0x11                 movra    status_temp
+                                           ;*******判断是哪个中断*****
+                                           start_just_int:
+                                            ;int0
+00000b   310f     jbset   0xf, 0x2             jbset    INT0IF
+00000c   2815     goto    0x15                 goto    exit_interrupt
+00000d   3d0f     bclr    0xf, 0x2             bclr    INT0IF
+00000e   0000     nop                       nop
+00000f   0000     nop                       nop
+000010   0000     nop                       nop
+000011   0000     nop                       nop
+000012   0000     nop                       nop
+000013   0000     nop                       NOP
+000014   0000     nop                       nop
+                                            
+                                            
+                                           exit_interrupt:
+000015   1611     movar   0x11                 movar    status_temp
+000016   1583     movra   0x3                  movra    STATUS
+000017   1610     movar   0x10                 movar    acc_temp
+000018   000d     retie                        retie
+                                           ;;*******软中断代码***********
+                                           ;soft_interrupt:
+                                           ;    movar    status_temp
+                                           ;    movra    STATUS
+                                           ;    movar    acc_temp
+                                           ;    retie
+                                           ; rti  
+                                           
+                                           
+                                             
+                                           lab_start:
+                                               ;fill    0x0000,5
+                                               
+                                               ; dt "abcde"
+000019   0b06     movai   0x6                  movai   4|6;
+00001a   0b09     movai   0x9                  movai   '\t'
+00001b   15c5     dw      0x15c5               movra   P5IOC ;p0 output
+00001c   0bff     movai   0xff                 movai   0xFF
+00001d   15c6     dw      0x15c6               movra   P6IOC ;p1 input
+00001e   3c0d     bclr    0xd, 0               bclr    PHCON,0    ;开P10上拉    bclr    INT0M
+00001f   0baa     movai   0xaa                 movai       0xaa
+000020   1592     movra   0x12                 movra      r1 
+000021   3812     bset    0x12, 0              bset      r10
+000022   0000     nop                          nop
+000023   0000     nop                          nop
+000024   0000     nop                          nop
+                                               
+                                               
+000025   0b12     movai   0x12                   movai 0x12
+000026   1584     movra   0x4                    movra FSR
+000027   0b0a     movai   0xa                    movai 0x0a
+000028   1580     movra   0                      movra INDF
+000029   1980     incr    0                      incr INDF
+00002a   0b20     movai   0x20                   movai 0x20
+00002b   1584     movra   0x4                    movra FSR
+                                                 ;incr INDF
+                                                 ;movai 0x34
+                                                 ;movra FSR
+                                                 ;incr INDF
+                                                 ;incr INDF
+                                                 
+00002c   0b10     movai   0x10                   movai 0x10
+00002d   15a0     movra   0x20                   movra 020h
+00002e   3ca0     bclr    0x20, 0x1              bclr  020h,1
+00002f   0000     nop                            nop
+000030   0000     nop                            NOP
+000031   30a0     jbset   0x20, 0x1              jbset 020h,1
+000032   0000     nop                            nop 
+000033   383f     bset    0x3f, 0                bset  0x3f,0
+000034   34a0     jbclr   0x20, 0x1              jbclr 020h,1
+000035   0000     nop                            nop 
+000036   0000     nop                            nop
+                                                 
+                                                 
+000037   3b8e     bset    0xe, 0x7               bset GIE
+                                                 
+                                           loop: 
+000038   0b55     movai   0x55                 movai 0x55
+000039   1590     movra   0x10                 movra 0x10
+00003a   1990     incr    0x10                 incr  0x10
+                                            ;   goto $-1
+00003b   0000     nop                              NOP
+00003c   0000     nop                              nop
+00003d   2053     call    0x53                 call int0_cfg_l
+                                               ;sleep;    
+00003e   0bfe     movai   0xfe                 movai 0xfe
+00003f   1585     movra   0x5                  movra   P0
+000040   0000     nop                          nop
+000041   2049     call    0x49                 call fun001
+000042   0000     nop                          nop
+000043   0b00     movai   0                    movai 0x00
+000044   1585     movra   0x5                  movra P0
+000045   0000     nop                          nop
+000046   0000     nop                          nop
+000047   205a     call    0x5a                 call int0_cfg_h
+                                               ;sleep
+                                               ;movai 0xfe
+                                               ;movra   P0
+                                               ;nop
+                                               ;nop
+                                               ;movai 0x00
+                                               ;movra P0
+                                               ;nop
+                                               ;nop
+000048   2838     goto    0x38                 goto loop
+                                               
+                                           fun001:
+000049   0000     nop                          nop
+00004a   204d     call    0x4d                 call fun002
+00004b   0000     nop                          nop
+00004c   000c     return                       return
+                                           fun002:
+00004d   0000     nop                          nop
+00004e   2051     call    0x51                 call fun003
+00004f   0000     nop                          nop
+000050   000c     return                       return
+                                           fun003:
+000051   0000     nop                          nop
+000052   000c     return                       return  
+                                           
+                                           
+                                               
+                                           ;*****int0 cfg************************
+                                           ;*****下降沿触发**********************
+                                           int0_cfg_l:    
+000053   3846     bset    0x46, 0              bset    DDR1,0    ;P10输入    
+000054   3c0d     bclr    0xd, 0               bclr    PHCON,0    ;开P10上拉    
+000055   3f41     bclr    0x41, 0x6            bclr    INT0M    
+000056   3b08     bset    0x8, 0x6             bset    EIS    
+000057   390e     bset    0xe, 0x2             bset    INT0IE    ;开中断    
+000058   3f88     bclr    0x8, 0x7             bclr    WDTEN    
+                                               ;sleep    
+000059   000c     return                       return;
+                                           ;**************************************
+                                           int0_cfg_h:    
+00005a   3846     bset    0x46, 0              bset    DDR1,0    ;P10输入    
+00005b   3c0d     bclr    0xd, 0               bclr    PHCON,0    ;开P10上拉    
+00005c   3b41     bset    0x41, 0x6            bset    INT0M    
+00005d   3b08     bset    0x8, 0x6             bset    EIS    
+00005e   390e     bset    0xe, 0x2             bset    INT0IE    ;开中断    
+00005f   3f88     bclr    0x8, 0x7             bclr    WDTEN    
+                                               ;sleep    
+000060   000c     return                       return;
+                                               
+                                               end
+                                               
+                                               bsset DDR1,0
+                                               
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXX---------- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XX-------------- ---------------- ---------------- ----------------
+07C0 : ---------------- ---------------- ---------------- --------------XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    93
+

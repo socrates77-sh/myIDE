@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc35P7041" ID="0x7041" MCU_Type="CRISC" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="test_7041_3">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="test_7041_3.c" fPath="\test_7041_3.c" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="0" Value0="0" Value1="0" Value2="0" Value3="0" Value4="0" Value5="0" Value6="" Value7="" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="C" />
+</Project>

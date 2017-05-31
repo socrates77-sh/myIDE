@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc30p011" ID="0x0311" MCU_Type="RISC" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="301_asm_multi_files">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="fun01.asm" fPath="\fun01.asm" />
+        <asmFile fName="main.asm" fPath="\main.asm" />
+        <asmFile fName="interrupt.asm" fPath="\interrupt.asm" />
+        <asmFile fName="fun02.asm" fPath="\fun02.asm" />
+      </SouceCode>
+      <SouceCode fName="Output">
+        <asmFile fName="var.inc" fPath="\var.inc" />
+      </SouceCode>
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="35ff37f0" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="ASM" />
+</Project>

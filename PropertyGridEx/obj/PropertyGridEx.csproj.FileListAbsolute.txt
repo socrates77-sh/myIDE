@@ -1,0 +1,5 @@
+F:\soft\CSharp\PropertyGrid\PropertyGridExCS\PropertyGridEx.CS\PropertyGridEx\bin\Debug\PropertyGridEx.dll
+F:\soft\CSharp\PropertyGrid\PropertyGridExCS\PropertyGridEx.CS\PropertyGridEx\bin\Debug\PropertyGridEx.pdb
+F:\soft\CSharp\PropertyGrid\PropertyGridExCS\PropertyGridEx.CS\PropertyGridEx\obj\Debug\ResolveAssemblyReference.cache
+F:\soft\CSharp\PropertyGrid\PropertyGridExCS\PropertyGridEx.CS\PropertyGridEx\obj\Debug\PropertyGridEx.dll
+F:\soft\CSharp\PropertyGrid\PropertyGridExCS\PropertyGridEx.CS\PropertyGridEx\obj\Debug\PropertyGridEx.pdb

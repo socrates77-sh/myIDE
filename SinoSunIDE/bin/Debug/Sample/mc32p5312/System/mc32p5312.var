@@ -1,0 +1,6 @@
+
+IOP0                               at 0x01C0  xxxx.x  0000 to 0000
+OEP0                               at 0x01C1  xxxx.x  0000 to 0000
+__33P116                           at 0x0001  xxxx.x  0000 to 0000
+loop                               at 0x0006  xxxx.x  0000 to 0000
+main                               at 0x0001  xxxx.x  0000 to 0000

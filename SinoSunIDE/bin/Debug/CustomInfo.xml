@@ -1,0 +1,16 @@
+
+[Information]
+ProductName	= 上海晟矽微 IDE
+CompanyName  = 上海晟矽微电子有限公司
+SoftName = WinScope IDE
+Version = V1.3bt 2017-04-20
+Website = http://www.sinomcu.com                      
+Tel =电话：021-38682906
+Copyright = shanghai sinomcu
+Description =		这是一个刚开发出来的IDE平台，在试用期间如发现任何问题请随时和我们联系。联系电话：021-38682906 Email: Support@sinomcu.com 
+
+[Language]
+ID=3
+
+[Reg]
+

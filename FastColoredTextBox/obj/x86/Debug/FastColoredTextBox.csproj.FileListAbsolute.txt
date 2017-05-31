@@ -1,0 +1,11 @@
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\bin\x86\Debug\Edit.dll
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\bin\x86\Debug\Edit.pdb
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\bin\x86\Debug\Edit.xml
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\FastColoredTextBoxNS.FastColoredTextBox.resources
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\FastColoredTextBoxNS.FindForm.resources
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\FastColoredTextBoxNS.GoToForm.resources
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\FastColoredTextBoxNS.ReplaceForm.resources
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\FastColoredTextBox.csproj.GenerateResource.Cache
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\Edit.dll
+G:\Emulator\IDE\SinoSunIDE\FastColoredTextBox\obj\x86\Debug\Edit.pdb

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC10P01B" ID="0x0101" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="MC10P01_VIHtest">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="MC10P01_VIHtest.asm" fPath="\MC10P01_VIHtest.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="68" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="ASM" />
+</Project>

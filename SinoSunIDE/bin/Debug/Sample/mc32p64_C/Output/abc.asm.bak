@@ -1,0 +1,178 @@
+;CHIP ID: 0x3264
+
+000000:  a001  goto	0x1
+000001:  3ca7  movai	0xa7
+000002:  5605  movra	0x5
+000003:  3c00  movai	0
+000004:  5606  movra	0x6
+000005:  3c80  movai	0x80
+000006:  8080  call	0x80
+000007:  5608  movra	0x8
+000008:  5806  movar	0x6
+000009:  5607  movra	0x7
+00000a:  3ca9  movai	0xa9
+00000b:  5609  movra	0x9
+00000c:  3c00  movai	0
+00000d:  560a  movra	0xa
+00000e:  5807  movar	0x7
+00000f:  560b  movra	0xb
+000010:  5808  movar	0x8
+000011:  560c  movra	0xc
+000012:  3cff  movai	0xff
+000013:  7e07  addra	0x7
+000014:  e187  jbset	0x187, 0
+000015:  6e08  decr	0x8
+000016:  580b  movar	0xb
+000017:  5c0c  orar	0xc
+000018:  f587  jbclr	0x187, 0x2
+000019:  a06d  goto	0x6d
+00001a:  3c04  movai	0x4
+00001b:  7c09  addar	0x9
+00001c:  560b  movra	0xb
+00001d:  760c  clrr	0xc
+00001e:  520c  rlr	0xc
+00001f:  580a  movar	0xa
+000020:  7e0c  addra	0xc
+000021:  580b  movar	0xb
+000022:  5605  movra	0x5
+000023:  580c  movar	0xc
+000024:  5606  movra	0x6
+000025:  3c80  movai	0x80
+000026:  8080  call	0x80
+000027:  560e  movra	0xe
+000028:  5806  movar	0x6
+000029:  560d  movra	0xd
+00002a:  5809  movar	0x9
+00002b:  5605  movra	0x5
+00002c:  580a  movar	0xa
+00002d:  5606  movra	0x6
+00002e:  3c80  movai	0x80
+00002f:  8080  call	0x80
+000030:  5610  movra	0x10
+000031:  560c  movra	0xc
+000032:  5806  movar	0x6
+000033:  560f  movra	0xf
+000034:  560b  movra	0xb
+000035:  3c02  movai	0x2
+000036:  7c09  addar	0x9
+000037:  560b  movra	0xb
+000038:  760c  clrr	0xc
+000039:  520c  rlr	0xc
+00003a:  580a  movar	0xa
+00003b:  7e0c  addra	0xc
+00003c:  580b  movar	0xb
+00003d:  5605  movra	0x5
+00003e:  580c  movar	0xc
+00003f:  5606  movra	0x6
+000040:  3c80  movai	0x80
+000041:  8080  call	0x80
+000042:  560c  movra	0xc
+000043:  5612  movra	0x12
+000044:  5806  movar	0x6
+000045:  560b  movra	0xb
+000046:  5611  movra	0x11
+000047:  580d  movar	0xd
+000048:  5611  movra	0x11
+000049:  580e  movar	0xe
+00004a:  5612  movra	0x12
+00004b:  3cff  movai	0xff
+00004c:  7e0d  addra	0xd
+00004d:  e187  jbset	0x187, 0
+00004e:  6e0e  decr	0xe
+00004f:  5811  movar	0x11
+000050:  5c12  orar	0x12
+000051:  f587  jbclr	0x187, 0x2
+000052:  a068  goto	0x68
+000053:  580f  movar	0xf
+000054:  5605  movra	0x5
+000055:  5810  movar	0x10
+000056:  5606  movra	0x6
+000057:  3c80  movai	0x80
+000058:  806f  call	0x6f
+000059:  5611  movra	0x11
+00005a:  580b  movar	0xb
+00005b:  5784  movra	0x184
+00005c:  df87  bclr	0x187, 0x7
+00005d:  f00c  jbclr	0xc, 0
+00005e:  cf87  bset	0x187, 0x7
+00005f:  5811  movar	0x11
+000060:  5780  movra	0x180
+000061:  660f  incr	0xf
+000062:  f587  jbclr	0x187, 0x2
+000063:  6610  incr	0x10
+000064:  660b  incr	0xb
+000065:  f587  jbclr	0x187, 0x2
+000066:  660c  incr	0xc
+000067:  a047  goto	0x47
+000068:  3c06  movai	0x6
+000069:  7e09  addra	0x9
+00006a:  f187  jbclr	0x187, 0
+00006b:  660a  incr	0xa
+00006c:  a00e  goto	0xe
+00006d:  a09a  goto	0x9a
+00006e:  000c  return
+00006f:  3900  xorai	0
+000070:  f5b7  jbclr	0x1b7, 0x2
+000071:  a076  goto	0x76
+000072:  3980  xorai	0x80
+000073:  f5b7  jbclr	0x1b7, 0x2
+000074:  a07a  goto	0x7a
+000075:  3b00  retai	0
+000076:  5805  movar	0x5
+000077:  57b4  movra	0x1b4
+000078:  59b0  movar	0x1b0
+000079:  000c  return
+00007a:  5806  movar	0x6
+00007b:  57b5  movra	0x1b5
+00007c:  5805  movar	0x5
+00007d:  57b4  movra	0x1b4
+00007e:  59b9  movar	0x1b9
+00007f:  000c  return
+000080:  3900  xorai	0
+000081:  f5b7  jbclr	0x1b7, 0x2
+000082:  a088  goto	0x88
+000083:  3980  xorai	0x80
+000084:  f5b7  jbclr	0x1b7, 0x2
+000085:  a08f  goto	0x8f
+000086:  7606  clrr	0x6
+000087:  3b00  retai	0
+000088:  5805  movar	0x5
+000089:  57b4  movra	0x1b4
+00008a:  59b0  movar	0x1b0
+00008b:  5606  movra	0x6
+00008c:  67b4  incr	0x1b4
+00008d:  59b0  movar	0x1b0
+00008e:  000c  return
+00008f:  807a  call	0x7a
+000090:  5604  movra	0x4
+000091:  6205  jzr	0x5
+000092:  6e06  decr	0x6
+000093:  6606  incr	0x6
+000094:  807a  call	0x7a
+000095:  5603  movra	0x3
+000096:  5804  movar	0x4
+000097:  5606  movra	0x6
+000098:  5803  movar	0x3
+000099:  000c  return
+00009a:  dfb8  bclr	0x1b8, 0x7
+00009b:  3cff  movai	0xff
+00009c:  57c4  movra	0x1c4
+00009d:  3cff  movai	0xff
+00009e:  57c8  movra	0x1c8
+00009f:  3cff  movai	0xff
+0000a0:  57c1  movra	0x1c1
+0000a1:  3cff  movai	0xff
+0000a2:  57c5  movra	0x1c5
+0000a3:  71c4  comar	0x1c4
+0000a4:  57c4  movra	0x1c4
+0000a5:  a0a3  goto	0xa3
+0000a6:  000c  return
+0000a7:  3b01  retai	0x1
+0000a8:  3b00  retai	0
+0000a9:  3baf  retai	0xaf
+0000aa:  3b00  retai	0
+0000ab:  3b13  retai	0x13
+0000ac:  3b00  retai	0
+0000ad:  3b01  retai	0x1
+0000ae:  3b00  retai	0
+0000af:  3b00  retai	0

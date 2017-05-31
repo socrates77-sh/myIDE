@@ -1,0 +1,141 @@
+
+00004        
+   at 0x01B0  xxxx.x  0000 to 0000
+0X1B5
+   at 0x01B6  xxxx.x  0000 to 0000
+0X1B6
+   at 0x01B7  xxxx.x  0000 to 0000
+0X1B7
+   at 0x01B7  xxxx.x  0000 to 0000
+0X1B7
+   at 0x01B8  xxxx.x  0000 to 0000
+0X1B8
+   at 0x01B9  xxxx.x  0000 to 0000
+0X1B9   
+   at 0x01BA  xxxx.x  0000 to 0000
+0X1BA
+   at 0x01BB  xxxx.x  0000 to 0000
+0X1BB
+   at 0x01BC  xxxx.x  0000 to 0000
+0X1C6
+   at 0x01C8  xxxx.x  0000 to 0000
+0X1C8
+   at 0x01C9  xxxx.x  0000 to 0000
+0X1C9
+   at 0x01CA  xxxx.x  0000 to 0000
+00028 
+   at 0x01CE  xxxx.x  0000 to 0000
+00030 
+   at 0x01D0  xxxx.x  0000 to 0000
+0X1D0
+   at 0x01D1  xxxx.x  0000 to 0000
+0X1D1
+   at 0x01D2  xxxx.x  0000 to 0000
+0X1D5
+   at 0x01D6  xxxx.x  0000 to 0000
+0X1D6
+   at 0x01D7  xxxx.x  0000 to 0000
+0X1D7
+   at 0x01D8  xxxx.x  0000 to 0000
+0X1D8
+   at 0x01D9  xxxx.x  0000 to 0000
+0X1D9
+   at 0x01DA  xxxx.x  0000 to 0000
+0X1DA
+   at 0x01DB  xxxx.x  0000 to 0000
+0X1DB
+   at 0x01DC  xxxx.x  0000 to 0000
+00044 
+   at 0x01DD  xxxx.x  0000 to 0000
+0X1DD
+   at 0x01DE  xxxx.x  0000 to 0000
+00047 
+   at 0x01E0  xxxx.x  0000 to 0000
+0X1E0
+   at 0x01E1  xxxx.x  0000 to 0000
+0X1E1
+   at 0x01E2  xxxx.x  0000 to 0000
+00051 
+   at 0x01E4  xxxx.x  0000 to 0000
+0X1E4
+   at 0x01E5  xxxx.x  0000 to 0000
+0X1E5
+   at 0x01E6  xxxx.x  0000 to 0000
+0X1E6
+   at 0x01E7  xxxx.x  0000 to 0000
+DKW0                               at 0x01E6  xxxx.x  0000 to 0000
+DKW1                               at 0x01E7  xxxx.x  0000 to 0000
+DKWP1                              at 0x01CE  xxxx.x  0000 to 0000
+DKWP2                              at 0x01D6  xxxx.x  0000 to 0000
+FSR0                               at 0x01B4  xxxx.x  0000 to 0000
+FSR1                               at 0x01B5  xxxx.x  0000 to 0000
+HIBYTE                             at 0x01B3  xxxx.x  0000 to 0000
+INDF0                              at 0x01B0  xxxx.x  0000 to 0000
+INDF1                              at 0x01B1  xxxx.x  0000 to 0000
+INDF2                              at 0x01B2  xxxx.x  0000 to 0000
+INDF3                              at 0x01B9  xxxx.x  0000 to 0000
+INTE                               at 0x01BA  xxxx.x  0000 to 0000
+INTF                               at 0x01BB  xxxx.x  0000 to 0000
+IOP1                               at 0x01C8  xxxx.x  0000 to 0000
+IOP2                               at 0x01D0  xxxx.x  0000 to 0000
+KBCR                               at 0x01D7  xxxx.x  0000 to 0000
+MCR                                at 0x01B8  xxxx.x  0000 to 0000
+OEP1                               at 0x01C9  xxxx.x  0000 to 0000
+OEP2                               at 0x01D1  xxxx.x  0000 to 0000
+OPCR0                              at 0x01E4  xxxx.x  0000 to 0000
+OPCR1                              at 0x01E5  xxxx.x  0000 to 0000
+OSCM                               at 0x01BC  xxxx.x  0000 to 0000
+PCL                                at 0x01B6  xxxx.x  0000 to 0000
+PFLAG                              at 0x01B7  xxxx.x  0000 to 0000
+PUP1                               at 0x01CA  xxxx.x  0000 to 0000
+PUP2                               at 0x01D2  xxxx.x  0000 to 0000
+STATUS                             at 0x01B7  xxxx.x  0000 to 0000
+T0CR                               at 0x01D8  xxxx.x  0000 to 0000
+T0LATFH                            at 0x01DC  xxxx.x  0000 to 0000
+T0LATFL                            at 0x01DB  xxxx.x  0000 to 0000
+T0LATRH                            at 0x01DE  xxxx.x  0000 to 0000
+T0LATRL                            at 0x01DD  xxxx.x  0000 to 0000
+T0LOADH                            at 0x01D9  xxxx.x  0000 to 0000
+T0LOADL                            at 0x01DA  xxxx.x  0000 to 0000
+T1CR                               at 0x01E0  xxxx.x  0000 to 0000
+T1DATA                             at 0x01E1  xxxx.x  0000 to 0000
+T1LOAD                             at 0x01E2  xxxx.x  0000 to 0000
+__32P21                            at 0x0001  xxxx.x  0000 to 0000
+main                               at 0x0001  xxxx.x  0000 to 0000
+ram_clr                            at 0x000A  xxxx.x  0000 to 0000
+ram_clr_first                      at 0x000B  xxxx.x  0000 to 0000
+ram_w                              at 0x0003  xxxx.x  0000 to 0000
+ram_w_first                        at 0x0004  xxxx.x  0000 to 0000
+#define         Z       PFLAG.bitn.bit2
+#define         DC      PFLAG.bitn.bit1
+#define         C       PFLAG.bitn.bit0
+#define         GIE     MCR.bitn.bit7
+#DEFINE         TO      MCR.bitn.bit5
+#DEFINE         PD      MCR.bitn.bit4
+#DEFINE         MINT11  MCR.bitn.bit3
+#define         KBIE    INTE.bitn.bit7
+#DEFINE         INT1IE  INTE.bitn.bit3
+#DEFINE         INT0IE  INTE.bitn.bit2
+#DEFINE         T1IE    INTE.bitn.bit1
+#define         T0IE    INTE.bitn.bit0
+#DEFINE         KBIF    INTF.bitn.bit7
+#DEFINE         T0RF    INTF.bitn.bit6
+#DEFINE         INT1IF  INTF.bitn.bit3
+#DEFINE         INT0IF  INTF.bitn.bit2
+#DEFINE         T1IF    INTF.bitn.bit1
+#DEFINE         T0IF    INTF.bitn.bit0
+#DEFINE         DKWE    DKW0.bitn.bit7
+#DEFINE         IROS    DKW0.bitn.bit6
+#DEFINE         IROT    DKW0.bitn.bit5
+#DEFINE         WSEL0   DKW0.bitn.bit4
+#DEFINE         WSEL1   DKW0.bitn.bit3
+#DEFINE         RSEL    DKW0.bitn.bit2
+#DEFINE         ISEL1   DKW0.bitn.bit1
+#define         ISEL0   DKW0.bitn.bit0
+#define                                 HFEN            OSCM.bitn.bit0
+#define                                 LFEN            OSCM.bitn.bit1
+#define                                 CLKS            OSCM.bitn.bit2
+#define                                 STBH            OSCM.bitn.bit4
+#DEFINE                                 STBL            OSCM.bitn.bit5
+#DEFINE         TC0EN   T0CR.bitn.bit7
+#DEFINE         TC1EN   T1CR.bitn.bit7

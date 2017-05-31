@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P801" ID="0x0281" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="MC20P801">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="MC20P801.ASM" fPath="\MC20P801.ASM" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="43" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="ASM" />
+</Project>

@@ -1,0 +1,54 @@
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc3011_mutilfile\var.inc2013-9-17  18:27:02          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 
+                      00004 cblock 0x10 
+                      00005 acc_temp
+                      00006 status_temp
+                      00007 r1
+                      00008 r2
+                      00009 work_flag1
+                      00010 work_flag2
+                      00011 error_flag
+                      00012 
+                      00013 time_125us
+                      00014 time_1ms
+                      00015 time_10ms
+                      00016 time_100ms
+                      00017 time_1s
+                      00018 time_1min
+                      00019 time_1hour
+                      00020 end
+Error[125]  : Illegal condition (EOF encountered before END)
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc3011_mutilfile\var.inc2013-9-17  18:27:02          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P011                          00000001
+acc_temp                          00000010
+error_flag                        00000016
+r1                                00000012
+r2                                00000013
+status_temp                       00000011
+time_100ms                        0000001A
+time_10ms                         00000019
+time_125us                        00000017
+time_1hour                        0000001D
+time_1min                         0000001C
+time_1ms                          00000018
+time_1s                           0000001B
+work_flag1                        00000014
+work_flag2                        00000015
+
+Errors   :     1
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

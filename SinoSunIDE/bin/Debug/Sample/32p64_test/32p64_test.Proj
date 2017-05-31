@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="gm32p64" ID="0x3264" MCU_Type="RISC" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="32p64_test">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="32p64.asm" fPath="\32p64.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="4070" Value0="" Value1="" Value2="" Value3="" Value4="" Value5="" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="ASM" />
+</Project>

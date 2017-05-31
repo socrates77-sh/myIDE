@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC2722" ID="0x2722" MCU_Type="RISC" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="test_2722_0424_01">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="test_2722_0424_01.asm" fPath="\test_2722_0424_01.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="0" Value0="0" Value1="100" Value2="0" Value3="18" Value4="8" Value5="0" FOSC_7041="2" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="ASM" />
+</Project>

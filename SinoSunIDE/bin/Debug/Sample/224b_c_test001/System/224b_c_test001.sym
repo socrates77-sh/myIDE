@@ -1,0 +1,101 @@
+
+Map of System\224b_c_test001.h05 from link file mc_com.lkf - Wed Mar 05 16:40:25 2014
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001003 end 00001037 length    52 segment CODE
+start 00001037 end 00001037 length     0 segment .const
+start 00000030 end 00000030 length     0 segment ZPAGE
+start 00000030 end 00000034 length     4 segment UZPAGE
+start 00000030 end 00000030 length     0 segment IDATA
+start 00000030 end 00000030 length     0 segment UDATA
+start 00000034 end 00000037 length     3 segment .share
+start 00000000 end 00001153 length  4435 segment .debug
+start 00001ff4 end 00002000 length    12 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o:
+start 00000030 end 00000034 length     4 section UZPAGE (.ubsct)
+
+224b_c_test001.o:
+start 00001003 end 00001037 length    52 section CODE (.text)
+start 00000000 end 00001153 length  4435 section .debug
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o:
+start 00001ff4 end 00002000 length    12 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+224b_c_test001.o:
+_funtion001     00000035-00000036 (0,2)
+_main           00000034-00000034 (1,0)
+
+Stack size: 9
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADDATAH        00000028   defined in 224b_c_test001.o
+_ADDATAL        00000029   defined in 224b_c_test001.o
+_BTCNT          0000000d   defined in 224b_c_test001.o
+_INT0_ISR       00001007   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_INT0_ISR.L     00000037   defined in linker section .share
+                           *** not used ***
+_INT1_ISR       00001004   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_INT1_ISR.L     00000037   defined in linker section .share
+                           *** not used ***
+_PWMDATA        00000022   defined in 224b_c_test001.o
+_PWMINT_ISR     00001005   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_PWMINT_ISR.L   00000037   defined in linker section .share
+                           *** not used ***
+_SWI_ISR        00001003   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_SWI_ISR.L      00000037   defined in linker section .share
+                           *** not used ***
+_T0CNT          00000000   defined in 224b_c_test001.o
+_T0DATA         00000001   defined in 224b_c_test001.o
+_T0INT_ISR      00001006   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_T0INT_ISR.L    00000037   defined in linker section .share
+                           *** not used ***
+_adcon          00000027   defined in 224b_c_test001.o
+_btcon          0000000c   defined in 224b_c_test001.o
+_funtion001     00001008   defined in 224b_c_test001.o section CODE (.text)
+_funtion001.L   00000035   defined in linker section .share
+                           used in 224b_c_test001.o
+_initial        00001014   defined in 224b_c_test001.o section CODE (.text)
+_main           00001028   defined in 224b_c_test001.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_main.L         00000035   defined in linker section .share
+                           used in 224b_c_test001.o
+_mcr            00000003   defined in 224b_c_test001.o
+_p0             00000010   defined in 224b_c_test001.o
+_p0conh         00000016   defined in 224b_c_test001.o
+_p0conl         00000017   defined in 224b_c_test001.o
+_p0pnd          00000018   defined in 224b_c_test001.o
+_p1             00000011   defined in 224b_c_test001.o
+_p1con          00000019   defined in 224b_c_test001.o
+_p2             00000012   defined in 224b_c_test001.o
+_p2conh         0000001a   defined in 224b_c_test001.o
+_p2conl         0000001b   defined in 224b_c_test001.o
+_pwmcon         00000023   defined in 224b_c_test001.o
+_t0con          00000002   defined in 224b_c_test001.o
+_vectab         00001ff4   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o section .const
+                           *** not used ***
+c_h             00000031   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o section UZPAGE (.ubsct)
+                           *** not used ***

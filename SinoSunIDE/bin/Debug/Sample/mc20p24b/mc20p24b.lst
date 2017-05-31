@@ -1,0 +1,1244 @@
+L 1				;$0000-$002F:Control registers
+L 2				T0CNT    EQU    $00    ;timer0
+L 3				T0DATA    EQU    $01
+L 4				T0CON    EQU    $02
+L 5				MCR    EQU    $03
+L 6				BTCON    EQU    $0c    ;basic time
+L 7				BTCLR    equ    1
+L 8				BTCNT    EQU    $0d
+L 9				P0    EQU    $10    ;port0-2
+L 10				P1    EQU    $11
+L 11				P2    EQU    $12
+L 12				P0CONH    EQU    $16
+L 13				P0CONL    EQU    $17
+L 14				P0PND    EQU    $18
+L 15				P1CON    EQU    $19
+L 16				P2CONH    EQU    $1a
+L 17				P2CONL    EQU    $1b
+L 18				PWMDATA    EQU    $22    ;PWM
+L 19				PWMCON    EQU    $23
+L 20				ADCON    EQU    $27    ;A/D
+L 21				ADDATAH    EQU    $28
+L 22				ADDATAL    EQU    $29
+L 23				
+L 24				
+L 25				;;;;;;;;;P0
+L 26				P0_keys        define    0,P0
+L 27				P0_ntc_senser    define    1,P0
+L 28				P0_164data    define    2,P0
+L 29				P0_164clk    define    3,P0
+L 30				P0_com1        define    4,P0
+L 31				P0_com2        define    5,P0
+L 32				P0_ledcom    define    6,P0
+L 33				P0_relay_motor    define    7,P0
+L 34				
+L 35				;;;;;;;;;P1
+L 36				
+L 37				XIN_4M        define    0,P1
+L 38				XOUT_4M        define    1,P1
+L 39				P12_inputequ    define    2,P1
+L 40				
+L 41				;;;;;;;;;P2
+L 42				
+L 43				P2_2k_buz        define    0,P2
+L 44				P2_2k_buzv        equ    #%00000001
+L 45				P2_triac_o3        define    1,P2
+L 46				P2_relay_heater        define    2,P2
+L 47				P2_triac_wpump        define    3,P2
+L 48				P2_triac_gpump        define    4,P2
+L 49				P2_triac_ir        define    5,P2
+L 50				P2_triac_vibrate    define    6,P2
+L 51				
+L 52				
+L 53				;------------------常量定义-------------
+L 54				KEYS_AD        equ    #%00000110
+L 55				TEMP_AD        equ    #%00010110
+L 56				
+L 57				
+L 58				
+L 59				SWITCH_TEMP    EQU    #%00001000
+L 60				C_K_LB        EQU    #10;5;8    ;键去抖次数
+L 61				AVERAGE_CNT    EQU    #128    ;
+L 62				
+L 63				COM1_VALID    EQU    #%00000111    ;low valid
+L 64				COM2_VALID    EQU    #%00001101
+L 65				COM3_VALID    EQU    #%00001011
+L 66				COM4_VALID    EQU    #%00001110
+L 67				LED_COM_VALID    EQU    #%00001111    ;high valid
+L 68				
+L 69				
+L 70				Level_1    EQU    70;85;80        ;70-120
+L 71				Level_2    EQU    100;123;130        ;100-160
+L 72				Level_3    EQU    140;168;156;160        ;140-180
+L 73				Level_4    EQU    160;177;168;180        ;160-200
+L 74				Level_5    EQU    180;177;168;180        ;180-230
+L 75				
+L 76				Level_1_H    EQU    120;85;80        ;70-120
+L 77				Level_2_H    EQU    160;123;130        ;100-160
+L 78				Level_3_H    EQU    180;168;156;160        ;140-180
+L 79				Level_4_H    EQU    200;177;168;180        ;160-200
+L 80				Level_5_H    EQU    230;177;168;180        ;180-230
+L 81				
+L 82				SCREEN_TIME1    EQU    6;3;6
+L 83				SCREEN_TIME2    EQU    6;3;6
+L 84				SCREEN_TIME3    EQU    6;3;6
+L 85				SCREEN_TIME4    EQU    5;2;3;6
+L 86				SCREEN_TIME5    EQU    5;2;3;6
+L 87				
+L 88				
+L 89				WINK_COUNTER1    EQU    20;10;200    ;设定主循环周期为5ms，闪烁频率1s
+L 90				WINK_COUNTER2    EQU    20;10    ;设定主循环周期为5ms，闪烁频率1s
+L 91				
+L 92				DEVICECODE_w    EQU    %00000000
+L 93				
+L 94				BUZ_TIME_H    EQU    #$ff;60;30
+L 95				BUZ_TIME_L    EQU    #255;200
+L 96				
+L 97				;------------------变量定义-------------
+L 98				;$0030-$00FF:RAM
+L 99				Temp_P0        equ    $30    ;port backup
+L 100				counting_time    equ    $31
+L 101				
+L 102				;键滤波
+L 103				R_KEY1        EQU    $32    ;滤波键值接口
+L 104				key1    equ    0
+L 105				key2    equ    1
+L 106				key3    equ    2
+L 107				key4    equ    3
+L 108				key5    equ    4
+L 109				key6    equ    5
+L 110				key7    equ    6
+L 111				key8    equ    7
+L 112				
+L 113				key_add        equ    key2
+L 114				key_sub        equ    key7
+L 115				key_heat    equ    key8
+L 116				key_time    equ    key6
+L 117				key_onoff    equ    key3
+L 118				key_o3        equ    key5
+L 119				key_vibrate    equ    key4
+L 120				key_ir        equ    key1
+L 121				
+L 122				
+L 123				
+L 124				
+L 125				
+L 126				R_KEY1_BAK    EQU    $33    ;
+L 127				R_KEY1_TRU    EQU    $34    ;
+L 128				R_K_LB        EQU    $35    ;
+L 129				
+L 130				F1        EQU    $36    
+L 131				F1_ir_mode    EQU    0    ;红外模式
+L 132				F1_ir_modev    equ    #%00000001
+L 133				F1_detect_ad    EQU    1    ;
+L 134				F1_Button    EQU    2
+L 135				F1_onoff    EQU    3    ;开关
+L 136				F1_onoffv    equ    #%00001000    ;
+L 137				F1_heat_mode    EQU    4    ;加热模式
+L 138				F1_heat_modev    equ    #%00010000
+L 139				F1_time_mode    EQU    5    ;时间模式
+L 140				F1_o3_mode    EQU    6    ;臭氧模式
+L 141				F1_vibrate_mode    EQU    7    ;振动模式
+L 142				F1_vibrate_modev    equ    #%10000000
+L 143				
+L 144				F2        EQU    $37
+L 145				F2_4s_wink    EQU    0    ;持续4s闪烁，1为亮，0为灭
+L 146				F2_4s_winkv    equ    #%00000001
+L 147				F2_BUZ_EN    EQU    1    ;
+L 148				F2_BUZ_BX    EQU    2    ;
+L 149				F2_BUZ_Forever    EQU    3    ;
+L 150				F2_steam_mode    EQU    4    ;热浪模式
+L 151				F2_4s        EQU    5    ;持续4s闪烁，1为闪烁状态，0为不闪烁
+L 152				F2_timer_mode    EQU    6    ;计时模式
+L 153				F2_4s_relay    EQU    7    ;
+L 154				;;;;;;;;;!!!!!!!!!!!!!!!!!!!!!
+L 155				
+L 156				Timer_125us    EQU    $38    ;计时器
+L 157				Timer_250us    EQU    $39    ;计时器
+L 158				Timer_2500us    EQU    $3A    ;计时器
+L 159				
+L 160				Timer_500ms    EQU    $3B    ;计时器
+L 161				Timer_500ms_wink    EQU    $3C    ;计时器
+L 162				
+L 163				Timer_1min    EQU    $3D    ;计时器
+L 164				Timer_500ms_relay    EQU    $3E    ;档位,0(OFF)-1(ON)-2(ON)-3(ON)-4(ON)
+L 165				;        EQU    $3F    ;P2缓存
+L 166				Buffer_Temper_H    EQU    $40    ;温度缓存
+L 167				Buffer_Temper_L    EQU    $41    
+L 168				
+L 169				data164        EQU    $42
+L 170				ad1datah_temp    EQU    $43
+L 171				ad1datal_temp    EQU    $44
+L 172				ad1_cnt        EQU    $45
+L 173				
+L 174				AD_Cnt        EQU    $46
+L 175				act_temperature    EQU    $47
+L 176				set_temperature    EQU    $48
+L 177				
+L 178				cnt_temp    EQU    $49
+L 179				;    EQU    $4A
+L 180				
+L 181				Temp        EQU    $4B
+L 182				Temp1        EQU    $4C
+L 183				Temp2        EQU    $4D
+L 184				Temp_FLAGS    EQU    $4E
+L 185				Timer_5ms_I2C    EQU    $4F
+L 186				Old_Act_Temper    EQU    $50
+L 187				SeveralTimer_125us    EQU    $51    ;屏蔽relay抖动计数器
+L 188				SeveralTimer_5ms    EQU    $52    ;屏蔽relay抖动计数器
+L 189				SeveralTimer_1s    EQU    $53    ;屏蔽relay抖动计数器
+L 190				Timer_5ms_I2C_L    EQU    $54
+L 191				Buzzer_H_Timer    EQU    $55    ;蜂鸣计时器
+L 192				Buzzer_L_Timer    EQU    $56    ;蜂鸣计时器
+L 193				Buzzer_Counter    EQU    $57    ;鸣响次数
+L 194				
+L 195				F3    EQU    $58
+L 196				F3_trouble_circuit    equ    0    ;探头故障标志，1故障，0正常
+L 197				F3_4s_heat    equ    1
+L 198				F3_set_bb_clr    equ    2
+L 199				
+L 200				Temp_Act_Temperature    equ    $59
+L 201				
+L 202				com_cnter    EQU    $60
+L 203				com1_data    EQU    $61
+L 204				com2_data    EQU    $62
+L 205				;    EQU    $63
+L 206				;    EQU    $64
+L 207				led_com_data    EQU    $65
+L 208				led6_r    equ    7
+L 209				led6_y    equ    6
+L 210				led5    equ    5
+L 211				led7    equ    4
+L 212				led3    equ    2
+L 213				led1    equ    1
+L 214				led2    equ    0
+L 215				
+L 216				led_vibrate    define    led2,led_com_data
+L 217				led_heattemp    define    led1,led_com_data
+L 218				led_ir        define    led3,led_com_data
+L 219				led_steam    define    led6_r,led_com_data
+L 220				led_o3        define    led6_y,led_com_data
+L 221				led_keeptemp    define    led5,led_com_data
+L 222				led_heat    define    led7,led_com_data
+L 223				
+L 224				
+L 225				reg_min        EQU    $66    ;分钟
+L 226				reg_sec        EQU    $67    ;秒钟
+L 227				Led_L        EQU    $68
+L 228				Led_H        EQU    $69
+L 229				
+L 230				R_KEY2        EQU    $6A    ;滤波键值接口
+L 231				R_KEY2_BAK    EQU    $6B    ;键值备份单元
+L 232				R_KEY2_TRU    EQU    $6C    ;滤波后的真值
+L 233				
+L 234				
+L 235				;$1000-$1FFF:OTP ROM
+L 236				    ORG $1000
+L 237				reset:
+L 238	[2]	1000	9B	    sei
+L 239	[2]	1001	9C	    rsp
+L 240				
+L 241	[2]	1002	A6AA	 lda #$aa
+L 242	[4]	1004	B701	 sta $01
+L 243	[2]	1006	A655	 lda #$55
+L 244	[4]	1008	B702	 sta $02    
+L 245	[4]	100A	B703	 sta $03
+L 246	[4]	100C	B710	 sta $10
+L 247	[4]	100E	B713	 sta $13
+L 248				
+L 249	[2]	1010	A6A2	    lda    #%10100010    ;dis WDT    ;cnt WDT    Fsys/4096    overflow time=4096*256*2/Fosc
+L 250	[4]	1012	B70C	    sta    BTCON
+L 251	[2]	1014	A600	    lda    #%00000000    ;Timer disable
+L 252	[4]	1016	B702	    sta    T0CON
+L 253	[2]	1018	A6FF	    lda    #$FF
+L 254	[4]	101A	B701	    sta    T0DATA
+L 255	[2]	101C	A601	    lda    #$01        ;EN LVR
+L 256	[4]	101E	B703	    sta    MCR
+L 257	[2]	1020	A608	    lda    #%00001000    ;PWM output low
+L 258	[4]	1022	B723	    sta    PWMCON
+L 259	[2]	1024	A6FF	    lda    #$FF
+L 260	[4]	1026	B722	    sta    PWMDATA
+L 261				    
+L 262	[2]	1028	A6AA	    lda    #%10101010
+L 263	[4]	102A	B716	    sta    P0CONH
+L 264	[2]	102C	A6AF	    lda    #%10101111
+L 265	[4]	102E	B717	    sta    P0CONL
+L 266	[5]	1030	3F10	    clr    P0
+L 267				    
+L 268	[2]	1032	A64A	    lda    #%01001010
+L 269	[4]	1034	B71A	    sta    P2CONH
+L 270	[2]	1036	A6AA	    lda    #%10101010
+L 271	[4]	1038	B71B	    sta    P2CONL
+L 272	[2]	103A	A67A	    lda    #%01111010
+L 273	[4]	103C	B712	    sta    P2
+L 274				    
+L 275	[2]	103E	A600	    lda    #$00        ;INT disable
+L 276	[4]	1040	B718	    sta    P0PND
+L 277	[2]	1042	A600	    lda    #$00        ;port1 use outside OSC
+L 278	[4]	1044	B719	    sta    P1CON
+L 279	[5]	1046	3F11	    clr    P1
+L 280	[2]	1048	A610	    lda    #%00010000    ;ADC1 enable
+L 281	[4]	104A	B727	    sta    ADCON
+L 282				    
+L 283				    
+L 284				
+L 285				ram_clear:            ;clear all ram
+L 286	[2]	104C	AED0	    ldx    #208
+L 287				ram_clear1:
+L 288	[6]	104E	6F2F	    clr    $2F,X
+L 289	[3]	1050	5A	    decx
+L 290	[3]	1051	26FB	    bne    ram_clear1
+L 291				    
+L 292				    
+L 293				    
+L 294	[2]	1053	A6FA	    lda    #250        ;Timer enable
+L 295	[4]	1055	B701	    sta    T0DATA
+L 296	[2]	1057	A6CA	    lda    #%11001010    ;使能计数器中断，1分频，250*2/4=125us    ;10001010，8分频,250*8*2/4=1000us
+L 297	[4]	1059	B702	    sta    T0CON
+L 298				    
+L 299	[2]	105B	9A	    cli
+L 300	[6]	105C	CD13E1	    jsr    b1
+L 301	[2]	105F	A628	    lda    #40
+L 302	[4]	1061	B748	    sta    set_temperature
+L 303				    
+L 304				;;;;;;;;;***************************************************
+L 305				;;;;;;;;;***************************************************
+L 306				;;;;;;;;;***************************************************
+L 307				
+L 308				
+L 309				
+L 310				main:
+L 311	[5]	1063	120C	    bset    BTCLR,BTCON    ;CLR WDT
+L 312				    
+L 313	[6]	1065	CD11FC	    jsr    check_button
+L 314	[6]	1068	CD107A	    jsr    timing_deal
+L 315	[6]	106B	CD1315	    jsr    ad_detect
+L 316	[6]	106E	CD145D	    jsr    K_LB
+L 317	[6]	1071	CD1414	    jsr    buzzer_deal
+L 318	[6]	1074	CD10D8	    jsr    display_led
+L 319				    
+L 320	[3]	1077	CC1063	    jmp    main
+L 321				    
+L 322				    
+L 323				    
+L 324				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 325				;;;;;;;;;;;;;;;;;;;;;;计时;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 326				timing_deal:
+L 327	[3]	107A	B63A	    lda    Timer_2500us
+L 328	[2]	107C	A1C8	    cmp    #200
+L 329	[3]	107E	2557	    blo    end_timing_deal
+L 330				    
+L 331	[5]	1080	0F370C	    brclr    F2_4s_relay,F2,end_4s_relay
+L 332	[5]	1083	3C3E	    inc    Timer_500ms_relay
+L 333	[3]	1085	B63E	    lda    Timer_500ms_relay
+L 334	[2]	1087	A108	    cmp    #8
+L 335	[3]	1089	2504	    blo    end_4s_relay
+L 336	[5]	108B	1F37	    bclr    F2_4s_relay,F2
+L 337	[5]	108D	1258	    bset    F3_4s_heat,F3
+L 338				end_4s_relay:
+L 339				    
+L 340				    
+L 341	[5]	108F	0B3724	    brclr    F2_4s,F2,end_4s_wink
+L 342	[2]	1092	A601	    lda    F2_4s_winkv    ;闪烁
+L 343	[3]	1094	B837	    eor    F2
+L 344	[4]	1096	B737	    sta    F2
+L 345	[5]	1098	3C3C	    inc    Timer_500ms_wink
+L 346	[3]	109A	B63C	    lda    Timer_500ms_wink
+L 347	[2]	109C	A108	    cmp    #8
+L 348	[3]	109E	2516	    blo    end_4s_wink
+L 349	[5]	10A0	1B37	    bclr    F2_4s,F2
+L 350	[3]	10A2	B631	    lda    counting_time
+L 351	[3]	10A4	2710	    beq    end_4s_wink
+L 352	[5]	10A6	0B360D	    brclr    F1_time_mode,F1,end_4s_wink
+L 353	[5]	10A9	1B36	    bclr    F1_time_mode,F1
+L 354	[5]	10AB	1C37	    bset    F2_timer_mode,F2
+L 355	[5]	10AD	3F39	    clr    Timer_250us    ;计时开始
+L 356	[5]	10AF	3F3A	    clr    Timer_2500us
+L 357	[5]	10B1	3F3B	    clr    Timer_500ms
+L 358	[5]	10B3	3F3D	    clr    Timer_1min
+L 359	[6]	10B5	81	    rts
+L 360				end_4s_wink:    
+L 361				    
+L 362				loop_timing_deal:
+L 363	[5]	10B6	3F3A	    clr    Timer_2500us    ;500ms
+L 364				    
+L 365	[5]	10B8	3C3B	    inc    Timer_500ms
+L 366	[3]	10BA	B63B	    lda    Timer_500ms
+L 367	[2]	10BC	A178	    cmp    #120
+L 368	[3]	10BE	2517	    blo    end_timing_deal
+L 369				    
+L 370	[5]	10C0	3F3B	    clr    Timer_500ms    ;1min
+L 371	[5]	10C2	073612	    brclr    F1_onoff,F1,end_timing_deal
+L 372	[5]	10C5	0D370F	    brclr    F2_timer_mode,F2,end_timing_deal
+L 373	[5]	10C8	3C3D	    inc    Timer_1min
+L 374	[3]	10CA	B63D	    lda    Timer_1min
+L 375	[3]	10CC	B131	    cmp    counting_time
+L 376	[3]	10CE	2507	    blo    end_timing_deal
+L 377	[5]	10D0	1D37	    bclr    F2_timer_mode,F2
+L 378	[5]	10D2	1736	    bclr    F1_onoff,F1    ;定时关机
+L 379	[6]	10D4	CD13E1	    jsr    b1
+L 380				end_timing_deal:
+L 381	[6]	10D7	81	    rts
+L 382				    
+L 383				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 384				;;;;;;;;;;;;;;;;;;;;;;LED显示;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 385				display_led:
+L 386	[2]	10D8	A64A	    lda    #%01001010
+L 387	[4]	10DA	B71A	    sta    P2CONH
+L 388	[2]	10DC	A6AA	    lda    #%10101010
+L 389	[4]	10DE	B71B	    sta    P2CONL
+L 390				    
+L 391	[5]	10E0	07362B	    brclr    F1_onoff,F1,off_disp
+L 392	[5]	10E3	00580E	    brset    F3_trouble_circuit,F3,error_disp
+L 393	[5]	10E6	0A362E	    brset    F1_time_mode,F1,time_disp
+L 394	[5]	10E9	093603	    brclr    F1_heat_mode,F1,temp_disp
+L 395	[5]	10EC	0A370E	    brset    F2_4s,F2,settemp_disp
+L 396				    
+L 397				temp_disp:
+L 398	[3]	10EF	B647	    lda    act_temperature
+L 399	[3]	10F1	CC1127	    jmp    deal_bcd
+L 400				    
+L 401				error_disp:
+L 402	[2]	10F4	A60B	    lda    #11        ;E0错误代码
+L 403	[4]	10F6	B761	    sta    com1_data
+L 404	[5]	10F8	3F62	    clr    com2_data
+L 405	[3]	10FA	CC1132	    jmp    end_deal_bcd
+L 406				    
+L 407				settemp_disp:    
+L 408	[5]	10FD	003709	    brset    F2_4s_wink,F2,loop_settemp_disp
+L 409	[2]	1100	A60A	    lda    #10    ;不显示
+L 410	[4]	1102	B761	    sta    com1_data
+L 411	[4]	1104	B762	    sta    com2_data
+L 412	[3]	1106	CC1132	    jmp    end_deal_bcd
+L 413				loop_settemp_disp:
+L 414	[3]	1109	B648	    lda    set_temperature
+L 415	[3]	110B	CC1127	    jmp    deal_bcd
+L 416				    
+L 417				off_disp:            ;关机
+L 418	[2]	110E	A60A	    lda    #10    ;不显示
+L 419	[4]	1110	B761	    sta    com1_data
+L 420	[4]	1112	B762	    sta    com2_data
+L 421	[3]	1114	CC1132	    jmp    end_deal_bcd
+L 422				    
+L 423				time_disp:
+L 424	[3]	1117	B631	    lda    counting_time
+L 425	[3]	1119	27D4	    beq    temp_disp
+L 426				    
+L 427	[5]	111B	003709	    brset    F2_4s_wink,F2,loop_time_disp
+L 428	[2]	111E	A60A	    lda    #10    ;不显示
+L 429	[4]	1120	B761	    sta    com1_data
+L 430	[4]	1122	B762	    sta    com2_data
+L 431	[3]	1124	CC1132	    jmp    end_deal_bcd
+L 432				loop_time_disp:
+L 433				
+L 434				deal_bcd:
+L 435	[6]	1127	CD144B	    jsr    hextobcd
+L 436	[3]	112A	B668	    lda    Led_L
+L 437	[4]	112C	B762	    sta    com2_data
+L 438	[3]	112E	B669	    lda    Led_H
+L 439	[4]	1130	B761	    sta    com1_data
+L 440				end_deal_bcd:
+L 441				    
+L 442				    
+L 443				status_set:
+L 444	[5]	1132	005813	    brset    F3_trouble_circuit,F3,loop_trouble
+L 445				    
+L 446	[5]	1135	073621	    brclr    F1_onoff,F1,loop_offdisp
+L 447				    
+L 448	[5]	1138	08363F	    brset    F1_heat_mode,F1,loop_heatdisp
+L 449	[5]	113B	1965	    bclr    led_heat
+L 450	[5]	113D	1365	    bclr    led_heattemp
+L 451	[5]	113F	1B65	    bclr    led_keeptemp
+L 452	[5]	1141	1512	    bclr    P2_relay_heater
+L 453	[5]	1143	1612	    bset    P2_triac_wpump
+L 454	[3]	1145	CC1198	    jmp    end_heatdisp
+L 455				    
+L 456				loop_trouble:    
+L 457	[5]	1148	3F65	    clr    led_com_data
+L 458				    
+L 459	[5]	114A	1F10	    bclr    P0_relay_motor
+L 460	[5]	114C	1512	    bclr    P2_relay_heater
+L 461	[5]	114E	1212	    bset    P2_triac_o3
+L 462	[5]	1150	1612	    bset    P2_triac_wpump
+L 463	[5]	1152	1812	    bset    P2_triac_gpump
+L 464	[5]	1154	1A12	    bset    P2_triac_ir
+L 465	[5]	1156	1C12	    bset    P2_triac_vibrate
+L 466	[6]	1158	81	    rts
+L 467				    
+L 468				loop_offdisp:    
+L 469	[5]	1159	3F65	    clr    led_com_data        ;关机
+L 470				    
+L 471	[5]	115B	1F10	    bclr    P0_relay_motor
+L 472	[5]	115D	1512	    bclr    P2_relay_heater
+L 473	[5]	115F	1212	    bset    P2_triac_o3
+L 474	[5]	1161	1612	    bset    P2_triac_wpump
+L 475	[5]	1163	1812	    bset    P2_triac_gpump
+L 476	[5]	1165	1A12	    bset    P2_triac_ir
+L 477	[5]	1167	1C12	    bset    P2_triac_vibrate
+L 478				    
+L 479	[5]	1169	1136	    bclr    F1_ir_mode,F1
+L 480	[5]	116B	1936	    bclr    F1_heat_mode,F1
+L 481	[5]	116D	1B36	    bclr    F1_time_mode,F1
+L 482	[5]	116F	1D36	    bclr    F1_o3_mode,F1
+L 483	[5]	1171	1F36	    bclr    F1_vibrate_mode,F1
+L 484	[5]	1173	1137	    bclr    F2_4s_wink,F2
+L 485	[5]	1175	1937	    bclr    F2_steam_mode,F2
+L 486	[5]	1177	1B37	    bclr    F2_4s,F2
+L 487	[6]	1179	81	    rts
+L 488				    
+L 489				    
+L 490				loop_heatdisp:
+L 491	[5]	117A	1865	    bset    led_heat
+L 492	[5]	117C	035819	    brclr    F3_4s_heat,F3,end_heatdisp
+L 493	[5]	117F	1712	    bclr    P2_triac_wpump    ;开水泵
+L 494	[3]	1181	B647	    lda    act_temperature
+L 495	[3]	1183	B148	    cmp    set_temperature
+L 496	[3]	1185	250B	    blo    loop1_heatdisp
+L 497	[3]	1187	270F	    beq    loop2_heatdisp
+L 498	[5]	1189	1365	    bclr    led_heattemp    ;保温
+L 499	[5]	118B	1A65	    bset    led_keeptemp
+L 500	[5]	118D	1512	    bclr    P2_relay_heater
+L 501	[3]	118F	CC1198	    jmp    loop2_heatdisp
+L 502				loop1_heatdisp:
+L 503	[5]	1192	1B65	    bclr    led_keeptemp    ;加热
+L 504	[5]	1194	1265	    bset    led_heattemp
+L 505	[5]	1196	1412	    bset    P2_relay_heater
+L 506				loop2_heatdisp:
+L 507				end_heatdisp:
+L 508				
+L 509	[5]	1198	003609	    brset    F1_ir_mode,F1,loop_irdisp
+L 510	[5]	119B	1A12	    bset    P2_triac_ir
+L 511	[5]	119D	1C12	    bset    P2_triac_vibrate
+L 512	[5]	119F	1565	    bclr    led_ir
+L 513	[3]	11A1	CC11AA	    jmp    end_irdisp
+L 514				loop_irdisp:
+L 515	[5]	11A4	1B12	    bclr    P2_triac_ir
+L 516	[5]	11A6	1D12	    bclr    P2_triac_vibrate
+L 517	[5]	11A8	1465	    bset    led_ir
+L 518				end_irdisp:
+L 519				
+L 520	[5]	11AA	0E3607	    brset    F1_vibrate_mode,F1,loop_vibratedisp
+L 521	[5]	11AD	1F10	    bclr    P0_relay_motor
+L 522	[5]	11AF	1165	    bclr    led_vibrate
+L 523	[3]	11B1	CC11B8	    jmp    end_vibratedisp
+L 524				loop_vibratedisp:
+L 525	[5]	11B4	1E10	    bset    P0_relay_motor
+L 526	[5]	11B6	1065	    bset    led_vibrate
+L 527				end_vibratedisp:
+L 528				    
+L 529	[5]	11B8	0C3619	    brset    F1_o3_mode,F1,loop_o3disp
+L 530	[5]	11BB	08370B	    brset    F2_steam_mode,F2,loop_steamdisp
+L 531	[5]	11BE	1212	    bset    P2_triac_o3
+L 532	[5]	11C0	1812	    bset    P2_triac_gpump
+L 533	[5]	11C2	1F65	    bclr    led_steam
+L 534	[5]	11C4	1D65	    bclr    led_o3
+L 535	[3]	11C6	CC11DC	    jmp    end_o3disp
+L 536				loop_steamdisp:
+L 537	[5]	11C9	1212	    bset    P2_triac_o3        ;气浪模式
+L 538	[5]	11CB	1912	    bclr    P2_triac_gpump
+L 539	[5]	11CD	1E65	    bset    led_steam
+L 540	[5]	11CF	1D65	    bclr    led_o3
+L 541	[3]	11D1	CC11DC	    jmp    end_o3disp
+L 542				loop_o3disp:
+L 543	[5]	11D4	1312	    bclr    P2_triac_o3        ;臭氧模式
+L 544	[5]	11D6	1812	    bset    P2_triac_gpump
+L 545	[5]	11D8	1C65	    bset    led_o3
+L 546	[5]	11DA	1F65	    bclr    led_steam
+L 547				end_o3disp:
+L 548	[3]	11DC	CC11DF	    jmp    end_disp
+L 549				    
+L 550				    
+L 551				    
+L 552				end_disp:    
+L 553	[6]	11DF	81	    rts
+L 554				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 555				;;;;;;;;;;;;;;;;;;;;164传送;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 556				transfer_164:
+L 557	[4]	11E0	B742	    sta    data164
+L 558	[5]	11E2	1510	    bclr    P0_164data
+L 559	[5]	11E4	1710	    bclr    P0_164clk
+L 560	[2]	11E6	AE08	    ldx    #8
+L 561				loop3_164:
+L 562	[5]	11E8	004205	    brset    0,data164,loop1_164
+L 563	[5]	11EB	1510	    bclr    P0_164data
+L 564	[3]	11ED	CC11F2	    jmp    loop2_164
+L 565				loop1_164:
+L 566	[5]	11F0	1410	    bset    P0_164data
+L 567				loop2_164:
+L 568	[5]	11F2	1610	    bset    P0_164clk
+L 569	[5]	11F4	1710	    bclr    P0_164clk
+L 570	[5]	11F6	3442	    lsr    data164
+L 571	[3]	11F8	5A	    decx
+L 572	[3]	11F9	26ED	    bne    loop3_164
+L 573	[6]	11FB	81	    rts
+L 574				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 575				;;;;;;;;;;;;;;;;;;;;;;键处理;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 576				check_button:                
+L 577	[5]	11FC	05360C	    brclr    F1_Button,F1,nonpress
+L 578				
+L 579				press:
+L 580	[3]	11FF	B634	    lda    R_KEY1_TRU
+L 581	[3]	1201	2703	    beq    loose
+L 582	[3]	1203	CC12DB	    jmp    end_check_button
+L 583				loose:
+L 584	[5]	1206	1536	    bclr    F1_Button,F1
+L 585	[3]	1208	CC12DB	    jmp    end_check_button
+L 586				    
+L 587				nonpress:
+L 588	[3]	120B	B634	    lda    R_KEY1_TRU
+L 589	[3]	120D	2603	    bne    anjian
+L 590	[3]	120F	CC12DB	    jmp    end_check_button
+L 591				    
+L 592				    
+L 593				    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;anjian
+L 594				anjian:    
+L 595	[5]	1212	1436	    bset    F1_Button,F1
+L 596				    
+L 597	[5]	1214	043436	    brset    key_onoff,R_KEY1_TRU,loop_anjian_onoff
+L 598	[5]	1217	005803	    brset    F3_trouble_circuit,F3,loop0_trouble
+L 599	[5]	121A	063603	    brset    F1_onoff,F1,loop1_end_button
+L 600				loop0_trouble:
+L 601	[3]	121D	CC12DB	    jmp    end_check_button
+L 602				loop1_end_button:    
+L 603	[5]	1220	0E3478	    brset    key_heat,R_KEY1_TRU,loop_anjian_heat
+L 604	[5]	1223	0B3403	    brclr    key_time,R_KEY1_TRU,loop0_anjian_time
+L 605	[3]	1226	CC12BC	    jmp    loop_anjian_time
+L 606				loop0_anjian_time:
+L 607	[5]	1229	093403	    brclr    key_o3,R_KEY1_TRU,loop0_anjian_o3
+L 608	[3]	122C	CC12DC	    jmp    loop_anjian_o3
+L 609				loop0_anjian_o3:
+L 610	[5]	122F	073403	    brclr    key_vibrate,R_KEY1_TRU,loop0_anjian_vibrate
+L 611	[3]	1232	CC12FD	    jmp    loop_anjian_vibrate
+L 612				loop0_anjian_vibrate:
+L 613	[5]	1235	013403	    brclr    key_ir,R_KEY1_TRU,loop1_anjian_ir
+L 614	[3]	1238	CC1309	    jmp    loop_anjian_ir
+L 615				loop1_anjian_ir:
+L 616	[5]	123B	083603	    brset    F1_heat_mode,F1,loop2_end_button
+L 617	[3]	123E	CC12DB	    jmp    end_check_button
+L 618				loop2_end_button:
+L 619	[6]	1241	CD13E1	    jsr    b1
+L 620	[5]	1244	023416	    brset    key_add,R_KEY1_TRU,loop_anjian_add
+L 621	[5]	1247	0C3432	    brset    key_sub,R_KEY1_TRU,loop_anjian_sub
+L 622	[3]	124A	CC12DB	    jmp    end_check_button
+L 623				    
+L 624				loop_anjian_onoff:            ;开关按键
+L 625	[2]	124D	A608	    lda    F1_onoffv
+L 626	[3]	124F	B836	    eor    F1
+L 627	[4]	1251	B736	    sta    F1
+L 628	[6]	1253	CD13E1	    jsr    b1
+L 629	[2]	1256	A60A	    lda    #10
+L 630	[4]	1258	B731	    sta    counting_time
+L 631	[3]	125A	CC12DB	    jmp    end_check_button
+L 632				    
+L 633				loop_anjian_add:            ;加温度按键
+L 634	[5]	125D	0B370F	    brclr    F2_4s,F2,loop1_anjian_add
+L 635	[5]	1260	0A360C	    brset    F1_time_mode,F1,loop1_anjian_add
+L 636				    
+L 637	[5]	1263	3C48	    inc    set_temperature
+L 638	[3]	1265	B648	    lda    set_temperature
+L 639	[2]	1267	A132	    cmp    #50
+L 640	[3]	1269	2504	    blo    loop1_anjian_add
+L 641	[2]	126B	A632	    lda    #50
+L 642	[4]	126D	B748	    sta    set_temperature
+L 643				loop1_anjian_add:
+L 644	[5]	126F	1B36	    bclr    F1_time_mode,F1
+L 645	[5]	1271	1A37	    bset    F2_4s,F2
+L 646	[5]	1273	3F3A	    clr    Timer_2500us
+L 647	[5]	1275	3F3C	    clr    Timer_500ms_wink
+L 648	[5]	1277	1037	    bset    F2_4s_wink,F2
+L 649	[3]	1279	CC12DB	    jmp    end_check_button
+L 650				    
+L 651				loop_anjian_sub:            ;减温度按键
+L 652	[5]	127C	0B370F	    brclr    F2_4s,F2,loop1_anjian_sub
+L 653	[5]	127F	0A360C	    brset    F1_time_mode,F1,loop1_anjian_sub
+L 654				    
+L 655	[5]	1282	3A48	    dec    set_temperature
+L 656	[3]	1284	B648	    lda    set_temperature
+L 657	[2]	1286	A123	    cmp    #35
+L 658	[3]	1288	2404	    bhs    loop1_anjian_sub
+L 659	[2]	128A	A623	    lda    #35
+L 660	[4]	128C	B748	    sta    set_temperature
+L 661				loop1_anjian_sub:
+L 662	[5]	128E	1B36	    bclr    F1_time_mode,F1
+L 663	[5]	1290	1A37	    bset    F2_4s,F2
+L 664	[5]	1292	3F3A	    clr    Timer_2500us
+L 665	[5]	1294	3F3C	    clr    Timer_500ms_wink
+L 666	[5]	1296	1037	    bset    F2_4s_wink,F2
+L 667	[3]	1298	CC12DB	    jmp    end_check_button
+L 668				    
+L 669				loop_anjian_heat:            ;加热冲浪按键
+L 670	[2]	129B	A610	    lda    F1_heat_modev
+L 671	[3]	129D	B836	    eor    F1
+L 672	[4]	129F	B736	    sta    F1
+L 673	[5]	12A1	093609	    brclr    F1_heat_mode,F1,loop1_heat
+L 674	[5]	12A4	3F3E	    clr    Timer_500ms_relay
+L 675	[5]	12A6	1E37	    bset    F2_4s_relay,F2
+L 676	[5]	12A8	1358	    bclr    F3_4s_heat,F3
+L 677	[3]	12AA	CC12B1	    jmp    loop2_heat
+L 678				loop1_heat:
+L 679	[5]	12AD	1258	    bset    F3_4s_heat,F3
+L 680	[5]	12AF	1F37	    bclr    F2_4s_relay,F2
+L 681				loop2_heat:
+L 682				    
+L 683	[6]	12B1	CD13E1	    jsr    b1
+L 684	[5]	12B4	0A3624	    brset    F1_time_mode,F1,end_check_button
+L 685	[5]	12B7	1B37	    bclr    F2_4s,F2
+L 686	[3]	12B9	CC12DB	    jmp    end_check_button
+L 687				    
+L 688				loop_anjian_time:            ;定时按键
+L 689	[5]	12BC	0B360C	    brclr    F1_time_mode,F1,loop1_anjian_time
+L 690				    
+L 691	[2]	12BF	A60A	    lda    #10
+L 692	[3]	12C1	BB31	    add    counting_time
+L 693	[2]	12C3	A13C	    cmp    #60
+L 694	[3]	12C5	2302	    bls    end_anjian_time
+L 695	[2]	12C7	A600	    lda    #0
+L 696				end_anjian_time:
+L 697	[4]	12C9	B731	    sta    counting_time
+L 698				loop1_anjian_time:
+L 699	[5]	12CB	1A36	    bset    F1_time_mode,F1
+L 700	[6]	12CD	CD13E1	    jsr    b1
+L 701	[5]	12D0	1A37	    bset    F2_4s,F2
+L 702	[5]	12D2	3F3A	    clr    Timer_2500us
+L 703	[5]	12D4	3F3C	    clr    Timer_500ms_wink
+L 704	[5]	12D6	1037	    bset    F2_4s_wink,F2
+L 705				;    lda    counting_time
+L 706				;    bne    end_check_button
+L 707				;    bclr    F1_time_mode,F1
+L 708				;    bclr    F2_4s,F2
+L 709				;    
+L 710	[3]	12D8	CC12DB	    jmp    end_check_button
+L 711				    
+L 712				end_check_button:    
+L 713	[6]	12DB	81	    rts
+L 714				    
+L 715				loop_anjian_o3:                ;气浪臭氧按键
+L 716	[5]	12DC	08370A	    brset    F2_steam_mode,F2,loop1_anjian_o3
+L 717	[5]	12DF	0C360E	    brset    F1_o3_mode,F1,loop2_anjian_o3
+L 718	[5]	12E2	1837	    bset    F2_steam_mode,F2
+L 719	[5]	12E4	1D36	    bclr    F1_o3_mode,F1
+L 720	[3]	12E6	CC12F7	    jmp    end_anjian_o3
+L 721				loop1_anjian_o3:
+L 722	[5]	12E9	1937	    bclr    F2_steam_mode,F2
+L 723	[5]	12EB	1C36	    bset    F1_o3_mode,F1
+L 724	[3]	12ED	CC12F7	    jmp    end_anjian_o3
+L 725				loop2_anjian_o3:
+L 726	[5]	12F0	1937	    bclr    F2_steam_mode,F2
+L 727	[5]	12F2	1D36	    bclr    F1_o3_mode,F1
+L 728	[3]	12F4	CC12F7	    jmp    end_anjian_o3
+L 729				end_anjian_o3:    
+L 730	[6]	12F7	CD13E1	    jsr    b1
+L 731	[3]	12FA	CC12DB	    jmp    end_check_button
+L 732				    
+L 733				loop_anjian_vibrate:            ;振动按键
+L 734	[2]	12FD	A680	    lda    F1_vibrate_modev
+L 735	[3]	12FF	B836	    eor    F1
+L 736	[4]	1301	B736	    sta    F1
+L 737	[6]	1303	CD13E1	    jsr    b1
+L 738	[3]	1306	CC12DB	    jmp    end_check_button
+L 739				    
+L 740				loop_anjian_ir:                ;红外按键
+L 741	[2]	1309	A601	    lda    F1_ir_modev
+L 742	[3]	130B	B836	    eor    F1
+L 743	[4]	130D	B736	    sta    F1
+L 744	[6]	130F	CD13E1	    jsr    b1
+L 745	[3]	1312	CC12DB	    jmp    end_check_button
+L 746				    
+L 747				    
+L 748				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 749				;;;;;;;;;;;;;;;;;;;;;;;;ad检测;;;;;;;;;;;;;;;;;;;;;;;;
+L 750				ad_detect:
+L 751	[5]	1315	02365C	    brset    F1_detect_ad,F1,ad_detect_temp
+L 752				    
+L 753				ad_detect_keys:
+L 754	[5]	1318	1027	    bset    0,ADCON        ;**************start A/D convertion***********
+L 755				AD_waiting0:
+L 756	[5]	131A	0727FD	    brclr    3,ADCON,AD_waiting0    ;判转换完毕否,为1转换完毕
+L 757				    
+L 758				average_ad0_divide:
+L 759	[3]	131D	B628	    lda    ADDATAH
+L 760	[6]	131F	CD1329	    jsr    keys_detect
+L 761	[5]	1322	1236	    bset    F1_detect_ad,F1
+L 762	[2]	1324	A616	    lda    TEMP_AD
+L 763	[4]	1326	B727	    sta    ADCON
+L 764	[6]	1328	81	    rts
+L 765				    
+L 766				keys_detect:
+L 767	[2]	1329	A117	    cmp    #23
+L 768	[3]	132B	2405	    bhs    loop1_keydetect
+L 769	[5]	132D	3F32	    clr    R_KEY1
+L 770	[5]	132F	1232	    bset    key2,R_KEY1
+L 771	[6]	1331	81	    rts
+L 772				loop1_keydetect:
+L 773	[2]	1332	A13A	    cmp    #58
+L 774	[3]	1334	2405	    bhs    loop2_keydetect
+L 775	[5]	1336	3F32	    clr    R_KEY1
+L 776	[5]	1338	1C32	    bset    key7,R_KEY1
+L 777	[6]	133A	81	    rts
+L 778				loop2_keydetect:
+L 779	[2]	133B	A155	    cmp    #85
+L 780	[3]	133D	2405	    bhs    loop3_keydetect
+L 781	[5]	133F	3F32	    clr    R_KEY1
+L 782	[5]	1341	1E32	    bset    key8,R_KEY1
+L 783	[6]	1343	81	    rts
+L 784				loop3_keydetect:
+L 785	[2]	1344	A169	    cmp    #105
+L 786	[3]	1346	2405	    bhs    loop4_keydetect
+L 787	[5]	1348	3F32	    clr    R_KEY1
+L 788	[5]	134A	1A32	    bset    key6,R_KEY1
+L 789	[6]	134C	81	    rts
+L 790				loop4_keydetect:
+L 791	[2]	134D	A178	    cmp    #120
+L 792	[3]	134F	2405	    bhs    loop5_keydetect
+L 793	[5]	1351	3F32	    clr    R_KEY1
+L 794	[5]	1353	1432	    bset    key3,R_KEY1
+L 795	[6]	1355	81	    rts
+L 796				loop5_keydetect:
+L 797	[2]	1356	A185	    cmp    #133
+L 798	[3]	1358	2405	    bhs    loop6_keydetect
+L 799	[5]	135A	3F32	    clr    R_KEY1
+L 800	[5]	135C	1832	    bset    key5,R_KEY1
+L 801	[6]	135E	81	    rts
+L 802				loop6_keydetect:
+L 803	[2]	135F	A190	    cmp    #144
+L 804	[3]	1361	2405	    bhs    loop7_keydetect
+L 805	[5]	1363	3F32	    clr    R_KEY1
+L 806	[5]	1365	1632	    bset    key4,R_KEY1
+L 807	[6]	1367	81	    rts
+L 808				loop7_keydetect:
+L 809	[2]	1368	A199	    cmp    #153
+L 810	[3]	136A	2405	    bhs    loop8_keydetect
+L 811	[5]	136C	3F32	    clr    R_KEY1
+L 812	[5]	136E	1032	    bset    key1,R_KEY1
+L 813	[6]	1370	81	    rts
+L 814				loop8_keydetect:
+L 815	[5]	1371	3F32	    clr    R_KEY1
+L 816	[6]	1373	81	    rts
+L 817				    
+L 818				    
+L 819				ad_detect_temp:    
+L 820				    
+L 821	[5]	1374	3C49	    inc    cnt_temp
+L 822	[3]	1376	B649	    lda    cnt_temp
+L 823	[2]	1378	A105	    cmp    #5
+L 824	[3]	137A	2401	    bhs    loop1_detect_temp
+L 825	[6]	137C	81	    rts
+L 826				loop1_detect_temp:
+L 827	[5]	137D	3F49	    clr    cnt_temp
+L 828				    
+L 829	[5]	137F	1027	    bset    0,ADCON        ;**************start A/D convertion***********
+L 830				AD_waiting1:
+L 831	[5]	1381	0727FD	    brclr    3,ADCON,AD_waiting1    ;判转换完毕否,为1转换完毕
+L 832				    
+L 833				average_ad1_divide:
+L 834	[3]	1384	B628	    lda    ADDATAH
+L 835	[3]	1386	BB44	    add    ad1datal_temp
+L 836	[4]	1388	B744	    sta    ad1datal_temp
+L 837	[3]	138A	2402	    bhs    loop1_average1
+L 838	[5]	138C	3C43	    inc    ad1datah_temp
+L 839				loop1_average1:
+L 840	[5]	138E	3C45	    inc    ad1_cnt
+L 841	[3]	1390	B645	    lda    ad1_cnt
+L 842	[2]	1392	A180	    cmp    AVERAGE_CNT
+L 843	[3]	1394	252F	    blo    loop1_average2
+L 844	[2]	1396	A607	    lda    #7
+L 845				loop1_average3:
+L 846	[5]	1398	3443	    lsr    ad1datah_temp
+L 847	[5]	139A	3644	    ror    ad1datal_temp
+L 848	[3]	139C	4A	    deca
+L 849	[3]	139D	26F9	    bne    loop1_average3
+L 850				    
+L 851	[3]	139F	B644	    lda    ad1datal_temp
+L 852	[2]	13A1	A114	    cmp    #20;10
+L 853	[3]	13A3	2531	    blo    temp_short_circuit
+L 854	[2]	13A5	A1F5	    cmp    #245;250
+L 855	[3]	13A7	2432	    bhs    temp_open_circuit
+L 856				    
+L 857	[5]	13A9	1158	    bclr    F3_trouble_circuit,F3
+L 858	[3]	13AB	B644	    lda    ad1datal_temp
+L 859	[2]	13AD	A141	    cmp    #65
+L 860	[3]	13AF	2520	    blo    loop1_tab_temp
+L 861	[2]	13B1	A1DB	    cmp    #219
+L 862	[3]	13B3	2417	    bhs    loop3_tab_temp
+L 863	[3]	13B5	B644	    lda    ad1datal_temp
+L 864	[2]	13B7	A041	    sub    #65
+L 865	[2]	13B9	97	    tax
+L 866				loop2_tab_temp:    
+L 867	[5]	13BA	D614EC	    lda    tab_temp,x
+L 868	[4]	13BD	B747	    sta    act_temperature
+L 869	[5]	13BF	3F45	    clr    ad1_cnt
+L 870	[5]	13C1	3F44	    clr    ad1datal_temp
+L 871	[5]	13C3	3F43	    clr    ad1datah_temp
+L 872				loop1_average2:
+L 873	[5]	13C5	1336	    bclr    F1_detect_ad,F1
+L 874	[2]	13C7	A606	    lda    KEYS_AD
+L 875	[4]	13C9	B727	    sta    ADCON
+L 876	[6]	13CB	81	    rts
+L 877				
+L 878				loop3_tab_temp:
+L 879	[2]	13CC	AEDB	    ldx    #219
+L 880	[3]	13CE	CC13BA	    jmp    loop2_tab_temp
+L 881				loop1_tab_temp:
+L 882	[2]	13D1	AE41	    ldx    #65
+L 883	[3]	13D3	CC13BA	    jmp    loop2_tab_temp
+L 884				    
+L 885				temp_short_circuit:
+L 886	[5]	13D6	1058	    bset    F3_trouble_circuit,F3
+L 887	[3]	13D8	CC13C5	    jmp    loop1_average2
+L 888				temp_open_circuit:
+L 889	[5]	13DB	1058	    bset    F3_trouble_circuit,F3
+L 890	[3]	13DD	CC13C5	    jmp    loop1_average2
+L 891	[6]	13E0	81	    rts
+L 892				
+L 893				    
+L 894				    
+L 895				    
+L 896				;;---------------------------------------------------
+L 897				;    
+L 898				;DELAY_4500us:
+L 899				;    lda    #10
+L 900				;    sta    Temp1
+L 901				;    
+L 902				;LLLOOP_2:
+L 903				;    lda    #140
+L 904				;    sta    Temp2
+L 905				;LLLOOP_1:
+L 906				;    dec    Temp2
+L 907				;    bne    LLLOOP_1
+L 908				;    
+L 909				;    dec    Temp1
+L 910				;    bne    LLLOOP_2
+L 911				;    
+L 912				;    rts
+L 913				;    
+L 914				;;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～延时
+L 915				;
+L 916				;DELAY_20us:
+L 917				;    lda    #10
+L 918				;LLLOOP_3:
+L 919				;    deca
+L 920				;    bne    LLLOOP_3
+L 921				;    
+L 922				;    rts
+L 923				;    
+L 924				
+L 925				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 926				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 927				;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～单声鸣叫
+L 928				    
+L 929				b1:
+L 930	[2]	13E1	A6FF	    lda    BUZ_TIME_H
+L 931	[4]	13E3	B755	    sta    Buzzer_H_Timer
+L 932	[4]	13E5	B756	    sta    Buzzer_L_Timer
+L 933	[5]	13E7	1437	    bset    F2_BUZ_BX,F2
+L 934	[5]	13E9	1237	    bset    F2_BUZ_EN,F2
+L 935	[5]	13EB	1737	    bclr    F2_BUZ_Forever,F2        ;响1声
+L 936	[2]	13ED	A601	    lda    #1
+L 937	[4]	13EF	B757	    sta    Buzzer_Counter
+L 938	[6]	13F1	81	    rts
+L 939				    
+L 940				;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～多声鸣叫
+L 941				    
+L 942				b1_b1:
+L 943	[2]	13F2	A6FF	    lda    BUZ_TIME_H
+L 944	[4]	13F4	B755	    sta    Buzzer_H_Timer
+L 945	[2]	13F6	A6FF	    lda    BUZ_TIME_L
+L 946	[4]	13F8	B756	    sta    Buzzer_L_Timer
+L 947	[5]	13FA	1437	    bset    F2_BUZ_BX,F2
+L 948	[5]	13FC	1237	    bset    F2_BUZ_EN,F2
+L 949	[5]	13FE	1737	    bclr    F2_BUZ_Forever,F2        ;响6声
+L 950	[2]	1400	A604	    lda    #4
+L 951	[4]	1402	B757	    sta    Buzzer_Counter
+L 952	[6]	1404	81	    rts
+L 953				    
+L 954				;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～多声鸣叫一直响
+L 955				    
+L 956				b1_b1_:
+L 957	[2]	1405	A6FF	    lda    BUZ_TIME_H
+L 958	[4]	1407	B755	    sta    Buzzer_H_Timer
+L 959	[2]	1409	A6FF	    lda    BUZ_TIME_L
+L 960	[4]	140B	B756	    sta    Buzzer_L_Timer
+L 961	[5]	140D	1437	    bset    F2_BUZ_BX,F2
+L 962	[5]	140F	1237	    bset    F2_BUZ_EN,F2
+L 963	[5]	1411	1637	    bset    F2_BUZ_Forever,F2        ;一直响
+L 964	[6]	1413	81	    rts
+L 965				    
+L 966				;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～蜂鸣处理
+L 967				
+L 968				buzzer_deal:
+L 969	[5]	1414	033730	    brclr    F2_BUZ_EN,F2,end_buz_deal
+L 970	[5]	1417	063706	    brset    F2_BUZ_Forever,F2,loop_buz1
+L 971	[3]	141A	B657	    lda    Buzzer_Counter
+L 972	[2]	141C	A100	    cmp    #0
+L 973	[3]	141E	2728	    beq    end_buz_deal1
+L 974				    
+L 975				loop_buz1:
+L 976	[5]	1420	053713	    brclr    F2_BUZ_BX,F2,loop_buz
+L 977	[5]	1423	3A55	    dec    Buzzer_H_Timer            ;鸣响
+L 978	[3]	1425	B655	    lda    Buzzer_H_Timer
+L 979	[2]	1427	A100	    cmp    #0
+L 980	[3]	1429	261C	    bne    end_buz_deal
+L 981	[5]	142B	3A57	    dec    Buzzer_Counter
+L 982	[5]	142D	1537	    bclr    F2_BUZ_BX,F2
+L 983	[2]	142F	A6FF	    lda    BUZ_TIME_H
+L 984	[4]	1431	B755	    sta    Buzzer_H_Timer
+L 985	[3]	1433	CC1447	    jmp    end_buz_deal
+L 986				    
+L 987				loop_buz:
+L 988	[5]	1436	3A56	    dec    Buzzer_L_Timer            ;不响
+L 989	[3]	1438	B656	    lda    Buzzer_L_Timer
+L 990	[2]	143A	A100	    cmp    #0
+L 991	[3]	143C	2609	    bne    end_buz_deal
+L 992	[5]	143E	1437	    bset    F2_BUZ_BX,F2
+L 993	[2]	1440	A6FF	    lda    BUZ_TIME_L
+L 994	[4]	1442	B756	    sta    Buzzer_L_Timer
+L 995	[3]	1444	CC1447	    jmp    end_buz_deal
+L 996				    
+L 997				end_buz_deal:
+L 998	[6]	1447	81	    rts
+L 999				    
+L 1000				end_buz_deal1:    
+L 1001	[5]	1448	1337	    bclr    F2_BUZ_EN,F2
+L 1002	[6]	144A	81	    rts
+L 1003				    
+L 1004				    
+L 1005				    
+L 1006				        
+L 1007				;～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～16进制转10进制
+L 1008				
+L 1009				hextobcd:        
+L 1010	[4]	144B	B768	        sta    Led_L
+L 1011	[5]	144D	3F69	        clr    Led_H
+L 1012				loop2_hexbcd:
+L 1013	[3]	144F	B668	        lda    Led_L
+L 1014	[2]	1451	A00A	        sub    #10
+L 1015	[3]	1453	2507	        blo    loop1_hexbcd
+L 1016	[4]	1455	B768	        sta    Led_L
+L 1017	[5]	1457	3C69	        inc    Led_H
+L 1018	[3]	1459	CC144F	        jmp    loop2_hexbcd
+L 1019				loop1_hexbcd:
+L 1020				;        lda    Led_H
+L 1021				;        sub    #10
+L 1022				;        blo    loop3_hexbcd
+L 1023				;        sta    Led_H
+L 1024				;loop3_hexbcd:
+L 1025	[6]	145C	81	        rts
+L 1026				        
+L 1027				        
+L 1028				        
+L 1029				        
+L 1030				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 1031				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+L 1032				;------------------键滤波------------------------
+L 1033				;;;;;;;;;
+L 1034				;该次键值与上次比较
+L 1035				;滤波完成否
+L 1036				;滤波OK的键值
+L 1037				;若不同上次键值,则保存该次值;初始化滤波次数
+L 1038				;;;;;;;;;
+L 1039				;BACKUP-->BAK-->备份
+L 1040				;TRUER--->真
+L 1041				
+L 1042				;R_K_BAK------上次备份值
+L 1043				;R_KEY--------该次键值
+L 1044				;R_K_TRUER----校验后得到的值
+L 1045				
+L 1046				;C_K_VER-----校验次数    
+L 1047				;R_K_VER-----次数寄存单元
+L 1048				
+L 1049				K_LB:
+L 1050				
+L 1051	[3]	145D	B632	    lda    R_KEY1            ;该次的值和上次备份的值进行比较
+L 1052	[3]	145F	B133	    cmp    R_KEY1_BAK
+L 1053	[3]	1461	260B	    bne    K_LB1
+L 1054				;    lda    R_KEY2
+L 1055				;    cmp    R_KEY2_BAK
+L 1056				;    bne    K_LB1
+L 1057				    
+L 1058				    
+L 1059	[5]	1463	3A35	    dec    R_K_LB            ;-1不为0跳,滤波次数没完
+L 1060	[3]	1465	260F	    bne    RET_K_LB
+L 1061				    
+L 1062	[3]	1467	B633	    lda    R_KEY1_BAK        ;滤波后真正的键值
+L 1063	[4]	1469	B734	    sta    R_KEY1_TRU
+L 1064				;    lda    R_KEY2_BAK
+L 1065				;    sta    R_KEY2_TRU
+L 1066				    
+L 1067	[3]	146B	CC1472	    jmp    K_LB2
+L 1068				K_LB1:
+L 1069	[3]	146E	B632	    lda    R_KEY1            ;不同上次值时,把此次值保存起来
+L 1070	[4]	1470	B733	    sta    R_KEY1_BAK
+L 1071				;    lda    R_KEY2
+L 1072				;    sta    R_KEY2_BAK
+L 1073				    
+L 1074				K_LB2:
+L 1075	[2]	1472	A60A	    lda    C_K_LB            ;初始化滤波次数
+L 1076	[4]	1474	B735	    sta    R_K_LB
+L 1077				RET_K_LB:
+L 1078	[6]	1476	81	    rts
+L 1079				    
+L 1080				;------------------中断---------------- 125us一次
+L 1081				
+L 1082				t0int:
+L 1083	[5]	1477	1102	    bclr    0,T0CON
+L 1084				    
+L 1085	[5]	1479	3C38	    inc    Timer_125us
+L 1086	[3]	147B	B638	    lda    Timer_125us
+L 1087	[2]	147D	A102	    cmp    #2
+L 1088	[3]	147F	250D	    blo    end_250us
+L 1089	[5]	1481	3F38	    clr    Timer_125us
+L 1090	[5]	1483	3C39	    inc    Timer_250us
+L 1091				    
+L 1092	[5]	1485	033706	    brclr    F2_BUZ_EN,F2,end_250us
+L 1093				    
+L 1094	[2]	1488	A601	    lda    P2_2k_buzv
+L 1095	[3]	148A	B812	    eor    P2
+L 1096	[4]	148C	B712	    sta    P2
+L 1097				end_250us:
+L 1098				    
+L 1099	[3]	148E	B639	    lda    Timer_250us
+L 1100	[2]	1490	A10A	    cmp    #10
+L 1101	[3]	1492	2503	    blo    end_2500ustime
+L 1102	[3]	1494	CC1498	    jmp    time_2500us
+L 1103				end_2500ustime:
+L 1104	[9]	1497	80	    rti
+L 1105				    
+L 1106				time_2500us:
+L 1107	[5]	1498	3F39	    clr    Timer_250us
+L 1108	[5]	149A	3C3A	    inc    Timer_2500us
+L 1109				    
+L 1110				    
+L 1111				    
+L 1112	[2]	149C	A6AA	    lda    #%10101010
+L 1113	[4]	149E	B716	    sta    P0CONH
+L 1114	[2]	14A0	A6AF	    lda    #%10101111
+L 1115	[4]	14A2	B717	    sta    P0CONL
+L 1116				    
+L 1117	[5]	14A4	3C60	    inc    com_cnter
+L 1118	[3]	14A6	B660	    lda    com_cnter
+L 1119	[2]	14A8	A101	    cmp    #1
+L 1120	[3]	14AA	2719	    beq    disp_com1
+L 1121	[2]	14AC	A102	    cmp    #2
+L 1122	[3]	14AE	2728	    beq    disp_com2
+L 1123	[3]	14B0	CC14B3	    jmp    disp_led_com
+L 1124				
+L 1125				disp_led_com:
+L 1126	[5]	14B3	3F60	    clr    com_cnter
+L 1127	[5]	14B5	1910	    bclr    P0_com1
+L 1128	[5]	14B7	1B10	    bclr    P0_com2
+L 1129	[5]	14B9	1D10	    bclr    P0_ledcom
+L 1130	[3]	14BB	B665	    lda    led_com_data
+L 1131	[6]	14BD	CD11E0	    jsr    transfer_164
+L 1132	[5]	14C0	1C10	    bset    P0_ledcom
+L 1133	[3]	14C2	CC14EB	    jmp    backup_ldadata
+L 1134				    
+L 1135				disp_com1:
+L 1136	[5]	14C5	1910	    bclr    P0_com1
+L 1137	[5]	14C7	1B10	    bclr    P0_com2
+L 1138	[5]	14C9	1D10	    bclr    P0_ledcom
+L 1139	[3]	14CB	BE61	    ldx    com1_data
+L 1140	[5]	14CD	D61587	    lda    table_0_9,x
+L 1141	[6]	14D0	CD11E0	    jsr    transfer_164
+L 1142	[5]	14D3	1810	    bset    P0_com1
+L 1143	[3]	14D5	CC14EB	    jmp    backup_ldadata
+L 1144				    
+L 1145				disp_com2:
+L 1146	[5]	14D8	1910	    bclr    P0_com1
+L 1147	[5]	14DA	1B10	    bclr    P0_com2
+L 1148	[5]	14DC	1D10	    bclr    P0_ledcom
+L 1149	[3]	14DE	BE62	    ldx    com2_data
+L 1150	[5]	14E0	D61587	    lda    table_0_9,x
+L 1151	[6]	14E3	CD11E0	    jsr    transfer_164
+L 1152	[5]	14E6	1A10	    bset    P0_com2
+L 1153	[3]	14E8	CC14EB	    jmp    backup_ldadata
+L 1154				    
+L 1155				backup_ldadata:
+L 1156	[9]	14EB	80	    rti
+L 1157				    
+L 1158				    
+L 1159				    
+L 1160				    
+L 1161				tab_temp:
+L 1162		14EC	00000000	    fcb     0, 0, 0, 0, 1                ;65-69
+			01	
+L 1163		14F1	01020203	    fcb     1, 2, 2, 3, 3, 3, 4, 4, 5, 5        ;70-79
+			03030404	
+			0505	
+L 1164		14FB	05060607	    fcb     5, 6, 6, 7, 7, 8, 8, 8, 9, 9        ;80-89
+			07080808	
+			0909	
+L 1165		1505	0A0A0A0B	    fcb    10,10,10,11,11,12,12,12,13,13        ;90-99
+			0B0C0C0C	
+			0D0D	
+L 1166		150F	0E0E0E0F	    fcb    14,14,14,15,15,16,16,16,17,17        ;100-109
+			0F101010	
+			1111	
+L 1167		1519	12121213	    fcb    18,18,18,19,19,20,20,20,21,21        ;110-119
+			13141414	
+			1515	
+L 1168		1523	15161617	    fcb    21,22,22,23,23,23,24,24,25,25        ;120-129
+			17171818	
+			1919	
+L 1169		152D	1A1A1A1B	    fcb    26,26,26,27,27,28,28,28,29,29        ;130-139
+			1B1C1C1C	
+			1D1D	
+L 1170		1537	1E1E1E1F	    fcb    30,30,30,31,31,32,32,33,33,33        ;140-149
+			1F202021	
+			2121	
+L 1171		1541	22222323	    fcb    34,34,35,35,36,36,37,37,38,38        ;150-159
+			24242525	
+			2626	
+L 1172		154B	26272728	    fcb    38,39,39,40,40,41,41,42,42,43        ;160-169
+			2829292A	
+			2A2B	
+L 1173		1555	2B2C2C2D	    fcb    43,44,44,45,45,46,46,47,48,48        ;170-179
+			2D2E2E2F	
+			3030	
+L 1174		155F	31313232	    fcb    49,49,50,50,51,52,52,53,53,54        ;180-189
+			33343435	
+			3536	
+L 1175		1569	37373838	    fcb    55,55,56,56,57,58,58,59,60,61        ;190-199
+			393A3A3B	
+			3C3D	
+L 1176		1573	3D3E3F40	    fcb    61,62,63,64,64,65,66,67,68,68        ;200-209
+			40414243	
+			4444	
+L 1177		157D	45464748	    fcb    69,70,71,72,73,74,75,76,77,78        ;210-219
+			494A4B4C	
+			4D4E	
+L 1178				    
+L 1179				table_0_9:                ;b - a - g - f - . - d - e - c
+L 1180		1587	D7	        fcb    $D7    ;0
+L 1181		1588	81	        fcb    $81    ;1
+L 1182		1589	E6	        fcb    $E6    ;2
+L 1183		158A	E5	        fcb    $E5    ;3
+L 1184		158B	B1	        fcb    $B1    ;4
+L 1185		158C	75	        fcb    $75    ;5
+L 1186		158D	77	        fcb    $77    ;6
+L 1187		158E	C1	        fcb    $C1    ;7
+L 1188		158F	F7	        fcb    $F7    ;8
+L 1189		1590	F5	        fcb    $F5    ;9
+L 1190		1591	00	        fcb    $00    ;不显示
+L 1191		1592	76	        fcb    $76    ;E
+L 1192				        
+L 1193				        
+L 1194				;---------------------------------------------------
+L 1195				    
+L 1196				    ORG    $1ff1
+L 1197	[3]	1FF1	CC1063	    jmp    main
+L 1198				    
+L 1199				    ;interrupt vector
+L 1200				;    ORG    $1ff4
+L 1201				;    FDB    int1
+L 1202				    ORG    $1ff6
+L 1203		1FF6	1477	    FDB    t0int
+L 1204				;    ORG    $1ff8
+L 1205				;    FDB    pwmint
+L 1206				;    ORG    $1ffa
+L 1207				;    FDB    int0
+L 1208				;    ORG    $1ffc
+L 1209				;    FDB    swi
+L 1210				    ORG    $1ffe
+L 1211		1FFE	1000	    FDB    reset
+L 1212				
+L 1213				

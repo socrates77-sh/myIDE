@@ -1,0 +1,48 @@
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\301_asm_multi_files\var.inc2013-9-26  13:37:57          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 ; reg 
+                      00004 
+                      00005 cblock 0x10
+                      00006 acc_temp
+                      00007 status_temp
+                      00008 flag_work0
+                      00009 flag_work1
+                      00010 flag_work2
+                      00011 counter
+                      00012 
+                      00013 
+                      00014 endc
+                      00015 
+                      00016 #define flag_10ms       flag_work0,1
+                      00017 #define flag_100ms      flag_work0,2
+                      00018 
+                      00019 
+                      00020  ;en
+Error[125]  : Illegal condition (EOF encountered before END)
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\301_asm_multi_files\var.inc2013-9-26  13:37:57          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P011                          00000001
+acc_temp                          00000010
+counter                           00000015
+flag_work0                        00000012
+flag_work1                        00000013
+flag_work2                        00000014
+status_temp                       00000011
+flag_100ms                        flag_work0,2
+flag_10ms                         flag_work0,1
+
+Errors   :     1
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

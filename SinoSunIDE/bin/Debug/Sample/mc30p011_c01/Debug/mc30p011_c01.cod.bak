@@ -1,0 +1,22 @@
+
+L 8           ; 13   [1]	00bd  	 main.c
+L 8           ; 15   [1]	00bf  	 main.c
+L 8           ; 17   [1]	00c1  	 main.c
+L 8           ; 18   [1]	00c2  	 main.c
+L 8           ; 19   [1]	00c4  	 main.c
+L 8           ; 20   [1]	00c5  	 main.c
+L 8           ; 23   [1]	00c6  	 main.c
+L 8           ; 24   [1]	00c8  	 main.c
+L 8           ; 20   [1]	0099  	 globle.c
+L 8           ; 24   [1]	009c  	 globle.c
+L 8           ; 25   [1]	009f  	 globle.c
+L 8           ; 26   [1]	00a2  	 globle.c
+L 8           ; 27   [1]	00a4  	 globle.c
+L 8           ; 28   [1]	00a7  	 globle.c
+L 8           ; 30   [1]	00a9  	 globle.c
+L 8           ; 32   [1]	00ad  	 globle.c
+L 8           ; 36   [1]	00b0  	 globle.c
+L 8           ; 11   [1]	00b2  	 globle.c
+L 8           ; 12   [1]	00b4  	 globle.c
+L 8           ; 13   [1]	00b8  	 globle.c
+L 8           ; 15   [1]	00ba  	 globle.c

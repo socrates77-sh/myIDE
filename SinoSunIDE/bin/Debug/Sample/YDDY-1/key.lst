@@ -1,0 +1,48 @@
+L 1				;-------------------------------------------------------------------
+L 2				KeySbr:
+L 3	[5]	1958	080032		BRSET	pVIn,KeyACKed	;充电状态不响应按键
+L 4					;BRCLR	FADOver,KeyACKed
+L 5	[5]	195B	07002F		BRCLR	pKey,KeyACKed
+L 6	[5]	195E	028032		BRSET	FKeyAck,KeySbrR
+L 7	[5]	1961	3C82		INC	KeyCnt
+L 8	[3]	1963	B682		LDA	KeyCnt
+L 9	[2]	1965	A105		CMP	#5
+L 10	[3]	1967	252A		BLO	KeySbrR
+L 11	[3]	1969	BE8B		LDX	Stauts
+L 12	[3]	196B	2702		BEQ	KeySbr1
+L 13	[3]	196D	200A		BRA	KeySbr2
+L 14				KeySbr1:
+L 15	[5]	196F	3F82		CLR	KeyCnt
+L 16	[5]	1971	3C8C		INC	KeyLong
+L 17	[3]	1973	B68C		LDA	KeyLong
+L 18	[2]	1975	A1C8		CMP	#200
+L 19	[3]	1977	251A		BLO	KeySbrR
+L 20					;BCLR	FADOver
+L 21					;CLR	ADCnt
+L 22					;CLR	TempADBuf
+L 23					;CLR	TempADBuf+1
+L 24					;CLR	VADBuf
+L 25					;CLR	VADBuf+1
+L 26					
+L 27				KeySbr2:
+L 28	[5]	1979	1280		BSET	FKeyAck
+L 29	[5]	197B	3C8B		INC	Stauts
+L 30	[3]	197D	B68B		LDA	Stauts
+L 31	[2]	197F	A104		CMP	#4
+L 32	[3]	1981	2503		BLO	KeySbr3
+L 33	[5]	1983	3F8B		CLR	Stauts
+L 34	[6]	1985	81		RTS
+L 35				KeySbr3:
+L 36	[5]	1986	1803		BSET	pPwr
+L 37	[5]	1988	3F8D		CLR	T50ms
+L 38	[5]	198A	1480		BSET	FFlash50
+L 39	[6]	198C	81		RTS
+L 40				KeyACKed:
+L 41	[5]	198D	1380		BCLR	FKeyAck
+L 42	[5]	198F	3F82		CLR	KeyCnt
+L 43	[5]	1991	3F8C		CLR	KeyLong
+L 44				KeySbrR:
+L 45	[6]	1993	81		RTS
+L 46				
+L 47				
+L 48				

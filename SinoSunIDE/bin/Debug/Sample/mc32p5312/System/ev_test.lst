@@ -1,0 +1,52 @@
+gpasm-1.7.0_beta1 (Oct 26 2015)ev_test.asm        2015-11-6  11:05:56          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+  000001C0            00003 IOP0    EQU     0X1C0
+  000001C1            00004 OEP0    EQU     0X1C1
+                      00005         
+                      00006 
+                      00007 
+                      00008         org 0x00
+0000   A000           00009         goto    main
+                      00010 
+                      00011 
+0001                  00012 main:
+0001   3CFF           00013         movai   0xff
+0002   57C1           00014         movra   OEP0
+                      00015     
+                      00016         ;option
+0003   3CAA           00017         movai   0xaa
+0004   57FA           00018         movra   0x1fa
+0005   57F9           00019         movra   0x1f9               
+                      00020         
+0006                  00021 loop:
+0006   3CFF           00022         movai   0xff
+0007   57C0           00023         movra   IOP0
+0008   0000           00024         nop
+0009   0000           00025         nop
+000A   77C0           00026         clrr    IOP0
+000B   0000           00027  nop
+000C   A000           00028         goto    loop
+                      00029         end      
+gpasm-1.7.0_beta1 (Oct 26 2015)ev_test.asm        2015-11-6  11:05:56          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+IOP0                              000001C0
+OEP0                              000001C1
+__33P116                          00000001
+loop                              00000006
+main                              00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

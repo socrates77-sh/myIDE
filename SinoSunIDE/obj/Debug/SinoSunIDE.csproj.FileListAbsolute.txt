@@ -1,0 +1,833 @@
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.exe
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.exe
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.exe
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.pdb
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMC20P24B.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+G:\Emulator\IDE\test\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+G:\Emulator\IDE\test\SinoSunIDE\bin\Debug\SinoSunIDE.exe
+G:\Emulator\IDE\test\SinoSunIDE\bin\Debug\SinoSunIDE.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.dll
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.dll
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScop IDE.exe
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScop IDE.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScop IDE.exe
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScop IDE.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\zh-CHS\WinScop IDE.resources.dll
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\en-US\WinScop IDE.resources.dll
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.dll
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.dll
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.zh-CHS.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.zh-CHS.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.zh-CHS.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.en-US.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.zh-CHS.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.zh-CHS.resources
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\zh-CHS\WinScop IDE.resources.dll
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\en-US\WinScop IDE.resources.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\WinScop IDE.exe
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\WinScop IDE.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\WinScop IDE.exe
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\WinScop IDE.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\zh-CHS\WinScop IDE.resources.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\en-US\WinScop IDE.resources.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\COD.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\Option.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.zh-CHS.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.zh-CHS.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.zh-CHS.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.en-US.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.zh-CHS.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.zh-CHS.resources
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\zh-CHS\WinScop IDE.resources.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\obj\Debug\en-US\WinScop IDE.resources.dll
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+G:\temp\CS\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+F:\MowinICE\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\COD.dll
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\Option.dll
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\temp\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0328\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\Option.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\SinoSunIDE.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\WinScope IDE.exe
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\COD.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\Edit.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\Edit.xml
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\Option.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.exe
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\WinScope IDE.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.exe
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\WinScope IDE.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\Option.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\CmdSNLink.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\COD.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\Edit.xml
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\ResolveAssemblyReference.cache
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmBreakPoint.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMTPRAM.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmPC.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmProjOption.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmRAM.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmROM.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmStopMess.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSys.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmSystemOption.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmWatch.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.bsGetFiles.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.NewProject_From.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmAbout.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmFile.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmEditor.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmMessage.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmREG.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmExplorer.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.frmMAIN.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.FrmCOMSeting.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\SinoSunIDE.Properties.Resources.resources
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\ResGen.read.1.tlog
+E:\tools\SinoSunIDE\SinoSunIDE\obj\Debug\ResGen.write.1.tlog

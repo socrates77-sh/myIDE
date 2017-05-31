@@ -1,0 +1,184 @@
+gplink-1.3.1 (Jul  9 2013)
+Listing File Generated: 2013-9-25  18:09:31
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           #include "mc30p011.inc"
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           #include "var.inc"
+                                           
+                                           ;#ifndef var_inc
+                                           ;#define var_inc
+                                           
+                                            extern  flag_work0
+                                            extern flag_work1
+                                            extern flag_work2
+                                           
+                                           
+                                           	extern STK06
+                                           	extern STK05
+                                           	extern STK04
+                                           	extern STK03
+                                           	extern STK02
+                                           	extern STK01
+                                           	extern STK00
+                                           ;-----------------------------
+                                           #define flag_10ms       flag_work2,0
+                                           #define flag_100ms      flag_work2,1
+                                           
+                                           
+                                           ;#endif
+                                           
+                                           
+                                            global fn_initial
+                                           
+                                           
+                                           
+                                           
+                                           code_fun01   code
+                                           fn_initial:
+000012   0b55     movai   0x55                     movai   0x55
+000013   1587     movra   0x7                      movra   flag_work0
+000014   0baa     movai   0xaa                     movai   0xaa
+000015   1599     movra   0x19                     movra   flag_work1
+                                           
+000016   000c     return                           return
+                                                   end       
+                                           
+                                           
+                                           
+                                           #include "mc30p011.inc"
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           ;#include "var.inc"
+                                           
+                                           
+                                                   extern fn_initial
+                                           
+                                            global flag_work0
+                                            global flag_work1
+                                            global flag_work2
+                                           
+                                           
+                                           	global STK06
+                                           	global STK05
+                                           	global STK04
+                                           	global STK03
+                                           	global STK02
+                                           	global STK01
+                                           	global STK00
+                                           
+                                           sharebank udata_ovr 0x0010
+                                           STK06	res 1
+                                           STK05	res 1
+                                           STK04	res 1
+                                           STK03	res 1
+                                           STK02	res 1
+                                           STK01	res 1
+                                           STK00	res 1
+                                                   
+                                           ;----------------------------------------
+                                           ; global definitions
+                                           ;----------------------------------------
+                                           ud00    udata 
+                                           flag_work0      res     1
+                                           ud01    udata        
+                                           flag_work1      res     1
+                                           ud02    udata 
+                                           counter         res     1
+                                           ud03    udata        
+                                           flag_work2      res     1
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           ;-------------------------------        
+                                           code_main    code 0x000
+000000   2801     goto    0x1                      goto    reset
+                                           
+                                           reset:
+000001   0baa     movai   0xaa                     movai   0xaa
+000002   1587     movra   0x7                      movra   flag_work0
+000003   0000     nop                              nop
+000004   2012     call    0x12                     call    fn_initial
+000005   2805     goto    0x5                      goto    $
+                                           
+                                                   end        
+                                                   
+                                                   
+                                           
+                                           #include "mc30p011.inc"
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           #include "var.inc"
+                                           
+                                           ;#ifndef var_inc
+                                           ;#define var_inc
+                                           
+                                            extern  flag_work0
+                                            extern flag_work1
+                                            extern flag_work2
+                                           
+                                           
+                                           	extern STK06
+                                           	extern STK05
+                                           	extern STK04
+                                           	extern STK03
+                                           	extern STK02
+                                           	extern STK01
+                                           	extern STK00
+                                           ;-----------------------------
+                                           #define flag_10ms       flag_work2,0
+                                           #define flag_100ms      flag_work2,1
+                                           
+                                           
+                                           ;#endif
+                                           
+                                                   global  interrupt_code
+                                                   global  acc_temp
+                                                   global  status_temp
+                                           
+                                            ;extern flag_work2
+                                                   
+                                           int_ud0         udata 
+                                           acc_temp        res 1
+                                           status_temp     res  1
+                                           
+                                           ;----------------------------------
+                                           
+                                           code_int     code    0x08
+                                           interrupt_code:
+000008   1597     movra   0x17                    movra    acc_temp
+000009   1103     swapar  0x3                    swapar    STATUS
+00000a   1598     movra   0x18                    movra    status_temp
+                                                 
+00000b   381b     bset    0x1b, 0                 bset     flag_10ms;
+00000c   3c9b     bclr    0x1b, 0x1               bclr     flag_100ms
+                                                  
+                                           exit_interrupt:
+00000d   1118     swapar  0x18                 swapar    status_temp
+00000e   1583     movra   0x3                  movra     STATUS
+00000f   1197     swapr   0x17                 swapr     acc_temp
+000010   1117     swapar  0x17                 swapar    acc_temp
+000011   000d     retie                        retie   
+                                           
+                                           
+                                                   end    
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXX---- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXX-- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    21
+

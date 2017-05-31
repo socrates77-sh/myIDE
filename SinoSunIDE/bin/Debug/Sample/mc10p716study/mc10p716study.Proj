@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC10P716" ID="0x0716" MCU_Type="AHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="mc10p716study">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="mc10p716study.asm" fPath="\mc10p716study.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="42" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="ASM" />
+  <WatchSymbol Name="learn_num" Addr="00C2" Value="??" />
+  <WatchSymbol Name="send_num" Addr="00C3" Value="??" />
+</Project>

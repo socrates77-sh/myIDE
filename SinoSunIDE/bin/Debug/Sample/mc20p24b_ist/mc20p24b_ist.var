@@ -1,0 +1,102 @@
+t0c	00
+t0data	01
+t0m	02
+t0clr	
+t0ie	
+t0f	
+mcr	03
+wtdm	0C
+wtdc	0D
+p0	10
+p1	11
+p2	12
+p0mh	16
+p0mL	17
+p0int	18
+p1m	19
+p2mh	1A
+p2mL	1B
+pwmc	22
+pwmm	23
+adm	27
+feoc	
+fads	
+bufadh	28
+bufadL	29
+guoling	
+buzz	
+yk_int	
+raly	
+nj_p	
+tao_p	
+you_p	
+zuo_p	
+hou_p	
+qian_p	
+num_wtd	A0
+taowat_num1	0A
+taowat_num2	11
+taowat_num3	1A
+taowat_num4	22
+taowat_num5	2B
+taowat_num6	33
+taowat_num7	3C
+sm_num0	3F
+sm_num1	06
+sm_num2	5B
+sm_num3	4F
+sm_num4	66
+sm_num5	6D
+sm_num6	7D
+sm_num7	07
+sm_num8	7F
+sm_num9	6F
+sm_numa	77
+sm_numb	7C
+sm_numc	39
+sm_numd	5E
+sm_nume	79
+sm_numf	71
+buzz_on	
+buzlong	
+key_lock	
+power_on	
+yk_ok	
+yk_wate	
+gl_err	
+acc_back	30
+status_back	31
+yk_125us	32
+t_125us	33
+led_125us	34
+t_1ms	35
+t_250ms	36
+t_1s	37
+f_a	38
+f_b	39
+num_buzz	3A
+num_watt	3B
+pcs_ykup	3C
+pcs_ykup125us	3D
+pcs_buzz	3E
+pcs_com1	3F
+pcs_gl_low	40
+pcs_gler	41
+pcs_gl_hig	42
+pcs_watt125us	43
+buf_qian	44
+buf_hou	45
+buf_zuo	46
+buf_you	47
+buf_nj	48
+buf_tao	49
+buf_outtime	4A
+buf_outqian	4B
+buf_outhou	4C
+buf_outzuo	4D
+buf_outyou	4E
+tm1629b_bit	4F
+yk_num1	50
+yk_num2	51
+yk_num3	52
+buf_sp	BF

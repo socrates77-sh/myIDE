@@ -1,0 +1,58 @@
+gpasm-1.7.0_beta1 (Nov 26 2015)test.asm           2016-1-28  14:27:27          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+  000001C0            00003 IOP0    EQU 0x1c0
+  000001C1            00004 OEP0    EQU 0X1C1
+  000001C8            00005 IOP2    EQU 0X1C8
+  000001C9            00006 OEP2    EQU 0X1C9
+                      00007 
+                      00008     org 0x00
+0000   A000           00009     goto    main
+                      00010        
+                      00011        
+                      00012        
+0001                  00013 main:
+0001   3C55           00014     movai   0x55
+0002   5600           00015     movra   0x00
+0003   5601           00016     movra   0x01
+0004   5650           00017     movra   0x50    ;µº»Îµÿ÷∑
+0005   57C0           00018     movra   IOP0
+0006   57C1           00019     movra   OEP0
+                      00020 
+0007                  00021 loop:
+0007   73C0           00022     comr    IOP0
+0008   A000           00023     goto    loop
+                      00024     ;lcall  loop
+                      00025        
+                      00026        
+                      00027        
+                      00028     org      0x3f00
+3F00   3CAA           00029     movai    0xaa
+3F01   5640           00030     movra    0x40
+                      00031        
+                      00032  
+                      00033     end     
+gpasm-1.7.0_beta1 (Nov 26 2015)test.asm           2016-1-28  14:27:27          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+IOP0                              000001C0
+IOP2                              000001C8
+OEP0                              000001C1
+OEP2                              000001C9
+__33P116                          00000001
+loop                              00000007
+main                              00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

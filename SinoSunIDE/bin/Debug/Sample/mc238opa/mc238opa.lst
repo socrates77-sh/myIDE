@@ -1,0 +1,467 @@
+L 1				PA	EQU	$00
+L 2				PB	EQU	$01
+L 3				PCC	EQU	$02
+L 4				DDRA	EQU		$03
+L 5				DDRB	EQU		$04
+L 6				PAHCON	EQU		$05
+L 7				PBHCON	EQU		$06
+L 8				TDR0	EQU	$07
+L 9				TLOAD0	EQU		$07
+L 10				TCR0	EQU	$08
+L 11				TDR1	EQU	$09
+L 12				TLOAD1	EQU		$09
+L 13				TCR1	EQU	$0A
+L 14				TDR2	EQU	$0B
+L 15				TLOAD2	EQU		$0B
+L 16				TCR2	EQU		$0C
+L 17				PPGC	EQU	$0D
+L 18				PPGCNT	EQU	$0E
+L 19				PPGT	EQU	$0E
+L 20				NETCTL	EQU		$0F
+L 21				INTDB	EQU		$10
+L 22				CVREF	EQU		$11
+L 23				PPGDL	EQU		$12
+L 24				CMP0C	EQU	$13
+L 25				CMP1C	EQU	$14
+L 26				CMP2C	EQU	$15
+L 27				OPAC	EQU	$16
+L 28				INTC0	EQU	$17
+L 29				INTC1	EQU	$18
+L 30				ADCON	EQU	$19
+L 31				ADCM	EQU	$1A
+L 32				ADDATAH	EQU		$1B
+L 33				ADDATAL	EQU		$1C
+L 34				MCR	EQU	$1D
+L 35				RSTFR	EQU	$1E
+L 36				MCRX EQU $1F
+L 37				;DEFINE RAM $40~FF
+L 38				R_TopTEMP EQU $40
+L 39				R_temp1   EQU $41
+L 40				OPACTEMP  EQU $42
+L 41				opaof     equ $43
+L 42				keycounter equ $44
+L 43				
+L 44				sendcode      equ $45
+L 45				
+L 46				EOC DEFINE 3,ADCON
+L 47				ADCE DEFINE 0,ADCON
+L 48				
+L 49				KEY DEFINE 1,PCC
+L 50				FREQ DEFINE 0,PCC
+L 51				
+L 52				PST DEFINE 7,PPGC
+L 53				C0CMPOP DEFINE 7,MCRX
+L 54				C1CMPOP DEFINE 6,MCRX
+L 55				C2CMPOP DEFINE 5,MCRX
+L 56				OPAMPOP DEFINE 4,MCRX
+L 57				
+L 58				C0COFM  DEFINE 7,CMP0C
+L 59				C0CRS   DEFINE 6,CMP0C
+L 60				
+L 61				C1COFM  DEFINE 7,CMP1C
+L 62				C1CRS   DEFINE 6,CMP1C
+L 63				
+L 64				C2COFM  DEFINE 7,CMP2C
+L 65				C2CRS   DEFINE 6,CMP2C
+L 66				
+L 67				OPAOFM  DEFINE 7,OPAC
+L 68				OPARS   DEFINE 6,OPAC
+L 69				
+L 70				CMP0EN  DEFINE 7,MCR
+L 71				CMP1EN  DEFINE 6,MCR
+L 72				CMP2EN  DEFINE 5,MCR
+L 73				OPAEN   DEFINE 4,MCR
+L 74				
+L 75				WDTC    DEFINE 0,MCR
+L 76				PA0     DEFINE 0,PA
+L 77				PA2		DEFINE 2,PA
+L 78				;PB7,PB6,PB3~PB0输出OPA校准值
+L 79				;key按键按一次校准值加一
+L 80				
+L 81				ORG $2000
+L 82				POWER_ON:
+L 83	[5]	2000	101D	         bset wdtc
+L 84	[5]	2002	3F08			 CLR TCR0
+L 85						 ;CLR TCR1
+L 86	[5]	2004	3F0C			 CLR TCR2
+L 87	[2]	2006	A6FF			 LDA #%11111111
+L 88	[4]	2008	B703			 STA DDRA
+L 89	[5]	200A	3F05			 CLR PAHCON
+L 90	[2]	200C	A6FF			 LDA #%11111111
+L 91	[4]	200E	B704			 STA DDRB
+L 92	[5]	2010	3F06			 CLR PBHCON
+L 93						 
+L 94				;		 brclr 3,rstfr,inirst
+L 95						
+L 96				;         bclr 3,rstfr
+L 97				;		 brset freq,clrfreq
+L 98				;		 bset freq
+L 99				;		 bra next
+L 100				;clrfreq:
+L 101				;         bclr freq
+L 102				;         bra next
+L 103				;inirst:		 
+L 104	[2]	2012	A624			 LDA #%00100100
+L 105	[4]	2014	B702			 STA PCC
+L 106				
+L 107				;next:		 
+L 108	[5]	2016	3F17			 CLR INTC0
+L 109	[5]	2018	3F18			 CLR INTC1
+L 110						 ;CLR PPGC 
+L 111	[2]	201A	A66D			 LDA #$6D
+L 112	[4]	201C	B70F			 STA NETCTL
+L 113						 ;CLR INTDB
+L 114	[2]	201E	A6FF			 LDA #$FF
+L 115	[4]	2020	B711			 STA CVREF
+L 116						 
+L 117						 ;CLR PPGDL
+L 118						 ;CLR CMP0C
+L 119						 ;CLR CMP1C
+L 120						 ;CLR CMP2C
+L 121						 ;CLR OPAC
+L 122	[5]	2022	3F1D			 CLR MCR
+L 123						 ;CLR MCRX
+L 124						 ;CLR RSTFR
+L 125						 ;LDA #%00000110
+L 126						 ;STA ADCON
+L 127	[5]	2024	3F19			 CLR ADCON
+L 128						 ;LDA #%00000001
+L 129						 ;STA ADCM
+L 130	[5]	2026	3F1A			 CLR ADCM
+L 131						 
+L 132	[5]	2028	3F00	         CLR PA
+L 133	[5]	202A	3F01			 CLR PB
+L 134						 
+L 135				SET_PPG:
+L 136	[2]	202C	A67F	         LDA #%01111111
+L 137	[4]	202E	B70D			 STA PPGC
+L 138	[2]	2030	A6FF			 LDA #$FF
+L 139	[4]	2032	B70E			 STA PPGT
+L 140	[2]	2034	A6FF	         LDA #%11111111
+L 141	[4]	2036	B710			 STA INTDB
+L 142	[2]	2038	A6FF			 LDA #%11111111
+L 143	[4]	203A	B712			 STA PPGDL
+L 144	[2]	203C	A6FF			 LDA #$FF
+L 145	[4]	203E	B709			 STA TDR1
+L 146	[2]	2040	A6FF			 LDA #%11111111
+L 147	[4]	2042	B70A			 STA TCR1
+L 148				         
+L 149						 ;BSET CMP0EN
+L 150						 ;BSET CMP1EN
+L 151						 ;BSET CMP2EN
+L 152	[5]	2044	181D			 BSET OPAEN
+L 153						 
+L 154						 ;JSR CAL_C0
+L 155				         ;JSR CAL_C1
+L 156						 ;JSR CAL_C2
+L 157				
+L 158				
+L 159				
+L 160	[6]	2046	CD20B8			 JSR CAL_OPA_AUTO
+L 161				         
+L 162	[3]	2049	B616			 LDA OPAC
+L 163	[2]	204B	A430			 AND #$30
+L 164	[3]	204D	48			 LSLA
+L 165	[3]	204E	48			 LSLA
+L 166	[4]	204F	B742			 STA OPACTEMP
+L 167	[3]	2051	B616			 LDA OPAC
+L 168	[2]	2053	A40F			 AND #$0F
+L 169	[3]	2055	BA42			 ora OPACTEMP
+L 170	[4]	2057	B701			 STA PB
+L 171						 
+L 172	[5]	2059	3F43			 clr opaof
+L 173	[5]	205B	3F44			 clr keycounter
+L 174				
+L 175	[2]	205D	A606			 LDA #%00000110
+L 176	[4]	205F	B719			 STA ADCON
+L 177	[2]	2061	A601			 LDA #%00000001
+L 178	[4]	2063	B71A			 STA ADCM
+L 179						 
+L 180				;FREQLOOP2:	
+L 181				FREQLOOP: 
+L 182				
+L 183	[5]	2065	1019	          BSET ADCE      ;START AD CONVERT
+L 184	[2]	2067	9D			  NOP
+L 185				 AD_CLOOP:
+L 186	[5]	2068	0719FD	          BRCLR EOC,AD_CLOOP  ;AD CONVERTED END?
+L 187				          
+L 188	[6]	206B	CD2133			  JSR DELAY100US
+L 189	[3]	206E	B61B			  lda ADDATAH
+L 190	[6]	2070	CD2140			  JSR SendAD2Pa0
+L 191	[3]	2073	B61C	          lda ADDATAL
+L 192	[6]	2075	CD2140			  JSR SendAD2Pa0
+L 193	[6]	2078	CD2133	          JSR DELAY100US
+L 194						  
+L 195	[5]	207B	000204	          BRSET FREQ,CLR_FREQ;5
+L 196	[5]	207E	1002			  BSET FREQ;5
+L 197	[3]	2080	2004			  BRA keyscan;3
+L 198				CLR_FREQ:
+L 199	[5]	2082	1102	          BCLR FREQ;5
+L 200	[3]	2084	2000	          BRA keyscan;3
+L 201				
+L 202				keyscan:
+L 203	[5]	2086	101D	          bset wdtc
+L 204	[5]	2088	02020A			  brset key,keydo
+L 205	[3]	208B	B644			  lda keycounter
+L 206	[2]	208D	A1FA			  cmp #250
+L 207	[3]	208F	22D4			  bhi freqloop
+L 208	[5]	2091	3C44			  inc keycounter
+L 209	[3]	2093	20D0			  bra freqloop
+L 210				
+L 211				keydo:
+L 212	[3]	2095	B644	          lda keycounter
+L 213	[2]	2097	A1F0			  cmp #240
+L 214	[3]	2099	2204			  bhi opa_key
+L 215	[5]	209B	3F44			  clr keycounter
+L 216	[3]	209D	20C6			  bra freqloop
+L 217				
+L 218				opa_key:
+L 219	[5]	209F	3F44			 clr keycounter
+L 220	[6]	20A1	CD2123			 JSR CAL_OPA_KEY
+L 221	[3]	20A4	B616			 LDA OPAC
+L 222	[2]	20A6	A430			 AND #$30
+L 223	[3]	20A8	48			 LSLA
+L 224	[3]	20A9	48			 LSLA
+L 225	[4]	20AA	B742			 STA OPACTEMP
+L 226	[3]	20AC	B616			 LDA OPAC
+L 227	[2]	20AE	A40F			 AND #$0F
+L 228	[3]	20B0	BA42			 ora OPACTEMP
+L 229	[4]	20B2	B701			 STA PB         
+L 230	[5]	20B4	3C43	         inc opaof
+L 231	[3]	20B6	20AD			 bra freqloop
+L 232						  
+L 233				
+L 234				;CMP_C0:		  
+L 235				;		  BRSET C0CMPOP,BSET_PB2
+L 236				;		  BCLR PB2
+L 237				;		  BRA  CMP_C1
+L 238				;BSET_PB2:		  
+L 239				;		  BSET PB2
+L 240				;		  BRA  CMP_C1
+L 241				;CMP_C1:		  
+L 242				;		  BRSET C1CMPOP,BSET_PB3
+L 243				;		  BCLR PB3
+L 244				;		  BRA  CMP_C2
+L 245				;BSET_PB3:		  
+L 246				;		  BSET PB3
+L 247				;		  BRA  CMP_C2
+L 248				;CMP_C2:		  
+L 249				;		  BRSET C2CMPOP,BSET_PB7
+L 250				;		  BCLR PB7
+L 251				;		  BRA  CMP_END
+L 252				;BSET_PB7:		  
+L 253				;		  BSET PB7
+L 254				;		  BRA  CMP_END
+L 255				;CMP_END:
+L 256						  
+L 257				;		  BRSET KEY,FREQLOOP;5
+L 258				;          BSET PST
+L 259				;		  BRA FREQLOOP2;3
+L 260				
+L 261				
+L 262				;===============================================比较器
+L 263				;CAL_C0:
+L 264				;				CLR    CMP0C
+L 265				;				BSET		C0COFM						
+L 266				;				BSET		C0CRS
+L 267				;				JSR  DELAY100US
+L 268				;				LDA		MCRX
+L 269				;				AND		#%10000000
+L 270				;				STA		R_temp1				
+L 271				;CAL_C0LP:		
+L 272				;				INC		CMP0C
+L 273				;				JSR  DELAY100US
+L 274				;				LDA		CMP0C
+L 275				;				AND		#%00111111
+L 276				;				EOR		#%00111111
+L 277				;				BEQ     CAL_C0_END
+L 278				;				JSR  DELAY100US
+L 279				;				LDA		MCRX				
+L 280				;				AND		#%10000000
+L 281				;				EOR		R_temp1
+L 282				;				BEQ     CAL_C0LP				
+L 283				;CAL_C0_END:				
+L 284				;				BCLR		C0COFM	
+L 285				;				RTS				
+L 286				;				
+L 287								
+L 288				
+L 289				;CAL_C1:
+L 290				;				CLR    CMP1C
+L 291				;				BSET		C1COFM						
+L 292				;				BSET		C1CRS
+L 293				;				JSR  DELAY100US
+L 294				;				LDA		MCRX
+L 295				;				AND		#%01000000
+L 296				;				STA		R_temp1				
+L 297				;CAL_C1LP:		
+L 298				;				INC		CMP1C
+L 299				;				JSR  DELAY100US
+L 300				;				LDA		CMP1C
+L 301				;				AND		#%00111111
+L 302				;				EOR		#%00111111
+L 303				;				BEQ     CAL_C1_END
+L 304				;				JSR  DELAY100US
+L 305				;				LDA		MCRX				
+L 306				;				AND		#%01000000
+L 307				;				EOR		R_temp1
+L 308				;				BEQ     CAL_C1LP				
+L 309				;CAL_C1_END:				
+L 310				;				BCLR		C1COFM	
+L 311				;				RTS				
+L 312								
+L 313								
+L 314				;CAL_C2:
+L 315				;				CLR    CMP2C
+L 316				;				BSET		C2COFM						
+L 317				;				BSET		C2CRS
+L 318				;				JSR  DELAY100US
+L 319				;				LDA		MCRX
+L 320				;				AND		#%00100000
+L 321				;				STA		R_temp1				
+L 322				;CAL_C2LP:		
+L 323				;				INC		CMP2C
+L 324				;				JSR  DELAY100US
+L 325				;				LDA		CMP2C
+L 326				;				AND		#%00111111
+L 327				;				EOR		#%00111111
+L 328				;				BEQ     CAL_C2_END
+L 329				;				JSR  DELAY100US
+L 330				;				LDA		MCRX				
+L 331				;				AND		#%00100000
+L 332				;				EOR		R_temp1
+L 333				;				BEQ     CAL_C2LP				
+L 334				;CAL_C2_END:				
+L 335				;				BCLR		C2COFM	
+L 336				;				RTS				
+L 337								
+L 338				;===============================================运放
+L 339				;*************************************************
+L 340				;*	MC20P38 OPA自动校准例程
+L 341				;*	2012-09-11
+L 342				;*	Liang Huifeng
+L 343				;*************************************************				
+L 344				CAL_OPA_AUTO:
+L 345	[5]	20B8	3F16					CLR    OPAC;设置OPAOF[5:0]=00
+L 346	[5]	20BA	1E16					BSET		OPAOFM;S3闭合，进入输入失调消除模式						
+L 347	[5]	20BC	1C16					BSET		OPARS;S2闭合，选择OPAP作为校准基准端
+L 348				
+L 349	[6]	20BE	CD2133					JSR  DELAY100US;等待至少100US
+L 350	[6]	20C1	CD2133	    JSR  DELAY100US;等待至少100US
+L 351	[6]	20C4	CD2133					JSR  DELAY100US;等待至少100US
+L 352	[6]	20C7	CD2133	    JSR  DELAY100US;等待至少100US
+L 353	[6]	20CA	CD2133					JSR  DELAY100US;等待至少100US
+L 354	[6]	20CD	CD2133	    JSR  DELAY100US;等待至少100US 
+L 355	[6]	20D0	CD2133					JSR  DELAY100US;等待至少100US
+L 356	[6]	20D3	CD2133	    JSR  DELAY100US;等待至少100US
+L 357	[6]	20D6	CD2133					JSR  DELAY100US;等待至少100US
+L 358	[6]	20D9	CD2133	    JSR  DELAY100US;等待至少100US    
+L 359	[3]	20DC	B61F					LDA		MCRX
+L 360	[2]	20DE	A410					AND		#%00010000
+L 361	[4]	20E0	B741					STA		R_temp1;读取OPAO当前状态				
+L 362				CAL_OPALP:		
+L 363	[3]	20E2	B616					LDA		OPAC;判断OPAOF[5:0]=3F仍未检测到OPAO变化则视为校准失败
+L 364	[2]	20E4	A43F					AND		#%00111111
+L 365	[2]	20E6	A83F					EOR		#%00111111
+L 366	[3]	20E8	2734					BEQ     CAL_OPA_ERROR
+L 367								
+L 368	[5]	20EA	3C16					INC		OPAC;设置OPAOF[5:0]=00
+L 369	[6]	20EC	CD2133					JSR 	DELAY100US;等待至少100US
+L 370	[6]	20EF	CD2133					JSR  DELAY100US;等待至少100US
+L 371	[6]	20F2	CD2133	    JSR  DELAY100US;等待至少100US
+L 372	[6]	20F5	CD2133					JSR  DELAY100US;等待至少100US
+L 373	[6]	20F8	CD2133	    JSR  DELAY100US;等待至少100US
+L 374	[6]	20FB	CD2133					JSR  DELAY100US;等待至少100US
+L 375	[6]	20FE	CD2133	    JSR  DELAY100US;等待至少100US 
+L 376	[6]	2101	CD2133					JSR  DELAY100US;等待至少100US
+L 377	[6]	2104	CD2133	    JSR  DELAY100US;等待至少100US
+L 378	[6]	2107	CD2133					JSR  DELAY100US;等待至少100US
+L 379	[6]	210A	CD2133	    JSR  DELAY100US;等待至少100US
+L 380	[3]	210D	B61F					LDA		MCRX				
+L 381	[2]	210F	A410					AND		#%00010000
+L 382	[3]	2111	B841					EOR		R_temp1;判读OPAO是否发生变化
+L 383	[3]	2113	27CD					BEQ     CAL_OPALP	
+L 384								
+L 385	[5]	2115	1400					BSET    PA2;校准成功，PA2输出高
+L 386								
+L 387	[5]	2117	0B1606	                BRCLR	5,OPAC,CAL_OPA_END; 判断OPAOF[5]，如果OPAOF[5]=0，则将当前值为校准值，
+L 388	[5]	211A	3A16	                DEC		OPAC;如果OPAOF[5]=1，则将当前值减1后为校准值
+L 389	[3]	211C	2002					BRA		CAL_OPA_END
+L 390				CAL_OPA_ERROR:
+L 391	[5]	211E	1500	                BCLR   PA2;校准失败，PA2输出低电平
+L 392				CAL_OPA_END:
+L 393	[5]	2120	1F16					BCLR		OPAOFM;退出输入失调消除模式	
+L 394	[6]	2122	81					RTS				
+L 395				
+L 396				
+L 397				                
+L 398				
+L 399				
+L 400				CAL_OPA_KEY:
+L 401								;CLR    OPAC
+L 402	[3]	2123	B643					lda opaof
+L 403	[2]	2125	A43F					and #$3f
+L 404	[4]	2127	B716					sta opac
+L 405	[5]	2129	1E16					BSET		OPAOFM						
+L 406	[5]	212B	1C16					BSET		OPARS
+L 407	[6]	212D	CD2133					JSR  DELAY100US
+L 408								;LDA		MCRX
+L 409								;AND		#%00010000
+L 410								;STA		R_temp1				
+L 411				;CAL_OPALP_KEY:		
+L 412								;INC		OPAC
+L 413								;JSR  DELAY100US
+L 414								;LDA		OPAC
+L 415								;AND		#%00111111
+L 416								;EOR		#%00111111
+L 417								;BEQ     CAL_OPA_END_KEY
+L 418								;JSR  DELAY100US
+L 419								;LDA		MCRX				
+L 420								;AND		#%00010000
+L 421								;EOR		R_temp1
+L 422								;BEQ     CAL_OPALP_KEY				
+L 423				;CAL_OPA_END_KEY:				
+L 424	[5]	2130	1F16					BCLR		OPAOFM	
+L 425	[6]	2132	81					RTS	
+L 426				
+L 427					
+L 428				DELAY100US:
+L 429	[2]	2133	A6FF	        LDA   #$FF
+L 430	[4]	2135	B740	        STA   R_TopTEMP
+L 431				DELAY100USLOOP:        
+L 432	[2]	2137	9D	        NOP
+L 433	[2]	2138	9D	        NOP
+L 434	[2]	2139	9D	        NOP
+L 435	[2]	213A	9D	        NOP
+L 436	[5]	213B	3A40	        DEC   R_TopTEMP
+L 437	[3]	213D	26F8	        BNE   DELAY100USLOOP
+L 438	[6]	213F	81			RTS	 
+L 439				
+L 440				SendAD2Pa0:
+L 441	[4]	2140	B745	        STA sendcode
+L 442	[2]	2142	AE08			ldx #8		 
+L 443				outPA0loop:
+L 444	[5]	2144	0E450C			 brset 7,sendcode,bsetPA0out
+L 445	[5]	2147	1000			 bset PA0
+L 446	[5]	2149	1100			 bclr PA0
+L 447	[5]	214B	1100			 bclr PA0
+L 448	[5]	214D	1100			 bclr PA0
+L 449	[5]	214F	1100			 bclr PA0
+L 450	[3]	2151	200C			 bra  outPA0loop1
+L 451				bsetPA0out:
+L 452	[5]	2153	1000	         bset PA0
+L 453	[5]	2155	1000			 bset PA0
+L 454	[5]	2157	1000			 bset PA0
+L 455	[5]	2159	1000			 bset PA0
+L 456	[5]	215B	1100			 bclr PA0
+L 457	[3]	215D	2000			 bra  outPA0loop1
+L 458				outPA0loop1:		 
+L 459	[5]	215F	3845			 lsL sendcode
+L 460	[3]	2161	5A			 decx
+L 461	[3]	2162	26E0			 bne outPA0loop		
+L 462				
+L 463	[6]	2164	81	        RTS
+L 464				
+L 465						 
+L 466				         ORG $3FFE
+L 467		3FFE	2000	   		 FDB POWER_ON

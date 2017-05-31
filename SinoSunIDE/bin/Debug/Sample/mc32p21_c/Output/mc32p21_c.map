@@ -1,0 +1,229 @@
+gplink-1.7.0_beta1 (Nov 26 2015)
+Map File - Created 2016-4-18  09:49:35
+ 
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                  STARTUP       code   00000000    program   0x000002
+              c_interrupt       code   0x000008    program   0x000048
+                code_main       code   0x00002c    program   0x0002c0
+                    .code       code   0x00018c    program   0x000022
+                ID_main_0       code   0x00019d    program   0x000014
+                ID_main_1       code   0x0001a7    program   0x000014
+                ID_main_2       code   0x0001b1    program   0x000014
+                ID_main_3       code   0x0001bb    program   0x000014
+                ID_main_4       code   0x0001c5    program   0x000014
+                ID_main_5       code   0x0001cf    program   0x000014
+                ID_main_6       code   0x0001d9    program   0x000014
+                sharebank      udata   00000000       data   0x000007
+               UDL_main_0      udata   0x000007       data   0x000009
+               UD_main_18      udata   0x000010       data   0x000002
+               UD_main_19      udata   0x000012       data   0x000002
+                UD_main_0      udata   0x000014       data   0x000001
+                UD_main_1      udata   0x000015       data   0x000001
+                UD_main_2      udata   0x000016       data   0x000001
+                UD_main_3      udata   0x000017       data   0x000001
+                UD_main_4      udata   0x000018       data   0x000001
+                UD_main_5      udata   0x000019       data   0x000001
+                UD_main_6      udata   0x00001a       data   0x000001
+                UD_main_7      udata   0x00001b       data   0x000001
+                UD_main_8      udata   0x00001c       data   0x000001
+                UD_main_9      udata   0x00001d       data   0x000001
+               UD_main_10      udata   0x00001e       data   0x000001
+               UD_main_11      udata   0x00001f       data   0x000001
+               UD_main_12      udata   0x000020       data   0x000001
+               UD_main_13      udata   0x000021       data   0x000001
+               UD_main_14      udata   0x000022       data   0x000001
+               UD_main_15      udata   0x000023       data   0x000001
+               UD_main_16      udata   0x000024       data   0x000001
+               UD_main_17      udata   0x000025       data   0x000001
+               UD_main_20      udata   0x000026       data   0x000001
+               UD_main_21      udata   0x000027       data   0x000001
+          UD_abs_3221_180      udata   0x000180       data   0x000001
+          UD_abs_3221_181      udata   0x000181       data   0x000001
+          UD_abs_3221_182      udata   0x000182       data   0x000001
+          UD_abs_3221_183      udata   0x000183       data   0x000001
+          UD_abs_3221_184      udata   0x000184       data   0x000001
+          UD_abs_3221_185      udata   0x000185       data   0x000001
+          UD_abs_3221_186      udata   0x000186       data   0x000001
+          UD_abs_3221_187      udata   0x000187       data   0x000001
+          UD_abs_3221_188      udata   0x000188       data   0x000001
+          UD_abs_3221_189      udata   0x000189       data   0x000001
+          UD_abs_3221_18a      udata   0x00018a       data   0x000001
+          UD_abs_3221_18b      udata   0x00018b       data   0x000001
+          UD_abs_3221_190      udata   0x000190       data   0x000001
+          UD_abs_3221_191      udata   0x000191       data   0x000001
+          UD_abs_3221_192      udata   0x000192       data   0x000001
+          UD_abs_3221_193      udata   0x000193       data   0x000001
+          UD_abs_3221_194      udata   0x000194       data   0x000001
+          UD_abs_3221_195      udata   0x000195       data   0x000001
+          UD_abs_3221_196      udata   0x000196       data   0x000001
+          UD_abs_3221_197      udata   0x000197       data   0x000001
+          UD_abs_3221_1a0      udata   0x0001a0       data   0x000001
+          UD_abs_3221_1a1      udata   0x0001a1       data   0x000001
+          UD_abs_3221_1a2      udata   0x0001a2       data   0x000001
+          UD_abs_3221_1a3      udata   0x0001a3       data   0x000001
+          UD_abs_3221_1a4      udata   0x0001a4       data   0x000001
+          UD_abs_3221_1a5      udata   0x0001a5       data   0x000001
+          UD_abs_3221_1a6      udata   0x0001a6       data   0x000001
+          UD_abs_3221_1a7      udata   0x0001a7       data   0x000001
+          UD_abs_3221_1ae      udata   0x0001ae       data   0x000001
+          UD_abs_3221_1af      udata   0x0001af       data   0x000001
+          UD_abs_3221_1b0      udata   0x0001b0       data   0x000001
+          UD_abs_3221_1b1      udata   0x0001b1       data   0x000001
+          UD_abs_3221_1b4      udata   0x0001b4       data   0x000001
+          UD_abs_3221_1b5      udata   0x0001b5       data   0x000001
+          UD_abs_3221_1fb      udata   0x0001fb       data   0x000001
+ 
+                              Program Memory Usage
+                               Start         End
+                           ---------   ---------
+                            0x00019d    0x0001a6
+                            0x0001a7    0x0001b0
+                            0x0001b1    0x0001ba
+                            0x0001bb    0x0001c4
+                            0x0001c5    0x0001ce
+                            0x0001cf    0x0001d8
+                            0x0001d9    0x0001e2
+                            00000000    00000000
+                            0x000008    0x00002b
+                            0x00002c    0x00018b
+                            0x00018c    0x00019c
+ 
+                            476 program addresses used
+ 
+                              Symbols
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                    STK06   00000000       data     extern main.asm
+                    STK05   0x000001       data     extern main.asm
+                    STK04   0x000002       data     extern main.asm
+                    STK03   0x000003       data     extern main.asm
+                    STK02   0x000004       data     extern main.asm
+                    STK01   0x000005       data     extern main.asm
+                    STK00   0x000006       data     extern main.asm
+                    _ABuf   0x000014       data     extern main.asm
+               _StatusBuf   0x000015       data     extern main.asm
+                    _R_r0   0x000016       data     extern main.asm
+                    _R_r1   0x000017       data     extern main.asm
+                    _R_r2   0x000018       data     extern main.asm
+                    _R_r3   0x000019       data     extern main.asm
+                    _R_r4   0x00001a       data     extern main.asm
+                    _R_r5   0x00001b       data     extern main.asm
+                    _R_r6   0x00001c       data     extern main.asm
+                    _R_r7   0x00001d       data     extern main.asm
+                  _R_test   0x00001e       data     extern main.asm
+             _R_disp_mode   0x00001f       data     extern main.asm
+                _R_disp_H   0x000020       data     extern main.asm
+                _R_disp_M   0x000021       data     extern main.asm
+                _R_disp_L   0x000022       data     extern main.asm
+              _R_ADC_Filt   0x000023       data     extern main.asm
+              _R_ADC_temp   0x000024       data     extern main.asm
+             _R_ADC_const   0x000025       data     extern main.asm
+                _R_16_ADC   0x000010       data     extern main.asm
+               _R_ADC_bak   0x000012       data     extern main.asm
+                   _Flag1   0x000026       data     extern main.asm
+                   _Flag2   0x000027       data     extern main.asm
+                  r0x101B   0x000007       data     static main.asm
+                  r0x101C   0x000008       data     static main.asm
+                  r0x101D   0x000009       data     static main.asm
+                  r0x101E   0x00000a       data     static main.asm
+                  r0x1013   0x00000b       data     static main.asm
+                  r0x1014   0x00000c       data     static main.asm
+                  r0x1017   0x00000d       data     static main.asm
+                  r0x1018   0x00000e       data     static main.asm
+                  r0x101A   0x00000f       data     static main.asm
+                _TAB_sega   0x00019d    program     extern main.asm
+                _TAB_segb   0x0001a7    program     extern main.asm
+                _TAB_segc   0x0001b1    program     extern main.asm
+                _TAB_segd   0x0001bb    program     extern main.asm
+                _TAB_sege   0x0001c5    program     extern main.asm
+                _TAB_segf   0x0001cf    program     extern main.asm
+                _TAB_segg   0x0001d9    program     extern main.asm
+         __sdcc_interrupt   0x000008    program     static main.asm
+                 _int_isr   0x000008    program     extern main.asm
+               _00165_DS_   0x000012    program     static main.asm
+               _00167_DS_   0x000019    program     static main.asm
+               _00169_DS_   0x000020    program     static main.asm
+               _00171_DS_   0x000027    program     static main.asm
+         END_OF_INTERRUPT   0x00002b    program     static main.asm
+                    _main   0x00002c    program     extern main.asm
+          _code_main_0008   0x000034    program     static main.asm
+               _00138_DS_   0x000039    program     static main.asm
+               _00140_DS_   0x00003c    program     static main.asm
+               _00131_DS_   0x000041    program     static main.asm
+               _00143_DS_   0x000051    program     static main.asm
+               _00159_DS_   0x000060    program     static main.asm
+               _00135_DS_   0x000071    program     static main.asm
+               _00136_DS_   0x00007e    program     static main.asm
+                _Division   0x0000a3    program     extern main.asm
+               _00121_DS_   0x0000b7    program     static main.asm
+               _00125_DS_   0x0000b9    program     static main.asm
+               updata_div   0x0000c6    program     static main.asm
+                 r0_shift   0x0000c8    program     static main.asm
+               _00126_DS_   0x0000d4    program     static main.asm
+          _Multiplication   0x0000d5    program     extern main.asm
+               _00115_DS_   0x0000dc    program     static main.asm
+                 Mul_loop   0x0000e1    program     static main.asm
+                 _Display   0x0000ee    program     extern main.asm
+                _Init_sys   0x000178    program     extern main.asm
+                    _INDF   0x000180       data     extern 3221.asm
+                   _INDF0   0x000180       data     extern 3221.asm
+                   _INDF1   0x000181       data     extern 3221.asm
+                   _INDF2   0x000182       data     extern 3221.asm
+                  _HIBYTE   0x000183       data     extern 3221.asm
+                     _FSR   0x000184       data     extern 3221.asm
+                    _FSR0   0x000184       data     extern 3221.asm
+                    _FSR1   0x000185       data     extern 3221.asm
+                     _PCL   0x000186       data     extern 3221.asm
+              _STATUSbits   0x000187       data     extern 3221.asm
+                  _STATUS   0x000187       data     extern 3221.asm
+                 _MCRbits   0x000188       data     extern 3221.asm
+                     _MCR   0x000188       data     extern 3221.asm
+                   _INDF3   0x000189       data     extern 3221.asm
+                _INTEbits   0x00018a       data     extern 3221.asm
+                    _INTE   0x00018a       data     extern 3221.asm
+                _INTFbits   0x00018b       data     extern 3221.asm
+                    _INTF   0x00018b       data     extern 3221.asm
+                _IOP0bits   0x000190       data     extern 3221.asm
+                    _IOP0   0x000190       data     extern 3221.asm
+                _OEP0bits   0x000191       data     extern 3221.asm
+                    _OEP0   0x000191       data     extern 3221.asm
+                _PUP0bits   0x000192       data     extern 3221.asm
+                    _PUP0   0x000192       data     extern 3221.asm
+               _ANSELbits   0x000193       data     extern 3221.asm
+                   _ANSEL   0x000193       data     extern 3221.asm
+                _IOP1bits   0x000194       data     extern 3221.asm
+                    _IOP1   0x000194       data     extern 3221.asm
+                _OEP1bits   0x000195       data     extern 3221.asm
+                    _OEP1   0x000195       data     extern 3221.asm
+                _PUP1bits   0x000196       data     extern 3221.asm
+                    _PUP1   0x000196       data     extern 3221.asm
+                _KBIMbits   0x000197       data     extern 3221.asm
+                    _KBIM   0x000197       data     extern 3221.asm
+                _T0CRbits   0x0001a0       data     extern 3221.asm
+                    _T0CR   0x0001a0       data     extern 3221.asm
+                   _T0CNT   0x0001a1       data     extern 3221.asm
+                  _T0LOAD   0x0001a2       data     extern 3221.asm
+                  _T0DATA   0x0001a3       data     extern 3221.asm
+                _T1CRbits   0x0001a4       data     extern 3221.asm
+                    _T1CR   0x0001a4       data     extern 3221.asm
+                   _T1CNT   0x0001a5       data     extern 3221.asm
+                  _T1LOAD   0x0001a6       data     extern 3221.asm
+                  _T1DATA   0x0001a7       data     extern 3221.asm
+                _OSCMbits   0x0001ae       data     extern 3221.asm
+                    _OSCM   0x0001ae       data     extern 3221.asm
+               _LVDCRbits   0x0001af       data     extern 3221.asm
+                   _LVDCR   0x0001af       data     extern 3221.asm
+               _ADCR0bits   0x0001b0       data     extern 3221.asm
+                   _ADCR0   0x0001b0       data     extern 3221.asm
+               _ADCR1bits   0x0001b1       data     extern 3221.asm
+                   _ADCR1   0x0001b1       data     extern 3221.asm
+                    _ADRH   0x0001b4       data     extern 3221.asm
+                    _ADRL   0x0001b5       data     extern 3221.asm
+                   _OSCAL   0x0001fb       data     extern 3221.asm
+                __gptrget   0x00018c    program     extern ../libsdcc/_gptrget1.S
+               __gptrget1   0x00018c    program     extern ../libsdcc/_gptrget1.S
+            __dataptrget1   0x000193    program     static ../libsdcc/_gptrget1.S
+            __codeptrget1   0x000197    program     extern ../libsdcc/_gptrget1.S
+ 

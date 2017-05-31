@@ -1,0 +1,45 @@
+﻿System.Exception: ex2
+   在 SinoSunIDE.Program.Main(String[] args) 位置 E:\tools\SinoSunIDE\SinoSunIDE\Program.cs:行号 20
+   在 System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+System.IO.IOException: 文件“E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\global.ini”正由另一进程使用，因此该进程无法访问该文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   在 System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   在 System.Xml.Linq.XElement.Load(String uri, LoadOptions options)
+   在 System.Xml.Linq.XElement.Load(String uri)
+   在 SinoSunIDE.FrmExplorer..ctor() 位置 E:\tools\SinoSunIDE\SinoSunIDE\FrmExplorer.cs:行号 47
+   在 SinoSunIDE.frmMAIN..ctor(String strProName) 位置 E:\tools\SinoSunIDE\SinoSunIDE\FrmMain.global.cs:行号 101
+   在 SinoSunIDE.Program.Main(String[] args) 位置 E:\tools\SinoSunIDE\SinoSunIDE\Program.cs:行号 28
+   在 System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+System.IO.IOException: 文件“E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\global.ini”正由另一进程使用，因此该进程无法访问该文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   在 System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   在 System.Xml.Linq.XElement.Load(String uri, LoadOptions options)
+   在 System.Xml.Linq.XElement.Load(String uri)
+   在 SinoSunIDE.frmMAIN..ctor(String strProName) 位置 E:\tools\SinoSunIDE\SinoSunIDE\FrmMAIN.cs:行号 71
+   在 SinoSunIDE.Program.Main(String[] args) 位置 E:\tools\SinoSunIDE\SinoSunIDE\Program.cs:行号 28
+   在 System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()

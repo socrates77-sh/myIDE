@@ -1,0 +1,108 @@
+L 1				;-----------------------------------------------------------------------
+L 2				ADCSbr:
+L 3	[5]	1A1B	080310		BRSET	pPwr,ADCSbr0
+L 4	[5]	1A1E	08000D		BRSET	pVIn,ADCSbr0
+L 5	[5]	1A21	3F8A		CLR	ADCnt
+L 6	[5]	1A23	3F85		CLR	TempADBuf
+L 7	[5]	1A25	3F86		CLR	TempADBuf+1
+L 8	[5]	1A27	3F88		CLR	VADBuf
+L 9	[5]	1A29	3F89		CLR	VADBuf+1
+L 10	[5]	1A2B	1980		BCLR	FADOver
+L 11	[6]	1A2D	81		RTS
+L 12				ADCSbr0:
+L 13	[2]	1A2E	A616		LDA	#$16
+L 14	[6]	1A30	CD1AB6		JSR	ADCovSbr
+L 15	[3]	1A33	B614		LDA	ADTH
+L 16					;LDA	Test
+L 17	[3]	1A35	BB85		ADD	TempADBuf
+L 18	[4]	1A37	B785		STA	TempADBuf
+L 19	[3]	1A39	4F		CLRA
+L 20	[3]	1A3A	B986		ADC	TempADBuf+1
+L 21	[4]	1A3C	B786		STA	TempADBuf+1
+L 22				
+L 23	[2]	1A3E	A636		LDA	#$36
+L 24	[6]	1A40	CD1AB6		JSR	ADCovSbr
+L 25	[3]	1A43	B614		LDA	ADTH
+L 26					;LDA	Test1
+L 27	[3]	1A45	BB88		ADD	VADBuf
+L 28	[4]	1A47	B788		STA	VADBuf
+L 29	[3]	1A49	4F		CLRA
+L 30	[3]	1A4A	B989		ADC	VADBuf+1
+L 31	[4]	1A4C	B789		STA	VADBuf+1
+L 32				
+L 33	[5]	1A4E	1913		BCLR	ADEN		;关闭ADC功能，降低功耗
+L 34				
+L 35	[5]	1A50	3C8A		INC	ADCnt
+L 36	[3]	1A52	B68A		LDA	ADCnt
+L 37	[2]	1A54	A108		CMP	#8
+L 38	[3]	1A56	2401		BHS	ADCSbr1
+L 39	[6]	1A58	81		RTS
+L 40				ADCSbr1:
+L 41	[5]	1A59	3786		ASR	TempADBuf+1
+L 42	[5]	1A5B	3685		ROR	TempADBuf
+L 43	[5]	1A5D	3786		ASR	TempADBuf+1
+L 44	[5]	1A5F	3685		ROR	TempADBuf
+L 45	[5]	1A61	3786		ASR	TempADBuf+1
+L 46	[5]	1A63	3685		ROR	TempADBuf
+L 47	[3]	1A65	B685		LDA	TempADBuf
+L 48	[4]	1A67	B784		STA	TempAD
+L 49				
+L 50	[5]	1A69	3789		ASR	VADBuf+1
+L 51	[5]	1A6B	3688		ROR	VADBuf
+L 52	[5]	1A6D	3789		ASR	VADBuf+1
+L 53	[5]	1A6F	3688		ROR	VADBuf
+L 54	[5]	1A71	3789		ASR	VADBuf+1
+L 55	[5]	1A73	3688		ROR	VADBuf
+L 56	[3]	1A75	B688		LDA	VADBuf
+L 57	[4]	1A77	B787		STA	VAD
+L 58					
+L 59	[5]	1A79	3F8A		CLR	ADCnt
+L 60	[5]	1A7B	3F85		CLR	TempADBuf
+L 61	[5]	1A7D	3F86		CLR	TempADBuf+1
+L 62	[5]	1A7F	3F88		CLR	VADBuf
+L 63	[5]	1A81	3F89		CLR	VADBuf+1
+L 64	[5]	1A83	088003		BRSET	FADOver,ADCSbr2
+L 65	[6]	1A86	CD1890		JSR	CellChkSbr	
+L 66				ADCSbr2:
+L 67	[5]	1A89	1880		BSET	FADOver
+L 68					
+L 69					;-----------------------------------------------------------
+L 70	[3]	1A8B	B684		LDA	TempAD
+L 71	[2]	1A8D	A105		CMP	#5
+L 72	[3]	1A8F	250B		BLO	TempOpen
+L 73	[5]	1A91	3F92		CLR	TempOpDly
+L 74	[2]	1A93	A1FA		CMP	#$FA
+L 75	[3]	1A95	2412		BHS	TempShort
+L 76	[5]	1A97	3F93		CLR	TempShDly
+L 77	[5]	1A99	1B80		BCLR	FERR
+L 78	[6]	1A9B	81		RTS
+L 79					;-----------------------------------------------------------
+L 80				TempOpen:
+L 81	[5]	1A9C	3C92		INC	TempOpDly
+L 82	[3]	1A9E	B692		LDA	TempOpDly
+L 83	[2]	1AA0	A105		CMP	#5
+L 84	[3]	1AA2	2504		BLO	TempOpenR
+L 85	[5]	1AA4	1A80		BSET	FERR
+L 86	[5]	1AA6	3A92		DEC	TempOpDly
+L 87				TempOpenR:
+L 88	[6]	1AA8	81		RTS
+L 89					;-----------------------------------------------------------
+L 90				TempShort:
+L 91	[5]	1AA9	3C93		INC	TempShDly
+L 92	[3]	1AAB	B693		LDA	TempShDly
+L 93	[2]	1AAD	A105		CMP	#5
+L 94	[3]	1AAF	25F8		BLO	TempShort
+L 95	[5]	1AB1	3A93		DEC	TempShDly
+L 96	[5]	1AB3	1A80		BSET	FERR
+L 97				TempShortR:
+L 98	[6]	1AB5	81		RTS
+L 99					
+L 100				;-----------------------------------------------------------------------
+L 101				ADCovSbr:
+L 102	[4]	1AB6	B713		STA	ADCON
+L 103	[5]	1AB8	1013		BSET	ADCE
+L 104				ADCovSbr0:
+L 105	[5]	1ABA	0713FD		BRCLR	EOC,ADCovSbr0
+L 106	[6]	1ABD	81		RTS
+L 107				
+L 108				

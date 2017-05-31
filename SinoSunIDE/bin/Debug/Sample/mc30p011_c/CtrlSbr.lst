@@ -1,0 +1,831 @@
+gpasm-1.7.0_beta1 (Aug 26 2015)CtrlSbr.asm        2016-6-23  15:01:24          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : ANSI-C Compiler
+                      00003 ; Version 0.0.4 (Aug  7 2015) (MINGW32)
+                      00004 ; This file was generated Thu Jun 23 15:01:24 2016
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC3X port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "CtrlSbr.c"
+                      00009         list    p=0311
+                      00010         radix dec
+                      00011         include "0311.inc"
+                      00001 
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00003 
+                      00004 
+                      00005 ;==========================================================================
+                      00006 ;
+                      00007 ;       Revision History
+                      00008 ;
+                      00009 ;==========================================================================
+                      00010 
+                      00011 ;Rev:   Date:    Reason:
+                      00012 
+                      00013 ;1.00   12/06/21 Initial Release
+                      00014 
+                      00015 ;==========================================================================
+                      00016 ;
+                      00017 ;       Verify Processor
+                      00018 ;
+                      00019 ;==========================================================================
+                      00020 ;==========================================================================
+                      00021 ;
+                      00022 ;       Register Definitions
+                      00023 ;
+                      00024 ;==========================================================================
+                      00025 
+                      00026 ;----- Register Files------------------------------------------------------
+                      00027 
+  00000000            00028 INDF                         EQU     H'0000'
+  00000001            00029 T0CNT                        EQU     H'0001'
+  00000002            00030 PCL                          EQU     H'0002'
+  00000003            00031 STATUS                       EQU     H'0003'
+  00000004            00032 FSR                          EQU     H'0004'
+  00000005            00033 P0                           EQU     H'0005'
+  00000006            00034 P1                           EQU     H'0006'
+  00000008            00035 MCR                          EQU     H'0008'
+  00000009            00036 KBIM                         EQU     H'0009'
+  0000000A            00037 PCLATH                       EQU     H'000A'
+  0000000B            00038 PDCON                        EQU     H'000B'
+  0000000C            00039 ODCON                        EQU     H'000C'
+  0000000D            00040 PUCON                        EQU     H'000D'
+  0000000E            00041 INTECON                      EQU     H'000E'
+  0000000F            00042 INTFLAG                      EQU     H'000F'
+  00000041            00043 T0CR                         EQU     H'0041'
+  00000045            00044 DDR0                         EQU     H'0045'
+  00000046            00045 DDR1                         EQU     H'0046'
+  0000004B            00046 TMCR                         EQU     H'004B'
+  0000004C            00047 T1CR                         EQU     H'004C'
+  0000004D            00048 T1CNT                        EQU     H'004D'
+  0000004E            00049 T1LOAD                       EQU     H'004E'
+  0000004F            00050 T1DATA                       EQU     H'004F'
+                      00051 
+                      00052 ;INDF 
+                      00053 #define         INDF7          INDF,7
+                      00054 #define         INDF6          INDF,6
+                      00055 #define         INDF5          INDF,5
+                      00056 #define         INDF4          INDF,4
+                      00057 #define         INDF3          INDF,3
+                      00058 #define         INDF2          INDF,2
+                      00059 #define         INDF1          INDF,1
+                      00060 #define         INDF0          INDF,0
+                      00061 
+                      00062 ;T0CNT 
+                      00063 #define         T0C7           T0CNT,7
+                      00064 #define         T0C6           T0CNT,6
+                      00065 #define         T0C5           T0CNT,5
+                      00066 #define         T0C4           T0CNT,4
+                      00067 #define         T0C3           T0CNT,3
+                      00068 #define         T0C2           T0CNT,2
+                      00069 #define         T0C1           T0CNT,1
+                      00070 #define         T0C0           T0CNT,0
+                      00071 
+                      00072 ;PCL 
+                      00073 #define         PC7             PCL,7
+                      00074 #define         PC6             PCL,6
+                      00075 #define         PC5             PCL,5
+                      00076 #define         PC4             PCL,4
+                      00077 #define         PC3             PCL,3
+                      00078 #define         PC2             PCL,2
+                      00079 #define         PC1             PCL,1
+                      00080 #define         PC0             PCL,0
+                      00081 
+                      00082 ;----- STATUS Bits --------------------------
+                      00083 #define RST       STATUS,7
+                      00084 #define TO        STATUS,4
+                      00085 #define PD        STATUS,3
+                      00086 #define Z           STATUS,2
+                      00087 #define DC        STATUS,1
+                      00088 #define C           STATUS,0
+                      00089 
+                      00090 ;FSR 
+                      00091 #define         FSR5           FSR,5
+                      00092 #define         FSR4           FSR,4
+                      00093 #define         FSR3           FSR,3
+                      00094 #define         FSR2           FSR,2
+                      00095 #define         FSR1           FSR,1
+                      00096 #define         FSR0           FSR,0
+                      00097 
+                      00098 ;P0 
+                      00099 #define         P03D           P0,3
+                      00100 #define         P02D           P0,2
+                      00101 #define         P01D           P0,1
+                      00102 #define         P00D           P0,0
+                      00103 
+                      00104 ;P1 
+                      00105 #define         P17D           P1,7
+                      00106 #define         P16D           P1,6
+                      00107 #define         P15D           P1,5
+                      00108 #define         P14D           P1,4
+                      00109 #define         P12D           P1,2
+                      00110 #define         P11D           P1,1
+                      00111 #define         P10D           P1,0
+                      00112 
+                      00113 ;----- MCR Bits --------------------------------------------------------
+                      00114 #define WDTEN   MCR,7
+                      00115 #define EIS       MCR,6
+                      00116 
+                      00117 ;KBIM 
+                      00118 #define         KBIM7           KBIM,7
+                      00119 #define         KBIM6           KBIM,6
+                      00120 #define         KBIM5           KBIM,5
+                      00121 #define         KBIM4           KBIM,4
+                      00122 #define         KBIM3           KBIM,3
+                      00123 #define         KBIM2           KBIM,2
+                      00124 #define         KBIM1           KBIM,1
+                      00125 #define         KBIM0           KBIM,0
+                      00126 
+                      00127 ;----- PCLATH Bits --------------------------------------------------------
+                      00128 #define PCH1      PCLATH,1
+                      00129 #define PCH0      PCLATH,0
+                      00130 
+                      00131 ;PDCON
+                      00132 #define         P12PD           PDCON,6
+                      00133 #define         P11PD           PDCON,5
+                      00134 #define         P10PD           PDCON,4
+                      00135 #define         P03PD           PDCON,3
+                      00136 #define         P02PD           PDCON,2
+                      00137 #define         P01PD           PDCON,1
+                      00138 #define         P00PD           PDCON,0
+                      00139 
+                      00140 ;ODCON
+                      00141 #define         P17OD           ODCON,7
+                      00142 #define         P16OD           ODCON,6
+                      00143 #define         P15OD           ODCON,5
+                      00144 #define         P14OD           ODCON,4
+                      00145 #define         P12OD           ODCON,2
+                      00146 #define         P11OD           ODCON,1
+                      00147 #define         P10OD           ODCON,0
+                      00148 
+                      00149 ;PUCON
+                      00150 #define         P17PU           PUCON,7
+                      00151 #define         P16PU           PUCON,6
+                      00152 #define         P15PU           PUCON,5
+                      00153 #define         P14PU           PUCON,4
+                      00154 #define         P12PU           PUCON,2
+                      00155 #define         P11PU           PUCON,1
+                      00156 #define         P10PU           PUCON,0
+                      00157 
+                      00158 ;----- INTECON Bits --------------------------------------------------------
+                      00159 #define INTE    INTECON
+                      00160 #define GIE     INTECON,7
+                      00161 #define INT0IE  INTECON,2
+                      00162 #define KBIE    INTECON,1
+                      00163 #define T0IE    INTECON,0
+                      00164 
+                      00165 ;----- INTFLAG Bits --------------------------------------------------------
+                      00166 #define INTF      INTFLAG
+                      00167 #define INT0IF  INTF,2
+                      00168 #define KBIF      INTF,1
+                      00169 #define T0IF      INTF,0
+                      00170 
+                      00171 ;----- T0CR Bits --------------------------------------------------------
+                      00172 #define         INT0M           T0CR,6
+                      00173 #define         T0PTS           T0CR,5
+                      00174 #define         T0SE            T0CR,4
+                      00175 #define         T0PTA           T0CR,3
+                      00176 #define         T0PR2           T0CR,2
+                      00177 #define         T0PR1           T0CR,1
+                      00178 #define         T0PR0           T0CR,0
+                      00179 
+                      00180 ;DDR0
+                      00181 #define         DDR03           DDR0,3
+                      00182 #define         DDR02           DDR0,2
+                      00183 #define         DDR01           DDR0,1
+                      00184 #define         DDR00           DDR0,0
+                      00185 
+                      00186 ;DDR1
+                      00187 #define         DDR17           DDR1,7
+                      00188 #define         DDR16           DDR1,6
+                      00189 #define         DDR15           DDR1,5
+                      00190 #define         DDR14           DDR1,4
+                      00191 #define         DDR12           DDR1,2
+                      00192 #define         DDR11           DDR1,1
+                      00193 #define         DDR10           DDR1,0
+                      00194 
+                      00195 ;------TMCR -----------------
+                      00196 #define TBS     TMCR,7
+                      00197 #define T1IE    TMCR,1
+                      00198 #define T1IF    TMCR,0
+                      00199 
+                      00200 ;-------T1CR----------
+                      00201 #define TMR1EN  T1CR,7
+                      00202 #define PWMOUT  T1CR,6
+                      00203 #define BUZOUT  T1CR,5
+                      00204 #define T1PTS1  T1CR,4
+                      00205 #define T1PTS0  T1CR,3
+                      00206 #define T1PR2   T1CR,2
+                      00207 #define T1PR1   T1CR,1
+                      00208 #define T1PR0   T1CR,0
+                      00209 
+                      00210 ;T1CNT
+                      00211 #define T1C7   T1CNT,7
+                      00212 #define T1C6   T1CNT,6
+                      00213 #define T1C5   T1CNT,5
+                      00214 #define T1C4   T1CNT,4
+                      00215 #define T1C3   T1CNT,3
+                      00216 #define T1C2   T1CNT,2
+                      00217 #define T1C1   T1CNT,1
+                      00218 #define T1C0   T1CNT,0
+                      00219 
+                      00220 ;T1LOAD
+                      00221 #define T1LOAD7   T1LOAD,7
+                      00222 #define T1LOAD6   T1LOAD,6
+                      00223 #define T1LOAD5   T1LOAD,5
+                      00224 #define T1LOAD4   T1LOAD,4
+                      00225 #define T1LOAD3   T1LOAD,3
+                      00226 #define T1LOAD2   T1LOAD,2
+                      00227 #define T1LOAD1   T1LOAD,1
+                      00228 #define T1LOAD0   T1LOAD,0
+                      00229 
+                      00230 ;T1DATA
+                      00231 #define T1DATA7   T1DATA,7
+                      00232 #define T1DATA6   T1DATA,6
+                      00233 #define T1DATA5   T1DATA,5
+                      00234 #define T1DATA4   T1DATA,4
+                      00235 #define T1DATA3   T1DATA,3
+                      00236 #define T1DATA2   T1DATA,2
+                      00237 #define T1DATA1   T1DATA,1
+                      00238 #define T1DATA0   T1DATA,0
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015         extern  _STATUSbits
+                      00016         extern  _P0bits
+                      00017         extern  _P1bits
+                      00018         extern  _MCRbits
+                      00019         extern  _KBIMbits
+                      00020         extern  _PDCONbits
+                      00021         extern  _ODCONbits
+                      00022         extern  _PUCONbits
+                      00023         extern  _INTECONbits
+                      00024         extern  _INTFLAGbits
+                      00025         extern  _T0CRbits
+                      00026         extern  _DDR0bits
+                      00027         extern  _DDR1bits
+                      00028         extern  _TMCRbits
+                      00029         extern  _T1CRbits
+                      00030         extern  _ABuf
+                      00031         extern  _StatusBuf
+                      00032         extern  _T1s
+                      00033         extern  _TRedCnt
+                      00034         extern  _TRed
+                      00035         extern  _TGreen
+                      00036         extern  _TBlue
+                      00037         extern  _IRTmr
+                      00038         extern  _Custom
+                      00039         extern  _CustomRev
+                      00040         extern  _IRCode1
+                      00041         extern  _IRCodeRev1
+                      00042         extern  _BitCnt
+                      00043         extern  _delay
+                      00044         extern  _Tmr
+                      00045         extern  _TStop
+                      00046         extern  _T40ms
+                      00047         extern  _ModeCnt
+                      00048         extern  _Step
+                      00049         extern  _delay05ms
+                      00050         extern  _Flag1
+                      00051         extern  _Flag2
+                      00052         extern  _INDF
+                      00053         extern  _T0CNT
+                      00054         extern  _PCL
+                      00055         extern  _STATUS
+                      00056         extern  _FSR
+                      00057         extern  _P0
+                      00058         extern  _P1
+                      00059         extern  _GPR
+                      00060         extern  _MCR
+                      00061         extern  _KBIM
+                      00062         extern  _PCLATH
+                      00063         extern  _PDCON
+                      00064         extern  _ODCON
+                      00065         extern  _PUCON
+                      00066         extern  _INTECON
+                      00067         extern  _INTFLAG
+                      00068         extern  _T0CR
+                      00069         extern  _DDR0
+                      00070         extern  _DDR1
+                      00071         extern  _TMCR
+                      00072         extern  _T1CR
+                      00073         extern  _T1CNT
+                      00074         extern  _T1LOAD
+                      00075         extern  _T1DATA
+                      00076 
+                      00077         extern STK06
+                      00078         extern STK05
+                      00079         extern STK04
+                      00080         extern STK03
+                      00081         extern STK02
+                      00082         extern STK01
+                      00083         extern STK00
+                      00084 ;--------------------------------------------------------
+                      00085 ; global declarations
+                      00086 ;--------------------------------------------------------
+                      00087         global  _MColorSbr
+                      00088         global  _Mode2Sbr
+                      00089 
+                      00090 ;--------------------------------------------------------
+                      00091 ; global definitions
+                      00092 ;--------------------------------------------------------
+                      00093 ;--------------------------------------------------------
+                      00094 ; absolute symbol definitions
+                      00095 ;--------------------------------------------------------
+                      00096 ;--------------------------------------------------------
+                      00097 ; compiler-defined variables
+                      00098 ;--------------------------------------------------------
+                      00099 ;--------------------------------------------------------
+                      00100 ; initialized data
+                      00101 ;--------------------------------------------------------
+                      00102 
+                      00103 ;@Allocation info for local variables in function 'MColorSbr'
+                      00104 ;@MColorSbr MColorSbr                 Allocated to registers ;size:2
+                      00105 ;@MColorSbr STATUSbits                Allocated to registers ;size:1
+                      00106 ;@MColorSbr P0bits                    Allocated to registers ;size:1
+                      00107 ;@MColorSbr P1bits                    Allocated to registers ;size:1
+                      00108 ;@MColorSbr MCRbits                   Allocated to registers ;size:1
+                      00109 ;@MColorSbr KBIMbits                  Allocated to registers ;size:1
+                      00110 ;@MColorSbr PDCONbits                 Allocated to registers ;size:1
+                      00111 ;@MColorSbr ODCONbits                 Allocated to registers ;size:1
+                      00112 ;@MColorSbr PUCONbits                 Allocated to registers ;size:1
+                      00113 ;@MColorSbr INTECONbits               Allocated to registers ;size:1
+                      00114 ;@MColorSbr INTFLAGbits               Allocated to registers ;size:1
+                      00115 ;@MColorSbr T0CRbits                  Allocated to registers ;size:1
+                      00116 ;@MColorSbr DDR0bits                  Allocated to registers ;size:1
+                      00117 ;@MColorSbr DDR1bits                  Allocated to registers ;size:1
+                      00118 ;@MColorSbr TMCRbits                  Allocated to registers ;size:1
+                      00119 ;@MColorSbr T1CRbits                  Allocated to registers ;size:1
+                      00120 ;@MColorSbr ABuf                      Allocated to registers ;size:1
+                      00121 ;@MColorSbr StatusBuf                 Allocated to registers ;size:1
+                      00122 ;@MColorSbr T1s                       Allocated to registers ;size:1
+                      00123 ;@MColorSbr TRedCnt                   Allocated to registers ;size:1
+                      00124 ;@MColorSbr TRed                      Allocated to registers ;size:1
+                      00125 ;@MColorSbr TGreen                    Allocated to registers ;size:1
+                      00126 ;@MColorSbr TBlue                     Allocated to registers ;size:1
+                      00127 ;@MColorSbr IRTmr                     Allocated to registers ;size:1
+                      00128 ;@MColorSbr Custom                    Allocated to registers ;size:1
+                      00129 ;@MColorSbr CustomRev                 Allocated to registers ;size:1
+                      00130 ;@MColorSbr IRCode1                   Allocated to registers ;size:1
+                      00131 ;@MColorSbr IRCodeRev1                Allocated to registers ;size:1
+                      00132 ;@MColorSbr BitCnt                    Allocated to registers ;size:1
+                      00133 ;@MColorSbr delay                     Allocated to registers ;size:1
+                      00134 ;@MColorSbr Tmr                       Allocated to registers ;size:2
+                      00135 ;@MColorSbr TStop                     Allocated to registers ;size:1
+                      00136 ;@MColorSbr T40ms                     Allocated to registers ;size:1
+                      00137 ;@MColorSbr ModeCnt                   Allocated to registers ;size:1
+                      00138 ;@MColorSbr Step                      Allocated to registers ;size:1
+                      00139 ;@MColorSbr delay05ms                 Allocated to registers ;size:1
+                      00140 ;@MColorSbr Flag1                     Allocated to registers ;size:1
+                      00141 ;@MColorSbr Flag2                     Allocated to registers ;size:1
+                      00142 ;@MColorSbr INDF                      Allocated to registers ;size:1
+                      00143 ;@MColorSbr T0CNT                     Allocated to registers ;size:1
+                      00144 ;@MColorSbr PCL                       Allocated to registers ;size:1
+                      00145 ;@MColorSbr STATUS                    Allocated to registers ;size:1
+                      00146 ;@MColorSbr FSR                       Allocated to registers ;size:1
+                      00147 ;@MColorSbr P0                        Allocated to registers ;size:1
+                      00148 ;@MColorSbr P1                        Allocated to registers ;size:1
+                      00149 ;@MColorSbr GPR                       Allocated to registers ;size:1
+                      00150 ;@MColorSbr MCR                       Allocated to registers ;size:1
+                      00151 ;@MColorSbr KBIM                      Allocated to registers ;size:1
+                      00152 ;@MColorSbr PCLATH                    Allocated to registers ;size:1
+                      00153 ;@MColorSbr PDCON                     Allocated to registers ;size:1
+                      00154 ;@MColorSbr ODCON                     Allocated to registers ;size:1
+                      00155 ;@MColorSbr PUCON                     Allocated to registers ;size:1
+                      00156 ;@MColorSbr INTECON                   Allocated to registers ;size:1
+                      00157 ;@MColorSbr INTFLAG                   Allocated to registers ;size:1
+                      00158 ;@MColorSbr T0CR                      Allocated to registers ;size:1
+                      00159 ;@MColorSbr DDR0                      Allocated to registers ;size:1
+                      00160 ;@MColorSbr DDR1                      Allocated to registers ;size:1
+                      00161 ;@MColorSbr TMCR                      Allocated to registers ;size:1
+                      00162 ;@MColorSbr T1CR                      Allocated to registers ;size:1
+                      00163 ;@MColorSbr T1CNT                     Allocated to registers ;size:1
+                      00164 ;@MColorSbr T1LOAD                    Allocated to registers ;size:1
+                      00165 ;@MColorSbr T1DATA                    Allocated to registers ;size:1
+                      00166 ;@end Allocation info for local variables in function 'MColorSbr';
+                      00167 ;@Allocation info for local variables in function 'Mode2Sbr'
+                      00168 ;@end Allocation info for local variables in function 'Mode2Sbr';
+                      00169 
+                      00170 ;--------------------------------------------------------
+                      00171 ; overlayable items in internal ram 
+                      00172 ;--------------------------------------------------------
+                      00173 ;       udata_ovr
+                      00174 ;--------------------------------------------------------
+                      00175 ; code
+                      00176 ;--------------------------------------------------------
+                      00177 code_CtrlSbr    code
+                      00178 ;***
+                      00179 ;  pBlock Stats: dbName = C
+                      00180 ;***
+                      00181 ;entry:  _Mode2Sbr      ;Function start
+                      00182 ; 2 exit points
+                      00183 ;has an exit
+                      00184 ;; Starting pCode block
+0000                  00185 _Mode2Sbr       ;Function start
+                      00186 ; 2 exit points
+                      00187 ;       .line   66; "CtrlSbr.c" if (ModeCnt >= Step)
+0000   1600           00188         MOVAR   _Step
+0001   1200           00189         RSUBAR  _ModeCnt
+0002   3003           00190         JBSET   STATUS,0
+0003   2800           00191         GOTO    _00131_DS_
+                      00192 ;;genSkipc:3251: created from rifx:0028608C
+                      00193 ;       .line   68; "CtrlSbr.c" pBlueC = 1;
+0004   3900           00194         BSET    _DDR1bits,2
+                      00195 ;       .line   69; "CtrlSbr.c" pRedC = 1;
+0005   3800           00196         BSET    _DDR1bits,0
+                      00197 ;       .line   70; "CtrlSbr.c" pGreenC = 1;
+0006   3880           00198         BSET    _DDR1bits,1
+                      00199 ;;swapping arguments (AOP_TYPEs 1/3)
+                      00200 ;;unsigned compare: left >= lit(0x33=51), size=1
+                      00201 ;       .line   71; "CtrlSbr.c" if (ModeCnt > 50) ModeCnt = 0;
+0007   0B33           00202         MOVAI   0x33
+0008   1200           00203         RSUBAR  _ModeCnt
+0009   3003           00204         JBSET   STATUS,0
+000A   2800           00205         GOTO    _00133_DS_
+                      00206 ;;genSkipc:3251: created from rifx:0028608C
+000B   1D80           00207         CLRR    _ModeCnt
+000C   2800           00208         GOTO    _00133_DS_
+000D                  00209 _00131_DS_
+                      00210 ;       .line   75; "CtrlSbr.c" pBlueC = 0;
+000D   3D00           00211         BCLR    _DDR1bits,2
+                      00212 ;       .line   76; "CtrlSbr.c" pRedC = 0;
+000E   3C00           00213         BCLR    _DDR1bits,0
+                      00214 ;       .line   77; "CtrlSbr.c" pGreenC = 0;
+000F   3C80           00215         BCLR    _DDR1bits,1
+0010                  00216 _00133_DS_
+0010   000C           00217         RETURN  
+                      00218 ; exit point of _Mode2Sbr
+                      00219 
+                      00220 ;***
+                      00221 ;  pBlock Stats: dbName = C
+                      00222 ;***
+                      00223 ;entry:  _MColorSbr     ;Function start
+                      00224 ; 2 exit points
+                      00225 ;has an exit
+                      00226 ;; Starting pCode block
+0011                  00227 _MColorSbr      ;Function start
+                      00228 ; 2 exit points
+                      00229 ;       .line   8; "CtrlSbr.c"  if (++delay >= 4) 
+0011   1980           00230         INCR    _delay
+                      00231 ;;unsigned compare: left < lit(0x4=4), size=1
+0012   0B04           00232         MOVAI   0x04
+0013   1200           00233         RSUBAR  _delay
+0014   3003           00234         JBSET   STATUS,0
+0015   2800           00235         GOTO    _00123_DS_
+                      00236 ;;genSkipc:3251: created from rifx:0028608C
+                      00237 ;       .line   10; "CtrlSbr.c" delay = 0;
+0016   1D80           00238         CLRR    _delay
+                      00239 ;       .line   11; "CtrlSbr.c" if (--ModeCnt == 0)
+0017   1B80           00240         DECR    _ModeCnt
+0018   0B00           00241         MOVAI   0x00
+0019   1700           00242         ORAR    _ModeCnt
+001A   3103           00243         JBSET   STATUS,2
+001B   2800           00244         GOTO    _00108_DS_
+                      00245 ;       .line   13; "CtrlSbr.c" TGreen = TColor;
+001C   0B7F           00246         MOVAI   0x7f
+001D   1580           00247         MOVRA   _TGreen
+                      00248 ;       .line   14; "CtrlSbr.c" TRed = TColor;
+001E   0B7F           00249         MOVAI   0x7f
+001F   1580           00250         MOVRA   _TRed
+                      00251 ;       .line   15; "CtrlSbr.c" TBlue = TColor;
+0020   0B7F           00252         MOVAI   0x7f
+0021   1580           00253         MOVRA   _TBlue
+                      00254 ;       .line   21; "CtrlSbr.c" if (++Step > 5) Step = 0;
+0022   1980           00255         INCR    _Step
+                      00256 ;;swapping arguments (AOP_TYPEs 1/3)
+                      00257 ;;unsigned compare: left >= lit(0x6=6), size=1
+0023   0B06           00258         MOVAI   0x06
+0024   1200           00259         RSUBAR  _Step
+0025   3003           00260         JBSET   STATUS,0
+0026   2800           00261         GOTO    _00106_DS_
+                      00262 ;;genSkipc:3251: created from rifx:0028608C
+0027   1D80           00263         CLRR    _Step
+0028                  00264 _00106_DS_
+                      00265 ;       .line   22; "CtrlSbr.c" ModeCnt = TSteplengh;
+0028   0B7F           00266         MOVAI   0x7f
+0029   1580           00267         MOVRA   _ModeCnt
+002A                  00268 _00108_DS_
+                      00269 ;       .line   24; "CtrlSbr.c" if (Step == 0) {++TGreen;--TBlue;return;}
+002A   0B00           00270         MOVAI   0x00
+002B   1700           00271         ORAR    _Step
+002C   3103           00272         JBSET   STATUS,2
+002D   2800           00273         GOTO    _00110_DS_
+002E   1980           00274         INCR    _TGreen
+002F   1B80           00275         DECR    _TBlue
+0030   2800           00276         GOTO    _00123_DS_
+0031                  00277 _00110_DS_
+                      00278 ;       .line   25; "CtrlSbr.c" if (Step == 1) {--TGreen;++TBlue;return;}
+0031   1600           00279         MOVAR   _Step
+0032   0801           00280         XORAI   0x01
+0033   3103           00281         JBSET   STATUS,2
+0034   2800           00282         GOTO    _00112_DS_
+0035   1B80           00283         DECR    _TGreen
+0036   1980           00284         INCR    _TBlue
+0037   2800           00285         GOTO    _00123_DS_
+0038                  00286 _00112_DS_
+                      00287 ;       .line   26; "CtrlSbr.c" if (Step == 2) {++TRed;--TBlue;return;}
+0038   1600           00288         MOVAR   _Step
+0039   0802           00289         XORAI   0x02
+003A   3103           00290         JBSET   STATUS,2
+003B   2800           00291         GOTO    _00114_DS_
+003C   1980           00292         INCR    _TRed
+003D   1B80           00293         DECR    _TBlue
+003E   2800           00294         GOTO    _00123_DS_
+003F                  00295 _00114_DS_
+                      00296 ;       .line   27; "CtrlSbr.c" if (Step == 3) {--TRed;++TBlue;return;}
+003F   1600           00297         MOVAR   _Step
+0040   0803           00298         XORAI   0x03
+0041   3103           00299         JBSET   STATUS,2
+0042   2800           00300         GOTO    _00116_DS_
+0043   1B80           00301         DECR    _TRed
+0044   1980           00302         INCR    _TBlue
+0045   2800           00303         GOTO    _00123_DS_
+0046                  00304 _00116_DS_
+                      00305 ;       .line   28; "CtrlSbr.c" if (Step == 4) {++TRed;--TGreen;return;}
+0046   1600           00306         MOVAR   _Step
+0047   0804           00307         XORAI   0x04
+0048   3103           00308         JBSET   STATUS,2
+0049   2800           00309         GOTO    _00118_DS_
+004A   1980           00310         INCR    _TRed
+004B   1B80           00311         DECR    _TGreen
+004C   2800           00312         GOTO    _00123_DS_
+004D                  00313 _00118_DS_
+                      00314 ;       .line   29; "CtrlSbr.c" if (Step == 5) {--TRed;++TGreen;return;}
+004D   1600           00315         MOVAR   _Step
+004E   0805           00316         XORAI   0x05
+004F   3103           00317         JBSET   STATUS,2
+0050   2800           00318         GOTO    _00123_DS_
+0051   1B80           00319         DECR    _TRed
+0052   1980           00320         INCR    _TGreen
+0053                  00321 _00123_DS_
+0053   000C           00322         RETURN  
+                      00323 ; exit point of _MColorSbr
+                      00324 
+                      00325 
+                      00326 ;       code size estimation:
+                      00327 ;          84+    0 =    84 instructions (  168 byte)
+                      00328 
+                      00329         end
+gpasm-1.7.0_beta1 (Aug 26 2015)CtrlSbr.asm        2016-6-23  15:01:24          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+DDR0                              00000045
+DDR1                              00000046
+FSR                               00000004
+INDF                              00000000
+INTECON                           0000000E
+INTFLAG                           0000000F
+KBIM                              00000009
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P1                                00000006
+PCL                               00000002
+PCLATH                            0000000A
+PDCON                             0000000B
+PUCON                             0000000D
+STATUS                            00000003
+STK00                             00000000
+STK01                             00000000
+STK02                             00000000
+STK03                             00000000
+STK04                             00000000
+STK05                             00000000
+STK06                             00000000
+T0CNT                             00000001
+T0CR                              00000041
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DATA                            0000004F
+T1LOAD                            0000004E
+TMCR                              0000004B
+_00106_DS_                        00000028
+_00108_DS_                        0000002A
+_00110_DS_                        00000031
+_00112_DS_                        00000038
+_00114_DS_                        0000003F
+_00116_DS_                        00000046
+_00118_DS_                        0000004D
+_00123_DS_                        00000053
+_00131_DS_                        0000000D
+_00133_DS_                        00000010
+_ABuf                             00000000
+_BitCnt                           00000000
+_Custom                           00000000
+_CustomRev                        00000000
+_DDR0                             00000000
+_DDR0bits                         00000000
+_DDR1                             00000000
+_DDR1bits                         00000000
+_FSR                              00000000
+_Flag1                            00000000
+_Flag2                            00000000
+_GPR                              00000000
+_INDF                             00000000
+_INTECON                          00000000
+_INTECONbits                      00000000
+_INTFLAG                          00000000
+_INTFLAGbits                      00000000
+_IRCode1                          00000000
+_IRCodeRev1                       00000000
+_IRTmr                            00000000
+_KBIM                             00000000
+_KBIMbits                         00000000
+_MCR                              00000000
+_MCRbits                          00000000
+_MColorSbr                        00000011
+_Mode2Sbr                         00000000
+_ModeCnt                          00000000
+_ODCON                            00000000
+_ODCONbits                        00000000
+_P0                               00000000
+_P0bits                           00000000
+_P1                               00000000
+_P1bits                           00000000
+_PCL                              00000000
+_PCLATH                           00000000
+_PDCON                            00000000
+_PDCONbits                        00000000
+_PUCON                            00000000
+_PUCONbits                        00000000
+_STATUS                           00000000
+_STATUSbits                       00000000
+_StatusBuf                        00000000
+_Step                             00000000
+_T0CNT                            00000000
+_T0CR                             00000000
+_T0CRbits                         00000000
+_T1CNT                            00000000
+_T1CR                             00000000
+_T1CRbits                         00000000
+_T1DATA                           00000000
+_T1LOAD                           00000000
+_T1s                              00000000
+_T40ms                            00000000
+_TBlue                            00000000
+_TGreen                           00000000
+_TMCR                             00000000
+_TMCRbits                         00000000
+_TRed                             00000000
+_TRedCnt                          00000000
+_TStop                            00000000
+_Tmr                              00000000
+__30P011                          00000001
+_delay                            00000000
+_delay05ms                        00000000
+BUZOUT                            T1CR,5
+C                                 STATUS,0
+DC                                STATUS,1
+DDR00                             DDR0,0
+DDR01                             DDR0,1
+DDR02                             DDR0,2
+DDR03                             DDR0,3
+DDR10                             DDR1,0
+DDR11                             DDR1,1
+DDR12                             DDR1,2
+DDR14                             DDR1,4
+DDR15                             DDR1,5
+DDR16                             DDR1,6
+DDR17                             DDR1,7
+EIS                               MCR,6
+FSR0                              FSR,0
+FSR1                              FSR,1
+FSR2                              FSR,2
+FSR3                              FSR,3
+FSR4                              FSR,4
+FSR5                              FSR,5
+GIE                               INTECON,7
+INDF0                             INDF,0
+INDF1                             INDF,1
+INDF2                             INDF,2
+INDF3                             INDF,3
+INDF4                             INDF,4
+INDF5                             INDF,5
+INDF6                             INDF,6
+INDF7                             INDF,7
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT0M                             T0CR,6
+INTE                              INTECON
+INTF                              INTFLAG
+KBIE                              INTECON,1
+KBIF                              INTF,1
+KBIM0                             KBIM,0
+KBIM1                             KBIM,1
+KBIM2                             KBIM,2
+KBIM3                             KBIM,3
+KBIM4                             KBIM,4
+KBIM5                             KBIM,5
+KBIM6                             KBIM,6
+KBIM7                             KBIM,7
+P00D                              P0,0
+P00PD                             PDCON,0
+P01D                              P0,1
+P01PD                             PDCON,1
+P02D                              P0,2
+P02PD                             PDCON,2
+P03D                              P0,3
+P03PD                             PDCON,3
+P10D                              P1,0
+P10OD                             ODCON,0
+P10PD                             PDCON,4
+P10PU                             PUCON,0
+P11D                              P1,1
+P11OD                             ODCON,1
+P11PD                             PDCON,5
+P11PU                             PUCON,1
+P12D                              P1,2
+P12OD                             ODCON,2
+P12PD                             PDCON,6
+P12PU                             PUCON,2
+P14D                              P1,4
+P14OD                             ODCON,4
+P14PU                             PUCON,4
+P15D                              P1,5
+P15OD                             ODCON,5
+P15PU                             PUCON,5
+P16D                              P1,6
+P16OD                             ODCON,6
+P16PU                             PUCON,6
+P17D                              P1,7
+P17OD                             ODCON,7
+P17PU                             PUCON,7
+PC0                               PCL,0
+PC1                               PCL,1
+PC2                               PCL,2
+PC3                               PCL,3
+PC4                               PCL,4
+PC5                               PCL,5
+PC6                               PCL,6
+PC7                               PCL,7
+PCH0                              PCLATH,0
+PCH1                              PCLATH,1
+PD                                STATUS,3
+PWMOUT                            T1CR,6
+RST                               STATUS,7
+T0C0                              T0CNT,0
+T0C1                              T0CNT,1
+T0C2                              T0CNT,2
+T0C3                              T0CNT,3
+T0C4                              T0CNT,4
+T0C5                              T0CNT,5
+T0C6                              T0CNT,6
+T0C7                              T0CNT,7
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T0PR0                             T0CR,0
+T0PR1                             T0CR,1
+T0PR2                             T0CR,2
+T0PTA                             T0CR,3
+T0PTS                             T0CR,5
+T0SE                              T0CR,4
+T1C0                              T1CNT,0
+T1C1                              T1CNT,1
+T1C2                              T1CNT,2
+T1C3                              T1CNT,3
+T1C4                              T1CNT,4
+T1C5                              T1CNT,5
+T1C6                              T1CNT,6
+T1C7                              T1CNT,7
+T1DATA0                           T1DATA,0
+T1DATA1                           T1DATA,1
+T1DATA2                           T1DATA,2
+T1DATA3                           T1DATA,3
+T1DATA4                           T1DATA,4
+T1DATA5                           T1DATA,5
+T1DATA6                           T1DATA,6
+T1DATA7                           T1DATA,7
+T1IE                              TMCR,1
+T1IF                              TMCR,0
+T1LOAD0                           T1LOAD,0
+T1LOAD1                           T1LOAD,1
+T1LOAD2                           T1LOAD,2
+T1LOAD3                           T1LOAD,3
+T1LOAD4                           T1LOAD,4
+T1LOAD5                           T1LOAD,5
+T1LOAD6                           T1LOAD,6
+T1LOAD7                           T1LOAD,7
+T1PR0                             T1CR,0
+T1PR1                             T1CR,1
+T1PR2                             T1CR,2
+T1PTS0                            T1CR,3
+T1PTS1                            T1CR,4
+TBS                               TMCR,7
+TMR1EN                            T1CR,7
+TO                                STATUS,4
+WDTEN                             MCR,7
+Z                                 STATUS,2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

@@ -1,0 +1,354 @@
+L 1				
+L 2				;2012.12.27
+L 3				;test mc10p716
+L 4				
+L 5				        ;REG $00-$0f
+L 6				        ;ram    $c0-$01ff
+L 7				        ;rom    c000--$ffff
+L 8				        KEYL	           equ	$00
+L 9				        KEYH	           equ	$01
+L 10				        MCR		           equ $02
+L 11				        P0		            equ $03
+L 12				        DDR0	           equ $04
+L 13				        P0HCON	         equ $05
+L 14				        TLOAD0L	        equ $06
+L 15				        TLOAD0H         equ $07
+L 16				        TLATL           equ $08
+L 17				        TLATH           equ $09
+L 18				        TCR0	           equ $0a
+L 19				        TLATLL          equ $0b
+L 20				        TDATA1	         equ $0b
+L 21				        TLOAD1	         equ $0c
+L 22				        TCR1	           equ $0d
+L 23				        INTC	           equ $0e
+L 24				        OPA	            equ $0f 
+L 25				        P0LCON          equ $10
+L 26				        P0KCON          equ $11 ;key & port control reg
+L 27				        
+L 28				      ;MCR 
+L 29				      KBIE define  7,MCR
+L 30				      KBIF define       6,MCR
+L 31				      OUTC define       5,MCR
+L 32				      IROUTS    define  4,MCR
+L 33				      IROUTE    define  3,MCR
+L 34				      IRIN      define  2,MCR
+L 35				      
+L 36				      ;timer0
+L 37				      TIF0       define  7,TCR0
+L 38				      TIM0E      define  6,TCR0
+L 39				      T0START    define  2,TCR0
+L 40				      ;timer1
+L 41				      TIF1      define  7,TCR1
+L 42				      TIM1E     define  6,TCR1
+L 43				      T1START   define  2,TCR1
+L 44				      
+L 45				      
+L 46				      
+L 47				      
+L 48				      
+L 49				 	org $c0
+L 50				timer_flag		            equ $c0
+L 51				timer_1ms_counter			    equ $c1
+L 52				timer_100ms_counter     equ $c2
+L 53				timer_1s_counter 	      equ $c3
+L 54				timer_10s_counter 		    equ $c4        ;´æ´¢tlatll
+L 55				key_buffer0             equ $c5
+L 56				key_buffer1             equ $c6
+L 57				key_scan_counter        equ $c7
+L 58				key_gnd_value0           equ $c8
+L 59				key_io_value0            equ     $c9
+L 60				key_gnd_value1          equ     $ca
+L 61				key_io_value1           equ     $cb
+L 62				
+L 63				
+L 64				tload_tmp equ $c7
+L 65				pwmdata         equ     $c8
+L 66				
+L 67				
+L 68				        time_100us_flag define  0,timer_flag
+L 69				        time_1ms_flag   define  1,timer_flag
+L 70				        time_100ms_flag define  2,timer_flag
+L 71				        time_1s_flag    define  3,timer_flag
+L 72				        time_10s_flag   define  4,timer_flag
+L 73				        key_gnd_flag    define  5,timer_flag
+L 74				        key_io_flag     define  6,timer_flag    
+L 75				
+L 76				        ;----------------------------------------       
+L 77				        
+L 78				        org $c000
+L 79				reset:        
+L 80	[2]	C000	9C	  rsp     
+L 81	[2]	C001	9B	  sei     
+L 82				
+L 83				ram_wrh: ;write $1xx rom
+L 84	[2]	C002	A6C0	        lda     #$c0
+L 85	[2]	C004	AEC0	        ldx #$c0   
+L 86				ram_wph:
+L 87	[4]	C006	F7	        sta  ,x
+L 88	[3]	C007	5C	        INCX
+L 89	[3]	C008	4C	        inca    
+L 90	[3]	C009	26FB	        bne ram_wph 
+L 91				  
+L 92				ram_clrl:          ;ÇåµÍRAM
+L 93	[2]	C00B	AEC0		ldx #$c0
+L 94				ram_lpl:	
+L 95	[5]	C00D	7F		clr ,x
+L 96	[3]	C00E	5C		incx
+L 97	[3]	C00F	26FC		bne ram_lpl
+L 98				
+L 99				ram_wrl: ;write $1xx rom
+L 100	[2]	C011	A600	        lda     #$00
+L 101	[3]	C013	5F	        clrx    
+L 102				ram_wpl:
+L 103	[6]	C014	D70100	        sta     $100,x
+L 104	[3]	C017	5C	        INCX
+L 105	[3]	C018	4C	        inca    
+L 106	[3]	C019	26F9	        bne ram_wpl       
+L 107				
+L 108				
+L 109				ram_clrh:          ;Çå¸ßRAM
+L 110	[3]	C01B	5F		clrx
+L 111	[2]	C01C	A600		lda #$00
+L 112				ram_lph:	
+L 113	[6]	C01E	D70100		sta $100,x
+L 114	[3]	C021	5C		incx
+L 115	[3]	C022	26FA		bne ram_lph
+L 116	[3]	C024	2008		bra start
+L 117				
+L 118				
+L 119				delay_100us:
+L 120	[2]	C026	A632		lda	#$32
+L 121				delay_100us_lp:
+L 122	[2]	C028	9D		nop
+L 123	[2]	C029	9D		nop
+L 124	[3]	C02A	4A		deca
+L 125	[3]	C02B	26FB		bne	delay_100us_lp
+L 126	[6]	C02D	81		rts
+L 127				
+L 128				start:
+L 129	[2]	C02E	A685	        lda #$85 ;key interrupt enable & irout low logic
+L 130				        ;cmp=70mv ,S0 as p00
+L 131	[4]	C030	B702	        sta MCR
+L 132	[2]	C032	A6FE	        lda #$fe
+L 133	[4]	C034	B711	        sta     P0KCON; set port as io
+L 134	[5]	C036	3F10	        clr     P0LCON ;push registor low disable
+L 135				
+L 136	[2]	C038	A6FF	        lda     #$ff
+L 137	[4]	C03A	B704	        sta     DDR0 ;as input
+L 138	[3]	C03C	B603	        lda     P0        
+L 139	[5]	C03E	3F0F	        clr     opa        
+L 140				        ; timer0 initial
+L 141	[2]	C040	A6FF	        lda #$ff
+L 142	[4]	C042	B706	        sta     TLOAD0L
+L 143	[2]	C044	A6FF	        lda #$ff
+L 144	[4]	C046	B707	        sta     TLOAD0H
+L 145	[2]	C048	A610	        lda #%00010000
+L 146	[4]	C04A	B70A	        sta TCR0
+L 147	[5]	C04C	140A	        bset    T0START ;
+L 148				        ;timer1 initial
+L 149	[2]	C04E	A6FF	        lda #255        ;4mhz, 100us 
+L 150	[4]	C050	B70C	        sta     TLOAD1 ;timer1 8bit
+L 151	[2]	C052	A680	        lda #$80
+L 152	[4]	C054	B70B	        sta     TDATA1 ;pwm output H
+L 153	[4]	C056	B7C8	        sta     pwmdata
+L 154	[4]	C058	B70B	        sta     $0B
+L 155	[2]	C05A	A610	        lda #%00010000
+L 156	[4]	C05C	B70D	        sta     TCR1
+L 157	[5]	C05E	1802	        bset    IROUTS  ;irout pin as pwm
+L 158	[5]	C060	140D	        bset    T1START
+L 159				        
+L 160	[5]	C062	1602	        bset    IROUTE
+L 161				        
+L 162	[2]	C064	9A	        cli
+L 163				loop:        
+L 164				
+L 165				        ;lda     P0
+L 166	[2]	C065	9D	        nop
+L 167	[2]	C066	9D	        nop
+L 168	[2]	C067	9D	        nop
+L 169	[5]	C068	1E02	        bset    KBIE ;enable  key int
+L 170	[5]	C06A	1D02	        bclr    KBIF
+L 171	[2]	C06C	8E	        stop
+L 172	[5]	C06D	1F02	        bclr    KBIE
+L 173	[6]	C06F	CDC07A	        jsr     keyscan
+L 174	[6]	C072	CDC0DB	        jsr     timer_counter
+L 175	[6]	C075	CDC111	        jsr     funtion01
+L 176	[3]	C078	20EB	        bra     loop
+L 177				
+L 178				;--------------------------------------
+L 179				keyscan:
+L 180	[5]	C07A	1D02	        bclr    KBIF ;clear key int,and reset port as H
+L 181	[5]	C07C	3FC5	        clr     key_buffer0
+L 182	[5]	C07E	3FC6	        clr     key_buffer1
+L 183	[5]	C080	3FC8	        clr     key_gnd_value0
+L 184	[5]	C082	3FCA	        clr     key_gnd_value1
+L 185	[5]	C084	3FC9	        clr     key_io_value0
+L 186	[5]	C086	3FCA	        clr     key_gnd_value1
+L 187	[5]	C088	1DC0	        bclr    key_io_flag
+L 188	[5]	C08A	1BC0	        bclr    key_gnd_flag
+L 189	[5]	C08C	3FC7	        clr     key_scan_counter
+L 190				scan_gnd:
+L 191	[3]	C08E	B600	        lda     KEYL
+L 192	[4]	C090	B7C5	        sta     key_buffer0
+L 193	[3]	C092	B601	        lda     KEYH
+L 194	[4]	C094	B7C6	        sta     key_buffer1        
+L 195	[2]	C096	A17F	        cmp     #$7f
+L 196	[3]	C098	2706	        beq     lab_key_scan_gnd_next      
+L 197	[3]	C09A	B6C6	        lda     key_buffer1
+L 198	[4]	C09C	B7CA	        sta     key_gnd_value1
+L 199	[5]	C09E	1AC0	        bset     key_gnd_flag
+L 200				lab_key_scan_gnd_next:
+L 201	[3]	C0A0	B6C5	        lda     key_buffer0        
+L 202	[2]	C0A2	A1FF	        cmp     #$ff
+L 203	[3]	C0A4	2706	        beq     lab_key_no_gnd        
+L 204				        ;------search key value-----------------------
+L 205	[5]	C0A6	1AC0	        bset     key_gnd_flag
+L 206	[3]	C0A8	B600	        lda     KEYL
+L 207	[4]	C0AA	B7C8	        sta     key_gnd_value0
+L 208				        
+L 209				lab_key_no_gnd:
+L 210	[2]	C0AC	A61F	        lda     #31
+L 211	[4]	C0AE	B7C7	        sta     key_scan_counter
+L 212	[6]	C0B0	CDC0B4	        jsr     scan_loop        
+L 213	[6]	C0B3	81	        rts
+L 214				        
+L 215				scan_loop:
+L 216	[4]	C0B4	B700	        sta     KEYL
+L 217				        
+L 218	[3]	C0B6	B600	        lda     KEYL
+L 219	[4]	C0B8	B7C5	        sta     key_buffer0
+L 220	[3]	C0BA	B601	        lda     KEYH
+L 221	[4]	C0BC	B7C6	        sta     key_buffer1
+L 222	[2]	C0BE	A17F	        cmp     #$7f
+L 223	[3]	C0C0	2706	        beq     next_keyl
+L 224	[5]	C0C2	1CC0	        bset    key_io_flag
+L 225	[3]	C0C4	B601	        lda     KEYH
+L 226	[4]	C0C6	B7CB	        sta     key_io_value1 ;save keyh value
+L 227				next_keyl:        
+L 228	[3]	C0C8	B6C5	        lda     key_buffer0
+L 229	[2]	C0CA	A1FF	        cmp     #$ff
+L 230	[3]	C0CC	2706	        beq     lab_key_no_io
+L 231	[5]	C0CE	1CC0	        bset    key_io_flag
+L 232	[3]	C0D0	B600	        lda     KEYL    
+L 233	[4]	C0D2	B7C9	        sta     key_io_value0
+L 234				lab_key_no_io:
+L 235	[5]	C0D4	3AC7	        dec     key_scan_counter
+L 236	[3]	C0D6	B6C7	        lda     key_scan_counter        
+L 237	[3]	C0D8	26DA	        bne     scan_loop        
+L 238	[6]	C0DA	81	        rts        
+L 239				;--------------------------------------
+L 240				; 100ms & 1 s
+L 241				timer_counter:
+L 242	[5]	C0DB	01C032	       brclr     time_100us_flag,timer_counter_return
+L 243	[5]	C0DE	11C0	       bclr     time_100us_flag
+L 244	[5]	C0E0	3CC1	       inc      timer_1ms_counter
+L 245	[3]	C0E2	B6C1	       lda      timer_1ms_counter
+L 246	[2]	C0E4	A10A	       cmp      #10
+L 247	[3]	C0E6	2628	       bne      timer_counter_return
+L 248	[5]	C0E8	12C0	       bset     time_1ms_flag;
+L 249	[5]	C0EA	3FC1	       clr      timer_1ms_counter
+L 250	[5]	C0EC	3CC2	       inc      timer_100ms_counter
+L 251	[3]	C0EE	B6C2	       lda      timer_100ms_counter
+L 252	[2]	C0F0	A164	       cmp      #100;10ms
+L 253	[3]	C0F2	261C	       bne      timer_counter_return
+L 254	[5]	C0F4	14C0	       bset     time_100ms_flag
+L 255	[5]	C0F6	3FC2	       clr      timer_100ms_counter
+L 256	[5]	C0F8	3CC3	       inc      timer_1s_counter
+L 257	[3]	C0FA	B6C3	       lda      timer_1s_counter
+L 258	[2]	C0FC	A10A	       cmp      #10
+L 259	[3]	C0FE	2610	       bne      timer_counter_return
+L 260	[5]	C100	16C0	       bset     time_1s_flag
+L 261	[5]	C102	3FC3	       clr      timer_1s_counter
+L 262	[5]	C104	3CC4	       inc      timer_10s_counter
+L 263	[3]	C106	B6C4	       lda      timer_10s_counter
+L 264	[2]	C108	A10A	       cmp      #10
+L 265	[3]	C10A	2604	       bne      timer_counter_return
+L 266	[5]	C10C	18C0	       bset     time_10s_flag
+L 267	[5]	C10E	3FC4	       clr      timer_10s_counter
+L 268				
+L 269				timer_counter_return:       
+L 270	[6]	C110	81	        rts  
+L 271				
+L 272				;------adjust pwm ------------------------------------        
+L 273				funtion01:
+L 274	[5]	C111	05C009	        brclr   time_100ms_flag,return_funtion01
+L 275	[5]	C114	15C0	        bclr    time_100ms_flag
+L 276				        
+L 277				        ;change pwm 
+L 278	[3]	C116	B6C8	        lda pwmdata
+L 279	[3]	C118	4C	        inca    
+L 280				        ;LDA     #1
+L 281	[4]	C119	B7C8	        sta     pwmdata
+L 282	[4]	C11B	B70B	        sta     TDATA1 
+L 283				        
+L 284				return_funtion01:        
+L 285	[6]	C11D	81	        rts
+L 286				
+L 287				funtion0011:
+L 288	[2]	C11E	A69B	        lda #$9b        
+L 289	[2]	C120	AE01	        ldx    #$01
+L 290	[6]	C122	D70100	        sta     $100,X
+L 291				        ;jmp funtion01 ;test sp value
+L 292	[6]	C125	81	        rts
+L 293				
+L 294				        
+L 295				
+L 296				
+L 297				
+L 298				        
+L 299				kbi_int:
+L 300	[5]	C126	1D02	        bclr    KBIF    ;clear key int
+L 301				        ;bclr    KBIE
+L 302	[9]	C128	80	        rti
+L 303				        ;timer0 interrupt funtion
+L 304				timer0_int:
+L 305	[5]	C129	1F0A	        bclr    TIF0; clear int flag
+L 306	[5]	C12B	000304	        brset   0,P0,lab_low
+L 307	[5]	C12E	1003	        bset    0,P0
+L 308	[3]	C130	2002	        bra     lab_end_timer0
+L 309				lab_low:
+L 310	[5]	C132	1103	        bclr    0,P0
+L 311				lab_end_timer0:        
+L 312	[9]	C134	80	        rti
+L 313				
+L 314				;timer interrupt funtion        
+L 315				timer1_int:
+L 316	[5]	C135	1F0D	        bclr    TIF1
+L 317	[5]	C137	020304	        brset   1,P0,lab_low1
+L 318	[5]	C13A	1203	        bset    1,P0
+L 319	[3]	C13C	2002	        bra     lab_end_timer1
+L 320				lab_low1:
+L 321	[5]	C13E	1303	        bclr    1,P0
+L 322				lab_end_timer1:
+L 323	[5]	C140	10C0	        bset time_100us_flag       
+L 324	[9]	C142	80	        rti
+L 325				        
+L 326				        
+L 327				int0_int:
+L 328				int1_int:
+L 329				swi_int:
+L 330	[2]	C143	9D	        nop
+L 331	[9]	C144	80	        rti        
+L 332				   
+L 333				   
+L 334				        org     $fff2
+L 335		FFF2	C126	        fdb     kbi_int
+L 336				        
+L 337				        org     $fff4
+L 338		FFF4	C129	        fdb     timer0_int
+L 339				        
+L 340				        org     $fff6
+L 341		FFF6	C135	        fdb     timer1_int
+L 342				        
+L 343				        org     $fff8
+L 344		FFF8	C143	        fdb     int0_int
+L 345				        
+L 346				        org     $fffa
+L 347		FFFA	C143	        fdb     int1_int
+L 348				        
+L 349				        org     $fffc
+L 350		FFFC	C143	        fdb     swi_int
+L 351				        
+L 352				        org     $fffe
+L 353		FFFE	C000	        fdb     reset   
+L 354				        

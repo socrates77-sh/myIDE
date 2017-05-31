@@ -1,0 +1,1096 @@
+L 1					; C Compiler for MC68HC05 (COSMIC Software)
+L 2					; Generator V4.1n - 19 Jul 2001
+L 3					; Optimizer V4.1n - 19 Jul 2001
+L 4					.const:	section
+L 5					1312               _table_0_9:
+L 6	[1]	1312	e7            	dc.b	231
+L 7	[1]	1313	81            	dc.b	129
+L 8	[1]	1314	6b            	dc.b	107
+L 9	[1]	1315	ab            	dc.b	171
+L 10	[1]	1316	8d            	dc.b	141
+L 11	[1]	1317	ae            	dc.b	174
+L 12	[1]	1318	ee            	dc.b	238
+L 13	[1]	1319	83            	dc.b	131
+L 14	[1]	131a	ef            	dc.b	239
+L 15	[1]	131b	af            	dc.b	175
+L 16	[1]	131c	00            	dc.b	0
+L 17	[1]	131d	00            	dc.b	0
+L 18	[1]	131e	00            	dc.b	0
+L 19	[1]	131f	00            	dc.b	0
+L 20	[1]	1320	00            	dc.b	0
+L 21					1321               _temperature_table:
+L 22	[1]	1321	00            	dc.b	0
+L 23	[1]	1322	00            	dc.b	0
+L 24	[1]	1323	00            	dc.b	0
+L 25	[1]	1324	00            	dc.b	0
+L 26	[1]	1325	00            	dc.b	0
+L 27	[1]	1326	00            	dc.b	0
+L 28	[1]	1327	00            	dc.b	0
+L 29	[1]	1328	00            	dc.b	0
+L 30	[1]	1329	00            	dc.b	0
+L 31	[1]	132a	00            	dc.b	0
+L 32	[1]	132b	00            	dc.b	0
+L 33	[1]	132c	00            	dc.b	0
+L 34	[1]	132d	00            	dc.b	0
+L 35	[1]	132e	00            	dc.b	0
+L 36	[1]	132f	00            	dc.b	0
+L 37	[1]	1330	00            	dc.b	0
+L 38	[1]	1331	00            	dc.b	0
+L 39	[1]	1332	00            	dc.b	0
+L 40	[1]	1333	00            	dc.b	0
+L 41	[1]	1334	00            	dc.b	0
+L 42	[1]	1335	00            	dc.b	0
+L 43	[1]	1336	00            	dc.b	0
+L 44	[1]	1337	00            	dc.b	0
+L 45	[1]	1338	00            	dc.b	0
+L 46	[1]	1339	00            	dc.b	0
+L 47	[1]	133a	00            	dc.b	0
+L 48	[1]	133b	78            	dc.b	120
+L 49	[1]	133c	77            	dc.b	119
+L 50	[1]	133d	76            	dc.b	118
+L 51	[1]	133e	74            	dc.b	116
+L 52	[1]	133f	72            	dc.b	114
+L 53	[1]	1340	71            	dc.b	113
+L 54	[1]	1341	6f            	dc.b	111
+L 55	[1]	1342	6e            	dc.b	110
+L 56	[1]	1343	6d            	dc.b	109
+L 57	[1]	1344	6b            	dc.b	107
+L 58	[1]	1345	6a            	dc.b	106
+L 59	[1]	1346	69            	dc.b	105
+L 60	[1]	1347	67            	dc.b	103
+L 61	[1]	1348	66            	dc.b	102
+L 62	[1]	1349	65            	dc.b	101
+L 63	[1]	134a	64            	dc.b	100
+L 64	[1]	134b	63            	dc.b	99
+L 65	[1]	134c	62            	dc.b	98
+L 66	[1]	134d	61            	dc.b	97
+L 67	[1]	134e	60            	dc.b	96
+L 68	[1]	134f	5f            	dc.b	95
+L 69	[1]	1350	5e            	dc.b	94
+L 70	[1]	1351	5d            	dc.b	93
+L 71	[1]	1352	5c            	dc.b	92
+L 72	[1]	1353	5b            	dc.b	91
+L 73	[1]	1354	5a            	dc.b	90
+L 74	[1]	1355	59            	dc.b	89
+L 75	[1]	1356	58            	dc.b	88
+L 76	[1]	1357	57            	dc.b	87
+L 77	[1]	1358	56            	dc.b	86
+L 78	[1]	1359	55            	dc.b	85
+L 79	[1]	135a	54            	dc.b	84
+L 80	[1]	135b	53            	dc.b	83
+L 81	[1]	135c	53            	dc.b	83
+L 82	[1]	135d	52            	dc.b	82
+L 83	[1]	135e	52            	dc.b	82
+L 84	[1]	135f	51            	dc.b	81
+L 85	[1]	1360	50            	dc.b	80
+L 86	[1]	1361	50            	dc.b	80
+L 87	[1]	1362	4f            	dc.b	79
+L 88	[1]	1363	4e            	dc.b	78
+L 89	[1]	1364	4e            	dc.b	78
+L 90	[1]	1365	4d            	dc.b	77
+L 91	[1]	1366	4c            	dc.b	76
+L 92	[1]	1367	4c            	dc.b	76
+L 93	[1]	1368	4b            	dc.b	75
+L 94	[1]	1369	4a            	dc.b	74
+L 95	[1]	136a	4a            	dc.b	74
+L 96	[1]	136b	49            	dc.b	73
+L 97	[1]	136c	48            	dc.b	72
+L 98	[1]	136d	48            	dc.b	72
+L 99	[1]	136e	47            	dc.b	71
+L 100	[1]	136f	46            	dc.b	70
+L 101	[1]	1370	46            	dc.b	70
+L 102	[1]	1371	45            	dc.b	69
+L 103	[1]	1372	45            	dc.b	69
+L 104	[1]	1373	44            	dc.b	68
+L 105	[1]	1374	44            	dc.b	68
+L 106	[1]	1375	43            	dc.b	67
+L 107	[1]	1376	43            	dc.b	67
+L 108	[1]	1377	42            	dc.b	66
+L 109	[1]	1378	42            	dc.b	66
+L 110	[1]	1379	41            	dc.b	65
+L 111	[1]	137a	40            	dc.b	64
+L 112	[1]	137b	40            	dc.b	64
+L 113	[1]	137c	3f            	dc.b	63
+L 114	[1]	137d	3f            	dc.b	63
+L 115	[1]	137e	3e            	dc.b	62
+L 116	[1]	137f	3e            	dc.b	62
+L 117	[1]	1380	3d            	dc.b	61
+L 118	[1]	1381	3d            	dc.b	61
+L 119	[1]	1382	3c            	dc.b	60
+L 120	[1]	1383	3b            	dc.b	59
+L 121	[1]	1384	3b            	dc.b	59
+L 122	[1]	1385	3a            	dc.b	58
+L 123	[1]	1386	3a            	dc.b	58
+L 124	[1]	1387	39            	dc.b	57
+L 125	[1]	1388	39            	dc.b	57
+L 126	[1]	1389	38            	dc.b	56
+L 127	[1]	138a	38            	dc.b	56
+L 128	[1]	138b	37            	dc.b	55
+L 129	[1]	138c	37            	dc.b	55
+L 130	[1]	138d	36            	dc.b	54
+L 131	[1]	138e	36            	dc.b	54
+L 132	[1]	138f	35            	dc.b	53
+L 133	[1]	1390	35            	dc.b	53
+L 134	[1]	1391	35            	dc.b	53
+L 135	[1]	1392	34            	dc.b	52
+L 136	[1]	1393	34            	dc.b	52
+L 137	[1]	1394	33            	dc.b	51
+L 138	[1]	1395	33            	dc.b	51
+L 139	[1]	1396	32            	dc.b	50
+L 140	[1]	1397	32            	dc.b	50
+L 141	[1]	1398	31            	dc.b	49
+L 142	[1]	1399	31            	dc.b	49
+L 143	[1]	139a	30            	dc.b	48
+L 144	[1]	139b	30            	dc.b	48
+L 145	[1]	139c	2f            	dc.b	47
+L 146	[1]	139d	2f            	dc.b	47
+L 147	[1]	139e	2f            	dc.b	47
+L 148	[1]	139f	2e            	dc.b	46
+L 149	[1]	13a0	2e            	dc.b	46
+L 150	[1]	13a1	2d            	dc.b	45
+L 151	[1]	13a2	2d            	dc.b	45
+L 152	[1]	13a3	2c            	dc.b	44
+L 153	[1]	13a4	2c            	dc.b	44
+L 154	[1]	13a5	2b            	dc.b	43
+L 155	[1]	13a6	2b            	dc.b	43
+L 156	[1]	13a7	2a            	dc.b	42
+L 157	[1]	13a8	2a            	dc.b	42
+L 158	[1]	13a9	2a            	dc.b	42
+L 159	[1]	13aa	29            	dc.b	41
+L 160	[1]	13ab	29            	dc.b	41
+L 161	[1]	13ac	28            	dc.b	40
+L 162	[1]	13ad	28            	dc.b	40
+L 163	[1]	13ae	27            	dc.b	39
+L 164	[1]	13af	27            	dc.b	39
+L 165	[1]	13b0	26            	dc.b	38
+L 166	[1]	13b1	26            	dc.b	38
+L 167	[1]	13b2	26            	dc.b	38
+L 168	[1]	13b3	25            	dc.b	37
+L 169	[1]	13b4	25            	dc.b	37
+L 170	[1]	13b5	24            	dc.b	36
+L 171	[1]	13b6	24            	dc.b	36
+L 172	[1]	13b7	23            	dc.b	35
+L 173	[1]	13b8	23            	dc.b	35
+L 174	[1]	13b9	22            	dc.b	34
+L 175	[1]	13ba	22            	dc.b	34
+L 176	[1]	13bb	22            	dc.b	34
+L 177	[1]	13bc	21            	dc.b	33
+L 178	[1]	13bd	21            	dc.b	33
+L 179	[1]	13be	20            	dc.b	32
+L 180	[1]	13bf	20            	dc.b	32
+L 181	[1]	13c0	1f            	dc.b	31
+L 182	[1]	13c1	1f            	dc.b	31
+L 183	[1]	13c2	1e            	dc.b	30
+L 184	[1]	13c3	1e            	dc.b	30
+L 185	[1]	13c4	1e            	dc.b	30
+L 186	[1]	13c5	1d            	dc.b	29
+L 187	[1]	13c6	1d            	dc.b	29
+L 188	[1]	13c7	1c            	dc.b	28
+L 189	[1]	13c8	1c            	dc.b	28
+L 190	[1]	13c9	1b            	dc.b	27
+L 191	[1]	13ca	1b            	dc.b	27
+L 192	[1]	13cb	1a            	dc.b	26
+L 193	[1]	13cc	1a            	dc.b	26
+L 194	[1]	13cd	19            	dc.b	25
+L 195	[1]	13ce	19            	dc.b	25
+L 196	[1]	13cf	19            	dc.b	25
+L 197	[1]	13d0	18            	dc.b	24
+L 198	[1]	13d1	18            	dc.b	24
+L 199	[1]	13d2	17            	dc.b	23
+L 200	[1]	13d3	17            	dc.b	23
+L 201	[1]	13d4	16            	dc.b	22
+L 202	[1]	13d5	16            	dc.b	22
+L 203	[1]	13d6	15            	dc.b	21
+L 204	[1]	13d7	15            	dc.b	21
+L 205	[1]	13d8	14            	dc.b	20
+L 206	[1]	13d9	14            	dc.b	20
+L 207	[1]	13da	13            	dc.b	19
+L 208	[1]	13db	13            	dc.b	19
+L 209	[1]	13dc	12            	dc.b	18
+L 210	[1]	13dd	12            	dc.b	18
+L 211	[1]	13de	11            	dc.b	17
+L 212	[1]	13df	11            	dc.b	17
+L 213	[1]	13e0	10            	dc.b	16
+L 214	[1]	13e1	10            	dc.b	16
+L 215	[1]	13e2	0f            	dc.b	15
+L 216	[1]	13e3	0f            	dc.b	15
+L 217	[1]	13e4	0e            	dc.b	14
+L 218	[1]	13e5	0e            	dc.b	14
+L 219	[1]	13e6	0d            	dc.b	13
+L 220	[1]	13e7	0d            	dc.b	13
+L 221	[1]	13e8	0c            	dc.b	12
+L 222	[1]	13e9	0c            	dc.b	12
+L 223	[1]	13ea	0b            	dc.b	11
+L 224	[1]	13eb	0a            	dc.b	10
+L 225	[1]	13ec	0a            	dc.b	10
+L 226	[1]	13ed	09            	dc.b	9
+L 227	[1]	13ee	09            	dc.b	9
+L 228	[1]	13ef	08            	dc.b	8
+L 229	[1]	13f0	08            	dc.b	8
+L 230	[1]	13f1	07            	dc.b	7
+L 231	[1]	13f2	06            	dc.b	6
+L 232	[1]	13f3	06            	dc.b	6
+L 233	[1]	13f4	05            	dc.b	5
+L 234	[1]	13f5	05            	dc.b	5
+L 235	[1]	13f6	04            	dc.b	4
+L 236	[1]	13f7	03            	dc.b	3
+L 237	[1]	13f8	03            	dc.b	3
+L 238	[1]	13f9	02            	dc.b	2
+L 239	[1]	13fa	01            	dc.b	1
+L 240	[1]	13fb	01            	dc.b	1
+L 241	[1]	13fc	00            	dc.b	0
+L 242					; 3 @interrupt void SWI_ISR(void)
+L 243					; 4 {
+L 244						xref.b	_SWI_ISR.L
+L 245						switch	.text
+L 246					1003               _SWI_ISR:
+L 247					; 5 }
+L 248	[1]	1003	80            	rti	
+L 249					; 7 @interrupt void INT1_ISR(void)
+L 250					; 8 {
+L 251						xref.b	_INT1_ISR.L
+L 252						switch	.text
+L 253					1004               _INT1_ISR:
+L 254					; 10 }
+L 255	[1]	1004	80            	rti	
+L 256					; 12 @interrupt void PWMINT_ISR(void)
+L 257					; 13 {
+L 258						xref.b	_PWMINT_ISR.L
+L 259						switch	.text
+L 260					1005               _PWMINT_ISR:
+L 261					; 15 }
+L 262	[1]	1005	80            	rti	
+L 263					; 16 @nosvf @interrupt void T0INT_ISR(void)
+L 264					; 17 {		
+L 265						xref.b	_T0INT_ISR.L
+L 266						switch	.text
+L 267					1006               _T0INT_ISR:
+L 268					; 19     T0CON  = T_T0CON;
+L 269	[1]	1006	a682          	lda	#130
+L 270	[1]	1008	b702          	sta	_t0con
+L 271					; 21     if(FLAG_BUZ_EN == 1) 
+L 272	[1]	100a	074d0b        	brclr	3,_FLAG,L3731
+L 273					; 23     		if(FLAG_BUZ_BX == 1)
+L 274	[1]	100d	054d0a        	brclr	2,_FLAG,L7731
+L 275					; 25     				P1 = P1 ^ 0x01;
+L 276	[1]	1010	b611          	lda	_p1
+L 277	[1]	1012	a801          	eor	#1
+L 278	[1]	1014	b711          	sta	_p1
+L 279	[1]	1016	2002          	bra	L7731
+L 280					1018               L3731:
+L 281					; 30     		P1 = P1 & 0xfe;
+L 282	[1]	1018	1111          	bclr	0,_p1
+L 283					101a               L7731:
+L 284					; 33      if(++Timer_125us >= 2)
+L 285	[1]	101a	3c48          	inc	_Timer_125us
+L 286	[1]	101c	b648          	lda	_Timer_125us
+L 287	[1]	101e	a102          	cmp	#2
+L 288	[1]	1020	250e          	blo	L1041
+L 289					; 35         		Timer_125us = 0 ;   		
+L 290	[1]	1022	3f48          	clr	_Timer_125us
+L 291					; 36     		if(++Timer_250us >= 200)
+L 292	[1]	1024	3c47          	inc	_Timer_250us
+L 293	[1]	1026	b647          	lda	_Timer_250us
+L 294	[1]	1028	a1c8          	cmp	#200
+L 295	[1]	102a	2504          	blo	L1041
+L 296					; 38     				Timer_250us = 0;
+L 297	[1]	102c	3f47          	clr	_Timer_250us
+L 298					; 39     				Timer_50ms++;
+L 299	[1]	102e	3c46          	inc	_Timer_50ms
+L 300					1030               L1041:
+L 301					; 43     if(++Timer_press_125us >= 200)
+L 302	[1]	1030	3c4c          	inc	_Timer_press_125us
+L 303	[1]	1032	b64c          	lda	_Timer_press_125us
+L 304	[1]	1034	a1c8          	cmp	#200
+L 305	[1]	1036	2504          	blo	L5041
+L 306					; 45     		Timer_press_125us = 0;
+L 307	[1]	1038	3f4c          	clr	_Timer_press_125us
+L 308					; 46     		Timer_press_25ms++;
+L 309	[1]	103a	3c4b          	inc	_Timer_press_25ms
+L 310					103c               L5041:
+L 311					; 50     if(++Timer_refresh_125us >= 200)
+L 312	[1]	103c	3c4a          	inc	_Timer_refresh_125us
+L 313	[1]	103e	b64a          	lda	_Timer_refresh_125us
+L 314	[1]	1040	a1c8          	cmp	#200
+L 315	[1]	1042	2504          	blo	L7041
+L 316					; 52      		Timer_refresh_125us= 0;
+L 317	[1]	1044	3f4a          	clr	_Timer_refresh_125us
+L 318					; 53      		Timer_refresh_25ms++;
+L 319	[1]	1046	3c49          	inc	_Timer_refresh_25ms
+L 320					1048               L7041:
+L 321					; 56      	display(); 	
+L 322	[1]	1048	cd1244        	jsr	_display
+L 323					; 57 }
+L 324	[1]	104b	80            	rti	
+L 325					; 59 @interrupt void INT0_ISR(void)
+L 326					; 60 {
+L 327						xref.b	_INT0_ISR.L
+L 328						switch	.text
+L 329					104c               _INT0_ISR:
+L 330					; 62 }
+L 331	[1]	104c	80            	rti	
+L 332					; 9 void  InitRst(void)
+L 333					; 10 {
+L 334						switch	.text
+L 335					104d               _InitRst:
+L 336					; 11     BTCON   = 0xa2;
+L 337	[1]	104d	a6a2          	lda	#162
+L 338	[1]	104f	b70c          	sta	_btcon
+L 339					; 12     MCR     = 0x01;
+L 340	[1]	1051	a601          	lda	#1
+L 341	[1]	1053	b703          	sta	_mcr
+L 342					; 13     PWMCON  = 0x08;
+L 343	[1]	1055	a608          	lda	#8
+L 344	[1]	1057	b723          	sta	_pwmcon
+L 345					; 14     PWMDATA = 0xff;
+L 346	[1]	1059	a6ff          	lda	#255
+L 347	[1]	105b	b722          	sta	_PWMDATA
+L 348					; 16     P0CONH = 0x00;
+L 349	[1]	105d	3f16          	clr	_p0conh
+L 350					; 17     P0CONL = 0x5d;
+L 351	[1]	105f	a65d          	lda	#93
+L 352	[1]	1061	b717          	sta	_p0conl
+L 353					; 18     P0PND  = 0X00;
+L 354	[1]	1063	3f18          	clr	_p0pnd
+L 355					; 20     P1CON  = 0x0a;
+L 356	[1]	1065	a60a          	lda	#10
+L 357	[1]	1067	b719          	sta	_p1con
+L 358					; 22     P2CONH = 0x00;
+L 359	[1]	1069	3f1a          	clr	_p2conh
+L 360					; 23     P2CONL = 0x00;
+L 361	[1]	106b	3f1b          	clr	_p2conl
+L 362					; 25     P0  = 0x00;
+L 363	[1]	106d	3f10          	clr	_p0
+L 364					; 26     P1  = 0x00;
+L 365	[1]	106f	3f11          	clr	_p1
+L 366					; 27     P2  = 0x00;
+L 367	[1]	1071	3f12          	clr	_p2
+L 368					; 28     ADCON = 0x10;
+L 369	[1]	1073	a610          	lda	#16
+L 370	[1]	1075	b727          	sta	_adcon
+L 371					; 29 }
+L 372	[1]	1077	81            	rts	
+L 373					; 14 void  main(void)
+L 374					; 15 {
+L 375						switch	.text
+L 376					1078               _main:
+L 377					; 16     SEI();
+L 378	[1]	1078	9b            	sei	
+L 379					; 18     InitRst();                //初始化系统计时器
+L 380	[1]	1079	add2          	jsr	_InitRst
+L 381					; 19     InitRam();                //初始化工作寄存器
+L 382	[1]	107b	ad21          	jsr	_InitRam
+L 383					; 21     T0DATA = T_T0DATA;
+L 384	[1]	107d	a632          	lda	#50
+L 385	[1]	107f	b701          	sta	_T0DATA
+L 386					; 22     T0CON = T_T0CON;
+L 387	[1]	1081	a682          	lda	#130
+L 388	[1]	1083	b702          	sta	_t0con
+L 389					; 23     CLI();
+L 390	[1]	1085	9a            	cli	
+L 391					; 24     Quotient =70;
+L 392	[1]	1086	a646          	lda	#70
+L 393	[1]	1088	b734          	sta	_Quotient
+L 394					; 25     startbibi(1,0);
+L 395	[1]	108a	3f58          	clr	_startbibi.L+1
+L 396	[1]	108c	a601          	lda	#1
+L 397	[1]	108e	ad22          	jsr	_startbibi
+L 398					1090               L7441:
+L 399					; 29         BTCLR = 1;
+L 400	[1]	1090	120c          	bset	1,_btcon
+L 401					; 30         ad_check();  
+L 402	[1]	1092	ad7b          	jsr	_ad_check
+L 403					; 31         check_button();
+L 404	[1]	1094	cd1181        	jsr	_check_button
+L 405					; 32         mn_cycle();
+L 406	[1]	1097	cd1209        	jsr	_mn_cycle
+L 407					; 33         buzzer_deal();
+L 408	[1]	109a	ad4b          	jsr	_buzzer_deal
+L 409	[1]	109c	20f2          	bra	L7441
+L 410					; 59 void  InitRam(void)
+L 411					; 60 {	
+L 412						switch	.text
+L 413					109e               _InitRam:
+L 414					; 62         ram_clear:			
+L 415					109e               ram_clear:
+L 416					; 63     	          ldx	#129
+L 417	[1]	109e	ae81          	ldx	#129
+L 418					; 64         ram_clear1:
+L 419					10a0               ram_clear1:
+L 420					; 65 	          clr	$2F,X
+L 421	[1]	10a0	6f2f          	clr	$2F,X
+L 422					; 66 	          decx
+L 423	[1]	10a2	5a            	decx	
+L 424					; 67 	          bne	ram_clear1
+L 425	[1]	10a3	26fb          	bne	ram_clear1
+L 426					; 69 }
+L 427	[1]	10a5	81            	rts	
+L 428					; 71 void error(uchar i)
+L 429					; 72 {
+L 430						xref.b	_error.L
+L 431						switch	.text
+L 432					10a6               _error:
+L 433					; 73 	com2_data = i;
+L 434	[1]	10a6	b738          	sta	_com2_data
+L 435					; 74   com1_data = 0x0e;  
+L 436	[1]	10a8	a60e          	lda	#14
+L 437	[1]	10aa	b739          	sta	_com1_data
+L 438					; 75   startbibi(6,0);
+L 439	[1]	10ac	3f58          	clr	_startbibi.L+1
+L 440	[1]	10ae	a606          	lda	#6
+L 441					; 76 }
+L 442	[1]	10b0	2000          	jmp	_startbibi
+L 443					; 78 void startbibi(uchar i, uchar j)
+L 444					; 79 {    
+L 445						xref.b	_startbibi.L
+L 446						switch	.text
+L 447					10b2               _startbibi:
+L 448	[1]	10b2	b757          	sta	_startbibi.L
+L 449					; 80     Buzzer_H_Timer = BUZ_TIME_H;
+L 450	[1]	10b4	a65f          	lda	#95
+L 451	[1]	10b6	b73d          	sta	_Buzzer_H_Timer
+L 452					; 81     Buzzer_L_Timer = BUZ_TIME_L;    
+L 453	[1]	10b8	a6ff          	lda	#255
+L 454	[1]	10ba	b73c          	sta	_Buzzer_L_Timer
+L 455					; 82     FLAG_BUZ_BX = 1;
+L 456	[1]	10bc	144d          	bset	2,_FLAG
+L 457					; 83     FLAG_BUZ_EN = 1;
+L 458	[1]	10be	164d          	bset	3,_FLAG
+L 459					; 84     FLAG_BUZ_Forever = 0;
+L 460	[1]	10c0	114d          	bclr	0,_FLAG
+L 461					; 85     if(j!=0) FLAG_BUZ_Forever = 1;
+L 462	[1]	10c2	3d58          	tst	_startbibi.L+1
+L 463	[1]	10c4	2702          	beq	L7051
+L 464	[1]	10c6	104d          	bset	0,_FLAG
+L 465					10c8               L7051:
+L 466					; 86     Buzzer_Counter = i;
+L 467	[1]	10c8	b657          	lda	_startbibi.L
+L 468	[1]	10ca	b73b          	sta	_Buzzer_Counter
+L 469					; 87 }
+L 470	[1]	10cc	81            	rts	
+L 471					; 89 void K_LB(void)
+L 472					; 90 {	
+L 473						switch	.text
+L 474					10cd               _K_LB:
+L 475					; 91 	if(R_KEY1 == R_KEY1_BAK)
+L 476	[1]	10cd	b651          	lda	_R_KEY1
+L 477	[1]	10cf	b150          	cmp	_R_KEY1_BAK
+L 478	[1]	10d1	260d          	bne	L7151
+L 479					; 93 		   if(--R_K_LB == 0)
+L 480	[1]	10d3	3a4e          	dec	_R_K_LB
+L 481	[1]	10d5	2608          	bne	L1251
+L 482					; 95 		     	R_KEY1_TRU.byte =R_KEY1_BAK;
+L 483	[1]	10d7	b650          	lda	_R_KEY1_BAK
+L 484	[1]	10d9	b74f          	sta	_R_KEY1_TRU
+L 485					; 96 		     	R_K_LB = C_K_LB;
+L 486	[1]	10db	a614          	lda	#20
+L 487	[1]	10dd	b74e          	sta	_R_K_LB
+L 488					; 97 		     	return;
+L 489					10df               L1251:
+L 490					; 99 		   else return;
+L 491	[1]	10df	81            	rts	
+L 492					10e0               L7151:
+L 493					; 102   	R_KEY1_BAK = R_KEY1;
+L 494	[1]	10e0	b750          	sta	_R_KEY1_BAK
+L 495					; 103 	R_K_LB = C_K_LB;
+L 496	[1]	10e2	a614          	lda	#20
+L 497	[1]	10e4	b74e          	sta	_R_K_LB
+L 498					; 104 }
+L 499	[1]	10e6	81            	rts	
+L 500					; 106 void buzzer_deal(void)
+L 501					; 107 {	
+L 502						switch	.text
+L 503					10e7               _buzzer_deal:
+L 504					; 108 	if(FLAG_BUZ_EN == 1)
+L 505	[1]	10e7	074d24        	brclr	3,_FLAG,L3351
+L 506					; 110 			if(FLAG_BUZ_Forever == 0)
+L 507	[1]	10ea	004d21        	brset	0,_FLAG,L3351
+L 508					; 112 					if(Buzzer_Counter == 0) 
+L 509	[1]	10ed	3d3b          	tst	_Buzzer_Counter
+L 510	[1]	10ef	2603          	bne	L7351
+L 511					; 114 						FLAG_BUZ_EN = 0;
+L 512	[1]	10f1	174d          	bclr	3,_FLAG
+L 513					; 115 						return;
+L 514	[1]	10f3	81            	rts	
+L 515					10f4               L7351:
+L 516					; 118 			if(FLAG_BUZ_BX == 1)
+L 517	[1]	10f4	054d0d        	brclr	2,_FLAG,L1451
+L 518					; 120 					if(--Buzzer_H_Timer == 0)
+L 519	[1]	10f7	3a3d          	dec	_Buzzer_H_Timer
+L 520	[1]	10f9	2613          	bne	L3351
+L 521					; 122 							Buzzer_Counter--;
+L 522	[1]	10fb	3a3b          	dec	_Buzzer_Counter
+L 523					; 123 							FLAG_BUZ_BX = 0;
+L 524	[1]	10fd	154d          	bclr	2,_FLAG
+L 525					; 124 							Buzzer_H_Timer = BUZ_TIME_H;							
+L 526	[1]	10ff	a65f          	lda	#95
+L 527	[1]	1101	b73d          	sta	_Buzzer_H_Timer
+L 528	[1]	1103	81            	rts	
+L 529					1104               L1451:
+L 530					; 129 					if(--Buzzer_L_Timer == 0)
+L 531	[1]	1104	3a3c          	dec	_Buzzer_L_Timer
+L 532	[1]	1106	2606          	bne	L3351
+L 533					; 131 							FLAG_BUZ_BX = 1;
+L 534	[1]	1108	144d          	bset	2,_FLAG
+L 535					; 132 							Buzzer_L_Timer = BUZ_TIME_L;
+L 536	[1]	110a	a6ff          	lda	#255
+L 537	[1]	110c	b73c          	sta	_Buzzer_L_Timer
+L 538					110e               L3351:
+L 539					; 137 }  
+L 540	[1]	110e	81            	rts	
+L 541					; 139 void  ad_check(void)
+L 542					; 140 {	  	  
+L 543						xref.b	_ad_check.L
+L 544						switch	.text
+L 545					110f               _ad_check:
+L 546					; 143     ADCON = T_ADCON;
+L 547	[1]	110f	a654          	lda	#84
+L 548	[1]	1111	b727          	sta	_adcon
+L 549					; 144     ADCH = 8;
+L 550	[1]	1113	b627          	lda	_adcon
+L 551	[1]	1115	a40f          	and	#15
+L 552	[1]	1117	aa80          	ora	#128
+L 553	[1]	1119	b727          	sta	_adcon
+L 554					; 145     ADPS = 3;
+L 555	[1]	111b	1227          	bset	1,_adcon
+L 556	[1]	111d	1427          	bset	2,_adcon
+L 557					; 146     NOP();
+L 558	[1]	111f	9d            	nop	
+L 559					; 147     NOP();
+L 560	[1]	1120	9d            	nop	
+L 561					; 148     NOP();
+L 562	[1]	1121	9d            	nop	
+L 563					; 150     ADCE = 1;
+L 564	[1]	1122	1027          	bset	0,_adcon
+L 565					1124               L3161:
+L 566					; 151     while (EOC == 0) ;
+L 567	[1]	1124	0727fd        	brclr	3,_adcon,L3161
+L 568					; 152     ad_result.word  = ADDATAH;
+L 569	[1]	1127	b628          	lda	_ADDATAH
+L 570	[1]	1129	5f            	clrx	
+L 571	[1]	112a	b755          	sta	_ad_check.L-1
+L 572	[1]	112c	bf54          	stx	_ad_check.L-2
+L 573					; 154     Buffer_Temper.word  += ad_result.word;
+L 574	[1]	112e	b642          	lda	_Buffer_Temper+1
+L 575	[1]	1130	bb55          	add	_ad_check.L-1
+L 576	[1]	1132	b742          	sta	_Buffer_Temper+1
+L 577	[1]	1134	b641          	lda	_Buffer_Temper
+L 578	[1]	1136	b954          	adc	_ad_check.L-2
+L 579	[1]	1138	b741          	sta	_Buffer_Temper
+L 580					; 155     if (++AD_Cnt >= AVERAGE_CNT) 
+L 581	[1]	113a	3c40          	inc	_AD_Cnt
+L 582	[1]	113c	b640          	lda	_AD_Cnt
+L 583	[1]	113e	a180          	cmp	#128
+L 584	[1]	1140	2513          	blo	L7161
+L 585					; 157     		Buffer_Temper.word = Buffer_Temper.word>>7;
+L 586	[1]	1142	a607          	lda	#7
+L 587					1144               L43:
+L 588	[1]	1144	3441          	lsr	_Buffer_Temper
+L 589	[1]	1146	3642          	ror	_Buffer_Temper+1
+L 590	[1]	1148	4a            	deca	
+L 591	[1]	1149	26f9          	bne	L43
+L 592					; 158         Quotient = Buffer_Temper_L;	 
+L 593	[1]	114b	b642          	lda	_Buffer_Temper+1
+L 594	[1]	114d	b734          	sta	_Quotient
+L 595					; 159         AD_Cnt = 0;
+L 596	[1]	114f	3f40          	clr	_AD_Cnt
+L 597					; 160         Buffer_Temper.word = 0;
+L 598	[1]	1151	3f41          	clr	_Buffer_Temper
+L 599	[1]	1153	3f42          	clr	_Buffer_Temper+1
+L 600					1155               L7161:
+L 601					; 163     if (Quotient <= 41) //error_1
+L 602	[1]	1155	b634          	lda	_Quotient
+L 603	[1]	1157	a12a          	cmp	#42
+L 604	[1]	1159	2405          	bhs	L1261
+L 605					; 165     		error(1);
+L 606	[1]	115b	a601          	lda	#1
+L 607	[1]	115d	cc10a6        	jmp	_error
+L 608					1160               L1261:
+L 609					; 167     else if (Quotient >= 220) //error_2
+L 610	[1]	1160	a1dc          	cmp	#220
+L 611	[1]	1162	2505          	blo	L5261
+L 612					; 169       	error(2);
+L 613	[1]	1164	a602          	lda	#2
+L 614	[1]	1166	cc10a6        	jmp	_error
+L 615					1169               L5261:
+L 616					; 173           if(FLAG_ON_OFF == 0) //待机状态
+L 617	[1]	1169	084d08        	brset	4,_FLAG,L1361
+L 618					; 175       		led_com_data.byte = 0;
+L 619	[1]	116c	3f37          	clr	_led_com_data
+L 620					; 177       		com1_data = 0x0c;
+L 621	[1]	116e	a60c          	lda	#12
+L 622	[1]	1170	b739          	sta	_com1_data
+L 623					; 178       		com2_data = 0x0c;
+L 624	[1]	1172	200a          	bra	LC001
+L 625					1174               L1361:
+L 626					; 182           hextobcd(Temperature);
+L 627	[1]	1174	b63f          	lda	_Temperature
+L 628	[1]	1176	ad76          	jsr	_hextobcd
+L 629					; 183           com1_data = Led_H;
+L 630	[1]	1178	b635          	lda	_Led_H
+L 631	[1]	117a	b739          	sta	_com1_data
+L 632					; 184           com2_data = Led_L;  	
+L 633	[1]	117c	b636          	lda	_Led_L
+L 634					117e               LC001:
+L 635	[1]	117e	b738          	sta	_com2_data
+L 636					; 187 }
+L 637	[1]	1180	81            	rts	
+L 638					; 189 void  check_button(void)
+L 639					; 190 {		
+L 640						switch	.text
+L 641					1181               _check_button:
+L 642					; 191     if  ( FLAG_Button == 1 )         
+L 643	[1]	1181	b64f          	lda	_R_KEY1_TRU
+L 644	[1]	1183	034d18        	brclr	1,_FLAG,L3461
+L 645					; 193         if ( R_KEY1_TRU.byte == 0)    //释放
+L 646	[1]	1186	2607          	bne	L5461
+L 647					; 195             FLAG_Button = 0;            
+L 648	[1]	1188	134d          	bclr	1,_FLAG
+L 649					; 196             Timer_press_125us = 0;
+L 650	[1]	118a	3f4c          	clr	_Timer_press_125us
+L 651					; 197             Timer_press_25ms  = 0;            
+L 652	[1]	118c	3f4b          	clr	_Timer_press_25ms
+L 653	[1]	118e	81            	rts	
+L 654					118f               L5461:
+L 655					; 201            if(key_1 == 1)
+L 656	[1]	118f	a508          	bit	#8
+L 657	[1]	1191	275a          	beq	L1171
+L 658					; 203         	 	  if (Timer_press_25ms >= 60)
+L 659	[1]	1193	b64b          	lda	_Timer_press_25ms
+L 660	[1]	1195	a13c          	cmp	#60
+L 661	[1]	1197	2554          	blo	L1171
+L 662					; 205                     Timer_press_25ms = 0;
+L 663	[1]	1199	3f4b          	clr	_Timer_press_25ms
+L 664					; 206                     FLAG_ON_OFF = 0;                                        
+L 665	[1]	119b	194d          	bclr	4,_FLAG
+L 666	[1]	119d	81            	rts	
+L 667					119e               L3461:
+L 668					; 213         if ( R_KEY1_TRU.byte != 0)     //按键
+L 669	[1]	119e	274d          	beq	L1171
+L 670					; 215             FLAG_Button = 1;            
+L 671	[1]	11a0	124d          	bset	1,_FLAG
+L 672					; 216             Timer_press_125us = 0;
+L 673	[1]	11a2	3f4c          	clr	_Timer_press_125us
+L 674					; 217             Timer_press_25ms = 0; 
+L 675	[1]	11a4	3f4b          	clr	_Timer_press_25ms
+L 676					; 218             if(FLAG_ON_OFF == 0)
+L 677	[1]	11a6	084d0b        	brset	4,_FLAG,L1661
+L 678					; 220                  if(key_1 == 1)
+L 679	[1]	11a9	a508          	bit	#8
+L 680	[1]	11ab	2706          	beq	L3661
+L 681					; 222             	 			FLAG_ON_OFF = 1;            	 			
+L 682	[1]	11ad	184d          	bset	4,_FLAG
+L 683					; 223             	 			LED_1 = 1;             	 			
+L 684	[1]	11af	1a37          	bset	5,_led_com_data
+L 685	[1]	11b1	2033          	bra	L7661
+L 686					11b3               L3661:
+L 687					; 225             	   else return;            		
+L 688	[1]	11b3	81            	rts	
+L 689					11b4               L1661:
+L 690					; 229                 if(key_2 == 1)
+L 691	[1]	11b4	a504          	bit	#4
+L 692	[1]	11b6	2706          	beq	L1761
+L 693					; 231                 		LED_2 = ~LED_2; 
+L 694	[1]	11b8	b637          	lda	_led_com_data
+L 695	[1]	11ba	a840          	eor	#64
+L 696	[1]	11bc	2026          	bra	LC002
+L 697					11be               L1761:
+L 698					; 233                 else if(key_3 == 1)
+L 699	[1]	11be	a502          	bit	#2
+L 700	[1]	11c0	2706          	beq	L5761
+L 701					; 235                 		LED_3 = ~LED_3; 
+L 702	[1]	11c2	b637          	lda	_led_com_data
+L 703	[1]	11c4	a880          	eor	#128
+L 704	[1]	11c6	201c          	bra	LC002
+L 705					11c8               L5761:
+L 706					; 237                 else if(key_4 == 1)
+L 707	[1]	11c8	a501          	bit	#1
+L 708	[1]	11ca	2706          	beq	L1071
+L 709					; 239                 		LED_4 = ~LED_4; 
+L 710	[1]	11cc	b637          	lda	_led_com_data
+L 711	[1]	11ce	a804          	eor	#4
+L 712	[1]	11d0	2012          	bra	LC002
+L 713					11d2               L1071:
+L 714					; 241                 else if(key_5 == 1)
+L 715	[1]	11d2	a540          	bit	#64
+L 716	[1]	11d4	2706          	beq	L5071
+L 717					; 243                 		LED_5 = ~LED_5; 
+L 718	[1]	11d6	b637          	lda	_led_com_data
+L 719	[1]	11d8	a802          	eor	#2
+L 720	[1]	11da	2008          	bra	LC002
+L 721					11dc               L5071:
+L 722					; 245                 else if(key_6 == 1)
+L 723	[1]	11dc	a580          	bit	#128
+L 724	[1]	11de	270d          	beq	L1171
+L 725					; 247                 		LED_6 = ~LED_6; 
+L 726	[1]	11e0	b637          	lda	_led_com_data
+L 727	[1]	11e2	a801          	eor	#1
+L 728					11e4               LC002:
+L 729	[1]	11e4	b737          	sta	_led_com_data
+L 730					11e6               L7661:
+L 731					; 251             startbibi(1,0);  
+L 732	[1]	11e6	3f58          	clr	_startbibi.L+1
+L 733	[1]	11e8	a601          	lda	#1
+L 734	[1]	11ea	cd10b2        	jsr	_startbibi
+L 735					11ed               L1171:
+L 736					; 249                 else return;
+L 737					; 254 }
+L 738	[1]	11ed	81            	rts	
+L 739					; 258 void hextobcd(uchar data)
+L 740					; 259 {
+L 741						xref.b	_hextobcd.L
+L 742						switch	.text
+L 743					11ee               _hextobcd:
+L 744					; 260 	Led_L = data;
+L 745	[1]	11ee	b736          	sta	_Led_L
+L 746					; 261 	Led_H = 0;
+L 747	[1]	11f0	3f35          	clr	_Led_H
+L 748	[1]	11f2	2006          	bra	L3371
+L 749					11f4               L7271:
+L 750					; 265 			Led_L = Led_L - 10;
+L 751	[1]	11f4	a00a          	sub	#10
+L 752	[1]	11f6	b736          	sta	_Led_L
+L 753					; 266 			Led_H++;			
+L 754	[1]	11f8	3c35          	inc	_Led_H
+L 755					11fa               L3371:
+L 756					; 263 	while(Led_L >= 10) 
+L 757	[1]	11fa	a10a          	cmp	#10
+L 758	[1]	11fc	24f6          	bhs	L7271
+L 759					; 268 	if(Led_H >= 10) Led_H = Led_H - 10;		
+L 760	[1]	11fe	b635          	lda	_Led_H
+L 761	[1]	1200	a10a          	cmp	#10
+L 762	[1]	1202	2504          	blo	L7371
+L 763	[1]	1204	a00a          	sub	#10
+L 764	[1]	1206	b735          	sta	_Led_H
+L 765					1208               L7371:
+L 766					; 269 }
+L 767	[1]	1208	81            	rts	
+L 768					; 273 void mn_cycle(void)
+L 769					; 274 {
+L 770						switch	.text
+L 771					1209               _mn_cycle:
+L 772					; 275     if (Timer_refresh_25ms >= 10)
+L 773	[1]	1209	b649          	lda	_Timer_refresh_25ms
+L 774	[1]	120b	a10a          	cmp	#10
+L 775	[1]	120d	2509          	blo	L7471
+L 776					; 277         Timer_refresh_25ms = 0;
+L 777	[1]	120f	3f49          	clr	_Timer_refresh_25ms
+L 778					; 278         Temperature = temperature_table[Quotient];
+L 779	[1]	1211	be34          	ldx	_Quotient
+L 780	[1]	1213	d61321        	lda	_temperature_table,x
+L 781	[1]	1216	b73f          	sta	_Temperature
+L 782					1218               L7471:
+L 783					; 281     if (FLAG_ON_OFF == 1) //;倒计时处理
+L 784	[1]	1218	094d28        	brclr	4,_FLAG,L1571
+L 785					; 283         if (Timer_50ms >= 200)
+L 786	[1]	121b	b646          	lda	_Timer_50ms
+L 787	[1]	121d	a1c8          	cmp	#200
+L 788	[1]	121f	2522          	blo	L1571
+L 789					; 285             Timer_50ms = 0;
+L 790	[1]	1221	3f46          	clr	_Timer_50ms
+L 791					; 286             if (++Timer_10s >= 6)
+L 792	[1]	1223	3c45          	inc	_Timer_10s
+L 793	[1]	1225	b645          	lda	_Timer_10s
+L 794	[1]	1227	a106          	cmp	#6
+L 795	[1]	1229	2518          	blo	L1571
+L 796					; 288                 Timer_10s = 0;
+L 797	[1]	122b	3f45          	clr	_Timer_10s
+L 798					; 289                 if (++Timer_1min >= 60)
+L 799	[1]	122d	3c44          	inc	_Timer_1min
+L 800	[1]	122f	b644          	lda	_Timer_1min
+L 801	[1]	1231	a13c          	cmp	#60
+L 802	[1]	1233	250e          	blo	L1571
+L 803					; 291                     Timer_1min = 0;
+L 804	[1]	1235	3f44          	clr	_Timer_1min
+L 805					; 292                     if(++Timer_1hour >= 60) //;倒计时时间到，转待机
+L 806	[1]	1237	3c43          	inc	_Timer_1hour
+L 807	[1]	1239	b643          	lda	_Timer_1hour
+L 808	[1]	123b	a13c          	cmp	#60
+L 809	[1]	123d	2504          	blo	L1571
+L 810					; 294                     	  Timer_1hour = 0;
+L 811	[1]	123f	3f43          	clr	_Timer_1hour
+L 812					; 295                         FLAG_ON_OFF      = 0;  
+L 813	[1]	1241	194d          	bclr	4,_FLAG
+L 814					1243               L1571:
+L 815					; 302 }
+L 816	[1]	1243	81            	rts	
+L 817					; 304 void display(void)
+L 818					; 305 {
+L 819						xref.b	_display.L
+L 820						switch	.text
+L 821					1244               _display:
+L 822					; 308     	if(++com_cnter == 1)
+L 823	[1]	1244	3c3a          	inc	_com_cnter
+L 824	[1]	1246	b63a          	lda	_com_cnter
+L 825	[1]	1248	a101          	cmp	#1
+L 826	[1]	124a	2633          	bne	L7771
+L 827					; 310     			Temp = table_0_9[com1_data];
+L 828	[1]	124c	be39          	ldx	_com1_data
+L 829	[1]	124e	d61312        	lda	_table_0_9,x
+L 830	[1]	1251	b73e          	sta	_Temp
+L 831					; 312     			Temp_P0.byte = Temp & 0x8f;
+L 832	[1]	1253	a48f          	and	#143
+L 833	[1]	1255	b753          	sta	_Temp_P0
+L 834					; 313     			Temp_P2.byte = Temp & 0x60;
+L 835	[1]	1257	b63e          	lda	_Temp
+L 836	[1]	1259	a460          	and	#96
+L 837	[1]	125b	b752          	sta	_Temp_P2
+L 838					; 315     			LED_com = 1;    			
+L 839	[1]	125d	1852          	bset	4,_Temp_P2
+L 840					; 316 					COM2 = 1;	 
+L 841	[1]	125f	1c53          	bset	6,_Temp_P0
+L 842					; 317 					COM1 = 0;
+L 843	[1]	1261	1953          	bclr	4,_Temp_P0
+L 844					; 318 					i[1]=COM2;
+L 845						btst	6,_Temp_P0
+L 846					; 319 					P0CONL = 0xaa;
+L 847	[1]	1266	a6aa          	lda	#170
+L 848	[1]	1268	b717          	sta	_p0conl
+L 849					; 320     	    P0CONH = 0xae;        
+L 850	[1]	126a	a6ae          	lda	#174
+L 851	[1]	126c	b716          	sta	_p0conh
+L 852					; 321           P2CONL = 0xaa;
+L 853	[1]	126e	a6aa          	lda	#170
+L 854	[1]	1270	b71b          	sta	_p2conl
+L 855					; 322     	    P2CONH = 0x4a;        
+L 856	[1]	1272	a64a          	lda	#74
+L 857	[1]	1274	b71a          	sta	_p2conh
+L 858					; 324     	    P2 = Temp_P2.byte; 
+L 859	[1]	1276	b652          	lda	_Temp_P2
+L 860	[1]	1278	b712          	sta	_p2
+L 861					; 325           P0 = Temp_P0.byte;
+L 862	[1]	127a	b653          	lda	_Temp_P0
+L 863	[1]	127c	b710          	sta	_p0
+L 864	[1]	127e	81            	rts	
+L 865					127f               L7771:
+L 866					; 327     	else if(com_cnter == 2) 
+L 867	[1]	127f	a102          	cmp	#2
+L 868	[1]	1281	262c          	bne	L3002
+L 869					; 329     			Temp = table_0_9[com2_data];
+L 870	[1]	1283	be38          	ldx	_com2_data
+L 871	[1]	1285	d61312        	lda	_table_0_9,x
+L 872	[1]	1288	b73e          	sta	_Temp
+L 873					; 331     			Temp_P0.byte = Temp & 0x8f;
+L 874	[1]	128a	a48f          	and	#143
+L 875	[1]	128c	b753          	sta	_Temp_P0
+L 876					; 332     			Temp_P2.byte = Temp & 0x60;
+L 877	[1]	128e	b63e          	lda	_Temp
+L 878	[1]	1290	a460          	and	#96
+L 879	[1]	1292	b752          	sta	_Temp_P2
+L 880					; 333     			LED_com = 1;
+L 881	[1]	1294	1852          	bset	4,_Temp_P2
+L 882					; 334     			COM1 = 1;
+L 883	[1]	1296	1853          	bset	4,_Temp_P0
+L 884					; 335     			COM2 = 1;      			
+L 885	[1]	1298	1c53          	bset	6,_Temp_P0
+L 886					; 337     			P0 = Temp_P0.byte;
+L 887	[1]	129a	b653          	lda	_Temp_P0
+L 888	[1]	129c	b710          	sta	_p0
+L 889					; 338     			P2 = Temp_P2.byte;   
+L 890	[1]	129e	b652          	lda	_Temp_P2
+L 891	[1]	12a0	b712          	sta	_p2
+L 892					; 340     			P0CONL = 0x55;
+L 893	[1]	12a2	a655          	lda	#85
+L 894	[1]	12a4	b717          	sta	_p0conl
+L 895					; 341     			P0CONH = 0x2e;        	    
+L 896	[1]	12a6	a62e          	lda	#46
+L 897	[1]	12a8	b716          	sta	_p0conh
+L 898					; 342     			P2CONH = 0x0a; 
+L 899	[1]	12aa	a60a          	lda	#10
+L 900	[1]	12ac	b71a          	sta	_p2conh
+L 901					; 344     			return;     
+L 902	[1]	12ae	81            	rts	
+L 903					12af               L3002:
+L 904					; 346     		else if(com_cnter == 3) 
+L 905	[1]	12af	a103          	cmp	#3
+L 906	[1]	12b1	2632          	bne	L7002
+L 907					; 348  			    Temp = ~P0 & 0x8f;   	    
+L 908	[1]	12b3	b610          	lda	_p0
+L 909	[1]	12b5	43            	coma	
+L 910	[1]	12b6	a48f          	and	#143
+L 911	[1]	12b8	b73e          	sta	_Temp
+L 912					; 349     			R_KEY1 = ~P2 & 0x40 | Temp;
+L 913	[1]	12ba	b612          	lda	_p2
+L 914	[1]	12bc	43            	coma	
+L 915	[1]	12bd	a440          	and	#64
+L 916	[1]	12bf	ba3e          	ora	_Temp
+L 917	[1]	12c1	b751          	sta	_R_KEY1
+L 918					; 350     			K_LB();      					
+L 919	[1]	12c3	cd10cd        	jsr	_K_LB
+L 920					; 351     			LED_com = 1;
+L 921	[1]	12c6	1852          	bset	4,_Temp_P2
+L 922					; 352     			COM1 = 1;
+L 923	[1]	12c8	1853          	bset	4,_Temp_P0
+L 924					; 353     			COM2 = 0; 
+L 925	[1]	12ca	1d53          	bclr	6,_Temp_P0
+L 926					; 355     			P0CONL = 0xaa;
+L 927	[1]	12cc	a6aa          	lda	#170
+L 928	[1]	12ce	b717          	sta	_p0conl
+L 929					; 356     	    P0CONH = 0xae;        
+L 930	[1]	12d0	a6ae          	lda	#174
+L 931	[1]	12d2	b716          	sta	_p0conh
+L 932					; 357           P2CONL = 0xaa;
+L 933	[1]	12d4	a6aa          	lda	#170
+L 934	[1]	12d6	b71b          	sta	_p2conl
+L 935					; 358     	    P2CONH = 0x4a;        
+L 936	[1]	12d8	a64a          	lda	#74
+L 937	[1]	12da	b71a          	sta	_p2conh
+L 938					; 360     	    P2 = Temp_P2.byte; 
+L 939	[1]	12dc	b652          	lda	_Temp_P2
+L 940	[1]	12de	b712          	sta	_p2
+L 941					; 361           P0 = Temp_P0.byte;
+L 942	[1]	12e0	b653          	lda	_Temp_P0
+L 943	[1]	12e2	b710          	sta	_p0
+L 944	[1]	12e4	81            	rts	
+L 945					12e5               L7002:
+L 946					; 365           Temp_P0.byte = led_com_data.byte & 0x87;	
+L 947	[1]	12e5	b637          	lda	_led_com_data
+L 948	[1]	12e7	a487          	and	#135
+L 949	[1]	12e9	b753          	sta	_Temp_P0
+L 950					; 366     			Temp_P2.byte = led_com_data.byte & 0x60;    	
+L 951	[1]	12eb	b637          	lda	_led_com_data
+L 952	[1]	12ed	a460          	and	#96
+L 953	[1]	12ef	b752          	sta	_Temp_P2
+L 954					; 367     			LED_com = 0;
+L 955	[1]	12f1	1952          	bclr	4,_Temp_P2
+L 956					; 368     			COM1 = 1;
+L 957	[1]	12f3	1853          	bset	4,_Temp_P0
+L 958					; 369     			COM2 = 1; 	  			
+L 959	[1]	12f5	1c53          	bset	6,_Temp_P0
+L 960					; 370     			com_cnter = 0;  
+L 961	[1]	12f7	3f3a          	clr	_com_cnter
+L 962					; 372     			P0CONL = 0xaa;
+L 963	[1]	12f9	a6aa          	lda	#170
+L 964	[1]	12fb	b717          	sta	_p0conl
+L 965					; 373     	    P0CONH = 0xae;        
+L 966	[1]	12fd	a6ae          	lda	#174
+L 967	[1]	12ff	b716          	sta	_p0conh
+L 968					; 374           P2CONL = 0xaa;
+L 969	[1]	1301	a6aa          	lda	#170
+L 970	[1]	1303	b71b          	sta	_p2conl
+L 971					; 375     	    P2CONH = 0x4a;        
+L 972	[1]	1305	a64a          	lda	#74
+L 973	[1]	1307	b71a          	sta	_p2conh
+L 974					; 377     	    P0 = Temp_P0.byte;
+L 975	[1]	1309	b653          	lda	_Temp_P0
+L 976	[1]	130b	b710          	sta	_p0
+L 977					; 378     	    P2 = Temp_P2.byte; 
+L 978	[1]	130d	b652          	lda	_Temp_P2
+L 979	[1]	130f	b712          	sta	_p2
+L 980					; 383 }
+L 981	[1]	1311	81            	rts	
+L 982						xdef	_main
+L 983						xdef	_INT0_ISR
+L 984						xdef	_T0INT_ISR
+L 985						xdef	_PWMINT_ISR
+L 986						xdef	_INT1_ISR
+L 987						xdef	_SWI_ISR
+L 988						xdef	_display
+L 989						xdef	_K_LB
+L 990						xdef	_startbibi
+L 991						xdef	_hextobcd
+L 992						xdef	_error
+L 993						xdef	_buzzer_deal
+L 994						xdef	_ad_check
+L 995						xdef	_mn_cycle
+L 996						xdef	_check_button
+L 997						xdef	_InitRam
+L 998						xdef	_InitRst
+L 999						switch	.ubsct
+L 1000					0034               _Quotient:
+L 1001	[1]	0034	00            	ds.b	1
+L 1002						xdef	_Quotient
+L 1003					0035               _Led_H:
+L 1004	[1]	0035	00            	ds.b	1
+L 1005						xdef	_Led_H
+L 1006					0036               _Led_L:
+L 1007	[1]	0036	00            	ds.b	1
+L 1008						xdef	_Led_L
+L 1009					0037               _led_com_data:
+L 1010	[1]	0037	00            	ds.b	1
+L 1011						xdef	_led_com_data
+L 1012					0038               _com2_data:
+L 1013	[1]	0038	00            	ds.b	1
+L 1014						xdef	_com2_data
+L 1015					0039               _com1_data:
+L 1016	[1]	0039	00            	ds.b	1
+L 1017						xdef	_com1_data
+L 1018					003a               _com_cnter:
+L 1019	[1]	003a	00            	ds.b	1
+L 1020						xdef	_com_cnter
+L 1021					003b               _Buzzer_Counter:
+L 1022	[1]	003b	00            	ds.b	1
+L 1023						xdef	_Buzzer_Counter
+L 1024					003c               _Buzzer_L_Timer:
+L 1025	[1]	003c	00            	ds.b	1
+L 1026						xdef	_Buzzer_L_Timer
+L 1027					003d               _Buzzer_H_Timer:
+L 1028	[1]	003d	00            	ds.b	1
+L 1029						xdef	_Buzzer_H_Timer
+L 1030					003e               _Temp:
+L 1031	[1]	003e	00            	ds.b	1
+L 1032						xdef	_Temp
+L 1033					003f               _Temperature:
+L 1034	[1]	003f	00            	ds.b	1
+L 1035						xdef	_Temperature
+L 1036					0040               _AD_Cnt:
+L 1037	[1]	0040	00            	ds.b	1
+L 1038						xdef	_AD_Cnt
+L 1039					0041               _Buffer_Temper:
+L 1040	[1]	0041	0000          	ds.b	2
+L 1041						xdef	_Buffer_Temper
+L 1042					0043               _Timer_1hour:
+L 1043	[1]	0043	00            	ds.b	1
+L 1044						xdef	_Timer_1hour
+L 1045					0044               _Timer_1min:
+L 1046	[1]	0044	00            	ds.b	1
+L 1047						xdef	_Timer_1min
+L 1048					0045               _Timer_10s:
+L 1049	[1]	0045	00            	ds.b	1
+L 1050						xdef	_Timer_10s
+L 1051					0046               _Timer_50ms:
+L 1052	[1]	0046	00            	ds.b	1
+L 1053						xdef	_Timer_50ms
+L 1054					0047               _Timer_250us:
+L 1055	[1]	0047	00            	ds.b	1
+L 1056						xdef	_Timer_250us
+L 1057					0048               _Timer_125us:
+L 1058	[1]	0048	00            	ds.b	1
+L 1059						xdef	_Timer_125us
+L 1060					0049               _Timer_refresh_25ms:
+L 1061	[1]	0049	00            	ds.b	1
+L 1062						xdef	_Timer_refresh_25ms
+L 1063					004a               _Timer_refresh_125us:
+L 1064	[1]	004a	00            	ds.b	1
+L 1065						xdef	_Timer_refresh_125us
+L 1066					004b               _Timer_press_25ms:
+L 1067	[1]	004b	00            	ds.b	1
+L 1068						xdef	_Timer_press_25ms
+L 1069					004c               _Timer_press_125us:
+L 1070	[1]	004c	00            	ds.b	1
+L 1071						xdef	_Timer_press_125us
+L 1072					004d               _FLAG:
+L 1073	[1]	004d	00            	ds.b	1
+L 1074						xdef	_FLAG
+L 1075					004e               _R_K_LB:
+L 1076	[1]	004e	00            	ds.b	1
+L 1077						xdef	_R_K_LB
+L 1078					004f               _R_KEY1_TRU:
+L 1079	[1]	004f	00            	ds.b	1
+L 1080						xdef	_R_KEY1_TRU
+L 1081					0050               _R_KEY1_BAK:
+L 1082	[1]	0050	00            	ds.b	1
+L 1083						xdef	_R_KEY1_BAK
+L 1084					0051               _R_KEY1:
+L 1085	[1]	0051	00            	ds.b	1
+L 1086						xdef	_R_KEY1
+L 1087					0052               _Temp_P2:
+L 1088	[1]	0052	00            	ds.b	1
+L 1089						xdef	_Temp_P2
+L 1090					0053               _Temp_P0:
+L 1091	[1]	0053	00            	ds.b	1
+L 1092						xdef	_Temp_P0
+L 1093						xdef	_temperature_table
+L 1094						xdef	_table_0_9
+L 1095						xref.b	_startbibi.L
+L 1096						end

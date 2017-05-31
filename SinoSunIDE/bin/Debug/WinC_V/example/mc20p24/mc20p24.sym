@@ -1,0 +1,154 @@
+
+Map of F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.h05 from link file MC20P24.lkf - Fri Jul 01 09:29:07 2011
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001000 end 00001317 length   791 segment CODE
+start 00001317 end 00001402 length   235 segment .const
+start 00000030 end 00000030 length     0 segment ZPAGE
+start 00000030 end 00000054 length    36 segment UZPAGE
+start 00000030 end 00000030 length     0 segment IDATA
+start 00000030 end 00000030 length     0 segment UDATA
+start 00000054 end 00000059 length     5 segment .share
+start 00000000 end 00001949 length  6473 segment .debug
+start 00001ff4 end 00002000 length    12 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+F:\COSMIC\SinoSunC_V1.3\Lib\crts.h05:
+start 00001000 end 0000100a length    10 section CODE (.text)
+start 00000030 end 00000034 length     4 section UZPAGE (.ubsct)
+
+F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o:
+start 0000100a end 00001317 length   781 section CODE (.text)
+start 00000034 end 00000054 length    32 section UZPAGE (.ubsct)
+start 00000000 end 00001949 length  6473 section .debug
+start 00001317 end 00001402 length   235 section .const
+
+F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o:
+start 00001ff4 end 00002000 length    12 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o:
+_ad_check      00000054-00000055 (2,0)
+_error         00000056-00000056 (0,1)
+_hextobcd      00000056-00000056 (0,1)
+_startbibi     00000057-00000058 (0,2)
+
+Stack size: 17
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADDATAH               00000028   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_ADDATAL               00000029   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_AD_Cnt                00000040   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_BTCNT                 0000000d   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_Buffer_Temper         00000041   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Buzzer_Counter        0000003b   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Buzzer_H_Timer        0000003d   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Buzzer_L_Timer        0000003c   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_FLAG                  0000004d   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_INT0_ISR              00001053   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_INT0_ISR.L            00000059   defined in linker section .share
+                                  *** not used ***
+_INT1_ISR              0000100b   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_INT1_ISR.L            00000059   defined in linker section .share
+                                  *** not used ***
+_InitRam               000010a6   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_InitRst               0000107b   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_K_LB                  000010d5   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_Led_H                 00000035   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Led_L                 00000036   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_PWMDATA               00000022   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_PWMINT_ISR            0000100c   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_PWMINT_ISR.L          00000059   defined in linker section .share
+                                  *** not used ***
+_Quotient              00000034   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_R_KEY1                00000051   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_R_KEY1_BAK            00000050   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_R_KEY1_TRU            0000004f   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_R_K_LB                0000004e   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_SWI_ISR               0000100a   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_SWI_ISR.L             00000059   defined in linker section .share
+                                  *** not used ***
+_T0CNT                 00000000   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_T0DATA                00000001   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_T0INT_ISR             0000100d   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_T0INT_ISR.L           00000059   defined in linker section .share
+                                  *** not used ***
+_Temp                  0000003e   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Temp_P0               00000053   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Temp_P2               00000052   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Temperature           0000003f   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_10s             00000045   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_125us           00000048   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_1hour           00000043   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_1min            00000044   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_250us           00000047   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_50ms            00000046   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_press_125us     0000004c   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_press_25ms      0000004b   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_refresh_125us   0000004a   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_Timer_refresh_25ms    00000049   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+__stext                00001000   defined in F:\COSMIC\SinoSunC_V1.3\Lib\crts.h05 section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o
+_ad_check              00001117   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_ad_check.L            00000056   defined in linker section .share
+                                  used in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_adcon                 00000027   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_btcon                 0000000c   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_buzzer_deal           000010ef   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_check_button          00001189   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_com1_data             00000039   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_com2_data             00000038   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_com_cnter             0000003a   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_display               0000124c   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_error                 000010ae   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_error.L               00000056   defined in linker section .share
+                                  used in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_exit                  00001008   defined in F:\COSMIC\SinoSunC_V1.3\Lib\crts.h05 section CODE (.text)
+_hextobcd              000011f6   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_hextobcd.L            00000056   defined in linker section .share
+                                  used in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_led_com_data          00000037   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section UZPAGE (.ubsct)
+_main                  00001054   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+                                  used in F:\COSMIC\SinoSunC_V1.3\Lib\crts.h05
+_mcr                   00000003   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_mn_cycle              00001211   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_p0                    00000010   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p0conh                00000016   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p0conl                00000017   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p0pnd                 00000018   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p1                    00000011   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p1con                 00000019   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p2                    00000012   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p2conh                0000001a   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_p2conl                0000001b   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_pwmcon                00000023   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_startbibi             000010ba   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section CODE (.text)
+_startbibi.L           00000057   defined in linker section .share
+                                  used in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_t0con                 00000002   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o
+_table_0_9             00001317   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section .const
+_temperature_table     00001326   defined in F:\COSMIC\SINOSU~1.3\example\mc20p24\mc20p24.o section .const
+_vectab                00001ff4   defined in F:\COSMIC\SinoSunC_V1.3\Lib\vec_mc20p24.o section .const
+                                  *** not used ***
+c_h                    00000031   defined in F:\COSMIC\SinoSunC_V1.3\Lib\crts.h05 section UZPAGE (.ubsct)

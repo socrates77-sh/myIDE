@@ -1,0 +1,826 @@
+L 1					; C Compiler for MC68HC05 (COSMIC Software)
+L 2					; Generator V4.1n - 19 Jul 2001
+L 3					; Optimizer V4.1n - 19 Jul 2001
+L 4					.const:	section
+L 5					1f03               _key_table:
+L 6	[1]	1f03	ff            	dc.b	255
+L 7	[1]	1f04	ff            	dc.b	255
+L 8	[1]	1f05	ff            	dc.b	255
+L 9	[1]	1f06	ff            	dc.b	255
+L 10	[1]	1f07	ff            	dc.b	255
+L 11	[1]	1f08	ff            	dc.b	255
+L 12	[1]	1f09	ff            	dc.b	255
+L 13	[1]	1f0a	ff            	dc.b	255
+L 14	[1]	1f0b	ff            	dc.b	255
+L 15	[1]	1f0c	ff            	dc.b	255
+L 16	[1]	1f0d	ff            	dc.b	255
+L 17	[1]	1f0e	ff            	dc.b	255
+L 18	[1]	1f0f	ff            	dc.b	255
+L 19	[1]	1f10	ff            	dc.b	255
+L 20	[1]	1f11	ff            	dc.b	255
+L 21	[1]	1f12	0c            	dc.b	12
+L 22	[1]	1f13	ff            	dc.b	255
+L 23	[1]	1f14	83            	dc.b	131
+L 24	[1]	1f15	0c            	dc.b	12
+L 25	[1]	1f16	ff            	dc.b	255
+L 26	[1]	1f17	0d            	dc.b	13
+L 27	[1]	1f18	cc            	dc.b	204
+L 28	[1]	1f19	f2            	dc.b	242
+L 29	[1]	1f1a	ff            	dc.b	255
+L 30	[1]	1f1b	54            	dc.b	84
+L 31	[1]	1f1c	10            	dc.b	16
+L 32	[1]	1f1d	58            	dc.b	88
+L 33	[1]	1f1e	20            	dc.b	32
+L 34	[1]	1f1f	ff            	dc.b	255
+L 35	[1]	1f20	5a            	dc.b	90
+L 36	[1]	1f21	5c            	dc.b	92
+L 37	[1]	1f22	5b            	dc.b	91
+L 38	[1]	1f23	11            	dc.b	17
+L 39	[1]	1f24	59            	dc.b	89
+L 40	[1]	1f25	ff            	dc.b	255
+L 41	[1]	1f26	21            	dc.b	33
+L 42	[1]	1f27	a9            	dc.b	169
+L 43	[1]	1f28	6d            	dc.b	109
+L 44	[1]	1f29	6e            	dc.b	110
+L 45	[1]	1f2a	6f            	dc.b	111
+L 46	[1]	1f2b	70            	dc.b	112
+L 47	[1]	1f2c	ff            	dc.b	255
+L 48	[1]	1f2d	4b            	dc.b	75
+L 49	[1]	1f2e	d8            	dc.b	216
+L 50	[1]	1f2f	f3            	dc.b	243
+L 51	[1]	1f30	84            	dc.b	132
+L 52	[1]	1f31	0f            	dc.b	15
+L 53	[1]	1f32	29            	dc.b	41
+L 54	[1]	1f33	30            	dc.b	48
+L 55	[1]	1f34	ff            	dc.b	255
+L 56	[1]	1f35	28            	dc.b	40
+L 57	[1]	1f36	37            	dc.b	55
+L 58	[1]	1f37	2c            	dc.b	44
+L 59	[1]	1f38	31            	dc.b	49
+L 60	[1]	1f39	01            	dc.b	1
+L 61	[1]	1f3a	02            	dc.b	2
+L 62	[1]	1f3b	03            	dc.b	3
+L 63	[1]	1f3c	04            	dc.b	4
+L 64	[1]	1f3d	ff            	dc.b	255
+L 65	[1]	1f3e	05            	dc.b	5
+L 66	[1]	1f3f	06            	dc.b	6
+L 67	[1]	1f40	07            	dc.b	7
+L 68	[1]	1f41	08            	dc.b	8
+L 69	[1]	1f42	09            	dc.b	9
+L 70	[1]	1f43	38            	dc.b	56
+L 71	[1]	1f44	00            	dc.b	0
+L 72	[1]	1f45	fb            	dc.b	251
+L 73	[1]	1f46	ff            	dc.b	255
+L 74	[1]	1f47	ff            	dc.b	255
+L 75	[1]	1f48	ff            	dc.b	255
+L 76	[1]	1f49	ff            	dc.b	255
+L 77	[1]	1f4a	ff            	dc.b	255
+L 78	[1]	1f4b	ff            	dc.b	255
+L 79	[1]	1f4c	ff            	dc.b	255
+L 80	[1]	1f4d	ff            	dc.b	255
+L 81	[1]	1f4e	ff            	dc.b	255
+L 82	[1]	1f4f	ff            	dc.b	255
+L 83	[1]	1f50	ff            	dc.b	255
+L 84	[1]	1f51	ff            	dc.b	255
+L 85	[1]	1f52	ff            	dc.b	255
+L 86	[1]	1f53	ff            	dc.b	255
+L 87	[1]	1f54	ff            	dc.b	255
+L 88	[1]	1f55	ff            	dc.b	255
+L 89	[1]	1f56	ff            	dc.b	255
+L 90	[1]	1f57	ff            	dc.b	255
+L 91	[1]	1f58	ff            	dc.b	255
+L 92	[1]	1f59	ff            	dc.b	255
+L 93	[1]	1f5a	ff            	dc.b	255
+L 94	[1]	1f5b	ff            	dc.b	255
+L 95	[1]	1f5c	ff            	dc.b	255
+L 96	[1]	1f5d	ff            	dc.b	255
+L 97	[1]	1f5e	ff            	dc.b	255
+L 98	[1]	1f5f	ff            	dc.b	255
+L 99	[1]	1f60	ff            	dc.b	255
+L 100	[1]	1f61	ff            	dc.b	255
+L 101	[1]	1f62	ff            	dc.b	255
+L 102	[1]	1f63	ff            	dc.b	255
+L 103	[1]	1f64	ff            	dc.b	255
+L 104	[1]	1f65	ff            	dc.b	255
+L 105	[1]	1f66	ff            	dc.b	255
+L 106	[1]	1f67	ff            	dc.b	255
+L 107	[1]	1f68	ff            	dc.b	255
+L 108	[1]	1f69	ff            	dc.b	255
+L 109	[1]	1f6a	ff            	dc.b	255
+L 110	[1]	1f6b	ff            	dc.b	255
+L 111	[1]	1f6c	ff            	dc.b	255
+L 112	[1]	1f6d	ff            	dc.b	255
+L 113	[1]	1f6e	ff            	dc.b	255
+L 114	[1]	1f6f	ff            	dc.b	255
+L 115	[1]	1f70	ff            	dc.b	255
+L 116	[1]	1f71	ff            	dc.b	255
+L 117	[1]	1f72	ff            	dc.b	255
+L 118					; 92 void delay_100us(unsigned char time_100us)
+L 119					; 93 {
+L 120						xref.b	_delay_100us.L
+L 121						switch	.text
+L 122					1c0d               _delay_100us:
+L 123	[1]	1c0d	b7ed          	sta	_delay_100us.L
+L 124					1c0f               L161:
+L 125					; 96 	ldx	#31
+L 126	[1]	1c0f	ae1f          	ldx	#31
+L 127					; 97 delay_100us_loop:
+L 128	[1]	1c11	delay_100us_loop:
+L 129					; 98 	    decx				;3
+L 130	[1]	1c11	5a            	decx	
+L 131					; 99 	    bne	delay_100us_loop	;3
+L 132	[1]	1c12	26fd          	bne	delay_100us_loop
+L 133					; 101     }while(time_100us--);
+L 134	[1]	1c14	beed          	ldx	_delay_100us.L
+L 135	[1]	1c16	3aed          	dec	_delay_100us.L
+L 136	[1]	1c18	5d            	tstx	
+L 137	[1]	1c19	26f4          	bne	L161
+L 138					; 102 }
+L 139	[1]	1c1b	81            	rts	
+L 140					; 104 void delay_1ms(unsigned char time_1ms)
+L 141					; 105 {
+L 142						xref.b	_delay_1ms.L
+L 143						switch	.text
+L 144					1c1c               _delay_1ms:
+L 145	[1]	1c1c	b7ec          	sta	_delay_1ms.L
+L 146	[1]	1c1e	2006          	bra	L302
+L 147					1c20               L102:
+L 148					; 108 	delay_100us(10);
+L 149	[1]	1c20	a60a          	lda	#10
+L 150	[1]	1c22	ade9          	jsr	_delay_100us
+L 151					; 109 	time_1ms--;
+L 152	[1]	1c24	3aec          	dec	_delay_1ms.L
+L 153					1c26               L302:
+L 154					; 106     while(time_1ms)
+L 155	[1]	1c26	3dec          	tst	_delay_1ms.L
+L 156	[1]	1c28	26f6          	bne	L102
+L 157					; 111 }
+L 158	[1]	1c2a	81            	rts	
+L 159					; 115 void sys_init()
+L 160					; 116 {
+L 161						switch	.text
+L 162					1c2b               _sys_init:
+L 163					; 117     OUTC=1;
+L 164	[1]	1c2b	1a01          	bset	5,_mcr
+L 165					; 118     delay_100us(255);
+L 166	[1]	1c2d	a6ff          	lda	#255
+L 167	[1]	1c2f	addc          	jsr	_delay_100us
+L 168					; 119     flag_send_code=0;	//不发码
+L 169	[1]	1c31	11ea          	bclr	0,_work_flag
+L 170					; 120     S0_AS_IO;
+L 171	[1]	1c33	1702          	bclr	3,_ior
+L 172					; 121     S0_OUTPUT;
+L 173	[1]	1c35	1202          	bset	1,_ior
+L 174					; 122     LED_OFF;
+L 175	[1]	1c37	1002          	bset	0,_ior
+L 176					; 123     S11_AS_KEY;
+L 177	[1]	1c39	1e02          	bset	7,_ior
+L 178					; 124 }
+L 179	[1]	1c3b	81            	rts	
+L 180					; 130 void read_key(unsigned char j)		
+L 181					; 131 {
+L 182						xref.b	_read_key.L
+L 183						switch	.text
+L 184					1c3c               _read_key:
+L 185	[1]	1c3c	b7ec          	sta	_read_key.L
+L 186	[1]	1c3e	200f          	bra	L132
+L 187					1c40               L722:
+L 188					; 134 	if(!(key_buffer.byte.lo&0x01))	   //为0有按键
+L 189	[1]	1c40	00e904        	brset	0,_key_buffer+1,L532
+L 190					; 136 	    key_value=key_temp;
+L 191	[1]	1c43	b6e6          	lda	_key_temp
+L 192	[1]	1c45	b7e7          	sta	_key_value
+L 193					1c47               L532:
+L 194					; 138 	key_buffer.word>>=1;
+L 195	[1]	1c47	34e8          	lsr	_key_buffer
+L 196	[1]	1c49	36e9          	ror	_key_buffer+1
+L 197					; 139 	key_temp++;
+L 198	[1]	1c4b	3ce6          	inc	_key_temp
+L 199					; 140 	j--;
+L 200	[1]	1c4d	3aec          	dec	_read_key.L
+L 201					1c4f               L132:
+L 202					; 132     while(j)
+L 203	[1]	1c4f	3dec          	tst	_read_key.L
+L 204	[1]	1c51	26ed          	bne	L722
+L 205					; 142 }
+L 206	[1]	1c53	81            	rts	
+L 207					; 144 void scan_key()
+L 208					; 145 {
+L 209						xref.b	_scan_key.L
+L 210						switch	.text
+L 211					1c54               _scan_key:
+L 212					; 147     key_temp=1;		                  //用来赋值，从1开始
+L 213	[1]	1c54	a601          	lda	#1
+L 214	[1]	1c56	b7e6          	sta	_key_temp
+L 215					; 148     key_value=0;	                	//若没赋值为0
+L 216	[1]	1c58	3fe7          	clr	_key_value
+L 217					; 150     KBIF=0;			                   //重置
+L 218	[1]	1c5a	1d01          	bclr	6,_mcr
+L 219					; 151     key_buffer.byte.lo=KEYL;
+L 220	[1]	1c5c	b600          	lda	_KEYL
+L 221	[1]	1c5e	b7e9          	sta	_key_buffer+1
+L 222					; 152     key_buffer.byte.hi=KEYH;
+L 223	[1]	1c60	b601          	lda	_mcr
+L 224	[1]	1c62	a41f          	and	#31
+L 225	[1]	1c64	b7e8          	sta	_key_buffer
+L 226					; 153     read_key(13);		               //S0--S12
+L 227	[1]	1c66	a60d          	lda	#13
+L 228	[1]	1c68	add2          	jsr	_read_key
+L 229					; 156     for(i=0;i<=12;i++)	           //key_temp从13开始，1--12是GND
+L 230	[1]	1c6a	3feb          	clr	_scan_key.L-1
+L 231					1c6c               L152:
+L 232					; 158 	KEY=0xff;		                     //对KEY写任意值，开始扫描
+L 233	[1]	1c6c	a6ff          	lda	#255
+L 234	[1]	1c6e	b700          	sta	_KEYL
+L 235					; 159 	NOP();
+L 236	[1]	1c70	9d            	nop	
+L 237					; 160 	NOP();
+L 238	[1]	1c71	9d            	nop	
+L 239					; 161 	key_buffer.byte.lo=KEYL;
+L 240	[1]	1c72	b600          	lda	_KEYL
+L 241	[1]	1c74	b7e9          	sta	_key_buffer+1
+L 242					; 162 	key_buffer.byte.hi=KEYH;
+L 243	[1]	1c76	b601          	lda	_mcr
+L 244	[1]	1c78	a41f          	and	#31
+L 245	[1]	1c7a	b7e8          	sta	_key_buffer
+L 246					; 163 	KEY=0xff;		                     //再次写KEY时停止，下一次写时扫描下一组
+L 247	[1]	1c7c	a6ff          	lda	#255
+L 248	[1]	1c7e	b700          	sta	_KEYL
+L 249					; 165 	read_key(i);
+L 250	[1]	1c80	b6eb          	lda	_scan_key.L-1
+L 251	[1]	1c82	adb8          	jsr	_read_key
+L 252					; 156     for(i=0;i<=12;i++)	           //key_temp从13开始，1--12是GND
+L 253	[1]	1c84	3ceb          	inc	_scan_key.L-1
+L 254	[1]	1c86	b6eb          	lda	_scan_key.L-1
+L 255	[1]	1c88	a10d          	cmp	#13
+L 256	[1]	1c8a	25e0          	blo	L152
+L 257					; 167 }
+L 258	[1]	1c8c	81            	rts	
+L 259					; 172 void key_deal()
+L 260					; 173 {
+L 261						switch	.text
+L 262					1c8d               _key_deal:
+L 263					; 175     flag_send_code=0;	           //不发码
+L 264	[1]	1c8d	11ea          	bclr	0,_work_flag
+L 265					; 176     if(key_value)
+L 266	[1]	1c8f	b6e7          	lda	_key_value
+L 267	[1]	1c91	2730          	beq	L562
+L 268					; 178 	if((key_value==16)||(key_value==57))flag_rc_6=0;
+L 269	[1]	1c93	a110          	cmp	#16
+L 270	[1]	1c95	2704          	beq	L172
+L 271	[1]	1c97	a139          	cmp	#57
+L 272	[1]	1c99	2610          	bne	L762
+L 273					1c9b               L172:
+L 274	[1]	1c9b	15ea          	bclr	2,_work_flag
+L 275					1c9d               L372:
+L 276					; 180 	if(key_bak!=key_value)	flag_parity_bit=!flag_parity_bit;	//按键不同时奇偶位翻转
+L 277	[1]	1c9d	b6e5          	lda	_key_bak
+L 278	[1]	1c9f	b1e7          	cmp	_key_value
+L 279	[1]	1ca1	270c          	beq	L572
+L 280	[1]	1ca3	b6ea          	lda	_work_flag
+L 281	[1]	1ca5	a802          	eor	#2
+L 282	[1]	1ca7	b7ea          	sta	_work_flag
+L 283	[1]	1ca9	2004          	bra	L572
+L 284					1cab               L762:
+L 285					; 179 	else flag_rc_6=1;
+L 286	[1]	1cab	14ea          	bset	2,_work_flag
+L 287	[1]	1cad	20ee          	bra	L372
+L 288					1caf               L572:
+L 289					; 181 	key_data=key_table[key_value-1];
+L 290	[1]	1caf	bee7          	ldx	_key_value
+L 291	[1]	1cb1	d61f02        	lda	_key_table-1,x
+L 292	[1]	1cb4	b7e4          	sta	_key_data
+L 293					; 182 	if(key_data!=0xff)
+L 294	[1]	1cb6	4c            	inca	
+L 295	[1]	1cb7	2718          	beq	L303
+L 296					; 184 	    flag_send_code=1;
+L 297	[1]	1cb9	10ea          	bset	0,_work_flag
+L 298					; 185 	    if(!flag_rc_6)key_data<<=2;		//3010码只发低6位
+L 299	[1]	1cbb	04ea13        	brset	2,_work_flag,L303
+L 300	[1]	1cbe	38e4          	lsl	_key_data
+L 301	[1]	1cc0	38e4          	lsl	_key_data
+L 302	[1]	1cc2	81            	rts	
+L 303					1cc3               L562:
+L 304					; 190 	OUTC=1;
+L 305	[1]	1cc3	1a01          	bset	5,_mcr
+L 306					; 191 	KBIF=0;
+L 307	[1]	1cc5	1d01          	bclr	6,_mcr
+L 308					; 192 	KBIE=1;			                 //开键盘中断
+L 309	[1]	1cc7	1e01          	bset	7,_mcr
+L 310					; 193 	LED_OFF;
+L 311	[1]	1cc9	1002          	bset	0,_ior
+L 312					; 194 	STOP();
+L 313	[1]	1ccb	8e            	stop	
+L 314					; 195 	KBIE=0;		                 	//关闭键盘中断
+L 315	[1]	1ccc	1f01          	bclr	7,_mcr
+L 316					; 196 	sys_init();
+L 317	[1]	1cce	cd1c2b        	jsr	_sys_init
+L 318					1cd1               L303:
+L 319					; 198 }
+L 320	[1]	1cd1	81            	rts	
+L 321					; 201 void send_head()
+L 322					; 202 {
+L 323						xref.b	_send_head.L
+L 324						switch	.text
+L 325					1cd2               _send_head:
+L 326					; 204     j=SEND_TIME_HEAD_H;      	 //发送头码载波时间
+L 327	[1]	1cd2	a65f          	lda	#95
+L 328	[1]	1cd4	b7ec          	sta	_send_head.L-1
+L 329					1cd6               L713:
+L 330					; 206 	OUT_38K(1);
+L 331	[1]	1cd6	1b01          	bclr	5,_mcr
+L 332	[1]	1cd8	1b01          	bclr	5,_mcr
+L 333	[1]	1cda	9d            	nop	
+L 334	[1]	1cdb	9d            	nop	
+L 335	[1]	1cdc	9d            	nop	
+L 336	[1]	1cdd	1a01          	bset	5,_mcr
+L 337	[1]	1cdf	1a01          	bset	5,_mcr
+L 338	[1]	1ce1	1a01          	bset	5,_mcr
+L 339	[1]	1ce3	1a01          	bset	5,_mcr
+L 340	[1]	1ce5	1a01          	bset	5,_mcr
+L 341	[1]	1ce7	9d            	nop	
+L 342					; 207     }while(j--);
+L 343	[1]	1ce8	beec          	ldx	_send_head.L-1
+L 344	[1]	1cea	3aec          	dec	_send_head.L-1
+L 345	[1]	1cec	5d            	tstx	
+L 346	[1]	1ced	26e7          	bne	L713
+L 347					; 209     j=SEND_TIME_HEAD_L;	      //发送头码无载波时间
+L 348	[1]	1cef	a620          	lda	#32
+L 349	[1]	1cf1	b7ec          	sta	_send_head.L-1
+L 350					1cf3               L523:
+L 351					; 211 	OUT_38K(0);
+L 352	[1]	1cf3	1a01          	bset	5,_mcr
+L 353	[1]	1cf5	1a01          	bset	5,_mcr
+L 354	[1]	1cf7	9d            	nop	
+L 355	[1]	1cf8	9d            	nop	
+L 356	[1]	1cf9	9d            	nop	
+L 357	[1]	1cfa	1a01          	bset	5,_mcr
+L 358	[1]	1cfc	1a01          	bset	5,_mcr
+L 359	[1]	1cfe	1a01          	bset	5,_mcr
+L 360	[1]	1d00	1a01          	bset	5,_mcr
+L 361	[1]	1d02	1a01          	bset	5,_mcr
+L 362	[1]	1d04	9d            	nop	
+L 363					; 212     }while(j--);
+L 364	[1]	1d05	beec          	ldx	_send_head.L-1
+L 365	[1]	1d07	3aec          	dec	_send_head.L-1
+L 366	[1]	1d09	5d            	tstx	
+L 367	[1]	1d0a	26e7          	bne	L523
+L 368					; 213 }
+L 369	[1]	1d0c	81            	rts	
+L 370					; 218 void send_byte(unsigned char send_data,unsigned char count)
+L 371					; 219 {
+L 372						xref.b	_send_byte.L
+L 373						switch	.text
+L 374					1d0d               _send_byte:
+L 375	[1]	1d0d	b7ed          	sta	_send_byte.L
+L 376	[1]	1d0f	2077          	bra	L353
+L 377					1d11               L153:
+L 378					; 223 	if(send_data&0x80)	       //先发高位
+L 379	[1]	1d11	a60f          	lda	#15
+L 380	[1]	1d13	0fed38        	brclr	7,_send_byte.L,L753
+L 381					; 225 	    j=SEND_TIME_BIT_H;
+L 382	[1]	1d16	b7ec          	sta	_send_byte.L-1
+L 383					1d18               L163:
+L 384					; 227 		OUT_38K(1);
+L 385	[1]	1d18	1b01          	bclr	5,_mcr
+L 386	[1]	1d1a	1b01          	bclr	5,_mcr
+L 387	[1]	1d1c	9d            	nop	
+L 388	[1]	1d1d	9d            	nop	
+L 389	[1]	1d1e	9d            	nop	
+L 390	[1]	1d1f	1a01          	bset	5,_mcr
+L 391	[1]	1d21	1a01          	bset	5,_mcr
+L 392	[1]	1d23	1a01          	bset	5,_mcr
+L 393	[1]	1d25	1a01          	bset	5,_mcr
+L 394	[1]	1d27	1a01          	bset	5,_mcr
+L 395	[1]	1d29	9d            	nop	
+L 396					; 228 	    }while(j--);
+L 397	[1]	1d2a	beec          	ldx	_send_byte.L-1
+L 398	[1]	1d2c	3aec          	dec	_send_byte.L-1
+L 399	[1]	1d2e	5d            	tstx	
+L 400	[1]	1d2f	26e7          	bne	L163
+L 401					; 230 	    j=SEND_TIME_BIT_L;
+L 402	[1]	1d31	b7ec          	sta	_send_byte.L-1
+L 403					1d33               L763:
+L 404					; 232 		OUT_38K(0);
+L 405	[1]	1d33	1a01          	bset	5,_mcr
+L 406	[1]	1d35	1a01          	bset	5,_mcr
+L 407	[1]	1d37	9d            	nop	
+L 408	[1]	1d38	9d            	nop	
+L 409	[1]	1d39	9d            	nop	
+L 410	[1]	1d3a	1a01          	bset	5,_mcr
+L 411	[1]	1d3c	1a01          	bset	5,_mcr
+L 412	[1]	1d3e	1a01          	bset	5,_mcr
+L 413	[1]	1d40	1a01          	bset	5,_mcr
+L 414	[1]	1d42	1a01          	bset	5,_mcr
+L 415	[1]	1d44	9d            	nop	
+L 416					; 233 	    }while(j--);
+L 417	[1]	1d45	beec          	ldx	_send_byte.L-1
+L 418	[1]	1d47	3aec          	dec	_send_byte.L-1
+L 419	[1]	1d49	5d            	tstx	
+L 420	[1]	1d4a	26e7          	bne	L763
+L 421	[1]	1d4c	2036          	bra	L573
+L 422					1d4e               L753:
+L 423					; 237 	    j=SEND_TIME_BIT_L;
+L 424	[1]	1d4e	b7ec          	sta	_send_byte.L-1
+L 425					1d50               L773:
+L 426					; 239 		OUT_38K(0);
+L 427	[1]	1d50	1a01          	bset	5,_mcr
+L 428	[1]	1d52	1a01          	bset	5,_mcr
+L 429	[1]	1d54	9d            	nop	
+L 430	[1]	1d55	9d            	nop	
+L 431	[1]	1d56	9d            	nop	
+L 432	[1]	1d57	1a01          	bset	5,_mcr
+L 433	[1]	1d59	1a01          	bset	5,_mcr
+L 434	[1]	1d5b	1a01          	bset	5,_mcr
+L 435	[1]	1d5d	1a01          	bset	5,_mcr
+L 436	[1]	1d5f	1a01          	bset	5,_mcr
+L 437	[1]	1d61	9d            	nop	
+L 438					; 240 	    }while(j--);
+L 439	[1]	1d62	beec          	ldx	_send_byte.L-1
+L 440	[1]	1d64	3aec          	dec	_send_byte.L-1
+L 441	[1]	1d66	5d            	tstx	
+L 442	[1]	1d67	26e7          	bne	L773
+L 443					; 241 	    j=SEND_TIME_BIT_H;
+L 444	[1]	1d69	b7ec          	sta	_send_byte.L-1
+L 445					1d6b               L504:
+L 446					; 243 		OUT_38K(1);
+L 447	[1]	1d6b	1b01          	bclr	5,_mcr
+L 448	[1]	1d6d	1b01          	bclr	5,_mcr
+L 449	[1]	1d6f	9d            	nop	
+L 450	[1]	1d70	9d            	nop	
+L 451	[1]	1d71	9d            	nop	
+L 452	[1]	1d72	1a01          	bset	5,_mcr
+L 453	[1]	1d74	1a01          	bset	5,_mcr
+L 454	[1]	1d76	1a01          	bset	5,_mcr
+L 455	[1]	1d78	1a01          	bset	5,_mcr
+L 456	[1]	1d7a	1a01          	bset	5,_mcr
+L 457	[1]	1d7c	9d            	nop	
+L 458					; 244 	    }while(j--);
+L 459	[1]	1d7d	beec          	ldx	_send_byte.L-1
+L 460	[1]	1d7f	3aec          	dec	_send_byte.L-1
+L 461	[1]	1d81	5d            	tstx	
+L 462	[1]	1d82	26e7          	bne	L504
+L 463					1d84               L573:
+L 464					; 246 	count--;
+L 465	[1]	1d84	3aee          	dec	_send_byte.L+1
+L 466					; 247 	send_data<<=1;
+L 467	[1]	1d86	38ed          	lsl	_send_byte.L
+L 468					1d88               L353:
+L 469					; 221     while(count)
+L 470	[1]	1d88	3dee          	tst	_send_byte.L+1
+L 471	[1]	1d8a	2685          	bne	L153
+L 472					; 249 }
+L 473	[1]	1d8c	81            	rts	
+L 474					; 252 void send_tr_bit()
+L 475					; 253 {
+L 476						xref.b	_send_tr_bit.L
+L 477						switch	.text
+L 478					1d8d               _send_tr_bit:
+L 479					; 255     j=SEND_TIME_BIT_H<<1;	       //TR位的时间是正常位的两倍
+L 480	[1]	1d8d	a61e          	lda	#30
+L 481	[1]	1d8f	b7ec          	sta	_send_tr_bit.L-1
+L 482					; 256     if(flag_parity_bit)		       //奇偶位
+L 483	[1]	1d91	03ea35        	brclr	1,_work_flag,L544
+L 484					1d94               L724:
+L 485					; 259 	    OUT_38K(1);
+L 486	[1]	1d94	1b01          	bclr	5,_mcr
+L 487	[1]	1d96	1b01          	bclr	5,_mcr
+L 488	[1]	1d98	9d            	nop	
+L 489	[1]	1d99	9d            	nop	
+L 490	[1]	1d9a	9d            	nop	
+L 491	[1]	1d9b	1a01          	bset	5,_mcr
+L 492	[1]	1d9d	1a01          	bset	5,_mcr
+L 493	[1]	1d9f	1a01          	bset	5,_mcr
+L 494	[1]	1da1	1a01          	bset	5,_mcr
+L 495	[1]	1da3	1a01          	bset	5,_mcr
+L 496	[1]	1da5	9d            	nop	
+L 497					; 260 	}while(j--);
+L 498	[1]	1da6	beec          	ldx	_send_tr_bit.L-1
+L 499	[1]	1da8	3aec          	dec	_send_tr_bit.L-1
+L 500	[1]	1daa	5d            	tstx	
+L 501	[1]	1dab	26e7          	bne	L724
+L 502					; 261 	j=SEND_TIME_BIT_L<<1;
+L 503	[1]	1dad	b7ec          	sta	_send_tr_bit.L-1
+L 504					1daf               L534:
+L 505					; 263 	    OUT_38K(0);
+L 506	[1]	1daf	1a01          	bset	5,_mcr
+L 507	[1]	1db1	1a01          	bset	5,_mcr
+L 508	[1]	1db3	9d            	nop	
+L 509	[1]	1db4	9d            	nop	
+L 510	[1]	1db5	9d            	nop	
+L 511	[1]	1db6	1a01          	bset	5,_mcr
+L 512	[1]	1db8	1a01          	bset	5,_mcr
+L 513	[1]	1dba	1a01          	bset	5,_mcr
+L 514	[1]	1dbc	1a01          	bset	5,_mcr
+L 515	[1]	1dbe	1a01          	bset	5,_mcr
+L 516	[1]	1dc0	9d            	nop	
+L 517					; 264 	}while(j--);
+L 518	[1]	1dc1	beec          	ldx	_send_tr_bit.L-1
+L 519	[1]	1dc3	3aec          	dec	_send_tr_bit.L-1
+L 520	[1]	1dc5	5d            	tstx	
+L 521	[1]	1dc6	26e7          	bne	L534
+L 522	[1]	1dc8	81            	rts	
+L 523					1dc9               L544:
+L 524					; 268 	    OUT_38K(0);
+L 525	[1]	1dc9	1a01          	bset	5,_mcr
+L 526	[1]	1dcb	1a01          	bset	5,_mcr
+L 527	[1]	1dcd	9d            	nop	
+L 528	[1]	1dce	9d            	nop	
+L 529	[1]	1dcf	9d            	nop	
+L 530	[1]	1dd0	1a01          	bset	5,_mcr
+L 531	[1]	1dd2	1a01          	bset	5,_mcr
+L 532	[1]	1dd4	1a01          	bset	5,_mcr
+L 533	[1]	1dd6	1a01          	bset	5,_mcr
+L 534	[1]	1dd8	1a01          	bset	5,_mcr
+L 535	[1]	1dda	9d            	nop	
+L 536					; 269 	}while(j--);
+L 537	[1]	1ddb	beec          	ldx	_send_tr_bit.L-1
+L 538	[1]	1ddd	3aec          	dec	_send_tr_bit.L-1
+L 539	[1]	1ddf	5d            	tstx	
+L 540	[1]	1de0	26e7          	bne	L544
+L 541					; 270 	j=SEND_TIME_BIT_L<<1;
+L 542	[1]	1de2	b7ec          	sta	_send_tr_bit.L-1
+L 543					1de4               L354:
+L 544					; 272 	    OUT_38K(1);
+L 545	[1]	1de4	1b01          	bclr	5,_mcr
+L 546	[1]	1de6	1b01          	bclr	5,_mcr
+L 547	[1]	1de8	9d            	nop	
+L 548	[1]	1de9	9d            	nop	
+L 549	[1]	1dea	9d            	nop	
+L 550	[1]	1deb	1a01          	bset	5,_mcr
+L 551	[1]	1ded	1a01          	bset	5,_mcr
+L 552	[1]	1def	1a01          	bset	5,_mcr
+L 553	[1]	1df1	1a01          	bset	5,_mcr
+L 554	[1]	1df3	1a01          	bset	5,_mcr
+L 555	[1]	1df5	9d            	nop	
+L 556					; 273 	}while(j--);
+L 557	[1]	1df6	beec          	ldx	_send_tr_bit.L-1
+L 558	[1]	1df8	3aec          	dec	_send_tr_bit.L-1
+L 559	[1]	1dfa	5d            	tstx	
+L 560	[1]	1dfb	26e7          	bne	L354
+L 561					; 275 }
+L 562	[1]	1dfd	81            	rts	
+L 563					; 277 void send_byte_3010(unsigned char send_data,unsigned char count)
+L 564					; 278 {
+L 565						xref.b	_send_byte_3010.L
+L 566						switch	.text
+L 567					1dfe               _send_byte_3010:
+L 568	[1]	1dfe	b7ec          	sta	_send_byte_3010.L
+L 569	[1]	1e00	206b          	bra	L105
+L 570					1e02               L774:
+L 571					; 282 	if(send_data&0x80)
+L 572	[1]	1e02	ae1f          	ldx	#31
+L 573	[1]	1e04	0fec32        	brclr	7,_send_byte_3010.L,L505
+L 574					; 284 	    j=SEND_TIME;
+L 575					1e07               L705:
+L 576					; 286 		OUT_38K(0);
+L 577	[1]	1e07	1a01          	bset	5,_mcr
+L 578	[1]	1e09	1a01          	bset	5,_mcr
+L 579	[1]	1e0b	9d            	nop	
+L 580	[1]	1e0c	9d            	nop	
+L 581	[1]	1e0d	9d            	nop	
+L 582	[1]	1e0e	1a01          	bset	5,_mcr
+L 583	[1]	1e10	1a01          	bset	5,_mcr
+L 584	[1]	1e12	1a01          	bset	5,_mcr
+L 585	[1]	1e14	1a01          	bset	5,_mcr
+L 586	[1]	1e16	1a01          	bset	5,_mcr
+L 587	[1]	1e18	9d            	nop	
+L 588					; 287 	    }while(j--);
+L 589	[1]	1e19	9f            	txa	
+L 590	[1]	1e1a	5a            	decx	
+L 591	[1]	1e1b	4d            	tsta	
+L 592	[1]	1e1c	26e9          	bne	L705
+L 593					; 289 	    j=SEND_TIME;
+L 594	[1]	1e1e	ae1f          	ldx	#31
+L 595					1e20               L515:
+L 596					; 291 		OUT_38K(1);
+L 597	[1]	1e20	1b01          	bclr	5,_mcr
+L 598	[1]	1e22	1b01          	bclr	5,_mcr
+L 599	[1]	1e24	9d            	nop	
+L 600	[1]	1e25	9d            	nop	
+L 601	[1]	1e26	9d            	nop	
+L 602	[1]	1e27	1a01          	bset	5,_mcr
+L 603	[1]	1e29	1a01          	bset	5,_mcr
+L 604	[1]	1e2b	1a01          	bset	5,_mcr
+L 605	[1]	1e2d	1a01          	bset	5,_mcr
+L 606	[1]	1e2f	1a01          	bset	5,_mcr
+L 607	[1]	1e31	9d            	nop	
+L 608					; 292 	    }while(j--);
+L 609	[1]	1e32	9f            	txa	
+L 610	[1]	1e33	5a            	decx	
+L 611	[1]	1e34	4d            	tsta	
+L 612	[1]	1e35	26e9          	bne	L515
+L 613	[1]	1e37	2030          	bra	L325
+L 614					1e39               L505:
+L 615					; 296 	    j=SEND_TIME;
+L 616					; 298 		OUT_38K(1);
+L 617	[1]	1e39	1b01          	bclr	5,_mcr
+L 618	[1]	1e3b	1b01          	bclr	5,_mcr
+L 619	[1]	1e3d	9d            	nop	
+L 620	[1]	1e3e	9d            	nop	
+L 621	[1]	1e3f	9d            	nop	
+L 622	[1]	1e40	1a01          	bset	5,_mcr
+L 623	[1]	1e42	1a01          	bset	5,_mcr
+L 624	[1]	1e44	1a01          	bset	5,_mcr
+L 625	[1]	1e46	1a01          	bset	5,_mcr
+L 626	[1]	1e48	1a01          	bset	5,_mcr
+L 627	[1]	1e4a	9d            	nop	
+L 628					; 299 	    }while(j--);
+L 629	[1]	1e4b	9f            	txa	
+L 630	[1]	1e4c	5a            	decx	
+L 631	[1]	1e4d	4d            	tsta	
+L 632	[1]	1e4e	26e9          	bne	L505
+L 633					; 300 	    j=SEND_TIME;
+L 634	[1]	1e50	ae1f          	ldx	#31
+L 635					1e52               L335:
+L 636					; 302 		OUT_38K(0);
+L 637	[1]	1e52	1a01          	bset	5,_mcr
+L 638	[1]	1e54	1a01          	bset	5,_mcr
+L 639	[1]	1e56	9d            	nop	
+L 640	[1]	1e57	9d            	nop	
+L 641	[1]	1e58	9d            	nop	
+L 642	[1]	1e59	1a01          	bset	5,_mcr
+L 643	[1]	1e5b	1a01          	bset	5,_mcr
+L 644	[1]	1e5d	1a01          	bset	5,_mcr
+L 645	[1]	1e5f	1a01          	bset	5,_mcr
+L 646	[1]	1e61	1a01          	bset	5,_mcr
+L 647	[1]	1e63	9d            	nop	
+L 648					; 303 	    }while(j--);
+L 649	[1]	1e64	9f            	txa	
+L 650	[1]	1e65	5a            	decx	
+L 651	[1]	1e66	4d            	tsta	
+L 652	[1]	1e67	26e9          	bne	L335
+L 653					1e69               L325:
+L 654					; 305 	count--;
+L 655	[1]	1e69	3aed          	dec	_send_byte_3010.L+1
+L 656					; 306 	send_data<<=1;
+L 657	[1]	1e6b	38ec          	lsl	_send_byte_3010.L
+L 658					1e6d               L105:
+L 659					; 280     while(count)
+L 660	[1]	1e6d	3ded          	tst	_send_byte_3010.L+1
+L 661	[1]	1e6f	2691          	bne	L774
+L 662					; 308 }
+L 663	[1]	1e71	81            	rts	
+L 664					; 312 void send_code()
+L 665					; 313 {
+L 666						xref.b	_send_code.L
+L 667						switch	.text
+L 668					1e72               _send_code:
+L 669					; 315     if(flag_send_code)
+L 670	[1]	1e72	01ea73        	brclr	0,_work_flag,L355
+L 671					; 317 	IO_LED=!IO_LED;		//LED口取反
+L 672	[1]	1e75	b602          	lda	_ior
+L 673	[1]	1e77	a801          	eor	#1
+L 674	[1]	1e79	b702          	sta	_ior
+L 675					; 318 	if(flag_rc_6)
+L 676	[1]	1e7b	05ea42        	brclr	2,_work_flag,L555
+L 677					; 320 	    send_head();		                //头码
+L 678	[1]	1e7e	cd1cd2        	jsr	_send_head
+L 679					; 321 	    send_byte(MODE_CODE,4);		      //模式码只有4位
+L 680	[1]	1e81	a604          	lda	#4
+L 681	[1]	1e83	b7ee          	sta	_send_byte.L+1
+L 682	[1]	1e85	a660          	lda	#96
+L 683	[1]	1e87	cd1d0d        	jsr	_send_byte
+L 684					; 323 	    send_tr_bit();
+L 685	[1]	1e8a	cd1d8d        	jsr	_send_tr_bit
+L 686					; 325 	    send_byte(SYSTEM_CODE_H,8);   	//系统码高8位
+L 687	[1]	1e8d	a608          	lda	#8
+L 688	[1]	1e8f	b7ee          	sta	_send_byte.L+1
+L 689	[1]	1e91	a680          	lda	#128
+L 690	[1]	1e93	cd1d0d        	jsr	_send_byte
+L 691					; 326 	    send_byte(SYSTEM_CODE_L,8);   	//系统码低8位
+L 692	[1]	1e96	a608          	lda	#8
+L 693	[1]	1e98	b7ee          	sta	_send_byte.L+1
+L 694	[1]	1e9a	a656          	lda	#86
+L 695	[1]	1e9c	cd1d0d        	jsr	_send_byte
+L 696					; 328 	    send_byte(CONTROL_CODE,8);	    //控制码有8位
+L 697	[1]	1e9f	a608          	lda	#8
+L 698	[1]	1ea1	b7ee          	sta	_send_byte.L+1
+L 699	[1]	1ea3	a6a7          	lda	#167
+L 700	[1]	1ea5	cd1d0d        	jsr	_send_byte
+L 701					; 330 	    send_byte(key_data,6);		      //数据码有8位
+L 702	[1]	1ea8	a606          	lda	#6
+L 703	[1]	1eaa	b7ee          	sta	_send_byte.L+1
+L 704	[1]	1eac	b6e4          	lda	_key_data
+L 705	[1]	1eae	cd1d0d        	jsr	_send_byte
+L 706					; 331 	    delay_100us(200);	              //20ms	加上程序的延时等于间隔时间
+L 707	[1]	1eb1	a6c8          	lda	#200
+L 708	[1]	1eb3	cd1c0d        	jsr	_delay_100us
+L 709					; 332 	    delay_100us(200);	              //20ms
+L 710	[1]	1eb6	a6c8          	lda	#200
+L 711	[1]	1eb8	cd1c0d        	jsr	_delay_100us
+L 712					; 333 	    delay_100us(200);	              //20ms
+L 713	[1]	1ebb	a6c8          	lda	#200
+L 714	[1]	1ebd	cc1c0d        	jmp	_delay_100us
+L 715					1ec0               L555:
+L 716					; 337 	    send_data_temp=SYSTEM_CODE_3010;
+L 717	[1]	1ec0	a680          	lda	#128
+L 718	[1]	1ec2	b7eb          	sta	_send_code.L-1
+L 719					; 338 	    if(key_data<=(0x3f<<2)) send_data_temp|=0x40;		//<=0x3f时，第二位为1	bit1
+L 720	[1]	1ec4	b6e4          	lda	_key_data
+L 721	[1]	1ec6	a1fd          	cmp	#253
+L 722	[1]	1ec8	2402          	bhs	L165
+L 723	[1]	1eca	1ceb          	bset	6,_send_code.L-1
+L 724					1ecc               L165:
+L 725					; 339 	    if(flag_parity_bit) send_data_temp|=0x20;			//奇偶键，改变第三位	bit2
+L 726	[1]	1ecc	03ea02        	brclr	1,_work_flag,L365
+L 727	[1]	1ecf	1aeb          	bset	5,_send_code.L-1
+L 728					1ed1               L365:
+L 729					; 341 	    send_byte_3010(send_data_temp,8);
+L 730	[1]	1ed1	a608          	lda	#8
+L 731	[1]	1ed3	b7ed          	sta	_send_byte_3010.L+1
+L 732	[1]	1ed5	b6eb          	lda	_send_code.L-1
+L 733	[1]	1ed7	cd1dfe        	jsr	_send_byte_3010
+L 734					; 344 	    send_byte_3010(key_data,6);
+L 735	[1]	1eda	a606          	lda	#6
+L 736	[1]	1edc	b7ed          	sta	_send_byte_3010.L+1
+L 737	[1]	1ede	b6e4          	lda	_key_data
+L 738	[1]	1ee0	cd1dfe        	jsr	_send_byte_3010
+L 739					; 346 	    delay_1ms(71);
+L 740	[1]	1ee3	a647          	lda	#71
+L 741	[1]	1ee5	cd1c1c        	jsr	_delay_1ms
+L 742					1ee8               L355:
+L 743					; 349 }
+L 744	[1]	1ee8	81            	rts	
+L 745					; 354 void main(){
+L 746						switch	.text
+L 747					1ee9               _main:
+L 748					; 357 	sei
+L 749	[1]	1ee9	9b            	sei	
+L 750					; 358 clr_ram:
+L 751					1eea               clr_ram:
+L 752					; 359 	    ldx	#$e0
+L 753	[1]	1eea	aee0          	ldx	#$e0
+L 754					; 360 clr_loop:
+L 755					1eec               clr_loop:
+L 756					; 361 	    clr	,x
+L 757	[1]	1eec	7f            	clr	,x
+L 758					; 362 	    incx
+L 759	[1]	1eed	5c            	incx	
+L 760					; 363 	    bne	clr_loop
+L 761	[1]	1eee	26fc          	bne	clr_loop
+L 762					; 364 	    rsp		            ;若程序比较复杂，不能复位堆栈
+L 763	[1]	1ef0	9c            	rsp	
+L 764					; 366 	    sys_init();
+L 765	[1]	1ef1	cd1c2b        	jsr	_sys_init
+L 766					1ef4               L375:
+L 767					; 371 	scan_key();
+L 768	[1]	1ef4	cd1c54        	jsr	_scan_key
+L 769					; 372 	key_deal();
+L 770	[1]	1ef7	cd1c8d        	jsr	_key_deal
+L 771					; 373 	send_code();
+L 772	[1]	1efa	cd1e72        	jsr	_send_code
+L 773	[1]	1efd	20f5          	bra	L375
+L 774					; 377 @nosvf @interrupt void SWI_ISR(void)
+L 775					; 378 {
+L 776						xref.b	_SWI_ISR.L
+L 777						switch	.text
+L 778					1eff               _SWI_ISR:
+L 779					; 379     return;
+L 780	[1]	1eff	80            	rti	
+L 781					; 382 @nosvf @interrupt void KBI_ISR(void)
+L 782					; 383 {
+L 783						xref.b	_KBI_ISR.L
+L 784						switch	.text
+L 785					1f00               _KBI_ISR:
+L 786					; 384     KBIF=0;		//清中断标志
+L 787	[1]	1f00	1d01          	bclr	6,_mcr
+L 788					; 385 }
+L 789	[1]	1f02	80            	rti	
+L 790						xdef	_KBI_ISR
+L 791						xdef	_SWI_ISR
+L 792						xdef	_main
+L 793						xdef	_send_code
+L 794						xdef	_send_byte_3010
+L 795						xdef	_send_tr_bit
+L 796						xdef	_send_byte
+L 797						xdef	_send_head
+L 798						xdef	_key_deal
+L 799						xdef	_scan_key
+L 800						xdef	_read_key
+L 801						xdef	_sys_init
+L 802						xdef	_delay_1ms
+L 803						xdef	_delay_100us
+L 804						xdef	_key_table
+L 805						switch	.ubsct
+L 806					00e4               _key_data:
+L 807	[1]	00e4	00            	ds.b	1
+L 808						xdef	_key_data
+L 809					00e5               _key_bak:
+L 810	[1]	00e5	00            	ds.b	1
+L 811						xdef	_key_bak
+L 812					00e6               _key_temp:
+L 813	[1]	00e6	00            	ds.b	1
+L 814						xdef	_key_temp
+L 815					00e7               _key_value:
+L 816	[1]	00e7	00            	ds.b	1
+L 817						xdef	_key_value
+L 818					00e8               _key_buffer:
+L 819	[1]	00e8	0000          	ds.b	2
+L 820						xdef	_key_buffer
+L 821					00ea               _work_flag:
+L 822	[1]	00ea	00            	ds.b	1
+L 823						xdef	_work_flag
+L 824						xref.b	_send_byte_3010.L
+L 825						xref.b	_send_byte.L
+L 826						end

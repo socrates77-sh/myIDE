@@ -1,0 +1,45 @@
+gplink-1.7.0_beta1 (Oct 26 2015)
+Listing File Generated: 2015-11-6  11:05:56
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                           IOP0    EQU     0X1C0
+                                           OEP0    EQU     0X1C1
+                                                   
+                                           
+                                           
+                                                   org 0x00
+000000   a001     goto    0x1                      goto    main
+                                           
+                                           
+                                           main:
+000001   3cff     movai   0xff                     movai   0xff
+000002   57c1     movra   0x1c1                    movra   OEP0
+                                               
+                                                   ;option
+000003   3caa     movai   0xaa                     movai   0xaa
+000004   57fa     movra   0x1fa                    movra   0x1fa
+000005   57f9     movra   0x1f9                    movra   0x1f9               
+                                                   
+                                           loop:
+000006   3cff     movai   0xff                     movai   0xff
+000007   57c0     movra   0x1c0                    movra   IOP0
+000008   0000     nop                              nop
+000009   0000     nop                              nop
+00000a   77c0     clrr    0x1c0                    clrr    IOP0
+00000b   0000     nop                       nop
+00000c   a006     goto    0x6                      goto    loop
+                                                   end       
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXX------ ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    13
+

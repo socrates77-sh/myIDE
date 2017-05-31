@@ -1,0 +1,86 @@
+T0CNT at 0x0000  xxxx.x  0000 to 0000
+T0DATA at 0x0001  xxxx.x  0000 to 0000
+t0con at 0x0002  xxxx.x  0000 to 0000
+mcr at 0x0003  xxxx.x  0000 to 0000
+btcon at 0x000c  xxxx.x  0000 to 0000
+BTCNT at 0x000d  xxxx.x  0000 to 0000
+p0 at 0x0010  xxxx.x  0000 to 0000
+p1 at 0x0011  xxxx.x  0000 to 0000
+p2 at 0x0012  xxxx.x  0000 to 0000
+p0conh at 0x0016  xxxx.x  0000 to 0000
+p0conl at 0x0017  xxxx.x  0000 to 0000
+p0pnd at 0x0018  xxxx.x  0000 to 0000
+p1con at 0x0019  xxxx.x  0000 to 0000
+p2conh at 0x001a  xxxx.x  0000 to 0000
+p2conl at 0x001b  xxxx.x  0000 to 0000
+PWMDATA at 0x0022  xxxx.x  0000 to 0000
+pwmcon at 0x0023  xxxx.x  0000 to 0000
+adcon at 0x0027  xxxx.x  0000 to 0000
+ADDATAH at 0x0028  xxxx.x  0000 to 0000
+ADDATAL at 0x0029  xxxx.x  0000 to 0000
+table_0_9[15] at 0x1312  xxxx.x  0000 to 0000
+temperature_table[220] at 0x1321  xxxx.x  0000 to 0000
+Temp_P0 at 0x0053  xxxx.x  0000 to 0000
+Temp_P2 at 0x0052  xxxx.x  0000 to 0000
+R_KEY1 at 0x0051  xxxx.x  0000 to 0000
+R_KEY1_BAK at 0x0050  xxxx.x  0000 to 0000
+R_KEY1_TRU at 0x004f  xxxx.x  0000 to 0000
+R_K_LB at 0x004e  xxxx.x  0000 to 0000
+FLAG at 0x004d  xxxx.x  0000 to 0000
+Timer_press_125us at 0x004c  xxxx.x  0000 to 0000
+Timer_press_25ms at 0x004b  xxxx.x  0000 to 0000
+Timer_refresh_125us at 0x004a  xxxx.x  0000 to 0000
+Timer_refresh_25ms at 0x0049  xxxx.x  0000 to 0000
+Timer_125us at 0x0048  xxxx.x  0000 to 0000
+Timer_250us at 0x0047  xxxx.x  0000 to 0000
+Timer_50ms at 0x0046  xxxx.x  0000 to 0000
+Timer_10s at 0x0045  xxxx.x  0000 to 0000
+Timer_1min at 0x0044  xxxx.x  0000 to 0000
+Timer_1hour at 0x0043  xxxx.x  0000 to 0000
+Buffer_Temper at 0x0041  xxxx.x  0000 to 0000
+AD_Cnt at 0x0040  xxxx.x  0000 to 0000
+Temperature at 0x003f  xxxx.x  0000 to 0000
+Temp at 0x003e  xxxx.x  0000 to 0000
+Buzzer_H_Timer at 0x003d  xxxx.x  0000 to 0000
+Buzzer_L_Timer at 0x003c  xxxx.x  0000 to 0000
+Buzzer_Counter at 0x003b  xxxx.x  0000 to 0000
+com_cnter at 0x003a  xxxx.x  0000 to 0000
+com1_data at 0x0039  xxxx.x  0000 to 0000
+com2_data at 0x0038  xxxx.x  0000 to 0000
+led_com_data at 0x0037  xxxx.x  0000 to 0000
+Led_L at 0x0036  xxxx.x  0000 to 0000
+Led_H at 0x0035  xxxx.x  0000 to 0000
+Quotient at 0x0034  xxxx.x  0000 to 0000
+i at 0x0056  mc20p24_c.c  71 to 76 
+i at 0x0057  mc20p24_c.c  78 to 87 
+j at 0x0058  mc20p24_c.c  78 to 87 
+ad_result at 0x0054  mc20p24_c.c  139 to 187 
+data at 0x0056  mc20p24_c.c  258 to 269 
+i[3] at 0x0059  mc20p24_c.c  304 to 383 
+#define AVERAGE_CNT 128
+#define C_K_LB 20
+#define T_T0DATA 50
+#define T_T0CON 0x82
+#define T_ADCON 0x54
+#define BUZ_TIME_H 0x5f
+#define BUZ_TIME_L 0xff
+#define LED_1  	 led_com_data.bitn.bit5
+#define LED_2  	 led_com_data.bitn.bit6
+#define LED_3  	 led_com_data.bitn.bit7
+#define LED_4  	 led_com_data.bitn.bit2
+#define LED_5  	 led_com_data.bitn.bit1
+#define LED_6  	 led_com_data.bitn.bit0
+#define key_1  	 R_KEY1_TRU.bitn.bit3
+#define key_2  	 R_KEY1_TRU.bitn.bit2
+#define key_3  	 R_KEY1_TRU.bitn.bit1
+#define key_4  	 R_KEY1_TRU.bitn.bit0
+#define key_5  	 R_KEY1_TRU.bitn.bit6
+#define key_6  	 R_KEY1_TRU.bitn.bit7
+#define LED_com   Temp_P2.bitn.bit4
+#define COM2   	   	  Temp_P0.bitn.bit6
+#define COM1   	   	  Temp_P0.bitn.bit4
+#define FLAG_BUZ_Forever   	FLAG.bitn.bit0
+#define FLAG_Button	   	   	   	FLAG.bitn.bit1
+#define FLAG_BUZ_BX	   	   	   	FLAG.bitn.bit2
+#define FLAG_BUZ_EN	   	   	   	FLAG.bitn.bit3
+#define FLAG_ON_OFF       FLAG.bitn.bit4

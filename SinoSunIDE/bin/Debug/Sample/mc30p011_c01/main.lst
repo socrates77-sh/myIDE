@@ -1,0 +1,382 @@
+gpasm-1.6.1 (Jan 23 2014)    main.asm           2014-3-6  14:24:44           PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SN-SDCC : ANSI-C Compiler
+                      00003 ; Version 0.0.4 (Jan 13 2014) (MSVC)
+                      00004 ; This file was generated Thu Mar 06 14:24:43 2014
+                      00005 ;--------------------------------------------------------
+                      00006 ; MC3X port for the RISC core
+                      00007 ;--------------------------------------------------------
+                      00008 ;       .file   "main.c"
+                      00009         list    p=30p011
+                      00010         radix dec
+                      00011         include "mc30p011.inc"
+                      00001                 LIST
+                      00002 ;mc30p011.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00226                 LIST
+                      00012 ;--------------------------------------------------------
+                      00013 ; external declarations
+                      00014 ;--------------------------------------------------------
+                      00015         extern  _initial
+                      00016         extern  _abc
+                      00017         extern  _STATUSbits
+                      00018         extern  _P0bits
+                      00019         extern  _P1bits
+                      00020         extern  _MCRbits
+                      00021         extern  _KBIMbits
+                      00022         extern  _PDCONbits
+                      00023         extern  _ODCONbits
+                      00024         extern  _PUCONbits
+                      00025         extern  _INTECONbits
+                      00026         extern  _INTFLAGbits
+                      00027         extern  _T0CRbits
+                      00028         extern  _DDR0bits
+                      00029         extern  _DDR1bits
+                      00030         extern  _TMCRbits
+                      00031         extern  _T1CRbits
+                      00032         extern  _temp2
+                      00033         extern  _INDF
+                      00034         extern  _T0CNT
+                      00035         extern  _PCL
+                      00036         extern  _STATUS
+                      00037         extern  _FSR
+                      00038         extern  _P0
+                      00039         extern  _P1
+                      00040         extern  _GPR
+                      00041         extern  _MCR
+                      00042         extern  _KBIM
+                      00043         extern  _PCLATH
+                      00044         extern  _PDCON
+                      00045         extern  _ODCON
+                      00046         extern  _PUCON
+                      00047         extern  _INTECON
+                      00048         extern  _INTFLAG
+                      00049         extern  _T0CR
+                      00050         extern  _DDR0
+                      00051         extern  _DDR1
+                      00052         extern  _TMCR
+                      00053         extern  _T1CR
+                      00054         extern  _T1CNT
+                      00055         extern  _T1LOAD
+                      00056         extern  _T1DATA
+                      00057         extern  __sdcc_gsinit_startup
+                      00058 ;--------------------------------------------------------
+                      00059 ; global declarations
+                      00060 ;--------------------------------------------------------
+                      00061         global  _main
+                      00062 
+                      00063         global STK06
+                      00064         global STK05
+                      00065         global STK04
+                      00066         global STK03
+                      00067         global STK02
+                      00068         global STK01
+                      00069         global STK00
+                      00070 
+                      00071 sharebank udata_ovr 0x0010
+0008                  00072 STK06   res 1
+0008                  00073 STK05   res 1
+0009                  00074 STK04   res 1
+0009                  00075 STK03   res 1
+000A                  00076 STK02   res 1
+000A                  00077 STK01   res 1
+000B                  00078 STK00   res 1
+                      00079 
+                      00080 ;--------------------------------------------------------
+                      00081 ; global definitions
+                      00082 ;--------------------------------------------------------
+                      00083 ;--------------------------------------------------------
+                      00084 ; absolute symbol definitions
+                      00085 ;--------------------------------------------------------
+                      00086 ;--------------------------------------------------------
+                      00087 ; compiler-defined variables
+                      00088 ;--------------------------------------------------------
+                      00089 UDL_main_0      udata
+0000                  00090 r0x1002 res     1
+0000                  00091 _main_t1_1_2    res     1
+                      00092 ;--------------------------------------------------------
+                      00093 ; initialized data
+                      00094 ;--------------------------------------------------------
+                      00095 
+                      00096 ;@Allocation info for local variables in function 'main'
+                      00097 ;@main t1                        Allocated to registers 
+                      00098 ;@end Allocation info for local variables in function 'main';
+                      00099 
+                      00100 ;--------------------------------------------------------
+                      00101 ; overlayable items in internal ram 
+                      00102 ;--------------------------------------------------------
+                      00103 ;       udata_ovr
+                      00104 ;--------------------------------------------------------
+                      00105 ; reset vector 
+                      00106 ;--------------------------------------------------------
+                      00107 STARTUP code 0x0000
+0000   2800           00108         goto    __sdcc_gsinit_startup
+                      00109 ;--------------------------------------------------------
+                      00110 ; code
+                      00111 ;--------------------------------------------------------
+                      00112 code_main       code
+                      00113 ;***
+                      00114 ;  pBlock Stats: dbName = M
+                      00115 ;***
+                      00116 ;entry:  _main  ;Function start
+                      00117 ; 2 exit points
+                      00118 ;has an exit
+                      00119 ;functions called:
+                      00120 ;   _initial
+                      00121 ;   _abc
+                      00122 ;   _initial
+                      00123 ;   _abc
+                      00124 ;2 compiler assigned registers:
+                      00125 ;   r0x1002
+                      00126 ;   STK00
+                      00127 ;; Starting pCode block
+0000                  00128 _main   ;Function start
+                      00129 ; 2 exit points
+                      00130 ;       .line   12; "main.c"    GIE=0;
+0000   3F80           00131         BCLR    _INTECONbits,7
+0001   000E           00132         clrwdt
+                      00133 ;       .line   14; "main.c"    DDR0=0Xaa;
+0002   0BAA           00134         MOVAI   0xaa
+0003   1580           00135         MOVRA   _DDR0
+                      00136 ;       .line   16; "main.c"    P0=0;
+0004   1D80           00137         CLRR    _P0
+                      00138 ;       .line   17; "main.c"    P1=1;
+0005   0B01           00139         MOVAI   0x01
+0006   1580           00140         MOVRA   _P1
+                      00141 ;       .line   18; "main.c"    T0CNT=0;
+0007   1D80           00142         CLRR    _T0CNT
+                      00143 ;       .line   19; "main.c"    initial();
+0008   2000           00144         CALL    _initial
+                      00145 ;       .line   20; "main.c"    while(1)
+0009   1600           00146         MOVAR   _main_t1_1_2
+000A   1580           00147         MOVRA   r0x1002
+000B                  00148 _00106_DS_
+                      00149 ;       .line   22; "main.c"    P0 =~P0;
+000B   1C00           00150         COMAR   _P0
+000C   1580           00151         MOVRA   _P0
+                      00152 ;       .line   23; "main.c"    t1++;
+000D   1980           00153         INCR    r0x1002
+                      00154 ;       .line   24; "main.c"    temp2++;
+000E   1980           00155         INCR    _temp2
+                      00156 ;       .line   25; "main.c"    abc(t1,temp2);    
+000F   1600           00157         MOVAR   _temp2
+0010   1580           00158         MOVRA   STK00
+0011   1600           00159         MOVAR   r0x1002
+0012   2000           00160         CALL    _abc
+0013   2800           00161         GOTO    _00106_DS_
+0014   000C           00162         RETURN  
+                      00163 ; exit point of _main
+                      00164 
+                      00165 
+                      00166 ;       code size estimation:
+                      00167 ;          20+    0 =    20 instructions (   40 byte)
+                      00168 
+                      00169         end
+gpasm-1.6.1 (Jan 23 2014)    main.asm           2014-3-6  14:24:44           PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+BUZOUT                            00000005
+C                                 00000000
+DC                                00000001
+DDR0                              00000045
+DDR00                             00000000
+DDR01                             00000001
+DDR02                             00000002
+DDR03                             00000003
+DDR1                              00000046
+DDR10                             00000000
+DDR11                             00000001
+DDR12                             00000002
+DDR14                             00000004
+DDR15                             00000005
+DDR16                             00000006
+DDR17                             00000007
+EIS                               00000006
+FSR                               00000004
+GIE                               00000007
+GPR                               00000007
+INDF                              00000000
+INT0IE                            00000002
+INT0IF                            00000002
+INT0M                             00000006
+INTECON                           0000000E
+INTFLAG                           0000000F
+KBIE                              00000001
+KBIF                              00000001
+KBIM                              00000009
+KBIM0                             00000000
+KBIM1                             00000001
+KBIM2                             00000002
+KBIM3                             00000003
+KBIM4                             00000004
+KBIM5                             00000005
+KBIM6                             00000006
+KBIM7                             00000007
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P00                               00000000
+P00PD                             00000000
+P01                               00000001
+P01PD                             00000001
+P02                               00000002
+P02PD                             00000002
+P03                               00000003
+P03PD                             00000003
+P1                                00000006
+P10                               00000000
+P10OD                             00000000
+P10PD                             00000004
+P10PU                             00000000
+P11                               00000001
+P11OD                             00000001
+P11PD                             00000005
+P11PU                             00000001
+P12                               00000002
+P12OD                             00000002
+P12PD                             00000006
+P12PU                             00000002
+P13                               00000003
+P14                               00000004
+P14OD                             00000004
+P14PU                             00000004
+P15                               00000005
+P15OD                             00000005
+P15PU                             00000005
+P16                               00000006
+P16OD                             00000006
+P16PU                             00000006
+P17                               00000007
+P17OD                             00000007
+P17PU                             00000007
+PCL                               00000002
+PCLATH                            0000000A
+PD                                00000003
+PDCON                             0000000B
+PUCON                             0000000D
+PWMOUT                            00000006
+RST                               00000007
+STATUS                            00000003
+STK00                             00000016
+STK01                             00000015
+STK02                             00000014
+STK03                             00000013
+STK04                             00000012
+STK05                             00000011
+STK06                             00000010
+T0CNT                             00000001
+T0CR                              00000041
+T0IE                              00000000
+T0IF                              00000000
+T0PTA                             00000003
+T0PTS                             00000005
+T0SE                              00000004
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DATA                            0000004F
+T1IE                              00000001
+T1IF                              00000000
+T1LOAD                            0000004E
+TBS                               00000007
+TMCR                              0000004B
+TMR1EN                            00000007
+TO                                00000004
+WDTEN                             00000007
+Z                                 00000002
+_00106_DS_                        0000000B
+_CONFIG0                          00002000
+_CONFIG1                          00002001
+_CP_ALL                           00001FFF
+_DDR0                             00000000
+_DDR0bits                         00000000
+_DDR1                             00000000
+_DDR1bits                         00000000
+_FCPU_2T                          00003F7F
+_FCPU_4T                          00003FFF
+_FSR                              00000000
+_GPR                              00000000
+_INDF                             00000000
+_INTECON                          00000000
+_INTECONbits                      00000000
+_INTFLAG                          00000000
+_INTFLAGbits                      00000000
+_IRC_1M                           00003FCF
+_IRC_2M                           00003FDF
+_IRC_444K                         00003FAF
+_IRC_4M                           00003FEF
+_IRC_8M                           00003FFF
+_KBIM                             00000000
+_KBIMbits                         00000000
+_MCLR_OFF                         00003FF7
+_MCLR_ON                          00003FFF
+_MCR                              00000000
+_MCRbits                          00000000
+_ODCON                            00000000
+_ODCONbits                        00000000
+_OSC_HXT                          00002FFF
+_OSC_IRC                          000037FF
+_OSC_IRC_RTC                      00003FFF
+_OSC_LXT                          000027FF
+_P0                               00000000
+_P0bits                           00000000
+_P1                               00000000
+_P1bits                           00000000
+_PCL                              00000000
+_PCLATH                           00000000
+_PDCON                            00000000
+_PDCONbits                        00000000
+_PUCON                            00000000
+_PUCONbits                        00000000
+_PWRT_OFF                         00003BFF
+_PWRT_ON                          00003FFF
+_RD_FROM_PIN                      00003FFF
+_RD_FROM_REG                      00003EFF
+_SMT_OFF                          00003FFF
+_SMT_ON                           00003DFF
+_STATUS                           00000000
+_STATUSbits                       00000000
+_T0CNT                            00000000
+_T0CR                             00000000
+_T0CRbits                         00000000
+_T1CNT                            00000000
+_T1CR                             00000000
+_T1CRbits                         00000000
+_T1DATA                           00000000
+_T1LOAD                           00000000
+_TMCR                             00000000
+_TMCRbits                         00000000
+_TWDT_18MS                        00003FFF
+_TWDT_288MS                       00003DFF
+_TWDT_4P5MS                       00003EFF
+_TWDT_72MS                        00003CFF
+_VBOR_15                          00003FF8
+_VBOR_18                          00003FF9
+_VBOR_20                          00003FFA
+_VBOR_22                          00003FFB
+_VBOR_24                          00003FFC
+_VBOR_26                          00003FFD
+_VBOR_30                          00003FFE
+_VBOR_36                          00003FFF
+_WDT_OFF                          000037FF
+_WDT_ON                           00003FFF
+__30P011                          00000001
+__sdcc_gsinit_startup             00000000
+_abc                              00000000
+_initial                          00000000
+_main                             00000000
+_main_t1_1_2                      00000001
+_temp2                            00000000
+r0x1002                           00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

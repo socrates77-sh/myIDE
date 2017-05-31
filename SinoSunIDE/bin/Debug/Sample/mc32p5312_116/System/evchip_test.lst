@@ -1,0 +1,46 @@
+gpasm-1.6.1 (Jan 23 2014)    evchip_test.asm    2014-5-8  13:42:55           PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+  000001C0            00002 IOP0    EQU     0X1C0
+  000001C1            00003 OEP0    EQU     0X1C1
+                      00004         
+                      00005 
+                      00006 
+                      00007         org 0x00
+0000   A000           00008         goto    main
+                      00009 
+                      00010 
+0001                  00011 main:
+0001   3CFF           00012         movai   0xff
+0002   57C1           00013         movra   OEP0            
+                      00014         
+0003                  00015 loop:
+0003   3CFF           00016         movai   0xff
+0004   57C0           00017         movra   IOP0
+0005   0000           00018         nop
+0006   0000           00019         nop
+0007   77C0           00020         clrr    IOP0
+0008   0000           00021  nop
+0009   A000           00022         goto    loop
+                      00023         end      
+gpasm-1.6.1 (Jan 23 2014)    evchip_test.asm    2014-5-8  13:42:55           PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+IOP0                              000001C0
+OEP0                              000001C1
+__33P116                          00000001
+loop                              00000003
+main                              00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<SN8Interrupt>
+	<BaseInterrupt>
+      	<ChipSeries>
+      		<Chip name="SN8P2839"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x87"></Hardware>
+      		<InterruptFlag type="byte" ENRegister="INTEN0" RQRegister="INTRQ0" vector="0x08" mask="0xFF"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN1" RQRegister="INTRQ1" vector="0x08" mask="0xFF"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN2" RQRegister="INTRQ2" vector="0x08" mask="0x03"></InterruptFlag>
+      	</ChipSeries>
+      	
+		<ChipSeries>
+      		<Chip name="SN8P26L38"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFF"></InterruptFlag>
+      		<InterruptFlag type="bit" ENRegister="CMP0M" ENBitMask="0x40" RQRegister="CMP0M" RQBitMask="0x20" vector="0x08" priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" ENRegister="CMP1M" ENBitMask="0x40" RQRegister="CMP1M" RQBitMask="0x20" vector="0x08" priorityLevel="1" ></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1929"></Chip>
+      		<PushPop type="Register" name="PFlag" mask="0xFF"></PushPop>
+      		<PushPop type="Ram" startAddress="0x80" endAddress="0x87"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x73"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1989"></Chip>
+      		<PushPop type="Register" name="PFlag" mask="0xFF"></PushPop>
+      		<PushPop type="Ram" startAddress="0x80" endAddress="0x87"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x77"></InterruptFlag>
+      	</ChipSeries>
+
+		<ChipSeries>
+			<Chip name="SN8P2735"></Chip>
+			<Chip name="SN8P2734"></Chip>
+			<Chip name="SN8P2733"></Chip>
+			<Chip name="SN8P2732"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xF7"></InterruptFlag>
+      		<InterruptFlag type="bit" ENRegister="CMP0M" ENBitMask="0x40" RQRegister="CMP0M" RQBitMask="0x20" vector="0x08" priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" ENRegister="CMP1M" ENBitMask="0x40" RQRegister="CMP1M" RQBitMask="0x20" vector="0x08" priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" ENRegister="CMP2M" ENBitMask="0x40" RQRegister="CMP2M" RQBitMask="0x20" vector="0x08" priorityLevel="1" ></InterruptFlag>
+      	</ChipSeries>
+      	
+    <ChipSeries>
+			<Chip name="SN8P2741A"></Chip>
+			<Chip name="SN8P27411A"></Chip>
+			<Chip name="SN8P27412A"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Register" startAddress="PFlag" endAddress="0x07"></Hardware>
+      		<InterruptFlag type="byte" ENRegister="INTEN0" RQRegister="INTRQ0" vector="0x08" mask="0xFF"></InterruptFlag>
+      	</ChipSeries>
+
+		<ChipSeries>
+			<Chip name="SN8P2704A"></Chip>
+			<Chip name="SN8P2704B"></Chip>
+			<Chip name="SN8P2705A"></Chip>
+			<Chip name="SN8P2706A"></Chip>
+			<Chip name="SN8P2707A"></Chip>
+			<Chip name="SN8P2708A"></Chip>
+			<Chip name="SN8P2708B"></Chip>
+			<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Ram" startAddress="0x80" endAddress="0x87"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFF"></InterruptFlag>
+		</ChipSeries>
+	
+		<ChipSeries>
+			<Chip name="SN8F27E93"></Chip>
+			<Chip name="SN8F22E93"></Chip>
+			<Chip name="SN8F27E93L"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x8F"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT1" 			ENRegister="INTEN0" ENBitMask="0x02" RQRegister="INTRQ0" RQBitMask="0x02" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T1" 				ENRegister="INTEN0" ENBitMask="0x40" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0F" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="ADC" 			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x10" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x11" 	priorityLevel="10" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="MSP" 			ENRegister="INTEN1" ENBitMask="0x10" RQRegister="INTRQ1" RQBitMask="0x10" vector="0x12" 	priorityLevel="11" ></InterruptFlag>		
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x13" 	priorityLevel="12" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x14" 	priorityLevel="13" ></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8F25E25"></Chip>
+      		<Chip name="SN8F25E24"></Chip>
+      		<Chip name="SN8F25E25L"></Chip>
+      		<Chip name="SN8F25E24L"></Chip>
+      		<Chip name="SN8FMD21"></Chip>
+      		<Chip name="SN8FMD21L"></Chip>
+      		<Chip name="SN8FMD22"></Chip>
+      		<Chip name="SN8FMD22L"></Chip>
+      		<Chip name="SN8FMD23"></Chip>
+      		<Chip name="SN8FMD23L"></Chip>
+      		<Chip name="SN8FMD24"></Chip>
+      		<Chip name="SN8FMD24L"></Chip>
+      		<Chip name="SN8FMD25"></Chip>
+      		<Chip name="SN8FMD25L"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x8F"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT1" 			ENRegister="INTEN0" ENBitMask="0x02" RQRegister="INTRQ0" RQBitMask="0x02" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC1" 			ENRegister="INTEN0" ENBitMask="0x10" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0D" 	priorityLevel="6" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC2" 			ENRegister="INTEN0" ENBitMask="0x20" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0E" 	priorityLevel="7" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="CMP" 			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x10" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x11" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="MSP" 			ENRegister="INTEN1" ENBitMask="0x10" RQRegister="INTRQ1" RQBitMask="0x10" vector="0x12" 	priorityLevel="10" ></InterruptFlag>		
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x13" 	priorityLevel="11" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x14" 	priorityLevel="12" ></InterruptFlag>
+      	</ChipSeries>
+      	  	    	  	
+      	<ChipSeries>
+      		<Chip name="SN8F27E94"></Chip>
+      		<Chip name="SN8F27E94L"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x8F"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT1" 			ENRegister="INTEN0" ENBitMask="0x02" RQRegister="INTRQ0" RQBitMask="0x02" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T1" 				ENRegister="INTEN0" ENBitMask="0x40" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0F" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="ADC" 			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x10" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x11" 	priorityLevel="10" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="MSP" 			ENRegister="INTEN1" ENBitMask="0x10" RQRegister="INTRQ1" RQBitMask="0x10" vector="0x12" 	priorityLevel="11" ></InterruptFlag>		
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x13" 	priorityLevel="12" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x14" 	priorityLevel="13" ></InterruptFlag>
+      	</ChipSeries>
+      	
+		<ChipSeries>
+			<Chip name="SN8P2308"></Chip>
+      		<PushPop type="Register" name="ACC" 		mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" 	mask="0x07"></PushPop>
+      		<InterruptFlag type="bit" name="T1" 	ENRegister="T1M" ENBitMask="0x02" RQRegister="T1M" RQBitMask="0x01" vector="0x8" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x31"></InterruptFlag>
+      	</ChipSeries>
+
+		<ChipSeries>
+      		<Chip name="SN8F27E65"></Chip>
+			<Chip name="SN8F29E39"></Chip>
+			<Chip name="SN8F29E38"></Chip>
+			<Chip name="SN8F27E23"></Chip>
+			<Chip name="SN8F27E23L"></Chip>
+      		<Chip name="SN8F27E64"></Chip>
+      		<Chip name="SN8F27E62"></Chip>
+      		<Chip name="SN8F27E65L"></Chip>
+      		<Chip name="SN8F27E64L"></Chip>
+      		<Chip name="SN8F27E62L"></Chip>
+      		<Chip name="SN8F22E88B"></Chip>
+      		<Chip name="SN8F22E83B"></Chip>
+      		<Chip name="SN8F22E84B"></Chip>
+      		<Chip name="SN8F22E87B"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x8F"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT1" 			ENRegister="INTEN0" ENBitMask="0x02" RQRegister="INTRQ0" RQBitMask="0x02" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC1" 			ENRegister="INTEN0" ENBitMask="0x10" RQRegister="INTRQ0" RQBitMask="0x10" vector="0x0D" 	priorityLevel="6" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC2" 			ENRegister="INTEN0" ENBitMask="0x20" RQRegister="INTRQ0" RQBitMask="0x20" vector="0x0E" 	priorityLevel="7" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T1" 				ENRegister="INTEN0" ENBitMask="0x40" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0F" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="ADC" 			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x10" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x11" 	priorityLevel="10" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="MSP" 			ENRegister="INTEN1" ENBitMask="0x10" RQRegister="INTRQ1" RQBitMask="0x10" vector="0x12" 	priorityLevel="11" ></InterruptFlag>		
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x13" 	priorityLevel="12" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x14" 	priorityLevel="13" ></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8F27E61"></Chip>
+      		<Chip name="SN8F27E611"></Chip>
+      		<Chip name="SN8F27E61L"></Chip>
+      		<Chip name="SN8F27E611L"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x87"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC1" 			ENRegister="INTEN0" ENBitMask="0x10" RQRegister="INTRQ0" RQBitMask="0x10" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC2" 			ENRegister="INTEN0" ENBitMask="0x20" RQRegister="INTRQ0" RQBitMask="0x20" vector="0x0D" 	priorityLevel="6" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="ADC"			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x0E" 	priorityLevel="7" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x0F" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x10" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x11" 	priorityLevel="10" ></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8F26E65"></Chip>
+      		<Chip name="SN8F26E64"></Chip>
+      		<Chip name="SN8F26E65L"></Chip>
+      		<Chip name="SN8F26E64L"></Chip>   
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x8F"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT1" 			ENRegister="INTEN0" ENBitMask="0x02" RQRegister="INTRQ0" RQBitMask="0x02" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC1" 			ENRegister="INTEN0" ENBitMask="0x10" RQRegister="INTRQ0" RQBitMask="0x10" vector="0x0D" 	priorityLevel="6" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC2" 			ENRegister="INTEN0" ENBitMask="0x20" RQRegister="INTRQ0" RQBitMask="0x20" vector="0x0E" 	priorityLevel="7" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x11" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="MSP" 			ENRegister="INTEN1" ENBitMask="0x10" RQRegister="INTRQ1" RQBitMask="0x10" vector="0x12" 	priorityLevel="9" ></InterruptFlag>		
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x13" 	priorityLevel="10" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x14" 	priorityLevel="11" ></InterruptFlag>
+      	</ChipSeries>
+		   	
+		<ChipSeries>
+      		<Chip name="SN8F26E61"></Chip>
+      		<Chip name="SN8F26E611"></Chip>
+      		<Chip name="SN8F26E61L"></Chip>
+      		<Chip name="SN8F26E611L"></Chip>
+      		<Hardware type="Register" name="ACC" mask="0xFF"></Hardware>
+      		<Hardware type="Ram" startAddress="0x80" endAddress="0x87"></Hardware>
+      		<InterruptFlag type="bit" name="WAKE"			ENRegister="INTEN1" ENBitMask="0x01" RQRegister="INTRQ1" RQBitMask="0x01" vector="0x08" 	priorityLevel="1" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="INT0" 			ENRegister="INTEN0" ENBitMask="0x01" RQRegister="INTRQ0" RQBitMask="0x01" vector="0x09" 	priorityLevel="2" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T0" 				ENRegister="INTEN0" ENBitMask="0x04" RQRegister="INTRQ0" RQBitMask="0x04" vector="0x0A" 	priorityLevel="3" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC0" 			ENRegister="INTEN0" ENBitMask="0x08" RQRegister="INTRQ0" RQBitMask="0x08" vector="0x0B" 	priorityLevel="4" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC1" 			ENRegister="INTEN0" ENBitMask="0x10" RQRegister="INTRQ0" RQBitMask="0x10" vector="0x0C" 	priorityLevel="5" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="TC2" 			ENRegister="INTEN0" ENBitMask="0x20" RQRegister="INTRQ0" RQBitMask="0x20" vector="0x0D" 	priorityLevel="6" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="T1" 				ENRegister="INTEN0" ENBitMask="0x40" RQRegister="INTRQ0" RQBitMask="0x40" vector="0x0E" 	priorityLevel="7" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="CM0" 			ENRegister="INTEN0" ENBitMask="0x80" RQRegister="INTRQ0" RQBitMask="0x80" vector="0x0F" 	priorityLevel="8" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="SIO" 				ENRegister="INTEN1" ENBitMask="0x02" RQRegister="INTRQ1" RQBitMask="0x02" vector="0x10" 	priorityLevel="9" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART RX" 	ENRegister="INTEN1" ENBitMask="0x04" RQRegister="INTRQ1" RQBitMask="0x04" vector="0x11" 	priorityLevel="10" ></InterruptFlag>
+      		<InterruptFlag type="bit" name="UART TX" 	ENRegister="INTEN1" ENBitMask="0x08" RQRegister="INTRQ1" RQBitMask="0x08" vector="0x12" 	priorityLevel="11" ></InterruptFlag>
+      	</ChipSeries>
+
+		<ChipSeries>
+      		<Chip name="SN8F2251B"></Chip>
+      		<Chip name="SN8F22511B"></Chip>
+      		<Chip name="SN8F22521B"></Chip>
+      		<Chip name="SN8F2253B"></Chip>
+      		<Chip name="SN8F22531"></Chip>
+      		<Chip name="SN8F2255B"></Chip>
+      		<Chip name="SN8F2251"></Chip>
+      		<Chip name="SN8F22511"></Chip>
+      		<Chip name="SN8F22521"></Chip>
+      		<Chip name="SN8F2253"></Chip>
+      		<Chip name="SN8F22531B"></Chip>
+      		<Chip name="SN8F2255"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x7F"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN1" RQRegister="INTRQ1" vector="0x08" mask="0x03"></InterruptFlag>
+      	</ChipSeries>
+
+      	<ChipSeries>
+      		<Chip name="SN8F2288"></Chip>
+      		<Chip name="SN8F2283"></Chip>
+      		<Chip name="SN8F22831"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFF"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN1" RQRegister="INTRQ1" vector="0x08" mask="0xFF"></InterruptFlag>
+      	</ChipSeries>
+      
+      	<ChipSeries>
+      		<Chip name="SN8P2754"></Chip>
+      		<Chip name="SN8P2755"></Chip>
+      		<Chip name="SN8P2758"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFF"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN_1" RQRegister="INTRQ_1" vector="0x08" mask="0x01"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+	    	<Chip name="SN8F2271B"></Chip>
+	    	<Chip name="SN8F22711B"></Chip>
+	    	<Chip name="SN8F22721B"></Chip>
+	    	<Chip name="SN8F2271"></Chip>
+	    	<Chip name="SN8F22711"></Chip>
+	    	<Chip name="SN8F22721"></Chip>
+	    	<Chip name="SN8F2277"></Chip>
+	    	<Chip name="SN8F2277B"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x7F"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+	    	<Chip name="SN8P2711A"></Chip>
+	    	<Chip name="SN8P2711"></Chip>
+	    	<Chip name="SN8P2711A1"></Chip>
+	    	<Chip name="SN8P2711A2"></Chip>
+	    	<Chip name="SN8P2711B"></Chip>
+	    	<Chip name="SN8P27L11B"></Chip>
+	    	<Chip name="SN8P2761"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xE3"></InterruptFlag>
+      	</ChipSeries> 
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2712"></Chip>
+      		<Chip name="SN8P27122"></Chip>
+      		<Chip name="SN8P2722"></Chip>
+      		<Chip name="SN8P2722A"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xB1"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2723"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN0" RQRegister="INTRQ0" vector="0x08" mask="0xF7"></InterruptFlag>
+      		<InterruptFlag type="byte" ENRegister="INTEN1" RQRegister="INTRQ1" vector="0x08" mask="0x03"></InterruptFlag>
+      	</ChipSeries>
+
+      	<ChipSeries>
+      		<Chip name="SN8P2743"></Chip>
+      		<Chip name="SN8P2742"></Chip>
+      		<Chip name="SN8P27411"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xBF"></InterruptFlag>
+     	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2213"></Chip>
+      		<Chip name="SN8P22121"></Chip>
+      		<Chip name="SN8P2212"></Chip>
+      		<Chip name="SN8P2201"></Chip>
+      		<Chip name="SN8P2202"></Chip>
+      		<Chip name="SN8P2203"></Chip>
+      		<Chip name="SN8P2204"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x7B"></InterruptFlag>
+      	</ChipSeries>
+	
+      	<ChipSeries>
+      		<Chip name="SN8P2242"></Chip>
+      		<Chip name="SN8P22421"></Chip>
+      		<Chip name="SN8P2241"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x55"></InterruptFlag>
+      	</ChipSeries>
+
+      	 <ChipSeries>
+      		<Chip name="SN8P2267F"></Chip>
+      		<Chip name="SN8P2267J"></Chip>
+      		<Chip name="SN8P2267"></Chip>
+      		<Chip name="SN8P2267C"></Chip>
+      		<Chip name="SZK671"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x27"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x75"></InterruptFlag>
+      	 </ChipSeries>
+      	 
+      	 <ChipSeries>
+      		<Chip name="SN8P2267CF"></Chip>
+      		<Chip name="SN8P2267CJ"></Chip>  
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xE5"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2233"></Chip>
+      		<Chip name="SN8P2234"></Chip>
+      		<Chip name="SN8P2236"></Chip>
+      		<Chip name="SN8P2238"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFF"></InterruptFlag>
+      	</ChipSeries>
+  
+      	<ChipSeries>
+      		<Chip name="SN8P2524"></Chip>
+      		<Chip name="SN8P2523"></Chip>
+      		<Chip name="SN8P25231"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xDB"></InterruptFlag>
+      	</ChipSeries>
+
+      	<ChipSeries>
+      		<Chip name="SN8P2522"></Chip>
+      		<Chip name="SN8P2521"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xFB"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2318"></Chip>
+      		<Chip name="SN8P2317"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x73"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8A2617"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x3F"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2602B"></Chip>
+      		<Chip name="SN8P2602C"></Chip>
+      		<Chip name="SN8PC22"></Chip>
+      		<Chip name="SN8P2511"></Chip>
+      		<Chip name="SN8P2501C"></Chip>
+      		<Chip name="SN8P2501B"></Chip>
+      		<Chip name="SN8P2501B1"></Chip>
+      		<Chip name="SN8P2501A"></Chip>
+      		<Chip name="SN8P2501D"></Chip>
+      		<Chip name="SN8P2602A"></Chip>
+      		<Chip name="SN8P2602C1"></Chip>
+      		<Chip name="SN8P2604"></Chip>
+      		<Chip name="SN8P26042"></Chip>
+      		<Chip name="SN8P2606"></Chip>
+      		<Chip name="SN8P2622"></Chip>
+      		<Chip name="SN8P2623"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x31"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2604A"></Chip>
+      		<Chip name="SN8P26042A"></Chip>
+      		<Chip name="SN8P2608"></Chip>
+      		<Chip name="SN8P2614"></Chip>
+      		<Chip name="SN8P2624"></Chip>
+      		<Chip name="SN8P26L31"></Chip>
+      		<Chip name="SN8P26L34"></Chip>
+      		<Chip name="SN8P26L37"></Chip>
+      		<Chip name="SN8P26L32"></Chip>
+      		<Chip name="SN8P26L321"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x53"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2611"></Chip>
+      		<Chip name="SN8P2612"></Chip>
+      		<Chip name="SN8P2613"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x33"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2808"></Chip>
+      		<Chip name="SN8P2807"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x37"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xF3"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8PC22"></Chip>
+      		<Chip name="SN8PC20"></Chip>
+      		<Chip name="SN8PC2014"></Chip>
+      		<Chip name="SN8PC2016"></Chip>
+      		<PushPop type="Register" name="ACC" mask="0xFF"></PushPop>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x11"></InterruptFlag>
+      	</ChipSeries>	
+
+      	<ChipSeries>
+      		<Chip name="SN8P1927"></Chip>
+      		<Chip name="SN8P1927A"></Chip>
+      		<Chip name="SN8P1917"></Chip>
+      		<Chip name="SN8P1907"></Chip>
+      		<Chip name="SN8P1908"></Chip>
+      		<Chip name="SN8P1909"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x11"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1919"></Chip>
+      		<PushPop type="Register" name="PFlag" mask="0xC7"></PushPop>
+					<PushPop type="Ram" startAddress="0x80" endAddress="0x87"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x73"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1602B"></Chip>
+      		<Chip name="SN8P1602"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x21"></InterruptFlag>
+      	 </ChipSeries>
+      	 
+      	<ChipSeries>
+      		<Chip name="SN8P1937"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x31"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2714"></Chip>
+      		<Chip name="SN8P27142"></Chip>
+      		<Chip name="SN8P27143"></Chip>
+      		<Chip name="SN8P2715"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x33"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1702A"></Chip>
+      		<Chip name="SN8P1703A"></Chip>
+      		<Chip name="SN8P1704"></Chip>
+      		<Chip name="SN8P1706"></Chip>
+      		<Chip name="SN8P1707"></Chip>
+      		<Chip name="SN8P1708"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x61"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P1829"></Chip>
+      		<Chip name="SN8P1808"></Chip>
+      		<Chip name="SN8P1819A"></Chip>
+      		<PushPop type="Register" name="PFlag" mask="0x07"></PushPop>
+			<PushPop type="Ram" startAddress="0x80" endAddress="0x87"></PushPop>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x7B"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2947"></Chip>
+      		<Chip name="SN8P2967"></Chip>
+      		<Chip name="SN8P2962"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0x91"></InterruptFlag>
+      	</ChipSeries>
+      	
+      	<ChipSeries>
+      		<Chip name="SN8P2949"></Chip>
+      		<InterruptFlag type="byte" ENRegister="INTEN" RQRegister="INTRQ" vector="0x08" mask="0xF3"></InterruptFlag>
+      	</ChipSeries>
+      	
+	</BaseInterrupt>
+	
+	<EmptyInterrupt>
+		<Chip name="SN8PC21"></Chip>
+		<Chip name="SN8PC21A"></Chip>
+		<Chip name="SN32F706"></Chip>
+		<Chip name="SN32F707"></Chip>
+		<Chip name="SN8F25E28"></Chip>
+		<Chip name="SN8F25E27"></Chip>
+		<Chip name="SN8F25E27L"></Chip>
+		<Chip name="SN8FMD24A"></Chip>
+		<Chip name="SN8FMD24AL"></Chip>
+		<Chip name="SN8P1919"></Chip>
+		<Chip name="SN8F26E27"></Chip>
+		<Chip name="SN8F26E27L"></Chip>
+		<Chip name="SN8F26E28"></Chip>
+		<Chip name="SN8F26E28L"></Chip>
+		<Chip name="SN8F26E281"></Chip>
+		<Chip name="SN8F26E281L"></Chip>
+    <Chip name="SN8P1929"></Chip>
+    <Chip name="SN8P2949"></Chip>
+    <Chip name="SN8P2929"></Chip>
+    <Chip name="SN8F25E28L"></Chip>
+    <Chip name="SN8FMD25A"></Chip>
+    <Chip name="SN8FMD25AL"></Chip>
+	</EmptyInterrupt>
+<CVSA></CVSA>
+</SN8Interrupt>

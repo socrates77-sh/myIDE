@@ -1,0 +1,197 @@
+gplink-0.7.0 (Nov 19 2012)
+Listing File Generated: 2012-12-6  10:06:37
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           #include mc30p011a.inc
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           #define	 asubra	subra
+                                           #define	 comr	comra
+                                           #define	 isubai	subai
+                                           
+                                           #define    RAM_COUNT    48    ;48个RAM
+                                           #define    FIR_RAM_ADDR    0x10    ;RAM首地址
+                                           
+                                           #define    MAX_DIS_DATA    18
+                                           
+                                           #define    RAM_E    0x00        ;RAM错误报E0
+                                           ;***************特殊RAM***********
+                                           R0    equ    0x07
+                                           DDR0    equ    0x45
+                                           DDR1    equ    0x46
+                                           
+                                           #define    r0    R0
+                                           #define    IO_TM1628_STB    P0,0
+                                           #define    IO_TM1628_CLK    P0,1
+                                           #define    IO_TM1628_DATA    P0,2
+                                           #define    IO_TM1628_DDR    DDR0,2
+                                           ;*************ram****************
+                                           cblock    0x10
+                                           acc_temp
+                                           status_temp
+                                           r1
+                                           r2
+                                           r3
+                                           r4
+                                           r5
+                                           r6
+                                           r7
+                                           work_flag1
+                                           work_flag2
+                                           error_flag
+                                           
+                                           time_125us
+                                           time_1ms
+                                           time_10ms
+                                           time_100ms
+                                           time_1s
+                                           time_1min
+                                           time_1hour
+                                           
+                                           work_time
+                                           funtion_valu
+                                           
+                                           key_times0
+                                           key_times1
+                                           key_times2
+                                           key_times3
+                                           key_bak
+                                           key_value
+                                           work_status
+                                           
+                                           dis_buffer0
+                                           dis_buffer1
+                                           dis_buffer2
+                                           dis_buffer3
+                                           tm_data0
+                                           tm_data1
+                                           tm_data2
+                                           tm_data3
+                                           tm_data4
+                                           tm_data5
+                                           tm_data6
+                                           tm_data7
+                                           key_data_buffer0
+                                           key_data_buffer1
+                                           key_data_buffer2
+                                           key_data_buffer3
+                                           key_data_buffer4
+                                           endc
+                                           ;***************end ram*************
+                                           #define		KEY_INT1	key_value,4
+                                           #define		KEY_INT0	key_value,5
+                                           #define		KEY_RST		key_value,7
+                                           
+                                           #define		IN_PUT		work_status,0
+                                           #define		IN_PULL_DOWN	work_status,1
+                                           #define		OUT_PUT		work_status,2
+                                           
+                                           #define    dis_buffer4    tm_data4
+                                           #define    dis_buffer5    tm_data5
+                                           #define    dis_buffer6    tm_data6
+                                           #define    dis_buffer7    tm_data7
+                                           #define    disp0_point    tm_data0,4
+                                           #define    disp1_point    tm_data1,4
+                                           #define    disp2_point    tm_data2,4
+                                           #define    disp3_point    tm_data3,4
+                                           #define    key_data1    key_data_buffer0,0    ;k1
+                                           #define    key_data2    key_data_buffer0,3    ;k2
+                                           #define    key_data3    key_data_buffer3,0    ;k3
+                                           
+                                           #define flag_time_10ms         work_flag1,0
+                                           #define flag_key1_effect    work_flag1,1
+                                           #define flag_key2_effect    work_flag1,2
+                                           #define flag_key3_effect    work_flag1,3
+                                           #define flag_key1_effect_bak    work_flag1,4
+                                           #define flag_key2_effect_bak    work_flag1,5
+                                           #define flag_key3_effect_bak    work_flag1,6
+                                           #define flag_test_timer0    work_flag1,7
+                                           
+                                           #define    flag_disp0_point    work_flag2,0
+                                           #define    flag_disp1_point    work_flag2,1
+                                           #define    flag_disp2_point    work_flag2,2
+                                           #define    flag_disp3_point    work_flag2,3
+                                               org     0x3ff        ;复位向量
+0003ff   3f8e     bclr    0xe, 0x7             bclr    GIE    ;关中断
+                                               org     0x00
+                                               
+000000   2801     goto    0x1                  goto    start
+                                           
+                                           ;*******程序开始*************
+                                           ;*********start***************
+                                           start:
+000001   3f88     bclr    0x8, 0x7             bclr    WDTEN        ;关看门狗
+000002   3f08     bclr    0x8, 0x6             bclr    EIS
+                                           
+                                           ;*****************************************
+                                           sys_init:
+000003   0b00     movai   0                    movai    0x00    ;8M,2T,4分频
+000004   15c1     dw      0x15c1               movra    T0CR        ;写入T0CR 
+000005   380e     bset    0xe, 0               bset    T0IE    ;开定时中断
+                                           
+000006   0bfe     movai   0xfe                 movai 254
+000007   15ce     dw      0x15ce               movra T1LOAD
+                                           
+000008   0b01     movai   0x1                  movai 0x01
+000009   15cc     dw      0x15cc               movra T1CR
+                                           
+00000a   0bfe     movai   0xfe                 movai 0xfe
+00000b   15cf     dw      0x15cf               movra T1DATA
+                                           
+00000c   3bcc     bset    0x4c, 0x7            bset  T1MEN         ;开定时器1
+00000d   38cb     bset    0x4b, 0x1            bset  T1IE        ;使能定时器1中断
+00000e   1dc5     dw      0x1dc5               clrr    DDR0
+00000f   1dc6     dw      0x1dc6               clrr    DDR1    ;全部作为输入口
+000010   1d85     clrr    0x5                  clrr    P0
+000011   1d86     clrr    0x6                  clrr    P1
+                                           ;***************************************
+000012   000e     clrwdt                       clrwdt
+000013   3b88     bset    0x8, 0x7             bset    WDTEN
+000014   3f8e     bclr    0xe, 0x7             bclr    GIE    ;关全局中断
+000015   3bcb     bset    0x4b, 0x7            bset    TBS
+000016   0000     nop                          nop
+                                           
+                                           ;************main loop***************
+                                           main_loop:
+000017   000e     clrwdt                       clrwdt
+                                               ;bclr    T0IE
+000018   0000     nop                          nop
+                                           ;********动态************************
+                                           ;io_out_h:
+                                           ;    clrr    DDR1
+                                           ;    clrr    DDR0
+                                           ;test_loop: 
+                                           ;    comr    P0
+                                           ;    comr    P1
+                                           ;    comr    R0
+                                           ;    clrwdt
+                                           ;    goto    test_loop
+                                           ;*****************************************
+                                           
+                                           ;;********静态*****************************
+                                           io_in_p1_l:
+000019   1dc6     dw      0x1dc6               clrr    DDR1
+00001a   1dc5     dw      0x1dc5               clrr    DDR0
+00001b   000e     clrwdt                       clrwdt
+                                           
+                                           test_loop2:
+00001c   1c85     comra   0x5                  comr    P0
+00001d   1c86     comra   0x6                  comr    P1
+00001e   000b     sleep                        sleep		;等待唤醒
+00001f   281c     goto    0x1c                 goto    test_loop2
+                                           
+                                               end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+07C0 : ---------------- ---------------- ---------------- --------------XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    33
+

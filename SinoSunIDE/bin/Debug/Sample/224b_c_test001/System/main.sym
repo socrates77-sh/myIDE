@@ -1,0 +1,100 @@
+
+Map of System\main.h05 from link file MC20P24.lkf - Mon Nov 19 17:20:20 2012
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001000 end 0000102c length    44 segment CODE
+start 0000102c end 0000102c length     0 segment .const
+start 00000030 end 00000030 length     0 segment ZPAGE
+start 00000030 end 00000034 length     4 segment UZPAGE
+start 00000030 end 00000030 length     0 segment IDATA
+start 00000030 end 00000030 length     0 segment UDATA
+start 00000034 end 00000035 length     1 segment .share
+start 00000000 end 000010ba length  4282 segment .debug
+start 00001ff4 end 00002000 length    12 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05:
+start 00001000 end 0000100a length    10 section CODE (.text)
+start 00000030 end 00000034 length     4 section UZPAGE (.ubsct)
+
+main.o:
+start 0000100a end 0000102c length    34 section CODE (.text)
+start 00000000 end 000010ba length  4282 section .debug
+
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o:
+start 00001ff4 end 00002000 length    12 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+main.o:
+_main     00000034-00000034 (1,0)
+
+Stack size: 9
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADDATAH        00000028   defined in main.o
+_ADDATAL        00000029   defined in main.o
+_BTCNT          0000000d   defined in main.o
+_INT0_ISR       0000100e   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_INT0_ISR.L     00000035   defined in linker section .share
+                           *** not used ***
+_INT1_ISR       0000100b   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_INT1_ISR.L     00000035   defined in linker section .share
+                           *** not used ***
+_PWMDATA        00000022   defined in main.o
+_PWMINT_ISR     0000100c   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_PWMINT_ISR.L   00000035   defined in linker section .share
+                           *** not used ***
+_SWI_ISR        0000100a   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_SWI_ISR.L      00000035   defined in linker section .share
+                           *** not used ***
+_T0CNT          00000000   defined in main.o
+_T0DATA         00000001   defined in main.o
+_T0INT_ISR      0000100d   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_T0INT_ISR.L    00000035   defined in linker section .share
+                           *** not used ***
+__stext         00001000   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05 section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o
+_adcon          00000027   defined in main.o
+_btcon          0000000c   defined in main.o
+_exit           00001008   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05 section CODE (.text)
+_initial        0000100f   defined in main.o section CODE (.text)
+_main           00001023   defined in main.o section CODE (.text)
+                           used in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05
+_main.L         00000035   defined in linker section .share
+                           used in main.o
+_mcr            00000003   defined in main.o
+_p0             00000010   defined in main.o
+_p0conh         00000016   defined in main.o
+_p0conl         00000017   defined in main.o
+_p0pnd          00000018   defined in main.o
+_p1             00000011   defined in main.o
+_p1con          00000019   defined in main.o
+_p2             00000012   defined in main.o
+_p2conh         0000001a   defined in main.o
+_p2conl         0000001b   defined in main.o
+_pwmcon         00000023   defined in main.o
+_t0con          00000002   defined in main.o
+_vectab         00001ff4   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o section .const
+                           *** not used ***
+c_h             00000031   defined in G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05 section UZPAGE (.ubsct)

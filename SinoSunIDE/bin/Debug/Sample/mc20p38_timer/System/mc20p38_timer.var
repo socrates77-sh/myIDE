@@ -1,0 +1,16 @@
+PA at 0x0000  xxxx.x  0000 to 0000
+PB at 0x0001  xxxx.x  0000 to 0000
+PC at 0x0002  xxxx.x  0000 to 0000
+DDRA at 0x0003  xxxx.x  0000 to 0000
+DDRB at 0x0004  xxxx.x  0000 to 0000
+TDR0 at 0x0007  xxxx.x  0000 to 0000
+TLOAD0 at 0x0007  xxxx.x  0000 to 0000
+TCR0 at 0x0008  xxxx.x  0000 to 0000
+TDR1 at 0x0009  xxxx.x  0000 to 0000
+TLOAD1 at 0x0009  xxxx.x  0000 to 0000
+TCR1 at 0x000A  xxxx.x  0000 to 0000
+TDR2 at 0x000B  xxxx.x  0000 to 0000
+TLOAD2 at 0x000B  xxxx.x  0000 to 0000
+TCR2 at 0x000C  xxxx.x  0000 to 0000
+INTC0 at 0x0017  xxxx.x  0000 to 0000
+INTC1 at 0x0018  xxxx.x  0000 to 0000

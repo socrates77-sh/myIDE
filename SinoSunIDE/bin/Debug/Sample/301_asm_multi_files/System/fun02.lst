@@ -1,0 +1,215 @@
+gpasm-1.3.1 (Jul  9 2013)    fun02.asm          2013-9-26  14:43:04          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 #include        "mc30p011.inc"
+                      00001         LIST
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00190         LIST
+                      00004 #include        "var.inc"
+                      00001 
+                      00002 ;------------------------------------------------
+                      00003 ;定义一个头文件用来存放程序中的变量和位定义，所有变量均为全局变量
+                      00004 ;
+                      00005 ;-------------------------------------------------
+                      00006 
+                      00007 #define    RAM_COUNT    48    ;48个RAM
+                      00008 #define    FIR_RAM_ADDR    0x10    ;RAM首地址
+                      00009 
+                      00010 #define    MAX_DIS_DATA    18
+                      00011 
+                      00012 #define    RAM_E    0x00        ;RAM错误报E0
+                      00013 ;***************特殊RAM***********
+  00000007            00014 R0    equ    0x07
+  00000045            00015 DDR0    equ    0x45
+  00000046            00016 DDR1    equ    0x46
+                      00017 
+                      00018 #define    r0    R0
+                      00019 #define    IO_TM1628_STB    P0,0
+                      00020 #define    IO_TM1628_CLK    P0,1
+                      00021 #define    IO_TM1628_DATA    P0,2
+                      00022 #define    IO_TM1628_DDR    DDR0,2
+                      00023 ;*************ram****************
+                      00024 cblock    0x10
+                      00025 acc_temp
+                      00026 status_temp
+                      00027 flag_work0
+                      00028 flag_work1
+                      00029 flag_work2
+                      00030 counter
+                      00031 endc
+                      00032 ;***************end ram*************
+                      00033 #define         timer_10ms      flag_work0,0
+                      00034 #define         timer_100ms     flag_work0,1
+                      00035 
+                      00036 
+                      00037 #define         led0            flag_work1,0
+                      00038 #define         led1            flag_work1,1
+                      00039 
+                      00005 
+                      00006         global  fn_display
+                      00007         global  fn_otherthing
+                      00008         
+                      00009         extern  fn_keyscan
+                      00010         
+                      00011         
+                      00012 code_fun02      code  ; 定义一个代码段，不指定程序起始地址
+                      00013         
+0000                  00014 fn_display:
+0000   3C13           00015         bclr    led0
+0001   2000           00016         call    fn_keyscan
+0002   0000           00017         NOP
+0003   0000           00018         nop 
+0004   0000           00019         nop ;....
+0005   000C           00020         return
+                      00021         
+0006                  00022 fn_otherthing:
+0006   0000           00023         nop
+0007   0000           00024         nop
+0008   000C           00025         return     
+                      00026      
+                      00027      end  
+gpasm-1.3.1 (Jul  9 2013)    fun02.asm          2013-9-26  14:43:04          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+DDR0                              00000045
+DDR1                              00000046
+FSR                               00000004
+GPR                               00000007
+INDF                              00000000
+INTECON                           0000000E
+INTEFLAG                          0000000F
+KBIM                              00000009
+MCR                               00000008
+ODCON                             0000000C
+P0                                00000005
+P1                                00000006
+P5IOC                             00000045
+P6IOC                             00000046
+PCL                               00000002
+PCLATH                            0000000A
+PDCON                             0000000B
+PR0                               00000000
+PR1                               00000001
+PR2                               00000002
+PTA                               00000003
+PUCON                             0000000D
+R0                                00000007
+STATUS                            00000003
+T0CNT                             00000001
+T0CR                              00000041
+T0CS                              00000005
+T0SE                              00000004
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DATA                            0000004F
+T1LOAD                            0000004E
+TMCR                              0000004B
+_BOR_15                           00003FF8
+_BOR_18                           00003FF9
+_BOR_20                           00003FFA
+_BOR_22                           00003FFB
+_BOR_24                           00003FFC
+_BOR_26                           00003FFD
+_BOR_36                           00003FFF
+_CONFIG1                          00002000
+_CONFIG2                          00002001
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_FCPU_2T                          00003F7F
+_FCPU_4T                          00003FFF
+_FOSC_1M                          00003FCF
+_FOSC_2M                          00003FDF
+_FOSC_32K                         00003F9F
+_FOSC_455K                        00003FAF
+_FOSC_4M                          00003FEF
+_FOSC_500K                        00003FBF
+_FOSC_62P5K                       00003F8F
+_FOSC_8M                          00003FFF
+_MCLR_OFF                         00003FF7
+_MCLR_ON                          00003FFF
+_MCU_EMC                          00003BFF
+_MCU_FEL                          00003FFF
+_OSCM_HS                          00003FFF
+_OSCM_IRC                         000037FF
+_OSCM_LP                          00003FFF
+_RDPORT_PIN                       00003FFF
+_RDPORT_REG                       00003EFF
+_ROTP_100N                        00001FFF
+_ROTP_200N                        00002FFF
+_ROTP_300N                        00000FFF
+_ROTP_HALFCPU                     00003FFF
+_SMT_OFF                          00003DFF
+_SMT_ON                           00003EFF
+_TWDT_18_18                       00003FFF
+_TWDT_288_288                     00003DFF
+_TWDT_4P5_4P5                     00003EFF
+_TWDT_72_72                       00003CFF
+_TWDT_P140_18                     00003BFF
+_TWDT_P140_288                    000039FF
+_TWDT_P140_4P5                    00003AFF
+_TWDT_P140_72                     000038FF
+_WDT_OFF                          000037FF
+_WDT_ON                           00003FFF
+__30P011                          00000001
+acc_temp                          00000010
+counter                           00000015
+flag_work0                        00000012
+flag_work1                        00000013
+flag_work2                        00000014
+fn_display                        00000000
+fn_keyscan                        00000000
+fn_otherthing                     00000006
+status_temp                       00000011
+BUZOUT                            T1CR,5
+C                                 STATUS,0
+DC                                STATUS,1
+EIS                               MCR,6
+FIR_RAM_ADDR                      0x10
+GIE                               INTECON,7
+GPR0                              STATUS,5
+GPR1                              STATUS,6
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT0M                             T0CR,6
+INTE                              INTECON
+INTF                              INTEFLAG
+IO_TM1628_CLK                     P0,1
+IO_TM1628_DATA                    P0,2
+IO_TM1628_DDR                     DDR0,2
+IO_TM1628_STB                     P0,0
+KBIE                              INTECON,1
+KBIF                              INTF,1
+MAX_DIS_DATA                      18
+PD                                STATUS,3
+PWMOUT                            T1CR,6
+RAM_COUNT                         48
+RAM_E                             0x00
+RST                               STATUS,7
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T1IE                              TMCR,1
+T1IF                              TMCR,0
+TBS                               TMCR,7
+TMR1EN                            T1CR,7
+TO                                STATUS,4
+WDTEN                             MCR,7
+Z                                 STATUS,2
+led0                              flag_work1,0
+led1                              flag_work1,1
+r0                                R0
+timer_100ms                       flag_work0,1
+timer_10ms                        flag_work0,0
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

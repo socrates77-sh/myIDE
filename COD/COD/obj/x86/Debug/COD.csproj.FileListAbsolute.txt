@@ -1,0 +1,8 @@
+G:\Emulator\IDE\SinoSunIDE\COD\COD\bin\x86\Debug\COD.dll
+G:\Emulator\IDE\SinoSunIDE\COD\COD\bin\x86\Debug\COD.pdb
+G:\Emulator\IDE\SinoSunIDE\COD\COD\bin\x86\Debug\Edit.dll
+G:\Emulator\IDE\SinoSunIDE\COD\COD\bin\x86\Debug\Edit.pdb
+G:\Emulator\IDE\SinoSunIDE\COD\COD\bin\x86\Debug\Edit.xml
+G:\Emulator\IDE\SinoSunIDE\COD\COD\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\COD\COD\obj\x86\Debug\COD.dll
+G:\Emulator\IDE\SinoSunIDE\COD\COD\obj\x86\Debug\COD.pdb

@@ -1,0 +1,44 @@
+gpasm-0.7.0 (Nov 19 2012)    sub2.asm           2012-11-21  16:32:49         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002     
+                      00003     
+                      00004 
+                      00005 PRO    CODE
+0000                  00006 funtion1:
+                      00007         global funtion1
+0000   0000           00008         nop
+0001   0000           00009         nop
+0002   000C           00010         return
+                      00011         
+0003                  00012 lab_abc:
+                      00013         global lab_abc
+0003   0000           00014         nop
+0004   0000           00015         nop
+0005   0000           00016   nop
+0006   0000           00017   nop
+0007   0000           00018   NOP
+0008   0000           00019   nop
+0009   0000           00020   nop
+000A   000C           00021         return 
+                      00022         
+                      00023         en
+gpasm-0.7.0 (Nov 19 2012)    sub2.asm           2012-11-21  16:32:49         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P01A                          00000001
+funtion1                          00000000
+lab_abc                           00000003
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

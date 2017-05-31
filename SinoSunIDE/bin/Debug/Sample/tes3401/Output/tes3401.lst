@@ -1,0 +1,1076 @@
+gplink-1.6.1 (Jan 23 2014)
+Listing File Generated: 2014-6-5  16:58:10
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           #define XORIA	XORAI	
+                                           
+                                           	org 0x00
+000000   1401     goto    0x1                 GOTO		0x0001
+000001   0408     movai   0x8                 MOVAI	0x08
+000002   0036     iosw    0x6                 IOSW		0x06
+000003   04ff     movai   0xff                MOVAI		0xFF
+000004   0086     movra   0x6                 MOVRA		0x06
+000005   0401     movai   0x1                 MOVAI		0x01
+000006   00ba     movra   0x3a                MOVRA		0x3A
+000007   0401     movai   0x1                 MOVAI		0x01
+000008   00b4     movra   0x34                MOVRA		0x34
+000009   0464     movai   0x64                MOVAI		0x64
+00000a   00b9     movra   0x39                MOVRA		0x39
+00000b   00f1     clrr    0x31                CLRR		0x31
+00000c   00ef     clrr    0x2f                CLRR		0x2F
+00000d   00ee     clrr    0x2e                CLRR		0x2E
+00000e   00fc     clrr    0x3c                CLRR		0x3C
+00000f   0025     iosr    0x5                 IOSR		0x05
+000010   0640     andai   0x40                ANDAI		0x40
+000011   0708     addai   0x8                 ADDAI		0x08
+000012   0031     iosw    0x1                 IOSW		0x01
+000013   0442     movai   0x42                MOVAI		0x42
+000014   0081     movra   0x1                 MOVRA		0x01
+000015   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+000016   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+000017   0404     movai   0x4                 MOVAI		0x04
+000018   00b8     movra   0x38                MOVRA		0x38
+000019   12c9     call    0x2c9               CALL		0x02C9
+00001a   04a0     movai   0xa0                MOVAI		0xA0
+00001b   12fd     call    0x2fd               CALL		0x02FD
+00001c   12ef     call    0x2ef               CALL		0x02EF
+00001d   0400     movai   0                   MOVAI		0x00
+00001e   12fd     call    0x2fd               CALL		0x02FD
+00001f   12ef     call    0x2ef               CALL		0x02EF
+000020   12c9     call    0x2c9               CALL		0x02C9
+000021   04a1     movai   0xa1                MOVAI		0xA1
+000022   12fd     call    0x2fd               CALL		0x02FD
+000023   12ef     call    0x2ef               CALL		0x02EF
+000024   130e     call    0x30e               CALL		0x030E
+000025   12dc     call    0x2dc               CALL		0x02DC
+000026   12d1     call    0x2d1               CALL		0x02D1
+000027   0bba     movar   0x3a                MOVAR		0x3A
+000028   01ff     xorai   0xff                XORIA		0xFF
+000029   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+00002a   142c     goto    0x2c                GOTO		0x002C
+00002b   1455     goto    0x55                GOTO		0x0055
+00002c   0401     movai   0x1                 MOVAI		0x01
+00002d   00ba     movra   0x3a                MOVRA		0x3A
+00002e   12c9     call    0x2c9               CALL		0x02C9
+00002f   04a0     movai   0xa0                MOVAI		0xA0
+000030   12fd     call    0x2fd               CALL		0x02FD
+000031   12ef     call    0x2ef               CALL		0x02EF
+000032   0400     movai   0                   MOVAI		0x00
+000033   12fd     call    0x2fd               CALL		0x02FD
+000034   12ef     call    0x2ef               CALL		0x02EF
+000035   0bba     movar   0x3a                MOVAR		0x3A
+000036   12fd     call    0x2fd               CALL		0x02FD
+000037   12ef     call    0x2ef               CALL		0x02EF
+000038   12d1     call    0x2d1               CALL		0x02D1
+000039   0464     movai   0x64                MOVAI		0x64
+00003a   12aa     call    0x2aa               CALL		0x02AA
+00003b   1455     goto    0x55                GOTO		0x0055
+00003c   1e03     bclr    0x3, 0               BCLR		0x0003,0x0000
+00003d   0b7a     rlr     0x3a                RLR		0x3A
+00003e   0bba     movar   0x3a                MOVAR		0x3A
+00003f   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000040   0d7a     incr    0x3a                INCR		0x3A
+000041   0401     movai   0x1                 MOVAI		0x01
+000042   00b4     movra   0x34                MOVRA		0x34
+000043   0464     movai   0x64                MOVAI		0x64
+000044   00b9     movra   0x39                MOVRA		0x39
+000045   00ef     clrr    0x2f                CLRR		0x2F
+000046   00ee     clrr    0x2e                CLRR		0x2E
+000047   12c9     call    0x2c9               CALL		0x02C9
+000048   04a0     movai   0xa0                MOVAI		0xA0
+000049   12fd     call    0x2fd               CALL		0x02FD
+00004a   12ef     call    0x2ef               CALL		0x02EF
+00004b   0400     movai   0                   MOVAI		0x00
+00004c   12fd     call    0x2fd               CALL		0x02FD
+00004d   12ef     call    0x2ef               CALL		0x02EF
+00004e   0bba     movar   0x3a                MOVAR		0x3A
+00004f   12fd     call    0x2fd               CALL		0x02FD
+000050   12ef     call    0x2ef               CALL		0x02EF
+000051   12d1     call    0x2d1               CALL		0x02D1
+000052   0464     movai   0x64                MOVAI		0x64
+000053   12aa     call    0x2aa               CALL		0x02AA
+000054   0000     nop                         NOP 
+000055   0bba     movar   0x3a                MOVAR		0x3A
+000056   0101     xorai   0x1                 XORIA		0x01
+000057   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000058   1475     goto    0x75                GOTO		0x0075
+000059   0bba     movar   0x3a                MOVAR		0x3A
+00005a   0102     xorai   0x2                 XORIA		0x02
+00005b   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+00005c   147c     goto    0x7c                GOTO		0x007C
+00005d   0bba     movar   0x3a                MOVAR		0x3A
+00005e   0104     xorai   0x4                 XORIA		0x04
+00005f   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000060   147e     goto    0x7e                GOTO		0x007E
+000061   0bba     movar   0x3a                MOVAR		0x3A
+000062   0108     xorai   0x8                 XORIA		0x08
+000063   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000064   1480     goto    0x80                GOTO		0x0080
+000065   0bba     movar   0x3a                MOVAR		0x3A
+000066   0110     xorai   0x10                XORIA		0x10
+000067   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000068   1482     goto    0x82                GOTO		0x0082
+000069   0bba     movar   0x3a                MOVAR		0x3A
+00006a   0120     xorai   0x20                XORIA		0x20
+00006b   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+00006c   1484     goto    0x84                GOTO		0x0084
+00006d   0bba     movar   0x3a                MOVAR		0x3A
+00006e   0140     xorai   0x40                XORIA		0x40
+00006f   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000070   1486     goto    0x86                GOTO		0x0086
+000071   0bba     movar   0x3a                MOVAR		0x3A
+000072   0180     xorai   0x80                XORIA		0x80
+000073   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000074   1488     goto    0x88                GOTO		0x0088
+000075   108a     call    0x8a                CALL		0x008A
+000076   111a     call    0x11a               CALL		0x011A
+000077   1135     call    0x135               CALL		0x0135
+000078   11c5     call    0x1c5               CALL		0x01C5
+000079   11d4     call    0x1d4               CALL		0x01D4
+00007a   124f     call    0x24f               CALL		0x024F
+00007b   1455     goto    0x55                GOTO		0x0055
+00007c   108a     call    0x8a                CALL		0x008A
+00007d   1455     goto    0x55                GOTO		0x0055
+00007e   111a     call    0x11a               CALL		0x011A
+00007f   1455     goto    0x55                GOTO		0x0055
+000080   1135     call    0x135               CALL		0x0135
+000081   1455     goto    0x55                GOTO		0x0055
+000082   11c5     call    0x1c5               CALL		0x01C5
+000083   1455     goto    0x55                GOTO		0x0055
+000084   11d4     call    0x1d4               CALL		0x01D4
+000085   1455     goto    0x55                GOTO		0x0055
+000086   124f     call    0x24f               CALL		0x024F
+000087   1455     goto    0x55                GOTO		0x0055
+000088   126e     call    0x26e               CALL		0x026E
+000089   1455     goto    0x55                GOTO		0x0055
+00008a   0401     movai   0x1                 MOVAI		0x01
+00008b   00b4     movra   0x34                MOVRA		0x34
+00008c   0432     movai   0x32                MOVAI		0x32
+00008d   00b9     movra   0x39                MOVRA		0x39
+00008e   0402     movai   0x2                 MOVAI		0x02
+00008f   00b7     movra   0x37                MOVRA		0x37
+000090   00ef     clrr    0x2f                CLRR		0x2F
+000091   0410     movai   0x10                MOVAI		0x10
+000092   00ad     movra   0x2d                MOVRA		0x2D
+000093   0460     movai   0x60                MOVAI		0x60
+000094   00b0     movra   0x30                MOVRA		0x30
+000095   0000     nop                         NOP 
+000096   10c7     call    0xc7                CALL		0x00C7
+000097   0df0     djzr    0x30                DJZR		0x30
+000098   1495     goto    0x95                GOTO		0x0095
+000099   0401     movai   0x1                 MOVAI		0x01
+00009a   00b4     movra   0x34                MOVRA		0x34
+00009b   0ded     djzr    0x2d                DJZR		0x2D
+00009c   1493     goto    0x93                GOTO		0x0093
+00009d   0d6f     incr    0x2f                INCR		0x2F
+00009e   0410     movai   0x10                MOVAI		0x10
+00009f   00ad     movra   0x2d                MOVRA		0x2D
+0000a0   0460     movai   0x60                MOVAI		0x60
+0000a1   00b0     movra   0x30                MOVRA		0x30
+0000a2   0000     nop                         NOP 
+0000a3   10c7     call    0xc7                CALL		0x00C7
+0000a4   0df0     djzr    0x30                DJZR		0x30
+0000a5   14a2     goto    0xa2                GOTO		0x00A2
+0000a6   0ded     djzr    0x2d                DJZR		0x2D
+0000a7   14a0     goto    0xa0                GOTO		0x00A0
+0000a8   00ef     clrr    0x2f                CLRR		0x2F
+0000a9   0401     movai   0x1                 MOVAI		0x01
+0000aa   00b7     movra   0x37                MOVRA		0x37
+0000ab   00ef     clrr    0x2f                CLRR		0x2F
+0000ac   0408     movai   0x8                 MOVAI		0x08
+0000ad   00ad     movra   0x2d                MOVRA		0x2D
+0000ae   0460     movai   0x60                MOVAI		0x60
+0000af   00b0     movra   0x30                MOVRA		0x30
+0000b0   0000     nop                         NOP 
+0000b1   10c7     call    0xc7                CALL		0x00C7
+0000b2   0df0     djzr    0x30                DJZR		0x30
+0000b3   14b0     goto    0xb0                GOTO		0x00B0
+0000b4   0401     movai   0x1                 MOVAI		0x01
+0000b5   00b4     movra   0x34                MOVRA		0x34
+0000b6   0ded     djzr    0x2d                DJZR		0x2D
+0000b7   14ae     goto    0xae                GOTO		0x00AE
+0000b8   0d6f     incr    0x2f                INCR		0x2F
+0000b9   0410     movai   0x10                MOVAI		0x10
+0000ba   00ad     movra   0x2d                MOVRA		0x2D
+0000bb   0460     movai   0x60                MOVAI		0x60
+0000bc   00b0     movra   0x30                MOVRA		0x30
+0000bd   0000     nop                         NOP 
+0000be   10c7     call    0xc7                CALL		0x00C7
+0000bf   0df0     djzr    0x30                DJZR		0x30
+0000c0   14bd     goto    0xbd                GOTO		0x00BD
+0000c1   0ded     djzr    0x2d                DJZR		0x2D
+0000c2   14bb     goto    0xbb                GOTO		0x00BB
+0000c3   00ef     clrr    0x2f                CLRR		0x2F
+0000c4   0464     movai   0x64                MOVAI		0x64
+0000c5   00b9     movra   0x39                MOVRA		0x39
+0000c6   0004     return                      RETURN 
+0000c7   0bb7     movar   0x37                MOVAR		0x37
+0000c8   00b8     movra   0x38                MOVRA		0x38
+0000c9   0bb4     movar   0x34                MOVAR		0x34
+0000ca   00b1     movra   0x31                MOVRA		0x31
+0000cb   0a39     rsubar  0x39                RSUBAR		0x39
+0000cc   00b5     movra   0x35                MOVRA		0x35
+0000cd   182f     jbset   0x2f, 0              JBSET		0x002F,0x0000
+0000ce   14d0     goto    0xd0                GOTO		0x00D0
+0000cf   14d3     goto    0xd3                GOTO		0x00D3
+0000d0   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+0000d1   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+0000d2   14d5     goto    0xd5                GOTO		0x00D5
+0000d3   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+0000d4   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+0000d5   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0000d6   14d9     goto    0xd9                GOTO		0x00D9
+0000d7   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+0000d8   14e0     goto    0xe0                GOTO		0x00E0
+0000d9   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+0000da   14dc     goto    0xdc                GOTO		0x00DC
+0000db   14e0     goto    0xe0                GOTO		0x00E0
+0000dc   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+0000dd   12bb     call    0x2bb               CALL		0x02BB
+0000de   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0000df   143c     goto    0x3c                GOTO		0x003C
+0000e0   180f     jbset   0xf, 0               JBSET		0x000F,0x0000
+0000e1   14e0     goto    0xe0                GOTO		0x00E0
+0000e2   1e0f     bclr    0xf, 0               BCLR		0x000F,0x0000
+0000e3   0442     movai   0x42                MOVAI		0x42
+0000e4   0081     movra   0x1                 MOVRA		0x01
+0000e5   0df1     djzr    0x31                DJZR		0x31
+0000e6   14cd     goto    0xcd                GOTO		0x00CD
+0000e7   182f     jbset   0x2f, 0              JBSET		0x002F,0x0000
+0000e8   14ea     goto    0xea                GOTO		0x00EA
+0000e9   14ed     goto    0xed                GOTO		0x00ED
+0000ea   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+0000eb   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+0000ec   14ef     goto    0xef                GOTO		0x00EF
+0000ed   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+0000ee   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+0000ef   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0000f0   14f3     goto    0xf3                GOTO		0x00F3
+0000f1   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+0000f2   14fa     goto    0xfa                GOTO		0x00FA
+0000f3   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+0000f4   14f6     goto    0xf6                GOTO		0x00F6
+0000f5   14fa     goto    0xfa                GOTO		0x00FA
+0000f6   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+0000f7   12bb     call    0x2bb               CALL		0x02BB
+0000f8   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0000f9   143c     goto    0x3c                GOTO		0x003C
+0000fa   12b1     call    0x2b1               CALL		0x02B1
+0000fb   0df5     djzr    0x35                DJZR		0x35
+0000fc   14e7     goto    0xe7                GOTO		0x00E7
+0000fd   0df8     djzr    0x38                DJZR		0x38
+0000fe   14c9     goto    0xc9                GOTO		0x00C9
+0000ff   1a2e     jbclr   0x2e, 0              JBCLR		0x002E,0x0000
+000100   150e     goto    0x10e               GOTO		0x010E
+000101   1502     goto    0x102               GOTO		0x0102
+000102   0000     nop                         NOP 
+000103   0d74     incr    0x34                INCR		0x34
+000104   0bb4     movar   0x34                MOVAR		0x34
+000105   00b2     movra   0x32                MOVRA		0x32
+000106   0431     movai   0x31                MOVAI		0x31
+000107   0972     xorra   0x32                XORRA		0x32
+000108   0bb2     movar   0x32                MOVAR		0x32
+000109   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+00010a   150c     goto    0x10c               GOTO		0x010C
+00010b   1519     goto    0x119               GOTO		0x0119
+00010c   0d6e     incr    0x2e                INCR		0x2E
+00010d   1519     goto    0x119               GOTO		0x0119
+00010e   0000     nop                         NOP 
+00010f   0e74     decr    0x34                DECR		0x34
+000110   0bb4     movar   0x34                MOVAR		0x34
+000111   00b2     movra   0x32                MOVRA		0x32
+000112   0401     movai   0x1                 MOVAI		0x01
+000113   0972     xorra   0x32                XORRA		0x32
+000114   0bb2     movar   0x32                MOVAR		0x32
+000115   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000116   1518     goto    0x118               GOTO		0x0118
+000117   1519     goto    0x119               GOTO		0x0119
+000118   00ee     clrr    0x2e                CLRR		0x2E
+000119   0004     return                      RETURN 
+00011a   0404     movai   0x4                 MOVAI		0x04
+00011b   00b0     movra   0x30                MOVRA		0x30
+00011c   047d     movai   0x7d                MOVAI		0x7D
+00011d   00b1     movra   0x31                MOVRA		0x31
+00011e   112a     call    0x12a               CALL		0x012A
+00011f   0408     movai   0x8                 MOVAI		0x08
+000120   00b0     movra   0x30                MOVRA		0x30
+000121   043e     movai   0x3e                MOVAI		0x3E
+000122   00b1     movra   0x31                MOVRA		0x31
+000123   112a     call    0x12a               CALL		0x012A
+000124   0410     movai   0x10                MOVAI		0x10
+000125   00b0     movra   0x30                MOVRA		0x30
+000126   041f     movai   0x1f                MOVAI		0x1F
+000127   00b1     movra   0x31                MOVRA		0x31
+000128   112a     call    0x12a               CALL		0x012A
+000129   0004     return                      RETURN 
+00012a   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+00012b   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+00012c   0bb1     movar   0x31                MOVAR		0x31
+00012d   1299     call    0x299               CALL		0x0299
+00012e   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+00012f   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+000130   0bb1     movar   0x31                MOVAR		0x31
+000131   1299     call    0x299               CALL		0x0299
+000132   0df0     djzr    0x30                DJZR		0x30
+000133   152a     goto    0x12a               GOTO		0x012A
+000134   0004     return                      RETURN 
+000135   0401     movai   0x1                 MOVAI		0x01
+000136   00b4     movra   0x34                MOVRA		0x34
+000137   0406     movai   0x6                 MOVAI		0x06
+000138   00ad     movra   0x2d                MOVRA		0x2D
+000139   00b8     movra   0x38                MOVRA		0x38
+00013a   04c4     movai   0xc4                MOVAI		0xC4
+00013b   00b0     movra   0x30                MOVRA		0x30
+00013c   116e     call    0x16e               CALL		0x016E
+00013d   0df0     djzr    0x30                DJZR		0x30
+00013e   153c     goto    0x13c               GOTO		0x013C
+00013f   0d6f     incr    0x2f                INCR		0x2F
+000140   0406     movai   0x6                 MOVAI		0x06
+000141   00ad     movra   0x2d                MOVRA		0x2D
+000142   00b8     movra   0x38                MOVRA		0x38
+000143   04c4     movai   0xc4                MOVAI		0xC4
+000144   00b0     movra   0x30                MOVRA		0x30
+000145   116e     call    0x16e               CALL		0x016E
+000146   0df0     djzr    0x30                DJZR		0x30
+000147   1545     goto    0x145               GOTO		0x0145
+000148   00ef     clrr    0x2f                CLRR		0x2F
+000149   0404     movai   0x4                 MOVAI		0x04
+00014a   00ad     movra   0x2d                MOVRA		0x2D
+00014b   00b8     movra   0x38                MOVRA		0x38
+00014c   04c4     movai   0xc4                MOVAI		0xC4
+00014d   00b0     movra   0x30                MOVRA		0x30
+00014e   116e     call    0x16e               CALL		0x016E
+00014f   0df0     djzr    0x30                DJZR		0x30
+000150   154e     goto    0x14e               GOTO		0x014E
+000151   0404     movai   0x4                 MOVAI		0x04
+000152   00ad     movra   0x2d                MOVRA		0x2D
+000153   00b8     movra   0x38                MOVRA		0x38
+000154   0d6f     incr    0x2f                INCR		0x2F
+000155   04c4     movai   0xc4                MOVAI		0xC4
+000156   00b0     movra   0x30                MOVRA		0x30
+000157   116e     call    0x16e               CALL		0x016E
+000158   0df0     djzr    0x30                DJZR		0x30
+000159   1557     goto    0x157               GOTO		0x0157
+00015a   00ef     clrr    0x2f                CLRR		0x2F
+00015b   0402     movai   0x2                 MOVAI		0x02
+00015c   00ad     movra   0x2d                MOVRA		0x2D
+00015d   00b8     movra   0x38                MOVRA		0x38
+00015e   04c4     movai   0xc4                MOVAI		0xC4
+00015f   00b0     movra   0x30                MOVRA		0x30
+000160   116e     call    0x16e               CALL		0x016E
+000161   0df0     djzr    0x30                DJZR		0x30
+000162   1560     goto    0x160               GOTO		0x0160
+000163   0404     movai   0x4                 MOVAI		0x04
+000164   00ad     movra   0x2d                MOVRA		0x2D
+000165   00b8     movra   0x38                MOVRA		0x38
+000166   0d6f     incr    0x2f                INCR		0x2F
+000167   04c4     movai   0xc4                MOVAI		0xC4
+000168   00b0     movra   0x30                MOVRA		0x30
+000169   116e     call    0x16e               CALL		0x016E
+00016a   0df0     djzr    0x30                DJZR		0x30
+00016b   1569     goto    0x169               GOTO		0x0169
+00016c   00ef     clrr    0x2f                CLRR		0x2F
+00016d   0004     return                      RETURN 
+00016e   0bb4     movar   0x34                MOVAR		0x34
+00016f   00b1     movra   0x31                MOVRA		0x31
+000170   0a39     rsubar  0x39                RSUBAR		0x39
+000171   00b5     movra   0x35                MOVRA		0x35
+000172   1a2f     jbclr   0x2f, 0              JBCLR		0x002F,0x0000
+000173   1577     goto    0x177               GOTO		0x0177
+000174   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000175   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+000176   1579     goto    0x179               GOTO		0x0179
+000177   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000178   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+000179   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00017a   157d     goto    0x17d               GOTO		0x017D
+00017b   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+00017c   1587     goto    0x187               GOTO		0x0187
+00017d   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+00017e   1580     goto    0x180               GOTO		0x0180
+00017f   1587     goto    0x187               GOTO		0x0187
+000180   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+000181   12bb     call    0x2bb               CALL		0x02BB
+000182   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000183   143c     goto    0x3c                GOTO		0x003C
+000184   1e0f     bclr    0xf, 0               BCLR		0x000F,0x0000
+000185   0442     movai   0x42                MOVAI		0x42
+000186   0081     movra   0x1                 MOVRA		0x01
+000187   180f     jbset   0xf, 0               JBSET		0x000F,0x0000
+000188   1587     goto    0x187               GOTO		0x0187
+000189   1e0f     bclr    0xf, 0               BCLR		0x000F,0x0000
+00018a   0442     movai   0x42                MOVAI		0x42
+00018b   0081     movra   0x1                 MOVRA		0x01
+00018c   0df1     djzr    0x31                DJZR		0x31
+00018d   1572     goto    0x172               GOTO		0x0172
+00018e   1a2f     jbclr   0x2f, 0              JBCLR		0x002F,0x0000
+00018f   1592     goto    0x192               GOTO		0x0192
+000190   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000191   1593     goto    0x193               GOTO		0x0193
+000192   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000193   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000194   1597     goto    0x197               GOTO		0x0197
+000195   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+000196   159e     goto    0x19e               GOTO		0x019E
+000197   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+000198   159a     goto    0x19a               GOTO		0x019A
+000199   159e     goto    0x19e               GOTO		0x019E
+00019a   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+00019b   12bb     call    0x2bb               CALL		0x02BB
+00019c   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00019d   143c     goto    0x3c                GOTO		0x003C
+00019e   12b1     call    0x2b1               CALL		0x02B1
+00019f   0000     nop                         NOP 
+0001a0   0df5     djzr    0x35                DJZR		0x35
+0001a1   158e     goto    0x18e               GOTO		0x018E
+0001a2   0df8     djzr    0x38                DJZR		0x38
+0001a3   156e     goto    0x16e               GOTO		0x016E
+0001a4   0bad     movar   0x2d                MOVAR		0x2D
+0001a5   00b8     movra   0x38                MOVRA		0x38
+0001a6   1a2e     jbclr   0x2e, 0              JBCLR		0x002E,0x0000
+0001a7   15b7     goto    0x1b7               GOTO		0x01B7
+0001a8   15a9     goto    0x1a9               GOTO		0x01A9
+0001a9   0000     nop                         NOP 
+0001aa   0d74     incr    0x34                INCR		0x34
+0001ab   0bb4     movar   0x34                MOVAR		0x34
+0001ac   00b7     movra   0x37                MOVRA		0x37
+0001ad   0463     movai   0x63                MOVAI		0x63
+0001ae   0977     xorra   0x37                XORRA		0x37
+0001af   0bb7     movar   0x37                MOVAR		0x37
+0001b0   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+0001b1   15b3     goto    0x1b3               GOTO		0x01B3
+0001b2   15c4     goto    0x1c4               GOTO		0x01C4
+0001b3   0d6e     incr    0x2e                INCR		0x2E
+0001b4   04fe     movai   0xfe                MOVAI		0xFE
+0001b5   00b8     movra   0x38                MOVRA		0x38
+0001b6   15c4     goto    0x1c4               GOTO		0x01C4
+0001b7   0000     nop                         NOP 
+0001b8   0e74     decr    0x34                DECR		0x34
+0001b9   0bb4     movar   0x34                MOVAR		0x34
+0001ba   00b7     movra   0x37                MOVRA		0x37
+0001bb   0401     movai   0x1                 MOVAI		0x01
+0001bc   0977     xorra   0x37                XORRA		0x37
+0001bd   0bb7     movar   0x37                MOVAR		0x37
+0001be   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+0001bf   15c1     goto    0x1c1               GOTO		0x01C1
+0001c0   15c4     goto    0x1c4               GOTO		0x01C4
+0001c1   00ee     clrr    0x2e                CLRR		0x2E
+0001c2   0450     movai   0x50                MOVAI		0x50
+0001c3   00b8     movra   0x38                MOVRA		0x38
+0001c4   0004     return                      RETURN 
+0001c5   0408     movai   0x8                 MOVAI		0x08
+0001c6   00b0     movra   0x30                MOVRA		0x30
+0001c7   0410     movai   0x10                MOVAI		0x10
+0001c8   00b1     movra   0x31                MOVRA		0x31
+0001c9   112a     call    0x12a               CALL		0x012A
+0001ca   1255     call    0x255               CALL		0x0255
+0001cb   1255     call    0x255               CALL		0x0255
+0001cc   0408     movai   0x8                 MOVAI		0x08
+0001cd   00b0     movra   0x30                MOVRA		0x30
+0001ce   0410     movai   0x10                MOVAI		0x10
+0001cf   00b1     movra   0x31                MOVRA		0x31
+0001d0   112a     call    0x12a               CALL		0x012A
+0001d1   1255     call    0x255               CALL		0x0255
+0001d2   1255     call    0x255               CALL		0x0255
+0001d3   0004     return                      RETURN 
+0001d4   0401     movai   0x1                 MOVAI		0x01
+0001d5   00ab     movra   0x2b                MOVRA		0x2B
+0001d6   0406     movai   0x6                 MOVAI		0x06
+0001d7   00ad     movra   0x2d                MOVRA		0x2D
+0001d8   04c4     movai   0xc4                MOVAI		0xC4
+0001d9   00b0     movra   0x30                MOVRA		0x30
+0001da   11ea     call    0x1ea               CALL		0x01EA
+0001db   0401     movai   0x1                 MOVAI		0x01
+0001dc   00ab     movra   0x2b                MOVRA		0x2B
+0001dd   0404     movai   0x4                 MOVAI		0x04
+0001de   00ad     movra   0x2d                MOVRA		0x2D
+0001df   04c4     movai   0xc4                MOVAI		0xC4
+0001e0   00b0     movra   0x30                MOVRA		0x30
+0001e1   11ea     call    0x1ea               CALL		0x01EA
+0001e2   0401     movai   0x1                 MOVAI		0x01
+0001e3   00ab     movra   0x2b                MOVRA		0x2B
+0001e4   0402     movai   0x2                 MOVAI		0x02
+0001e5   00ad     movra   0x2d                MOVRA		0x2D
+0001e6   04c4     movai   0xc4                MOVAI		0xC4
+0001e7   00b0     movra   0x30                MOVRA		0x30
+0001e8   11ea     call    0x1ea               CALL		0x01EA
+0001e9   0004     return                      RETURN 
+0001ea   11ee     call    0x1ee               CALL		0x01EE
+0001eb   0df0     djzr    0x30                DJZR		0x30
+0001ec   15ea     goto    0x1ea               GOTO		0x01EA
+0001ed   0004     return                      RETURN 
+0001ee   1a2f     jbclr   0x2f, 0              JBCLR		0x002F,0x0000
+0001ef   15f5     goto    0x1f5               GOTO		0x01F5
+0001f0   0bb4     movar   0x34                MOVAR		0x34
+0001f1   00b1     movra   0x31                MOVRA		0x31
+0001f2   0a39     rsubar  0x39                RSUBAR		0x39
+0001f3   00b5     movra   0x35                MOVRA		0x35
+0001f4   15f9     goto    0x1f9               GOTO		0x01F9
+0001f5   0bab     movar   0x2b                MOVAR		0x2B
+0001f6   00b1     movra   0x31                MOVRA		0x31
+0001f7   0a39     rsubar  0x39                RSUBAR		0x39
+0001f8   00b5     movra   0x35                MOVRA		0x35
+0001f9   1a2f     jbclr   0x2f, 0              JBCLR		0x002F,0x0000
+0001fa   15fd     goto    0x1fd               GOTO		0x01FD
+0001fb   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+0001fc   15fe     goto    0x1fe               GOTO		0x01FE
+0001fd   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+0001fe   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0001ff   1602     goto    0x202               GOTO		0x0202
+000200   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+000201   1609     goto    0x209               GOTO		0x0209
+000202   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+000203   1605     goto    0x205               GOTO		0x0205
+000204   1609     goto    0x209               GOTO		0x0209
+000205   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+000206   12bb     call    0x2bb               CALL		0x02BB
+000207   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000208   143c     goto    0x3c                GOTO		0x003C
+000209   180f     jbset   0xf, 0               JBSET		0x000F,0x0000
+00020a   1609     goto    0x209               GOTO		0x0209
+00020b   1e0f     bclr    0xf, 0               BCLR		0x000F,0x0000
+00020c   0442     movai   0x42                MOVAI		0x42
+00020d   0081     movra   0x1                 MOVRA		0x01
+00020e   0df1     djzr    0x31                DJZR		0x31
+00020f   15f9     goto    0x1f9               GOTO		0x01F9
+000210   1a2f     jbclr   0x2f, 0              JBCLR		0x002F,0x0000
+000211   1614     goto    0x214               GOTO		0x0214
+000212   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000213   1620     goto    0x220               GOTO		0x0220
+000214   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000215   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000216   1619     goto    0x219               GOTO		0x0219
+000217   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+000218   1620     goto    0x220               GOTO		0x0220
+000219   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+00021a   161c     goto    0x21c               GOTO		0x021C
+00021b   1620     goto    0x220               GOTO		0x0220
+00021c   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+00021d   12bb     call    0x2bb               CALL		0x02BB
+00021e   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00021f   143c     goto    0x3c                GOTO		0x003C
+000220   12b1     call    0x2b1               CALL		0x02B1
+000221   0df5     djzr    0x35                DJZR		0x35
+000222   1610     goto    0x210               GOTO		0x0210
+000223   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000224   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000225   0baf     movar   0x2f                MOVAR		0x2F
+000226   0101     xorai   0x1                 XORIA		0x01
+000227   00af     movra   0x2f                MOVRA		0x2F
+000228   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000229   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+00022a   0df8     djzr    0x38                DJZR		0x38
+00022b   15ee     goto    0x1ee               GOTO		0x01EE
+00022c   0bad     movar   0x2d                MOVAR		0x2D
+00022d   00b8     movra   0x38                MOVRA		0x38
+00022e   1a2e     jbclr   0x2e, 0              JBCLR		0x002E,0x0000
+00022f   1640     goto    0x240               GOTO		0x0240
+000230   1631     goto    0x231               GOTO		0x0231
+000231   0000     nop                         NOP 
+000232   0d74     incr    0x34                INCR		0x34
+000233   0d6b     incr    0x2b                INCR		0x2B
+000234   0bb4     movar   0x34                MOVAR		0x34
+000235   00b2     movra   0x32                MOVRA		0x32
+000236   0463     movai   0x63                MOVAI		0x63
+000237   0972     xorra   0x32                XORRA		0x32
+000238   0bb2     movar   0x32                MOVAR		0x32
+000239   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+00023a   163c     goto    0x23c               GOTO		0x023C
+00023b   164e     goto    0x24e               GOTO		0x024E
+00023c   0d6e     incr    0x2e                INCR		0x2E
+00023d   04fe     movai   0xfe                MOVAI		0xFE
+00023e   00b8     movra   0x38                MOVRA		0x38
+00023f   164e     goto    0x24e               GOTO		0x024E
+000240   0000     nop                         NOP 
+000241   0e74     decr    0x34                DECR		0x34
+000242   0e6b     decr    0x2b                DECR		0x2B
+000243   0bb4     movar   0x34                MOVAR		0x34
+000244   00b2     movra   0x32                MOVRA		0x32
+000245   0401     movai   0x1                 MOVAI		0x01
+000246   0972     xorra   0x32                XORRA		0x32
+000247   0bb2     movar   0x32                MOVAR		0x32
+000248   1a83     jbclr   0x3, 0x2             JBCLR		0x0003,0x0002
+000249   164b     goto    0x24b               GOTO		0x024B
+00024a   164e     goto    0x24e               GOTO		0x024E
+00024b   00ee     clrr    0x2e                CLRR		0x2E
+00024c   0450     movai   0x50                MOVAI		0x50
+00024d   00b8     movra   0x38                MOVRA		0x38
+00024e   0004     return                      RETURN 
+00024f   0408     movai   0x8                 MOVAI		0x08
+000250   00b1     movra   0x31                MOVRA		0x31
+000251   1255     call    0x255               CALL		0x0255
+000252   0df1     djzr    0x31                DJZR		0x31
+000253   1651     goto    0x251               GOTO		0x0251
+000254   0004     return                      RETURN 
+000255   0404     movai   0x4                 MOVAI		0x04
+000256   00b0     movra   0x30                MOVRA		0x30
+000257   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+000258   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000259   0410     movai   0x10                MOVAI		0x10
+00025a   1299     call    0x299               CALL		0x0299
+00025b   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+00025c   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+00025d   0410     movai   0x10                MOVAI		0x10
+00025e   1299     call    0x299               CALL		0x0299
+00025f   0df0     djzr    0x30                DJZR		0x30
+000260   1657     goto    0x257               GOTO		0x0257
+000261   0404     movai   0x4                 MOVAI		0x04
+000262   00b0     movra   0x30                MOVRA		0x30
+000263   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+000264   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000265   0410     movai   0x10                MOVAI		0x10
+000266   1299     call    0x299               CALL		0x0299
+000267   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000268   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000269   0410     movai   0x10                MOVAI		0x10
+00026a   1299     call    0x299               CALL		0x0299
+00026b   0df0     djzr    0x30                DJZR		0x30
+00026c   1663     goto    0x263               GOTO		0x0263
+00026d   0004     return                      RETURN 
+00026e   0420     movai   0x20                MOVAI		0x20
+00026f   00ad     movra   0x2d                MOVRA		0x2D
+000270   04ff     movai   0xff                MOVAI		0xFF
+000271   00b1     movra   0x31                MOVRA		0x31
+000272   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000273   1676     goto    0x276               GOTO		0x0276
+000274   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+000275   167d     goto    0x27d               GOTO		0x027D
+000276   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+000277   1679     goto    0x279               GOTO		0x0279
+000278   167d     goto    0x27d               GOTO		0x027D
+000279   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+00027a   12bb     call    0x2bb               CALL		0x02BB
+00027b   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00027c   143c     goto    0x3c                GOTO		0x003C
+00027d   0405     movai   0x5                 MOVAI		0x05
+00027e   00b0     movra   0x30                MOVRA		0x30
+00027f   1d06     bset    0x6, 0x4             BSET		0x0006,0x0004
+000280   1f46     bclr    0x6, 0x5             BCLR		0x0006,0x0005
+000281   12b1     call    0x2b1               CALL		0x02B1
+000282   1f06     bclr    0x6, 0x4             BCLR		0x0006,0x0004
+000283   1d46     bset    0x6, 0x5             BSET		0x0006,0x0005
+000284   12b1     call    0x2b1               CALL		0x02B1
+000285   0df0     djzr    0x30                DJZR		0x30
+000286   167f     goto    0x27f               GOTO		0x027F
+000287   0df1     djzr    0x31                DJZR		0x31
+000288   1672     goto    0x272               GOTO		0x0272
+000289   0ded     djzr    0x2d                DJZR		0x2D
+00028a   1670     goto    0x270               GOTO		0x0270
+00028b   0004     return                      RETURN 
+00028c   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00028d   1691     goto    0x291               GOTO		0x0291
+00028e   1a3c     jbclr   0x3c, 0              JBCLR		0x003C,0x0000
+00028f   143c     goto    0x3c                GOTO		0x003C
+000290   1698     goto    0x298               GOTO		0x0298
+000291   1a3c     jbclr   0x3c, 0              JBCLR		0x003C,0x0000
+000292   1698     goto    0x298               GOTO		0x0298
+000293   12bb     call    0x2bb               CALL		0x02BB
+000294   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+000295   1697     goto    0x297               GOTO		0x0297
+000296   1698     goto    0x298               GOTO		0x0298
+000297   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+000298   0004     return                      RETURN 
+000299   00b7     movra   0x37                MOVRA		0x37
+00029a   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+00029b   169e     goto    0x29e               GOTO		0x029E
+00029c   1e3c     bclr    0x3c, 0              BCLR		0x003C,0x0000
+00029d   16a5     goto    0x2a5               GOTO		0x02A5
+00029e   183c     jbset   0x3c, 0              JBSET		0x003C,0x0000
+00029f   16a1     goto    0x2a1               GOTO		0x02A1
+0002a0   16a5     goto    0x2a5               GOTO		0x02A5
+0002a1   1c3c     bset    0x3c, 0              BSET		0x003C,0x0000
+0002a2   12bb     call    0x2bb               CALL		0x02BB
+0002a3   18c6     jbset   0x6, 0x3             JBSET		0x0006,0x0003
+0002a4   143c     goto    0x3c                GOTO		0x003C
+0002a5   0464     movai   0x64                MOVAI		0x64
+0002a6   12aa     call    0x2aa               CALL		0x02AA
+0002a7   0df7     djzr    0x37                DJZR		0x37
+0002a8   169a     goto    0x29a               GOTO		0x029A
+0002a9   0004     return                      RETURN 
+0002aa   00b6     movra   0x36                MOVRA		0x36
+0002ab   12b1     call    0x2b1               CALL		0x02B1
+0002ac   0df6     djzr    0x36                DJZR		0x36
+0002ad   16ab     goto    0x2ab               GOTO		0x02AB
+0002ae   0000     nop                         NOP 
+0002af   0000     nop                         NOP 
+0002b0   0004     return                      RETURN 
+0002b1   0401     movai   0x1                 MOVAI		0x01
+0002b2   00b3     movra   0x33                MOVRA		0x33
+0002b3   0440     movai   0x40                MOVAI		0x40
+0002b4   00b2     movra   0x32                MOVRA		0x32
+0002b5   0df2     djzr    0x32                DJZR		0x32
+0002b6   16b5     goto    0x2b5               GOTO		0x02B5
+0002b7   0df3     djzr    0x33                DJZR		0x33
+0002b8   16b3     goto    0x2b3               GOTO		0x02B3
+0002b9   0000     nop                         NOP 
+0002ba   0004     return                      RETURN 
+0002bb   0000     nop                         NOP 
+0002bc   040a     movai   0xa                 MOVAI		0x0A
+0002bd   00ac     movra   0x2c                MOVRA		0x2C
+0002be   0464     movai   0x64                MOVAI		0x64
+0002bf   12aa     call    0x2aa               CALL		0x02AA
+0002c0   0dec     djzr    0x2c                DJZR		0x2C
+0002c1   16be     goto    0x2be               GOTO		0x02BE
+0002c2   0004     return                      RETURN 
+0002c3   0401     movai   0x1                 MOVAI		0x01
+0002c4   00b7     movra   0x37                MOVRA		0x37
+0002c5   0000     nop                         NOP 
+0002c6   0df7     djzr    0x37                DJZR		0x37
+0002c7   16c5     goto    0x2c5               GOTO		0x02C5
+0002c8   0004     return                      RETURN 
+0002c9   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002ca   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002cb   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002cc   12b1     call    0x2b1               CALL		0x02B1
+0002cd   1e86     bclr    0x6, 0x2             BCLR		0x0006,0x0002
+0002ce   12b1     call    0x2b1               CALL		0x02B1
+0002cf   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002d0   0004     return                      RETURN 
+0002d1   1e86     bclr    0x6, 0x2             BCLR		0x0006,0x0002
+0002d2   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002d3   12b1     call    0x2b1               CALL		0x02B1
+0002d4   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002d5   0004     return                      RETURN 
+0002d6   1e86     bclr    0x6, 0x2             BCLR		0x0006,0x0002
+0002d7   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002d8   12b1     call    0x2b1               CALL		0x02B1
+0002d9   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002da   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002db   0004     return                      RETURN 
+0002dc   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002dd   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002de   12b1     call    0x2b1               CALL		0x02B1
+0002df   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002e0   0004     return                      RETURN 
+0002e1   1e86     bclr    0x6, 0x2             BCLR		0x0006,0x0002
+0002e2   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002e3   0000     nop                         NOP 
+0002e4   0000     nop                         NOP 
+0002e5   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002e6   0000     nop                         NOP 
+0002e7   0000     nop                         NOP 
+0002e8   0004     return                      RETURN 
+0002e9   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002ea   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002eb   12c3     call    0x2c3               CALL		0x02C3
+0002ec   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002ed   12c3     call    0x2c3               CALL		0x02C3
+0002ee   0004     return                      RETURN 
+0002ef   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+0002f0   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+0002f1   12b1     call    0x2b1               CALL		0x02B1
+0002f2   040a     movai   0xa                 MOVAI		0x0A
+0002f3   00b0     movra   0x30                MOVRA		0x30
+0002f4   1a86     jbclr   0x6, 0x2             JBCLR		0x0006,0x0002
+0002f5   16f7     goto    0x2f7               GOTO		0x02F7
+0002f6   16f9     goto    0x2f9               GOTO		0x02F9
+0002f7   0df0     djzr    0x30                DJZR		0x30
+0002f8   16f4     goto    0x2f4               GOTO		0x02F4
+0002f9   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+0002fa   00f0     clrr    0x30                CLRR		0x30
+0002fb   12b1     call    0x2b1               CALL		0x02B1
+0002fc   0004     return                      RETURN 
+0002fd   00b1     movra   0x31                MOVRA		0x31
+0002fe   0408     movai   0x8                 MOVAI		0x08
+0002ff   00b0     movra   0x30                MOVRA		0x30
+000300   0b71     rlr     0x31                RLR		0x31
+000301   1a03     jbclr   0x3, 0               JBCLR		0x0003,0x0000
+000302   1704     goto    0x304               GOTO		0x0304
+000303   1706     goto    0x306               GOTO		0x0306
+000304   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+000305   1707     goto    0x307               GOTO		0x0307
+000306   1e86     bclr    0x6, 0x2             BCLR		0x0006,0x0002
+000307   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+000308   12b1     call    0x2b1               CALL		0x02B1
+000309   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+00030a   12b1     call    0x2b1               CALL		0x02B1
+00030b   0df0     djzr    0x30                DJZR		0x30
+00030c   1700     goto    0x300               GOTO		0x0300
+00030d   0004     return                      RETURN 
+00030e   1c86     bset    0x6, 0x2             BSET		0x0006,0x0002
+00030f   0408     movai   0x8                 MOVAI		0x08
+000310   00b0     movra   0x30                MOVRA		0x30
+000311   00f1     clrr    0x31                CLRR		0x31
+000312   1c46     bset    0x6, 0x1             BSET		0x0006,0x0001
+000313   12b1     call    0x2b1               CALL		0x02B1
+000314   1886     jbset   0x6, 0x2             JBSET		0x0006,0x0002
+000315   1717     goto    0x317               GOTO		0x0317
+000316   171a     goto    0x31a               GOTO		0x031A
+000317   1e03     bclr    0x3, 0               BCLR		0x0003,0x0000
+000318   0b71     rlr     0x31                RLR		0x31
+000319   171c     goto    0x31c               GOTO		0x031C
+00031a   1c03     bset    0x3, 0               BSET		0x0003,0x0000
+00031b   0b71     rlr     0x31                RLR		0x31
+00031c   1e46     bclr    0x6, 0x1             BCLR		0x0006,0x0001
+00031d   12b1     call    0x2b1               CALL		0x02B1
+00031e   0df0     djzr    0x30                DJZR		0x30
+00031f   1712     goto    0x312               GOTO		0x0312
+000320   0bb1     movar   0x31                MOVAR		0x31
+000321   00ba     movra   0x3a                MOVRA		0x3A
+000322   0004     return                      RETURN 
+000323   0000     nop                         NOP		
+000324   0000     nop                         NOP		
+000325   0000     nop                         NOP		
+000326   0000     nop                         NOP		
+000327   0000     nop                         NOP		
+000328   0000     nop                         NOP		
+000329   0000     nop                         NOP		
+00032a   0000     nop                         NOP		
+00032b   0000     nop                         NOP		
+00032c   0000     nop                         NOP		
+00032d   0000     nop                         NOP		
+00032e   0000     nop                         NOP		
+00032f   0000     nop                         NOP		
+000330   0000     nop                         NOP		
+000331   0000     nop                         NOP		
+000332   0000     nop                         NOP		
+000333   0000     nop                         NOP		
+000334   0000     nop                         NOP		
+000335   0000     nop                         NOP		
+000336   0000     nop                         NOP		
+000337   0000     nop                         NOP		
+000338   0000     nop                         NOP		
+000339   0000     nop                         NOP		
+00033a   0000     nop                         NOP		
+00033b   0000     nop                         NOP		
+00033c   0000     nop                         NOP		
+00033d   0000     nop                         NOP		
+00033e   0000     nop                         NOP		
+00033f   0000     nop                         NOP		
+000340   0000     nop                         NOP		
+000341   0000     nop                         NOP		
+000342   0000     nop                         NOP		
+000343   0000     nop                         NOP		
+000344   0000     nop                         NOP		
+000345   0000     nop                         NOP		
+000346   0000     nop                         NOP		
+000347   0000     nop                         NOP		
+000348   0000     nop                         NOP		
+000349   0000     nop                         NOP		
+00034a   0000     nop                         NOP		
+00034b   0000     nop                         NOP		
+00034c   0000     nop                         NOP		
+00034d   0000     nop                         NOP		
+00034e   0000     nop                         NOP		
+00034f   0000     nop                         NOP		
+000350   0000     nop                         NOP		
+000351   0000     nop                         NOP		
+000352   0000     nop                         NOP		
+000353   0000     nop                         NOP		
+000354   0000     nop                         NOP		
+000355   0000     nop                         NOP		
+000356   0000     nop                         NOP		
+000357   0000     nop                         NOP		
+000358   0000     nop                         NOP		
+000359   0000     nop                         NOP		
+00035a   0000     nop                         NOP		
+00035b   0000     nop                         NOP		
+00035c   0000     nop                         NOP		
+00035d   0000     nop                         NOP		
+00035e   0000     nop                         NOP		
+00035f   0000     nop                         NOP		
+000360   0000     nop                         NOP		
+000361   0000     nop                         NOP		
+000362   0000     nop                         NOP		
+000363   0000     nop                         NOP		
+000364   0000     nop                         NOP		
+000365   0000     nop                         NOP		
+000366   0000     nop                         NOP		
+000367   0000     nop                         NOP		
+000368   0000     nop                         NOP		
+000369   0000     nop                         NOP		
+00036a   0000     nop                         NOP		
+00036b   0000     nop                         NOP		
+00036c   0000     nop                         NOP		
+00036d   0000     nop                         NOP		
+00036e   0000     nop                         NOP		
+00036f   0000     nop                         NOP		
+000370   0000     nop                         NOP		
+000371   0000     nop                         NOP		
+000372   0000     nop                         NOP		
+000373   0000     nop                         NOP		
+000374   0000     nop                         NOP		
+000375   0000     nop                         NOP		
+000376   0000     nop                         NOP		
+000377   0000     nop                         NOP		
+000378   0000     nop                         NOP		
+000379   0000     nop                         NOP		
+00037a   0000     nop                         NOP		
+00037b   0000     nop                         NOP		
+00037c   0000     nop                         NOP		
+00037d   0000     nop                         NOP		
+00037e   0000     nop                         NOP		
+00037f   0000     nop                         NOP		
+000380   0000     nop                         NOP		
+000381   0000     nop                         NOP		
+000382   0000     nop                         NOP		
+000383   0000     nop                         NOP		
+000384   0000     nop                         NOP		
+000385   0000     nop                         NOP		
+000386   0000     nop                         NOP		
+000387   0000     nop                         NOP		
+000388   0000     nop                         NOP		
+000389   0000     nop                         NOP		
+00038a   0000     nop                         NOP		
+00038b   0000     nop                         NOP		
+00038c   0000     nop                         NOP		
+00038d   0000     nop                         NOP		
+00038e   0000     nop                         NOP		
+00038f   0000     nop                         NOP		
+000390   0000     nop                         NOP		
+000391   0000     nop                         NOP		
+000392   0000     nop                         NOP		
+000393   0000     nop                         NOP		
+000394   0000     nop                         NOP		
+000395   0000     nop                         NOP		
+000396   0000     nop                         NOP		
+000397   0000     nop                         NOP		
+000398   0000     nop                         NOP		
+000399   0000     nop                         NOP		
+00039a   0000     nop                         NOP		
+00039b   0000     nop                         NOP		
+00039c   0000     nop                         NOP		
+00039d   0000     nop                         NOP		
+00039e   0000     nop                         NOP		
+00039f   0000     nop                         NOP		
+0003a0   0000     nop                         NOP		
+0003a1   0000     nop                         NOP		
+0003a2   0000     nop                         NOP		
+0003a3   0000     nop                         NOP		
+0003a4   0000     nop                         NOP		
+0003a5   0000     nop                         NOP		
+0003a6   0000     nop                         NOP		
+0003a7   0000     nop                         NOP		
+0003a8   0000     nop                         NOP		
+0003a9   0000     nop                         NOP		
+0003aa   0000     nop                         NOP		
+0003ab   0000     nop                         NOP		
+0003ac   0000     nop                         NOP		
+0003ad   0000     nop                         NOP		
+0003ae   0000     nop                         NOP		
+0003af   0000     nop                         NOP		
+0003b0   0000     nop                         NOP		
+0003b1   0000     nop                         NOP		
+0003b2   0000     nop                         NOP		
+0003b3   0000     nop                         NOP		
+0003b4   0000     nop                         NOP		
+0003b5   0000     nop                         NOP		
+0003b6   0000     nop                         NOP		
+0003b7   0000     nop                         NOP		
+0003b8   0000     nop                         NOP		
+0003b9   0000     nop                         NOP		
+0003ba   0000     nop                         NOP		
+0003bb   0000     nop                         NOP		
+0003bc   0000     nop                         NOP		
+0003bd   0000     nop                         NOP		
+0003be   0000     nop                         NOP		
+0003bf   0000     nop                         NOP		
+0003c0   0000     nop                         NOP		
+0003c1   0000     nop                         NOP		
+0003c2   0000     nop                         NOP		
+0003c3   0000     nop                         NOP		
+0003c4   0000     nop                         NOP		
+0003c5   0000     nop                         NOP		
+0003c6   0000     nop                         NOP		
+0003c7   0000     nop                         NOP		
+0003c8   0000     nop                         NOP		
+0003c9   0000     nop                         NOP		
+0003ca   0000     nop                         NOP		
+0003cb   0000     nop                         NOP		
+0003cc   0000     nop                         NOP		
+0003cd   0000     nop                         NOP		
+0003ce   0000     nop                         NOP		
+0003cf   0000     nop                         NOP		
+0003d0   0000     nop                         NOP		
+0003d1   0000     nop                         NOP		
+0003d2   0000     nop                         NOP		
+0003d3   0000     nop                         NOP		
+0003d4   0000     nop                         NOP		
+0003d5   0000     nop                         NOP		
+0003d6   0000     nop                         NOP		
+0003d7   0000     nop                         NOP		
+0003d8   0000     nop                         NOP		
+0003d9   0000     nop                         NOP		
+0003da   0000     nop                         NOP		
+0003db   0000     nop                         NOP		
+0003dc   0000     nop                         NOP		
+0003dd   0000     nop                         NOP		
+0003de   0000     nop                         NOP		
+0003df   0000     nop                         NOP		
+0003e0   0000     nop                         NOP		
+0003e1   0000     nop                         NOP		
+0003e2   0000     nop                         NOP		
+0003e3   0000     nop                         NOP		
+0003e4   0000     nop                         NOP		
+0003e5   0000     nop                         NOP		
+0003e6   0000     nop                         NOP		
+0003e7   0000     nop                         NOP		
+0003e8   0000     nop                         NOP		
+0003e9   0000     nop                         NOP		
+0003ea   0000     nop                         NOP		
+0003eb   0000     nop                         NOP		
+0003ec   0000     nop                         NOP		
+0003ed   0000     nop                         NOP		
+0003ee   0000     nop                         NOP		
+0003ef   0000     nop                         NOP		
+0003f0   0000     nop                         NOP		
+0003f1   0000     nop                         NOP		
+0003f2   0000     nop                         NOP		
+0003f3   0000     nop                         NOP		
+0003f4   0000     nop                         NOP		
+0003f5   0000     nop                         NOP		
+0003f6   0000     nop                         NOP		
+0003f7   0000     nop                         NOP		
+0003f8   0000     nop                         NOP		
+0003f9   0000     nop                         NOP		
+0003fa   0000     nop                         NOP		
+0003fb   0000     nop                         NOP		
+0003fc   0000     nop                         NOP		
+0003fd   0000     nop                         NOP		
+0003fe   0000     nop                         NOP		
+0003ff   1401     goto    0x1                 GOTO		0x0001
+                                           	end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0200 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0240 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0280 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+02C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0300 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0340 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0380 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+03C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0400 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0440 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0480 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+04C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0500 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0540 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0580 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+05C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0600 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0640 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0680 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+06C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0700 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0740 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0780 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+07C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+
+All other memory blocks unused.
+
+Program Memory Words Used:  1024
+

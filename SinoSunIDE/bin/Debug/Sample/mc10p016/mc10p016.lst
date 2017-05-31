@@ -1,0 +1,140 @@
+L 1				
+L 2				
+L 3				        org     $0000
+L 4		0000	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 5		0010	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 6		0020	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 7		0030	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 8		0040	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 9				        
+L 10				        org     $0100
+L 11		0100	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 12		0110	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 13		0120	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 14		0130	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 15		0140	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 16				        
+L 17				        org     $0300
+L 18		0300	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 19		0310	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 20		0320	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 21		0330	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 22		0340	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 23				        
+L 24				        org     $0f00
+L 25		0F00	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 26		0F10	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 27		0F20	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 28		0F30	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 29		0F40	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 30				        
+L 31				        org     $1000
+L 32		1000	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 33		1010	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 34		1020	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 35		1030	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 36		1040	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 37				        
+L 38				        org     $2000
+L 39		2000	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 40		2010	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 41		2020	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 42		2030	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 43		2040	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 44				        
+L 45				        org     $3ff0
+L 46		3FF0	55AAAA55	        db $55 $aa $aa $55 $aa $aa $55 $aa $aa $aa $55 $aa $aa $55 $aa $aa 
+			AAAA55AA	
+			AAAA55AA	
+			AA55AAAA	
+L 47				

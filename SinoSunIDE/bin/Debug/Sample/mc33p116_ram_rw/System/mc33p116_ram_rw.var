@@ -1,0 +1,292 @@
+
+00007        
+   at 0x01B0  xxxx.x  0000 to 0000
+0X01B0
+   at 0x01B1  xxxx.x  0000 to 0000
+0X01B1
+   at 0x01B2  xxxx.x  0000 to 0000
+0X01B2
+   at 0x01B3  xxxx.x  0000 to 0000
+0X01B3
+   at 0x01B4  xxxx.x  0000 to 0000
+0X01B4
+   at 0x01B5  xxxx.x  0000 to 0000
+0X1B5
+   at 0x01B6  xxxx.x  0000 to 0000
+0X1B6
+   at 0x01B7  xxxx.x  0000 to 0000
+0X1B7
+   at 0x01B8  xxxx.x  0000 to 0000
+0X1B8
+   at 0x01B9  xxxx.x  0000 to 0000
+0X1B9   
+   at 0x01BA  xxxx.x  0000 to 0000
+0X1BA
+   at 0x01BB  xxxx.x  0000 to 0000
+0X1BB
+   at 0x01BC  xxxx.x  0000 to 0000
+0X1BC
+   at 0x01BD  xxxx.x  0000 to 0000
+0X1C0
+   at 0x01C1  xxxx.x  0000 to 0000
+0X1C1
+   at 0x01C2  xxxx.x  0000 to 0000
+0X1C2
+   at 0x01C3  xxxx.x  0000 to 0000
+0X1C4
+   at 0x01C5  xxxx.x  0000 to 0000
+0X1C5
+   at 0x01C6  xxxx.x  0000 to 0000
+0X1C6
+   at 0x01C7  xxxx.x  0000 to 0000
+0X1C8
+   at 0x01C9  xxxx.x  0000 to 0000
+0X1C9
+   at 0x01CA  xxxx.x  0000 to 0000
+0X1CA
+   at 0x01CB  xxxx.x  0000 to 0000
+0X1CC
+   at 0x01CD  xxxx.x  0000 to 0000
+0X1CD
+   at 0x01CE  xxxx.x  0000 to 0000
+0X1CE
+   at 0x01CF  xxxx.x  0000 to 0000
+00049 
+   at 0x01D8  xxxx.x  0000 to 0000
+00060 
+   at 0x01E4  xxxx.x  0000 to 0000
+00064 
+   at 0x01E8  xxxx.x  0000 to 0000
+00070 
+   at 0x01F0  xxxx.x  0000 to 0000
+00002 
+   at 0x0000  xxxx.x  0000 to 0000
+0x00
+   at 0x0001  xxxx.x  0000 to 0000
+0x01
+   at 0x0002  xxxx.x  0000 to 0000
+0x02
+   at 0x0003  xxxx.x  0000 to 0000
+00007 
+   at 0x0003  xxxx.x  0000 to 0000
+ADCR0                              at 0x01E8  xxxx.x  0000 to 0000
+ADCR1                              at 0x01E9  xxxx.x  0000 to 0000
+ADCR2                              at 0x01EA  xxxx.x  0000 to 0000
+ADDRH                              at 0x01EC  xxxx.x  0000 to 0000
+ADDRL                              at 0x01ED  xxxx.x  0000 to 0000
+DKW                                at 0x01F4  xxxx.x  0000 to 0000
+DKWP0                              at 0x01C3  xxxx.x  0000 to 0000
+FSR0                               at 0x01B4  xxxx.x  0000 to 0000
+FSR1                               at 0x01B5  xxxx.x  0000 to 0000
+HIBYTE                             at 0x01B3  xxxx.x  0000 to 0000
+INDF0                              at 0x01B0  xxxx.x  0000 to 0000
+INDF1                              at 0x01B1  xxxx.x  0000 to 0000
+INDF2                              at 0x01B2  xxxx.x  0000 to 0000
+INDF3                              at 0x01B9  xxxx.x  0000 to 0000
+INTE                               at 0x01BA  xxxx.x  0000 to 0000
+INTFLAG                            at 0x01BB  xxxx.x  0000 to 0000
+IOP0                               at 0x01C0  xxxx.x  0000 to 0000
+IOP1                               at 0x01C4  xxxx.x  0000 to 0000
+IOP2                               at 0x01C8  xxxx.x  0000 to 0000
+IOP3                               at 0x01CC  xxxx.x  0000 to 0000
+IOP4                               at 0x01D0  xxxx.x  0000 to 0000
+IOP5                               at 0x01D4  xxxx.x  0000 to 0000
+KBCR                               at 0x01F5  xxxx.x  0000 to 0000
+LCDCR0                             at 0x01F2  xxxx.x  0000 to 0000
+LCDCR1                             at 0x01F3  xxxx.x  0000 to 0000
+LCDDRV                             at 0x01F6  xxxx.x  0000 to 0000
+LCDIOSP1                           at 0x01C7  xxxx.x  0000 to 0000
+LCDIOSP2                           at 0x01CB  xxxx.x  0000 to 0000
+LCDIOSP3                           at 0x01CF  xxxx.x  0000 to 0000
+LCDIOSP4                           at 0x01D3  xxxx.x  0000 to 0000
+LCDIOSP5                           at 0x01D7  xxxx.x  0000 to 0000
+LVDCR                              at 0x01BD  xxxx.x  0000 to 0000
+LXTCP                              at 0x01BF  xxxx.x  0000 to 0000
+LXTCR                              at 0x01BE  xxxx.x  0000 to 0000
+MCR                                at 0x01B8  xxxx.x  0000 to 0000
+OEP0                               at 0x01C1  xxxx.x  0000 to 0000
+OEP1                               at 0x01C5  xxxx.x  0000 to 0000
+OEP2                               at 0x01C9  xxxx.x  0000 to 0000
+OEP3                               at 0x01CD  xxxx.x  0000 to 0000
+OEP4                               at 0x01D1  xxxx.x  0000 to 0000
+OEP5                               at 0x01D5  xxxx.x  0000 to 0000
+OPCR0                              at 0x01F0  xxxx.x  0000 to 0000
+OPCR1                              at 0x01F1  xxxx.x  0000 to 0000
+OSCM                               at 0x01BC  xxxx.x  0000 to 0000
+PCL                                at 0x01B6  xxxx.x  0000 to 0000
+PFLAG                              at 0x01B7  xxxx.x  0000 to 0000
+PUP0                               at 0x01C2  xxxx.x  0000 to 0000
+PUP1                               at 0x01C6  xxxx.x  0000 to 0000
+PUP2                               at 0x01CA  xxxx.x  0000 to 0000
+PUP3                               at 0x01CE  xxxx.x  0000 to 0000
+PUP4                               at 0x01D2  xxxx.x  0000 to 0000
+PUP5                               at 0x01D6  xxxx.x  0000 to 0000
+T0CR0                              at 0x01D8  xxxx.x  0000 to 0000
+T0CR1                              at 0x01D9  xxxx.x  0000 to 0000
+T0DATAH                            at 0x01DE  xxxx.x  0000 to 0000
+T0DATAL                            at 0x01DF  xxxx.x  0000 to 0000
+T0LATFH                            at 0x01E2  xxxx.x  0000 to 0000
+T0LATFL                            at 0x01E3  xxxx.x  0000 to 0000
+T0LATRH                            at 0x01E0  xxxx.x  0000 to 0000
+T0LATRL                            at 0x01E1  xxxx.x  0000 to 0000
+T0LOADH                            at 0x01DC  xxxx.x  0000 to 0000
+T0LOADL                            at 0x01DD  xxxx.x  0000 to 0000
+T1CR                               at 0x01E4  xxxx.x  0000 to 0000
+T1DATA                             at 0x01E5  xxxx.x  0000 to 0000
+T1LOAD                             at 0x01E6  xxxx.x  0000 to 0000
+__33P116                           at 0x0001  xxxx.x  0000 to 0000
+data_error                         at 0x01B7  xxxx.x  0000 to 0000
+end_addr                           at 0x0000  xxxx.x  0000 to 0000
+goal_data                          at 0x0001  xxxx.x  0000 to 0000
+inte                               at 0x0008  xxxx.x  0000 to 0000
+inte1                              at 0x0FFE  xxxx.x  0000 to 0000
+io_init                            at 0x016C  xxxx.x  0000 to 0000
+loop                               at 0x0113  xxxx.x  0000 to 0000
+ok_loop                            at 0x0167  xxxx.x  0000 to 0000
+ram_read0                          at 0x0191  xxxx.x  0000 to 0000
+ram_read1                          at 0x019D  xxxx.x  0000 to 0000
+ram_read2                          at 0x01A9  xxxx.x  0000 to 0000
+ram_write0                         at 0x0171  xxxx.x  0000 to 0000
+ram_write1                         at 0x017B  xxxx.x  0000 to 0000
+ram_write2                         at 0x0185  xxxx.x  0000 to 0000
+rw_addr                            at 0x0003  xxxx.x  0000 to 0000
+rw_data                            at 0x0002  xxxx.x  0000 to 0000
+start                              at 0x000A  xxxx.x  0000 to 0000
+#define         Z                       PFLAG.bitn.bit2
+#define         DC              PFLAG.bitn.bit1
+#define         C                       PFLAG.bitn.bit0
+#define         GIE       MCR.bitn.bit7
+#define         TO        MCR.bitn.bit5
+#define         PD        MCR.bitn.bit4
+#define         MINT11          MCR.bitn.bit3
+#define         MINT10          MCR.bitn.bit2
+#define         MINT01          MCR.bitn.bit1
+#define         MINT00          MCR.bitn.bit0
+#define         ADIE    INTE.bitn.bit7
+#define         LVDIE   INTE.bitn.bit5
+#define         KBIE    INTE.bitn.bit4
+#define         INT1IE  INTE.bitn.bit3
+#define         INT0IE  INTE.bitn.bit2
+#define         T1IE    INTE.bitn.bit1
+#define         T0IE    INTE.bitn.bit0
+#define         ADIF    INTFLAG.bitn.bit7
+#define         T0RF    INTFLAG.bitn.bit6
+#define         LVDIF   INTFLAG.bitn.bit5
+#define         KBIF    INTFLAG.bitn.bit4
+#define         INT1IF  INTFLAG.bitn.bit3
+#define         INT0IF  INTFLAG.bitn.bit2
+#define         T1IF    INTFLAG.bitn.bit1
+#define         T0IF    INTFLAG.bitn.bit0
+#define                 TC0EN                           T0CR0.bitn.bit7
+#define                 T0MOD1                  T0CR0.bitn.bit6
+#define                 T0MOD0                  T0CR0.bitn.bit5
+#define                 T0PTS1                  T0CR0.bitn.bit4
+#define                 T0PTS0                  T0CR0.bitn.bit3
+#define                 T0PR2                   T0CR0.bitn.bit2
+#define                 T0PR1                           T0CR0.bitn.bit1
+#define                 T0PR0                   T0CR0.bitn.bit0
+#define                 FPWMEN                  T0CR1.bitn.bit7
+#define                 PWMEN                   T0CR1.bitn.bit6
+#define                 PWMOS                   T0CR1.bitn.bit5
+#define                 FPWMS                   T0CR1.bitn.bit4
+#define                 FPWMA1                  T0CR1.bitn.bit3
+#define                 FPWMA0                  T0CR1.bitn.bit2
+#define                 FPWMB1                  T0CR1.bitn.bit1
+#define                 FPWMB0                  T0CR1.bitn.bit0
+#define                 TC1EN                   T1CR.bitn.bit7
+#define                 T1MOD1                  T1CR.bitn.bit6
+#define                 T1MOD0                  T1CR.bitn.bit5
+#define                 T1PTS1                  T1CR.bitn.bit4
+#define                 T1PTS0                  T1CR.bitn.bit3
+#define                 T1PR2                   T1CR.bitn.bit2
+#define                 T1PR1                   T1CR.bitn.bit1
+#define                 T1PR0                   T1CR.bitn.bit0
+#define                                 DKWE            DKW.bitn.bit7
+#define                                 IROS    DKW.bitn.bit6
+#define                                 IROT    DKW.bitn.bit5
+#define                                 WSEL1           DKW.bitn.bit4
+#define                                 WSEL0   DKW.bitn.bit3
+#define                                 RSEL    DKW.bitn.bit2
+#define                                 DRVS    DKW.bitn.bit1
+#define                                 DSELEN  DKW.bitn.bit0
+#define                                 LCDEN           LCDCR0.bitn.bit7
+#define                                 LCDSP1  LCDCR0.bitn.bit6
+#define                                 LCDSP0  LCDCR0.bitn.bit5
+#define                                 LCDDUTY LCDCR0.bitn.bit4
+#define                                 VLCDS           LCDCR0.bitn.bit3
+#define                                 LCDSPEED                LCDCR0.bitn.bit2
+#define                                 LCDRS1  LCDCR0.bitn.bit1
+#define                                 LCDRS0          LCDCR0.bitn.bit0
+#define                                 ADCHS3          ADCR0.bitn.bit7
+#define                                 ADCHS2          ADCR0.bitn.bit6
+#define                                 ADCHS1          ADCR0.bitn.bit5
+#define                                 ADCHS0          ADCR0.bitn.bit4
+#define                                 ADCKS1          ADCR0.bitn.bit3
+#define                                 ADCKS0          ADCR0.bitn.bit2
+#define                                 ADEOC           ADCR0.bitn.bit1
+#define                                 ADON                    ADCR0.bitn.bit0
+#define                                 ADIOS7          ADCR1.bitn.bit7
+#define                                 ADIOS6          ADCR1.bitn.bit6
+#define                                 ADIOS5          ADCR1.bitn.bit5
+#define                                 ADIOS4          ADCR1.bitn.bit4
+#define                                 ADIOS3          ADCR1.bitn.bit3
+#define                                 ADIOS2          ADCR1.bitn.bit2
+#define                                 ADIOS1          ADCR1.bitn.bit1
+#define                                 ADIOS0          ADCR1.bitn.bit0
+#define                                 VREF            ADCR2.bitn.bit6
+#define                                 VLDOSL1         ADCR2.bitn.bit5
+#define                                 VLDOSL0         ADCR2.bitn.bit4
+#define                                 TPS1                    ADCR2.bitn.bit3
+#define                                 TPS0              ADCR2.bitn.bit2
+#define                                 VREFRES         ADCR2.bitn.bit1
+#define                                 VREXT                   ADCR2.bitn.bit0
+#define                                 IOP07           IOP0.bitn.bit7
+#define                                 IOP06   IOP0.bitn.bit6
+#define                                 IOP05   IOP0.bitn.bit5
+#define                                 IOP04           IOP0.bitn.bit4
+#define                                 IOP03   IOP0.bitn.bit3
+#define                                 IOP02   IOP0.bitn.bit2
+#define                                 IOP01   IOP0.bitn.bit1
+#define                                 IOP00           IOP0.bitn.bit0
+#define                                 IOP17           IOP1.bitn.bit7
+#define                                 IOP16   IOP1.bitn.bit6
+#define                                 IOP15   IOP1.bitn.bit5
+#define                                 IOP14           IOP1.bitn.bit4
+#define                                 IOP13   IOP1.bitn.bit3
+#define                                 IOP12   IOP1.bitn.bit2
+#define                                 IOP11   IOP1.bitn.bit1
+#define                                 IOP10           IOP1.bitn.bit0
+#define                                 IOP27           IOP2.bitn.bit7
+#define                                 IOP26   IOP2.bitn.bit6
+#define                                 IOP25   IOP2.bitn.bit5
+#define                                 IOP24           IOP2.bitn.bit4
+#define                                 IOP23   IOP2.bitn.bit3
+#define                                 IOP22   IOP2.bitn.bit2
+#define                                 IOP21   IOP2.bitn.bit1
+#define                                 IOP20           IOP2.bitn.bit0
+#define                                 IOP37           IOP3.bitn.bit7
+#define                                 IOP36   IOP3.bitn.bit6
+#define                                 IOP35   IOP3.bitn.bit5
+#define                                 IOP34           IOP3.bitn.bit4
+#define                                 IOP33   IOP3.bitn.bit3
+#define                                 IOP32   IOP3.bitn.bit2
+#define                                 IOP31   IOP3.bitn.bit1
+#define                                 IOP30           IOP3.bitn.bit0
+#define                                 IOP47           IOP4.bitn.bit7
+#define                                 IOP46   IOP4.bitn.bit6
+#define                                 IOP45   IOP4.bitn.bit5
+#define                                 IOP44           IOP4.bitn.bit4
+#define                                 IOP43   IOP4.bitn.bit3
+#define                                 IOP42   IOP4.bitn.bit2
+#define                                 IOP41   IOP4.bitn.bit1
+#define                                 IOP40           IOP4.bitn.bit0
+#define                                 IOP55   IOP5.bitn.bit5
+#define                                 IOP54           IOP5.bitn.bit4
+#define                                 IOP53   IOP5.bitn.bit3
+#define                                 IOP52   IOP5.bitn.bit2
+#define                                 IOP51   IOP5.bitn.bit1
+#define                                 IOP50           IOP5.bitn.bit0
+#define                                 STBL    OSCM.bitn.bit5
+#define                                 STBH            OSCM.bitn.bit4
+#define                                 CLKS    OSCM.bitn.bit2
+#define                                 LFEN            OSCM.bitn.bit1

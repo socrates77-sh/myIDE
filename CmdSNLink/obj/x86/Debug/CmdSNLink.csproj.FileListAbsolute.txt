@@ -1,0 +1,5 @@
+G:\Emulator\IDE\SinoSunIDE\CmdSNLink\bin\x86\Debug\CmdSNLink.dll
+G:\Emulator\IDE\SinoSunIDE\CmdSNLink\bin\x86\Debug\CmdSNLink.pdb
+G:\Emulator\IDE\SinoSunIDE\CmdSNLink\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Emulator\IDE\SinoSunIDE\CmdSNLink\obj\x86\Debug\CmdSNLink.dll
+G:\Emulator\IDE\SinoSunIDE\CmdSNLink\obj\x86\Debug\CmdSNLink.pdb

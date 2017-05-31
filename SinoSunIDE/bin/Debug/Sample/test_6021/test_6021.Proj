@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC35P6021" ID="0x6021" MCU_Type="RISC" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="test_6021">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="test_6021.asm" fPath="\test_6021.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="0" Value0="0" Value1="0" Value2="0" Value3="38" Value4="8" Value5="0" FOSC_7041="1" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="ASM" />
+</Project>

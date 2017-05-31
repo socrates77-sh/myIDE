@@ -1,0 +1,154 @@
+
+Map of System\mc20p24_c.h05 from link file mc_com.lkf - Tue Jan 12 13:26:44 2016
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001003 end 00001312 length   783 segment CODE
+start 00001312 end 000013fd length   235 segment .const
+start 00000030 end 00000030 length     0 segment ZPAGE
+start 00000030 end 00000054 length    36 segment UZPAGE
+start 00000030 end 00000030 length     0 segment IDATA
+start 00000030 end 00000030 length     0 segment UDATA
+start 00000054 end 0000005c length     8 segment .share
+start 00000000 end 00001992 length  6546 segment .debug
+start 00001ff4 end 00002000 length    12 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o:
+start 00000030 end 00000034 length     4 section UZPAGE (.ubsct)
+
+mc20p24_c.o:
+start 00001003 end 00001312 length   783 section CODE (.text)
+start 00000034 end 00000054 length    32 section UZPAGE (.ubsct)
+start 00000000 end 00001992 length  6546 section .debug
+start 00001312 end 000013fd length   235 section .const
+
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o:
+start 00001ff4 end 00002000 length    12 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+mc20p24_c.o:
+_ad_check      00000054-00000055 (2,0)
+_display       00000059-0000005b (3,0)
+_error         00000056-00000056 (0,1)
+_hextobcd      00000056-00000056 (0,1)
+_startbibi     00000057-00000058 (0,2)
+
+Stack size: 17
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADDATAH               00000028   defined in mc20p24_c.o
+_ADDATAL               00000029   defined in mc20p24_c.o
+_AD_Cnt                00000040   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_BTCNT                 0000000d   defined in mc20p24_c.o
+_Buffer_Temper         00000041   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Buzzer_Counter        0000003b   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Buzzer_H_Timer        0000003d   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Buzzer_L_Timer        0000003c   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_FLAG                  0000004d   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_INT0_ISR              0000104c   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_INT0_ISR.L            00000059   defined in linker section .share
+                                  *** not used ***
+_INT1_ISR              00001004   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_INT1_ISR.L            00000059   defined in linker section .share
+                                  *** not used ***
+_InitRam               0000109e   defined in mc20p24_c.o section CODE (.text)
+_InitRst               0000104d   defined in mc20p24_c.o section CODE (.text)
+_K_LB                  000010cd   defined in mc20p24_c.o section CODE (.text)
+_Led_H                 00000035   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Led_L                 00000036   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_PWMDATA               00000022   defined in mc20p24_c.o
+_PWMINT_ISR            00001005   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_PWMINT_ISR.L          00000059   defined in linker section .share
+                                  *** not used ***
+_Quotient              00000034   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_R_KEY1                00000051   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_R_KEY1_BAK            00000050   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_R_KEY1_TRU            0000004f   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_R_K_LB                0000004e   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_SWI_ISR               00001003   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_SWI_ISR.L             00000059   defined in linker section .share
+                                  *** not used ***
+_T0CNT                 00000000   defined in mc20p24_c.o
+_T0DATA                00000001   defined in mc20p24_c.o
+_T0INT_ISR             00001006   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_T0INT_ISR.L           00000059   defined in linker section .share
+                                  *** not used ***
+_Temp                  0000003e   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Temp_P0               00000053   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Temp_P2               00000052   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Temperature           0000003f   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_10s             00000045   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_125us           00000048   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_1hour           00000043   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_1min            00000044   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_250us           00000047   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_50ms            00000046   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_press_125us     0000004c   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_press_25ms      0000004b   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_refresh_125us   0000004a   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_Timer_refresh_25ms    00000049   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_ad_check              0000110f   defined in mc20p24_c.o section CODE (.text)
+_ad_check.L            00000056   defined in linker section .share
+                                  used in mc20p24_c.o
+_adcon                 00000027   defined in mc20p24_c.o
+_btcon                 0000000c   defined in mc20p24_c.o
+_buzzer_deal           000010e7   defined in mc20p24_c.o section CODE (.text)
+_check_button          00001181   defined in mc20p24_c.o section CODE (.text)
+_com1_data             00000039   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_com2_data             00000038   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_com_cnter             0000003a   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_display               00001244   defined in mc20p24_c.o section CODE (.text)
+_display.L             0000005c   defined in linker section .share
+                                  used in mc20p24_c.o
+_error                 000010a6   defined in mc20p24_c.o section CODE (.text)
+_error.L               00000056   defined in linker section .share
+                                  used in mc20p24_c.o
+_hextobcd              000011ee   defined in mc20p24_c.o section CODE (.text)
+_hextobcd.L            00000056   defined in linker section .share
+                                  used in mc20p24_c.o
+_led_com_data          00000037   defined in mc20p24_c.o section UZPAGE (.ubsct)
+_main                  00001078   defined in mc20p24_c.o section CODE (.text)
+                                  used in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o
+_mcr                   00000003   defined in mc20p24_c.o
+_mn_cycle              00001209   defined in mc20p24_c.o section CODE (.text)
+_p0                    00000010   defined in mc20p24_c.o
+_p0conh                00000016   defined in mc20p24_c.o
+_p0conl                00000017   defined in mc20p24_c.o
+_p0pnd                 00000018   defined in mc20p24_c.o
+_p1                    00000011   defined in mc20p24_c.o
+_p1con                 00000019   defined in mc20p24_c.o
+_p2                    00000012   defined in mc20p24_c.o
+_p2conh                0000001a   defined in mc20p24_c.o
+_p2conl                0000001b   defined in mc20p24_c.o
+_pwmcon                00000023   defined in mc20p24_c.o
+_startbibi             000010b2   defined in mc20p24_c.o section CODE (.text)
+_startbibi.L           00000057   defined in linker section .share
+                                  used in mc20p24_c.o
+_t0con                 00000002   defined in mc20p24_c.o
+_table_0_9             00001312   defined in mc20p24_c.o section .const
+_temperature_table     00001321   defined in mc20p24_c.o section .const
+_vectab                00001ff4   defined in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\vec_x224.o section .const
+                                  *** not used ***
+c_h                    00000031   defined in D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\WinC_V\Lib\crts.o section UZPAGE (.ubsct)
+                                  *** not used ***

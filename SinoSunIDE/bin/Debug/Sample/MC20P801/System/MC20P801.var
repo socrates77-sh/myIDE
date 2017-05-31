@@ -1,0 +1,13 @@
+P1 at 0x0003  xxxx.x  0000 to 0000
+DDR1 at 0x0004  xxxx.x  0000 to 0000
+P1HCON at 0x0005  xxxx.x  0000 to 0000
+P1LCON at 0x0006  xxxx.x  0000 to 0000
+KBIM at 0x0008  xxxx.x  0000 to 0000
+TCNT0 at 0x0009  xxxx.x  0000 to 0000
+TCR0 at 0x000A  xxxx.x  0000 to 0000
+DATA1 at 0x000B  xxxx.x  0000 to 0000
+TCNT1 at 0x000C  xxxx.x  0000 to 0000
+TCR1 at 0x000D  xxxx.x  0000 to 0000
+INTC at 0x000E  xxxx.x  0000 to 0000
+MCR at 0x000F  xxxx.x  0000 to 0000
+RSTFR at 0x0010  xxxx.x  0000 to 0000

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc30p011" ID="0x0311" MCU_Type="RISC" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="sleep2_div_t0">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="mc30p01a.asm" fPath="\mc30p01a.asm" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="35FF37E0" />
+  <Compiler Name="gpasm.exe" />
+</Project>

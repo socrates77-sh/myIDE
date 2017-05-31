@@ -1,0 +1,139 @@
+L 1				
+L 2				;Test 20p801
+L 3				;reg define 
+L 4				        P1              EQU     $03
+L 5				        DDR1            EQU     $04
+L 6				        P1HCON          EQU     $05
+L 7				        P1LCON          EQU     $06
+L 8				        KBIM            EQU     $08
+L 9				        TCNT0           EQU     $09
+L 10				        TCR0            EQU     $0A
+L 11				        DATA1           EQU     $0B
+L 12				        TCNT1           EQU     $0C
+L 13				        TCR1            EQU     $0D
+L 14				        INTC            EQU     $0E
+L 15				        MCR             EQU     $0F
+L 16				        RSTFR           EQU     $10
+L 17				        
+L 18				
+L 19				;RAM ADD $E0---$FF
+L 20				
+L 21				
+L 22					
+L 23					
+L 24					ORG $1c00
+L 25				RESET:
+L 26	[2]	1C00	9C		RSP
+L 27	[2]	1C01	9A		CLI 
+L 28	[3]	1C02	4F	 CLRA
+L 29				
+L 30	[2]	1C03	AEC0	 ldx #$C0
+L 31				ram_wr:
+L 32	[4]	1C05	F7	 sta ,x 
+L 33	[3]	1C06	4C	 inca
+L 34	[3]	1C07	5C	 incx
+L 35	[3]	1C08	26FB	 bne ram_wr
+L 36				 
+L 37	[3]	1C0A	4F	 clra
+L 38	[2]	1C0B	AEC0	 ldx #$C0
+L 39				ram_rd:
+L 40	[3]	1C0D	F1	 cmp ,x
+L 41	[3]	1C0E	261E	 bne test_ram_error
+L 42	[3]	1C10	4C	 inca
+L 43				 
+L 44	[3]	1C11	5C	 incx
+L 45	[3]	1C12	26F9	 bne ram_rd 
+L 46				
+L 47	[2]	1C14	A6AA	 lda #$aa
+L 48	[4]	1C16	B704	 sta DDR1
+L 49	[2]	1C18	A6BB	 lda #$bb
+L 50	[4]	1C1A	B705	 sta P1HCON
+L 51	[2]	1C1C	AECC	 ldx #$cc
+L 52	[4]	1C1E	BF05	 stx P1HCON
+L 53				
+L 54	[2]	1C20	A6FF	 LDA	#$FF
+L 55	[4]	1C22	B704	 	STA	DDR1
+L 56				  ;STA   ddr0
+L 57	[2]	1C24	A6FF	 LDA	#$FF
+L 58	[4]	1C26	B703		STA	P1
+L 59	[2]	1C28	A600		LDA	#$00
+L 60	[4]	1C2A	B703		STA	P1
+L 61	[2]	1C2C	9D	 nop
+L 62	[2]	1C2D	9D	 nop
+L 63				 
+L 64				 
+L 65				 
+L 66				 
+L 67				test_ram_error: 
+L 68				 ;nop
+L 69	[2]	1C2E	9D	 nop
+L 70					
+L 71	[5]	1C2F	140F	        bset 2,MCR ; WDT enable interrupt
+L 72	[5]	1C31	170F	        bclr 3,MCR 
+L 73	[5]	1C33	1A0F	        bset 5,MCR
+L 74				       ; stop  
+L 75	[2]	1C35	A6FF	       lda #$ff
+L 76	[4]	1C37	B709	       sta TCNT0
+L 77	[2]	1C39	A62C	       lda #%00101100 ; enable timer interrupt and no division
+L 78	[4]	1C3B	B70A	       sta TCR0
+L 79	[2]	1C3D	9A	       cli      
+L 80				LOOP:
+L 81	[5]	1C3E	3303	       COM P1
+L 82				       
+L 83				        ;bset 4,MCR ;clear wdt counter
+L 84				        ;jsr fun001
+L 85				        ;jsr fun002
+L 86				        ;jsr fun003
+L 87	[3]	1C40	CC1C3E	    JMP LOOP
+L 88				
+L 89				fun001:
+L 90	[3]	1C43	B640	    lda $40
+L 91	[3]	1C45	4C	    inca
+L 92	[2]	1C46	9D	    nop
+L 93	[3]	1C47	4C	    inca
+L 94	[4]	1C48	B7E0	    sta $e0
+L 95	[6]	1C4A	CD1C4F	    jsr fun011
+L 96	[2]	1C4D	9D	    nop
+L 97	[6]	1C4E	81	    rts
+L 98				    
+L 99				fun011:
+L 100	[2]	1C4F	9D	    nop
+L 101	[2]	1C50	A655	    lda #$55
+L 102	[4]	1C52	B7E6	    sta $e6
+L 103				    ;brset 2,$30,loop
+L 104	[6]	1C54	CD1C5C	    jsr fun111
+L 105	[2]	1C57	A603	    lda #03
+L 106	[4]	1C59	B7E7	    sta $e7
+L 107	[6]	1C5B	81	    rts
+L 108				    
+L 109				fun111:
+L 110	[2]	1C5C	9D	    nop
+L 111	[2]	1C5D	9D	    nop
+L 112	[6]	1C5E	81	    rts
+L 113				
+L 114				fun002:
+L 115				fun003:
+L 116	[2]	1C5F	9D	    nop
+L 117	[2]	1C60	9D	    nop
+L 118	[6]	1C61	81	    rts
+L 119				
+L 120				timer_int:
+L 121	[2]	1C62	9D	    nop
+L 122	[2]	1C63	A65D	    lda #93
+L 123	[4]	1C65	B709	    sta TCNT0
+L 124	[5]	1C67	1F0A	    bclr 7,TCR0 ; clear TIF
+L 125	[5]	1C69	3303	    com P1
+L 126	[9]	1C6B	80	    rti
+L 127				    
+L 128				    
+L 129				wdt_int:
+L 130	[5]	1C6C	170F	    bclr 3,MCR 
+L 131	[9]	1C6E	80	    rti    
+L 132				
+L 133				;INT VECTOR
+L 134				        org $1ff2
+L 135		1FF2	1C6C	        fdb wdt_int
+L 136				        org $1ff6
+L 137		1FF6	1C62	        fdb timer_int
+L 138					ORG	$1FFE
+L 139		1FFE	1C00		FDB	RESET

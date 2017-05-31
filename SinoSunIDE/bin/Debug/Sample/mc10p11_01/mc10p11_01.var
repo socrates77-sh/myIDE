@@ -1,0 +1,25 @@
+KEY	00
+MCR	01
+IOR	02
+OUTC	
+KBIF	
+KBIE	
+LED_IO	
+R0	E1
+R1	E2
+USR_CODE_L	04
+USR_CODE_H	CB
+key_count	E3
+key_value1	E4
+key_value2	E5
+key_buffer_l	E6
+key_buffer_h	E7
+send_bit_time	E8
+send_data3	EB
+send_data	ED
+send_count	EE
+key_value1_bak	EF
+work_flag	E0
+send_code_flag	
+gnd_key_flag	
+send_over_flag	

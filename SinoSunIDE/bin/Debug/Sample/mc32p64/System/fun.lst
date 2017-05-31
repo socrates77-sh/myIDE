@@ -1,0 +1,32 @@
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc32p64\fun.asm2013-9-17  18:18:35          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003         global abcd
+                      00004 
+0000                  00005 abcd:
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0000   0000           00006         nop
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0001   3CAA           00007         movai   0xaa
+Error[152]  : Executable code and data must be defined in an appropriate section.
+0002   000C           00008         retur
+Error[125]  : Illegal condition (EOF encountered before END)
+gpasm-1.3.1 (Jul  9 2013)    G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\Sample\mc32p64\fun.asm2013-9-17  18:18:35          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__32P64                           00000001
+abcd                              00000000
+
+Errors   :     4
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

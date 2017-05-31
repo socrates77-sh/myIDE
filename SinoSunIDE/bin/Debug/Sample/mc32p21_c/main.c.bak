@@ -1,0 +1,25 @@
+
+#include "mc32p21.h"
+#include "mc3x-common.h"
+
+
+
+void main()
+{
+    //unsigned char i,k;
+   
+     GIE=0;
+     IOP0=0XFF;
+     IOP1=0XFF;
+     OEP0=0XFF;
+     OEP1=0XFF;
+     
+     
+     while(1)
+     {
+       IOP1=~IOP1;       
+             
+     }
+        
+        
+}

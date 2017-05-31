@@ -1,0 +1,50 @@
+gplink-1.7.0_beta1 (Nov 26 2015)
+Listing File Generated: 2016-3-3  11:24:10
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                           #include "mc30p011.inc"
+                                                   LIST
+                                           ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                                                   NOLIST
+                                           
+                                           
+                                                   org 0x3ff
+0003ff   2801     goto    0x1                      goto    main
+                                                   org 0x00
+000000   2801     goto    0x1                      goto    main
+                                                   
+                                                   
+                                           main:
+000001   0b00     movai   0                        movai   0x00
+000002   15c5     movra   0x45                     movra   DDR0
+000003   15c6     movra   0x46                     movra   DDR1
+                                                   
+                                           loop:
+                                                   
+000004   1990     incr    0x10                     incr    0x10
+000005   1610     movar   0x10                     movar   0x10
+000006   1585     movra   0x5                      movra   P0
+000007   1991     incr    0x11                     incr    0x11
+000008   1611     movar   0x11                     movar   0x11
+000009   1586     movra   0x6                      movra   P1
+                                                   ;comr    P1
+00000a   2804     goto    0x4                      goto    loop 
+                                           
+                                            
+                                                   END       
+                                                   
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXX---------- ---------------- ----------------
+07C0 : ---------------- ---------------- ---------------- --------------XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    12
+

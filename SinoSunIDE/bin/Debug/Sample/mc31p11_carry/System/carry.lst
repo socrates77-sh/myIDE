@@ -1,0 +1,55 @@
+gpasm-1.4.0 (Sep 22 2013)    carry.asm          2013-11-4  17:50:17          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002     
+  00000020            00003 abc     equ     0x20
+  00000030            00004 abc0    equ     0x30        
+                      00005         
+                      00006         org 0x3ff
+                      00007 
+                      00008         org 0x00
+0000   0401           00009         movai   0x01
+0001   0AD0           00010         movra   0x10
+0002   0402           00011         movai   0x02
+0003   0910           00012         rsubar  0x10
+                      00013         
+0004   0403           00014         movai   0x03
+0005   0AD0           00015         movra   0x10
+0006   0402           00016         movai   0x02
+0007   0910           00017         rsubar  0x10
+                      00018 
+0008                  00019 looop:        
+0008   0CE0           00020         incr    abc
+0009   0B20           00021         movar   0x20
+000A   0AF0           00022         movra   abc0
+000B   0AF5           00023         movra   0x35
+000C   0AF8           00024         movra   0x38
+000D   0AC0           00025         movra   0x40
+                      00026         
+                      00027         
+                      00028         
+                      00029         
+000E   1400           00030         goto    looop
+                      00031         
+                      00032         
+                      00033         en
+gpasm-1.4.0 (Sep 22 2013)    carry.asm          2013-11-4  17:50:17          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__31P11                           00000001
+abc                               00000020
+abc0                              00000030
+looop                             00000008
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

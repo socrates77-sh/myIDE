@@ -1,0 +1,14 @@
+#LINK COMMAND FILE EXAMPLE FOR MC20P24             
++seg .text  -b 0x1000 -m0x1000 -nCODE   -sROM      
++seg .const -a CODE   -it      -sROM               
++seg .bsct  -b 0x30   -nZPAGE  -m0x00   -sRAM      
++seg .ubsct -b 0x30   -nUZPAGE -m0x90   -sRAM      
++seg .data  -b 0x30   -nIDATA  -m0x00   -sRAM      
++seg .bss   -b 0x30   -nUDATA  -m0x00   -sRAM      
++seg .share -a UZPAGE -is      -sRAM               
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\crts.h05                          
+main.o                                               
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\libi.h05                          
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\libm.h05                          
++seg .const -b 0x1FF4                              
+G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunC_V\Lib\vec_mc20p24.o                     

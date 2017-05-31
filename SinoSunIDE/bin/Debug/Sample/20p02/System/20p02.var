@@ -1,0 +1,5 @@
+DDR1 at 0x0005  xxxx.x  0000 to 0000
+P1 at 0x0004  xxxx.x  0000 to 0000
+DDR0 at 0x0001  xxxx.x  0000 to 0000
+p0 at 0x0000  xxxx.x  0000 to 0000
+MCR at 0x000F  xxxx.x  0000 to 0000

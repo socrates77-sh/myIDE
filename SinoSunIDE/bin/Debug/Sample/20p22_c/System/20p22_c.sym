@@ -1,0 +1,125 @@
+
+Map of System\20p22_c.h05 from link file mc_com.lkf - Fri May 06 17:05:21 2016
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00001803 end 0000189a length   151 segment CODE
+start 0000189a end 0000189a length     0 segment .const
+start 00000080 end 00000080 length     0 segment ZPAGE
+start 00000080 end 0000008a length    10 segment UZPAGE
+start 00000080 end 00000080 length     0 segment IDATA
+start 00000080 end 00000080 length     0 segment UDATA
+start 0000008a end 0000008e length     4 segment .share
+start 00000000 end 0000153e length  5438 segment .debug
+start 00001fee end 00002000 length    18 segment .const
+
+
+                               -------
+                               Modules
+                               -------
+
+F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05:
+start 00001803 end 0000180d length    10 section CODE (.text)
+start 00000080 end 00000084 length     4 section UZPAGE (.ubsct)
+
+20p22_c.o:
+start 0000180d end 0000189a length   141 section CODE (.text)
+start 00000084 end 0000008a length     6 section UZPAGE (.ubsct)
+start 00000000 end 0000153e length  5438 section .debug
+
+F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o:
+start 00001fee end 00002000 length    18 section .const
+
+
+                             ------------
+                             Shared areas
+                             ------------
+
+20p22_c.o:
+_TMI0_ISR       0000008c-0000008d (2,0)
+_funtion001     0000008a-0000008b (0,2)
+_initial        0000008a-0000008a (1,0)
+
+Stack size: 9
+
+
+                               -------
+                               Symbols
+                               -------
+
+_ADTH           00000014   defined in 20p22_c.o
+_ADTL           00000015   defined in 20p22_c.o
+_INT0_ISR       0000184c   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_INT0_ISR.L     0000008c   defined in linker section .share
+                           *** not used ***
+_INT1_ISR       0000184b   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_INT1_ISR.L     0000008c   defined in linker section .share
+                           *** not used ***
+_KBI_ISR        0000188c   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_KBI_ISR.L      0000008c   defined in linker section .share
+                           *** not used ***
+_SWI_ISR        0000184a   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_SWI_ISR.L      0000008c   defined in linker section .share
+                           *** not used ***
+_T0CNT          00000007   defined in 20p22_c.o
+_T1CNT          0000000a   defined in 20p22_c.o
+_T1CNTL         0000000f   defined in 20p22_c.o
+_T2CNTH         0000000d   defined in 20p22_c.o
+_TDATA1         00000009   defined in 20p22_c.o
+_TDATA2H        0000000c   defined in 20p22_c.o
+_TDATA2L        0000000e   defined in 20p22_c.o
+_TMI0_ISR       0000184f   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_TMI0_ISR.L     0000008e   defined in linker section .share
+                           used in 20p22_c.o
+_TMI1_ISR       0000184e   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_TMI1_ISR.L     0000008c   defined in linker section .share
+                           *** not used ***
+_TMI2_ISR       0000184d   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_TMI2_ISR.L     0000008c   defined in linker section .share
+                           *** not used ***
+_WDTI_ISR       0000188d   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_WDTI_ISR.L     0000008c   defined in linker section .share
+                           *** not used ***
+__stext         00001803   defined in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o
+_aaa            00000084   defined in 20p22_c.o section UZPAGE (.ubsct)
+_adcm           00000012   defined in 20p22_c.o
+_adcon          00000013   defined in 20p22_c.o
+_ddr0           00000001   defined in 20p22_c.o
+_ddr1           00000004   defined in 20p22_c.o
+_exit           0000180b   defined in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section CODE (.text)
+_funtion001     0000180d   defined in 20p22_c.o section CODE (.text)
+                           *** not used ***
+_funtion001.L   0000008a   defined in linker section .share
+                           used in 20p22_c.o
+_initial        00001819   defined in 20p22_c.o section CODE (.text)
+_initial.L      0000008b   defined in linker section .share
+                           used in 20p22_c.o
+_intc           00000011   defined in 20p22_c.o
+_kbim           00000006   defined in 20p22_c.o
+_main           0000188e   defined in 20p22_c.o section CODE (.text)
+                           used in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05
+_mcr            00000016   defined in 20p22_c.o
+_p0             00000000   defined in 20p22_c.o
+_p0hcon         00000002   defined in 20p22_c.o
+_p1             00000003   defined in 20p22_c.o
+_p1hcon         00000005   defined in 20p22_c.o
+_rstfr          00000017   defined in 20p22_c.o
+_tcr0           00000008   defined in 20p22_c.o
+_tcr1           0000000b   defined in 20p22_c.o
+_tcr2           00000010   defined in 20p22_c.o
+_temp           00000085   defined in 20p22_c.o section UZPAGE (.ubsct)
+_vectab         00001fee   defined in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\vec_x222.o section .const
+                           *** not used ***
+c_h             00000081   defined in F:\APP\Software\仿真软件版本库\正式版版本库\WinScopeIDE_v1.01bt_20151212\WinC_V\Lib\crts.h05 section UZPAGE (.ubsct)

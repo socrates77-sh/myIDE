@@ -1,0 +1,192 @@
+L 1				T100msSbr:
+L 2	[5]	184F	3C8D		INC	T50ms
+L 3	[3]	1851	B68D		LDA	T50ms
+L 4	[2]	1853	A119		CMP	#25
+L 5	[3]	1855	2538		BLO	T100msSbrR
+L 6	[5]	1857	3F8D		CLR	T50ms
+L 7	[5]	1859	058003		BRCLR	FFlash50,T100msSbr1
+L 8	[5]	185C	1580		BCLR	FFlash50
+L 9	[6]	185E	81		RTS
+L 10				T100msSbr1:
+L 11	[5]	185F	1480		BSET	FFlash50
+L 12	[5]	1861	078003		BRCLR	FFlash100,T100msSbr2
+L 13	[5]	1864	1780		BCLR	FFlash100
+L 14	[6]	1866	81		RTS
+L 15				T100msSbr2:
+L 16	[5]	1867	3C97		INC	CellDly
+L 17	[3]	1869	B697		LDA	CellDly
+L 18	[2]	186B	A104		CMP	#4
+L 19	[3]	186D	2504		BLO	T100msSbr21
+L 20	[5]	186F	3A97		DEC	CellDly
+L 21	[5]	1871	1281		BSET	FVin
+L 22				T100msSbr21:
+L 23	[5]	1873	098019		BRCLR	FADOver,T100msSbrR
+L 24	[3]	1876	B694		LDA	FlashCnt
+L 25	[3]	1878	2702		BEQ	T100msSbr3
+L 26	[5]	187A	3A94		DEC	FlashCnt
+L 27				T100msSbr3:
+L 28	[5]	187C	3C90		INC	T500ms
+L 29	[3]	187E	B690		LDA	T500ms
+L 30	[2]	1880	A105		CMP	#5
+L 31	[3]	1882	250B		BLO	T100msSbrR
+L 32	[5]	1884	3F90		CLR	T500ms
+L 33	[6]	1886	CD1890		JSR	CellChkSbr
+L 34	[6]	1889	CD18F9		JSR	TemChkSbr
+L 35	[6]	188C	CD191E		JSR	OutCtrlSbr
+L 36				T100msSbrR:	
+L 37	[6]	188F	81		RTS
+L 38				;-------------------------------------------------------------------
+L 39				;µç³ØµçÑ¹¼ì²â
+L 40				;-------------------------------------------------------------------
+L 41				CellChkSbr:
+L 42	[5]	1890	090021		BRCLR	pVIn,CellChkSbrA
+L 43					;³äµç×´Ì¬---------------------------------------------------
+L 44	[5]	1893	3A97		DEC	CellDly
+L 45	[3]	1895	BE87		LDX	VAD
+L 46	[3]	1897	B68F		LDA	CellV
+L 47	[3]	1899	2704		BEQ	CellChkSbr1
+L 48	[3]	189B	4A		DECA
+L 49	[3]	189C	2708		BEQ	CellChkSbr2
+L 50	[6]	189E	81		RTS	
+L 51				CellChkSbr1:
+L 52	[2]	189F	A384		CPX	#CV38
+L 53	[3]	18A1	2403		BHS	CellChkSbr2
+L 54	[5]	18A3	3F8F		CLR	CellV
+L 55	[6]	18A5	81		RTS
+L 56				CellChkSbr2:
+L 57	[2]	18A6	A601		LDA	#1
+L 58	[4]	18A8	B78F		STA	CellV
+L 59	[2]	18AA	A391		CPX	#CV41
+L 60	[3]	18AC	2401		BHS	CellChkSbr3
+L 61	[6]	18AE	81		RTS
+L 62				CellChkSbr3:
+L 63	[2]	18AF	A602		LDA	#2
+L 64	[4]	18B1	B78F		STA	CellV
+L 65	[6]	18B3	81		RTS
+L 66					;·Åµç×´Ì¬---------------------------------------------------
+L 67				CellChkSbrA:
+L 68	[5]	18B4	3F8F		CLR	CellV
+L 69	[5]	18B6	0F8004		BRCLR	F38V,CellChkSbrA1
+L 70	[5]	18B9	0D8021		BRCLR	F32V,CellChkSbrA2
+L 71					;LDA	FlashCnt
+L 72					;BNE	CellChkSbrR
+L 73					;LDA	#$55
+L 74					;STA	CellLow
+L 75					;BCLR	pPwr
+L 76	[6]	18BC	81		RTS
+L 77				CellChkSbrA1:
+L 78	[3]	18BD	B687		LDA	VAD
+L 79	[2]	18BF	A184		CMP	#CV38
+L 80	[3]	18C1	2411		BHS	CellChkSbrA11
+L 81	[5]	18C3	3C95		INC	V38CNT
+L 82	[3]	18C5	B695		LDA	V38Cnt
+L 83	[2]	18C7	A10A		CMP	#10
+L 84	[3]	18C9	250D		BLO	CellChkSbrA12
+L 85	[5]	18CB	3A95		DEC	V38CNT
+L 86	[5]	18CD	1E80		BSET	F38V
+L 87	[2]	18CF	A628		LDA	#40
+L 88	[4]	18D1	B794		STA	FLashCnt
+L 89	[6]	18D3	81		RTS
+L 90				CellChkSbrA11:
+L 91	[5]	18D4	3F96		CLR	V32CNT
+L 92	[5]	18D6	3F95		CLR	V38CNT
+L 93				CellChkSbrA12:
+L 94	[5]	18D8	1F80		BCLR	F38V
+L 95	[5]	18DA	1D80		BCLR	F32V
+L 96	[6]	18DC	81		RTS
+L 97				CellChkSbrA2:
+L 98	[3]	18DD	B687		LDA	VAD
+L 99	[2]	18DF	A16F		CMP	#CV32
+L 100	[3]	18E1	2211		BHI	CellChkSbrA21
+L 101	[5]	18E3	3C96		INC	V32CNT
+L 102	[3]	18E5	B696		LDA	V32CNT
+L 103	[2]	18E7	A10A		CMP	#10
+L 104	[3]	18E9	250B		BLO	CellChkSbrA22
+L 105	[5]	18EB	3A96		DEC	V32CNT
+L 106	[5]	18ED	1C80		BSET	F32V
+L 107	[2]	18EF	A628		LDA	#40
+L 108	[4]	18F1	B794		STA	FLashCnt
+L 109	[6]	18F3	81		RTS
+L 110				CellChkSbrA21:
+L 111	[5]	18F4	3F96		CLR	V32CNT
+L 112				CellChkSbrA22:
+L 113	[5]	18F6	1D80		BCLR	F32V
+L 114	[6]	18F8	81		RTS
+L 115				;-------------------------------------------------------------------
+L 116				;ÎÂ¶È¼ì²â
+L 117				;-------------------------------------------------------------------
+L 118				TemChkSbr:
+L 119	[3]	18F9	B68B		LDA	Stauts
+L 120	[3]	18FB	2720		BEQ	TemChkSbrR
+L 121	[2]	18FD	AE6D		LDX	#CT38
+L 122	[4]	18FF	BF91		STX	Buf
+L 123	[2]	1901	AE74		LDX	#CT41
+L 124	[3]	1903	4A		DECA
+L 125	[3]	1904	2706		BEQ	TemChkSbr1
+L 126	[2]	1906	AE76		LDX	#CT42
+L 127	[4]	1908	BF91		STX	Buf
+L 128	[2]	190A	AE7D		LDX	#CT45
+L 129				TemChkSbr1:
+L 130	[3]	190C	B684		LDA	TempAD
+L 131	[3]	190E	B191		CMP	Buf
+L 132	[3]	1910	2203		BHI	TemChkSbr2
+L 133	[5]	1912	1180		BCLR	FTempOver
+L 134	[6]	1914	81		RTS
+L 135				TemChkSbr2:
+L 136	[4]	1915	BF91		STX	Buf
+L 137	[3]	1917	B191		CMP	Buf
+L 138	[3]	1919	2502		BLO	TemChkSbrR
+L 139	[5]	191B	1080		BSET	FTempOver
+L 140				TemChkSbrR:
+L 141	[6]	191D	81		RTS
+L 142				;-------------------------------------------------------------------
+L 143				;Êä³ö¿ØÖÆ
+L 144				;-------------------------------------------------------------------
+L 145				OutCtrlSbr:
+L 146	[5]	191E	08001D		BRSET	pVIn,OutChargSbr
+L 147	[3]	1921	B68B		LDA	Stauts
+L 148	[3]	1923	272C		BEQ	OutCloseSbr
+L 149	[3]	1925	4A		DECA
+L 150	[3]	1926	2708		BEQ	OutCtrlSbr1
+L 151	[3]	1928	4A		DECA
+L 152	[3]	1929	2705		BEQ	OutCtrlSbr1
+L 153					;-----------------------------------------------------------
+L 154					;³äµçÊä³ö×´Ì¬
+L 155	[5]	192B	1203		BSET	pCharge
+L 156	[5]	192D	1503		BCLR	pHeat
+L 157	[6]	192F	81		RTS	
+L 158					;-----------------------------------------------------------
+L 159					;¼ÓÈÈ×´Ì¬
+L 160				OutCtrlSbr1:
+L 161	[5]	1930	1303		BCLR	pCharge
+L 162	[5]	1932	008006		BRSET	FTempOver,OutCtrlSbr2
+L 163	[5]	1935	0A8003		BRSET	FErr,OutCtrlSbr2
+L 164	[5]	1938	1403		BSET	pHeat
+L 165	[6]	193A	81		RTS
+L 166				OutCtrlSbr2:
+L 167	[5]	193B	1503		BCLR	pHeat
+L 168	[6]	193D	81		RTS
+L 169					;-----------------------------------------------------------
+L 170					;³äµçÊäÈë×´Ì¬
+L 171				OutChargSbr:
+L 172	[5]	193E	1D80		BCLR	F32V
+L 173	[5]	1940	1F80		BCLR	F38V
+L 174	[5]	1942	3F96		CLR	V32CNT
+L 175	[5]	1944	3F95		CLR	V38CNT
+L 176	[5]	1946	3F8B		CLR	Stauts
+L 177	[5]	1948	3FF1		CLR	CellLow
+L 178	[5]	194A	1503		BCLR	pHeat
+L 179	[5]	194C	1303		BCLR	pCharge
+L 180	[5]	194E	1903		BCLR	pPwr
+L 181	[6]	1950	81		RTS
+L 182					;-----------------------------------------------------------
+L 183					;´ý»ú×´Ì¬
+L 184				OutCloseSbr:
+L 185					;JSR	SysInitRamSbr
+L 186	[5]	1951	1303		BCLR	pCharge
+L 187	[5]	1953	1503		BCLR	pHeat
+L 188	[5]	1955	1903		BCLR	pPwr
+L 189	[6]	1957	81		RTS	
+L 190					;-----------------------------------------------------------
+L 191					
+L 192				

@@ -1,0 +1,70 @@
+gpasm-0.7.0 (Nov 19 2012)    sub1.asm           2012-11-21  16:32:50         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 #include "sub1.inc"
+                      00001 
+                      00002 #ifndef sub1_h
+                      00003 #define sub1_h
+                      00004 
+                      00005     ;abc equ 1fh
+                      00006     
+                      00007         global abc;
+                      00008       global aaa;
+                      00009 
+                      00010     
+                      00011 GPR_DATA        UDATA 0x10
+0008                  00012 aaa     RES 1;
+0008                  00013 abc     RES 1;
+0009                  00014 value RES 1;
+                      00015     
+                      00016 #endif
+                      00017     
+                      00003 ;#include "mc30p01a.inc"
+                      00004 
+                      00005 
+                      00006     extern lab_abc
+                      00007 
+  00000010            00008 time1 equ 10h
+                      00009 
+                      00010 
+                      00011 
+                      00012 
+                      00013     ;extern delay;
+                      00014     ;extern value;
+                      00015 
+                      00016 PROG CODE
+0000                  00017 funtion0:
+                      00018      global funtion0
+                      00019      ;movia ddd
+0000   1610           00020      movar time1
+0001   1680           00021      movr aaa
+0002   1680           00022      movr value;
+0003   0000           00023      nop
+0004   0000           00024      nop
+0005   2800           00025      goto lab_abc
+                      00026      
+                      00027      en
+gpasm-0.7.0 (Nov 19 2012)    sub1.asm           2012-11-21  16:32:50         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__30P01A                          00000001
+aaa                               00000010
+abc                               00000011
+funtion0                          00000000
+lab_abc                           00000000
+time1                             00000010
+value                             00000012
+sub1_h                            (null)
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

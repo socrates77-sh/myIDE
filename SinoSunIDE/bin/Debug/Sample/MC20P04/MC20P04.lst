@@ -1,0 +1,150 @@
+L 1				
+L 2				;Test 20p04
+L 3				;reg define 
+L 4				        P0      EQU     $00
+L 5				        PA      EQU     $00
+L 6				        PB      EQU     $04
+L 7				        PC      EQU     $08
+L 8				        DDR0    EQU     $01
+L 9				        P0HCON  EQU     $02
+L 10				        P0LCON  EQU     $03
+L 11				        P1      EQU     $04
+L 12				        DDR1    EQU     $05
+L 13				        P1HCON  EQU     $06
+L 14				        BKIM    EQU     $07
+L 15				        P2      EQU     $08
+L 16				        DDR2    EQU     $09
+L 17				        TDR     EQU     $0A
+L 18				        TCR     EQU     $0B
+L 19				        INTC    EQU     $0C
+L 20				        MCR     EQU     $0D
+L 21				        RSTFR   EQU     $0E
+L 22				        CMPC    EQU     $0F
+L 23				        CMP0A   EQU     $10
+L 24				        CMP1A   EQU     $11
+L 25				
+L 26				
+L 27				
+L 28				
+L 29				;RAM ADD $E0---$FF
+L 30				
+L 31				
+L 32				    
+L 33				    
+L 34				    ORG $1c00
+L 35				RESET:
+L 36	[2]	1C00	9C	    RSP
+L 37	[2]	1C01	9A	    CLI 
+L 38	[3]	1C02	4F	 CLRA
+L 39				
+L 40	[2]	1C03	AEC0	 ldx #$C0
+L 41				ram_wr:
+L 42	[4]	1C05	F7	 sta ,x 
+L 43	[3]	1C06	4C	 inca
+L 44	[3]	1C07	5C	 incx
+L 45	[3]	1C08	26FB	 bne ram_wr
+L 46				 
+L 47	[3]	1C0A	4F	 clra
+L 48	[2]	1C0B	AEC0	 ldx #$C0
+L 49				ram_rd:
+L 50	[3]	1C0D	F1	 cmp ,x
+L 51	[3]	1C0E	2624	 bne test_ram_error
+L 52	[3]	1C10	4C	 inca
+L 53				 
+L 54	[3]	1C11	5C	 incx
+L 55	[3]	1C12	26F9	 bne ram_rd 
+L 56				
+L 57	[2]	1C14	A6AA	 lda #$aa
+L 58	[4]	1C16	B701	 sta ddr0
+L 59	[2]	1C18	A6BB	 lda #$bb
+L 60	[4]	1C1A	B702	 sta p0hcon
+L 61	[2]	1C1C	AECC	 ldx #$cc
+L 62	[4]	1C1E	BF03	 stx p0lcon
+L 63				
+L 64	[2]	1C20	A6FF	 LDA    #$FF
+L 65	[4]	1C22	B701	    STA DDR0
+L 66	[4]	1C24	B705	    STA DDR1
+L 67	[2]	1C26	A6FF	 LDA    #$FF
+L 68	[4]	1C28	B704	    STA P1
+L 69	[4]	1C2A	B708	    STA P2
+L 70	[2]	1C2C	A600	    LDA #$00
+L 71	[4]	1C2E	B704	    STA P1
+L 72	[4]	1C30	B708	    STA P2
+L 73	[2]	1C32	9D	 nop
+L 74	[2]	1C33	9D	 nop
+L 75				 
+L 76				 
+L 77				 
+L 78				 
+L 79				test_ram_error: 
+L 80				 ;nop
+L 81	[2]	1C34	9D	 nop
+L 82				    
+L 83	[5]	1C35	140D	        bset 2,MCR ; WDT enable interrupt
+L 84	[5]	1C37	170D	        bclr 3,MCR 
+L 85	[5]	1C39	1A0D	        bset 5,MCR
+L 86				       ; stop  
+L 87	[2]	1C3B	A6FF	       lda #$ff
+L 88	[4]	1C3D	B70A	       sta TDR
+L 89	[2]	1C3F	A62C	       lda #%00101100 ; enable timer interrupt and no division
+L 90	[4]	1C41	B70B	       sta TCR
+L 91	[2]	1C43	9A	       cli      
+L 92				LOOP:
+L 93	[5]	1C44	3300	       COM PA
+L 94				        ;bset 4,MCR ;clear wdt counter
+L 95	[6]	1C46	CD1C52	    jsr fun001
+L 96	[6]	1C49	CD1C6E	    jsr fun002
+L 97	[6]	1C4C	CD1C6E	    jsr fun003
+L 98	[3]	1C4F	CC1C44	    JMP LOOP
+L 99				
+L 100				fun001:
+L 101	[3]	1C52	B640	    lda $40
+L 102	[3]	1C54	4C	    inca
+L 103	[2]	1C55	9D	    nop
+L 104	[3]	1C56	4C	    inca
+L 105	[4]	1C57	B7E0	    sta $e0
+L 106	[6]	1C59	CD1C5E	    jsr fun011
+L 107	[2]	1C5C	9D	    nop
+L 108	[6]	1C5D	81	    rts
+L 109				    
+L 110				fun011:
+L 111	[2]	1C5E	9D	    nop
+L 112	[2]	1C5F	A655	    lda #$55
+L 113	[4]	1C61	B7E6	    sta $e6
+L 114				    ;brset 2,$30,loop
+L 115	[6]	1C63	CD1C6B	    jsr fun111
+L 116	[2]	1C66	A603	    lda #03
+L 117	[4]	1C68	B7E7	    sta $e7
+L 118	[6]	1C6A	81	    rts
+L 119				    
+L 120				fun111:
+L 121	[2]	1C6B	9D	    nop
+L 122	[2]	1C6C	9D	    nop
+L 123	[6]	1C6D	81	    rts
+L 124				
+L 125				fun002:
+L 126				fun003:
+L 127	[2]	1C6E	9D	    nop
+L 128	[2]	1C6F	9D	    nop
+L 129	[6]	1C70	81	    rts
+L 130				
+L 131				timer_int:
+L 132	[2]	1C71	9D	    nop
+L 133	[2]	1C72	A65D	    lda #93
+L 134	[4]	1C74	B70A	    sta TDR
+L 135	[5]	1C76	1F0B	    bclr 7,TCR ; clear TIF
+L 136	[5]	1C78	3304	    com P1
+L 137	[9]	1C7A	80	    rti
+L 138				    
+L 139				    
+L 140				wdt_int:
+L 141	[5]	1C7B	170D	    bclr 3,MCR 
+L 142	[9]	1C7D	80	    rti    
+L 143				
+L 144				;INT VECTOR
+L 145				        org $1ff2
+L 146		1FF2	1C7B	        fdb wdt_int
+L 147				        org $1ff6
+L 148		1FF6	1C71	        fdb timer_int
+L 149				    ORG $1FFE
+L 150		1FFE	1C00	    FDB RESET

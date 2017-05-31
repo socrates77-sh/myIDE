@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="MC20P22" ID="0x0222" MCU_Type="CHC05" Author="Mike.Mo" Date="2012-08-28" VS="1.01">
+  <ProWindows>
+    <Explorer fName="20p22_c">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="20p22_c.c" fPath="\20p22_c.c" />
+        <asmFile fName="abc.c" fPath="\abc.c" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="45" Value0="" Value1="" Value2="" Value3="" Value4="" Value5="" />
+  <Compiler Name="Assembly.exe/C " />
+  <Language Name="C" />
+  <WatchSymbol Name="DDR0" Addr="0045" Value="??" BitFlag="False" Bit="0" DataRes="0" Array="False" />
+</Project>

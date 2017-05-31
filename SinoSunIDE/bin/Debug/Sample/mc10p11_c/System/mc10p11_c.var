@@ -1,0 +1,36 @@
+KEYL at 0x0000  xxxx.x  0000 to 0000
+mcr at 0x0001  xxxx.x  0000 to 0000
+ior at 0x0002  xxxx.x  0000 to 0000
+work_flag at 0x00ea  xxxx.x  0000 to 0000
+key_buffer at 0x00e8  xxxx.x  0000 to 0000
+key_value at 0x00e7  xxxx.x  0000 to 0000
+key_temp at 0x00e6  xxxx.x  0000 to 0000
+key_bak at 0x00e5  xxxx.x  0000 to 0000
+key_data at 0x00e4  xxxx.x  0000 to 0000
+key_table[112] at 0x1f03  xxxx.x  0000 to 0000
+time_100us at 0x00ed  mc10p11_c.c  92 to 102 
+time_1ms at 0x00ec  mc10p11_c.c  104 to 111 
+j at 0x00ec  mc10p11_c.c  130 to 142 
+i at 0x00eb  mc10p11_c.c  144 to 167 
+j at 0x00ec  mc10p11_c.c  201 to 213 
+send_data at 0x00ed  mc10p11_c.c  218 to 249 
+count at 0x00ee  mc10p11_c.c  218 to 249 
+j at 0x00ec  mc10p11_c.c  218 to 249 
+j at 0x00ec  mc10p11_c.c  252 to 275 
+send_data at 0x00ec  mc10p11_c.c  277 to 308 
+count at 0x00ed  mc10p11_c.c  277 to 308 
+send_data_temp at 0x00eb  mc10p11_c.c  312 to 349 
+#define _36KHZ 	1
+#define	flag_send_code 	work_flag.bitn.bit0
+#define	flag_parity_bit	work_flag.bitn.bit1
+#define	flag_rc_6  	work_flag.bitn.bit2
+#define	MODE_CODE  	0x06
+#define	SYSTEM_CODE_H  	0x80
+#define	SYSTEM_CODE_L  	0x56
+#define	CONTROL_CODE   	0xa7
+#define	SEND_TIME_HEAD_H   	95
+#define	SEND_TIME_HEAD_L   	32
+#define	SEND_TIME_BIT_L	   	15
+#define	SEND_TIME_BIT_H	   	15
+#define	USER_CODE_3010 	   	0x00
+#define	SEND_TIME  	   	31

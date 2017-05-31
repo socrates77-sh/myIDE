@@ -1,0 +1,565 @@
+gplink-1.4.0 (Sep 22 2013)
+Listing File Generated: 2013-11-22  10:34:42
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                           #include mc32p821.inc
+                                           
+                                           ;==========================================================================
+                                           ;
+                                           ;       Revision History
+                                           ;
+                                           ;==========================================================================
+                                           
+                                           ;Rev:   Date:    Reason:
+                                           
+                                           ;1.00   12/06/21 Initial Release
+                                           
+                                           ;==========================================================================
+                                           ;
+                                           ;       Register Definitions
+                                           ;
+                                           ;==========================================================================
+                                           
+                                           ;W                            EQU     H'0000'
+                                           ;F                            EQU     H'0001'
+                                           
+                                           ;----- Register Files------------------------------------------------------
+                                           cblock	0x180
+                                           INDF0			
+                                           INDF1			
+                                           INDF2			
+                                           HIBYTE			
+                                           FSR0			
+                                           FSR1			
+                                           PCL			
+                                           PFALG			
+                                           ;----0x188
+                                           MCR			
+                                           INDF3			
+                                           INTE			
+                                           INTF			
+                                           AAAA_R00		
+                                           INVALID_ADDR1		
+                                           INVALID_ADDR2		
+                                           INVALID_ADDR3		
+                                           ;----0x190
+                                           IOP0			
+                                           OEP0                    
+                                           PUP0           
+                                           ANSEL
+                                           IOP1                      
+                                           OEP1                    
+                                           PUP1                    
+                                           KBIM           
+                                           ;-----0x198                        
+                                           INVALID_ADDR5                      
+                                           INVALID_ADDR6                    
+                                           INVALID_ADDR7           
+                                           INVALID_ADDR8           
+                                           INVALID_ADDR9           
+                                           INVALID_ADDRA           
+                                           INVALID_ADDRB           
+                                           INVALID_ADDRC           
+                                           ;-----0x1a0
+                                           T0CR			
+                                           T0CNT                   
+                                           T0LOAD                  
+                                           T0DATA                  
+                                           T1CR                    
+                                           T1CNT                   
+                                           T1LOAD                  
+                                           T1DATA                  
+                                           ;-----0x1a8                        
+                                           T2CR                     
+                                           T2CNT                    
+                                           T2LOAD
+                                           AA_R4                   
+                                           PWMCR                  
+                                           AA_R0                     
+                                           OSCM                   
+                                           AA_R2                                       
+                                           ;-----0x1b0
+                                           ADCR0			
+                                           ADCR1                                     
+                                           endc
+                                           
+                                           
+                                           ;-----------------------------------
+                                           
+                                           
+                                           ;------------------------------------
+                                           #define		ADRH		0X1B4
+                                           #define		ADRL		0X1B5
+                                           #define		OSCCAL	0X1FB
+                                           
+                                           ;#define		sleep			stop
+                                           #define		STATUS		PFALG
+                                           #define		INDF		INDF0
+                                           
+                                           #define		INTECON		INTE	
+                                           
+                                           
+                                           ;----- STATUS Bits --------------------------
+                                           #define	Z	STATUS,2
+                                           #define	DC	STATUS,1
+                                           #define	C	STATUS,0
+                                           
+                                           ;----- MCR Bits --------------------------
+                                           #define	GIE	MCR,7
+                                           
+                                           
+                                           ;----- INTECON Bits --------------------------
+                                           
+                                           #define	ADIE	INTECON,6
+                                           #define	T2IE	INTECON,5
+                                           #define	KBIE	INTECON,4
+                                           #define	INT1IE	INTECON,3
+                                           #define	INT0IE	INTECON,2
+                                           #define	T1IE	INTECON,1
+                                           #define	T0IE	INTECON,0
+                                           
+                                           ;----- INTEFLAG Bits --------------------------
+                                           
+                                           #define	ADIF	INTF,6
+                                           #define	T2IF	INTF,5
+                                           #define	KBIF	INTF,4
+                                           #define	INT1IF	INTF,3
+                                           #define	INT0IF	INTF,2
+                                           #define	T1IF	INTF,1
+                                           #define	T0IF	INTF,0
+                                           
+                                           
+                                           ;----- T0CR  Bits ----------------
+                                           #define	TC0EN	T0CR,7
+                                           #define	PWM0OE	T0CR,6
+                                           #define	BUZ0OE	T0CR,5
+                                           
+                                           
+                                           ;----- T1CR  Bits ----------------
+                                           #define	TC1EN	T1CR,7
+                                           #define	PWM1OE	T1CR,6
+                                           #define	BUZ1OE	T1CR,5
+                                           
+                                           ;----- OSCM  Bits ----------------
+                                           #define	STBL	OSCM,5
+                                           #define	STBH	OSCM,4
+                                           #define	CLKS	OSCM,2
+                                           #define	LFEN	OSCM,1
+                                           #define	HFEN	OSCM,0
+                                           
+                                           
+                                           ;-----  LVDCR Bits -------
+                                           #define LVD	PLVDCR,7
+                                           #define	LVDS	PLVDCR,6
+                                           ;***********DDR1 DDR2 **********
+                                           #define	DDR10	DDR1,0
+                                           #define	DDR11	DDR1,1
+                                           #define	DDR12	DDR1,2
+                                           #define	DDR13	DDR1,3
+                                           
+                                           
+                                           ;----------ADC------------
+                                           #define	AIN0		0<<4
+                                           #define	AIN1		1<<4
+                                           #define	AIN2		2<<4
+                                           #define	AIN3		3<<4
+                                           #define	AIN4		4<<4
+                                           #define	AIN5		5<<4
+                                           #define	VDD_DIV3			6<<4
+                                           #define	VOUTV_DIV3		7<<4
+                                           
+                                           
+                                           #define	FSYS_DIV16		0<<2
+                                           #define	FSYS_DIV8		1<<2
+                                           #define	FSYS_DIV4		2<<2
+                                           #define	FSYS_DIV2		3<<2
+                                           
+                                           #define	ADEOC		ADCR0,1
+                                           #define	ADON		ADCR0,0
+                                           
+                                           #define	VRES		ADCR1,3
+                                           #define	VRS0		ADCR1,0
+                                           ;#define	inca	addai 1
+                                           
+                                           
+                                           ;----timer0------------
+                                           
+                                           #define	TC2EN				T2CR,7
+                                           
+                                           
+                                           #define	T0PR_DIV1		0<<0
+                                           #define	T0PR_DIV2		1<<0
+                                           #define	T0PR_DIV4		2<<0
+                                           #define	T0PR_DIV8		3<<0
+                                           #define	T0PR_DIV16		4<<0
+                                           #define	T0PR_DIV32		5<<0
+                                           #define	T0PR_DIV64		6<<0
+                                           #define	T0PR_DIV128		7<<0
+                                           
+                                           #define	T0PTS_FCPU			0<<3
+                                           #define	T0PTS_FHOSC			1<<3
+                                           #define	T0PTS_FLOSC			2<<3
+                                           #define	T0PTS_INT0			3<<3
+                                           
+                                           
+                                           #define     RAM_first_size  0x80
+                                             
+                                           
+                                           
+                                           cblock  0x0
+                                               acc_temp            ;save the ACC value
+                                               status_temp             ;save the ACC status
+                                            work01
+                                            work02
+                                            work03 
+                                           
+                                           endc
+                                           
+                                                   org 0x00
+000000   a00f     goto    0xf                      goto    main
+                                           
+                                                   org 0x8
+                                           intport:
+000008   5600     movra   0                        movra   acc_temp            ;save the ACC status
+000009   4587     swapar  0x187                    swapar  STATUS              ;save the CPU status
+00000a   5601     movra   0x1                      movra   status_temp 
+                                           ;int_t0:
+                                           ;        jbset   T0IE
+                                           ;        goto    int_t1
+                                           ;        jbset   T0IF
+                                           ;        goto    int_t1
+                                           ;        bclr    T0IF
+                                           ;        ;---
+                                           ;
+                                           ;
+                                           ;int_t1:        
+                                           ;        jbset   T1IE
+                                           ;        goto    int_kbi
+                                           ;        jbset   T1IF
+                                           ;        goto    int_kbi
+                                           ;        bclr    T1IF
+                                           ;        ;---
+                                           ;        jbset   IOP1,3
+                                           ;        goto    set_p13_h
+                                           ;        bclr    IOP1,3
+                                           ;        goto    int_kbi
+                                           ;set_p13_h:        
+                                           ;        bset    IOP1,3         
+                                           ;
+                                           ;int_kbi:
+                                           ;        jbset   KBIE
+                                           ;        goto    int_int0
+                                           ;        jbset   KBIF
+                                           ;        goto    int_int0        
+                                           ;        bclr    KBIF    
+                                           ;        incr    work01
+                                           ;         
+                                           ;int_int0:
+                                           ;        jbset   INT0IE
+                                           ;        goto    int_int1
+                                           ;        jbset   INT0IF
+                                           ;        goto    int_int1
+                                           ;        bclr    INT0IF
+                                           ;        ;-----
+                                           ;
+                                           ; 
+                                           ;int_int1:
+                                           ;        jbset   INT1IE
+                                           ;        goto    end_int
+                                           ;        jbset   INT1IF
+                                           ;        goto    end_int
+                                           ;        bclr    INT1IF
+                                           ;        ;----        
+                                           ;        jbset   IOP1,2
+                                           ;        goto    set_p12_h
+                                           ;        bclr    IOP1,2
+                                           ;        goto    end_int
+                                           ;set_p12_h:        
+                                           ;        bset    IOP1,2        
+                                           end_int:        
+00000b   4401     swapar  0x1                      swapar  status_temp
+00000c   5787     movra   0x187                    movra   STATUS
+00000d   5800     movar   0                        movar   acc_temp
+00000e   000d     retie                            retie
+                                           
+                                           main:
+00000f   df88     bclr    0x188, 0x7               bclr    GIE
+000010   3caa     movai   0xaa                     movai   0xaa
+000011   5600     movra   0                        movra   0x00
+000012   803e     call    0x3e                     call    fn_ram_test
+                                                   
+                                                   ;rom reading funtion test
+000013   3cf0     movai   0xf0                     movai   0xf0
+000014   5784     movra   0x184                    movra   FSR0
+000015   3c03     movai   0x3                      movai   0x03
+000016   5785     movra   0x185                    movra   FSR1
+000017   5989     movar   0x189                    movar   INDF3
+000018   3a55     isubai  0x55                     isubai  0x55
+000019   e587     jbset   0x187, 0x2               jbset   Z
+00001a   a031     goto    0x31                     goto    flag_error
+00001b   6784     incr    0x184                    incr    FSR0
+00001c   5989     movar   0x189                    movar   INDF3
+00001d   3a44     isubai  0x44                     isubai  0x44
+00001e   e587     jbset   0x187, 0x2               jbset   Z
+00001f   a031     goto    0x31                     goto    flag_error        
+000020   6784     incr    0x184                    incr    FSR0
+000021   5989     movar   0x189                    movar   INDF3
+000022   3a56     isubai  0x56                     isubai  0x56
+000023   e587     jbset   0x187, 0x2               jbset   Z
+000024   a031     goto    0x31                     goto    flag_error
+                                                   ;PC test
+000025   7602     clrr    0x2                      clrr    work01
+                                           look_next_data:        
+000026   6602     incr    0x2                      incr    work01
+000027   5802     movar   0x2                      movar   work01
+000028   82fd     call    0x2fd                    call    pc_test_tab
+000029   4802     rsubar  0x2                      rsubar  work01
+00002a   e587     jbset   0x187, 0x2               jbset   Z
+00002b   a031     goto    0x31                     goto    flag_error
+00002c   5802     movar   0x2                      movar   work01
+00002d   3a04     isubai  0x4                      isubai  0x04
+00002e   e587     jbset   0x187, 0x2               jbset   Z
+00002f   a026     goto    0x26                     goto    look_next_data
+                                                   
+                                                   
+000030   a032     goto    0x32                     goto    funtion_initial
+                                           flag_error:
+000031   a031     goto    0x31                     goto    $        
+                                           funtion_initial:
+                                                   ;8 levers stack test
+000032   8058     call    0x58                     call    fun001
+                                                   
+000033   3c00     movai   0                        movai   0x00
+000034   5790     movra   0x190                    movra   IOP0
+000035   5794     movra   0x194                    movra   IOP1
+000036   5791     movra   0x191                    movra   OEP0
+000037   5795     movra   0x195                    movra   OEP1
+                                                   
+000038   3cff     movai   0xff                     movai   0xff
+000039   5792     movra   0x192                    movra   PUP0
+00003a   5796     movra   0x196                    movra   PUP1        
+                                           loop:
+                                                   ;incr    work01
+                                                   ;movar   work01
+                                                   ;movra   IOP1
+                                                   ;movra   IOP0
+00003b   5994     movar   0x194                    movar   IOP1
+00003c   5990     movar   0x190                    movar   IOP0
+                                                   
+00003d   a03b     goto    0x3b                     goto    loop        
+                                           
+                                           ;----------------------------------------------
+                                           ;       ram test
+                                           ;  write & read all ram 
+                                           ;
+                                           ;-----------------------------------------------        
+                                           fn_ram_test:
+                                           
+                                           ram_w:
+00003e   7784     clrr    0x184                    clrr     FSR0
+                                                   ;clrr    FSR1
+                                           #ifdef RAM_first_size        
+                                           ram_w_first:        
+00003f   6784     incr    0x184                    incr    FSR0        
+000040   5984     movar   0x184                    movar   FSR0
+000041   5780     movra   0x180                    movra   INDF0        
+000042   3a7f     isubai  0x7f                     isubai  RAM_first_size-1
+000043   e587     jbset   0x187, 0x2               jbset   Z
+000044   a03f     goto    0x3f                     goto    ram_w_first
+                                           #endif
+                                           #ifdef RAM_second_size        
+                                           ram_w_second: ;        0x100--0x1af
+                                                   incr    FSR1        
+                                                   movar   FSR1
+                                                   movra   INDF1        
+                                                   isubai  RAM_second_size-1
+                                                   jbset   Z
+                                                   goto    ram_w_second
+                                           #ENDIF
+                                           #ifdef  RAM_third_size        
+                                                   clrr    FSR0
+                                                   movai   0x02
+                                                   movra   FSR1
+                                           ram_w_thr:
+                                                   incr    FSR0    ;0x200--0x3ff
+                                                   movar   FSR0
+                                                   movra   INDF2        
+                                                   isubai  RAM_third_size-1
+                                                   jbset   Z
+                                                   goto    ram_w_thr
+                                                   incr    FSR1
+                                                   movar   FSR1
+                                                   isubai  0x04
+                                                   jbset   Z
+                                                   goto    ram_w_thr
+                                           #ENDIF        
+                                           ;check data
+                                           
+000045   7784     clrr    0x184                    clrr    FSR0
+                                           #ifdef  RAM_first_size        
+                                           ram_first_check:
+                                                   
+000046   6784     incr    0x184                    incr    FSR0
+000047   5980     movar   0x180                    movar   INDF0                
+000048   5984     movar   0x184                    movar   FSR0
+000049   4980     rsubar  0x180                    rsubar  INDF0
+00004a   e587     jbset   0x187, 0x2               jbset   Z ;if D_w==D_read
+00004b   a031     goto    0x31                     goto    flag_error
+00004c   5984     movar   0x184                    movar   FSR0        
+00004d   3a7f     isubai  0x7f                     isubai  RAM_first_size-1
+00004e   e587     jbset   0x187, 0x2               jbset   Z        
+00004f   a046     goto    0x46                     goto    ram_first_check
+                                           #ENDIF
+                                           #ifdef  RAM_second_size        
+                                                   ;0X100--0X1af
+                                                   clrr    FSR1
+                                           ram_check_second: ;        0x100--0x1af
+                                                   incr    FSR1        
+                                                   movar   FSR1
+                                                   
+                                                   rsubar   INDF1
+                                                   jbset   Z
+                                                   goto    flag_error
+                                                   movar   FSR1        
+                                                   isubai  0xaf
+                                                   jbset   Z
+                                                   goto    ram_check_second
+                                           #ENDIF
+                                           #ifdef  RAM_third_size        
+                                                   ;0x200--0x3ff
+                                                   clrr    FSR0
+                                                   movai   0x02
+                                                   movra   FSR1
+                                           ram_check_thr:
+                                                   incr    FSR0    ;0x200--0x3ff
+                                                   movar   FSR0
+                                                   rsubar   INDF2 
+                                                   jbset   Z
+                                                   goto    flag_error
+                                                   movar   FSR0
+                                                   isubai  0xff
+                                                   jbset   Z
+                                                   goto    ram_check_thr
+                                                   incr    FSR1
+                                                   movar   FSR1
+                                                   isubai  0x04
+                                                   jbset   Z
+                                                   goto    ram_check_thr        
+                                                   ;end ram_w
+                                           #endif                
+                                           ram_clr:
+000050   7784     clrr    0x184                    clrr     FSR0
+                                                   ;clrr    FSR1
+                                           #ifdef  RAM_first_size        
+                                           ram_clr_first:        
+000051   6784     incr    0x184                    incr    FSR0        
+000052   5984     movar   0x184                    movar   FSR0
+000053   7780     clrr    0x180                    clrr    INDF0        
+000054   3a7f     isubai  0x7f                     isubai  RAM_first_size-1
+000055   e587     jbset   0x187, 0x2               jbset   Z
+000056   a051     goto    0x51                     goto    ram_clr_first
+                                           #ENDIF
+                                           #ifdef  RAM_second_size        
+                                                   ;0X100--0X1af
+                                                   clrr    FSR1
+                                           ram_clr_second: ;        0x100--0x1af
+                                                   incr    FSR1        
+                                                   movar   FSR1
+                                                   clrr   INDF1        
+                                                   isubai  0xaf
+                                                   jbset   Z
+                                                   goto    ram_clr_second
+                                           #endif 
+                                           #ifdef  RAM_third_size                
+                                                   clrr    FSR0
+                                                   movai   0x02
+                                                   movra   FSR1
+                                           ram_clr_thr:
+                                                   incr    FSR0    ;0x200--0x3ff
+                                                   movar   FSR0
+                                                   clrr   INDF2        
+                                                   isubai  0xff
+                                                   jbset   Z
+                                                   goto    ram_clr_thr
+                                                   incr    FSR1
+                                                   movar   FSR1
+                                                   isubai  0x04
+                                                   jbset   Z
+                                                   goto    ram_clr_thr
+                                           #endif        
+                                           
+000057   000c     return                           return
+                                           
+                                           
+                                           fun001:
+000058   6602     incr    0x2                      incr    work01
+000059   805b     call    0x5b                     call    fun002
+00005a   000c     return                           return
+                                           fun002:
+00005b   6602     incr    0x2                      incr    work01
+00005c   805e     call    0x5e                     call    fun003
+00005d   000c     return                           return
+                                           fun003:
+00005e   6602     incr    0x2                      incr    work01
+00005f   8061     call    0x61                     call    fun004
+000060   000c     return                           return
+                                           fun004:
+000061   6602     incr    0x2                      incr    work01        
+000062   8064     call    0x64                     call    fun005
+000063   000c     return                           return
+                                           fun005:
+000064   6602     incr    0x2                      incr    work01
+000065   8067     call    0x67                     call    fun006
+000066   000c     return                           return
+                                           fun006:
+000067   6602     incr    0x2                      incr    work01
+000068   806a     call    0x6a                     call    fun007
+000069   000c     return                           return
+                                           fun007:
+00006a   6602     incr    0x2                      incr    work01
+00006b   806d     call    0x6d                     call    fun008
+00006c   000c     return                           return        
+                                           fun008:
+00006d   6602     incr    0x2                      incr    work01
+                                                   ;call    fun009 ; 
+00006e   000c     return                           return
+                                           fun009:
+00006f   6602     incr    0x2                      incr    work01
+000070   000c     return                           return       
+                                                   
+                                                   org 0x2fd
+                                           pc_test_tab:        
+0002fd   7f86     addra   0x186                    addra   PCL
+0002fe   3b00     retai   0                        retai   0x00
+0002ff   3b01     retai   0x1                      retai   0x01
+000300   3b02     retai   0x2                      retai   0x02
+000301   3b03     retai   0x3                      retai   0x03
+000302   3b04     retai   0x4                      retai   0x04
+                                                   
+                                                   org 0x3f0
+0003f0   aa55     goto    0xa55                    dw 0xaa55,0x3344,0x1256,0x7890        
+0003f1   3344     dw      0x3344           
+0003f2   1256     adcra   0x56             
+0003f3   7890     andar   0x90             
+                                           
+                                                   end        
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XX-------------- XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XX-------------- ----------------
+05C0 : ---------------- ---------------- ---------------- ----------XXXXXX
+0600 : XXXXXX---------- ---------------- ---------------- ----------------
+07C0 : ---------------- ---------------- XXXXXXXX-------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   116
+

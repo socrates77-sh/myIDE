@@ -1,0 +1,26 @@
+gplink-1.7.0_beta1 (Aug  8 2014)
+Listing File Generated: 2014-8-11  18:08:21
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                           	org 0x00
+000000   1600     bclr    0, 0                      bclr	0,0
+000001   1440     bset    0, 0x1                    bset	0,1
+000002   1140     jbset   0, 0x5                    jbclr	0,1
+000003   1080     jbset   0, 0x2                    jbset	0,2
+                                                    
+                                                    
+                                                    end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXX-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:     4
+

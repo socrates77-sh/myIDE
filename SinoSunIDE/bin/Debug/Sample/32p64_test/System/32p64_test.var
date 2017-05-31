@@ -1,0 +1,142 @@
+
+ADCR0                              at 0x01EC  xxxx.x  0000 to 0000
+ADCR1                              at 0x01ED  xxxx.x  0000 to 0000
+ADIOS                              at 0x01ED  xxxx.x  0000 to 0000
+ADRH                               at 0x01EE  xxxx.x  0000 to 0000
+ADRL                               at 0x01EF  xxxx.x  0000 to 0000
+FSR0                               at 0x01B4  xxxx.x  0000 to 0000
+FSR1                               at 0x01B5  xxxx.x  0000 to 0000
+HIBYTE                             at 0x01B3  xxxx.x  0000 to 0000
+I2CADDR                            at 0x01F1  xxxx.x  0000 to 0000
+I2CCR                              at 0x01F0  xxxx.x  0000 to 0000
+I2CDATA                            at 0x01F2  xxxx.x  0000 to 0000
+INDF0                              at 0x01B0  xxxx.x  0000 to 0000
+INDF1                              at 0x01B1  xxxx.x  0000 to 0000
+INDF2                              at 0x01B2  xxxx.x  0000 to 0000
+INDF3                              at 0x01B9  xxxx.x  0000 to 0000
+INTE                               at 0x01BA  xxxx.x  0000 to 0000
+INTFLAG                            at 0x01BB  xxxx.x  0000 to 0000
+IOP0                               at 0x01C0  xxxx.x  0000 to 0000
+IOP1                               at 0x01C4  xxxx.x  0000 to 0000
+IOP2                               at 0x01C8  xxxx.x  0000 to 0000
+IOP3                               at 0x01CC  xxxx.x  0000 to 0000
+MCR                                at 0x01B8  xxxx.x  0000 to 0000
+OEP0                               at 0x01C1  xxxx.x  0000 to 0000
+OEP1                               at 0x01C5  xxxx.x  0000 to 0000
+OEP2                               at 0x01C9  xxxx.x  0000 to 0000
+OEP3                               at 0x01CD  xxxx.x  0000 to 0000
+OSCCAL0                            at 0x01FB  xxxx.x  0000 to 0000
+OSCCAL1                            at 0x01FC  xxxx.x  0000 to 0000
+OSCM                               at 0x01BC  xxxx.x  0000 to 0000
+PCL                                at 0x01B6  xxxx.x  0000 to 0000
+PFLAG                              at 0x01B7  xxxx.x  0000 to 0000
+PUP0                               at 0x01C2  xxxx.x  0000 to 0000
+PUP1                               at 0x01C6  xxxx.x  0000 to 0000
+PUP2                               at 0x01CA  xxxx.x  0000 to 0000
+PUP3                               at 0x01CE  xxxx.x  0000 to 0000
+T0CNT                              at 0x01D1  xxxx.x  0000 to 0000
+T0CR                               at 0x01D0  xxxx.x  0000 to 0000
+T0DATA                             at 0x01D3  xxxx.x  0000 to 0000
+T0LOAD                             at 0x01D2  xxxx.x  0000 to 0000
+T1CNT                              at 0x01D5  xxxx.x  0000 to 0000
+T1CR                               at 0x01D4  xxxx.x  0000 to 0000
+T1DATA                             at 0x01D7  xxxx.x  0000 to 0000
+T1LOAD                             at 0x01D6  xxxx.x  0000 to 0000
+T2CNTH                             at 0x01D9  xxxx.x  0000 to 0000
+T2CNTL                             at 0x01DA  xxxx.x  0000 to 0000
+T2CR                               at 0x01D8  xxxx.x  0000 to 0000
+T2LOADH                            at 0x01DB  xxxx.x  0000 to 0000
+T2LOADL                            at 0x01DC  xxxx.x  0000 to 0000
+TK0CNTH                            at 0x01E2  xxxx.x  0000 to 0000
+TK0CNTL                            at 0x01E3  xxxx.x  0000 to 0000
+TK0CRH                             at 0x01E0  xxxx.x  0000 to 0000
+TK0CRL                             at 0x01E1  xxxx.x  0000 to 0000
+TK1CNTH                            at 0x01E6  xxxx.x  0000 to 0000
+TK1CNTL                            at 0x01E7  xxxx.x  0000 to 0000
+TK1CRH                             at 0x01E4  xxxx.x  0000 to 0000
+TK1CRL                             at 0x01E5  xxxx.x  0000 to 0000
+TK2CNTH                            at 0x01EA  xxxx.x  0000 to 0000
+TK2CNTL                            at 0x01EB  xxxx.x  0000 to 0000
+TK2CRH                             at 0x01E8  xxxx.x  0000 to 0000
+TK2CRL                             at 0x01E9  xxxx.x  0000 to 0000
+__32P64                            at 0x0001  xxxx.x  0000 to 0000
+loop                               at 0x0003  xxxx.x  0000 to 0000
+start                              at 0x0000  xxxx.x  0000 to 0000
+#define         GIE             MCR,7
+#define         T0        MCR,5
+#define         PD              MCR,4
+#define         MINT1
+                      00076   
+#define         Z       PFLAG,2
+#define         DC      PFLAG,1
+#define         C       PFLAG,0 
+#define         ADIE    INTE,6
+#define         I2CIE   INTE,5
+#define         T2IE    INTE,4
+#define         INT1IE  INTE,3
+#define         INT0IE  INTE,2
+#define         T1IE    INTE,1
+#define         T0IE    INTE,0
+#define         TC0EN           T0CR,7
+#define         PWM0OUT         T0CR,6
+#define         BUZZ0OUT        T0CR,5
+#define         T0PS1           T0CR,4
+#define         T0PTS0          T0CR,3
+#define         T0PR2
+                      00101 
+#define         STBL    OSCM,5
+#define         STBH    OSCM,4
+#define         CLKS    OSCM,2
+#define         LFEN    OSCM,1
+#define         HFEN    OSCM,0          
+#define         TC1EN           T1CR,7
+#define         PWM1OUT         T1CR,6
+#define         BUZZ1OUT        T1CR,5
+#define         T1PS1           T1CR,4
+#define         T1PTS0          T1CR,3
+#define         ADIF    INTFLAG,6 
+#define         I2CIF   INTFLAG,5
+#define         T2IF    INTFLAG,4
+#define         INT1IF  INTFLAG,3
+#define         INT0IF  INTFLAG,2
+#define         T1IF    INTFLAG,1
+#define         T0IF    INTFLAG,0
+#define                 TC2EN                           T2CR,7
+#define                 T2MODE                  T2CR,6
+#define                                 TK0JE           TK0CRH,5
+#define                                 TK0RCE  TK0CRH,4
+#define                                 TK0CLR  TK0CRH,3
+#define                                 TK1JE           TK1CRH,5
+#define                                 TK1RCE  TK1CRH,4
+#define                                 TK1CLR  TK1CRH,3
+#define                                 TK2JE           TK2CRH,5
+#define                                 TK2RCE  TK2CRH,4
+#define                                 TK2CLR  TK2CRH,3
+#define                                 TK0IF           TK0CRL,7
+#define                                 TK0IE           TK0CRL,6
+#define                                 TK1IF           TK1CRL,7
+#define                                 TK1IE           TK1CRL,6
+#define                                 TK2IF           TK2CRL,7
+#define                                 TK2IE           TK2CRL,6
+#define         ADEOC   ADCR0,1
+#define         ADON    ADCR0,0      
+#define                 HCF                     I2CCR,7 
+#define                 HAAS            I2CCR,6      
+#define                 HBB                     I2CCR,5                         
+#define                 HTX                     I2CCR,4
+#define                 TXAK            I2CCR,3
+#define                 SRW                     I2CCR,2
+#define                 HEN                     I2CCR,1
+#define                 RXAK            I2CCR,0
+#define         AD0     0X00
+#define         AD1     0X10
+#define         AD2     0X20
+#define         AD3     0X30
+#define         AD4     0X40
+#define         AD5     0X50
+#define         AD6     0X60
+#define         AD7     0X70
+#define         LDO     0X80
+#define         AD_VDD          0XD0
+#define         AD_VDD_4DIV     0XE0
+#define         AD_VDD_2DIV     0XF0

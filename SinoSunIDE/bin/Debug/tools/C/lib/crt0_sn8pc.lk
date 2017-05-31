@@ -1,0 +1,6 @@
+//;;;;; This file defines basic SNCC runtime variables and bootup code.
+locate: _SGV_INIT_CODE_BEGIN at 0xa
+locate: _SGV_INIT_CODE after _SGV_INIT_CODE_BEGIN //at 0xa 	// after crt0@code 
+locate: _SGV_INIT_CODE_END after _SGV_INIT_CODE
+
+//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

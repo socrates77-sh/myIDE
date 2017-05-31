@@ -1,0 +1,238 @@
+gpasm-1.4.0 (Sep 22 2013)    readtest.asm       2013-10-23  13:29:41         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 #include "mc33p78.inc"
+                      00001 
+                      00002 ;mc33p78 header file
+                      00003 ;define must write at first row
+                      00004        
+  000001B0            00005 INDF0   EQU     H'01B0'
+  000001B1            00006 INDF1   EQU     H'01B1'
+  000001B2            00007 INDF2   EQU     H'01B2'
+  000001B3            00008 HIBYTE  EQU     H'01B3'
+  000001B4            00009 FSR0    EQU     H'01B4'
+  000001B5            00010 FSR1    EQU     0X1B5
+  000001B6            00011 PCL     EQU     0X1B6
+  000001B7            00012 PFLAG   EQU    0X1B7
+  000001B7            00013 STATUS  EQU     0X1B7
+  000001B8            00014 MCR     EQU     0X1B8
+  000001B9            00015 INDF3   EQU    0X1B9   
+  000001BA            00016 INTE    EQU     0X1BA
+  000001BB            00017 INTF    EQU     0X1BB
+  000001BC            00018 OSCM    EQU     0X1BC
+                      00019 ;IOP0    EQU     0X1C0
+                      00020 ;OEP0    EQU     0X1C1
+                      00021 ;PUP0    EQU     0X1C2
+                      00022 ;IOP1    EQU     0X1C4
+                      00023 ;OEP1    EQU     0X1C5
+                      00024 ;PUP1    EQU     0X1C6
+  000001C8            00025 IOP1    EQU     0X1C8
+  000001C9            00026 OEP1    EQU     0X1C9
+  000001CA            00027 PUP1    EQU     0X1CA
+                      00028 
+  000001CE            00029 DKWP1    EQU     0X1CE
+                      00030 
+  000001D0            00031 IOP2    EQU     0X1D0
+  000001D1            00032 OEP2    EQU     0X1D1
+  000001D2            00033 PUP2    EQU     0X1D2
+                      00034 ;T0DATA  EQU     0X1D3
+                      00035 ;T1CR    EQU     0X1D4
+                      00036 ;T1CNT   EQU     0X1D5
+  000001D6            00037 DKWP2   EQU     0X1D6
+  000001D7            00038 KBCR    EQU     0X1D7
+  000001D8            00039 T0CR    EQU     0X1D8
+  000001D9            00040 T0LOADH EQU     0X1D9
+  000001DA            00041 T0LOADL  EQU     0X1DA
+  000001DB            00042 T0LATFL   EQU     0X1DB
+  000001DC            00043 T0LATFH EQU     0X1DC
+                      00044 
+  000001DD            00045 T0LATRL  EQU     0X1DD
+  000001DE            00046 T0LATRH  EQU     0X1DE
+                      00047 
+  000001E0            00048 T1CR    EQU     0X1E0
+  000001E1            00049 T1DATA  EQU     0X1E1
+  000001E2            00050 T1LOAD  EQU     0X1E2
+                      00051 
+  000001E4            00052 OPCR0   EQU     0X1E4
+  000001E5            00053 OPCR1   EQU     0X1E5
+  000001E6            00054 DKW0    EQU     0X1E6
+  000001E7            00055 DKW1    EQU     0X1E7
+                      00056 
+                      00057 ;pflag bit 
+                      00058 #define         Z       PFLAG,2
+                      00059 #define         DC      PFLAG,1
+                      00060 #define         C       PFLAG,0 
+                      00061 
+                      00062 ;MCR
+                      00063 #define         GIE     MCR,7
+                      00064 #DEFINE         TO      MCR,5
+                      00065 #DEFINE         PD      MCR,4
+                      00066 #DEFINE         MINT11  MCR,3
+                      00067 
+                      00068 
+                      00069 ;INTE
+                      00070 #define         KBIE    INTE,7
+                      00071 #DEFINE         INT1IE  INTE,3
+                      00072 #DEFINE         INT0IE  INTE,2
+                      00073 #DEFINE         T1IE    INTE,1
+                      00074 #define         T0IE    INTE,0
+                      00075 
+                      00076 ;INTF
+                      00077 #DEFINE         KBIF    INTF,7
+                      00078 #DEFINE         T0RF    INTF,6
+                      00079 #DEFINE         INT1IF  INTF,3
+                      00080 #DEFINE         INT0IF  INTF,2
+                      00081 #DEFINE         T1IF    INTF,1
+                      00082 #DEFINE         T0IF    INTF,0
+                      00083 
+                      00084 ;DKW0
+                      00085 #DEFINE         DKWE    DKW0,7
+                      00086 #DEFINE         IROS    DKW0,6
+                      00087 #DEFINE         IROT    DKW0,5         
+                      00088 #DEFINE         WSEL0   DKW0,4
+                      00089 #DEFINE         WSEL1   DKW0,3
+                      00090 #DEFINE         RSEL    DKW0,2
+                      00091 #DEFINE         ISEL1   DKW0,1
+                      00092 #define         ISEL0   DKW0,0 
+                      00093 
+                      00094 #define                                 HFEN            OSCM,0
+                      00095 #define                                 LFEN            OSCM,1
+                      00096 #define                                 CLKS            OSCM,2
+                      00097 #define                                 STBH            OSCM,4
+                      00098 #DEFINE                                 STBL            OSCM,5
+                      00099 
+                      00100 ;T0CR
+                      00101 #DEFINE         TC0EN   T0CR,7
+                      00102 ;#DEFINE  
+                      00103 
+                      00104 ;T1CR
+                      00105 #DEFINE         TC1EN   T1CR,7
+                      00106          
+                      00107     
+                      00108 
+                      00109 
+                      00004 
+                      00005     org     0x00
+0000   A000           00006     goto    main
+                      00007     
+                      00008     
+                      00009     
+0001                  00010 main:
+0001   0000           00011         nop
+0002   3CAA           00012         movai   0xaa;
+0003                  00013 ram_w:
+0003   77B4           00014         clrr     FSR0
+                      00015         ;clrr    FSR1
+0004                  00016 ram_w_first:        
+0004   67B4           00017         incr    FSR0        
+0005   59B4           00018         movar   FSR0
+0006   57B0           00019         movra   INDF0        
+0007   3AFF           00020         isubai  0xff
+0008   E5B7           00021         jbset   Z
+0009   A000           00022         goto    ram_w_first
+000A                  00023 ram_clr:
+000A   77B4           00024         clrr     FSR0
+                      00025         ;clrr    FSR1
+000B                  00026 ram_clr_first:        
+000B   67B4           00027         incr    FSR0        
+000C   59B4           00028         movar   FSR0
+000D   77B0           00029         clrr   INDF0        
+000E   3AFF           00030         isubai  0xff
+000F   E5B7           00031         jbset   Z
+0010   A000           00032         goto    ram_clr_first        
+                      00033         
+0011   A000           00034         goto    main
+                      00035     end   
+gpasm-1.4.0 (Sep 22 2013)    readtest.asm       2013-10-23  13:29:41         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+DKW0                              000001E6
+DKW1                              000001E7
+DKWP1                             000001CE
+DKWP2                             000001D6
+FSR0                              000001B4
+FSR1                              000001B5
+HIBYTE                            000001B3
+INDF0                             000001B0
+INDF1                             000001B1
+INDF2                             000001B2
+INDF3                             000001B9
+INTE                              000001BA
+INTF                              000001BB
+IOP1                              000001C8
+IOP2                              000001D0
+KBCR                              000001D7
+MCR                               000001B8
+OEP1                              000001C9
+OEP2                              000001D1
+OPCR0                             000001E4
+OPCR1                             000001E5
+OSCM                              000001BC
+PCL                               000001B6
+PFLAG                             000001B7
+PUP1                              000001CA
+PUP2                              000001D2
+STATUS                            000001B7
+T0CR                              000001D8
+T0LATFH                           000001DC
+T0LATFL                           000001DB
+T0LATRH                           000001DE
+T0LATRL                           000001DD
+T0LOADH                           000001D9
+T0LOADL                           000001DA
+T1CR                              000001E0
+T1DATA                            000001E1
+T1LOAD                            000001E2
+__32P21                           00000001
+main                              00000001
+ram_clr                           0000000A
+ram_clr_first                     0000000B
+ram_w                             00000003
+ram_w_first                       00000004
+C                                 PFLAG,0
+CLKS                              OSCM,2
+DC                                PFLAG,1
+DKWE                              DKW0,7
+GIE                               MCR,7
+HFEN                              OSCM,0
+INT0IE                            INTE,2
+INT0IF                            INTF,2
+INT1IE                            INTE,3
+INT1IF                            INTF,3
+IROS                              DKW0,6
+IROT                              DKW0,5
+ISEL0                             DKW0,0
+ISEL1                             DKW0,1
+KBIE                              INTE,7
+KBIF                              INTF,7
+LFEN                              OSCM,1
+MINT11                            MCR,3
+PD                                MCR,4
+RSEL                              DKW0,2
+STBH                              OSCM,4
+STBL                              OSCM,5
+T0IE                              INTE,0
+T0IF                              INTF,0
+T0RF                              INTF,6
+T1IE                              INTE,1
+T1IF                              INTF,1
+TC0EN                             T0CR,7
+TC1EN                             T1CR,7
+TO                                MCR,5
+WSEL0                             DKW0,4
+WSEL1                             DKW0,3
+Z                                 PFLAG,2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

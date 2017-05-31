@@ -1,0 +1,169 @@
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\WorkDir\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\temp\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\temp\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+F:\Emulator\IDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_mo\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_1125\SinoSunIDE_mo\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1128\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1230\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_1230_2\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0315\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0320\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0322\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0411\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0417\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0418\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0425\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0428\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.csproj.GenerateResource.Cache
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+D:\lyl\SinoSunIDE\SinoSunIDE_0515\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.dll
+E:\tools\SinoSunIDE\SinoSunIDE\bin\Debug\SinoSunIDE.Languages.pdb
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResolveAssemblyReference.cache
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.Chinese (Simplified).resources
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.English (United States).resources
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResGen.read.1.tlog
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\ResGen.write.1.tlog
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.dll
+E:\tools\SinoSunIDE\SinoSunIDE.Languages\obj\Debug\SinoSunIDE.Languages.pdb

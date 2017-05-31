@@ -1,0 +1,1529 @@
+gpasm-0.8.0 (Dec  5 2012)    mc30p01a.asm       2012-12-7  16:56:03          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #include mc32p21a.inc
+                      00001         ;LIST
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00003         ;NOLIST
+                      00004 
+                      00005 
+                      00006 ;==========================================================================
+                      00007 ;
+                      00008 ;       Revision History
+                      00009 ;
+                      00010 ;==========================================================================
+                      00011 
+                      00012 ;Rev:   Date:    Reason:
+                      00013 
+                      00014 ;1.00   12/06/21 Initial Release
+                      00015 
+                      00016 ;==========================================================================
+                      00017 ;
+                      00018 ;       Verify Processor
+                      00019 ;
+                      00020 ;==========================================================================
+                      00021 
+                      00022         IFNDEF __30P44
+Message[301]: Processor-header file mismatch.  Verify selected processor.
+                      00023            MESSG "Processor-header file mismatch.  Verify selected processor."
+                      00024         ENDIF
+                      00025 
+                      00026 ;==========================================================================
+                      00027 ;
+                      00028 ;       Register Definitions
+                      00029 ;
+                      00030 ;==========================================================================
+                      00031 
+                      00032 ;W                            EQU     H'0000'
+                      00033 ;F                            EQU     H'0001'
+                      00034 
+                      00035 ;----- Register Files------------------------------------------------------
+                      00036 cblock  0x180
+                      00037 INDF0                   
+                      00038 INDF1                   
+                      00039 INDF2                   
+                      00040 HIBYTE                  
+                      00041 FSR0                    
+                      00042 FSR1                    
+                      00043 PCL                     
+                      00044 PFALG                   
+                      00045 ;----0x188
+                      00046 MCR                     
+                      00047 INDF3                   
+                      00048 INTE0                   
+                      00049 INTF0                   
+                      00050 INVALID_ADDR0           
+                      00051 INVALID_ADDR1           
+                      00052 INVALID_ADDR2           
+                      00053 INVALID_ADDR3           
+                      00054 ;----0x190
+                      00055 P0                      
+                      00056 DDR0                    
+                      00057 PUP0           
+                      00058 ANSEL
+                      00059 P1                      
+                      00060 DDR1                    
+                      00061 PUP1                    
+                      00062 KBIM           
+                      00063 ;-----0x198                        
+                      00064 INVALID_ADDR5                      
+                      00065 INVALID_ADDR6                    
+                      00066 INVALID_ADDR7           
+                      00067 INVALID_ADDR8           
+                      00068 INVALID_ADDR9           
+                      00069 INVALID_ADDRA           
+                      00070 INVALID_ADDRB           
+                      00071 INVALID_ADDRC           
+                      00072 ;-----0x1a0
+                      00073 T0CR                    
+                      00074 T0CNT                   
+                      00075 T0LOAD                  
+                      00076 T0DATA                  
+                      00077 T1CR                    
+                      00078 T1CNT                   
+                      00079 T1LOAD                  
+                      00080 T1DATA                  
+                      00081 ;-----0x1a8                        
+                      00082 UCR                     
+                      00083 UBR                     
+                      00084 UFR                     
+                      00085 UTR                     
+                      00086 URR                     
+                      00087 LVDCR                   
+                      00088 OSCM                    
+                      00089 POWCR                   
+                      00090 ;-----0x1b0
+                      00091 ADCR0                   
+                      00092 ADCR1                   
+                      00093 ADCR2                   
+                      00094 ADCR3                   
+                      00095 ADRH                    
+                      00096 ADRM                    
+                      00097 ADRL                    
+                      00098 INVALID_ADDRD           
+                      00099 ;----0x1b8                        
+                      00100 LCDCR0                  
+                      00101 LCDCR1                  
+                      00102 LCDIOS                  
+                      00103 INVALID_ADDRE           
+                      00104 INVALID_ADDRF           
+                      00105 INVALID_ADDR10          
+                      00106 INVALID_ADDR11          
+                      00107 INVALID_ADDR12          
+                      00108 ;----0x1c0
+                      00109 LCDDS0                  
+                      00110 LCDDS1                  
+                      00111 LCDDS2                  
+                      00112 LCDDS3                  
+                      00113 LCDDS4                  
+                      00114 LCDDS5                  
+                      00115 LCDDS6                  
+                      00116 LCDDS7                  
+                      00117 ;----0x1c8                        
+                      00118 LCDDS8                  
+                      00119 LCDDS9                  
+                      00120 LCDDSa                  
+                      00121 LCDDSb                  
+                      00122 LCDDSc                  
+                      00123 LCDDSd                  
+                      00124 LCDDSe                  
+                      00125 LCDDSf                  
+                      00126 endc
+  000001F3            00127 OSCCAL          equ     0x1f3
+                      00128 
+                      00129 #define         STATUS          PFALG
+                      00130 #define         INDF            INDF0
+                      00131 #define         FSR             FSR0
+                      00132 #define         P0HCON          PUP0
+                      00133 #define         P1HCON          PUP1
+                      00134 #define         INTECON         INTE0
+                      00135 #define         INTEFLAG        INTF0   
+                      00136 #define         LCDDS10         LCDDSa
+                      00137 #define         LCDDS11         LCDDSb
+                      00138 #define         LCDDS12         LCDDSc
+                      00139 #define         LCDDS13         LCDDSc
+                      00140 #define         LCDDS14         LCDDSe
+                      00141 #define         LCDDS15         LCDDSf
+                      00142 
+                      00143 ;----- STATUS Bits --------------------------
+                      00144 #define Z       STATUS,2
+                      00145 #define DC      STATUS,1
+                      00146 #define C       STATUS,0
+                      00147 
+                      00148 ;----- MCR Bits --------------------------
+                      00149 #define GIE     MCR,7
+                      00150 
+                      00151 ;-----  P2HCON Bits -----------------------
+                      00152 #define P20PH   P2HCON,0
+                      00153 #define P21PH   P2HCON,1
+                      00154 #define P22PH   P2HCON,2
+                      00155 #define P23PH   P2HCON,3
+                      00156 #define P24PH   P2HCON,4
+                      00157 #define P25PH   P2HCON,5
+                      00158 #define P26PH   P2HCON,6
+                      00159 #define P27PH   P2HCON,7
+                      00160 ;----- INTECON Bits --------------------------
+                      00161 #define INTE    INTECON
+                      00162 #define ADIE    INTECON,6
+                      00163 #define KBIE    INTECON,4
+                      00164 #define INT1IE  INTECON,3
+                      00165 #define INT0IE  INTECON,2
+                      00166 #define T1IE    INTECON,1
+                      00167 #define T0IE    INTECON,0
+                      00168 
+                      00169 ;----- INTEFLAG Bits --------------------------
+                      00170 #define INTF    INTEFLAG
+                      00171 #define ADIF    INTF,6
+                      00172 #define KBIF    INTF,4
+                      00173 #define INT1IF  INTF,3
+                      00174 #define INT0IF  INTF,2
+                      00175 #define T1IF    INTF,1
+                      00176 #define T0IF    INTF,0
+                      00177 ;----- UCR Bits--------------------------
+                      00178 #define OPEN    UCR,4
+                      00179 #define EPEN    UCR,3
+                      00180 #define UARTEN  UCR,2
+                      00181 ;----- UFR ----------------------
+                      00182 #define FREF    UFR,7
+                      00183 #define PAEF    UFR,6
+                      00184 #define OVEF    UFR,5
+                      00185 #define TSEF    UFR,4
+                      00186 #define RDAF    UFR,1
+                      00187 #define TREF    UFR,0
+                      00188 ;---- ADCR0 Bits -----------------
+                      00189 #define    ADCKS_16     0<<1    ;Fcpu/16
+                      00190 #define    ADCKS_8      1<<1    ;Fcpu/8
+                      00191 #define    ADCKS_4      2<<1    ;Fcpu/4
+                      00192 #define    ADCKS_2      2<<1    ;Fcpu/2
+                      00193 #define    ADCHS_0      0<<4    ;AN0
+                      00194 #define    ADCHS_1      1<<4    ;AN1
+                      00195 #define    ADCHS_2      2<<4    ;AN2
+                      00196 #define    ADCHS_3      3<<4    ;AN3
+                      00197 #define    ADCHS_4      4<<4    ;AN4
+                      00198 #define    ADCHS_5      5<<4    ;AN5
+                      00199 #define    ADCHS_6      6<<4    ;AN6
+                      00200 #define ADEN    ADCR0,0
+                      00201 #define ADEOC   ADCR0,3
+                      00202 ;---- ADCR1 Bits -----------------
+                      00203 #define    ADV_ADD      3       ;VDD
+                      00204 #define    ADV_4V       2       ;4V
+                      00205 #define    ADV_3V       1       ;3V
+                      00206 #define    ADV_2V       0       ;2V
+                      00207 #define    ADV_EX       4       ;外部参考电压
+                      00208 ;----- LCDCR0 Bits --------------------------
+                      00209 #define LCDEN   LCDCR0,7
+                      00210 #define VLCDS   LCDCR0,3
+                      00211 ;----- T0CR  Bits ----------------
+                      00212 #define TC0EN   T0CR,7
+                      00213 #define PWM0OUT T0CR,6
+                      00214 #define BUZ0OUT T0CR,5
+                      00215 
+                      00216 ;----- T1CR  Bits ----------------
+                      00217 #define TC1EN   T1CR,7
+                      00218 #define PWM1OUT T1CR,6
+                      00219 #define BUZ1OUT T1CR,5
+                      00220 
+                      00221 ;----- OSCM  Bits ----------------
+                      00222 #define STBL    OSCM,5
+                      00223 #define STBH    OSCM,4
+                      00224 #define CLKS    OSCM,2
+                      00225 #define LFEN    OSCM,1
+                      00226 #define HFEN    OSCM,0
+                      00227 
+                      00228 ;-----  POWCR Bits -------
+                      00229 #define LDOEN   POWCR,7
+                      00230 #define ENB     POWCR,6
+                      00231 ;-----  LVDCR Bits -------
+                      00232 #define LVD     PLVDCR,7
+                      00233 #define LVDS    PLVDCR,6
+                      00234 ;***********DDR1 DDR2 **********
+                      00235 #define DDR10   DDR1,0
+                      00236 #define DDR11   DDR1,1
+                      00237 #define DDR12   DDR1,2
+                      00238 #define DDR13   DDR1,3
+                      00239 
+                      00240 #define DDR20   DDR2,0
+                      00241 #define DDR21   DDR2,1
+                      00242 #define DDR22   DDR2,2
+                      00243 #define DDR23   DDR2,3
+                      00244 #define DDR24   DDR2,4
+                      00245 #define DDR25   DDR2,5
+                      00246 #define DDR26   DDR2,6
+                      00247 #define DDR27   DDR2,7
+                      00248 ;******************************
+                      00249 
+                      00250 
+                      00251 ;#define        inca    addai 1
+                      00002 #define  coma   xorai   0xff
+                      00003 
+                      00004 ;*************ram****************
+                      00005 cblock    0x0
+                      00006 r0
+                      00007 r1
+                      00008 r2
+                      00009 r3
+                      00010 r4
+                      00011 r5
+                      00012 r6
+                      00013 r7
+                      00014 r8
+                      00015 acc_temp
+                      00016 status_temp
+                      00017 work_flag1
+                      00018 work_flag2
+                      00019 error_flag
+                      00020 
+                      00021 time_125us
+                      00022 time_1ms
+                      00023 time_10ms
+                      00024 time_100ms
+                      00025 time_1s
+                      00026 time_1min
+                      00027 time_1hour
+                      00028 
+                      00029 work_time
+                      00030 funtion_valu
+                      00031 
+                      00032 dis_buffer0
+                      00033 dis_buffer1
+                      00034 dis_buffer2
+                      00035 dis_buffer3
+                      00036 tm_data0
+                      00037 tm_data1
+                      00038 tm_data2
+                      00039 tm_data3
+                      00040 tm_data4
+                      00041 tm_data5
+                      00042 tm_data6
+                      00043 tm_data7
+                      00044 key_data_buffer0
+                      00045 key_data_buffer1
+                      00046 key_data_buffer2
+                      00047 key_data_buffer3
+                      00048 key_data_buffer4
+                      00049 test_io
+                      00050 endc
+                      00051 
+                      00052 ;***********************
+                      00053 #define R0 r0
+                      00054 
+                      00055 #define    RAM_COUNT    127    ;48个RAM
+                      00056 #define    FIR_RAM_ADDR    0x01    ;RAM首地址
+                      00057 ;#undefine  INDF
+                      00058 ;#define    INDF                INDF3
+                      00059 #define    MAX_DIS_DATA    18
+                      00060 
+                      00061 #define    RAM_E    0x00        ;RAM错误报E0
+                      00062 
+                      00063 #define    TF_FCPU      (0<<3)  ;使用CPU频率
+                      00064 #define    TF_FHOSC     (1<<3)  ;使用内部16M
+                      00065 #define    TF_FLOSC     (2<<3)  ;使用内部28K
+                      00066 #define    TF_INT       (3<<3)  ;使用INT0输入
+                      00067 #define    TR_1         0       ;1分频
+                      00068 #define    TR_2         1       ;2分频
+                      00069 #define    TR_4         2       ;4分频
+                      00070 #define    TR_8         3       ;8分频
+                      00071 #define    TR_16        4       ;16分频
+                      00072 #define    TR_32        5       ;32分频
+                      00073 #define    TR_64        6       ;64分频
+                      00074 #define    TR_128       7       ;128分频
+                      00075 
+                      00076 
+                      00077 #define    IO_TM1628_STB    P0,4
+                      00078 #define    IO_TM1628_CLK    P1,4
+                      00079 #define    IO_TM1628_DATA    P1,5
+                      00080 #define    IO_TM1628_DDR    DDR1,5
+                      00081 ;***************end ram*************
+                      00082 #define    dis_buffer4    tm_data4
+                      00083 #define    dis_buffer5    tm_data5
+                      00084 #define    dis_buffer6    tm_data6
+                      00085 #define    dis_buffer7    tm_data7
+                      00086 #define    disp0_point    tm_data0,4
+                      00087 #define    disp1_point    tm_data1,4
+                      00088 #define    disp2_point    tm_data2,4
+                      00089 #define    disp3_point    tm_data3,4
+                      00090 #define    key_data1    key_data_buffer0,0    ;k1
+                      00091 #define    key_data2    key_data_buffer0,3    ;k2
+                      00092 #define    key_data3    key_data_buffer3,0    ;k3
+                      00093 
+                      00094 #define flag_time_10ms         work_flag1,0
+                      00095 #define flag_key1_effect    work_flag1,1
+                      00096 #define flag_key2_effect    work_flag1,2
+                      00097 #define flag_key3_effect    work_flag1,3
+                      00098 #define flag_key1_effect_bak    work_flag1,4
+                      00099 #define flag_key2_effect_bak    work_flag1,5
+                      00100 #define flag_key3_effect_bak    work_flag1,6
+                      00101 #define flag_test_timer0    work_flag1,7
+                      00102 
+                      00103 #define    flag_disp0_point    work_flag2,0
+                      00104 #define    flag_disp1_point    work_flag2,1
+                      00105 #define    flag_disp2_point    work_flag2,2
+                      00106 #define    flag_disp3_point    work_flag2,3
+                      00107     org     0x3ff        ;复位向量
+03FF   DF88           00108     bclr    GIE    ;关中断
+                      00109     org     0x00
+                      00110 
+                      00111 
+0000   A000           00112     goto    start
+                      00113 
+                      00114     ORG 0x08        ;其它中断向量
+0008                  00115 interrupt_sub:
+0008   5609           00116     movra    acc_temp
+0009   4587           00117     swapar    STATUS
+000A   560A           00118     movra    status_temp
+                      00119 ;*******判断是哪个中断*****
+000B                  00120 start_just_int:
+000B   F18A           00121     jbclr    T0IE
+000C   E18B           00122     jbset    T0IF
+000D   A000           00123     goto    just_t1
+                      00124 ;**********timer0**********
+000E   D18B           00125     bclr    T0IF
+                      00126 
+000F   D595           00127     bclr        DDR1,2
+                      00128 ;    incr    time_125us
+                      00129 ;    jbset    time_125us,3
+                      00130 ;    goto       end_time0_interrupt
+                      00131 ;
+                      00132 ;    clrr    time_125us
+                      00133 ;    incr    time_1ms
+                      00134 ;    movar    time_1ms
+                      00135 ;    asubai    10        ;time_1ms-10
+                      00136 ;    jbset    C
+                      00137 ;    goto    end_time0_interrupt
+                      00138 ;    clrr    time_1ms
+                      00139 ;    bset    flag_time_10ms
+0010                  00140 end_time0_interrupt:
+                      00141 ;**********end_time0*******
+0010                  00142 just_t1:
+0010   F38A           00143     jbclr    T1IE
+0011   E38B           00144     jbset    T1IF
+0012   A000           00145     goto    just_int0
+                      00146 ;*********timer1***********
+0013   D38B           00147     bclr    T1IF
+0014   660E           00148     incr    time_125us
+0015   E60E           00149     jbset    time_125us,3
+0016   A000           00150     goto        end_time1_interrupt
+                      00151 
+0017   760E           00152     clrr    time_125us
+0018   660F           00153     incr    time_1ms
+0019   580F           00154     movar    time_1ms
+001A   350A           00155     asubai    10        ;time_1ms-10
+001B   E187           00156     jbset    C
+001C   A000           00157     goto    end_time1_interrupt
+001D   760F           00158     clrr    time_1ms
+001E   C00B           00159     bset    flag_time_10ms
+                      00160    ; movra   P0
+                      00161    ; movra   P1    
+                      00162 ;    incr    test_io
+                      00163 ;    movar   test_io
+                      00164 ;    movra   P3
+                      00165     ;comr   P3
+001F                  00166 end_time1_interrupt:
+                      00167 ;**********end_timer1******
+001F                  00168 just_int0:
+001F   F58A           00169     jbclr    INT0IE
+0020   E58B           00170     jbset    INT0IF
+0021   A000           00171     goto     just_int1
+                      00172 ;**********int0************
+0022   D58B           00173     bclr    INT0IF
+0023   7394           00174     comr        P1
+                      00175 ;*********end int0*********
+0024                  00176 just_int1:
+0024   F78A           00177     jbclr    INT1IE
+0025   E78B           00178     jbset    INT1IF
+0026   A000           00179     goto     just_adc
+                      00180 ;**********int0************
+0027   D78B           00181     bclr    INT1IF
+0028   7390           00182     comr        P0
+                      00183 ;*********end int1*********
+0029                  00184 just_adc:
+0029   FD8A           00185      jbclr      ADIE
+002A   ED8B           00186      jbset      ADIF
+002B   A000           00187      goto       just_kbim
+                      00188 ;***********adc ***********
+002C   DD8B           00189      bclr       ADIF
+                      00190 ;***********end adc********
+002D                  00191 just_kbim:
+002D   F98A           00192     jbclr    KBIE
+002E   E98B           00193     jbset    KBIF
+002F   A000           00194     goto    end_just_int
+                      00195 ;**********kbim************
+0030   D98B           00196     bclr    KBIF
+0031   7390           00197     comr        P0
+0032   6618           00198     incr    dis_buffer1
+                      00199 ;**********end_kbim********
+0033                  00200 end_just_int:
+0033                  00201 exit_interrupt:
+0033   440A           00202     swapar    status_temp
+0034   5787           00203     movra    STATUS
+0035   4609           00204     swapr    acc_temp
+0036   4409           00205     swapar    acc_temp
+0037   000D           00206     retie
+                      00207 
+                      00208 
+                      00209 ;*******程序开始*************
+                      00210 ;*********start***************
+                      00211 
+0038                  00212 start:
+                      00213     ;movai    0x01;high test_table
+0038   3C00           00214     movai           high test_table
+0039   5785           00215     movra    FSR1
+                      00216     ;movai    0x07;low  test_table
+003A   3C00           00217     movai             low       test_table
+003B   5784           00218     movra    FSR0
+003C   5989           00219     movar    INDF3
+003D   5982           00220     movar    INDF2
+003E   5981           00221     movar    INDF1
+003F   6784           00222     incr     FSR0
+0040   5989           00223     movar    INDF3
+0041   0000           00224     nop
+0042   0000           00225     nop
+                      00226 ;    bclr    WDTEN        ;关看门狗
+                      00227   ;  bclr    EIS
+                      00228 
+0043   3C01           00229     movai    low FIR_RAM_ADDR
+0044   5784           00230     movra    FSR        ;首地址
+0045   3C00           00231     movai    high FIR_RAM_ADDR
+0046   5785           00232     movra    FSR1
+0047   3C7F           00233     movai    RAM_COUNT
+0048   5600           00234     movra    R0
+0049                  00235 clr_ram_loop:
+0049   3CFF           00236     movai    0xff
+004A   5780           00237     movra    INDF        ;把FF写到FSR所指的地址
+004B   0000           00238     nop
+004C   5980           00239     movar    INDF        ;写完后读出来
+004D   3AFF           00240     isubai    0xff
+004E   E587           00241     jbset    Z        ;读出来后如果是FF，相减后为0，Z为1
+004F   A000           00242     goto    ram_error    ;先写FF
+                      00243 
+0050   6780           00244     incr    INDF
+0051   5980           00245     movar    INDF        ;0xff+1后为0
+0052   E587           00246     jbset    Z
+0053   A000           00247     goto    ram_error    ;若不为0则是出错
+                      00248 
+0054   6784           00249     incr    FSR        ;FSR指向下一个地址
+0055   6A00           00250     djzr    R0        ;R0-1==0则跳过一行
+0056   A000           00251     goto    clr_ram_loop
+0057   A000           00252     goto    sys_init
+0058                  00253 ram_error:
+0058   5800           00254     movar    RAM_E
+0059   560D           00255     movra    error_flag
+005A   A000           00256     goto    $-1
+                      00257 ;*****************************************
+005B                  00258 sys_init:
+005B   3C13           00259     movai    (TF_FLOSC+TR_8)    ;内部16M,16分频
+                      00260     ;movai    (TF_FCPU+TR_8)
+005C   57A0           00261     movra    T0CR        ;写入T0CR 
+005D   3CF9           00262     movai    249        ;125us中断
+005E   57A2           00263     movra    T0LOAD
+005F   57A1           00264     movra    T0CNT
+0060   CFA0           00265     bset     TC0EN              ;启动T0
+0061   C18A           00266     bset     T0IE    ;开定时中断
+                      00267 
+0062   3C17           00268     movai    (TF_FLOSC+TR_128)    ;内部16M,16分频
+0063   57A4           00269     movra    T1CR        ;写入T0CR 
+0064   3CF9           00270     movai    249        ;500us中断
+0065   57A6           00271     movra    T1LOAD
+0066   57A5           00272     movra    T1CNT
+0067   CFA4           00273     bset     TC1EN              ;启动T1
+0068   C38A           00274     bset     T1IE    ;开定时中断
+                      00275 
+0069   3CFE           00276     movai       0xfe
+006A   57A7           00277     movra       T1DATA
+                      00278 
+006B   3CFC           00279     movai       0xfc
+006C   5791           00280     movra       DDR0
+006D   5795           00281     movra       DDR1
+006E   7794           00282     clrr        P1
+                      00283     ;bset       BUZ0OUT
+                      00284     ;bset       PWM0OUT
+006F   3C96           00285     movai       150
+0070   57A3           00286     movra       T0DATA
+                      00287     ;bset       BUZ1OUT
+                      00288     ;bset       PWM1OUT
+0071   3CD2           00289     movai       210
+0072   57A7           00290     movra       T1DATA
+                      00291 
+                      00292    ; bset       INT0IE
+                      00293    ; bset       INT1IE
+0073   D788           00294     bclr        MCR,3
+0074   D388           00295     bclr        MCR,1
+0075   D588           00296     bclr        MCR,2
+0076   D188           00297     bclr        MCR,0
+0077   C191           00298     bset        DDR0,0
+                      00299 
+                      00300 ;***************************************
+0078   000E           00301     clrwdt
+                      00302  ;   bset    WDTEN
+0079   CF88           00303     bset    GIE    ;开全局中断
+                      00304 ;************main loop***************
+007A                  00305 main_loop:
+007A   000E           00306     clrwdt
+007B   DF88           00307     bclr        GIE
+                      00308 
+007C   8000           00309     call        scan_adc
+007D   A000           00310     goto        main_loop
+                      00311     ;goto $-2
+                      00312     ;sleep
+                      00313     ;bclr    T1MEN
+                      00314     ;bset    BUZOUT
+                      00315     ;bset    PWMOUT
+                      00316 
+007E   8000           00317     call    time_deal
+                      00318    ; goto    main_loop
+                      00319     ;call    tm_1628_read_sub    ;读按键
+                      00320     ;call    key_scan        ;整理读回来的按键数据
+                      00321     ;call    key_deal        ;按键处理
+                      00322     ;call    work_deal
+007F   8000           00323     call    display
+0080   8000           00324     call    tm_1628_write_sub    ;写显示数据
+0081   A000           00325     goto    main_loop
+                      00326 ;-------adc------------
+0082                  00327 scan_adc:
+0082   7600           00328     clrr        R0
+0083                  00329 adc_loop:
+0083   3C00           00330     movai       high    adc_hcs_table
+0084   5785           00331     movra       FSR1
+0085   3C00           00332     movai       low     adc_hcs_table
+0086   7C00           00333     addar       R0
+0087   5784           00334     movra       FSR0
+0088   5789           00335     movra       INDF3
+                      00336 
+0089   3F00           00337     addai       ADCKS_16        ;16分频
+008A   57B0           00338     movra       ADCR0
+                      00339     
+008B   C1B0           00340     bset        ADEN            ;启动AD转换
+008C   C7B0           00341     bset        ADEOC
+008D   A000           00342     goto        $-1
+                      00343 
+008E   0000           00344     nop
+008F                  00345 end_scan_adc:
+008F   000C           00346         return
+                      00347 
+                      00348 ;************time sub*************
+0090                  00349 time_deal:
+0090   E00B           00350     jbset    flag_time_10ms
+0091   A000           00351     goto    end_time_deal
+                      00352 
+0092   D00B           00353     bclr    flag_time_10ms
+0093   6610           00354     incr    time_10ms
+0094   5810           00355     movar    time_10ms
+0095   3A0A           00356     isubai    10
+0096   E587           00357     jbset    Z
+0097   A000           00358     goto    end_time_deal
+                      00359 
+0098   7610           00360     clrr    time_10ms
+0099   6611           00361     incr    time_100ms
+009A   5811           00362     movar    time_100ms
+009B   3A0A           00363     isubai    10
+009C   E587           00364     jbset    Z
+009D   A000           00365     goto    end_time_deal
+                      00366 
+009E   7611           00367     clrr    time_100ms
+                      00368 
+009F   5A15           00369     movr    work_time
+00A0   E587           00370     jbset    Z
+00A1   6E15           00371     decr    work_time
+                      00372 
+00A2   6612           00373     incr    time_1s
+                      00374     ;incr    T1DATA
+00A3   5812           00375     movar    time_1s
+00A4   350A           00376     asubai    10
+00A5   E187           00377     jbset    C
+00A6   A000           00378     goto    end_time_deal
+                      00379 
+00A7   7612           00380     clrr    time_1s
+00A8   5612           00381     movra   time_1s
+00A9   6608           00382     incr        r8
+00AA   D608           00383     bclr        r8,3
+00AB   59A0           00384     movar       T0CR
+00AC   3EF8           00385     andai       0xf8
+00AD   7C08           00386     addar       r8
+00AE   57A0           00387     movra       T0CR
+                      00388  
+                      00389  ;   bclr    GIE
+                      00390  ;   incr    T1CR
+                      00391  ;   bclr    T1CR,5
+                      00392  ;   bset    GIE
+                      00393     ;movai   0x04
+                      00394   ;  xorra    OSCM 
+                      00395     ;bset    HFEN    
+00AF   6613           00396     incr    time_1min
+00B0   5813           00397     movar    time_1min
+00B1   3A3C           00398     isubai    60
+00B2   E587           00399     jbset    Z
+00B3   A000           00400     goto    end_time_deal
+00B4   7613           00401     clrr    time_1min
+00B5   6614           00402     incr    time_1hour
+00B6                  00403 end_time_deal:
+00B6   000C           00404     return
+                      00405 ;************key_scan*************
+00B7                  00406 key_scan:
+                      00407 ;**********k1***********
+00B7                  00408 scan_key1
+00B7   E023           00409     jbset    key_data1
+00B8   A000           00410     goto    clr_key1_bak
+                      00411     
+00B9   F80B           00412     jbclr    flag_key1_effect_bak
+00BA   A000           00413     goto    scan_key2
+                      00414 
+00BB   C20B           00415     bset    flag_key1_effect
+00BC   C80B           00416     bset    flag_key1_effect_bak
+00BD   A000           00417     goto    scan_key2
+00BE                  00418 clr_key1_bak:
+00BE   D80B           00419     bclr    flag_key1_effect_bak
+                      00420 ;**********k2************
+00BF                  00421 scan_key2:
+00BF   E623           00422     jbset    key_data2
+00C0   A000           00423     goto    clr_key2_bak
+                      00424     
+00C1   FA0B           00425     jbclr    flag_key2_effect_bak
+00C2   A000           00426     goto    scan_key3
+                      00427 
+00C3   C40B           00428     bset    flag_key2_effect
+00C4   CA0B           00429     bset    flag_key2_effect_bak
+00C5   A000           00430     goto    scan_key3
+00C6                  00431 clr_key2_bak:
+00C6   DA0B           00432     bclr    flag_key2_effect_bak
+                      00433 ;**********k3************
+00C7                  00434 scan_key3:
+00C7   E026           00435     jbset    key_data3
+00C8   A000           00436     goto    clr_key3_bak
+                      00437     
+00C9   FC0B           00438     jbclr    flag_key3_effect_bak
+00CA   A000           00439     goto    end_key_scan
+                      00440 
+00CB   C60B           00441     bset    flag_key3_effect
+00CC   CC0B           00442     bset    flag_key3_effect_bak
+00CD   A000           00443     goto    end_key_scan
+00CE                  00444 clr_key3_bak:
+00CE   DC0B           00445     bclr    flag_key3_effect_bak
+00CF                  00446 end_key_scan:
+00CF   000C           00447     return
+                      00448 ;***********key_deal**************
+00D0                  00449 key_deal:
+00D0   E20B           00450     jbset    flag_key1_effect
+00D1   A000           00451     goto    deal_k2
+00D2   D20B           00452     bclr    flag_key1_effect
+                      00453 
+00D3   6617           00454     incr    dis_buffer0
+00D4   3C05           00455     movai    5
+00D5   5615           00456     movra    work_time
+00D6   6616           00457     incr    funtion_valu
+                      00458 
+00D7                  00459 deal_k2:
+00D7   E40B           00460     jbset    flag_key2_effect
+00D8   A000           00461     goto    deal_k3
+00D9   D40B           00462     bclr    flag_key2_effect
+                      00463 
+00DA   6618           00464     incr    dis_buffer1
+00DB                  00465 deal_k3:
+00DB   E60B           00466     jbset    flag_key3_effect
+00DC   A000           00467     goto    end_key_deal
+00DD   D60B           00468     bclr    flag_key3_effect
+                      00469 
+                      00470     ;incr    dis_buffer2
+00DE   EE0B           00471     jbset    flag_test_timer0
+00DF   A000           00472     goto    end_key_deal
+                      00473 
+00E0   DF88           00474     bclr    GIE    ;disable interrupt
+00E1   67A0           00475     incr    T0CR
+00E2   D9A0           00476     bclr    T0CR,4
+00E3   CF88           00477     bset    GIE
+                      00478 
+00E4                  00479 end_key_deal:
+00E4   000C           00480     return
+                      00481 
+                      00482 ;********************************
+00E5                  00483 display:
+                      00484 ;*************查表开始***************
+00E5   7603           00485     clrr    r3
+00E6   5812           00486     movar    time_1s
+00E7   5604           00487     movra    r4
+                      00488 
+00E8   3C0A           00489     movai    10        ;十进制
+00E9   5605           00490     movra    r5
+                      00491 
+00EA   8000           00492     call    div_x
+                      00493 
+00EB   5802           00494     movar    r2        ;余数
+00EC   561A           00495     movra    dis_buffer3
+00ED   5800           00496     movar    r0        ;商低位
+00EE   5619           00497     movra    dis_buffer2
+                      00498 
+00EF   7603           00499     clrr        r3
+00F0   5813           00500     movar    time_1min
+00F1   5604           00501     movra    r4
+00F2   3C0A           00502     movai    10
+00F3   5605           00503     movra    r5
+00F4   8000           00504     call    div_x
+                      00505 
+00F5   5802           00506     movar    r2
+00F6   5618           00507     movra    dis_buffer1
+00F7   5800           00508     movar    r0
+00F8   5617           00509     movra    dis_buffer0
+                      00510 
+00F9   3CFF           00511     movai    0xff
+00FA   561F           00512     movra    dis_buffer4
+                      00513 
+                      00514 ;    movai      0
+                      00515 ;    movra      dis_buffer0
+                      00516 ;    inca       
+                      00517 ;    movra      dis_buffer1
+                      00518 ;    inca       
+                      00519 ;    movra      dis_buffer2
+                      00520 ;    inca
+                      00521 ;    movra      dis_buffer3
+00FB   7600           00522     clrr    R0                ;计数4次
+00FC                  00523 load_table_loop:
+00FC   3C17           00524     movai    dis_buffer0
+00FD   7C00           00525     addar    R0
+00FE   5784           00526     movra    FSR                ;每次循环更新一次FSR指针
+                      00527     
+                      00528    ; movai   HIGH table_dis_code
+                      00529    ; movra    PCLATH
+                      00530 
+00FF   3C12           00531     movai    MAX_DIS_DATA        
+0100   0980           00532     asubar   INDF
+0101   E187           00533     jbset    C
+0102   7780           00534     clrr    INDF
+                      00535 
+0103   5980           00536     movar    INDF
+0104   3F02           00537     addai    0x02                
+0105   8000           00538     call    table_dis_code
+0106   5601           00539     movra    r1                ;r1存放查表的临时值
+0107   3C1B           00540     movai    dis_buffer0+4
+0108   7C00           00541     addar    R0
+0109   5784           00542     movra    FSR
+                      00543 
+010A   5801           00544     movar    r1
+010B   5780           00545     movra    INDF                ;把查表值（r1）存储到tm_data中
+                      00546 
+010C   6600           00547     incr    R0
+010D   E400           00548     jbset    R0,2
+010E   A000           00549     goto    load_table_loop
+                      00550 
+                      00551 ;*************小数点的显示************
+010F   F00C           00552     jbclr    flag_disp0_point
+0110   C81B           00553     bset    disp0_point
+0111   F20C           00554     jbclr    flag_disp1_point
+0112   C81C           00555     bset    disp1_point
+0113   F40C           00556     jbclr    flag_disp2_point
+0114   C81D           00557     bset    disp2_point
+0115   F60C           00558     jbclr    flag_disp3_point
+0116   C81E           00559     bset    disp3_point
+                      00560 ;***************其它段的显示处理*********
+0117                  00561 end_display
+0117   000C           00562     return
+                      00563 
+                      00564 ;***************1628读按键数据************
+0118                  00565 tm_1628_read_sub:
+0118   3C23           00566     movai    key_data_buffer0
+0119   5784           00567     movra    FSR
+                      00568 
+011A   3C05           00569     movai    5    ;循环5次
+011B   5602           00570     movra    r2
+                      00571 
+011C   3C42           00572     movai    0x42
+011D   5601           00573     movra    r1
+011E   8000           00574     call    tm_1628_write
+011F                  00575 tm1628_read_key_loop:
+011F   8000           00576     call    tm_1628_read
+0120   CB95           00577     bset    IO_TM1628_DDR
+0121   5801           00578     movar    r1
+0122   5780           00579     movra    INDF
+                      00580      
+0123   6784           00581     incr    FSR
+0124   6A02           00582     djzr    r2
+0125   A000           00583     goto    tm1628_read_key_loop
+0126                  00584 end_tm_1628_read:
+0126   000C           00585     return
+                      00586 ;***********1628 写显示数据***************
+0127                  00587 tm_1628_write_sub:
+                      00588 ;    movai    0x55
+                      00589 ;    movra      tm_data0
+                      00590 ;    movra      tm_data1
+                      00591 ;    movra      tm_data2
+                      00592 ;    movra      tm_data3
+                      00593 ;    movra      tm_data4
+                      00594 ;    movra      tm_data5
+                      00595 ;    movra      tm_data6
+                      00596 
+0127   3C03           00597     movai    0x03
+0128   5601           00598     movra    r1
+0129   8000           00599     call    tm_1628_write
+012A   C990           00600     bset    IO_TM1628_STB
+012B   3C40           00601     movai    0x40
+012C   5601           00602     movra    r1
+012D   8000           00603     call    tm_1628_write
+012E   C990           00604     bset    IO_TM1628_STB
+012F   3CC0           00605     movai    0xc0
+0130   5601           00606     movra    r1
+0131   8000           00607     call    tm_1628_write
+0132   3C1B           00608     movai    tm_data0            ;首地址
+0133   5784           00609     movra    FSR
+0134   7602           00610     clrr    r2                ;r2计算发送buffer的次数
+0135   6602           00611     incr    r2
+0136                  00612 send_display_buffer:
+0136   5980           00613     movar    INDF
+0137   5601           00614     movra    r1
+0138   8000           00615     call    tm_1628_write
+0139   8000           00616     call    tm_1628_write
+013A   6784           00617     incr    FSR
+013B   6602           00618     incr    r2
+013C   E602           00619     jbset    r2,3                ;够八次就跳出
+013D   A000           00620     goto    send_display_buffer
+                      00621 
+013E   C990           00622     bset    IO_TM1628_STB
+013F   3C88           00623     movai    0x88
+0140   5601           00624     movra    r1
+0141   8000           00625     call    tm_1628_write
+0142   C990           00626     bset    IO_TM1628_STB
+0143                  00627 end_tm_1628_write:
+0143   000C           00628     return
+                      00629 ;*********************************
+                      00630 ;***************1628***************
+                      00631 ;*********占用r1,R0寄存器***********
+                      00632 ;*********r1作为参数****************
+0144                  00633 tm_1628_write:
+0144   D990           00634     bclr    IO_TM1628_STB
+0145   CB95           00635     bset    IO_TM1628_DDR    ;data output
+                      00636     ;bclr    IO_TM1628_DDR    
+0146   7600           00637     clrr    R0        ;计数用
+0147   C600           00638     bset    R0,3        ;R0=8
+0148                  00639 tm1628_send_data_loop:
+0148   DB94           00640     bclr    IO_TM1628_DATA
+0149   D994           00641     bclr    IO_TM1628_CLK
+                      00642 
+014A   F001           00643     jbclr    r1,0        ;发送0位数据
+014B   CB94           00644     bset    IO_TM1628_DATA
+014C                  00645 tm1628_clk_rising:
+014C   4E01           00646     rrr    r1
+014D   0000           00647     nop
+014E   0000           00648     nop
+014F   0000           00649     nop
+0150   0000           00650     nop
+0151   0000           00651     nop
+0152   C994           00652     bset    IO_TM1628_CLK
+0153   6A00           00653     djzr    R0
+0154   A000           00654     goto    tm1628_send_data_loop
+0155   000C           00655     return
+                      00656 
+0156                  00657 tm_1628_read:
+0156   D990           00658     bclr    IO_TM1628_STB
+0157   DB95           00659     bclr    IO_TM1628_DDR    ;data input
+0158   7600           00660     clrr    R0        ;计数用
+0159   C600           00661     bset    R0,3        ;R0=8
+015A                  00662 tm1628_receive_data_loop:
+015A   D994           00663     bclr    IO_TM1628_CLK
+015B   0000           00664     nop
+015C   0000           00665     nop
+015D   0000           00666     nop
+015E   D187           00667     bclr    C
+015F   FB94           00668     jbclr    IO_TM1628_DATA
+0160   C187           00669     bset    C
+0161   4E01           00670     rrr    r1
+0162   C994           00671     bset    IO_TM1628_CLK
+0163   6A00           00672     djzr    R0
+0164   A000           00673     goto    tm1628_receive_data_loop
+0165   000C           00674     return
+                      00675 ;***************************************
+                      00676 ;**********math**************
+                      00677 ;*************商r1r0,余r2,计数r6,被除数r3,r4
+                      00678 ;*************除数r5
+0166                  00679 div_x:
+0166   7600           00680     clrr    R0    ;商
+0167   7601           00681     clrr    r1
+0168   7602           00682     clrr    r2    ;余数
+                      00683 
+0169   5A05           00684     movr    r5
+016A   F587           00685     jbclr    Z
+016B   000C           00686     return        ;除数为0，退出
+                      00687 
+016C   3C10           00688     movai    16
+016D   5606           00689     movra    r6    ;计数=被除数位
+                      00690 
+016E   5A03           00691     movr    r3
+016F   E587           00692     jbset    Z
+0170   A000           00693     goto    div_loop
+0171   5A04           00694     movr    r4
+0172   F587           00695     jbclr    Z
+0173   000C           00696     return        ;被数为0直接返回
+0174                  00697 div_loop:
+0174   D187           00698     bclr    C
+0175   5204           00699     rlr    r4    ;低8位
+0176   5203           00700     rlr    r3    ;高8位
+0177   5202           00701     rlr    r2    ;余
+0178   5207           00702     rlr    r7
+                      00703 
+0179   5805           00704     movar    r5
+017A   4802           00705     rsubar    r2
+017B   F187           00706     jbclr    C
+017C   A000           00707     goto     updata_div
+017D   F007           00708     jbclr    r7,0
+017E   A000           00709     goto    $+3
+017F   D187           00710     bclr    C
+0180   A000           00711     goto    r0_shift
+0181                  00712 updata_div:        ;更新余数
+0181   5602           00713     movra    r2
+0182   C187           00714     bset    C
+0183                  00715 r0_shift:
+0183   5200           00716     rlr    R0
+0184   5201           00717     rlr    r1
+0185   6A06           00718     djzr    r6
+0186   A000           00719     goto    div_loop
+0187   000C           00720     return    
+                      00721 ;****************************************
+                      00722 ;********io test************************
+0188                  00723 io_out_h:
+0188   000E           00724     clrwdt
+0189   7795           00725     clrr    DDR1
+018A   3CFF           00726     movai    0xff
+018B   5794           00727     movra    P1
+018C   A000           00728     goto    io_out_h
+018D   000C           00729     return
+                      00730 ;*****************************************
+018E                  00731 io_out_l:
+018E   000E           00732     clrwdt
+018F   7795           00733     clrr    DDR1
+0190   3C00           00734     movai    0x00
+0191   5794           00735     movra    P1
+0192   A000           00736     goto    io_out_l
+0193   000C           00737     return
+                      00738 ;*****************************************
+0194                  00739 io_in_p1_l:
+0194   3CFF           00740     movai    0xff
+0195   5795           00741     movra    DDR1
+                      00742 
+                      00743     ;swapar    P1
+0196   5994           00744     movar    P1
+0197   000E           00745     clrwdt
+0198   A000           00746     goto    $-3
+0199   000C           00747     return
+                      00748 ;*****************************************
+019A                  00749 io_in_p1_h:
+019A   3CFF           00750     movai    0xff
+019B   5795           00751     movra    DDR1
+                      00752    ; clrr    PHCON    ;上拉输入
+                      00753     ;clrr    PDCON    ;下拉
+                      00754 
+019C   4594           00755     swapar    P1
+                      00756   ;  movra    P0    ;P14--P17的状态从P0输出
+019D   000E           00757     clrwdt
+019E   A000           00758     goto    $-3
+019F   000C           00759     return
+                      00760 ;******************************************
+01A0                  00761 io_in_p0:
+01A0   7795           00762     clrr    DDR1    ;P1口输出
+01A1   3CFF           00763     movai    0xff
+                      00764 ;    movra    DDR0
+                      00765 ;    clrr    PDCON    ;下拉    ;P0没有上拉
+                      00766 
+01A2   5794           00767     movra    P1    ;P00-P03的状态从P1口输出
+01A3   000E           00768     clrwdt
+01A4   A000           00769     goto    $-3
+01A5   000C           00770     return
+                      00771 ;*********************************
+                      00772 ;********键盘中断和sleep共用一个子程序*****
+                      00773 ;****************************************
+01A6                  00774 key_bim:
+01A6   DF88           00775     bclr    GIE
+                      00776 ;    bclr    WDTEN
+                      00777 ;    clrr     DDR0
+01A7   3CFF           00778     movai    0xff
+01A8   5795           00779     movra    DDR1    ;P1作为输入
+                      00780 ;    movra    KBIM    ;开启键盘中断位
+                      00781 ;    clrr    PHCON    ;使能上拉
+                      00782 
+                      00783 ;    bset    KBIE    ;使能键盘中断
+                      00784 ;    sleep
+                      00785 ;    bclr    KBIE
+                      00786  ;   clrr    DDR1
+01A9   000C           00787     return
+                      00788 
+                      00789 ;**************************************
+                      00790 ;*****int0 cfg************************
+                      00791 ;*****下降沿触发**********************
+01AA                  00792 int0_cfg_l:
+01AA   C195           00793     bset    DDR1,0    ;P10输入
+                      00794 ;    bclr    PHCON,0    ;开P10上拉
+                      00795 ;    bset    EIS
+01AB   C58A           00796     bset    INT0IE    ;开中断
+                      00797 ;    bclr    WDTEN
+                      00798 ;    sleep
+01AC   000C           00799     return;
+                      00800 ;**************************************
+01AD                  00801 int0_cfg_h:
+01AD   C195           00802     bset    DDR1,0    ;P10输入
+                      00803 ;    bclr    PHCON,0    ;开P10上拉
+                      00804 ;    bset    EIS
+01AE   C58A           00805     bset    INT0IE    ;开中断
+                      00806 ;    bclr    WDTEN
+                      00807 ;    sleep
+01AF   000C           00808     return;
+                      00809 
+                      00810 ;*************************************
+                      00811 ;***********output high od*************
+                      00812 ;********开漏输出高*******************
+01B0                  00813 io_out_h_od:
+01B0   7795           00814     clrr    DDR1
+01B1   3CFF           00815     movai    0xff
+01B2   5794           00816     movra    P1
+01B3   000E           00817     clrwdt
+01B4   A000           00818     goto    io_out_h_od
+01B5   000C           00819     return
+                      00820 ;*************************************
+                      00821 ;***********output low od*************
+                      00822 ;********开漏输出低*******************
+01B6                  00823 io_out_l_od:
+01B6   7795           00824     clrr    DDR1
+01B7   3C00           00825     movai    0x00
+01B8   5794           00826     movra    P1
+01B9   3CFF           00827     movai    0xff
+01BA   000E           00828     clrwdt
+01BB   A000           00829     goto    io_out_l_od
+01BC   000C           00830     return
+                      00831 
+                      00832 ;*************************************
+                      00833 ;***********上拉输入******************
+01BD                  00834 io_in_pn_pull:
+01BD   3CFF           00835     movai    0xff
+01BE   5795           00836     movra    DDR1
+                      00837     ;clrr    PHCON    ;上拉输入
+01BF   000E           00838     clrwdt
+01C0   A000           00839     goto    io_in_pn_pull
+01C1   000C           00840     return
+                      00841 ;*************************************
+                      00842 ;***********下拉输入******************
+01C2                  00843 io_in_pn_down:
+01C2   3CFF           00844     movai    0xff
+01C3   5795           00845     movra    DDR1
+01C4   000E           00846     clrwdt
+01C5   A000           00847     goto    io_in_pn_down
+01C6   000C           00848     return
+                      00849     org 0x300
+0300                  00850 test_table:
+0300   8877           00851     dw  0x8877
+0301   9802           00852     dw  0x9802
+0302   0980           00853     dw  0x0980
+0303                  00854 adc_hcs_table:
+0303   0000           00855         dw      ADCHS_0
+0304   0010           00856         dw      ADCHS_1
+0305   0020           00857         dw      ADCHS_2
+0306   0030           00858         dw      ADCHS_3
+0307   0040           00859         dw      ADCHS_4
+0308   0050           00860         dw      ADCHS_5
+0309   0060           00861         dw      ADCHS_6
+                      00862 ;**********************************
+                      00863 ;********timer*********************
+030A                  00864 timer0_test:
+030A   CE0B           00865     bset    flag_test_timer0
+030B   7795           00866     clrr    DDR1
+030C   000C           00867     return
+                      00868 
+                      00869 ;***********work sub**************
+030D                  00870 work_deal:
+030D   5A15           00871     movr    work_time
+030E   E587           00872     jbset    Z
+030F   A000           00873     goto    end_work_deal
+                      00874 
+0310   5816           00875     movar    funtion_valu
+0311   7F86           00876     addra    PCL
+0312   A000           00877     goto    end_work_deal
+0313   A000           00878     goto    io_out_h    ;1
+0314   A000           00879     goto    io_out_l    ;2
+0315   A000           00880     goto    io_in_p1_l    ;3
+0316   A000           00881     goto    io_in_p1_h    ;4
+0317   A000           00882     goto    io_in_p0    ;5
+0318   A000           00883     goto    key_bim        ;6
+0319   A000           00884     goto    int0_cfg_l    ;7
+031A   A000           00885     goto    int0_cfg_h    ;8
+                      00886 
+031B   A000           00887     goto    io_out_h_od    ;9
+031C   A000           00888     goto    io_out_l_od    ;a
+                      00889 
+031D   A000           00890     goto    io_in_pn_pull    ;b
+031E   A000           00891     goto    io_in_pn_down    ;c
+                      00892 
+031F   A000           00893     goto    timer0_test    ;d
+0320                  00894 end_work_deal:
+0320   000C           00895     return    
+                      00896 ;*******表格**********************
+0321                  00897 table:
+                      00898     org (0x3fe-MAX_DIS_DATA)
+03EC   3B40           00899     retai    0x40
+03ED   3B00           00900     retai    0x00
+03EE   3BC5           00901     retai    0xC5
+03EF   3BCD           00902     retai    0xCD
+03F0   3B6E           00903     retai    0x6E
+03F1   3B8D           00904     retai    0x8D
+03F2   3B6D           00905     retai    0x6D
+03F3   3BE7           00906     retai    0xE7
+03F4   3BEB           00907     retai    0xEB
+03F5   3BEF           00908            retai    0xEF
+03F6   3BA2           00909     retai    0xA2
+03F7   3BED           00910     retai    0xED
+03F8   3BE9           00911     retai    0xE9
+03F9   3B63           00912     retai    0x63
+03FA   3BEA           00913     retai    0xEA
+03FB   3BCE           00914     retai    0xCE
+03FC   3B22           00915     retai    0x22
+03FD   3BAF           00916     retai    0xAF
+                      00917     org    0x3fe
+03FE                  00918 table_dis_code:
+03FE   4B86           00919     rsubra    PCL
+                      00920     end
+gpasm-0.8.0 (Dec  5 2012)    mc30p01a.asm       2012-12-7  16:56:03          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000001B0
+ADCR1                             000001B1
+ADCR2                             000001B2
+ADCR3                             000001B3
+ADRH                              000001B4
+ADRL                              000001B6
+ADRM                              000001B5
+ANSEL                             00000193
+DDR0                              00000191
+DDR1                              00000195
+FSR0                              00000184
+FSR1                              00000185
+HIBYTE                            00000183
+INDF0                             00000180
+INDF1                             00000181
+INDF2                             00000182
+INDF3                             00000189
+INTE0                             0000018A
+INTF0                             0000018B
+INVALID_ADDR0                     0000018C
+INVALID_ADDR1                     0000018D
+INVALID_ADDR10                    000001BD
+INVALID_ADDR11                    000001BE
+INVALID_ADDR12                    000001BF
+INVALID_ADDR2                     0000018E
+INVALID_ADDR3                     0000018F
+INVALID_ADDR5                     00000198
+INVALID_ADDR6                     00000199
+INVALID_ADDR7                     0000019A
+INVALID_ADDR8                     0000019B
+INVALID_ADDR9                     0000019C
+INVALID_ADDRA                     0000019D
+INVALID_ADDRB                     0000019E
+INVALID_ADDRC                     0000019F
+INVALID_ADDRD                     000001B7
+INVALID_ADDRE                     000001BB
+INVALID_ADDRF                     000001BC
+KBIM                              00000197
+LCDCR0                            000001B8
+LCDCR1                            000001B9
+LCDDS0                            000001C0
+LCDDS1                            000001C1
+LCDDS2                            000001C2
+LCDDS3                            000001C3
+LCDDS4                            000001C4
+LCDDS5                            000001C5
+LCDDS6                            000001C6
+LCDDS7                            000001C7
+LCDDS8                            000001C8
+LCDDS9                            000001C9
+LCDDSa                            000001CA
+LCDDSb                            000001CB
+LCDDSc                            000001CC
+LCDDSd                            000001CD
+LCDDSe                            000001CE
+LCDDSf                            000001CF
+LCDIOS                            000001BA
+LVDCR                             000001AD
+MCR                               00000188
+OSCCAL                            000001F3
+OSCM                              000001AE
+P0                                00000190
+P1                                00000194
+PCL                               00000186
+PFALG                             00000187
+POWCR                             000001AF
+PUP0                              00000192
+PUP1                              00000196
+T0CNT                             000001A1
+T0CR                              000001A0
+T0DATA                            000001A3
+T0LOAD                            000001A2
+T1CNT                             000001A5
+T1CR                              000001A4
+T1DATA                            000001A7
+T1LOAD                            000001A6
+UBR                               000001A9
+UCR                               000001A8
+UFR                               000001AA
+URR                               000001AC
+UTR                               000001AB
+_.org_8_005A                      0000005A
+_.org_8_008D                      0000008D
+_.org_8_017E                      0000017E
+_.org_8_0198                      00000198
+_.org_8_019E                      0000019E
+_.org_8_01A4                      000001A4
+__32P21                           00000001
+acc_temp                          00000009
+adc_hcs_table                     00000303
+adc_loop                          00000083
+clr_key1_bak                      000000BE
+clr_key2_bak                      000000C6
+clr_key3_bak                      000000CE
+clr_ram_loop                      00000049
+deal_k2                           000000D7
+deal_k3                           000000DB
+dis_buffer0                       00000017
+dis_buffer1                       00000018
+dis_buffer2                       00000019
+dis_buffer3                       0000001A
+display                           000000E5
+div_loop                          00000174
+div_x                             00000166
+end_display                       00000117
+end_just_int                      00000033
+end_key_deal                      000000E4
+end_key_scan                      000000CF
+end_scan_adc                      0000008F
+end_time0_interrupt               00000010
+end_time1_interrupt               0000001F
+end_time_deal                     000000B6
+end_tm_1628_read                  00000126
+end_tm_1628_write                 00000143
+end_work_deal                     00000320
+error_flag                        0000000D
+exit_interrupt                    00000033
+funtion_valu                      00000016
+int0_cfg_h                        000001AD
+int0_cfg_l                        000001AA
+interrupt_sub                     00000008
+io_in_p0                          000001A0
+io_in_p1_h                        0000019A
+io_in_p1_l                        00000194
+io_in_pn_down                     000001C2
+io_in_pn_pull                     000001BD
+io_out_h                          00000188
+io_out_h_od                       000001B0
+io_out_l                          0000018E
+io_out_l_od                       000001B6
+just_adc                          00000029
+just_int0                         0000001F
+just_int1                         00000024
+just_kbim                         0000002D
+just_t1                           00000010
+key_bim                           000001A6
+key_data_buffer0                  00000023
+key_data_buffer1                  00000024
+key_data_buffer2                  00000025
+key_data_buffer3                  00000026
+key_data_buffer4                  00000027
+key_deal                          000000D0
+key_scan                          000000B7
+load_table_loop                   000000FC
+main_loop                         0000007A
+r0                                00000000
+r0_shift                          00000183
+r1                                00000001
+r2                                00000002
+r3                                00000003
+r4                                00000004
+r5                                00000005
+r6                                00000006
+r7                                00000007
+r8                                00000008
+ram_error                         00000058
+scan_adc                          00000082
+scan_key1                         000000B7
+scan_key2                         000000BF
+scan_key3                         000000C7
+send_display_buffer               00000136
+start                             00000038
+start_just_int                    0000000B
+status_temp                       0000000A
+sys_init                          0000005B
+table                             00000321
+table_dis_code                    000003FE
+test_io                           00000028
+test_table                        00000300
+time_100ms                        00000011
+time_10ms                         00000010
+time_125us                        0000000E
+time_1hour                        00000014
+time_1min                         00000013
+time_1ms                          0000000F
+time_1s                           00000012
+time_deal                         00000090
+timer0_test                       0000030A
+tm1628_clk_rising                 0000014C
+tm1628_read_key_loop              0000011F
+tm1628_receive_data_loop          0000015A
+tm1628_send_data_loop             00000148
+tm_1628_read                      00000156
+tm_1628_read_sub                  00000118
+tm_1628_write                     00000144
+tm_1628_write_sub                 00000127
+tm_data0                          0000001B
+tm_data1                          0000001C
+tm_data2                          0000001D
+tm_data3                          0000001E
+tm_data4                          0000001F
+tm_data5                          00000020
+tm_data6                          00000021
+tm_data7                          00000022
+updata_div                        00000181
+work_deal                         0000030D
+work_flag1                        0000000B
+work_flag2                        0000000C
+work_time                         00000015
+ADCHS_0                           0<<4
+ADCHS_1                           1<<4
+ADCHS_2                           2<<4
+ADCHS_3                           3<<4
+ADCHS_4                           4<<4
+ADCHS_5                           5<<4
+ADCHS_6                           6<<4
+ADCKS_16                          0<<1
+ADCKS_2                           2<<1
+ADCKS_4                           2<<1
+ADCKS_8                           1<<1
+ADEN                              ADCR0,0
+ADEOC                             ADCR0,3
+ADIE                              INTECON,6
+ADIF                              INTF,6
+ADV_2V                            0
+ADV_3V                            1
+ADV_4V                            2
+ADV_ADD                           3
+ADV_EX                            4
+BUZ0OUT                           T0CR,5
+BUZ1OUT                           T1CR,5
+C                                 STATUS,0
+CLKS                              OSCM,2
+DC                                STATUS,1
+DDR10                             DDR1,0
+DDR11                             DDR1,1
+DDR12                             DDR1,2
+DDR13                             DDR1,3
+DDR20                             DDR2,0
+DDR21                             DDR2,1
+DDR22                             DDR2,2
+DDR23                             DDR2,3
+DDR24                             DDR2,4
+DDR25                             DDR2,5
+DDR26                             DDR2,6
+DDR27                             DDR2,7
+ENB                               POWCR,6
+EPEN                              UCR,3
+FIR_RAM_ADDR                      0x01
+FREF                              UFR,7
+FSR                               FSR0
+GIE                               MCR,7
+HFEN                              OSCM,0
+INDF                              INDF0
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT1IE                            INTECON,3
+INT1IF                            INTF,3
+INTE                              INTECON
+INTECON                           INTE0
+INTEFLAG                          INTF0
+INTF                              INTEFLAG
+IO_TM1628_CLK                     P1,4
+IO_TM1628_DATA                    P1,5
+IO_TM1628_DDR                     DDR1,5
+IO_TM1628_STB                     P0,4
+KBIE                              INTECON,4
+KBIF                              INTF,4
+LCDDS10                           LCDDSa
+LCDDS11                           LCDDSb
+LCDDS12                           LCDDSc
+LCDDS13                           LCDDSc
+LCDDS14                           LCDDSe
+LCDDS15                           LCDDSf
+LCDEN                             LCDCR0,7
+LDOEN                             POWCR,7
+LFEN                              OSCM,1
+LVD                               PLVDCR,7
+LVDS                              PLVDCR,6
+MAX_DIS_DATA                      18
+OPEN                              UCR,4
+OVEF                              UFR,5
+P0HCON                            PUP0
+P1HCON                            PUP1
+P20PH                             P2HCON,0
+P21PH                             P2HCON,1
+P22PH                             P2HCON,2
+P23PH                             P2HCON,3
+P24PH                             P2HCON,4
+P25PH                             P2HCON,5
+P26PH                             P2HCON,6
+P27PH                             P2HCON,7
+PAEF                              UFR,6
+PWM0OUT                           T0CR,6
+PWM1OUT                           T1CR,6
+R0                                r0
+RAM_COUNT                         127
+RAM_E                             0x00
+RDAF                              UFR,1
+STATUS                            PFALG
+STBH                              OSCM,4
+STBL                              OSCM,5
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T1IE                              INTECON,1
+T1IF                              INTF,1
+TC0EN                             T0CR,7
+TC1EN                             T1CR,7
+TF_FCPU                           (0<<3)
+TF_FHOSC                          (1<<3)
+TF_FLOSC                          (2<<3)
+TF_INT                            (3<<3)
+TREF                              UFR,0
+TR_1                              0
+TR_128                            7
+TR_16                             4
+TR_2                              1
+TR_32                             5
+TR_4                              2
+TR_64                             6
+TR_8                              3
+TSEF                              UFR,4
+UARTEN                            UCR,2
+VLCDS                             LCDCR0,3
+Z                                 STATUS,2
+coma                              xorai	0xff
+dis_buffer4                       tm_data4
+dis_buffer5                       tm_data5
+dis_buffer6                       tm_data6
+dis_buffer7                       tm_data7
+disp0_point                       tm_data0,4
+disp1_point                       tm_data1,4
+disp2_point                       tm_data2,4
+disp3_point                       tm_data3,4
+flag_disp0_point                  work_flag2,0
+flag_disp1_point                  work_flag2,1
+flag_disp2_point                  work_flag2,2
+flag_disp3_point                  work_flag2,3
+flag_key1_effect                  work_flag1,1
+flag_key1_effect_bak              work_flag1,4
+flag_key2_effect                  work_flag1,2
+flag_key2_effect_bak              work_flag1,5
+flag_key3_effect                  work_flag1,3
+flag_key3_effect_bak              work_flag1,6
+flag_test_timer0                  work_flag1,7
+flag_time_10ms                    work_flag1,0
+key_data1                         key_data_buffer0,0
+key_data2                         key_data_buffer0,3
+key_data3                         key_data_buffer3,0
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

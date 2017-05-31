@@ -1,0 +1,17 @@
+p0 at 0x0000  xxxx.x  0000 to 0000
+ddr0 at 0x0001  xxxx.x  0000 to 0000
+p0hcon at 0x0002  xxxx.x  0000 to 0000
+p0lcon at 0x0003  xxxx.x  0000 to 0000
+p1 at 0x0004  xxxx.x  0000 to 0000
+ddr1 at 0x0005  xxxx.x  0000 to 0000
+p1hcon at 0x0006  xxxx.x  0000 to 0000
+kbim at 0x0007  xxxx.x  0000 to 0000
+p2 at 0x0008  xxxx.x  0000 to 0000
+ddr2 at 0x0009  xxxx.x  0000 to 0000
+TDR at 0x000a  xxxx.x  0000 to 0000
+tcr at 0x000b  xxxx.x  0000 to 0000
+p0pnd at 0x000c  xxxx.x  0000 to 0000
+mcr at 0x000d  xxxx.x  0000 to 0000
+rstfr at 0x000e  xxxx.x  0000 to 0000
+read_buff[8] at 0x00c4  mc20p02_c.c  5 to 16 
+i at 0x00cc  mc20p02_c.c  5 to 16 

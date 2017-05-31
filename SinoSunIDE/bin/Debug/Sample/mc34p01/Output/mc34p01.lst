@@ -1,0 +1,46 @@
+gplink-1.7.0_beta1 (Mar 26 2015)
+Listing File Generated: 2015-4-13  15:52:15
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           
+                                           
+                                               org 0x3ff
+0003ff   1401     goto    0x1                  goto        main
+                                               org 0x0
+000000   1401     goto    0x1                  goto    main
+                                               
+                                               
+                                               
+                                           main:
+000001   04aa     movai   0xaa                  movai   0xaa
+000002   0090     movra   0x10                  movra   0x10
+000003   04ff     movai   0xff                  movai   0xff
+000004   0410     movai   0x10                  movai   0x10
+000005   0091     movra   0x11                  movra   0x11
+000006   0f91     addar   0x11                  addar   0x11
+000007   0fe2     addra   0x22                  addra   0x22
+000008   0891     adcar   0x11                  adcar   0x11
+000009   08e2     adcra   0x22                  adcra   0x22
+00000a   0a11     rsubar  0x11                  rsubar  0x11
+00000b   0a62     rsubra  0x22                  rsubra  0x22
+00000c   0811     rsbcar  0x11                  rsbcar  0x11
+00000d   0862     rsbcra  0x22                  rsbcra  0x22
+00000e   0006     daa                           daa
+00000f   0007     dsa                           dsa
+                                                
+000010   1401     goto    0x1                   GOTO    main
+                                                
+                                                end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XX-------------- ----------------
+07C0 : ---------------- ---------------- ---------------- --------------XX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    18
+

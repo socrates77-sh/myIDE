@@ -1,0 +1,175 @@
+T0CNT	00
+T0DATA	01
+T0CON	02
+MCR	03
+BTCON	0C
+BTCLR	1
+BTCNT	0D
+P0	10
+P1	11
+P2	12
+P0CONH	16
+P0CONL	17
+P0PND	18
+P1CON	19
+P2CONH	1A
+P2CONL	1B
+PWMDATA	22
+PWMCON	23
+ADCON	27
+ADDATAH	28
+ADDATAL	29
+P0_keys	
+P0_ntc_senser	
+P0_164data	
+P0_164clk	
+P0_com1	
+P0_com2	
+P0_ledcom	
+P0_relay_motor	
+XIN_4M	
+XOUT_4M	
+P12_inputequ	
+P2_2k_buz	
+P2_2k_buzv	01
+P2_triac_o3	
+P2_relay_heater	
+P2_triac_wpump	
+P2_triac_gpump	
+P2_triac_ir	
+P2_triac_vibrate	
+KEYS_AD	06
+TEMP_AD	16
+SWITCH_TEMP	08
+C_K_LB	0A
+AVERAGE_CNT	80
+COM1_VALID	07
+COM2_VALID	0D
+COM3_VALID	0B
+COM4_VALID	0E
+LED_COM_VALID	0F
+Level_1	46
+Level_2	64
+Level_3	8C
+Level_4	A0
+Level_5	B4
+Level_1_H	78
+Level_2_H	A0
+Level_3_H	B4
+Level_4_H	C8
+Level_5_H	E6
+SCREEN_TIME1	6
+SCREEN_TIME2	6
+SCREEN_TIME3	6
+SCREEN_TIME4	5
+SCREEN_TIME5	5
+WINK_COUNTER1	14
+WINK_COUNTER2	14
+DEVICECODE_w	
+BUZ_TIME_H	FF
+BUZ_TIME_L	FF
+Temp_P0	30
+counting_time	31
+R_KEY1	32
+key1	0
+key2	1
+key3	2
+key4	3
+key5	4
+key6	5
+key7	6
+key8	7
+key_add	
+key_sub	
+key_heat	
+key_time	
+key_onoff	
+key_o3	
+key_vibrate	
+key_ir	
+R_KEY1_BAK	33
+R_KEY1_TRU	34
+R_K_LB	35
+F1	36
+F1_ir_mode	0
+F1_ir_modev	01
+F1_detect_ad	1
+F1_Button	2
+F1_onoff	3
+F1_onoffv	08
+F1_heat_mode	4
+F1_heat_modev	10
+F1_time_mode	5
+F1_o3_mode	6
+F1_vibrate_mode	7
+F1_vibrate_modev	80
+F2	37
+F2_4s_wink	0
+F2_4s_winkv	01
+F2_BUZ_EN	1
+F2_BUZ_BX	2
+F2_BUZ_Forever	3
+F2_steam_mode	4
+F2_4s	5
+F2_timer_mode	6
+F2_4s_relay	7
+Timer_125us	38
+Timer_250us	39
+Timer_2500us	3A
+Timer_500ms	3B
+Timer_500ms_wink	3C
+Timer_1min	3D
+Timer_500ms_relay	3E
+Buffer_Temper_H	40
+Buffer_Temper_L	41
+data164	42
+ad1datah_temp	43
+ad1datal_temp	44
+ad1_cnt	45
+AD_Cnt	46
+act_temperature	47
+set_temperature	48
+cnt_temp	49
+Temp	4B
+Temp1	4C
+Temp2	4D
+Temp_FLAGS	4E
+Timer_5ms_I2C	4F
+Old_Act_Temper	50
+SeveralTimer_125us	51
+SeveralTimer_5ms	52
+SeveralTimer_1s	53
+Timer_5ms_I2C_L	54
+Buzzer_H_Timer	55
+Buzzer_L_Timer	56
+Buzzer_Counter	57
+F3	58
+F3_trouble_circuit	0
+F3_4s_heat	1
+F3_set_bb_clr	2
+Temp_Act_Temperature	59
+com_cnter	60
+com1_data	61
+com2_data	62
+led_com_data	65
+led6_r	7
+led6_y	6
+led5	5
+led7	4
+led3	2
+led1	1
+led2	0
+led_vibrate	
+led_heattemp	
+led_ir	
+led_steam	
+led_o3	
+led_keeptemp	
+led_heat	
+reg_min	66
+reg_sec	67
+Led_L	68
+Led_H	69
+R_KEY2	6A
+R_KEY2_BAK	6B
+R_KEY2_TRU	6C

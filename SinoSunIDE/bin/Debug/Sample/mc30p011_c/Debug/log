@@ -1,0 +1,19 @@
+
+(FF) System\CtrlSbr.o
+(FF) System\CtrlSbr.lst
+
+                        errors: 0
+                      warnings: 0
+                      messages: 0
+           warnings suppressed: 0
+           messages suppressed: 0
+
+       ===== (GPASM) Successful =====
+
+Processor: 30p011
+Using devices from G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\tools\share\include\mc3xdevices.txt.
+sdcc: Calling preprocessor...
++ G:\Emulator\IDE\SINOSU~1\SINOSU~1\bin\Debug\tools\sdcpp.exe -nostdinc -Wall -IG:\\Emulator\\IDE\\SinoSunIDE\\SinoSunIDE\\bin\\Debug\\tools\\share\\include -D__SDCC_PROCESSOR="30p011" -DSDCC_PROCESSOR="30p011" -D__SDCC_MC30P011 -obj-ext=.o -D__SDCC_USE_NON_FREE -DSDCC_USE_NON_FREE -D__SDCC=0_0_3 -DSDCC=003 -D__SDCC_REVISION=8004 -DSDCC_REVISION=8004 -D__SDCC_mc30 -DSDCC_mc30 -D__mc30 -D__STDC_NO_COMPLEX__ -D__STDC_NO_THREADS__ -D__STDC_NO_ATOMICS__ -D__STDC_NO_VLA__ -isystem "G:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\tools\share\include"  "CtrlSbr.c" 
+sdcc: Generating code...
+sdcc: Calling assembler...
++ G:\Emulator\IDE\SINOSU~1\SINOSU~1\bin\Debug\tools\gpasm.exe -IG:\Emulator\IDE\SinoSunIDE\SinoSunIDE\bin\Debug\tools\share\header -o "System\CtrlSbr" -c "System\CtrlSbr.asm"

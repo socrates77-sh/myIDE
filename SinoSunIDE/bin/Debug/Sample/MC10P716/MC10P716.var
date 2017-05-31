@@ -1,0 +1,52 @@
+KEYL	00
+KEYH	01
+MCR	02
+P0	03
+DDR0	04
+P0HCON	05
+TLOAD0L	06
+TLOAD0H	07
+TLATL	08
+TLATH	09
+TCR0	0A
+TLATLL	0B
+TDATA1	0B
+TLOAD1	0C
+TCR1	0D
+INTC	0E
+OPA	0F
+P0LCON	10
+P0KCON	11
+KBIE	
+KBIF	
+OUTC	
+IROUTS	
+IROUTE	
+IRIN	
+TIF0	
+TIM0E	
+T0START	
+TIF1	
+TIM1E	
+T1START	
+timer_flag	C0
+timer_1ms_counter	C1
+timer_100ms_counter	C2
+timer_1s_counter	C3
+timer_10s_counter	C4
+key_buffer0	C5
+key_buffer1	C6
+key_scan_counter	C7
+key_gnd_value0	C8
+key_io_value0	C9
+key_gnd_value1	CA
+key_io_value1	CB
+tload_tmp	C7
+pwmdata	C8
+time_100us_flag	
+time_1ms_flag	
+time_100ms_flag	
+time_1s_flag	
+time_10s_flag	
+key_gnd_flag	
+key_io_flag	

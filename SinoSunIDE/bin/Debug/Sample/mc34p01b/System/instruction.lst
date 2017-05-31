@@ -1,0 +1,29 @@
+gpasm-1.7.0_beta1 (Aug  8 2014)instruction.asm    2014-8-11  18:08:21          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003         org 0x00
+0000   1600           00004          bclr   0,0
+0001   1440           00005          bset   0,1
+0002   1140           00006          jbclr  0,1
+0003   1080           00007          jbset  0,2
+                      00008          
+                      00009          
+                      00010          en
+gpasm-1.7.0_beta1 (Aug  8 2014)instruction.asm    2014-8-11  18:08:21          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+__34P01B                          00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

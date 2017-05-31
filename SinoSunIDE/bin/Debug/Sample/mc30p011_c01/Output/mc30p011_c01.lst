@@ -1,0 +1,442 @@
+gplink-1.6.1 (Jan 23 2014)
+Listing File Generated: 2014-3-6  14:24:46
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           ;--------------------------------------------------------
+                                           ; File Created by SN-SDCC : ANSI-C Compiler
+                                           ; Version 0.0.4 (Jan 13 2014) (MSVC)
+                                           ; This file was generated Thu Mar 06 14:24:43 2014
+                                           ;--------------------------------------------------------
+                                           ; MC3X port for the RISC core
+                                           ;--------------------------------------------------------
+                                           ;	.file	"main.c"
+                                           	list	p=30p011
+                                           	radix dec
+                                           	include "mc30p011.inc"
+                                           		LIST
+                                           ;mc30p011.inc    Standard Header File, Version 1.00 by Sinomcu
+                                           		NOLIST
+                                           ;--------------------------------------------------------
+                                           ; external declarations
+                                           ;--------------------------------------------------------
+                                           	extern	_initial
+                                           	extern	_abc
+                                           	extern	_STATUSbits
+                                           	extern	_P0bits
+                                           	extern	_P1bits
+                                           	extern	_MCRbits
+                                           	extern	_KBIMbits
+                                           	extern	_PDCONbits
+                                           	extern	_ODCONbits
+                                           	extern	_PUCONbits
+                                           	extern	_INTECONbits
+                                           	extern	_INTFLAGbits
+                                           	extern	_T0CRbits
+                                           	extern	_DDR0bits
+                                           	extern	_DDR1bits
+                                           	extern	_TMCRbits
+                                           	extern	_T1CRbits
+                                           	extern	_temp2
+                                           	extern	_INDF
+                                           	extern	_T0CNT
+                                           	extern	_PCL
+                                           	extern	_STATUS
+                                           	extern	_FSR
+                                           	extern	_P0
+                                           	extern	_P1
+                                           	extern	_GPR
+                                           	extern	_MCR
+                                           	extern	_KBIM
+                                           	extern	_PCLATH
+                                           	extern	_PDCON
+                                           	extern	_ODCON
+                                           	extern	_PUCON
+                                           	extern	_INTECON
+                                           	extern	_INTFLAG
+                                           	extern	_T0CR
+                                           	extern	_DDR0
+                                           	extern	_DDR1
+                                           	extern	_TMCR
+                                           	extern	_T1CR
+                                           	extern	_T1CNT
+                                           	extern	_T1LOAD
+                                           	extern	_T1DATA
+                                           	extern	__sdcc_gsinit_startup
+                                           ;--------------------------------------------------------
+                                           ; global declarations
+                                           ;--------------------------------------------------------
+                                           	global	_main
+                                           
+                                           	global STK06
+                                           	global STK05
+                                           	global STK04
+                                           	global STK03
+                                           	global STK02
+                                           	global STK01
+                                           	global STK00
+                                           
+                                           sharebank udata_ovr 0x0010
+                                           STK06	res 1
+                                           STK05	res 1
+                                           STK04	res 1
+                                           STK03	res 1
+                                           STK02	res 1
+                                           STK01	res 1
+                                           STK00	res 1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; absolute symbol definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; compiler-defined variables
+                                           ;--------------------------------------------------------
+                                           UDL_main_0	udata
+                                           r0x1002	res	1
+                                           _main_t1_1_2	res	1
+                                           ;--------------------------------------------------------
+                                           ; initialized data
+                                           ;--------------------------------------------------------
+                                           
+                                           ;@Allocation info for local variables in function 'main'
+                                           ;@main t1                        Allocated to registers 
+                                           ;@end Allocation info for local variables in function 'main';
+                                           
+                                           ;--------------------------------------------------------
+                                           ; overlayable items in internal ram 
+                                           ;--------------------------------------------------------
+                                           ;	udata_ovr
+                                           ;--------------------------------------------------------
+                                           ; reset vector 
+                                           ;--------------------------------------------------------
+                                           STARTUP	code 0x0000
+000000   2801     goto    0x1              	goto	__sdcc_gsinit_startup
+                                           ;--------------------------------------------------------
+                                           ; code
+                                           ;--------------------------------------------------------
+                                           code_main	code
+                                           ;***
+                                           ;  pBlock Stats: dbName = M
+                                           ;***
+                                           ;entry:  _main	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   _initial
+                                           ;   _abc
+                                           ;   _initial
+                                           ;   _abc
+                                           ;2 compiler assigned registers:
+                                           ;   r0x1002
+                                           ;   STK00
+                                           ;; Starting pCode block
+                                           _main	;Function start
+                                           ; 2 exit points
+                                           ;	.line	12; "main.c"	GIE=0;
+0000bd   3f8e     bclr    0xe, 0x7         	BCLR	_INTECONbits,7
+0000be   000e     clrwdt                   	clrwdt
+                                           ;	.line	14; "main.c"	DDR0=0Xaa;
+0000bf   0baa     movai   0xaa             	MOVAI	0xaa
+0000c0   15c5     movra   0x45             	MOVRA	_DDR0
+                                           ;	.line	16; "main.c"	P0=0;
+0000c1   1d85     clrr    0x5              	CLRR	_P0
+                                           ;	.line	17; "main.c"	P1=1;
+0000c2   0b01     movai   0x1              	MOVAI	0x01
+0000c3   1586     movra   0x6              	MOVRA	_P1
+                                           ;	.line	18; "main.c"	T0CNT=0;
+0000c4   1d81     clrr    0x1              	CLRR	_T0CNT
+                                           ;	.line	19; "main.c"	initial();
+0000c5   20b2     call    0xb2             	CALL	_initial
+                                           ;	.line	20; "main.c"	while(1)
+0000c6   1629     movar   0x29             	MOVAR	_main_t1_1_2
+0000c7   15a8     movra   0x28             	MOVRA	r0x1002
+                                           _00106_DS_
+                                           ;	.line	22; "main.c"	P0 =~P0;
+0000c8   1c05     comar   0x5              	COMAR	_P0
+0000c9   1585     movra   0x5              	MOVRA	_P0
+                                           ;	.line	23; "main.c"	t1++;
+0000ca   19a8     incr    0x28             	INCR	r0x1002
+                                           ;	.line	24; "main.c"	temp2++;
+0000cb   1987     incr    0x7              	INCR	_temp2
+                                           ;	.line	25; "main.c"	abc(t1,temp2);    
+0000cc   1607     movar   0x7              	MOVAR	_temp2
+0000cd   1596     movra   0x16             	MOVRA	STK00
+0000ce   1628     movar   0x28             	MOVAR	r0x1002
+0000cf   2099     call    0x99             	CALL	_abc
+0000d0   28c8     goto    0xc8             	GOTO	_00106_DS_
+0000d1   000c     return                   	RETURN	
+                                           ; exit point of _main
+                                           
+                                           
+                                           ;	code size estimation:
+                                           ;	   20+    0 =    20 instructions (   40 byte)
+                                           
+                                           	end
+                                           ;--------------------------------------------------------
+                                           ; File Created by SN-SDCC : ANSI-C Compiler
+                                           ; Version 0.0.4 (Jan 13 2014) (MSVC)
+                                           ; This file was generated Thu Mar 06 14:24:44 2014
+                                           ;--------------------------------------------------------
+                                           ; MC3X port for the RISC core
+                                           ;--------------------------------------------------------
+                                           ;	.file	"globle.c"
+                                           	list	p=30p011
+                                           	radix dec
+                                           	include "mc30p011.inc"
+                                           		LIST
+                                           ;mc30p011.inc    Standard Header File, Version 1.00 by Sinomcu
+                                           		NOLIST
+                                           ;--------------------------------------------------------
+                                           ; external declarations
+                                           ;--------------------------------------------------------
+                                           	extern	_STATUSbits
+                                           	extern	_P0bits
+                                           	extern	_P1bits
+                                           	extern	_MCRbits
+                                           	extern	_KBIMbits
+                                           	extern	_PDCONbits
+                                           	extern	_ODCONbits
+                                           	extern	_PUCONbits
+                                           	extern	_INTECONbits
+                                           	extern	_INTFLAGbits
+                                           	extern	_T0CRbits
+                                           	extern	_DDR0bits
+                                           	extern	_DDR1bits
+                                           	extern	_TMCRbits
+                                           	extern	_T1CRbits
+                                           	extern	_INDF
+                                           	extern	_T0CNT
+                                           	extern	_PCL
+                                           	extern	_STATUS
+                                           	extern	_FSR
+                                           	extern	_P0
+                                           	extern	_P1
+                                           	extern	_GPR
+                                           	extern	_MCR
+                                           	extern	_KBIM
+                                           	extern	_PCLATH
+                                           	extern	_PDCON
+                                           	extern	_ODCON
+                                           	extern	_PUCON
+                                           	extern	_INTECON
+                                           	extern	_INTFLAG
+                                           	extern	_T0CR
+                                           	extern	_DDR0
+                                           	extern	_DDR1
+                                           	extern	_TMCR
+                                           	extern	_T1CR
+                                           	extern	_T1CNT
+                                           	extern	_T1LOAD
+                                           	extern	_T1DATA
+                                           
+                                           	extern STK06
+                                           	extern STK05
+                                           	extern STK04
+                                           	extern STK03
+                                           	extern STK02
+                                           	extern STK01
+                                           	extern STK00
+                                           ;--------------------------------------------------------
+                                           ; global declarations
+                                           ;--------------------------------------------------------
+                                           	global	_abc
+                                           	global	_initial
+                                           	global	_temp2
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global definitions
+                                           ;--------------------------------------------------------
+                                           UD_globle_0	udata
+                                           _temp2	res	1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; absolute symbol definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; compiler-defined variables
+                                           ;--------------------------------------------------------
+                                           UDL_globle_0	udata
+                                           r0x1004	res	1
+                                           r0x1000	res	1
+                                           r0x1001	res	1
+                                           r0x1002	res	1
+                                           r0x1003	res	1
+                                           ;--------------------------------------------------------
+                                           ; initialized data
+                                           ;--------------------------------------------------------
+                                           
+                                           ;@Allocation info for local variables in function 'initial'
+                                           ;@initial i                         Allocated to registers 
+                                           ;@initial j                         Allocated to registers r0x1004 
+                                           ;@end Allocation info for local variables in function 'initial';
+                                           ;@Allocation info for local variables in function 'abc'
+                                           ;@abc b                         Allocated to registers r0x1001 
+                                           ;@abc a                         Allocated to registers r0x1000 
+                                           ;@abc i                         Allocated to registers r0x1002 
+                                           ;@abc j                         Allocated to registers r0x1003 
+                                           ;@abc k                         Allocated to registers r0x1002 
+                                           ;@abc l                         Allocated to registers r0x1000 
+                                           ;@abc m                         Allocated to registers r0x1002 
+                                           ;@end Allocation info for local variables in function 'abc';
+                                           
+                                           ;--------------------------------------------------------
+                                           ; overlayable items in internal ram 
+                                           ;--------------------------------------------------------
+                                           ;	udata_ovr
+                                           ;--------------------------------------------------------
+                                           ; code
+                                           ;--------------------------------------------------------
+                                           code_globle	code
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _abc	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;5 compiler assigned registers:
+                                           ;   r0x1000
+                                           ;   STK00
+                                           ;   r0x1001
+                                           ;   r0x1002
+                                           ;   r0x1003
+                                           ;; Starting pCode block
+                                           _abc	;Function start
+                                           ; 2 exit points
+                                           ;	.line	22; "globle.c"	void  abc(uchar a,uchar b)
+000099   15a4     movra   0x24             	MOVRA	r0x1000
+00009a   1616     movar   0x16             	MOVAR	STK00
+00009b   15a5     movra   0x25             	MOVRA	r0x1001
+                                           ;	.line	26; "globle.c"	i=a+2;
+00009c   0b02     movai   0x2              	MOVAI	0x02
+00009d   1f24     addar   0x24             	ADDAR	r0x1000
+00009e   15a6     movra   0x26             	MOVRA	r0x1002
+                                           ;	.line	27; "globle.c"	j=a+8;
+00009f   0b08     movai   0x8              	MOVAI	0x08
+0000a0   1f24     addar   0x24             	ADDAR	r0x1000
+0000a1   15a7     movra   0x27             	MOVRA	r0x1003
+                                           ;	.line	28; "globle.c"	k=i+j;
+0000a2   1627     movar   0x27             	MOVAR	r0x1003
+0000a3   1fa6     addra   0x26             	ADDRA	r0x1002
+                                           ;	.line	29; "globle.c"	l=b+a;
+0000a4   1624     movar   0x24             	MOVAR	r0x1000
+0000a5   1f25     addar   0x25             	ADDAR	r0x1001
+0000a6   15a4     movra   0x24             	MOVRA	r0x1000
+                                           ;	.line	30; "globle.c"	m=k-l;
+0000a7   1624     movar   0x24             	MOVAR	r0x1000
+0000a8   12a6     rsubra  0x26             	RSUBRA	r0x1002
+                                           ;;swapping arguments (AOP_TYPEs 1/2)
+                                           ;;unsigned compare: left >= lit(0x4=4), size=1
+                                           ;	.line	32; "globle.c"	if(m>3)
+0000a9   0b04     movai   0x4              	MOVAI	0x04
+0000aa   1226     rsubar  0x26             	RSUBAR	r0x1002
+0000ab   3003     jbset   0x3, 0           	JBSET	STATUS,0
+0000ac   28b0     goto    0xb0             	GOTO	_00114_DS_
+                                           ;;genSkipc:3251: created from rifx:028B593C
+                                           ;	.line	34; "globle.c"	P1=0X80;       
+0000ad   0b80     movai   0x80             	MOVAI	0x80
+0000ae   1586     movra   0x6              	MOVRA	_P1
+0000af   28b1     goto    0xb1             	GOTO	_00116_DS_
+                                           _00114_DS_
+                                           ;	.line	38; "globle.c"	P1=0X00;
+0000b0   1d86     clrr    0x6              	CLRR	_P1
+                                           _00116_DS_
+0000b1   000c     return                   	RETURN	
+                                           ; exit point of _abc
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _initial	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;1 compiler assigned register :
+                                           ;   r0x1004
+                                           ;; Starting pCode block
+                                           _initial	;Function start
+                                           ; 2 exit points
+                                           ;	.line	13; "globle.c"	j=T1CNT;
+0000b2   164d     movar   0x4d             	MOVAR	_T1CNT
+0000b3   15a3     movra   0x23             	MOVRA	r0x1004
+                                           ;	.line	14; "globle.c"	if(j)  
+0000b4   0b00     movai   0                	MOVAI	0x00
+0000b5   1723     orar    0x23             	ORAR	r0x1004
+0000b6   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+0000b7   28ba     goto    0xba             	GOTO	_00106_DS_
+                                           ;	.line	15; "globle.c"	DDR0=0;
+0000b8   1dc5     clrr    0x45             	CLRR	_DDR0
+0000b9   28bc     goto    0xbc             	GOTO	_00108_DS_
+                                           _00106_DS_
+                                           ;	.line	17; "globle.c"	DDR0=0XFF; 
+0000ba   0bff     movai   0xff             	MOVAI	0xff
+0000bb   15c5     movra   0x45             	MOVRA	_DDR0
+                                           _00108_DS_
+0000bc   000c     return                   	RETURN	
+                                           ; exit point of _initial
+                                           
+                                           
+                                           ;	code size estimation:
+                                           ;	   36+    0 =    36 instructions (   72 byte)
+                                           
+                                           	end
+                                           ;--------------------------------------------------------
+                                           ; File Created by SN-SDCC : ANSI-C Compiler
+                                           ; Version 0.0.4 (Jan 13 2014) (MSVC)
+                                           ; This file was generated Thu Mar 06 14:24:45 2014
+                                           ;--------------------------------------------------------
+                                           ; MC3X port for the RISC core
+                                           ;--------------------------------------------------------
+                                           ;	.file	"iic.c"
+                                           	list	p=30p011
+                                           	radix dec
+                                           	include "mc30p011.inc"
+                                           		LIST
+                                           ;mc30p011.inc    Standard Header File, Version 1.00 by Sinomcu
+                                           		NOLIST
+                                           		LIST
+                                           ;--------------------------------------------------------
+                                           ; external declarations
+                                           ;--------------------------------------------------------
+                                           
+                                           	extern STK06
+                                           	extern STK05
+                                           	extern STK04
+                                           	extern STK03
+                                           	extern STK02
+                                           	extern STK01
+                                           	extern STK00
+                                           ;--------------------------------------------------------
+                                           ; global declarations
+                                           ;--------------------------------------------------------
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; absolute symbol definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; compiler-defined variables
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; initialized data
+                                           ;--------------------------------------------------------
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXX----------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   219
+

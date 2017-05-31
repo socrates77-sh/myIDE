@@ -1,0 +1,439 @@
+gpasm-0.7.0 (Nov 19 2012)    mc30p01a.asm       2012-12-6  10:06:36          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #include mc30p011a.inc
+                      00001         LIST
+                      00002 ;MC30P01A.INC  Standard Header File, Version 1.00 by Sinomcu
+                      00245         LIST
+                      00002 #define  asubra subra
+                      00003 #define  comr   comra
+                      00004 #define  isubai subai
+                      00005 
+                      00006 #define    RAM_COUNT    48    ;48个RAM
+                      00007 #define    FIR_RAM_ADDR    0x10    ;RAM首地址
+                      00008 
+                      00009 #define    MAX_DIS_DATA    18
+                      00010 
+                      00011 #define    RAM_E    0x00        ;RAM错误报E0
+                      00012 ;***************特殊RAM***********
+  00000007            00013 R0    equ    0x07
+  00000045            00014 DDR0    equ    0x45
+  00000046            00015 DDR1    equ    0x46
+                      00016 
+                      00017 #define    r0    R0
+                      00018 #define    IO_TM1628_STB    P0,0
+                      00019 #define    IO_TM1628_CLK    P0,1
+                      00020 #define    IO_TM1628_DATA    P0,2
+                      00021 #define    IO_TM1628_DDR    DDR0,2
+                      00022 ;*************ram****************
+                      00023 cblock    0x10
+                      00024 acc_temp
+                      00025 status_temp
+                      00026 r1
+                      00027 r2
+                      00028 r3
+                      00029 r4
+                      00030 r5
+                      00031 r6
+                      00032 r7
+                      00033 work_flag1
+                      00034 work_flag2
+                      00035 error_flag
+                      00036 
+                      00037 time_125us
+                      00038 time_1ms
+                      00039 time_10ms
+                      00040 time_100ms
+                      00041 time_1s
+                      00042 time_1min
+                      00043 time_1hour
+                      00044 
+                      00045 work_time
+                      00046 funtion_valu
+                      00047 
+                      00048 key_times0
+                      00049 key_times1
+                      00050 key_times2
+                      00051 key_times3
+                      00052 key_bak
+                      00053 key_value
+                      00054 work_status
+                      00055 
+                      00056 dis_buffer0
+                      00057 dis_buffer1
+                      00058 dis_buffer2
+                      00059 dis_buffer3
+                      00060 tm_data0
+                      00061 tm_data1
+                      00062 tm_data2
+                      00063 tm_data3
+                      00064 tm_data4
+                      00065 tm_data5
+                      00066 tm_data6
+                      00067 tm_data7
+                      00068 key_data_buffer0
+                      00069 key_data_buffer1
+                      00070 key_data_buffer2
+                      00071 key_data_buffer3
+                      00072 key_data_buffer4
+                      00073 endc
+                      00074 ;***************end ram*************
+                      00075 #define         KEY_INT1        key_value,4
+                      00076 #define         KEY_INT0        key_value,5
+                      00077 #define         KEY_RST         key_value,7
+                      00078 
+                      00079 #define         IN_PUT          work_status,0
+                      00080 #define         IN_PULL_DOWN    work_status,1
+                      00081 #define         OUT_PUT         work_status,2
+                      00082 
+                      00083 #define    dis_buffer4    tm_data4
+                      00084 #define    dis_buffer5    tm_data5
+                      00085 #define    dis_buffer6    tm_data6
+                      00086 #define    dis_buffer7    tm_data7
+                      00087 #define    disp0_point    tm_data0,4
+                      00088 #define    disp1_point    tm_data1,4
+                      00089 #define    disp2_point    tm_data2,4
+                      00090 #define    disp3_point    tm_data3,4
+                      00091 #define    key_data1    key_data_buffer0,0    ;k1
+                      00092 #define    key_data2    key_data_buffer0,3    ;k2
+                      00093 #define    key_data3    key_data_buffer3,0    ;k3
+                      00094 
+                      00095 #define flag_time_10ms         work_flag1,0
+                      00096 #define flag_key1_effect    work_flag1,1
+                      00097 #define flag_key2_effect    work_flag1,2
+                      00098 #define flag_key3_effect    work_flag1,3
+                      00099 #define flag_key1_effect_bak    work_flag1,4
+                      00100 #define flag_key2_effect_bak    work_flag1,5
+                      00101 #define flag_key3_effect_bak    work_flag1,6
+                      00102 #define flag_test_timer0    work_flag1,7
+                      00103 
+                      00104 #define    flag_disp0_point    work_flag2,0
+                      00105 #define    flag_disp1_point    work_flag2,1
+                      00106 #define    flag_disp2_point    work_flag2,2
+                      00107 #define    flag_disp3_point    work_flag2,3
+                      00108     org     0x3ff        ;复位向量
+03FF   3F8E           00109     bclr    GIE    ;关中断
+                      00110     org     0x00
+                      00111     
+0000   2800           00112     goto    start
+                      00113 
+                      00114 ;*******程序开始*************
+                      00115 ;*********start***************
+0001                  00116 start:
+0001   3F88           00117     bclr    WDTEN        ;关看门狗
+0002   3F08           00118     bclr    EIS
+                      00119 
+                      00120 ;*****************************************
+0003                  00121 sys_init:
+0003   0B00           00122     movai    0x00    ;8M,2T,4分频
+0004   15C1           00123     movra    T0CR        ;写入T0CR 
+0005   380E           00124     bset    T0IE    ;开定时中断
+                      00125 
+0006   0BFE           00126     movai 254
+0007   15CE           00127     movra T1LOAD
+                      00128 
+0008   0B01           00129     movai 0x01
+0009   15CC           00130     movra T1CR
+                      00131 
+000A   0BFE           00132     movai 0xfe
+000B   15CF           00133     movra T1DATA
+                      00134 
+000C   3BCC           00135     bset  T1MEN         ;开定时器1
+000D   38CB           00136     bset  T1IE        ;使能定时器1中断
+000E   1DC5           00137     clrr    DDR0
+000F   1DC6           00138     clrr    DDR1    ;全部作为输入口
+0010   1D85           00139     clrr    P0
+0011   1D86           00140     clrr    P1
+                      00141 ;***************************************
+0012   000E           00142     clrwdt
+0013   3B88           00143     bset    WDTEN
+0014   3F8E           00144     bclr    GIE    ;关全局中断
+0015   3BCB           00145     bset    TBS
+0016   0000           00146     nop
+                      00147 
+                      00148 ;************main loop***************
+0017                  00149 main_loop:
+0017   000E           00150     clrwdt
+                      00151     ;bclr    T0IE
+0018   0000           00152     nop
+                      00153 ;********动态************************
+                      00154 ;io_out_h:
+                      00155 ;    clrr    DDR1
+                      00156 ;    clrr    DDR0
+                      00157 ;test_loop: 
+                      00158 ;    comr    P0
+                      00159 ;    comr    P1
+                      00160 ;    comr    R0
+                      00161 ;    clrwdt
+                      00162 ;    goto    test_loop
+                      00163 ;*****************************************
+                      00164 
+                      00165 ;;********静态*****************************
+0019                  00166 io_in_p1_l:
+0019   1DC6           00167     clrr    DDR1
+001A   1DC5           00168     clrr    DDR0
+001B   000E           00169     clrwdt
+                      00170 
+001C                  00171 test_loop2:
+001C   1C85           00172     comr    P0
+001D   1C86           00173     comr    P1
+001E   000B           00174     sleep               ;等待唤醒
+001F   2800           00175     goto    test_loop2
+                      00176 
+                      00177     end
+gpasm-0.7.0 (Nov 19 2012)    mc30p01a.asm       2012-12-6  10:06:36          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+FSR                               00000004
+GPR                               00000007
+INDF                              00000000
+INTECON                           0000000E
+INTEFLAG                          0000000F
+KBIM                              00000009
+MCR                               00000008
+ODCON                             0000000C
+OPT                               00000041
+P0                                00000005
+P1                                00000006
+P5IOC                             00000045
+P6IOC                             00000046
+PCL                               00000002
+PCLATH                            0000000A
+PDCON                             0000000B
+PHCON                             0000000D
+R0                                00000007
+STATUS                            00000003
+T0CNT                             00000001
+T1CNT                             0000004D
+T1CR                              0000004C
+T1DATA                            0000004F
+T1LOAD                            0000004E
+T1_FLAG                           0000004B
+_BOR_15                           00003FF8
+_BOR_18                           00003FF9
+_BOR_20                           00003FFA
+_BOR_22                           00003FFB
+_BOR_24                           00003FFC
+_BOR_26                           00003FFD
+_BOR_36                           00003FFF
+_CONFIG1                          00002000
+_CONFIG2                          00002001
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_FCPU_2T                          00003F7F
+_FCPU_4T                          00003FFF
+_FOSC_1M                          00003FCF
+_FOSC_2M                          00003FDF
+_FOSC_32K                         00003F9F
+_FOSC_455K                        00003FAF
+_FOSC_4M                          00003FEF
+_FOSC_500K                        00003FBF
+_FOSC_62P5K                       00003F8F
+_FOSC_8M                          00003FFF
+_MCLR_OFF                         00003FF7
+_MCLR_ON                          00003FFF
+_MCU_EMC                          00003BFF
+_MCU_FEL                          00003FFF
+_OSCM_HS                          00003FFF
+_OSCM_IRC                         000037FF
+_OSCM_LP                          00003FFF
+_RDPORT_PIN                       00003FFF
+_RDPORT_REG                       00003EFF
+_ROTP_100N                        00001FFF
+_ROTP_200N                        00002FFF
+_ROTP_300N                        00000FFF
+_ROTP_HALFCPU                     00003FFF
+_SMT_OFF                          00003DFF
+_SMT_ON                           00003EFF
+_TWDT_18_18                       00003FFF
+_TWDT_288_288                     00003DFF
+_TWDT_4P5_4P5                     00003EFF
+_TWDT_72_72                       00003CFF
+_TWDT_P140_18                     00003BFF
+_TWDT_P140_288                    000039FF
+_TWDT_P140_4P5                    00003AFF
+_TWDT_P140_72                     000038FF
+_WDT_OFF                          000037FF
+_WDT_ON                           00003FFF
+__30P01A                          00000001
+acc_temp                          00000010
+dis_buffer0                       0000002C
+dis_buffer1                       0000002D
+dis_buffer2                       0000002E
+dis_buffer3                       0000002F
+error_flag                        0000001B
+funtion_valu                      00000024
+io_in_p1_l                        00000019
+key_bak                           00000029
+key_data_buffer0                  00000038
+key_data_buffer1                  00000039
+key_data_buffer2                  0000003A
+key_data_buffer3                  0000003B
+key_data_buffer4                  0000003C
+key_times0                        00000025
+key_times1                        00000026
+key_times2                        00000027
+key_times3                        00000028
+key_value                         0000002A
+main_loop                         00000017
+r1                                00000012
+r2                                00000013
+r3                                00000014
+r4                                00000015
+r5                                00000016
+r6                                00000017
+r7                                00000018
+start                             00000001
+status_temp                       00000011
+sys_init                          00000003
+test_loop2                        0000001C
+time_100ms                        0000001F
+time_10ms                         0000001E
+time_125us                        0000001C
+time_1hour                        00000022
+time_1min                         00000021
+time_1ms                          0000001D
+time_1s                           00000020
+tm_data0                          00000030
+tm_data1                          00000031
+tm_data2                          00000032
+tm_data3                          00000033
+tm_data4                          00000034
+tm_data5                          00000035
+tm_data6                          00000036
+tm_data7                          00000037
+work_flag1                        00000019
+work_flag2                        0000001A
+work_status                       0000002B
+work_time                         00000023
+BUZOUT                            T1CR,5
+C                                 STATUS,0
+DC                                STATUS,1
+DDR0                              P5IOC
+DDR00                             DDR0,0
+DDR01                             DDR0,1
+DDR02                             DDR0,2
+DDR03                             DDR0,3
+DDR1                              P6IOC
+DDR10                             DDR1,0
+DDR11                             DDR1,1
+DDR12                             DDR1,2
+DDR14                             DDR1,4
+DDR15                             DDR1,5
+DDR16                             DDR1,6
+DDR17                             DDR1,7
+EIS                               MCR,6
+FIR_RAM_ADDR                      0x10
+FLAG_TEMP0                        STATUS,6
+FLAG_TEMP1                        STATUS,5
+FSR0                              FSR0
+GIE                               INTECON,7
+INDF0                             INDF
+INT0IE                            INTECON,2
+INT0IF                            INTF,2
+INT0M                             T0CR,6
+INTE                              INTECON
+INTF                              INTEFLAG
+IN_PULL_DOWN                      work_status,1
+IN_PUT                            work_status,0
+IO_TM1628_CLK                     P0,1
+IO_TM1628_DATA                    P0,2
+IO_TM1628_DDR                     DDR0,2
+IO_TM1628_STB                     P0,0
+KBIE                              INTECON,1
+KBIF                              INTF,1
+KBIM0                             KBIM,0
+KBIM1                             KBIM,1
+KBIM2                             KBIM,2
+KBIM3                             KBIM,3
+KBIM4                             KBIM,4
+KBIM5                             KBIM,5
+KBIM6                             KBIM,6
+KBIM7                             KBIM,7
+KEY_INT0                          key_value,5
+KEY_INT1                          key_value,4
+KEY_RST                           key_value,7
+MAX_DIS_DATA                      18
+OUT_PUT                           work_status,2
+P00PD                             PDCON,0
+P01PD                             PDCON,1
+P02PD                             PDCON,2
+P03PD                             PDCON,3
+P10OD                             ODCON,0
+P10PD                             PDCON,4
+P10PH                             PHCON,0
+P11OD                             ODCON,1
+P11PD                             PDCON,5
+P11PH                             PHCON,1
+P12OD                             ODCON,2
+P12PD                             PDCON,6
+P12PH                             PHCON,2
+P14OD                             ODCON,4
+P14PH                             PHCON,4
+P15OD                             ODCON,5
+P15PH                             PHCON,5
+P16OD                             ODCON,6
+P16PH                             PHCON,6
+P17OD                             ODCON,7
+P17PH                             PHCON,7
+P1HCON                            PHCON
+PD                                STATUS,3
+PWMOUT                            T1CR,6
+RAM_COUNT                         48
+RAM_E                             0x00
+RST                               STATUS,7
+T0CR                              OPT
+T0IE                              INTECON,0
+T0IF                              INTF,0
+T1IE                              T1_FLAG,1
+T1IF                              T1_FLAG,0
+T1MEN                             T1CR,7
+T1PR0                             T1CR,0
+T1PR1                             T1CR,1
+T1PR2                             T1CR,2
+T1PTS0                            T1CR,3
+T1PTS1                            T1CR,4
+TBS                               T1_FLAG,7
+TO                                STATUS,4
+WDTEN                             MCR,7
+Z                                 STATUS,2
+asubra                            subra
+comr                              comra
+dis_buffer4                       tm_data4
+dis_buffer5                       tm_data5
+dis_buffer6                       tm_data6
+dis_buffer7                       tm_data7
+disp0_point                       tm_data0,4
+disp1_point                       tm_data1,4
+disp2_point                       tm_data2,4
+disp3_point                       tm_data3,4
+flag_disp0_point                  work_flag2,0
+flag_disp1_point                  work_flag2,1
+flag_disp2_point                  work_flag2,2
+flag_disp3_point                  work_flag2,3
+flag_key1_effect                  work_flag1,1
+flag_key1_effect_bak              work_flag1,4
+flag_key2_effect                  work_flag1,2
+flag_key2_effect_bak              work_flag1,5
+flag_key3_effect                  work_flag1,3
+flag_key3_effect_bak              work_flag1,6
+flag_test_timer0                  work_flag1,7
+flag_time_10ms                    work_flag1,0
+inca                              addai 1
+isubai                            subai
+key_data1                         key_data_buffer0,0
+key_data2                         key_data_buffer0,3
+key_data3                         key_data_buffer3,0
+r0                                R0
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

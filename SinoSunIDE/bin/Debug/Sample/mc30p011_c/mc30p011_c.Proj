@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MCU="mc30p011" ID="0x0311" MCU_Type="CRISC" Author="Mike.Mo" Date="2012-08-28" VS="1.01" Com="COM34">
+  <ProWindows>
+    <Explorer fName="mc30p011_c">
+      <SouceCode fName="SourceCode">
+        <asmFile fName="CtrlSbr.c" fPath="\CtrlSbr.c" />
+        <asmFile fName="initSys.c" fPath="\initSys.c" />
+        <asmFile fName="interrupt.c" fPath="\interrupt.c" />
+        <asmFile fName="IR.c" fPath="\IR.c" />
+        <asmFile fName="T1sSbr.c" fPath="\T1sSbr.c" />
+        <asmFile fName="YKQ3011.c" fPath="\YKQ3011.c" />
+      </SouceCode>
+      <SouceCode fName="Output" />
+      <SouceCode fName="Debug" />
+    </Explorer>
+  </ProWindows>
+  <Option Value="32FF37F0" Value0="3770" Value1="35ff" Value2="ffff" Value3="ffff" Value4="ffff" Value5="ffff" />
+  <Compiler Name="gpasm.exe" />
+  <Language Name="C" />
+</Project>

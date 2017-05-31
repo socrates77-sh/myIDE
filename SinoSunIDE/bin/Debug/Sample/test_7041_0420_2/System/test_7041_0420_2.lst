@@ -1,0 +1,363 @@
+gpasm-1.9.5 (Apr 18 2017)    test_7041_0420_2.asm2017-4-20  17:16:21          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #include "mc35p7041.inc"
+                      00001                 LIST
+                      00002 ;mc32p7041.inc    Standard Header File, Version 1.00 by Sinomcu
+                      00507                 LIST
+                      00002         org 0x00
+0000   8000           00003         goto start
+                      00004 
+0001                  00005 start:
+0001   0000           00006         NOP
+0002   0000           00007         nop
+0003   8000           00008         goto loop
+                      00009 
+0004                  00010 loop:
+0004   0000           00011         nop
+0005   0000           00012         nop
+0006   0000           00013         NOP
+0007   0000           00014         nop
+0008   0000           00015         NOP
+0009   8000           00016         goto loop
+                      00017 
+                      00018 
+                      00019         end
+gpasm-1.9.5 (Apr 18 2017)    test_7041_0420_2.asm2017-4-20  17:16:21          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCR0                             000000B1
+ADCR1                             000000B2
+ADCR2                             000000B5
+ADIOS0                            000000AD
+ADIOS1                            000000AE
+ADIOS2                            000000AF
+ADRH                              000000B3
+ADRL                              000000B4
+BUZCR                             000000DC
+EINTCR                            000000BF
+FSR                               00000083
+FSR0                              00000083
+FSR1                              00000084
+HIBYTE                            00000082
+INDF                              000000E7
+INTE                              000000C9
+INTF                              000000C8
+IOP0                              000000D0
+IOP4                              000000D4
+IOP5                              000000D5
+MCR                               000000DF
+OEP0                              000000B8
+OEP4                              000000C4
+OEP5                              000000C5
+OSCCAL                            0000008F
+OSCM                              000000CA
+PCH                               000000CF
+PCL                               000000CE
+PFLAG                             00000086
+PUP0                              000000E0
+PUP4                              000000E4
+PUP5                              000000E5
+PWMADT                            000000EB
+PWMBDT                            000000EC
+PWMCDT                            000000ED
+PWMCNT                            000000EA
+PWMCR0                            000000E8
+PWMCR1                            000000E9
+PWMPD                             000000EE
+STATUS                            00000086
+STKR0H                            000000F1
+STKR0L                            000000F0
+STKR1H                            000000F3
+STKR1L                            000000F2
+STKR2H                            000000F5
+STKR2L                            000000F4
+STKR3H                            000000F7
+STKR3L                            000000F6
+STKR4H                            000000F9
+STKR4L                            000000F8
+STKR5H                            000000FB
+STKR5L                            000000FA
+STKR6H                            000000FD
+STKR6L                            000000FC
+STKR7H                            000000FF
+STKR7L                            000000FE
+T0CNT                             000000D9
+T0CR                              000000D8
+T1CNT                             000000DB
+T1CR                              000000DA
+T1LDR                             000000CD
+WDTCR                             000000CC
+WKCR0                             000000A0
+WKCR5                             000000A5
+ZEROTR                            0000008E
+_CONFIG0                          00008000
+_CONFIG1                          00008001
+__2K7041                          00000001
+loop                              00000004
+start                             00000001
+ADCHS0                            ADCR0,0
+ADCHS1                            ADCR0,1
+ADCHS2                            ADCR0,2
+ADCHS3                            ADCR0,3
+ADCKS0                            ADCR1,4
+ADCKS1                            ADCR1,5
+ADCKS2                            ADCR1,6
+ADEN                              ADCR0,7
+ADEOC                             ADCR0,5
+ADIE                              INTE,7
+ADIF                              INTF,7
+ADRSEL                            ADCR1,7
+ADSPS0                            ADCR1,0
+ADSPS1                            ADCR1,1
+ADSPS2                            ADCR1,2
+ADSPS3                            ADCR1,3
+ADSTR                             ADCR0,6
+AN0EN                             ADIOS2,0
+AN1EN                             ADIOS2,1
+AN2EN                             ADIOS2,2
+AN3EN                             ADIOS2,3
+AN4EN                             ADIOS2,4
+AN5EN                             ADIOS0,0
+AN6EN                             ADIOS1,4
+AN7EN                             ADIOS1,3
+AN8EN                             ADIOS1,2
+AN9EN                             ADIOS0,7
+BUZ1OE                            T1CR,1
+BUZEN                             BUZCR,7
+BUZPRS0                           BUZCR,5
+BUZPRS1                           BUZCR,6
+C                                 PFLAG,2
+CLKS                              OSCM,2
+CPUM0                             OSCM,3
+CPUM1                             OSCM,4
+DC                                PFLAG,1
+EVRS                              ADCR2,7
+GCHS                              ADCR0,4
+GIE                               MCR,7
+HFDE                              OSCM,1
+INDF0                             INDF,0
+INDF1                             INDF,1
+INDF2                             INDF,2
+INDF3                             INDF,3
+INDF4                             INDF,4
+INDF5                             INDF,5
+INDF6                             INDF,6
+INDF7                             INDF,7
+INT0IE                            INTE,0
+INT0IF                            INTF,0
+LVD24                             PFLAG,4
+LVD36                             PFLAG,5
+MINT00                            EINTCR,3
+MINT01                            EINTCR,4
+NPD                               PFLAG,6
+NTO                               PFLAG,7
+OSCCAL0                           OSCCAL,0
+OSCCAL1                           OSCCAL,1
+OSCCAL2                           OSCCAL,2
+OSCCAL3                           OSCCAL,3
+OSCCAL4                           OSCCAL,4
+OSCCAL5                           OSCCAL,5
+OSCCAL6                           OSCCAL,6
+OSCCAL7                           OSCCAL,7
+P00D                              IOP0,0
+P00OE                             OEP0,0
+P00PU                             PUP0,0
+P00WK                             WKCR0,0
+P01D                              IOP0,1
+P01OE                             OEP0,1
+P01PU                             PUP0,1
+P01WK                             WKCR0,1
+P02D                              IOP0,2
+P02OE                             OEP0,2
+P02PU                             PUP0,2
+P02WK                             WKCR0,2
+P03D                              IOP0,3
+P03OE                             OEP0,3
+P03PU                             PUP0,3
+P03WK                             WKCR0,3
+P04D                              IOP0,4
+P04OE                             OEP0,4
+P04PU                             PUP0,4
+P04WK                             WKCR0,4
+P05D                              IOP0,5
+P05OE                             OEP0,5
+P05PU                             PUP0,5
+P05WK                             WKCR0,5
+P06D                              IOP0,6
+P06OE                             OEP0,6
+P06PU                             PUP0,6
+P06WK                             WKCR0,6
+P07D                              IOP0,7
+P07OE                             OEP0,7
+P07PU                             PUP0,7
+P07WK                             WKCR0,7
+P40D                              IOP4,0
+P40OE                             OEP4,0
+P40PU                             PUP4,0
+P41D                              IOP4,1
+P41OE                             OEP4,1
+P41PU                             PUP4,1
+P42D                              IOP4,2
+P42OE                             OEP4,2
+P42PU                             PUP4,2
+P43D                              IOP4,3
+P43OE                             OEP4,3
+P43PU                             PUP4,3
+P44OE                             OEP4,4
+P44PU                             PUP4,4
+P50D                              IOP5,0
+P50OE                             OEP5,0
+P50PU                             PUP5,0
+P50WK                             WKCR5,0
+P51D                              IOP5,1
+P51OE                             OEP5,1
+P51PU                             PUP5,1
+P51WK                             WKCR5,1
+P52D                              IOP5,2
+P52OE                             OEP5,2
+P52PU                             PUP5,2
+P52WK                             WKCR5,2
+P53D                              IOP5,3
+P53OE                             OEP5,3
+P53PU                             PUP5,3
+P53WK                             WKCR5,3
+P54OE                             OEP5,4
+P54PU                             PUP5,4
+P54WK                             WKCR5,4
+PC0                               PCL,0
+PC1                               PCL,1
+PC10                              PCH,2
+PC2                               PCL,2
+PC3                               PCL,3
+PC4                               PCL,4
+PC5                               PCL,5
+PC6                               PCL,6
+PC7                               PCL,7
+PC8                               PCH,0
+PC9                               PCH,1
+PCHEN                             ADCR2,2
+PWM1OE                            T1CR,0
+PWMADT0                           PWMADT,0
+PWMADT1                           PWMADT,1
+PWMADT2                           PWMADT,2
+PWMADT3                           PWMADT,3
+PWMADT4                           PWMADT,4
+PWMADT5                           PWMADT,5
+PWMADT6                           PWMADT,6
+PWMADT7                           PWMADT,7
+PWMAOE                            PWMCR1,5
+PWMAOF                            PWMCR0,0
+PWMBDT0                           PWMBDT,0
+PWMBDT1                           PWMBDT,1
+PWMBDT2                           PWMBDT,2
+PWMBDT3                           PWMBDT,3
+PWMBDT4                           PWMBDT,4
+PWMBDT5                           PWMBDT,5
+PWMBDT6                           PWMBDT,6
+PWMBDT7                           PWMBDT,7
+PWMBOE                            PWMCR1,6
+PWMBOF                            PWMCR0,1
+PWMCDT0                           PWMCDT,0
+PWMCDT1                           PWMCDT,1
+PWMCDT2                           PWMCDT,2
+PWMCDT3                           PWMCDT,3
+PWMCDT4                           PWMCDT,4
+PWMCDT5                           PWMCDT,5
+PWMCDT6                           PWMCDT,6
+PWMCDT7                           PWMCDT,7
+PWMCNT0                           PWMCNT,0
+PWMCNT1                           PWMCNT,1
+PWMCNT2                           PWMCNT,2
+PWMCNT3                           PWMCNT,3
+PWMCNT4                           PWMCNT,4
+PWMCNT5                           PWMCNT,5
+PWMCNT6                           PWMCNT,6
+PWMCNT7                           PWMCNT,7
+PWMCOE                            PWMCR1,7
+PWMCOF                            PWMCR0,2
+PWMEN                             PWMCR0,7
+PWMIE                             INTE,3
+PWMIF                             INTF,3
+PWMPD0                            PWMPD,0
+PWMPD1                            PWMPD,1
+PWMPD2                            PWMPD,2
+PWMPD3                            PWMPD,3
+PWMPD4                            PWMPD,4
+PWMPD5                            PWMPD,5
+PWMPD6                            PWMPD,6
+PWMPD7                            PWMPD,7
+PWMPRS0                           PWMCR0,4
+PWMPRS1                           PWMCR0,5
+PWMPRS2                           PWMCR0,6
+STKP0                             MCR,0
+STKP1                             MCR,1
+STKP2                             MCR,2
+T0CNT0                            T0CNT,0
+T0CNT1                            T0CNT,1
+T0CNT2                            T0CNT,2
+T0CNT3                            T0CNT,3
+T0CNT4                            T0CNT,4
+T0CNT5                            T0CNT,5
+T0CNT6                            T0CNT,6
+T0CNT7                            T0CNT,7
+T0EN                              T0CR,7
+T0IE                              INTE,4
+T0IF                              INTF,4
+T0PRS0                            T0CR,4
+T0PRS1                            T0CR,5
+T1CKS0                            T1CR,3
+T1CKS1                            T0CR,2
+T1CKS2                            T0CR,3
+T1CNT0                            T1CNT,0
+T1CNT1                            T1CNT,1
+T1CNT2                            T1CNT,2
+T1CNT3                            T1CNT,3
+T1CNT4                            T1CNT,4
+T1CNT5                            T1CNT,5
+T1CNT6                            T1CNT,6
+T1CNT7                            T1CNT,7
+T1EN                              T1CR,7
+T1IE                              INTE,5
+T1IF                              INTF,5
+T1LDEN                            T1CR,2
+T1LDR0                            T1LDR,0
+T1LDR1                            T1LDR,1
+T1LDR2                            T1LDR,2
+T1LDR3                            T1LDR,3
+T1LDR4                            T1LDR,4
+T1LDR5                            T1LDR,5
+T1LDR6                            T1LDR,6
+T1LDR7                            T1LDR,7
+T1PRS0                            T1CR,4
+T1PRS1                            T1CR,5
+T1PRS2                            T1CR,6
+VRS0                              ADCR2,0
+VRS1                              ADCR2,1
+WDTCR0                            WDTCR,0
+WDTCR1                            WDTCR,1
+WDTCR2                            WDTCR,2
+WDTCR3                            WDTCR,3
+WDTCR5                            WDTCR,5
+WDTCR6                            WDTCR,6
+WDTCR7                            WDTCR,7
+Z                                 PFLAG,0
+ZEROTR0                           ZEROTR,0
+ZEROTR1                           ZEROTR,1
+ZEROTR2                           ZEROTR,2
+ZEROTR3                           ZEROTR,3
+ZEROTR4                           ZEROTR,4
+ZOTEN0                            ZEROTR,6
+ZOTEN1                            ZEROTR,7
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
